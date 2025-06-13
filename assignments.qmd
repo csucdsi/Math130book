@@ -1,0 +1,16 @@
+# Assignments {.unnumbered}
+
+Right click and save these files in your `Math 130/hw` folder. You will write your answers directly in them and submit your assignment as instructed by the due date.
+
+* [HW 1](hw1.qmd)
+* [HW 2](hw2.qmd)
+* [HW 3](hw3.qmd)
+* [HW 4](hw4.qmd)
+
+::: .callout-caution
+### Need help getting started? 
+
+Watch [Dr. Lytals help video](https://media.csuchico.edu/media/MATH130%20-%20Extra%20Video%20(Jan%2029)/1_9nsoxdy9)
+:::
+
+ 

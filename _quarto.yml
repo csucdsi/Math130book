@@ -1,0 +1,37 @@
+project:
+  type: book
+
+book:
+  title: "Introduction to R"  
+  author: "Donatello, Roualdes, Lytal, Guo"
+  date: "Fall 2025"
+  search: true
+  #downloads: [pdf, epub]
+  
+  chapters:
+    - index.qmd
+    - setup_tools.qmd
+    - intro_r.qmd
+    - quarto.qmd
+    - programming_in_r.qmd
+    - dm.qmd  
+    - factors.qmd
+    - plots.qmd
+    # - dplyr.qmd
+    # - import.qmd
+    # - plots2.qmd
+    - project.qmd
+    - assignments.qmd
+      
+
+#bibliography: references.bib
+
+format:
+  html:
+    theme: sandstone
+  pdf:
+    documentclass: scrreprt
+
+execute: 
+  freeze: auto
+

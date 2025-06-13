@@ -1,0 +1,63 @@
+---
+title: "Welcome to MATH 130"
+subtitle: "Introduction to R"
+date: "2025-08-25"
+author: "Robin Donatello"
+format: 
+  revealjs:
+    theme: sky
+    transition: fade
+    slide-number: true
+---
+
+# Meet your instructor {background-image="../images/Zombatar.jpg" background-size="200px" background-position="45% 25%"}
+
+## Dr. Robin Donatello (she/her) {.smaller}
+
+You can address me as "Robin", "Dr. D", or some other respectful title.
+
+I have a Doctorate in Public Health (DrPH) Biostatistics from UCLA, but I'm a Chico alum. I double majored in Statistics & Biology, with minor in Chemistry, and a first generation college student who started at Butte College.
+
+My campus life consists of training the next generation of Scientists how to harness the power of Statistics and Data in a responsible and ethical manner. I lead the Data Science Initiative (DSI) and the WildCat Data Hub which provides analytical support and statistical consulting for many projects on and off campus.
+
+When I'm not on campus, typically I'm growing food for my family, out adventuring with my dogs, or getting some game time in. You can learn more about the projects I'm involved in on my [website](http://www.norcalbiostat.com/).
+
+## Mode of Instruction
+
+The first week will be a guided introduction. I will share some information, walk you a few tasks, then you will work on assignments at your own pace. 
+
+After the first week this will have a stronger flipped classroom feel. Before our set meeting times, you are expected to watch the video lectures. All lectures are all pre-recorded and linked from the class website. During class meeting time you will complete assignments at your own pace, asking me  questions as needed.
+
+::: {.callout-danger}
+## Attendance
+Attendance is required. If you finish the materials for the week early, and get it checked off by the instructor or TA, you can skip Friday class. 
+:::
+
+
+## Time Commitment
+
+-   Fast paced, we're hitting the ground running and only have 4 weeks.
+-   Expect to spend at least 10h/week on this class.
+-   Not designed to teach you everything about R, just enough to get going.
+-   Daily practice will pay off, results can be very rewarding
+
+## Warning: Effort and patience required!
+
+-   Minimal effort --\> frustration and tendency to give up
+-   Work hard --\> results out --\> satisfaction + rewarding + confidence boosting
+
+<br>
+
+<center><img src="../static/img/hard.JPG" width="350px"/></center>
+
+<br>
+
+We've all been there. It will get easier but you have to ask for help and use the resources available!
+
+## Let's get started!
+
+Let's get you introduced to your new tools. 
+
+::: {.callout-danger}
+## add 315 welcome picture here
+:::

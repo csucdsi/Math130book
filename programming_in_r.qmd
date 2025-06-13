@@ -1,0 +1,435 @@
+# Getting Started with R
+
+This lesson is designed to explain the basics of how R works as a programming language. 
+
+::: {.callout-caution}
+### Learning Objectives
+
+* Define the following terms as they relate to R: object, assign, call, function, arguments, options.
+* Assign values to objects in R.
+* Learn how to _name_ objects
+* Solve simple arithmetic operations in R.
+* Call functions and use arguments to change their default options.
+* Inspect the content of vectors and manipulate their content.
+* Subset and extract values from vectors.
+* Write logical statements that resolve as TRUE and FALSE.
+* Describe what a data frame is.
+* Summarize the contents of a data frame.
+* Extract vectors out of data frames using variable names.
+
+:::
+
+---
+
+## Writing Scripts <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Intro+and+Writing+Scripts/1_7cyqxm6j" target="_blank">(Video)</a>
+
+In lesson 02 we saw that we could write R code in the console and get immediate results. There are two main ways of interacting with R: by using the console or by using script files (plain text files that contain your code). We will be working in R markdown files exclusively in this class, but it is important to be aware that there are also script files that have an extension of `.R`. These can contain code and comments only, not normal text sentences like this. 
+
+Because we want our code and workflow to be reproducible, and often your code may span several lines at a time, it is better to type the commands we want in a script, and save the script. This way, there is a complete record of what we did, and anyone (including our future selves!) can easily replicate the results on their computer. It's also easier to fix mistakes this way, without having to retype in the entire command. 
+
+
+##### Start a new Rmarkdown file
+
+* Go to File --> New File --> R Markdown to open a new R markdown window.
+* Give this file a name such as "Lesson 04 notes", and put your name as the author. 
+* Delete all the template language below line 11. 
+
+Now let's go back to that long expression from lesson 2 (corrected), but this time type it into a new code chunk. Recall we can make a new code chunk by pressing <kbd>`CTRL`</kbd>+<kbd>`ALT`</kbd>+<kbd>`I`</kbd>, or by clicking on _Insert_ then _R_. Also recall that we submit this code by pressing <kbd>`Ctrl`</kbd>+<kbd>`Enter`</kbd> or clicking the green play arrow in the top right corner of the code chunk.
+
+```
+2 + 5*(8^3)- 3*log(10)
+```
+
+##### Make a change to the above expression and run the command again. 
+
+
+For the rest of this lesson, retype each code chunk below into the notes file you just created. Be sure to annotate these notes as you would take notes in any other class. For you to retain what you are reading and learning, writing out what these pieces of code are doing (e.g. the assignment operator `<-`) in **your own words** is an effective learning technique.
+
+----
+
+## Creating objects in R <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Creating+Objects+in+R/1_dxcx1qiy" target="_blank">(Video)</a>
+
+To do useful and interesting things, we need to assign _values_ to
+_objects_. To create an object, we need to give it a name followed by the
+assignment operator `<-`, and the value we want to give it:
+
+```{r}
+weight_kg <- 55
+```
+
+`<-` is the assignment operator. It assigns values on the right to objects on
+the left. So, after executing `x <- 3`, the value of `x` is `3`. 
+
+**Objects can be given any name such as `x`, `current_temperature`, or `subject_id`. However there are some naming guidelines you need to be aware of.**
+
+* You want your object names to be explicit and not too long. 
+* They cannot start with a number (`2x` is not valid, but `x2` is). 
+* R is case sensitive (e.g., `weight_kg` is different from `Weight_kg`). 
+* There are some names that cannot be used because they are the names of fundamental 
+  functions in R (e.g., `if`, `else`, `for`, see
+  [here](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Reserved.html)
+  for a complete list). 
+* It's best to not use other function names (e.g., `c`, `T`, `mean`, `data`, `df`, `weights`)
+  because these already tend to be in use by different parts of R. 
+* See [Google's](https://google.github.io/styleguide/Rguide.xml) style guide for more information. 
+
+When assigning a value to an object, R does not print anything. You can force R to print the value by using parentheses or by typing the object name:
+
+```{r}
+weight_kg <- 55    # doesn't print anything
+(weight_kg <- 55)  # but putting parenthesis around the call prints the value of `weight_kg`
+weight_kg          # and so does typing the name of the object
+```
+
+Now that R has `weight_kg` in memory, we can do arithmetic with it. For
+instance, we may want to convert this weight into pounds (weight in pounds is 2.2 times the weight in kg):
+
+```{r}
+2.2 * weight_kg
+```
+
+We can also change an object's value by assigning it a new one:
+
+```{r}
+weight_kg <- 57.5
+2.2 * weight_kg
+```
+
+This means that assigning a value to one object does not change the values of
+other objects  For example, let's store the animal's weight in pounds in a new
+object, `weight_lb`:
+
+```{r}
+weight_lb <- 2.2 * weight_kg
+```
+
+and then change `weight_kg` to 100.
+
+```{r}
+weight_kg <- 100
+```
+
+R executes code in top-down order. So what happens on line 10 occurs before line 11. What do you think is the current content of the object `weight_lb`? 126.5 or 220?
+
+_**Comments.**_
+_The comment character in R is `#`, anything to the right of a `#` in a script will be ignored by R. It is useful to leave notes, and explanations in your scripts as demonstrated earlier._
+
+----
+
+## Functions and their arguments <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Functions+and+their+Arguments/1_7q6v5abj" target="_blank">(Video)</a>
+
+Functions are "canned scripts" that automate more complicated sets of commands
+including operations assignments, etc. Many functions are predefined, or can be
+made available by importing R *packages* (lesson 02).
+
+A function usually takes one or more inputs called *arguments*, and often (but not always) return a *value*. 
+
+A typical example would be the function `sqrt()`. The input is the number `4`, and 
+the return value (the output) is the square root of 4, namely 2. Executing a function 
+('running it') is called *calling* the function. 
+
+```{r}
+sqrt(4)
+```
+
+Let's look into the `round` function. 
+
+```{r}
+round(3.14159)
+```
+
+We can learn more about this function by typing `?round`. The **Usage** section of 
+the help documentation shows you what the default values for each argument are. This is 
+a very important piece to pay attention. Sometimes the default behaviors are not what you want to happen. 
+
+```{r, eval=FALSE}
+round(x, digits=0)
+```
+
+In the **Arguments** section the help file defines what each argument does.
+
+* `x` is the object that you want to round. It must be a _numeric vector_.
+* `digits` is an integer indicating the number of decimal places to round to.
+
+Above, we called `round()` with just one argument, `3.14159`, and it has
+returned the value `3`.  That's because the default is to round to the nearest
+whole number. We see that if we want a different number of digits, we can
+type `digits = 2` or however many we want.
+
+```{r}
+round(3.14159, digits = 2)
+```
+
+If you provide the arguments in the exact same order as they are defined you
+don't have to name them:
+
+```{r}
+round(3.14159, 2)
+```
+
+And if you do name the arguments, you can switch their order:
+
+```{r}
+round(digits = 2, x = 3.14159)
+```
+
+This is a simple function with only one argument. Functions are the backbone of how R 
+does it's thing. You will get lots of practice with functions, and quickly encounter 
+functions that require many arguments. 
+
+----
+
+## Data Types <a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Types/1_e2j7qadw" target="_blank">(Video)</a>
+
+
+R objects come in different data types. 
+
+### Numbers
+
+When a number is stored in an object it is now called a **numerical** variable. We can do math on numeric variables. 
+
+```{r}
+im_a_number <- 50
+im_a_number*2
+```
+
+
+### Letters
+
+Letters, words, and entire sentences can also be stored in objects. These are then called **character** or **string** variables. We can't do math on character variables, and if we try to R gives us an error message. 
+
+```{r, error=TRUE}
+(im_a_character <- "dog")
+im_a_character*2
+```
+
+In statistics classes, character variables are often treated as **categorical** variables, which can also be called **factor** variables. Factor variables in R are special types of categorical variables. We will learn how to work with factor variables in week 2. 
+
+### Boolean
+When the value of an object can only be `TRUE` or `FALSE` it is called a **Boolean** variable. These are created by writing a **logical statement** where the answer is either TRUE or FALSE. Silly examples include "Is 3 greater than 4?" and "Is the square root of 4 equal to 2?"
+
+```{r}
+3>4
+sqrt(4)==2
+```
+
+We will see how to use these logical statements to do things such as subsetting data and creating new variables. 
+
+## Data Structures <a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Structures/1_yxg14z9f" target="_blank">(Video)</a>
+
+Data structures is how we refer to a collection of pieces of data, like a series of numbers, or a list of words. 
+
+### Vectors 
+
+A vector is the most common and basic data structure in R, and is pretty much the workhorse of R.
+
+We can assign a series of values to a vector using the `c()` function. For example we can create a vector of animal weights and assign it to a new object `weight_g`:
+
+```{r}
+(weight_g <- c(50, 60, 65, 82))
+```
+
+A vector can also contain characters:
+
+```{r}
+(animals <- c("mouse", "rat", "dog"))
+```
+
+The quotes around "mouse", "rat", etc. are essential here. Without the quotes R will assume objects have been created called `mouse`, `rat` and `dog`. As these objects don't exist in R's memory, there will be an error message.
+
+An important feature of a vector, is that all of the elements are the same type of data. That is, each element in the vector has to be the same type. You can use the function `class()` to see what data type a vector is. 
+
+```{r}
+class(weight_g)
+class(animals)
+```
+
+If you try to mix and match data types within a vector, some "coercion" will occur. If you combine letters and numbers, everything will be treated as letters. 
+```{r}
+(mix_match <- c(weight_g, animals))
+class(mix_match)
+```
+
+This is VERY important to keep in mind when you import data into R from another program like Excel. If you have any letters (like the word "missing", or "NA") in a column, all data from that column will be treated as character strings. And you can't do math (such as take a mean) on words. 
+
+Vectors are one of the many **data structures** that R uses. Other important ones are lists (`list`), matrices (`matrix`), data frames (`data.frame`), factors (`factor`) and arrays (`array`). We will only talk about `vectors`,`data.frame`s and `factors` in this class (not all in this lesson). 
+
+
+### Doing math on vectors
+
+You can perform math operations on the elements of a vector such as
+```{r}
+weight_KG <- weight_g/1000
+weight_KG
+```
+
+When adding two vectors together, the elements in the same position are added to each other. So element 1 in the vector `a` is added to element 1 in vector `b`. 
+```{r}
+a <- c(1,2,3)
+b <- c(6,7,8)
+a+b
+```
+
+More complex calculations can be performed on multiple vectors. 
+```{r}
+wt_lb <- c(155, 135, 90)
+ht_in <- c(72, 64, 50)
+bmi <- 703*wt_lb / ht_in^2
+bmi
+```
+      
+All these operations on vectors behave the same way when dealing with variables in a data set (data.frame).   
+   
+If you want to add the values _within_ a vector, you use functions such as `sum()`, `max()` and `mean()`
+```{r}
+sum(a)
+max(b)
+mean(a+b)
+```
+
+### Subsetting vectors
+
+If we want to extract one or several values from a vector, we must provide one
+or several indices in square brackets. For instance:
+
+```{r}
+animals <- c("mouse", "rat", "dog", "cat")
+animals[2]
+animals[c(2, 3)]
+```
+
+The number in the indices indicates which element to extract. For example we can extract the 3rd element in `weight_g` by typing
+
+```{r}
+weight_g[3]
+```
+
+### Conditional subsetting
+
+Another common way of subsetting is by using a logical vector. `TRUE` will select the element with the same index, while `FALSE` will not. Typically, these logical vectors are not typed by hand, but are the output of other functions or logical tests such as: 
+
+```{r}
+weight_g > 50  # returns TRUE or FALSE depending on which elements that meet the condition
+```
+
+We can use this output to select elements in a _different_ vector where the value of that logical statement is TRUE. For instance, if you wanted to select only the values where weight in grams is above 50 we would type:
+
+```{r}
+weight_g[weight_g > 50]
+```
+
+You can combine multiple tests using `&` (both conditions are true, AND) or `|`
+(at least one of the conditions is true, OR):
+
+_Weight is less than 30g or greater than 60g_
+```{r}
+weight_g[weight_g < 30 | weight_g > 60]
+```
+_Weight is between 60 and 80lbs_
+```{r}
+weight_g[weight_g >= 60 & weight_g <= 80]
+```
+
+Here, `<` stands for "less than", `>` for "greater than", `>=` for "greater than
+or equal to", and `==` for "equal to". The double equal sign `==` is a test for
+numerical equality between the left and right hand sides, and should not be
+confused with the single `=` sign, which performs variable assignment (similar
+to `<-`).
+
+A common task is to search for certain strings in a vector.  One could use the
+"or" operator `|` to test for equality to multiple values, but this can quickly
+become tedious. The function `%in%` allows you to test if any of the elements of
+a search vector are found:
+
+```{r}
+animals <- c("mouse", "rat", "dog", "cat")
+animals[animals == "cat" | animals == "rat"] # returns both rat and cat
+animals %in% c("rat", "cat", "dog", "duck", "goat")
+animals[animals %in% c("rat", "cat", "dog", "duck", "goat")]
+```
+
+### Order matters. 
+When considering string or character vectors or data elements, R treats everything in alphabetical order. 
+Thus
+
+```{r}
+"four" > "five"
+```
+
+This will come back to bug you when dealing with categorical data types called `factor`s in a later lesson. Don't worry, we'll show you how to be the boss of your factors and not let R tell you that "one" is greater than "four". 
+
+## Data Frames <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Data+Frames/1_8v7zwwro" target="_blank">(Video)</a>
+
+Data frames are like spreadsheet data, rectangular with rows and columns. Ideally each row represents data on a single observation and each column contains data on a single variable, or characteristic, of the observation. This is called `tidy data`. This is an important concept that you are encouraged to read more about if you will be doing your own data collection and research.
+[This article is a good place to start](https://www.jstatsoft.org/article/view/v059i10).
+
+A data frame is the representation of data in the format of a table where the columns are vectors that all have the same length. Because columns are vectors, each column must contain a single type of data (e.g., characters, integers, factors). For example, here is a figure depicting a data frame comprising a numeric, a character, and a logical vector.
+
+![_figure depicting a data frame_](../static/img/data-frame.png)
+
+
+For this part of the lesson we will use a data set called `diamonds` that comes with the `ggplot2` package that you installed as part of lesson 02. In a later lesson we will learn how to import data from an external file into R. We can load the `diamonds` data set into our global environment by typing 
+```{r}
+diamonds <- ggplot2::diamonds
+```
+
+##### To see the raw data values, click on the square spreadsheet icon to the right of the data set name in the top right panel of RStudio (circled in green in the image below).
+
+![_screenshot of dataset in the global environment_](../static/img/data.PNG)
+
+This area also tells us a little bit about the data set, specifically that it has 53,940 rows and 10 variables. 
+
+When data sets are very large such as this one, it may be difficult to see all columns or all rows. We can get an idea of the structure of the data frame including variable names and types by using the `str` function,
+```{r}
+str(diamonds)
+```
+
+The `diamonds` data set contains numeric variables such as `carat`, `depth`, and `price`, and ordered factor variables including the `cut`, `color`, and `clarity` of those diamonds. 
+
+### Inspecting `data.frame` objects
+
+Here is a non-exhaustive list of functions to get a sense of the content/structure of the data. Let’s try them out!
+
+* Size:
+    - `dim(diamonds)` - returns a vector with the number of rows in the first element, 
+                       and the number of columns as the second element (the  dimensions of the object)
+    - `nrow(diamonds)` - returns the number of rows
+    - `ncol(diamonds)` - returns the number of columns
+* Content:
+    - `head(diamonds)` - shows the first 6 rows
+    - `tail(diamonds)` - shows the last 6 rows
+* Names:
+    - `names(diamonds)` - returns the column names (synonym of colnames() for data.frame objects)
+    - `rownames(diamonds)` - returns the row names
+* Summary:
+    - `str(diamonds)` - structure of the object and information about the class, length and content of each column
+    - `summary(diamonds)` - summary statistics for each column
+
+
+Note: most of these functions are "generic", they can be used on other types of objects besides a data.frame
+
+### Identifying variables
+
+Data frames can be subset by specifying indices (as shown previously), but also by calling their column names directly:
+
+```r
+diamonds[, "depth"]
+diamonds[, 5] 
+diamonds$depth
+```
+
+The `$` notation has the format `data$variable` and so can be thought of as specifying which data set the variable is in. It is easy to imagine a situation where two different data sets have the same name. 
+
+This allows us to perform calculations on an individual variable. Below is an example of finding the average price for all diamonds in the data set. 
+
+```{r}
+mean(diamonds$price)
+```
+
+You can also subset a variable based on the value of a secondary variable. Here is an example of finding the average price for `Good` quality diamonds. 
+```{r}
+mean(diamonds$price[diamonds$cut=="Good"])
+```
+
+Note that the $ is used in both locations where we want to identify a variable. 
+

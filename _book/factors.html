@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6&nbsp; Working with Factors – Introduction to R</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./plots.html" rel="next">
+<link href="./dm.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./factors.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Working with Factors</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Introduction to R</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface &amp; Course Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./setup_tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Your New Tools</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Programming with R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reproducibility with Quarto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./programming_in_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Started with R</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Working with Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./factors.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Working with Factors</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./plots.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Creating Graphics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Putting it all together</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignments</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#student-learning-objectives" id="toc-student-learning-objectives" class="nav-link active" data-scroll-target="#student-learning-objectives"><span class="header-section-number">6.0.1</span> Student Learning Objectives</a></li>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">6.1</span> Preparation</a></li>
+  <li><a href="#what-is-a-factor-video" id="toc-what-is-a-factor-video" class="nav-link" data-scroll-target="#what-is-a-factor-video"><span class="header-section-number">6.2</span> What is a factor? </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+What+is+a+FactorF/1_abke2v0c" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+06A+What+is+a+FactorF/1_abke2v0c">(Video)</a></li>
+  <li><a href="#convert-a-number-to-factor-video" id="toc-convert-a-number-to-factor-video" class="nav-link" data-scroll-target="#convert-a-number-to-factor-video"><span class="header-section-number">6.3</span> Convert a number to Factor </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Convert+a+Number+to+Factor/1_rfnetvxy" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Convert+a+Number+to+Factor/1_rfnetvxy">(Video)</a></li>
+  <li><a href="#factor-ordering-video" id="toc-factor-ordering-video" class="nav-link" data-scroll-target="#factor-ordering-video"><span class="header-section-number">6.4</span> Factor ordering </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Factor+Ordering/1_jl8i52iu" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Factor+Ordering/1_jl8i52iu">(Video)</a>
+  <ul class="collapse">
+  <li><a href="#manually-specified" id="toc-manually-specified" class="nav-link" data-scroll-target="#manually-specified"><span class="header-section-number">6.4.1</span> Manually specified</a></li>
+  </ul></li>
+  <li><a href="#factor-renaming-video" id="toc-factor-renaming-video" class="nav-link" data-scroll-target="#factor-renaming-video"><span class="header-section-number">6.5</span> Factor (re)naming </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Factor+%28Re%29naming/1_f34h4fuw" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Factor+%28Re%29naming/1_f34h4fuw">(Video)</a></li>
+  <li><a href="#collapsing-factor-levels-video" id="toc-collapsing-factor-levels-video" class="nav-link" data-scroll-target="#collapsing-factor-levels-video"><span class="header-section-number">6.6</span> Collapsing factor levels </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Collapsing+Factor+Levels/1_23zku0qv" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Collapsing+Factor+Levels/1_23zku0qv">(Video)</a>
+  <ul class="collapse">
+  <li><a href="#lets-chain-this-all-together." id="toc-lets-chain-this-all-together." class="nav-link" data-scroll-target="#lets-chain-this-all-together."><span class="header-section-number">6.6.1</span> Let’s chain this all together.</a></li>
+  </ul></li>
+  <li><a href="#removing-factor-levels-video" id="toc-removing-factor-levels-video" class="nav-link" data-scroll-target="#removing-factor-levels-video"><span class="header-section-number">6.7</span> Removing factor levels </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Removing+Factor+Levels/1_dv1a8kgh" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Removing+Factor+Levels/1_dv1a8kgh">(Video)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Working with Factors</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this lesson we will discuss ways to organize and deal with categorical data, also known as factor data types. <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Intro/1_h8a1glfl" target="_blank">(Intro Video)</a></p>
+<section id="student-learning-objectives" class="level3" data-number="6.0.1">
+<h3 data-number="6.0.1" class="anchored" data-anchor-id="student-learning-objectives"><span class="header-section-number">6.0.1</span> Student Learning Objectives</h3>
+<p>After completing this lesson students will be able to</p>
+<ul>
+<li>Convert a numeric variable to a factor variable.</li>
+<li>Apply and change labels to factor</li>
+<li>Understand and control the ordering of the factor.</li>
+<li>Combine multiple levels of a factor variable into one level</li>
+</ul>
+</section>
+<section id="preparation" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="preparation"><span class="header-section-number">6.1</span> Preparation</h2>
+<p>Prior to this lesson learners should</p>
+<ul>
+<li>Download the <a href="notes/factors_notes.qmd">[factors_notes.qmd]</a> Quarto file and save into your <code>notes/Math130</code> folder.
+<ul>
+<li>Open this in RStudio and ensure the first code chunk will run without error.</li>
+</ul></li>
+<li>Install the <code>forcats</code> package (<a href="https://norcalbiostat.github.io/MATH130/notes/02_setup_slides.html#19">this was done as part of lesson 02</a>).</li>
+</ul>
+<p>We’re going to use two data sets from the <code>openintro</code> package. The <code>email</code> data set contains information on emails received by a specific account for the first three months in 2012, and the <code>fastfood</code> data set describes nutrition amounts in 515 fast food items. More information can be seen about these data sets by viewing the help files using <code>?email</code> and <code>?fastfood</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> openintro<span class="sc">::</span>email</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ff    <span class="ot">&lt;-</span> openintro<span class="sc">::</span>fastfood</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<img src="../static/img/forcats.png" align="left" style="margin: 0px 20px 0px 20px;">
+<p>
+<br><br><br> The goal of the <code>forcats</code> package is to provide a suite of useful tools that solve common problems with factors. Often in R there are multiple ways to accomplish the same task. Some examples in this lesson will show how to perform a certain task using base R functions, as well as functions from the <code>forcats</code> package.
+</p>
+</section>
+<section id="what-is-a-factor-video" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="what-is-a-factor-video"><span class="header-section-number">6.2</span> What is a factor? <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+What+is+a+FactorF/1_abke2v0c" target="_blank">(Video)</a></h2>
+<p>The term factor refers to a data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable corresponds to a limited number of categories, while a continuous variable can correspond to an infinite number of values.</p>
+<p>An example of a categorical variable is the <code>number</code> variable in the <code>email</code> data set. This variable contains data on whether there was no number, a small number (under 1 million), or a big number in the content of the email.</p>
+<p>First we should confirm that R sees <code>number</code> as a factor.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "factor"</code></pre>
+</div>
+</div>
+<p>We can use the <code>levels()</code> function to get to know factor variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "none"  "small" "big"  </code></pre>
+</div>
+</div>
+<p>There are three levels: <code>none</code>, <code>small</code>, and <code>big</code>.</p>
+<p>How many records are in each level? There are a few ways we can determine this, here are two:</p>
+<p><strong>Base R</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ none small   big 
+  549  2827   545 </code></pre>
+</div>
+</div>
+<p><strong>forcats</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_count</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  f         n
+  &lt;fct&gt; &lt;int&gt;
+1 none    549
+2 small  2827
+3 big     545</code></pre>
+</div>
+</div>
+<p>Note that <code>fct_count</code> also gives you the number of records with that factor level. This is yet another way to generate a frequency table.</p>
+</section>
+<section id="convert-a-number-to-factor-video" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="convert-a-number-to-factor-video"><span class="header-section-number">6.3</span> Convert a number to Factor <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Convert+a+Number+to+Factor/1_rfnetvxy" target="_blank">(Video)</a></h2>
+<p>Sometimes data are entered into the computer using numeric codes such as 0 and 1. These codes stand for categories, such as “no” and “yes”. Sometimes we want to analyze these binary variables in two ways:</p>
+<ul>
+<li>For statistical analyses, the data must be numeric 0/1.</li>
+<li>For many graphics, the data must be a factor, “no/yes”.</li>
+</ul>
+<p><strong>Example: Is the email flagged as spam?</strong> The <code>spam</code> variable is recorded as an integer variable with values 0 and 1.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>spam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+   0    1 
+3554  367 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(email<span class="sc">$</span>spam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "factor"</code></pre>
+</div>
+</div>
+<p>We use the function <code>factor()</code> to convert the numeric variable <code>spam</code> to a factor, applying <code>labels</code> to convert 0 to “no” and 1 to “yes”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>spam_fac <span class="ot">&lt;-</span> <span class="fu">factor</span>(email<span class="sc">$</span>spam, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">"no"</span>, <span class="st">"yes"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The ordering of the <code>labels</code> argument <em>must</em> be in the same order (left to right) as the factor levels themselves. Look back at the order of columns in the <code>table</code> - it goes 0 then 1. Thus our labels need to go “no” then “yes”.</p>
+<p><strong>Always confirm your recode</strong></p>
+<p>Here we confirm that the new variable was created correctly by creating a two-way contingency table by calling the <code>table(old variable, new variable)</code> function on both the old and new variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>spam, email<span class="sc">$</span>spam_fac, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      
+         no  yes &lt;NA&gt;
+  0    3554    0    0
+  1       0  367    0
+  &lt;NA&gt;    0    0    0</code></pre>
+</div>
+</div>
+<p>Here we see that all the 0’s were recoded to ’no’s, and all the 1’s recoded to “yes”’s, and there are no new missing values. Success!</p>
+</section>
+<section id="factor-ordering-video" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="factor-ordering-video"><span class="header-section-number">6.4</span> Factor ordering <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Factor+Ordering/1_jl8i52iu" target="_blank">(Video)</a></h2>
+<p>Let’s revisit the variable <code>number</code>, that contains the size of the number in the email.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+ none small   big 
+  549  2827   545 </code></pre>
+</div>
+</div>
+<p>Specifically the ordering from left to right of the factors. This is ordinal data, in that <code>none</code> is inherently “smaller” than <code>small</code>, which is smaller than <code>big</code>. Though R correctly ordered these data, it may default to alphabetical order in other cases, so beware! You may need to correct the ordering for other data sets.</p>
+<p>Let’s see a few ways of how to control the ordering.</p>
+<section id="manually-specified" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="manually-specified"><span class="header-section-number">6.4.1</span> Manually specified</h3>
+<p>We need to take control of these factors! We can do that by re-factoring the existing factor variable, but this time specifying the <code>levels</code> of the factor (since it already has labels). Say we decide to reverse the order so we go from big to small to none, in decreasing order of size.</p>
+<p><strong>Base R</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">factor</span>(email<span class="sc">$</span>number, <span class="at">levels=</span><span class="fu">c</span>(<span class="st">"big"</span>, <span class="st">"small"</span>, <span class="st">"none"</span>)) <span class="sc">%&gt;%</span> <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>.
+  big small  none 
+  545  2827   549 </code></pre>
+</div>
+</div>
+<p><strong>forcats</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>number <span class="sc">%&gt;%</span> <span class="fu">fct_relevel</span>(<span class="st">"big"</span>, <span class="st">"small"</span>, <span class="st">"none"</span>) <span class="sc">%&gt;%</span> <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>.
+  big small  none 
+  545  2827   549 </code></pre>
+</div>
+</div>
+<p>In each of these examples, I pipe (<code>%&gt;%</code>) the <code>table()</code> function at the end so I can see the results of the reordering. This helps me visually confirm that the code used changed the factor levels to be left to right in decreasing content size order. This will be important for graphing.</p>
+<blockquote class="blockquote">
+<p>Since I did not use the assignment operator (<code>&lt;-</code>) here, these changes were not made to the variable in the <code>email</code> data set. The examples below demonstrate making an adjustmet to a factor variable and saving that adjustment as a new variable in the data set.</p>
+</blockquote>
+<!---
+## Order by frequency
+The size of the number in an email is _ordinal_, meaning the levels have an internal order. _Nominal_ categorical
+data does not have a natural ordering. One preferrable way to order the levels of a nominal variable is by the frequency of the levels. The `forcats` function `fct_infreq()` accomplishes this task. 
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+email$number %>% fct_infreq() %>% table()
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+.
+small  none   big 
+ 2827   549   545 
+```
+
+
+:::
+:::
+
+
+
+
+There are more emails with small numbers in it than there are emails with no numbers, which shows up more often than emails with big numbers. 
+
+## Reversed order
+
+Again, `forcats` to the rescue here. Let's remind ourselves what the original ordering was: 
+
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+table(email$number)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+
+ none small   big 
+  549  2827   545 
+```
+
+
+:::
+:::
+
+
+
+
+And now to reverse this ordering, 
+
+
+
+::: {.cell}
+
+```{.r .cell-code}
+email$number %>% fct_rev() %>% table()
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+.
+  big small  none 
+  545  2827   549 
+```
+
+
+:::
+:::
+
+
+
+
+This just *happens* to be the same as in decreasing frequency order. 
+
+--->
+</section>
+</section>
+<section id="factor-renaming-video" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="factor-renaming-video"><span class="header-section-number">6.5</span> Factor (re)naming <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Factor+%28Re%29naming/1_f34h4fuw" target="_blank">(Video)</a></h2>
+<p>Sometimes factors come to us in names we don’t prefer. We want them to say something else.</p>
+<p><strong>Base R</strong> The easiest way here is to re-factor the variable and apply new <code>labels</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>my_new_number <span class="ot">&lt;-</span> <span class="fu">factor</span>(email<span class="sc">$</span>number, <span class="at">labels=</span><span class="fu">c</span>( <span class="st">"None"</span>, <span class="st">"&lt;1M"</span>,<span class="st">"1M+"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ok, but did this work? Trust, but verify.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number, email<span class="sc">$</span>my_new_number, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       
+        None  &lt;1M  1M+ &lt;NA&gt;
+  none   549    0    0    0
+  small    0 2827    0    0
+  big      0    0  545    0
+  &lt;NA&gt;     0    0    0    0</code></pre>
+</div>
+</div>
+<p>The “big” factor is now labeled “1M+”, “none” is named “None”, and “small” is “&lt;1M”.</p>
+<p><strong>forcats</strong>: use the <code>fct_recode("NEW" = "old")</code> function here.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>my_forcats_number <span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(email<span class="sc">$</span>number, <span class="st">"BIG"</span> <span class="ot">=</span> <span class="st">"big"</span>, <span class="st">"NONE"</span> <span class="ot">=</span> <span class="st">"none"</span>, <span class="st">"SMALL"</span> <span class="ot">=</span> <span class="st">"small"</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number, email<span class="sc">$</span>my_forcats_number, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       
+        NONE SMALL  BIG &lt;NA&gt;
+  none   549     0    0    0
+  small    0  2827    0    0
+  big      0     0  545    0
+  &lt;NA&gt;     0     0    0    0</code></pre>
+</div>
+</div>
+</section>
+<section id="collapsing-factor-levels-video" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="collapsing-factor-levels-video"><span class="header-section-number">6.6</span> Collapsing factor levels <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Collapsing+Factor+Levels/1_23zku0qv" target="_blank">(Video)</a></h2>
+<p>For analysis purposes, sometimes you want to work with a smaller number of factor variables. Let’s look at the restaurants that are included in the <code>fastfood</code> data set.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+      Arbys Burger King Chick Fil-A Dairy Queen   Mcdonalds       Sonic 
+         55          70          27          42          57          53 
+     Subway   Taco Bell 
+         96         115 </code></pre>
+</div>
+</div>
+<p>Let’s combine all the sandwich, and burger joints together. I am going to save this new variable as <code>restaurant_new</code>.</p>
+<p>The syntax for the <code>fct_collapse</code> function is <code>new level</code> = <code>"old level"</code>, where the “old level” is in quotes. As always, it is good practice to create a two way table to make sure the code typed does what we expected it to do.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant_new <span class="ot">&lt;-</span> <span class="fu">fct_collapse</span>(ff<span class="sc">$</span>restaurant, </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">BurgerJoint =</span> <span class="fu">c</span>(<span class="st">"Burger King"</span>, <span class="st">"Mcdonalds"</span>, <span class="st">"Sonic"</span>), </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">Sammich =</span> <span class="fu">c</span>(<span class="st">"Arbys"</span>, <span class="st">"Subway"</span>))</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant, ff<span class="sc">$</span>restaurant_new, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             
+              Sammich BurgerJoint Chick Fil-A Dairy Queen Taco Bell &lt;NA&gt;
+  Arbys            55           0           0           0         0    0
+  Burger King       0          70           0           0         0    0
+  Chick Fil-A       0           0          27           0         0    0
+  Dairy Queen       0           0           0          42         0    0
+  Mcdonalds         0          57           0           0         0    0
+  Sonic             0          53           0           0         0    0
+  Subway           96           0           0           0         0    0
+  Taco Bell         0           0           0           0       115    0
+  &lt;NA&gt;              0           0           0           0         0    0</code></pre>
+</div>
+</div>
+<p>Let’s take this one step further and shorten the factor names and rename the levels with spaces (like <code>Taco Bell</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant_shortname <span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(ff<span class="sc">$</span>restaurant_new, </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Ckn"</span> <span class="ot">=</span> <span class="st">"Chick Fil-A"</span>, </span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"DQ"</span> <span class="ot">=</span> <span class="st">"Dairy Queen"</span>, </span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"TB"</span> <span class="ot">=</span> <span class="st">"Taco Bell"</span>, </span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Samm"</span> <span class="ot">=</span> <span class="st">'Sammich'</span>, </span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Burg"</span><span class="ot">=</span> <span class="st">"BurgerJoint"</span>)</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant, ff<span class="sc">$</span>restaurant_shortname, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             
+              Samm Burg Ckn  DQ  TB &lt;NA&gt;
+  Arbys         55    0   0   0   0    0
+  Burger King    0   70   0   0   0    0
+  Chick Fil-A    0    0  27   0   0    0
+  Dairy Queen    0    0   0  42   0    0
+  Mcdonalds      0   57   0   0   0    0
+  Sonic          0   53   0   0   0    0
+  Subway        96    0   0   0   0    0
+  Taco Bell      0    0   0   0 115    0
+  &lt;NA&gt;           0    0   0   0   0    0</code></pre>
+</div>
+</div>
+<section id="lets-chain-this-all-together." class="level3 .callout-tip" data-number="6.6.1">
+<h3 data-number="6.6.1" class="anchored" data-anchor-id="lets-chain-this-all-together."><span class="header-section-number">6.6.1</span> Let’s chain this all together.</h3>
+<p>Sporadically throughout this lesson, and at the end of the last lesson I’ve used the pipe <code>%&gt;%</code> operator as somewhat of a shortcut. This amazing piece of code lets us string together commands. Let’s see how to accomplish both changes to the restaurant variable in one single step.</p>
+</section>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant <span class="sc">%&gt;%</span> <span class="fu">fct_collapse</span>(<span class="at">BurgerJoint =</span> <span class="fu">c</span>(<span class="st">"Burger King"</span>, <span class="st">"Mcdonalds"</span>, <span class="st">"Sonic"</span>), </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>                               <span class="at">Sammich     =</span> <span class="fu">c</span>(<span class="st">"Arbys"</span>, <span class="st">"Subway"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">fct_recode</span>(<span class="st">"Ckn"</span>  <span class="ot">=</span> <span class="st">"Chick Fil-A"</span>, </span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"DQ"</span>   <span class="ot">=</span> <span class="st">"Dairy Queen"</span>, </span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"TB"</span>   <span class="ot">=</span> <span class="st">"Taco Bell"</span>, </span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Samm"</span> <span class="ot">=</span> <span class="st">'Sammich'</span>, </span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Burg "</span><span class="ot">=</span> <span class="st">"BurgerJoint"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>.
+ Samm Burg    Ckn    DQ    TB 
+  151   180    27    42   115 </code></pre>
+</div>
+</div>
+<p>A few things to note when chaining commands together:</p>
+<ol type="1">
+<li>the first argument (the data or variable) is not included.</li>
+<li>the pipe itself must be at the end of a “sentence”</li>
+</ol>
+<p>Don’t worry if this doesn’t make immediate sense right now. We’ll talk more on chaining commands together in a later lesson. There is no harm in accomplishing a task in more than one step.</p>
+</section>
+<section id="removing-factor-levels-video" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="removing-factor-levels-video"><span class="header-section-number">6.7</span> Removing factor levels <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Removing+Factor+Levels/1_dv1a8kgh" target="_blank">(Video)</a></h2>
+<p>Sometimes, you don’t even want to consider certain levels. This often occurs in survey data where the respondent provides an answer of “Refuse to answer” or the data is coded as the word “missing”. The word “missing’ is fundamentally different than the <code>NA</code> code for a missing value.</p>
+<p>For demonstration purposes, let’s get rid of the data from DQ. Who eats something other than ice cream at that place anyhow?</p>
+<p>The most straight forward way to set a variable missing based on it’s value is to use a logical statement to choose what rows the variable is set to missing.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant_shortname[ff<span class="sc">$</span>restaurant_shortname <span class="sc">==</span> <span class="st">"DQ"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant_shortname, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Samm Burg  Ckn   DQ   TB &lt;NA&gt; 
+ 151  180   27    0  115   42 </code></pre>
+</div>
+</div>
+<p>This table shows that there are 42 records missing <code>restaraunt_shortname</code>, and 0 records with the level <code>DQ</code>. Unfortunately, the level itself still is there. R does not assume just because there are no records with that level, that the named level itself should be removed. We can use the function <code>fct_drop</code> to drop the levels with no records.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_drop</span>(ff<span class="sc">$</span>restaurant_shortname) <span class="sc">%&gt;%</span> <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>.
+Samm Burg  Ckn   TB 
+ 151  180   27  115 </code></pre>
+</div>
+</div>
+<p>If we knew ahead of time we wanted to drop DQ, we could have set that level to <code>NULL</code> when we did the initial recode.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant <span class="sc">%&gt;%</span> <span class="fu">fct_collapse</span>(<span class="at">BurgerJoint =</span> <span class="fu">c</span>(<span class="st">"Burger King"</span>, <span class="st">"Mcdonalds"</span>, <span class="st">"Sonic"</span>), </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>                               <span class="at">Sammich =</span> <span class="fu">c</span>(<span class="st">"Arbys"</span>, <span class="st">"Subway"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">fct_recode</span>(<span class="st">"Ckn"</span>  <span class="ot">=</span> <span class="st">"Chick Fil-A"</span>, </span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>                              <span class="at">NULL   =</span> <span class="st">"Dairy Queen"</span>, </span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"TB"</span>   <span class="ot">=</span> <span class="st">"Taco Bell"</span>, </span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Samm"</span> <span class="ot">=</span> <span class="st">'Sammich'</span>, </span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Burg "</span><span class="ot">=</span> <span class="st">"BurgerJoint"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>.
+ Samm Burg    Ckn    TB 
+  151   180    27   115 </code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./dm.html" class="pagination-link" aria-label="Working with Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Working with Data</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./plots.html" class="pagination-link" aria-label="Creating Graphics">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Creating Graphics</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,265 @@
+# Working with Data
+
+
+In this lesson we will learn how to summarize data in a data frame, and to do basic data management tasks such as making new variables, recoding data and dealing with missing data. <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Intro/1_oifkz4hn" target="_blank">(Introduction Video)</a>
+
+::: .callout-note
+### Learning Objectives
+
+After completing this lesson learners will be able to
+
+* Summarize variables inside a data frame
+* Make new variables inside a data frame. 
+* Selectively edit (and recode) data elements. 
+* Identify when data values are missing
+* Summarize data in the presence of missing values.
+
+:::
+
+
+### Preparation 
+
+Prior to this lesson learners should
+
+* Download the [[05_dm_notes.Rmd]](05_dm_notes.Rmd) R markdown file and save into your `notes/Math130` folder. 
+    - Open this in RStudio and ensure the first code chunk will run without error. 
+* Install the `ggplot2`, `openintro` and `dplyr` packages ([this was done as part of lesson 02](https://norcalbiostat.github.io/MATH130/notes/02_setup_slides.html#19)). 
+
+```{r, warning=FALSE, message=FALSE}
+library(dplyr)
+library(ggplot2)
+ncbirths <- openintro::ncbirths
+```
+
+
+## Missing Data <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Missing+Data/1_3ignf1uh" target="_blank">(Video)</a>
+
+Missing data occurs when the value for a variable is missing. Think of it as a blank cell in an spreadsheet. Missing values can cause some problems during analysis, so let's see how to detect missing values and how to work around them. 
+
+Consider the `ncbirths` data set, specifically the first column containing data on the father's age (`fage`).
+```{r}
+head(ncbirths)
+```
+
+* R puts a `NA` as a placeholder when the value for that piece of data is missing. 
+* Missing data can be a result of many things: skip patterns in a survey (i.e. non-smokers don't get asked how many packs per week they smoke), errors in data reads from a machine, etc. 
+
+
+**Problem 1** 
+`R` can't do arithmetic on missing data. So `5 + NA = NA`, and if you were to try to calculate the `mean()` of a variable, you'd also get `NA`. 
+
+```{r}
+mean(ncbirths$fage)
+```
+
+**Problem 2**
+Some plots will show `NA` as it's own category, which is undesirable. 
+
+```{r}
+ggplot(ncbirths, aes(premie))+geom_bar()
+```
+
+
+### Identifying missing values 
+
+To find out how many values in a particular variable are missing we can use one of two approaches:  
+
+1. Look at the raw data using `head()` or `str()`. This may not be helpful if there is no missing values in the first 6 rows, or if there is a large number of variables to look through. 
+2. Look at data summaries using `table()` for categorical data and `summary()` for numerical data. In the examples below you can see that entries for "NA" are included in the output. 
+
+```{r}
+table(ncbirths$habit, useNA="always")
+summary(ncbirths$fage)
+```
+
+### Is it NA?
+
+The function `is.na()` returns TRUE or FALSE for each element in the provided vector for whether or not that element is missing.  
+```{r}
+x <- c("green", NA, 3)
+is.na(x)
+```
+
+In this example, the vector `x` is created with three elements, the second one is missing. Calling the function `is.na()` on the vector `x`, results in three values, where only the second one is TRUE -- meaning the second element is missing. 
+
+This can be extended to do things such as using the `sum()` function to count the number of missing values in a variable. Here we are _nesting_ the functions `is.na()` is written entirely inside the `sum()` function. 
+
+```{r}
+sum(is.na(ncbirths$fage))
+```
+
+There are 171 records in this data set where the age for the father is not present. 
+
+
+## Summarizing data <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Summarizing+Data/1_5hztp76z" target="_blank">(Video)</a>
+
+Two common methods used to summarize data are `table()` for categorical factor variables, and `summary()` for numeric variables. 
+
+## Frequency Tables for categorical data
+Frequency tables are used only on categorical data, and the table results show you how many records in the data set have that particular factor level. 
+
+You can create a frequency table by using the `table()` function. The `useNA="always"` argument tells `R` to always include an entry for missing values `<NA>`, even if there are none. 
+
+```{r}
+table(ncbirths$lowbirthweight, useNA="always")
+```
+
+The variable `ncbirths$lowbirthweight` has 111 records with a value of `low`, and 889 records with the value of `not low`. 
+
+### Summary statistics for numerical data
+Numerical variables can be summarized using statistics such as the min, max, mean and median. The function `summary()` prints out the five number summary, and includes the mean. This function also displays the number of missing values for that variable. 
+
+```{r}
+summary(ncbirths$visits)
+```
+
+Mothers included in this data set visited the doctor on average 12.1 times during their pregnancy. 
+
+
+## Data editing / Recoding <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Data+Editing+%28Recoding%29/1_kh8v7jk6" target="_blank">(Video)</a>
+
+
+Sometimes we have a need to edit, or change data. We can change values of existing data by using logical statements.
+
+To choose all observations (rows) of a `data` set, where a `variable` is equal to some `value`, you would type
+```{r, eval=FALSE}
+data[data$variable==value]  # example code
+```
+
+We can use this method of selecting rows, to change data in those specific rows. 
+
+
+**Example 1: Too low birthweight**
+
+Let's look at the numerical distribution of birthweight of the baby. 
+
+```{r}
+summary(ncbirths$weight)
+```
+
+The value of 1 lb seems very low. The researchers you are working with decide that is a mistake and should be excluded from the data. We would then set all records where `weight=1` to missing. 
+
+```{r}
+ncbirths$weight[ncbirths$weight==1] <- NA
+```
+
+* The specific variable `ncbirths$weight` is on the left side outside the `[]`. So just the variable `weight` is being changed. * Recall that bracket notation `[]` can be used to select rows where a certain logical statement is true. So `[ncbirths$weight==1]` will only show records where `weight` is equal to 1. 
+* Notice where the assignment arrow (`<-`) is at. This code assigns the value of `NA` (missing) to the variable `weight`, where `weight==1`. 
+
+
+But what about other weights that aren't quite as low as 1, but still unusually low? The boxplot below shows outlying values as dots on the low end of birthweight. 
+
+```{r}
+boxplot(ncbirths$weight)
+```
+
+Let's set all birth weights less than 4 lbs to missing. 
+
+```{r}
+ncbirths$weight[ncbirths$weight < 4] <- NA
+```
+
+It is important to plot the data again, to make sure that there are no values below 4 now. 
+```{r}
+boxplot(ncbirths$weight)
+```
+
+
+## Creating new variables <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Creating+New+Variables/1_ivmj78et" target="_blank">(Video)</a>
+
+**New variables should be added to the data frame.** This can be done using `$` sign notation. 
+
+The new variable you want to create goes on the left side of the assignment operator `<-`, and how you want to create that new variable goes on the right side. 
+```{r, eval=FALSE}
+data$new_variable <- creation statement
+```
+
+::: .callout-tip
+### Example: Row-wise difference between two existing variables
+
+As a pregnancy progresses, both the mother and the baby gain weight. The variable `gained` is the total amount of weight the mother gained in her pregnancy. The variable `weight` is how much the baby weighed at birth.
+
+:::
+
+The following code creates a new variable `wtgain_mom` the weight gained by the mother, that is not due to the baby by subtracting `weight` from `gained`.
+```{r}
+ncbirths$wtgain_mom <- ncbirths$gained - ncbirths$weight
+```
+
+To confirm this variable was created correctly, we look at the data contained in three variables in question. 
+
+```{r}
+head(ncbirths[,c('gained', 'weight', 'wtgain_mom')])
+```
+
+
+
+### Dichtomizing data 
+
+The `ifelse()` is hands down the easiest way to create a binary variable (dichotomizing, only 2 levels)
+
+Let's add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth. 
+
+* We will define this as if the mothers age `mage` is under 18. 
+* We will create a new factor variable with two values: `underage` and `adult`. 
+* We will use the `ifelse()` function. 
+    - It's set of arguments are: `ifelse(logical, value if TRUE, value if FALSE)`
+    - The `logical` argument is a statement that resolves as a `boolean` variable, as either TRUE or FALSE.
+    - The second argument is what you want the resulting variable to contain if the logical argument is `TRUE`
+    - The last argument is what you want the resulting variable to contain if the logical argument is `FALSE`
+
+Make a new variable `underage` on the `ncbirths` data set. If `mage` is under 18, then the value of this new variable is `underage`, else it is labeled as `adult`. 
+
+```{r}
+ncbirths$underage <- ifelse(ncbirths$mage < 18, "underage", "adult")
+```
+
+You should always make sure your code works as intended.
+
+* First let's look at the frequency table of `underage` and see if records exist with the new categories, and if there are any missing values. 
+```{r}
+table(ncbirths$underage, useNA="always")
+```
+* Next let's check it against the value of `mage` itself. Let's look at all rows where mothers age is either 17 or 18 `mage %in% c(17,18)`, and only the columns of interest. 
+
+```{r}
+ncbirths[ncbirths$mage %in% c(17,18),c('mage', 'underage')]
+```
+
+Notice I snuck a new operator in on you - `%in%`. This is a way you can provide a list of values (a.k.a a vector) and say "if the value of the variable I want is %in% any of these options in this vector..." do the thing. 
+
+
+## Chaining using the pipe <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Chaining+Using+the+Pipe+E/1_chcscua0" target="_blank">(Video)</a>
+
+![](../static/img/pipe.png)
+
+
+The pipe is technically part of the `magrittr` package, but quite often we will use it in conjunction with functions from the `dplyr` package introduced in a later lesson. In fact it's so commonly used with `dplyr` functions that it the `magrittr` package is loaded when you load `dplyr` (which is what we do here). However, the pipe operator is so useful in many other places that it deserves it's own introduction here. 
+
+> "and then...."
+
+This is what I read to myself when using the pipe (`%>%`). The pipe lets you chain functions together, as long as the first argument of the function is a `data.frame` or a variable in a `data.frame`. 
+
+### Example: Frequency tables & summary statistics
+
+Earlier we saw that to create a frequency table for categorical variable we can type: 
+```{r}
+table(ncbirths$mature)
+```
+
+This is also accomplished by first stating the variable, then piping in the summary function. 
+
+> If you get an error message saying something like <span style="color:red;">function not found</span>, that is a message to you that you need to load the library. See the [preparation](#preparation) section of these notes to remind yourself how to do this. 
+
+```{r, warning=FALSE, message=FALSE}
+ncbirths$mature %>% table()
+
+ncbirths$mage %>% mean()
+```
+
+I read this as "Take the `mage` variable on the `ncbirths` data set, _and then_ calculate the mean."
+
+The pipe `%>%` allows multiple steps to be chained together to execute a series of commands all at once. 
+The usefulness of this approach will be apparent before the class is finished. 
+
+

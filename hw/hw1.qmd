@@ -1,0 +1,65 @@
+---
+title: "Homework 1"
+author: "Your name here"
+format:
+  html: default
+  pdf: default
+---
+
+Here's your chance to demonstrate that you can integrate the topics and skills you learned so far into a literate report. 
+
+When the question asks you to perform a coding task, insert a code chunk after each question where you will write the code to answer that question. Knitting after each completed code chunk will help you to ensure your final product works as intended! That way if it breaks, you know exactly where the error lies. It's like saving after every answer!
+
+The first question is done for you as an example. 
+
+# Object assignments
+
+0. Calculate 3 + 4. Put the answer in the grey area below and knit the document. Make sure you can find this code and output in the resulting HTML file. 
+```{r}
+3+4
+```
+
+
+1. Calculate $2^5$ by typing this mathematical expression in the code chunk below and then knit the document. 
+```{r}
+
+```
+
+
+1. List out the variable name and their corresponding data types for five different variables in the ames data set.
+
+
+
+2. How many observations does the ames data set have? How many variables? 
+
+
+
+3. Extract the variable that measures the overall condition of the house (`Overall.Cond`) by position (using bracket index notation `[]`), and by variable names (using `$` notation)
+
+```{r}
+
+```
+
+4. What is the maximum number of Full bathrooms (`Full.Bath`) in this housing data set? 
+
+```{r}
+
+```
+
+5. Do any houses have more than 2 fireplaces (`Fireplaces`)? _Hint: Use the `summary()` function._
+```{r}
+
+```
+
+6. What is the average sale price (`price`) for houses sold in 2010? (`Yr.Sold`). Be sure to match the data type of your logical statement with the data type of `Yr.Sold`. The year should be written as 2010, not "2010". 
+```{r}
+
+```
+
+::: {.callout-danger}
+## Challenge Questions
+
+What is the median _price per square foot_ of houses sold in _2008 or later_?
+:::
+
+

@@ -1,0 +1,81 @@
+# Reproducibility with Quarto
+
+In this lesson you will learn to write a document using R markdown, integrate live R code into a literate statistical program, compile R markdown documents using `knitr` and related tools, and organize a data analysis sandbox so that it is reproducible and accessible to others.
+
+## Learning Objectives
+
+After completing this lesson learners will be able to create a new R markdown document, identify the components of a R Markdown document, and explain how R markdown files facilitates sharing of reproducible research. 
+
+### Pre-requisites
+* Have R and R Studio installed
+* Have the following packages installed: `rmarkdown`
+
+## Document structure 
+
+R Markdown is an example of literate programming where the explanation of the program (or analysis) logic is presented in a natural language (such as English), with supporting pieces of code embedded in the document itself. R Markdown combines normal text such as this sentence, code and the output from the code all in one Rmarkdown (`.Rmd`) file. 
+
+
+The following page lays out the format of an RMarkdown document with several details included.
+
+*Image credit on next page: Data Visualization by Kieran Healy. Available at http://socviz.co/*
+
+## Components of a R Markdown document 
+
+'../static/img/rmarkdown_components.png'
+
+
+## Code Chunks 
+
+* Code chunks start with three back ticks (to the left of the 1) and an r in braces. Chunks close (end) with another three back ticks. Note the background color of this section has changed to a different shade. This helps you identify you have closed your code chunk properly. 
+
+* You can insert code chunks by using the button in the top right of an RMD file (Insert --> R), 
+or by typing  `CTRL+ALT+I`. 
+
+* Only code goes in code chunks. That's why they're called **code** chunks. 
+  - No normal text. 
+  - All explanatory text goes outside a code chunk.
+
+
+## Test your setup
+
+Let's create your first markdown file!
+
+1. In R Studio go to _File_ --> _New File_ --> _R Markdown_
+2. Title this document **My First R Markdown Document**, then click OK.
+3. Click the small blue disk icon to save this file into your class folder. 
+4. Save this file using the file name **test_markdown_document**. 
+    - File names cannot have spaces or special characters.
+    - Do not specify the file type. It will be set automatically. 
+5. Click the **KNIT** button (has the yarn ball next to it) to convert this file into HTML. 
+6. Look at the HTML file that was created. You should be able to match the code with the resulting output. 
+
+This is what we mean by reproducible. If you make a change in the code document, and re-knit (aka compile), your changes will be reflected in the generated document. 
+
+If you are asked to install additional packages, go ahead and say yes. Then go back to [lesson 02](02_setup_slides.html) and make sure you have all the necessary packages listed. 
+
+## Make a change
+
+Play around with modifying the text and the R code.
+
+1. Change the code from `summary(cars)` to `summary(iris)`.   
+2. Write a sentence below this code chunk. It could be "Hello world". 
+3. Add a code chunk and type the equation `2+2` in the code chunk.
+4. Re-knit this document and observe your changes. 
+
+You are now ready to start the first assignment.  
+
+## Start Assignment 1
+
+1. **Right click** and select **save as** (or save target as) to download [[HW 1.Rmd]](../hw/hw1.Rmd) code file to your class folder. 
+2. Navigate to your class folder and double click to open this file in R Studio
+    - You might have to tell your computer what program to use. 
+    - Do NOT open this file from your browser window. 
+3. Double click on this file (from your class folder) to open it in R studio. 
+4. This `.Rmd` file is a template for you to use to write your assignment. Write your answers directly into this document. 
+5. After you answer each question, knit the file to ensure that your work is saved, and that your answers are being correctly displayed in the final document. 
+
+## Additional Resources
+
+* While the introductory video no longer works, there are additional lessons on using R Markdown at the following site: http://rmarkdown.rstudio.com/lesson-1.html
+    - Relevant portions in this tutorial are "How it works", "Code Chunks", and "Output Formats"
+* Gallery of the vast range of output and product types that you can create using R Markdown including PDF reports, interactive dashboards, maps, webpages like this one and more:  https://rmarkdown.rstudio.com/gallery.html

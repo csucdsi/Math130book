@@ -1,0 +1,203 @@
+---
+title: "Homework 1"
+author: "NAME"
+date: "DATE"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+Here's your chance to demonstrate that you can integrate the topics and skills you learned so far into a literate report. 
+
+When the question asks you to perform a coding task, insert a code chunk after each question where you will write the code to answer that question. Knitting after each completed code chunk will help you to ensure your final product works as intended! That way if it breaks, you know exactly where the error lies. It's like saving after every answer!
+
+The first question is done for you as an example. 
+
+# Object assignments
+
+0. Calculate 3 + 4. Put the answer in the grey area below and knit the document. Make sure you can find this code and output in the resulting HTML file. 
+```{r}
+3+4
+```
+
+
+1. Calculate $2^5$ by typing this mathematical expression in the code chunk below and then knit the document. 
+```{r}
+2^5
+```
+
+2. What are the values after each statement in the following?
+
+```{r}
+(mass <- 47.5)            # a 
+(age  <- 122 )            # b
+(mass <- mass * 2.0)      # c 
+(age  <- age - 20)        # d
+(mass_index <- mass/age)  # e
+```
+
+a. `mass` = 47.5 
+b. `age` = 122
+c. `mass` = 95
+d. `age` = 102
+e. `mass_index` = 0.9313725
+
+3. Assign a numeric value to the variable `my_apples`, assign a different numeric value to the variable `my_oranges`. Add these two together and assign the result to the variable `my_fruit`. Print the result of `my_fruit` to the report.
+
+```{r}
+my_apples <- 6
+my_oranges <- 19
+my_fruit <- my_apples + my_oranges
+my_fruit
+```
+
+4. What is the data type of the variable `my_fruit`? 
+
+```{r}
+class(my_fruit)
+```
+
+Its class is "numeric"
+
+5. A variable that classified as `logical` can hold only what two values? These are also called Boolean variables. (You don't need to write code to answer this question.)
+
+TRUE and FALSE
+
+
+6. Knit this document. 
+
+# Vectors()
+
+1.  Use the `class()` function to explore what happens when you have vectors of different data types. The first one has been done for you. Report your answer for each in a sentence below.
+
+```{r}
+num_only <- c(1,2,3,4)                    #a
+char_only <- c("a","b","c","d")           #b
+num_char <- c(1, 2, 3, "a")               #c
+num_logical <- c(1, 2, 3, TRUE)           #d
+char_logical <- c("a", "b", "c", TRUE)    #e
+tricky <- c(1, 2, 3, "4")                 #f
+class(num_only) 
+class(char_only)
+class(num_char)
+class(num_logical)
+class(char_logical)
+class(tricky)
+```
+
+* a. The `num_only` vector contains only numeric values, and it's class is numeric.
+* b. The `char_only` vector contains only character values, and it's class is character. 
+* c. The `num_char` vector contains numeric and character values, and it's class is character.
+* d. The `num_logical` vector contains numeric and Boolean values, and it's class is numeric. 
+* e. The `char_logical` vector contains character and Boolean values, and it's class is character. 
+* f. The `tricky` vector contains three numeric value and one character value("4"), and it's class is character. 
+
+## Let's go to Vegas!
+
+2. Create three vectors (`weekday`, `poker`, `roulette`) using the `c()` operator to describe the following outcome. 
+
+* `weekday`: The 5 weekdays. Use these three letter codes: "mon", "tue", "wed", "thu", "fri."
+* `poker`: 
+    - On Monday you won $140 
+    - Tuesday you lost $50
+    - Wednesday you won $20
+    - Thursday you lost $120
+    - Friday you won $240
+* `roulette`:
+    - On Monday you lost $24
+    - Tuesday you lost $50
+    - Wednesday you won $100
+    - Thursday you lost $350
+    - Friday you won $10
+
+_Hint: If I won $30 on monday and lost $20 on tuesday, my vector would look like `c(30, -20)`_
+
+```{r}
+weekday <- c("mon", "tue", "wed", "thu", "fri")
+poker <- c(140, -50, 20, -120, 240)
+roulette <- c(-24, -50, 100, -350, 10)
+```
+
+3. Use the `sum()` function to calculate how much money did you gain/lose on each game. What game did you do better on?
+
+```{r}
+sum(poker)
+sum(roulette)
+sum(poker) > sum(roulette)
+```
+* We gained `$230` on poker and lost `$314` on roulette. We did better on poker game.   
+
+4. Add the results of both vectors together, then calculate your net gain over the weekend. Did you come out ahead?
+
+```{r}
+sum(poker+roulette)
+```
+We came out behind.
+
+5. On which days did you make money on poker? _Hint: subset the `weekday` vector using a logical statement about `poker`_
+```{r}
+weekday[poker>0]
+```
+
+6. On which days did you do better on poker than roulette? _Hint: compare the two vectors using a statement of inequality_
+
+```{r}
+weekday[poker > roulette]
+``` 
+
+7. Knit this document to make sure it still works. 
+
+
+# Data Frames
+
+Run the code chunk below to read in the Ames data set from the web. This data set is on all residential home sales in Ames, Iowa between 2006 and 2010. The data set contains many explanatory variables on the quality and quantity of physical attributes of residential homes in Iowa sold between 2006 and 2010. Most of the variables describe information a typical home buyer would like to know about a property (square footage, number of bedrooms and bathrooms, size of lot, etc.). A detailed discussion of variables can be found in the original paper: De Cock D. 2011. Ames, Iowa: Alternative to the Boston Housing Data as an End of Semester Regression Project. Journal of Statistics Education; 19(3).
+
+```{r}
+ames <- openintro::ames
+head(ames)
+```
+
+
+1. List out the variable name and data types for five different variables in the ames data set
+
+Order, integer 
+PID, integer
+MS. Subclass, integer
+MS. Zoning, character
+Lot. Frontage, integer
+
+2. How many observations does the ames data set have? How many variables? 
+
+2930 observations and 82 variables. 
+
+3. Extract the variable that measures the overall condition of the house (`Overall.Cond`) by position (using bracket index notation `[]`), and by variable names (using `$` notation)
+
+```{r}
+ames[,22]
+ames$Overall.Cond
+```
+
+4. What is the maximum number of Full bathrooms (`Full.bath`) in this housing data set? 
+
+```{r}
+max(ames$Full.Bath)
+```
+
+5. Do any houses have more than 2 fireplaces (`Fireplaces`)? _Hint: Use the `summary()` function._
+```{r}
+summary(ames$Fireplaces)
+```
+* There are houses that have more than 2 fireplaces.
+
+6. What is the average sale price (`price`) for houses sold in 2010? (`Yr.Sold`). Be sure to match the data type of your logical statement with the data type of `Yr.Sold`. The year should be written as 2010, not "2010". 
+```{r}
+mean(ames$price[ames$Yr.Sold==2010])
+```
+
+
+# Challenge Questions
+
+1. What is the median _price per square foot_ of houses sold in _2008 or later_?
+```{r}
+median(ames$price[ames$Yr.Sold>=2008] / ames$area[ames$Yr.Sold>=2008])
+```
