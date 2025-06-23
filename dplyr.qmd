@@ -1,12 +1,219 @@
-# dplyr 
+# Data management and aggregation
 
+## Introduction <a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Introduction/1_r7jhnwgd" target="_blank">(Video)</a>
+
+When working with data you must:
+
+1. Figure out what you want to do.
+2. Precisely describe what you want in the form of a computer program.
+3. Execute the code.
+
+The dplyr package makes each of these steps as fast and easy as possible by:
+
+1. Elucidating the most common data manipulation operations, so that your
+   options are helpfully constrained when thinking about how to tackle a problem.
+2. Providing simple functions that correspond to the most common data 
+   manipulation verbs, so that you can easily translate your thoughts into code.
+3. Using efficient data storage back ends, so that you spend as little time 
+   waiting for the computer as possible.
 
 ::: {.callout-note}
 ### Learning Objectives
 
+After completing this lesson students will be able to
 
-
+* Explain the difference between a `data.table` and a `tibble`. 
+* Build and execute a chain of command to accomplish a data management task
+* Extract certain rows using `select`. 
+* Create new variables using `mutate`. 
+* Rename variables using `rename`
+* Subset the data based on a criteria using `filter`.
+* Create summary statistics using `group_by` and `summarize`
+* Learn how to use code chunk options to disable warning messages. 
 :::
+
+
+:::{.callout-important}
+#### Preparation
+
+Prior to this lesson students should
+
+* Download the [[08_dplyr_notes.Rmd]](08_dplyr_notes.Rmd) R markdown file and save into your `Math130/notes` folder. 
+* Ensure that the `dplyr` and `nycflights13` packages are installed by running the first code chunk. 
+
+```{r, warning=FALSE, message=FALSE}
+library(dplyr)
+flights <- nycflights13::flights
+```
+:::
+
+### Exploring airline flight data with dplyr. 
+
+The `nycflights13` package contains several data sets that can be used to help understand what causes delays. We will be using the `flights` data set which contains information about all flights that departed from NYC (e.g. EWR, JFK and LGA) in 2013. 
+
+### Tibbles
+
+The `flights` data set, and any data set created with `dplyr`, has a specific data type called a `tibble`. These are not as furry and prolific as their cousins the `tribbles`. `tibbles` behaves for all intents and purposes as a `data.frame`, just gets displayed differently. For example, the `flights` data set contains data on 19 characteristics (variables) from 336,776 flights. There's no way I would want to print out a data set that large. But I'm gonna....  
+
+```{r}
+flights
+```
+
+The output has been trimmed to something more reasonable for our viewing pleasure. This may not seem such a big deal because R Studio already provides some level of truncation for our viewing pleasure. 
+
+## Basic verbs <a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Basic+Verbs/1_ndesnisk" target="_blank">(Video)</a>
+The `dplyr` package contains new data manipulation functions, also called verbs. We will look at the following verbs: 
+
+* `filter()`: Returns a subset of the rows.
+* `select()`: Returns only the listed columns.
+* `rename()`: Renames the variables listed. 
+* `mutate()`: Adds columns from existing data.
+* `summarise()`: Reduces each group to a single row by calculating aggregate measures.
+* `group_by()`: Groups a data set on a factor variable, such that all functions performed are then done on each level of the factor.
+
+
+### Filter
+`filter()` allows you to select a subset of the rows of a data frame. 
+The first argument is the name of the data frame, and the second and subsequent are filtering expressions evaluated in the context of that data frame. For example, we can select all flights on January 1st with 
+```{r}
+filter(flights, month == 1, day == 1)
+```
+
+`filter()` works similarly to `subset()` except that you can give it any number of filtering conditions which are joined together with &. You can use other Boolean operators explicitly. Here we select flights in January or February.
+```{r}
+filter(flights, month == 1 | month == 2)
+```
+
+### Select
+Often you work with large data sets with many columns where only a few are actually of interest to you. `select()` allows you to rapidly zoom in on a useful subset using operations that usually only work on numeric variable positions.
+```{r}
+select(flights, month, day, year)
+```
+
+You can use a colon (:) to select all columns physically located between two variables. 
+```{r}
+select(flights, year:day)
+```
+
+To exclude specific columns you use the minus sign (-)
+```{r}
+select(flights, -carrier)
+```
+
+This also works to exclude all columns EXCEPT the ones between two variables. 
+```{r}
+select(flights, -(year:day))
+```
+
+### Rename
+Sometimes variables come to you in really obscure naming conventions. What the heck is SBA641? New to `dplyr` 1.0.0 is the `rename()` function. Works like magic to convert `old name` to a `new name`. The generic syntax is `rename(new = old)`
+
+So to rename `dep_time` to `departure_time` we would type
+
+```{r}
+rename(flights, departure_time = dep_time)
+```
+
+The variable name on the 3rd column now says `departure_time` instead of `dep_time`. 
+
+> For the purpose of these lecture notes I am not making this change permenant. There is no assignment operator `<-` used here, so this change is not going to persist into later code. 
+
+### Mutate
+As well as selecting from the set of existing columns, it's often useful to add new columns that are functions of existing columns. This is the job of `mutate()`!
+
+Here we create two variables: gain (as arrival delay minus departure delay) and speed (as distance divided by time, converted to hours). 
+```{r}
+a <- mutate(flights, gain = arr_delay - dep_delay, 
+                speed = distance / air_time * 60)
+select(a, gain, distance, air_time, speed)
+```
+
+
+One key advantage of mutate is that you can refer to the columns you just created. Mutate flights to create two variables, `gain = arr_delay - dep_delay` and `gain_per_hour = gain / (air_time / 60)`. 
+```{r}
+mutate(flights, gain = arr_delay - dep_delay, 
+                gain_per_hour = gain / (air_time / 60 ))
+```  
+
+
+### Summarize
+The last verb is `summarise()`, which collapses a data frame to a single row. It's not very useful yet. We can create a new variable called delay that is the average departure delay on the entire flights data set. 
+```{r}
+summarise(flights, delay = mean(dep_delay, na.rm = TRUE))
+```
+
+
+
+## Grouped Operations  <a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Grouped+Operations/1_w9x1kd5m" target="_blank">(Video)</a>
+
+The above verbs are useful, but they become really powerful when you combine them with the idea of "group by", repeating the operation individually on groups of observations within the dataset. In dplyr, you use the `group_by()` function to describe how to break a dataset down into groups of rows. You can then use the resulting object in exactly the same functions as above; they'll automatically work "by group" when the input is a grouped.
+
+Let's demonstrate how some of these functions work after grouping the flights data set by month. First we'll create a new data set that is grouped by month. 
+
+```{r}
+by_month <- group_by(flights, month)
+```
+
+
+* The `summarise()` verb allows you to calculate summary statistics for each group. This is probably the most common function that is used in conjunction with `group_by`. For example, the average distance flown per month. 
+```{r}
+summarise(by_month, avg_airtime = mean(distance, na.rm=TRUE))
+```
+
+Or simply the total number of flights per month. 
+```{r}
+summarize(by_month, count=n())
+``` 
+
+
+## Chaining Operations  <a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Chaining+Operations/1_6xzk59i7" target="_blank">(Video)</a>
+Consider the following group of operations that take the data set `flights`, and produce a final data set (`a4`) that contains only the flights where the daily average delay is greater than a half hour. 
+```{r}
+a1 <- group_by(flights, year, month, day)
+a2 <- select(a1, arr_delay, dep_delay)
+a3 <- summarise(a2,
+                arr = mean(arr_delay, na.rm = TRUE),
+                dep = mean(dep_delay, na.rm = TRUE))
+a4 <- filter(a3, arr > 30 | dep > 30)
+head(a4)
+```
+
+It does the trick, but what if you don't want to save all the intermediate results (`a1` - `a3`)? Well these verbs are `function`, so they can be wrapped inside other functions to create a nesting type structure.  
+```{r, eval=FALSE}
+filter(
+  summarise(
+    select(
+      group_by(flights, year, month, day),
+      arr_delay, dep_delay
+    ),
+    arr = mean(arr_delay, na.rm = TRUE),
+    dep = mean(dep_delay, na.rm = TRUE)
+  ),
+  arr > 30 | dep > 30
+)
+```
+
+Woah, that is HARD to read! This is difficult to read because the order of the operations is from inside to out, and the arguments are a long way away from the function. To get around this problem, dplyr provides the `%>%` operator. `x %>% f(y)` turns into `f(x, y)` so you can use it to rewrite multiple operations so you can read from left-to-right, top-to-bottom:
+
+```{r}
+flights %>%
+  group_by(year, month, day) %>%
+  select(arr_delay, dep_delay) %>%
+  summarise(
+    arr = mean(arr_delay, na.rm = TRUE),
+    dep = mean(dep_delay, na.rm = TRUE)
+  ) %>%
+  filter(arr > 30 | dep > 30)
+```
+
+Another way you can read this is by thinking "and then" when you see the `%>%` 
+operator. So the above code takes the data set flights  
+.. and then groups by day  
+.. and then selects the delay variables  
+.. and then calculates the means  
+.. and then filters on a delay over half hour. 
+
+The same 4 steps that resulted in the `a4` data set, but without all the intermediate data saved! This can be **very important** when dealing with Big Data. `R` stores all data in memory, so if your little computer only has 2G of RAM and you're working with a data set that is 500M in size, your computers memory will be used up fast. `a1` takes 500M, `a2` another 500M, by now your computer is getting slow. Make another copy at `a3` and it gets worse, `a4` now likely won't even be able to be created because you'll be out of memory. 
 
 
 

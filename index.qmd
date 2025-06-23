@@ -151,11 +151,3 @@ Because it's not reproducible.
 
 Some of this material presented is a derivation from work that is Copyright © Software Carpentry (http://software-carpentry.org/) which is under a [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/) which allows for adaptations and reuse of the work.
 :::
-
-# Questions {.unnumbered}
-
-* [] file number prefix?
-* [] quarto before R?
-* [] dm last still? 
-* [] any other re-ordering? 
-* [] auto-graded quizzes instead of notes? 
