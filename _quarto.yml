@@ -17,9 +17,9 @@ book:
     - dm.qmd  
     - factors.qmd
     - plots.qmd
-    # - dplyr.qmd
-    # - import.qmd
-    # - plots2.qmd
+    - dplyr.qmd
+    - import.qmd
+    - plots2.qmd
     - project.qmd
     - assignments.qmd
       
@@ -28,7 +28,7 @@ book:
 
 format:
   html:
-    theme: sandstone
+    theme: lumen
   pdf:
     documentclass: scrreprt
 
