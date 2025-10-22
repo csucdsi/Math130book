@@ -1,80 +1,10 @@
 # Preface & Course Overview {.unnumbered}
 
-This notebook was created to host learning materials for Math 130: Introduction to R at California State University, Chico.
+This notebook was created to host learning materials for Math 130: Introduction to R at California State University, Chico. Some of this material presented is a derivation from work that is Copyright © Software Carpentry (http://software-carpentry.org/) which is under a [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/) which allows for adaptations and reuse of the work.
 
 Math 130 is designed as a short-course "primer" to be taken before, or concurrently with, an upper division or graduate level Statistics course such as Math 315 or Math 615.
 
 The goal of Math 130 is to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. We recognize there are many topics and many approaches to teach an introduction to the R programming language. We have picked specific topics and methods that we believe learners will need to succeed in subsequent classes.
-
-The target audience is anyone who wants to do their own data analysis. The course will culminate with an exploratory data analysis on either a pre-specified data set or your data set of choice.
-
-## Logistics
-
-This course may be offered as in person or (a)synchronous online. Regardless of the mode of instruction, all learning materials are found on this website. Class time (when applicable) is spent expanding on ideas and concepts, working through assignments as a class or in pairs.
-
-The logistics of the course varies slightly by instructor and mode of instruction. See below for your specific section.
-
-::: callout-danger
-## Syllabus for current term
-
--   [HTML webpage](syllabus.html)
--   [Downloadable PDF](syllabus.pdf)
-:::
-
-<!-- updateme -->
-
-> move these to sub folder
-
--   [Fall 2025 Dr. Donatello - In person](slides/00_welcome_rad.html)
-
-```{=html}
-<!---
-* [Spring 2025 Dr. Roualdes](slides/01e_async_protocol.html)
-* [Summer 2025 Dr. Lytal](slides/01c_async_protocol.html)
---->
-```
-
-> where to put discord & common help? 
-
-## Callout boxes and icons
-
-::: callout-note
-### blue boxes
-
-mean this is a note
-:::
-
-::: callout-danger
-### orange boxes
-
-means danger. so this is red? 
-:::
-
-
-::: callout-caution
-### yellow boxes
-
-means caution
-:::
-
-::: callout-tip
-### green box
-
-is a tip or an example
-:::
-
-
-::: callout-important
-### this is important
-
-not sure what color
-:::
-
-* :cinema: associated video
-* :pencil2: You try it
-* :x: Don't do this thing
-
-
 
 ## Tool choices
 
@@ -85,6 +15,13 @@ not sure what color
 -   **RStudio** is currently a very popular way to not only write your R scripts but also to interact with the R software.
 
 -   We will be programming in the R language, using the R Studio platform. You will have to install both onto your computer. Setup instructions are discussed later in section `FIXME`
+
+![Manual transmission shifter representing the “learning curve” when starting with R.](img/r-manual.jpeg){fig-alt="Manual transmission shifter representing the learning curve when starting with R" width="250"}
+
+![Automatic transmission shifter representing R + RStudio productivity (“Drive”).](img/r-automatic.jpeg){fig-alt="Automatic transmission shifter representing R + RStudio productivity" width="250"}
+
+[Left photo credit](https://unsplash.com/photos/D19rXKDUPYM); [Right photo credit](https://unsplash.com/photos/Wec3M4dY_LE).\
+Entire figure credit: *Data Carpentry R for Social Scientists*.
 
 ### Why use R?
 
@@ -109,11 +46,9 @@ not sure what color
 -   One button publishing of reproducible documents such as reports, interactive visualizations, presentations (like this one!), websites.
 
 ::: callout-danger
-### make this side by side and add appropriate alt text
+## Danger
 
-![caption](img/r-manual.jpeg){fig-alt="alt text" fig-align="left" width="250"} ![caption](img/r-automatic.jpeg){fig-alt="alt text" fig-align="right" width="250"}
-
-<a href="https://unsplash.com/photos/D19rXKDUPYM">Left photo credit</a>; <a href="https://unsplash.com/photos/Wec3M4dY_LE">Right photo credit</a>. Entire figure credit: Data Carpentry R for Social Scientists.
+Use caution with these settings.
 :::
 
 > check this link
@@ -122,7 +57,9 @@ not sure what color
 
 ## Programming is scary!
 
-![](img/hard.JPG){width="403"}
+![Learning R feels steep at first; it gets easier with practice. Artwork by @allison_horst (CC BY 4.0).](img/r-learning-curve-horst.png){width="403"}
+
+*Artwork by @allison_horst (CC BY 4.0).*
 
 > check links
 
@@ -145,9 +82,28 @@ Because it's not reproducible.
 -   Need to expand your model? Gotta do it all over.
 -   Made a mistake in the data coding? Gotta do it all over...
 
+## How this book is organized
 
-::: callout-info
-## References
+-   **Setup & Tools** → install R and RStudio; confirm your environment works.
+-   **Intro to R & Programming** → objects, vectors, control flow, and functions.
+-   **Data In/Out & Wrangling** → import, `dplyr`, factors, tidy data.
+-   **Visualization** → `ggplot2` essentials and extensions.
+-   **Putting it together** → practice, projects, and reproducible reporting with Quarto.
 
-Some of this material presented is a derivation from work that is Copyright © Software Carpentry (http://software-carpentry.org/) which is under a [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/) which allows for adaptations and reuse of the work.
+Below you’ll find some quick reminders and callout boxes that use emojis to highlight tips, cautions, and key ideas.
+
+::: callout-important
+## Important
+
+important is red box
 :::
+
+### Emoji key
+
+✅**Tip** — run code often to check your work  
+
+⚠**Caution** — save files before running large scripts  
+
+💡**Idea** — simplify repeated steps with a function  
+
+🎯**Goal** — focus on understanding the why, not just the code
