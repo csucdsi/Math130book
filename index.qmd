@@ -8,15 +8,17 @@ Math 130 is designed as a short-course "primer" to be taken before, or concurren
 
 The goal of Math 130 is to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. We recognize there are many topics and many approaches to teach an introduction to the R programming language. We have picked specific topics and methods that we believe learners will need to succeed in subsequent classes.
 
-## Tool choices
-
-### R + R Studio = Success
+## R + IDE = Success
 
 -   The term **R** refers to both the programming language and the software that interprets the scripts written using it.
 
--   **RStudio** is currently a very popular way to not only write your R scripts but also to interact with the R software.
+- An **IDE** is an "Integrated Development Environment" and essentially is another program that lets you interact with R in a productive and efficient manner. 
 
--   We will be programming in the R language, using the R Studio platform. You will have to install both onto your computer. Setup instructions are discussed later in section `FIXME`
+- **[RStudio](https://posit.co/downloads/)** has been a very popular IDE since around 2011 that has continued to flourish and improve throughtout the years. 
+
+- **[Positron](https://positron.posit.co/)** is a new IDE created by the developers of RStudio that is based off another popular IDE called VSCode - and aimed primarily at Data Scientists
+
+-   This book teaches you how to use R from within the **R Studio** IDE as we feel it is easier for new learners to start with.  You will have to install both onto your computer. Setup instructions are discussed later in section `FIXME`
 
 -   ![Manual car gear shift representing coding in R](img/r-manual.jpeg){fig-alt="Manual car gear shift representing coding in R" fig-align="left" width="250"} ![Automatic car gear shift representing RStudio environment](img/r-automatic.jpeg){fig-alt="Automatic car gear shift representing RStudio environment" fig-align="right" width="250"}
 
@@ -44,11 +46,9 @@ The goal of Math 130 is to get the complete novice up and running with the basic
 -   Free training videos available from the developers directly.
 -   One button publishing of reproducible documents such as reports, interactive visualizations, presentations (like this one!), websites.
 
-> check this link
-
 [Examples of things you can do in RStudio](https://rmarkdown.rstudio.com/gallery.html)
 
-## Programming is scary!
+## Programming can be scary!
 
 ![Learning curve diagram by Allison Horst showing how much you think you know about R over time](img/r-learning-curve-horst.png){fig-alt="Line chart labeled 'How much I think I know about R' versus time, showing ups and downs with smiley faces at different stages." width="600"}
 
@@ -63,8 +63,8 @@ Learning to program has other benefits
 -   Increases your self reliance and empowers you to control your own research.
 -   Your PI will love your awesome graphics and reports.
 -   Some people think what you do is magic.
--   Thinking graduate school? [\[expect to learn this on your own\]](http://www.nature.com/nature/journal/v541/n7638/full/nj7638-563a.html)
--   [\[A few\]](https://skillcrush.com/2015/01/28/laurence-bradford-10-reasons/) [\[other lists\]](https://careerfoundry.com/en/blog/web-development/7-benefits-of-learning-to-code/) [\[of reasons\]](https://skillcrush.com/2017/01/30/learn-to-code-benefits/)
+-   Thinking graduate school? [expect to learn this on your own](http://www.nature.com/nature/journal/v541/n7638/full/nj7638-563a.html)
+-   [A few](https://skillcrush.com/2015/01/28/laurence-bradford-10-reasons/) [other lists](https://careerfoundry.com/en/blog/web-development/7-benefits-of-learning-to-code/) [of reasons](https://skillcrush.com/2017/01/30/learn-to-code-benefits/)
 
 ### Why no point and click?
 
@@ -75,25 +75,23 @@ Because it's not reproducible.
 -   Need to expand your model? Gotta do it all over.
 -   Made a mistake in the data coding? Gotta do it all over...
 
+
+
 ## How this book is organized
 
-::: callout-info
-
-:::
+* explain callout boxes
+* videos
+* interactivity
+* sections (intro/intermediate)
+* how to use with assignments in an LMS
 
 ## Callout boxes and icons
-
 ::: callout-note
 ### blue boxes
 
-mean this is a note
+means this is a note
 :::
 
-::: callout-danger
-### orange boxes
-
-means danger. so this is red?
-:::
 
 ::: callout-caution
 ### yellow boxes
@@ -107,12 +105,6 @@ means caution
 is a tip or an example
 :::
 
-::: callout-danger
-### danger box
-
-this is a red box used to show warnings or critical notes
-:::
-
 
 ::: callout-important
 ### this is important
@@ -120,9 +112,9 @@ this is a red box used to show warnings or critical notes
 important is red box
 :::
 
-not sure what color :::
 
 -   🎦:associated video
 -   ✏️: You try it
 -   ❌: Don't do this thing
+
 
