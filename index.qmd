@@ -8,11 +8,6 @@ Math 130 is designed as a short-course "primer" to be taken before, or concurren
 
 The goal of Math 130 is to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. We recognize there are many topics and many approaches to teach an introduction to the R programming language. We have picked specific topics and methods that we believe learners will need to succeed in subsequent classes.
 
-::: callout-danger
-:::
-
-## How this book is organized
-
 ## Tool choices
 
 ### R + R Studio = Success
@@ -55,9 +50,9 @@ The goal of Math 130 is to get the complete novice up and running with the basic
 
 ## Programming is scary!
 
-![Learning curve diagram by Allison Horst showing how much you *think* you know about R over time](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/d65eb83f-66e4-4760-8c1f-29d336d1d6df_rw_3840.png?h=ece3b7c448f38a10cd71866e2cbb2b4d){fig-alt="Line plot labeled 'How much I think I know about R' vs Time with ups/downs and emoji faces; annotation 'join R community on twitter'." width="600"}
+![Learning curve diagram by Allison Horst showing how much you think you know about R over time](img/r-learning-curve-horst.png){fig-alt="Line chart labeled 'How much I think I know about R' versus time, showing ups and downs with smiley faces at different stages." width="600"}
 
-*Artwork by @allison_horst — CC BY 4.0.* 
+*Artwork by @allison_horst – used under CC BY 4.0. Source: [allisonhorst.com](https://allisonhorst.com/)*
 
 > check links
 
@@ -79,6 +74,8 @@ Because it's not reproducible.
 -   New data? Gotta do it all over.
 -   Need to expand your model? Gotta do it all over.
 -   Made a mistake in the data coding? Gotta do it all over...
+
+## How this book is organized
 
 ::: callout-info
 
@@ -115,6 +112,7 @@ is a tip or an example
 
 this is a red box used to show warnings or critical notes
 :::
+
 
 ::: callout-important
 ### this is important
