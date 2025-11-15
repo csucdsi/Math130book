@@ -126,3 +126,13 @@ not sure what color :::
 -   ✏️: You try it
 -   ❌: Don't do this thing
 
+**Code appearance**
+
+In these notes, code is displayed like this:
+
+```{r}
+2+2
+```
+
+where the output or result of the code is displayed with two pound signs
+(`##`)
