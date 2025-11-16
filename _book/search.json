@@ -4,27 +4,37 @@
     "href": "index.html",
     "title": "Introduction to R",
     "section": "",
-    "text": "Preface & Course Overview\nThis notebook was created to host learning materials for Math 130: Introduction to R at California State University, Chico.\nMath 130 is designed as a short-course “primer” to be taken before, or concurrently with, an upper division or graduate level Statistics course such as Math 315 or Math 615.\nThe goal of Math 130 is to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. We recognize there are many topics and many approaches to teach an introduction to the R programming language. We have picked specific topics and methods that we believe learners will need to succeed in subsequent classes.\nThe target audience is anyone who wants to do their own data analysis. The course will culminate with an exploratory data analysis on either a pre-specified data set or your data set of choice.",
+    "text": "Preface & Course Overview\nThis notebook was created to host learning materials for Math 130: Introduction to R at California State University, Chico.\nSome of this material presented is a derivation from work that is Copyright © Software Carpentry (http://software-carpentry.org/) which is under a CC BY 4.0 license which allows for adaptations and reuse of the work.\nMath 130 is designed as a short-course “primer” to be taken before, or concurrently with, an upper division or graduate level Statistics course such as Math 315 or Math 615.\nThe goal of Math 130 is to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. We recognize there are many topics and many approaches to teach an introduction to the R programming language. We have picked specific topics and methods that we believe learners will need to succeed in subsequent classes.",
     "crumbs": [
       "Preface & Course Overview"
     ]
   },
   {
-    "objectID": "index.html#logistics",
-    "href": "index.html#logistics",
+    "objectID": "index.html#r-ide-success",
+    "href": "index.html#r-ide-success",
     "title": "Introduction to R",
-    "section": "Logistics",
-    "text": "Logistics\nThis course may be offered as in person or (a)synchronous online. Regardless of the mode of instruction, all learning materials are found on this website. Class time (when applicable) is spent expanding on ideas and concepts, working through assignments as a class or in pairs.\nThe logistics of the course varies slightly by instructor and mode of instruction. See below for your specific section.",
+    "section": "R + IDE = Success",
+    "text": "R + IDE = Success\n\nThe term R refers to both the programming language and the software that interprets the scripts written using it.\nAn IDE is an “Integrated Development Environment” and essentially is another program that lets you interact with R in a productive and efficient manner.\nRStudio has been a very popular IDE since around 2011 that has continued to flourish and improve throughtout the years.\nPositron is a new IDE created by the developers of RStudio that is based off another popular IDE called VSCode - and aimed primarily at Data Scientists\nThis book teaches you how to use R from within the R Studio IDE as we feel it is easier for new learners to start with. You will have to install both onto your computer. Setup instructions are discussed later in section FIXME\n \nLeft photo credit; Right photo credit. Entire figure credit: Data Carpentry R for Social Scientists.\n\n\nWhy use R?\n\nOpen source, cross-platform, and free\nGreat for reproducibility\nFlexible and extensible. Doesn’t do something you want? Create a custom function for yourself.\nTons of learning resources\nCurrently R is used in all of Chico’s upper division Statistics & Data Science courses, as well as in some Science, Public Health, Economics, Finance, and some graduate courses.\nDoes not involve lots of pointing and clicking (that’s a good thing!)\nWorks on data of all shapes and sizes\nProduces high-quality graphics\nLarge and welcoming community\n\n\n\nWhy use R Studio?\n\nCustomizable workspace that docks all windows together.\nNotebook formats that allow for easy sharing of code and output, and integration with other languages (Python, C++, SQL, Stan)\nSyntax highlighting, warning errors when missing a closing parentheses.\nCross-platform interface. Also works on Windows/iOS/Linux.\nTab completion for functions. Forget the syntax or a variable name? Popup helpers are available.\nFree training videos available from the developers directly.\nOne button publishing of reproducible documents such as reports, interactive visualizations, presentations (like this one!), websites.\n\nExamples of things you can do in RStudio",
     "crumbs": [
       "Preface & Course Overview"
     ]
   },
   {
-    "objectID": "index.html#syllabus-for-current-term",
-    "href": "index.html#syllabus-for-current-term",
+    "objectID": "index.html#programming-can-be-scary",
+    "href": "index.html#programming-can-be-scary",
     "title": "Introduction to R",
-    "section": "Syllabus for current term",
-    "text": "Syllabus for current term\n\nHTML webpage\nDownloadable PDF",
+    "section": "Programming can be scary!",
+    "text": "Programming can be scary!\n\n\n\nLearning curve diagram by Allison Horst showing how much you think you know about R over time\n\n\nArtwork by @allison_horst – used under CC BY 4.0. Source: allisonhorst.com\n\ncheck links\n\nLearning to program has other benefits\n\nImproves your logical skills and critical problem solving\nIncreases your attention to detail\nIncreases your self reliance and empowers you to control your own research.\nYour PI will love your awesome graphics and reports.\nSome people think what you do is magic.\nThinking graduate school? expect to learn this on your own\nA few other lists of reasons\n\n\nWhy no point and click?\nBecause it’s not reproducible.\n\nWhich boxes did you click last time?\nNew data? Gotta do it all over.\nNeed to expand your model? Gotta do it all over.\nMade a mistake in the data coding? Gotta do it all over…",
+    "crumbs": [
+      "Preface & Course Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#how-this-book-is-organized",
+    "href": "index.html#how-this-book-is-organized",
+    "title": "Introduction to R",
+    "section": "How this book is organized",
+    "text": "How this book is organized\n\nexplain callout boxes\nvideos\ninteractivity\nsections (intro/intermediate)\nhow to use with assignments in an LMS",
     "crumbs": [
       "Preface & Course Overview"
     ]
@@ -34,37 +44,7 @@
     "href": "index.html#callout-boxes-and-icons",
     "title": "Introduction to R",
     "section": "Callout boxes and icons",
-    "text": "Callout boxes and icons\n\n\n\n\n\n\nblue boxes\n\n\n\nmean this is a note\n\n\n\norange boxes\nmeans danger. so this is red?\n\n\n\n\n\n\n\nyellow boxes\n\n\n\nmeans caution\n\n\n\n\n\n\n\n\ngreen box\n\n\n\nis a tip or an example\n\n\n\n\n\n\n\n\nthis is important\n\n\n\nnot sure what color\n\n\n\n:cinema: associated video\n:pencil2: You try it\n:x: Don’t do this thing",
-    "crumbs": [
-      "Preface & Course Overview"
-    ]
-  },
-  {
-    "objectID": "index.html#tool-choices",
-    "href": "index.html#tool-choices",
-    "title": "Introduction to R",
-    "section": "Tool choices",
-    "text": "Tool choices\n\nR + R Studio = Success\n\nThe term R refers to both the programming language and the software that interprets the scripts written using it.\nRStudio is currently a very popular way to not only write your R scripts but also to interact with the R software.\nWe will be programming in the R language, using the R Studio platform. You will have to install both onto your computer. Setup instructions are discussed later in section FIXME\n\n\n\nWhy use R?\n\nOpen source, cross-platform, and free\nGreat for reproducibility\nFlexible and extensible. Doesn’t do something you want? Create a custom function for yourself.\nTons of learning resources\nCurrently R is used in all of Chico’s upper division Statistics & Data Science courses, as well as in some Science, Public Health, Economics, Finance, and some graduate courses.\nDoes not involve lots of pointing and clicking (that’s a good thing!)\nWorks on data of all shapes and sizes\nProduces high-quality graphics\nLarge and welcoming community\n\n\n\nWhy use R Studio?\n\nCustomizable workspace that docks all windows together.\nNotebook formats that allow for easy sharing of code and output, and integration with other languages (Python, C++, SQL, Stan)\nSyntax highlighting, warning errors when missing a closing parentheses.\nCross-platform interface. Also works on Windows/iOS/Linux.\nTab completion for functions. Forget the syntax or a variable name? Popup helpers are available.\nFree training videos available from the developers directly.\nOne button publishing of reproducible documents such as reports, interactive visualizations, presentations (like this one!), websites.\n\n\n\nmake this side by side and add appropriate alt text\n \nLeft photo credit; Right photo credit. Entire figure credit: Data Carpentry R for Social Scientists.\n\n\ncheck this link\n\nExamples of things you can do in RStudio",
-    "crumbs": [
-      "Preface & Course Overview"
-    ]
-  },
-  {
-    "objectID": "index.html#programming-is-scary",
-    "href": "index.html#programming-is-scary",
-    "title": "Introduction to R",
-    "section": "Programming is scary!",
-    "text": "Programming is scary!\n\n\ncheck links\n\nLearning to program has other benefits\n\nImproves your logical skills and critical problem solving\nIncreases your attention to detail\nIncreases your self reliance and empowers you to control your own research.\nYour PI will love your awesome graphics and reports.\nSome people think what you do is magic.\nThinking graduate school? [expect to learn this on your own]\n[A few] [other lists] [of reasons]\n\n\nWhy no point and click?\nBecause it’s not reproducible.\n\nWhich boxes did you click last time?\nNew data? Gotta do it all over.\nNeed to expand your model? Gotta do it all over.\nMade a mistake in the data coding? Gotta do it all over…",
-    "crumbs": [
-      "Preface & Course Overview"
-    ]
-  },
-  {
-    "objectID": "index.html#references",
-    "href": "index.html#references",
-    "title": "Introduction to R",
-    "section": "References",
-    "text": "References\nSome of this material presented is a derivation from work that is Copyright © Software Carpentry (http://software-carpentry.org/) which is under a CC BY 4.0 license which allows for adaptations and reuse of the work.",
+    "text": "Callout boxes and icons\n\n\n\n\n\n\nblue boxes\n\n\n\nmeans this is a note\n\n\n\n\n\n\n\n\nyellow boxes\n\n\n\nmeans caution\n\n\n\n\n\n\n\n\ngreen box\n\n\n\nis a tip or an example\n\n\n\n\n\n\n\n\nthis is important\n\n\n\nimportant is red box\n\n\n\n🎦:associated video\n✏️: You try it\n❌: Don’t do this thing",
     "crumbs": [
       "Preface & Course Overview"
     ]
