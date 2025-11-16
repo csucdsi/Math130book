@@ -6,9 +6,6 @@ In this lesson you will learn to write a document using R markdown, integrate li
 
 After completing this lesson learners will be able to create a new R markdown document, identify the components of a R Markdown document, and explain how R markdown files facilitates sharing of reproducible research. 
 
-### Pre-requisites
-* Have R and R Studio installed
-* Have the following packages installed: `rmarkdown`
 
 ## Document structure 
 

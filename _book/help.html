@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Reproducibility with Quarto – Introduction to R</title>
+<title>2&nbsp; Seeking Help – Introduction to R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./programming_in_r.html" rel="next">
-<link href="./help.html" rel="prev">
+<link href="./quarto.html" rel="next">
+<link href="./setup_tools.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -70,35 +105,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -111,7 +117,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reproducibility with Quarto</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./help.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Seeking Help</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -150,13 +156,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./help.html" class="sidebar-item-text sidebar-link">
+  <a href="./help.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Seeking Help</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto.html" class="sidebar-item-text sidebar-link active">
+  <a href="./quarto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reproducibility with Quarto</span></span></a>
   </div>
 </li>
@@ -224,18 +230,12 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">3.1</span> Learning Objectives</a>
-  <ul class="collapse">
-  <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link" data-scroll-target="#pre-requisites"><span class="header-section-number">3.1.1</span> Pre-requisites</a></li>
-  </ul></li>
-  <li><a href="#document-structure" id="toc-document-structure" class="nav-link" data-scroll-target="#document-structure"><span class="header-section-number">3.2</span> Document structure</a></li>
-  <li><a href="#components-of-a-r-markdown-document" id="toc-components-of-a-r-markdown-document" class="nav-link" data-scroll-target="#components-of-a-r-markdown-document"><span class="header-section-number">3.3</span> Components of a R Markdown document</a></li>
-  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks"><span class="header-section-number">3.4</span> Code Chunks</a></li>
-  <li><a href="#test-your-setup" id="toc-test-your-setup" class="nav-link" data-scroll-target="#test-your-setup"><span class="header-section-number">3.5</span> Test your setup</a></li>
-  <li><a href="#make-a-change" id="toc-make-a-change" class="nav-link" data-scroll-target="#make-a-change"><span class="header-section-number">3.6</span> Make a change</a></li>
-  <li><a href="#start-assignment-1" id="toc-start-assignment-1" class="nav-link" data-scroll-target="#start-assignment-1"><span class="header-section-number">3.7</span> Start Assignment 1</a></li>
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">3.8</span> Additional Resources</a></li>
-  <li><a href="#install-tinytex" id="toc-install-tinytex" class="nav-link" data-scroll-target="#install-tinytex"><span class="header-section-number">3.9</span> Install TinyTex</a></li>
+  <li><a href="#advice-on-asking-for-help" id="toc-advice-on-asking-for-help" class="nav-link active" data-scroll-target="#advice-on-asking-for-help"><span class="header-section-number">2.0.1</span> Advice on asking for help</a></li>
+  <li><a href="#help-from-inside-r-studio" id="toc-help-from-inside-r-studio" class="nav-link" data-scroll-target="#help-from-inside-r-studio"><span class="header-section-number">2.0.2</span> Help from inside R Studio</a></li>
+  <li><a href="#in-person-help" id="toc-in-person-help" class="nav-link" data-scroll-target="#in-person-help"><span class="header-section-number">2.0.3</span> In Person help</a></li>
+  <li><a href="#other-online" id="toc-other-online" class="nav-link" data-scroll-target="#other-online"><span class="header-section-number">2.0.4</span> Other Online</a></li>
+  <li><a href="#using-ai-tools" id="toc-using-ai-tools" class="nav-link" data-scroll-target="#using-ai-tools"><span class="header-section-number">2.0.5</span> Using AI tools</a></li>
+  <li><a href="#written" id="toc-written" class="nav-link" data-scroll-target="#written"><span class="header-section-number">2.0.6</span> Written</a></li>
   </ul>
 </nav>
     </div>
@@ -244,7 +244,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reproducibility with Quarto</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Seeking Help</span></h1>
 </div>
 
 
@@ -261,101 +261,101 @@ window.Quarto = {
 </header>
 
 
-<p>In this lesson you will learn to write a document using R markdown, integrate live R code into a literate statistical program, compile R markdown documents using <code>knitr</code> and related tools, and organize a data analysis sandbox so that it is reproducible and accessible to others.</p>
-<section id="learning-objectives" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">3.1</span> Learning Objectives</h2>
-<p>After completing this lesson learners will be able to create a new R markdown document, identify the components of a R Markdown document, and explain how R markdown files facilitates sharing of reproducible research.</p>
-<section id="pre-requisites" class="level3" data-number="3.1.1">
-<h3 data-number="3.1.1" class="anchored" data-anchor-id="pre-requisites"><span class="header-section-number">3.1.1</span> Pre-requisites</h3>
+<blockquote class="blockquote">
+<p>help me help you</p>
+</blockquote>
+<p><em>Sometimes a second pair of eyeballs is all you need</em></p>
+<p><embed src="https://bcgov.github.io/ds-cop-intro-to-r/seeking-help-fr%20om-others-with-reprex.html" class="img-fluid">](img/debugging.jpg){fig-align=“center” width=“149”}</p>
+<p><em>Much of this information is also on the <a href="../faq.html">FAQ</a> page</em></p>
+<blockquote class="blockquote">
+<p>still accurate?</p>
+</blockquote>
+<section id="advice-on-asking-for-help" class="level3" data-number="2.0.1">
+<h3 data-number="2.0.1" class="anchored" data-anchor-id="advice-on-asking-for-help"><span class="header-section-number">2.0.1</span> Advice on asking for help</h3>
+<p>The key to receiving help from someone is for them to rapidly grasp your problem. You should make it as easy as possible to pinpoint where the issue might be.</p>
+<p>Try to use the correct words to describe your problem. For instance, a package is not the same thing as a library. Most people will understand what you meant, but it can make things confusing for people trying to help you. Be as precise as possible when describing your problem.</p>
+<p>:warning: Don’t let not knowing exactly how to describe your problem prevent you from asking. Screenshots help tremendously!</p>
+<p><strong>When asking someone for help try to</strong> 1. Explain what thing you are trying to do 2. Explain/show the code you wrote to try to do that thing 3. Explain/show your result, and if it’s not obvious explain why you feel it’s not the correct result. (E.g. you expected the answer to be 5, but instead it’s 10. )</p>
+<p>:warning: Don’t spend more than 20 minutes banging your head on the wall before you ask for help!</p>
+</section>
+<section id="help-from-inside-r-studio" class="level3" data-number="2.0.2">
+<h3 data-number="2.0.2" class="anchored" data-anchor-id="help-from-inside-r-studio"><span class="header-section-number">2.0.2</span> Help from inside R Studio</h3>
+<section id="use-the-built-in-rstudio-help-interface-to-search-for-more-information-on-r-functions" class="level4" data-number="2.0.2.1">
+<h4 data-number="2.0.2.1" class="anchored" data-anchor-id="use-the-built-in-rstudio-help-interface-to-search-for-more-information-on-r-functions"><span class="header-section-number">2.0.2.1</span> Use the built-in RStudio help interface to search for more information on R functions</h4>
+<p>One of the fastest ways to get help is to use the RStudio help interface. This panel by default can be found at the lower right hand panel of RStudio. As seen in the screenshot, by typing the word <code>mean</code>, RStudio tries to also give a number of suggestions that you might be interested in. The description is then shown in the display window.</p>
+</section>
+<section id="i-know-the-name-of-the-function-i-want-to-use-but-im-not-sure-how-to-use-it" class="level4" data-number="2.0.2.2">
+<h4 data-number="2.0.2.2" class="anchored" data-anchor-id="i-know-the-name-of-the-function-i-want-to-use-but-im-not-sure-how-to-use-it"><span class="header-section-number">2.0.2.2</span> I know the name of the function I want to use, but I’m not sure how to use it</h4>
+<p>If you need help with a specific function, let’s say <code>barplot()</code>, you can type:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>?barplot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you just need to remind yourself of the names of the arguments, you can use:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="i-want-to-use-a-function-that-does-x-there-must-be-a-function-for-it-but-i-dont-know-which-one" class="level4" data-number="2.0.2.3">
+<h4 data-number="2.0.2.3" class="anchored" data-anchor-id="i-want-to-use-a-function-that-does-x-there-must-be-a-function-for-it-but-i-dont-know-which-one"><span class="header-section-number">2.0.2.3</span> I want to use a function that does X, there must be a function for it but I don’t know which one…</h4>
+<p>If you are looking for a function to do a particular task, you can use the <code>help.search()</code> function, which is called by the double question mark <code>??</code>. However, this only looks through the installed packages for help pages with a match to your search request</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>??kruskal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you can’t find what you are looking for, you can use the <a href="http://www.rdocumentation.org">rdocumentation.org</a> website that searches through the help files across all packages available.</p>
+<p>Finally, a generic Google or internet search “R &lt;task&gt;” will often either send you to the appropriate package documentation or a helpful forum where someone else has already asked your question.</p>
+</section>
+<section id="i-get-an-error-message-that-i-dont-understand" class="level4" data-number="2.0.2.4">
+<h4 data-number="2.0.2.4" class="anchored" data-anchor-id="i-get-an-error-message-that-i-dont-understand"><span class="header-section-number">2.0.2.4</span> I get an error message that I don’t understand</h4>
+<p>Start by googling the error message. However, this doesn’t always work very well because often, package developers rely on the error catching provided by R. You end up with general error messages that might not be very helpful to diagnose a problem (e.g.&nbsp;“subscript out of bounds”). If the message is very generic, you might also include the name of the function or package you’re using in your query.</p>
+<p>If you check Stack Overflow, search using the <code>[r]</code> tag. Most questions have already been answered, but the challenge is to use the right words in the search to find the answers: <a href="http://stackoverflow.com/questions/tagged/r" class="uri">http://stackoverflow.com/questions/tagged/r</a></p>
+<p>:warning: Development of R moves pretty fast. When at all possible, use results from the past 1-2 years. Anything over 5 years old for packages such as <code>ggplot</code>, <code>dplyr</code>, and <code>forcats</code> are likely obsolete.</p>
+</section>
+</section>
+<section id="in-person-help" class="level3" data-number="2.0.3">
+<h3 data-number="2.0.3" class="anchored" data-anchor-id="in-person-help"><span class="header-section-number">2.0.3</span> In Person help</h3>
 <ul>
-<li>Have R and R Studio installed</li>
-<li>Have the following packages installed: <code>rmarkdown</code></li>
-</ul>
-</section>
-</section>
-<section id="document-structure" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="document-structure"><span class="header-section-number">3.2</span> Document structure</h2>
-<p>R Markdown is an example of literate programming where the explanation of the program (or analysis) logic is presented in a natural language (such as English), with supporting pieces of code embedded in the document itself. R Markdown combines normal text such as this sentence, code and the output from the code all in one Rmarkdown (<code>.Rmd</code>) file.</p>
-<p>The following page lays out the format of an RMarkdown document with several details included.</p>
-<p><em>Image credit on next page: Data Visualization by Kieran Healy. Available at http://socviz.co/</em></p>
-</section>
-<section id="components-of-a-r-markdown-document" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="components-of-a-r-markdown-document"><span class="header-section-number">3.3</span> Components of a R Markdown document</h2>
-<p>‘../static/img/rmarkdown_components.png’</p>
-</section>
-<section id="code-chunks" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="code-chunks"><span class="header-section-number">3.4</span> Code Chunks</h2>
+<li>Start by ask the person sitting next to you! Don’t hesitate to talk to your neighbor, compare your answers, and ask for help.</li>
+<li>Ask in the Math &amp; Statistics <a href="https://discord.gg/ck497bJty5">Discord server</a> - we have a dedicated channel just for this class but a lot of students in the server know how to use R.</li>
+<li>Attend <a href="https://www.csuchico.edu/datascience/community-coding.shtml">Community Coding</a>.
 <ul>
-<li><p>Code chunks start with three back ticks (to the left of the 1) and an r in braces. Chunks close (end) with another three back ticks. Note the background color of this section has changed to a different shade. This helps you identify you have closed your code chunk properly.</p></li>
-<li><p>You can insert code chunks by using the button in the top right of an RMD file (Insert –&gt; R), or by typing <code>CTRL+ALT+I</code>.</p></li>
-<li><p>Only code goes in code chunks. That’s why they’re called <strong>code</strong> chunks.</p>
-<ul>
-<li>No normal text.</li>
-<li>All explanatory text goes outside a code chunk.</li>
+<li>Drop in work session &amp; dedicated space to work on coding projects.</li>
+<li>Collaborate with your peers and learn from experts.</li>
+<li>Some hours are held over Zoom</li>
 </ul></li>
 </ul>
 </section>
-<section id="test-your-setup" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="test-your-setup"><span class="header-section-number">3.5</span> Test your setup</h2>
-<p>Let’s create your first markdown file!</p>
-<ol type="1">
-<li>In R Studio go to <em>File</em> –&gt; <em>New File</em> –&gt; <em>R Markdown</em></li>
-<li>Title this document <strong>My First R Markdown Document</strong>, then click OK.</li>
-<li>Click the small blue disk icon to save this file into your class folder.</li>
-<li>Save this file using the file name <strong>test_markdown_document</strong>.
+<section id="other-online" class="level3" data-number="2.0.4">
+<h3 data-number="2.0.4" class="anchored" data-anchor-id="other-online"><span class="header-section-number">2.0.4</span> Other Online</h3>
 <ul>
-<li>File names cannot have spaces or special characters.</li>
-<li>Do not specify the file type. It will be set automatically.</li>
-</ul></li>
-<li>Click the <strong>KNIT</strong> button (has the yarn ball next to it) to convert this file into HTML.</li>
-<li>Look at the HTML file that was created. You should be able to match the code with the resulting output.</li>
-</ol>
-<p>This is what we mean by reproducible. If you make a change in the code document, and re-knit (aka compile), your changes will be reflected in the generated document.</p>
-<p>If you are asked to install additional packages, go ahead and say yes. Then go back to <a href="02_setup_slides.html">lesson 02</a> and make sure you have all the necessary packages listed.</p>
-</section>
-<section id="make-a-change" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="make-a-change"><span class="header-section-number">3.6</span> Make a change</h2>
-<p>Play around with modifying the text and the R code.</p>
-<ol type="1">
-<li>Change the code from <code>summary(cars)</code> to <code>summary(iris)</code>.<br>
-</li>
-<li>Write a sentence below this code chunk. It could be “Hello world”.</li>
-<li>Add a code chunk and type the equation <code>2+2</code> in the code chunk.</li>
-<li>Re-knit this document and observe your changes.</li>
-</ol>
-<p>You are now ready to start the first assignment.</p>
-</section>
-<section id="start-assignment-1" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="start-assignment-1"><span class="header-section-number">3.7</span> Start Assignment 1</h2>
-<ol type="1">
-<li><strong>Right click</strong> and select <strong>save as</strong> (or save target as) to download <a href="../hw/hw1.Rmd">[HW 1.Rmd]</a> code file to your class folder.</li>
-<li>Navigate to your class folder and double click to open this file in R Studio
-<ul>
-<li>You might have to tell your computer what program to use.</li>
-<li>Do NOT open this file from your browser window.</li>
-</ul></li>
-<li>Double click on this file (from your class folder) to open it in R studio.</li>
-<li>This <code>.Rmd</code> file is a template for you to use to write your assignment. Write your answers directly into this document.</li>
-<li>After you answer each question, knit the file to ensure that your work is saved, and that your answers are being correctly displayed in the final document.</li>
-</ol>
-</section>
-<section id="additional-resources" class="level2" data-number="3.8">
-<h2 data-number="3.8" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">3.8</span> Additional Resources</h2>
-<ul>
-<li>While the introductory video no longer works, there are additional lessons on using R Markdown at the following site: http://rmarkdown.rstudio.com/lesson-1.html
-<ul>
-<li>Relevant portions in this tutorial are “How it works”, “Code Chunks”, and “Output Formats”</li>
-</ul></li>
-<li>Gallery of the vast range of output and product types that you can create using R Markdown including PDF reports, interactive dashboards, maps, webpages like this one and more: https://rmarkdown.rstudio.com/gallery.html</li>
+<li>In RStudio go to <code>Help</code> –&gt; <code>Cheatsheets</code> or to this URL https://posit.co/resources/cheatsheets/</li>
+<li><a href="http://stackoverflow.com/questions/tagged/r">Stack Overflow</a>: if your question hasn’t been answered before and is well crafted, chances are you will get an answer in less than 5 min. Remember to follow their guidelines on <a href="http://stackoverflow.com/help/how-to-ask">how to ask a good question</a>.</li>
+<li><a href="https://groups.google.com/forum/#!forum/chico-rug">Chico R Users Google Group</a>.</li>
+<li>The <a href="https://forum.posit.co/">Posit Community</a>: it is read by a lot of people and is welcoming to new users.</li>
+<li>If your question is about a specific package, see if there is a mailing list for it. Usually it’s included in the DESCRIPTION file of the package that can be accessed using `packageDescription(“name-of-package:. You may also want to try to email the author of the package directly, or open an issue on the code repository (e.g., GitHub).</li>
 </ul>
 </section>
-<section id="install-tinytex" class="level2" data-number="3.9">
-<h2 data-number="3.9" class="anchored" data-anchor-id="install-tinytex"><span class="header-section-number">3.9</span> Install TinyTex</h2>
-<p>To convert your work into a professional looking PDF, or to write math symbols in your homework, or you need a typesetting program called <span class="math inline">\(\LaTeX\)</span> (pronounced “lay-tek” or “lah-tex”). It’s a super neat program, but also nearly 4Gb. Too big for our needs. That’s where the <code>tinytex</code> package came from. we’re going to use it to install a lightweight version of <span class="math inline">\(\LaTeX\)</span>. This will let us write math equations in Markdown/Quarto, and create nice PDF’s of your work.</p>
-<p>In your console type the following and hit <strong>Enter</strong></p>
-<pre><code>tinytex::install_tinytex()</code></pre>
-<p>This may take a few minutes, but then you’re good to go!</p>
-<p>Test it out now by rendering … <thing> to PDF by clicking on the down arrow next to “Render” and choosing “PDF”. &gt; FIXME</thing></p>
+<section id="using-ai-tools" class="level3" data-number="2.0.5">
+<h3 data-number="2.0.5" class="anchored" data-anchor-id="using-ai-tools"><span class="header-section-number">2.0.5</span> Using AI tools</h3>
+<blockquote class="blockquote">
+<p>write guidance here</p>
+</blockquote>
+</section>
+<section id="written" class="level3" data-number="2.0.6">
+<h3 data-number="2.0.6" class="anchored" data-anchor-id="written"><span class="header-section-number">2.0.6</span> Written</h3>
+<p>If you’re a book kinda person, there is plenty of help available as well. Many have online versions or free PDF’s.</p>
+<ul>
+<li>R Markdown, the Definitive Guide: https://bookdown.org/yihui/rmarkdown/</li>
+<li>R for Data Science https://r4ds.had.co.nz/</li>
+<li>Cookbook for R http://www.cookbook-r.com/</li>
+<li>R Graphics Cookbook (I use this all the time) – Chapter 8 in the above link</li>
+<li>The Art of R Programming https://nostarch.com/artofr.htm</li>
+<li>R for… http://r4stats.com/
+<ul>
+<li>Excel Users https://www.rforexcelusers.com/</li>
+<li>SAS and SPSS Users http://r4stats.com/books/r4sas-spss/</li>
+<li>STATA Users http://r4stats.com/books/r4stata/</li>
+</ul></li>
+</ul>
 
 
 </section>
@@ -762,13 +762,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./help.html" class="pagination-link" aria-label="Seeking Help">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Seeking Help</span></span>
+      <a href="./setup_tools.html" class="pagination-link" aria-label="Your New Tools">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Your New Tools</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./programming_in_r.html" class="pagination-link" aria-label="Getting Started with R">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Started with R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./quarto.html" class="pagination-link" aria-label="Reproducibility with Quarto">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reproducibility with Quarto</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

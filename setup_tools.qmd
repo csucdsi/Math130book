@@ -67,7 +67,6 @@ If you are using a tablet, Chromebook or otherwise do not have a computer that y
 -   Then go to (#intro_rstudio) to learn how to navigate RStudio.
 
 The free account allows for 25 project hours/month, which may not be enough for this class. If you run into time limits or you are using this for another class you will have to upgrade to the **Cloud Student** plan which is \$5/month.
-:::
 
 Using the cloud is easier to initially setup, but having your own installation on your computer ensures that
 
@@ -332,17 +331,18 @@ to finish before entering the next command.
 
 - `tidyverse`  
 - `sjPlot`
+- `quarto`
 
 </td><td>
 
 - `openintro`  
+- `palmerpenguins`
 - `tinytex`
 
 </td></tr>
 </table>
 
 
-To effectively restart R, go to the file menu and click *Session* , then "Restart R", or "Restart R and clear output". :cinema: [Link to video walk through](https://youtu.be/49u5xAYfrgk)
 
 ## Final Tips
 
@@ -361,4 +361,6 @@ menu bar in the top,
 > *Session* --\> Restart R and Clear Output
 
 This is good to do when switching between projects/classes.
+
+To effectively restart R, go to the file menu and click *Session* , then "Restart R", or "Restart R and clear output". :cinema: [Link to video walk through](https://youtu.be/49u5xAYfrgk)
 

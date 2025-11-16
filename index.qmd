@@ -79,45 +79,39 @@ Because it's not reproducible.
 
 ## How this book is organized
 
-* explain callout boxes
+
 * videos
-* interactivity
 * sections (intro/intermediate)
 * how to use with assignments in an LMS
 
-## Callout boxes and icons
-::: callout-note
-### blue boxes
+### Callout blocks and icons
 
-means this is a note
+::: {.callout-note title="General Information"}
+Blue boxes contain notes and information for you to be aware of.
+:::
+
+::: {.callout-tip title="You Try It!"}
+Green boxes contain "you try it" examples for you to try on your computer. 
 :::
 
 
-::: callout-caution
-### yellow boxes
-
-means caution
-:::
-
-::: callout-tip
-### green box
-
-is a tip or an example
+::: {.callout-important title="Danger"}
+Red boxes contain warnings such as common errors or pitfalls. 
 :::
 
 
-::: callout-important
-### this is important
 
-important is red box
+::: {.callout-caution title="Caution"}
+not sure if using yellow boxes 
 :::
+
 
 
 -   🎦:associated video
 -   ✏️: You try it
 -   ❌: Don't do this thing
 
-**Code appearance**
+### Code appearance
 
 In these notes, code is displayed like this:
 
