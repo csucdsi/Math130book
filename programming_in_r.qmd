@@ -2,8 +2,10 @@
 
 This lesson is designed to explain the basics of how R works as a programming language. 
 
-::: {.callout-caution}
-### Learning Objectives
+
+
+::: {.callout-note title="Learning Objectives"}
+:::
 
 * Define the following terms as they relate to R: object, assign, call, function, arguments, options.
 * Assign values to objects in R.
@@ -17,30 +19,24 @@ This lesson is designed to explain the basics of how R works as a programming la
 * Summarize the contents of a data frame.
 * Extract vectors out of data frames using variable names.
 
-:::
-
 ---
 
-## Writing Scripts <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Intro+and+Writing+Scripts/1_7cyqxm6j" target="_blank">(Video)</a>
+::: {.callout-important title="FIXME"}
+## Start a new Quarto file
 
-In lesson 02 we saw that we could write R code in the console and get immediate results. There are two main ways of interacting with R: by using the console or by using script files (plain text files that contain your code). We will be working in R markdown files exclusively in this class, but it is important to be aware that there are also script files that have an extension of `.R`. These can contain code and comments only, not normal text sentences like this. 
-
-Because we want our code and workflow to be reproducible, and often your code may span several lines at a time, it is better to type the commands we want in a script, and save the script. This way, there is a complete record of what we did, and anyone (including our future selves!) can easily replicate the results on their computer. It's also easier to fix mistakes this way, without having to retype in the entire command. 
-
-
-##### Start a new Rmarkdown file
-
-* Go to File --> New File --> R Markdown to open a new R markdown window.
+* Go to File --> New File --> Quarto document to open a new Quarto window.
 * Give this file a name such as "Lesson 04 notes", and put your name as the author. 
 * Delete all the template language below line 11. 
+:::
 
-Now let's go back to that long expression from lesson 2 (corrected), but this time type it into a new code chunk. Recall we can make a new code chunk by pressing <kbd>`CTRL`</kbd>+<kbd>`ALT`</kbd>+<kbd>`I`</kbd>, or by clicking on _Insert_ then _R_. Also recall that we submit this code by pressing <kbd>`Ctrl`</kbd>+<kbd>`Enter`</kbd> or clicking the green play arrow in the top right corner of the code chunk.
+
+Let's go back to that long expression from lesson 2 (corrected), but this time type it into a new code chunk. Recall we can make a new code chunk by pressing <kbd>`CTRL`</kbd>+<kbd>`ALT`</kbd>+<kbd>`I`</kbd>, or by clicking on _Insert_ then _R_. Also recall that we submit this code by pressing <kbd>`Ctrl`</kbd>+<kbd>`Enter`</kbd> or clicking the green play arrow in the top right corner of the code chunk.
 
 ```
 2 + 5*(8^3)- 3*log(10)
 ```
 
-##### Make a change to the above expression and run the command again. 
+ **Make a change to the above expression and run the command again.** 
 
 
 For the rest of this lesson, retype each code chunk below into the notes file you just created. Be sure to annotate these notes as you would take notes in any other class. For you to retain what you are reading and learning, writing out what these pieces of code are doing (e.g. the assignment operator `<-`) in **your own words** is an effective learning technique.
@@ -373,7 +369,10 @@ For this part of the lesson we will use a data set called `diamonds` that comes 
 diamonds <- ggplot2::diamonds
 ```
 
-##### To see the raw data values, click on the square spreadsheet icon to the right of the data set name in the top right panel of RStudio (circled in green in the image below).
+::: {.callout-tip title="Look at your data often"}
+To see the raw data values, click on the square spreadsheet icon to the right of the data set name in the top right panel of RStudio (circled in green in the image below).
+:::
+
 
 ![_screenshot of dataset in the global environment_](../static/img/data.PNG)
 
