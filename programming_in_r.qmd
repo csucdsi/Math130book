@@ -366,7 +366,10 @@ For this part of the lesson we will use a data set called `diamonds` that comes 
 diamonds <- ggplot2::diamonds
 ```
 
-### To see the raw data values, click on the square spreadsheet icon to the right of the data set name in the top right panel of RStudio (circled in green in the image below).
+::: {.callout-tip title="Look at your data often"}
+To see the raw data values, click on the square spreadsheet icon to the right of the data set name in the top right panel of RStudio (circled in green in the image below).
+:::
+
 
 ![_screenshot of dataset in the global environment_](../static/img/data.PNG)
 
