@@ -21,13 +21,16 @@ This lesson is designed to explain the basics of how R works as a programming la
 
 ---
 
+::: {.callout-important title="FIXME"}
 ## Start a new Quarto file
 
 * Go to File --> New File --> Quarto document to open a new Quarto window.
 * Give this file a name such as "Lesson 04 notes", and put your name as the author. 
 * Delete all the template language below line 11. 
+:::
 
-Now let's go back to that long expression from lesson 2 (corrected), but this time type it into a new code chunk. Recall we can make a new code chunk by pressing <kbd>`CTRL`</kbd>+<kbd>`ALT`</kbd>+<kbd>`I`</kbd>, or by clicking on _Insert_ then _R_. Also recall that we submit this code by pressing <kbd>`Ctrl`</kbd>+<kbd>`Enter`</kbd> or clicking the green play arrow in the top right corner of the code chunk.
+
+Let's go back to that long expression from lesson 2 (corrected), but this time type it into a new code chunk. Recall we can make a new code chunk by pressing <kbd>`CTRL`</kbd>+<kbd>`ALT`</kbd>+<kbd>`I`</kbd>, or by clicking on _Insert_ then _R_. Also recall that we submit this code by pressing <kbd>`Ctrl`</kbd>+<kbd>`Enter`</kbd> or clicking the green play arrow in the top right corner of the code chunk.
 
 ```
 2 + 5*(8^3)- 3*log(10)
