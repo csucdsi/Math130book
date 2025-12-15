@@ -1,0 +1,119 @@
+---
+format: 
+  html:
+    toc-depth: 2
+---
+
+# Course Overview {.unnumbered}
+
+## Program Terminology
+
+-   The term **R** refers to both the programming language and the software that interprets the scripts written using it.
+- An **IDE** is an "Integrated Development Environment" and essentially is another program that lets you interact with R in a productive and efficient manner. 
+    - **[RStudio](https://posit.co/downloads/)** has been a very popular IDE since around 2011 that has continued to flourish and improve throughtout the years. 
+    - **[Positron](https://positron.posit.co/)** is a new IDE created by the developers of RStudio that is based off another popular IDE called VSCode - and aimed primarily at Data Scientists
+    
+![Manual car gear shift representing coding in R](img/r-manual.jpeg){fig-alt="Manual car gear shift representing coding in R" fig-align="left" width="250"} ![Automatic car gear shift representing RStudio environment](img/r-automatic.jpeg){fig-alt="Automatic car gear shift representing RStudio environment" fig-align="right" width="250"}
+[RStudio extends what R can do, and makes it easier to write R code and interact with R. <a href="https://unsplash.com/photos/D19rXKDUPYM">Left photo credit</a>; <a href="https://unsplash.com/photos/Wec3M4dY_LE">Right photo credit</a>.]{.aside}
+
+This book teaches you how to use R from within the **R Studio** IDE as we feel it is easier for new learners to start with.  You will have to install both onto your computer. Setup instructions are discussed later in @sec-install
+
+
+## Motivation
+
+### Why use R?
+
+-   Open source, cross-platform, and free
+-   Great for reproducibility
+-   Flexible and extensible. Doesn't do something you want? Create a custom function for yourself.
+-   Tons of learning resources
+-   Currently R is used in many upper division & graduate level Statistics and Research methods courses in domains such as Public Health, Economics, Finance, and Political Science.
+-   Does not involve lots of pointing and clicking (that's a good thing!)
+-   Works on data of all shapes and sizes
+-   Produces high-quality graphics
+-   Large and welcoming community
+
+### Why use R Studio?
+
+-   Customizable workspace that docks all windows together.
+-   Notebook formats that allow for easy sharing of code and output, and integration with other languages (Python, C++, SQL, Stan)
+-   Syntax highlighting, warning errors when missing a closing parentheses.
+-   Cross-platform interface. Also works on Windows/iOS/Linux.
+-   Tab completion for functions. Forget the syntax or a variable name? Popup helpers are available.
+-   Free training videos available from the developers directly.
+-   One button publishing of reproducible documents such as reports, dashboards, presentations (like this one!), websites.
+
+[See a gallery of other examples at <a href = "https://quarto.org/docs/gallery/"> https://quarto.org/docs/gallery/</a>]{.aside}
+
+## Programming can be scary!
+It's important to acknowledge that computer programming is a new skill, that may bring a roller coaster of emotions with it while you learn. 
+
+![Learning curve diagram by Allison Horst showing how much you think you know about R over time](img/r-learning-curve-horst.png){fig-alt="Line chart labeled 'How much I think I know about R' versus time, showing ups and downs with smiley faces at different stages." width="600"}
+[<a href = "https://allisonhorst.com/">Artwork by @allison_horst – used under CC BY 4.0.</a>]{.aside}
+
+Learning to program has lots of benefits
+
+-   Improves your logical skills and critical problem solving
+-   Increases your attention to detail
+-   Increases your self reliance and empowers you to control your own research.
+-   Your PI will love your awesome graphics and reports.
+-   Some people think what you do is magic.
+-   Thinking graduate school? [expect to learn this on your own](http://www.nature.com/nature/journal/v541/n7638/full/nj7638-563a.html)
+-   [A few](https://skillcrush.com/2015/01/28/laurence-bradford-10-reasons/) [other lists](https://careerfoundry.com/en/blog/web-development/7-benefits-of-learning-to-code/) [of reasons](https://skillcrush.com/2017/01/30/learn-to-code-benefits/)
+
+### Why no point and click?
+
+Because it's not reproducible.
+
+-   Which boxes did you click last time?
+-   New data? Gotta do it all over.
+-   Need to expand your model? Gotta do it all over.
+-   Made a mistake in the data coding? Gotta do it all over...
+
+
+
+## How this book is organized
+
+<!---
+* videos
+* sections (intro/intermediate)
+* how to use with assignments in an LMS
+--->
+
+### Callout blocks
+
+::: {.callout-note title="General Information"}
+Black boxes contain notes and information for you to be aware of (Blue in dark mode). 
+:::
+
+::: {.callout-tip title="You Try It!"}
+Green boxes contain "you try it" examples for you to try on your computer. 
+:::
+
+
+::: {.callout-important title="Danger"}
+Red boxes contain warnings such as common errors or pitfalls. 
+:::
+
+
+::: {.callout-caution title="Caution"}
+not sure if using yellow boxes 
+:::
+
+### Follow along videos
+Sections that have associated videos will be denoted with a 🎦. 
+### Code appearance
+
+In these notes, code is displayed like this:
+
+```{r}
+2+2
+```
+
+where the output or result of the code is displayed directly after. 
+
+## Getting and Submitting Assignments
+
+All assignment files can be found on @sec-assignments. Submission instructions vary by instructor so check your syllabus for details.  
+
+

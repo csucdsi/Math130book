@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; Getting data into R – Introduction to R</title>
+<title>Course Overview – Introduction to R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./plots2.html" rel="next">
-<link href="./dplyr.html" rel="prev">
+<link href="./setup_tools.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./import.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Getting data into R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./preface.html">Course Overview</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -153,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+  <a href="./preface.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Course Overview</span></a>
   </div>
 </li>
@@ -221,7 +221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./import.html" class="sidebar-item-text sidebar-link active">
+  <a href="./import.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Getting data into R</span></span></a>
   </div>
 </li>
@@ -271,26 +271,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
-  <ul>
-  <li><a href="#introduction-video" id="toc-introduction-video" class="nav-link active" data-scroll-target="#introduction-video"><span class="header-section-number">8.1</span> Introduction </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+Introduction/1_qwkzetht" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+09A+Introduction/1_qwkzetht">(Video)</a></li>
-  <li><a href="#file-types-video" id="toc-file-types-video" class="nav-link" data-scroll-target="#file-types-video"><span class="header-section-number">8.2</span> File types </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+File+Types/1_9p0tuqjq" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+09A+File+Types/1_9p0tuqjq">(Video)</a></li>
-  <li><a href="#general-importing-data-video" id="toc-general-importing-data-video" class="nav-link" data-scroll-target="#general-importing-data-video"><span class="header-section-number">8.3</span> General Importing data </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+General+Importing+Data/1_o1ggmj66" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+09A+General+Importing+Data/1_o1ggmj66">(Video)</a>
   <ul class="collapse">
-  <li><a href="#special-instructions-for-mac" id="toc-special-instructions-for-mac" class="nav-link" data-scroll-target="#special-instructions-for-mac"><span class="header-section-number">8.3.1</span> Special Instructions for Mac</a></li>
-  </ul></li>
-  <li><a href="#checking-the-import-was-successful" id="toc-checking-the-import-was-successful" class="nav-link" data-scroll-target="#checking-the-import-was-successful"><span class="header-section-number">8.4</span> Checking the import was successful</a></li>
-  <li><a href="#text-files" id="toc-text-files" class="nav-link" data-scroll-target="#text-files"><span class="header-section-number">8.5</span> Text files</a></li>
-  <li><a href="#csv-comma-separated-values" id="toc-csv-comma-separated-values" class="nav-link" data-scroll-target="#csv-comma-separated-values"><span class="header-section-number">8.6</span> CSV: Comma Separated Values</a></li>
-  <li><a href="#excel-files" id="toc-excel-files" class="nav-link" data-scroll-target="#excel-files"><span class="header-section-number">8.7</span> Excel files</a></li>
+  <li><a href="#program-terminology" id="toc-program-terminology" class="nav-link active" data-scroll-target="#program-terminology">Program Terminology</a></li>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#programming-can-be-scary" id="toc-programming-can-be-scary" class="nav-link" data-scroll-target="#programming-can-be-scary">Programming can be scary!</a></li>
+  <li><a href="#how-this-book-is-organized" id="toc-how-this-book-is-organized" class="nav-link" data-scroll-target="#how-this-book-is-organized">How this book is organized</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./import.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Getting data into R</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Getting data into R</span></h1>
+<h1 class="title">Course Overview</h1>
 </div>
 
 
@@ -307,266 +301,150 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction-video" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="introduction-video"><span class="header-section-number">8.1</span> Introduction <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+Introduction/1_qwkzetht" target="_blank">(Video)</a></h2>
-<p>In this lesson we will introduce ways to get data from external files into R, how R works with data, and how to use functions to explore your data frame.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="program-terminology" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="program-terminology">Program Terminology</h2>
+<ul>
+<li>The term <strong>R</strong> refers to both the programming language and the software that interprets the scripts written using it.</li>
+<li>An <strong>IDE</strong> is an “Integrated Development Environment” and essentially is another program that lets you interact with R in a productive and efficient manner.
+<ul>
+<li><strong><a href="https://posit.co/downloads/">RStudio</a></strong> has been a very popular IDE since around 2011 that has continued to flourish and improve throughtout the years.</li>
+<li><strong><a href="https://positron.posit.co/">Positron</a></strong> is a new IDE created by the developers of RStudio that is based off another popular IDE called VSCode - and aimed primarily at Data Scientists</li>
+</ul></li>
+</ul>
+<div class="page-columns page-full"><p><img src="img/r-manual.jpeg" class="img-fluid quarto-figure quarto-figure-left" alt="Manual car gear shift representing coding in R" width="250"> <img src="img/r-automatic.jpeg" class="img-fluid quarto-figure quarto-figure-right" alt="Automatic car gear shift representing RStudio environment" width="250"> </p><div class="no-row-height column-margin column-container"><span class="margin-aside">RStudio extends what R can do, and makes it easier to write R code and interact with R. <a href="https://unsplash.com/photos/D19rXKDUPYM">Left photo credit</a>; <a href="https://unsplash.com/photos/Wec3M4dY_LE">Right photo credit</a>.</span></div></div>
+<p>This book teaches you how to use R from within the <strong>R Studio</strong> IDE as we feel it is easier for new learners to start with. You will have to install both onto your computer. Setup instructions are discussed later in <a href="setup_tools.html#sec-install" class="quarto-xref"><span>1.2 Installing R and R Studio</span></a></p>
+</section>
+<section id="motivation" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<section id="why-use-r" class="level3">
+<h3 class="anchored" data-anchor-id="why-use-r">Why use R?</h3>
+<ul>
+<li>Open source, cross-platform, and free</li>
+<li>Great for reproducibility</li>
+<li>Flexible and extensible. Doesn’t do something you want? Create a custom function for yourself.</li>
+<li>Tons of learning resources</li>
+<li>Currently R is used in many upper division &amp; graduate level Statistics and Research methods courses in domains such as Public Health, Economics, Finance, and Political Science.</li>
+<li>Does not involve lots of pointing and clicking (that’s a good thing!)</li>
+<li>Works on data of all shapes and sizes</li>
+<li>Produces high-quality graphics</li>
+<li>Large and welcoming community</li>
+</ul>
+</section>
+<section id="why-use-r-studio" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="why-use-r-studio">Why use R Studio?</h3>
+<ul>
+<li>Customizable workspace that docks all windows together.</li>
+<li>Notebook formats that allow for easy sharing of code and output, and integration with other languages (Python, C++, SQL, Stan)</li>
+<li>Syntax highlighting, warning errors when missing a closing parentheses.</li>
+<li>Cross-platform interface. Also works on Windows/iOS/Linux.</li>
+<li>Tab completion for functions. Forget the syntax or a variable name? Popup helpers are available.</li>
+<li>Free training videos available from the developers directly.</li>
+<li>One button publishing of reproducible documents such as reports, dashboards, presentations (like this one!), websites.</li>
+</ul>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">See a gallery of other examples at <a href="https://quarto.org/docs/gallery/"> https://quarto.org/docs/gallery/</a></span></div></div>
+</section>
+</section>
+<section id="programming-can-be-scary" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="programming-can-be-scary">Programming can be scary!</h2>
+<p>It’s important to acknowledge that computer programming is a new skill, that may bring a roller coaster of emotions with it while you learn.</p>
+<div class="page-columns page-full"><p><img src="img/r-learning-curve-horst.png" class="img-fluid" alt="Line chart labeled 'How much I think I know about R' versus time, showing ups and downs with smiley faces at different stages." width="600"> </p><div class="no-row-height column-margin column-container"><span class="margin-aside"><a href="https://allisonhorst.com/">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span> – used under CC BY 4.0.</a></span></div></div>
+<p>Learning to program has lots of benefits</p>
+<ul>
+<li>Improves your logical skills and critical problem solving</li>
+<li>Increases your attention to detail</li>
+<li>Increases your self reliance and empowers you to control your own research.</li>
+<li>Your PI will love your awesome graphics and reports.</li>
+<li>Some people think what you do is magic.</li>
+<li>Thinking graduate school? <a href="http://www.nature.com/nature/journal/v541/n7638/full/nj7638-563a.html">expect to learn this on your own</a></li>
+<li><a href="https://skillcrush.com/2015/01/28/laurence-bradford-10-reasons/">A few</a> <a href="https://careerfoundry.com/en/blog/web-development/7-benefits-of-learning-to-code/">other lists</a> <a href="https://skillcrush.com/2017/01/30/learn-to-code-benefits/">of reasons</a></li>
+</ul>
+<section id="why-no-point-and-click" class="level3">
+<h3 class="anchored" data-anchor-id="why-no-point-and-click">Why no point and click?</h3>
+<p>Because it’s not reproducible.</p>
+<ul>
+<li>Which boxes did you click last time?</li>
+<li>New data? Gotta do it all over.</li>
+<li>Need to expand your model? Gotta do it all over.</li>
+<li>Made a mistake in the data coding? Gotta do it all over…</li>
+</ul>
+</section>
+</section>
+<section id="how-this-book-is-organized" class="level2">
+<h2 class="anchored" data-anchor-id="how-this-book-is-organized">How this book is organized</h2>
+<!---
+* videos
+* sections (intro/intermediate)
+* how to use with assignments in an LMS
+--->
+<section id="callout-blocks" class="level3">
+<h3 class="anchored" data-anchor-id="callout-blocks">Callout blocks</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="General Information">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Learning Objectives
+General Information
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>After completing this lesson learners will be able to</p>
-<ul>
-<li>Import data that is stored in an external Excel, CSV or tab-delimited text file into R.</li>
-<li>Compare and contrast the three file types discussed in this lesson.</li>
-<li>Use functions to examine data objects to ensure data was imported correctly.</li>
-</ul>
+<p>Black boxes contain notes and information for you to be aware of (Blue in dark mode).</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled" title="You Try It!">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Prior to this lesson learners should
+You Try It!
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li>Download the <a href="09_import_notes.Rmd">[09_import_notes.Rmd]</a> R markdown file and save into your <code>Math130/notes</code> folder.</li>
-<li>Install the following packages: <code>gridExtra</code>, <code>RColorBrewer</code> and <code>sjPlot</code>.</li>
-<li>Right click each link and save the following data sets into your <code>Math130/data</code> folder.</li>
-</ul>
-<p>:x: <strong>DO NOT RENAME ANYTHING</strong> If you download multiple copies of the data, do not keep the versions that have a (1) or some number in the name. Do not leave these files in your downloads folder.</p>
-<ul>
-<li><a href="https://www.norcalbiostat.com/data/NCbirths.csv">NCBirths</a></li>
-<li><a href="https://www.norcalbiostat.com/data/email.txt">email</a></li>
-<li><a href="https://www.norcalbiostat.com/data/fatal-police-shootings-data.xlsx">Police Shootings</a></li>
-</ul>
+<p>Green boxes contain “you try it” examples for you to try on your computer.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Danger">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Danger
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Red boxes contain warnings such as common errors or pitfalls.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled" title="Caution">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>not sure if using yellow boxes</p>
 </div>
 </div>
 </section>
-<section id="file-types-video" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="file-types-video"><span class="header-section-number">8.2</span> File types <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+File+Types/1_9p0tuqjq" target="_blank">(Video)</a></h2>
-<p>In this lesson we are only going to explore reading files that exist on your computer into R from three most commonly used data sources: A tab-delimited text file, A CSV file and an Excel file. The three different files we will be using have different file types, or extensions.</p>
-<ul>
-<li><code>email.txt</code> is a <code>.txt</code> or “text” file.</li>
-<li><code>NCBirths.csv</code> is a <code>.csv</code> or “comma separated values” file.</li>
-<li><code>fatal-police-shootings-data.xlsx</code> is a <code>.xlsx</code> or Excel file.</li>
-</ul>
-<p>Each of these file types differ in the type of <em>delimiter</em> used. The <em>delimiter</em> is a character or symbol that separates columns of data from each other when stored in an external file. Recall back to the earlier lesson on data frames and matrices. Each column in the matrix represented data on a specific variable. Something had to tell R how to distinguish which values went with which variable.</p>
-<p>There are two main types of delimiters we will consider in this class; comma and tab. That does not mean that data can’t be stored in other ways, these are just the two most common.</p>
-<p>Each of these different data types requires a different function or mechanism to import the data into R. If you use the wrong mechanism, the data may not be read in correctly if at all.</p>
-</section>
-<section id="general-importing-data-video" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="general-importing-data-video"><span class="header-section-number">8.3</span> General Importing data <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+General+Importing+Data/1_o1ggmj66" target="_blank">(Video)</a></h2>
-<p>To import data into R, we have to tell the program explicitly where to find the files you just downloaded. To do that we need to find the file’s <em>path</em>. The <em>path</em> is a programmatic way to direct your computer to the location of a file. It’s like the file’s address, or, where it lives on your computer. <!-- ([link]("../static/img/path.png") to picture to explain absolute vs relative path if there is time) --></p>
-<p>In all the examples below, the path shown (<code>data/</code>) is the path on <strong>MY</strong> computer. You will have to update this path to <strong>YOUR</strong> path on <strong>YOUR</strong> machine that points to your MATH130 folder.</p>
-<p>You can find the path of a file by navigating to the desired file in your finder or browser window. Right click and copy the file to the clipboard, then right click and pasting into a R markdown file. This will show a path that looks something like this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>file<span class="sc">:</span><span class="er">///</span>C<span class="sc">:</span><span class="er">/</span>Math <span class="dv">130</span><span class="sc">/</span>Data<span class="sc">/</span>Challenger.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You will need to remove the <code>file:///</code> part at the beginning before using this path. You will have three chances in this lab to practice this.</p>
-<section id="special-instructions-for-mac" class="level3" data-number="8.3.1">
-<h3 data-number="8.3.1" class="anchored" data-anchor-id="special-instructions-for-mac"><span class="header-section-number">8.3.1</span> Special Instructions for Mac</h3>
-<ul>
-<li>Navigate to the file or folder you wish to copy the path for Right-click (or Control+Click, or a Two-Finger click on trackpads) on the file or folder in the Mac Finder</li>
-<li>While in the right-click menu, hold down the OPTION key to reveal the “Copy (item name) as Pathname” option, which replaces the standard Copy option. Once selected, the file or folders path is now in the clipboard, ready to be pasted anywhere</li>
-</ul>
-<p><em>Source: https://stackoverflow.com/questions/52695546/how-to-copy-path-of-a-file-in-mac-os</em></p>
-</section>
-</section>
-<section id="checking-the-import-was-successful" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="checking-the-import-was-successful"><span class="header-section-number">8.4</span> Checking the import was successful</h2>
-<p>The first thing you should always do after importing a data file is look at the raw data and ask yourself the following things:</p>
-<ol type="1">
-<li>Were the variable names read in correctly?</li>
-<li>Is there the expected number of rows and columns?</li>
-<li>Are the data types for each variable as expected?</li>
-</ol>
-<p>There are many ways this can be done. Here are three:</p>
-<ol type="1">
-<li><code>str()</code> to show you the structure of the data frame.</li>
-<li><code>head()</code> to show you the top 6 rows</li>
-<li><code>data[1:x, 1:x]</code> - when the data frame is too large for the above two to work well, we can use matrix notation to view only the first X columns, and first X rows.</li>
-</ol>
-<p>Next we will read in three different data sets, each with unique file types, and look at each one to make sure it was read in correctly.</p>
-</section>
-<section id="text-files" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="text-files"><span class="header-section-number">8.5</span> Text files</h2>
-<p>Text files are very simple files that have a <code>.txt</code> file extension. Common delimiters include a space, a comma (,) or a tab. Uncommon delimiters could include a % or even a semi-colon. By opening the file directly on your computer (not in R) you can see what delimiter is being used.</p>
-<p>We will use the <code>read.table()</code> function that is in base R to read in any type of delimited file. A tab-delimited text file can be read in using <code>"\t"</code> as the deliminator character. In this class you <strong>ALWAYS</strong> want to include <code>header=TRUE</code> to signify that the data in the first row contains our column names.</p>
+<section id="follow-along-videos" class="level3">
+<h3 class="anchored" data-anchor-id="follow-along-videos">Follow along videos</h3>
+<p>Sections that have associated videos will be denoted with a 🎦. ### Code appearance</p>
+<p>In these notes, code is displayed like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/email.txt"</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Here we call the <code>str()</code> or <em>structure</em> function to examine the data that was imported.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(email)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>'data.frame':   3921 obs. of  21 variables:
- $ spam        : int  0 0 0 0 0 0 0 0 0 0 ...
- $ to_multiple : int  0 0 0 0 0 0 1 1 0 0 ...
- $ from        : int  1 1 1 1 1 1 1 1 1 1 ...
- $ cc          : int  0 0 0 0 0 0 0 1 0 0 ...
- $ sent_email  : int  0 0 0 0 0 0 1 1 0 0 ...
- $ time        : chr  "2011-12-31 22:16:41" "2011-12-31 23:03:59" "2012-01-01 08:00:32" "2012-01-01 01:09:49" ...
- $ image       : int  0 0 0 0 0 0 0 1 0 0 ...
- $ attach      : int  0 0 0 0 0 0 0 1 0 0 ...
- $ dollar      : int  0 0 4 0 0 0 0 0 0 0 ...
- $ winner      : chr  "no" "no" "no" "no" ...
- $ inherit     : int  0 0 1 0 0 0 0 0 0 0 ...
- $ viagra      : int  0 0 0 0 0 0 0 0 0 0 ...
- $ password    : int  0 0 0 0 2 2 0 0 0 0 ...
- $ num_char    : num  11.37 10.5 7.77 13.26 1.23 ...
- $ line_breaks : int  202 202 192 255 29 25 193 237 69 68 ...
- $ format      : int  1 1 1 1 0 0 1 1 0 1 ...
- $ re_subj     : int  0 0 0 0 0 0 0 0 0 0 ...
- $ exclaim_subj: int  0 0 0 0 0 0 0 0 0 0 ...
- $ urgent_subj : int  0 0 0 0 0 0 0 0 0 0 ...
- $ exclaim_mess: int  0 1 6 48 1 1 1 18 1 0 ...
- $ number      : chr  "big" "small" "small" "small" ...</code></pre>
+<pre><code>[1] 4</code></pre>
 </div>
 </div>
-<ul>
-<li>The <code>email</code> data set has 3921 observations, and 21 variables.</li>
-<li>The variable names were read in correctly, as evidenced by the words in the far right corner after the <code>$</code>.</li>
-<li>Most variables are treated as numeric integers, except a few are factors. Including <code>time</code>. If we wanted to examine a time trend, we would need to convert the class into a <code>datetime</code></li>
-</ul>
-<blockquote class="blockquote">
-<p>What happens if you forget to include the arguments for <code>header</code> or <code>sep</code>? Try that now and discuss what happened. <!-- > What happens if you forget to include the arguments for `header` or `sep`? Try that now and discuss with your neighbor what happened.  --></p>
-</blockquote>
-<p><strong>Forgetting both arguments</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/email.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in read.table("data/email.txt"): duplicate 'row.names' are not allowed</code></pre>
-</div>
-</div>
-<p><strong>Forgetting the header</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/email.txt"</span>, <span class="at">sep=</span><span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(email)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    V1          V2   V3 V4         V5                  V6    V7     V8     V9
-1 spam to_multiple from cc sent_email                time image attach dollar
-2    0           0    1  0          0 2011-12-31 22:16:41     0      0      0
-3    0           0    1  0          0 2011-12-31 23:03:59     0      0      0
-4    0           0    1  0          0 2012-01-01 08:00:32     0      0      4
-5    0           0    1  0          0 2012-01-01 01:09:49     0      0      0
-6    0           0    1  0          0 2012-01-01 02:00:01     0      0      0
-     V10     V11    V12      V13      V14         V15    V16     V17
-1 winner inherit viagra password num_char line_breaks format re_subj
-2     no       0      0        0    11.37         202      1       0
-3     no       0      0        0   10.504         202      1       0
-4     no       1      0        0    7.773         192      1       0
-5     no       0      0        0   13.256         255      1       0
-6     no       0      0        2    1.231          29      0       0
-           V18         V19          V20    V21
-1 exclaim_subj urgent_subj exclaim_mess number
-2            0           0            0    big
-3            0           0            1  small
-4            0           0            6  small
-5            0           0           48  small
-6            0           0            1   none</code></pre>
-</div>
-</div>
-<p><strong>Forgetting the separator</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/email.txt"</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in read.table("data/email.txt", header = TRUE): duplicate 'row.names' are not allowed</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(email)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    V1          V2   V3 V4         V5                  V6    V7     V8     V9
-1 spam to_multiple from cc sent_email                time image attach dollar
-2    0           0    1  0          0 2011-12-31 22:16:41     0      0      0
-3    0           0    1  0          0 2011-12-31 23:03:59     0      0      0
-4    0           0    1  0          0 2012-01-01 08:00:32     0      0      4
-5    0           0    1  0          0 2012-01-01 01:09:49     0      0      0
-6    0           0    1  0          0 2012-01-01 02:00:01     0      0      0
-     V10     V11    V12      V13      V14         V15    V16     V17
-1 winner inherit viagra password num_char line_breaks format re_subj
-2     no       0      0        0    11.37         202      1       0
-3     no       0      0        0   10.504         202      1       0
-4     no       1      0        0    7.773         192      1       0
-5     no       0      0        0   13.256         255      1       0
-6     no       0      0        2    1.231          29      0       0
-           V18         V19          V20    V21
-1 exclaim_subj urgent_subj exclaim_mess number
-2            0           0            0    big
-3            0           0            1  small
-4            0           0            6  small
-5            0           0           48  small
-6            0           0            1   none</code></pre>
-</div>
-</div>
-</section>
-<section id="csv-comma-separated-values" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="csv-comma-separated-values"><span class="header-section-number">8.6</span> CSV: Comma Separated Values</h2>
-<p>CSV is a fancy way of saying a text file with comma-separated values (i.e.&nbsp;CSV). This file type can also open in Excel–the icons even look similar. We could use <code>read.table()</code> to import this data file, but <code>read.csv()</code> is optimized to read in CSV files.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>NCbirths <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/NCbirths.csv"</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(NCbirths)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  fage mage      mature weeks    premie visits marital gained weight
-1   NA   13 younger mom    39 full term     10 married     38   7.63
-2   NA   14 younger mom    42 full term     15 married     20   7.88
-3   19   15 younger mom    37 full term     11 married     38   6.63
-4   21   15 younger mom    41 full term      6 married     34   8.00
-5   NA   15 younger mom    39 full term      9 married     27   6.38
-6   NA   15 younger mom    38 full term     19 married     22   5.38
-  lowbirthweight gender     habit  whitemom
-1        not low   male nonsmoker not white
-2        not low   male nonsmoker not white
-3        not low female nonsmoker     white
-4        not low   male nonsmoker     white
-5        not low female nonsmoker not white
-6            low   male nonsmoker not white</code></pre>
-</div>
-</div>
-<ul>
-<li>The <code>NCbirths</code> data set has 1000 rows and 13 columns.</li>
-<li>Variable names are read in OK.</li>
-<li>Most the data is begin read in as factors and integers.</li>
-<li>There are some <code>NA</code> values for the variable <code>fage</code> (fathers age).</li>
-</ul>
-</section>
-<section id="excel-files" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="excel-files"><span class="header-section-number">8.7</span> Excel files</h2>
-<p>The best method to read in Excel files is from the <a href="http://readxl.tidyverse.org/"><code>readxl</code> package</a> by <a href="http://hadley.nz/">Hadley Wickham</a>. This package need to be installed first, and then can be simply loaded using the <code>library()</code> function each time you start an <code>R</code> session where you will be reading in this type of data.</p>
-<p>The <code>read_excel()</code> function is what we are going to use. Note the use of the underscore <code>_</code> instead of a period <code>.</code> between <code>read</code> and <code>excel</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>police  <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/fatal-police-shootings-data.xlsx"</span>, <span class="at">sheet=</span><span class="dv">1</span>, <span class="at">col_names=</span><span class="cn">TRUE</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>police[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 5
-      id name                date                manner_of_death  armed     
-   &lt;dbl&gt; &lt;chr&gt;               &lt;dttm&gt;              &lt;chr&gt;            &lt;chr&gt;     
- 1     3 Tim Elliot          2015-01-02 00:00:00 shot             gun       
- 2     4 Lewis Lee Lembke    2015-01-02 00:00:00 shot             gun       
- 3     5 John Paul Quintero  2015-01-03 00:00:00 shot and Tasered unarmed   
- 4     8 Matthew Hoffman     2015-01-04 00:00:00 shot             toy weapon
- 5     9 Michael Rodriguez   2015-01-04 00:00:00 shot             nail gun  
- 6    11 Kenneth Joe Brown   2015-01-04 00:00:00 shot             gun       
- 7    13 Kenneth Arnold Buck 2015-01-05 00:00:00 shot             gun       
- 8    15 Brock Nichols       2015-01-06 00:00:00 shot             gun       
- 9    16 Autumn Steele       2015-01-06 00:00:00 shot             unarmed   
-10    17 Leslie Sapp III     2015-01-06 00:00:00 shot             toy weapon</code></pre>
-</div>
-</div>
-<ul>
-<li>The variable <code>date</code> is a <code>dttm</code> or <em>date-time</em> variable. This means <code>R</code> recognizes it directly as a date, not some string of numbers.</li>
-<li>Categorical variables such as <code>manner_of_death</code> and <code>city</code> are read in as <code>character</code> instead of factor. We may or may not want to change that later.</li>
-<li>Numeric variables such as <code>age</code> are of type <code>dbl</code> (double). This is similar to <code>integer</code> or <code>numeric</code>, so we are fine.</li>
-</ul>
+<p>where the output or result of the code is displayed directly after.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1133,13 +1011,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./dplyr.html" class="pagination-link" aria-label="Data management and aggregation">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></span>
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./plots2.html" class="pagination-link" aria-label="Graphing Enhancements">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./setup_tools.html" class="pagination-link" aria-label="Your New Tools">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Your New Tools</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

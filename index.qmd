@@ -1,123 +1,27 @@
-# Preface & Course Overview {.unnumbered}
+# Preface {.unnumbered}
 
 This notebook was created to host learning materials for Math 130: Introduction to R at California State University, Chico.
 
 Some of this material presented is a derivation from work that is Copyright © Software Carpentry (http://software-carpentry.org/) which is under a [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/) which allows for adaptations and reuse of the work.
 
-Math 130 is designed as a short-course "primer" to be taken before, or concurrently with, an upper division or graduate level Statistics course such as Math 315 or Math 615.
+Math 130 is designed as a short-course "primer" to be taken before, or concurrently with, an upper division or graduate level Statistics course such as Math 315 or Math 615. This can also be used a prepratory learning for classified admission into the [Masters in Data Science and Analytics Program](https://www.csuchico.edu/math/degrees/msdsa.shtml)
 
 The goal of Math 130 is to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. We recognize there are many topics and many approaches to teach an introduction to the R programming language. We have picked specific topics and methods that we believe learners will need to succeed in subsequent classes.
 
-## R + IDE = Success
-
--   The term **R** refers to both the programming language and the software that interprets the scripts written using it.
-
-- An **IDE** is an "Integrated Development Environment" and essentially is another program that lets you interact with R in a productive and efficient manner. 
-
-- **[RStudio](https://posit.co/downloads/)** has been a very popular IDE since around 2011 that has continued to flourish and improve throughtout the years. 
-
-- **[Positron](https://positron.posit.co/)** is a new IDE created by the developers of RStudio that is based off another popular IDE called VSCode - and aimed primarily at Data Scientists
-
--   This book teaches you how to use R from within the **R Studio** IDE as we feel it is easier for new learners to start with.  You will have to install both onto your computer. Setup instructions are discussed later in section `FIXME`
-
--   ![Manual car gear shift representing coding in R](img/r-manual.jpeg){fig-alt="Manual car gear shift representing coding in R" fig-align="left" width="250"} ![Automatic car gear shift representing RStudio environment](img/r-automatic.jpeg){fig-alt="Automatic car gear shift representing RStudio environment" fig-align="right" width="250"}
-
--   <a href="https://unsplash.com/photos/D19rXKDUPYM">Left photo credit</a>; <a href="https://unsplash.com/photos/Wec3M4dY_LE">Right photo credit</a>. Entire figure credit: Data Carpentry R for Social Scientists.
-
-### Why use R?
-
--   Open source, cross-platform, and free
--   Great for reproducibility
--   Flexible and extensible. Doesn't do something you want? Create a custom function for yourself.
--   Tons of learning resources
--   Currently R is used in all of Chico's upper division Statistics & Data Science courses, as well as in some Science, Public Health, Economics, Finance, and some graduate courses.
--   Does not involve lots of pointing and clicking (that's a good thing!)
--   Works on data of all shapes and sizes
--   Produces high-quality graphics
--   Large and welcoming community
-
-### Why use R Studio?
-
--   Customizable workspace that docks all windows together.
--   Notebook formats that allow for easy sharing of code and output, and integration with other languages (Python, C++, SQL, Stan)
--   Syntax highlighting, warning errors when missing a closing parentheses.
--   Cross-platform interface. Also works on Windows/iOS/Linux.
--   Tab completion for functions. Forget the syntax or a variable name? Popup helpers are available.
--   Free training videos available from the developers directly.
--   One button publishing of reproducible documents such as reports, interactive visualizations, presentations (like this one!), websites.
-
-[Examples of things you can do in RStudio](https://rmarkdown.rstudio.com/gallery.html)
-
-## Programming can be scary!
-
-![Learning curve diagram by Allison Horst showing how much you think you know about R over time](img/r-learning-curve-horst.png){fig-alt="Line chart labeled 'How much I think I know about R' versus time, showing ups and downs with smiley faces at different stages." width="600"}
-
-*Artwork by @allison_horst – used under CC BY 4.0. Source: [allisonhorst.com](https://allisonhorst.com/)*
-
-> check links
-
-Learning to program has other benefits
-
--   Improves your logical skills and critical problem solving
--   Increases your attention to detail
--   Increases your self reliance and empowers you to control your own research.
--   Your PI will love your awesome graphics and reports.
--   Some people think what you do is magic.
--   Thinking graduate school? [expect to learn this on your own](http://www.nature.com/nature/journal/v541/n7638/full/nj7638-563a.html)
--   [A few](https://skillcrush.com/2015/01/28/laurence-bradford-10-reasons/) [other lists](https://careerfoundry.com/en/blog/web-development/7-benefits-of-learning-to-code/) [of reasons](https://skillcrush.com/2017/01/30/learn-to-code-benefits/)
-
-### Why no point and click?
-
-Because it's not reproducible.
-
--   Which boxes did you click last time?
--   New data? Gotta do it all over.
--   Need to expand your model? Gotta do it all over.
--   Made a mistake in the data coding? Gotta do it all over...
 
 
+::: {.callout-note title="Course Learning Objectives"}
+By the end of this class you will be able to: 
 
-## How this book is organized
+* Import spreadsheet-like data into R from an external file
+* Perform basic data wrangling like handling missing values, creating new variables, labeling categorical variables, and filtering rows. 
+* Create statistical data visualizations such as barcharts, histograms, boxplots, scatterplots, and extend to multivariate data by modifying colors, sizes, and panels. 
+* Create statistical data summaries such as tables, proportions, and summary statistics. 
+* Perform all of this work in a reproducible manner using professional tools. 
 
-
-* videos
-* sections (intro/intermediate)
-* how to use with assignments in an LMS
-
-### Callout blocks and icons
-
-::: {.callout-note title="General Information"}
-Blue boxes contain notes and information for you to be aware of.
 :::
 
-::: {.callout-tip title="You Try It!"}
-Green boxes contain "you try it" examples for you to try on your computer. 
-:::
+## References & Acknowledgements
 
+The material in the first section "Getting Started" is based heavily off of, and sometimes used directly, from the [Data Carpentry: R for Social Scientists](https://datacarpentry.github.io/r-socialsci/index.html) which is CC-BY 4.0.
 
-::: {.callout-important title="Danger"}
-Red boxes contain warnings such as common errors or pitfalls. 
-:::
-
-
-
-::: {.callout-caution title="Caution"}
-not sure if using yellow boxes 
-:::
-
-
-
--   🎦:associated video
--   ✏️: You try it
--   ❌: Don't do this thing
-
-### Code appearance
-
-In these notes, code is displayed like this:
-
-```{r}
-2+2
-```
-
-where the output or result of the code is displayed with two pound signs
-(`##`)

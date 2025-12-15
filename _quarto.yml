@@ -3,34 +3,47 @@ project:
 
 book:
   title: "Introduction to R"  
-  author: "Donatello, Lytal, Roualdes, Guo"
-  date: "Fall 2025"
+  author: "Robin Donatello, Nicholas Lytal"
+  date: "Spring 2026"
   search: true
   #downloads: [pdf, epub]
   
   chapters:
     - index.qmd
-    - setup_tools.qmd
-    - help.qmd
-    - quarto.qmd
-    - programming_in_r.qmd
-    - dm.qmd  
-    - factors.qmd
-    - plots.qmd
-    - dplyr.qmd
-    - import.qmd
-    - plots2.qmd
-    - project.qmd
-    - assignments.qmd
+    - preface.qmd
+    - part: "Getting Started"
+      chapters: 
+        - setup_tools.qmd
+        - quarto.qmd
+        - programming_in_r.qmd
+    - part: "Working with Data"
+      chapters: 
+        - dm.qmd  
+        - factors.qmd
+        - plots.qmd
+        - dplyr.qmd
+        - import.qmd
+        - plots2.qmd
+    - part: "Appendix"
+      chapters: 
+        - help.qmd
+        - assignments.qmd
+        - project.qmd
       
 
 #bibliography: references.bib
 
 format:
   html:
-    theme: lumen
-  pdf:
-    documentclass: scrreprt
+    theme: 
+      light: flatly
+      dark: darkly
+    highlight-style: arrow
+    respect-user-color-scheme: true
+    code-block-border-left: true
+    code-line-numbers: false
+    code-block-bg: true
+
 
 execute: 
   freeze: auto

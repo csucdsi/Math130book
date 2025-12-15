@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to R - 4&nbsp; Getting Started with R</title>
+<title>3&nbsp; Getting Started with R – Introduction to R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -71,10 +71,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b2bea1b993f23d24829151e1fafd31f2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-495add37648e2abd34f1cfaf1465a323.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -112,13 +114,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./programming_in_r.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Started with R</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup_tools.html">Getting Started</a></li><li class="breadcrumb-item"><a href="./programming_in_r.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with R</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -131,6 +133,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to R</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -143,81 +148,120 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface &amp; Course Overview</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Getting Started</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setup_tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Your New Tools</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./help.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Seeking Help</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reproducibility with Quarto</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reproducibility with Quarto</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./programming_in_r.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Started with R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with R</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Working with Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Working with Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./factors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Working with Factors</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Working with Factors</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Creating Graphics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Graphics</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Getting data into R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Getting data into R</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendix</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Putting it all together</span></a>
+  <a href="./help.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Seeking Help</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./assignments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignments</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Putting it all together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -228,28 +272,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#start-a-new-quarto-file" id="toc-start-a-new-quarto-file" class="nav-link active" data-scroll-target="#start-a-new-quarto-file"><span class="header-section-number">4.1</span> Start a new Quarto file</a></li>
-  <li><a href="#creating-objects-in-r-video" id="toc-creating-objects-in-r-video" class="nav-link" data-scroll-target="#creating-objects-in-r-video"><span class="header-section-number">4.2</span> Creating objects in R </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Creating+Objects+in+R/1_dxcx1qiy" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Creating+Objects+in+R/1_dxcx1qiy">(Video)</a></li>
-  <li><a href="#functions-and-their-arguments-video" id="toc-functions-and-their-arguments-video" class="nav-link" data-scroll-target="#functions-and-their-arguments-video"><span class="header-section-number">4.3</span> Functions and their arguments </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Functions+and+their+Arguments/1_7q6v5abj" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Functions+and+their+Arguments/1_7q6v5abj">(Video)</a></li>
-  <li><a href="#data-types-video" id="toc-data-types-video" class="nav-link" data-scroll-target="#data-types-video"><span class="header-section-number">4.4</span> Data Types </a><a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Types/1_e2j7qadw" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Types/1_e2j7qadw">(Video)</a>
+  <li><a href="#creating-objects-in-r-video" id="toc-creating-objects-in-r-video" class="nav-link active" data-scroll-target="#creating-objects-in-r-video"><span class="header-section-number">3.2</span> Creating objects in R </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Creating+Objects+in+R/1_dxcx1qiy" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Creating+Objects+in+R/1_dxcx1qiy">(Video)</a></li>
+  <li><a href="#functions-and-their-arguments-video" id="toc-functions-and-their-arguments-video" class="nav-link" data-scroll-target="#functions-and-their-arguments-video"><span class="header-section-number">3.3</span> Functions and their arguments </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Functions+and+their+Arguments/1_7q6v5abj" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Functions+and+their+Arguments/1_7q6v5abj">(Video)</a></li>
+  <li><a href="#data-types-video" id="toc-data-types-video" class="nav-link" data-scroll-target="#data-types-video"><span class="header-section-number">3.4</span> Data Types </a><a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Types/1_e2j7qadw" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Types/1_e2j7qadw">(Video)</a>
   <ul class="collapse">
-  <li><a href="#numbers" id="toc-numbers" class="nav-link" data-scroll-target="#numbers"><span class="header-section-number">4.4.1</span> Numbers</a></li>
-  <li><a href="#letters" id="toc-letters" class="nav-link" data-scroll-target="#letters"><span class="header-section-number">4.4.2</span> Letters</a></li>
-  <li><a href="#boolean" id="toc-boolean" class="nav-link" data-scroll-target="#boolean"><span class="header-section-number">4.4.3</span> Boolean</a></li>
+  <li><a href="#numbers" id="toc-numbers" class="nav-link" data-scroll-target="#numbers"><span class="header-section-number">3.4.1</span> Numbers</a></li>
+  <li><a href="#letters" id="toc-letters" class="nav-link" data-scroll-target="#letters"><span class="header-section-number">3.4.2</span> Letters</a></li>
+  <li><a href="#boolean" id="toc-boolean" class="nav-link" data-scroll-target="#boolean"><span class="header-section-number">3.4.3</span> Boolean</a></li>
   </ul></li>
-  <li><a href="#data-structures-video" id="toc-data-structures-video" class="nav-link" data-scroll-target="#data-structures-video"><span class="header-section-number">4.5</span> Data Structures </a><a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Structures/1_yxg14z9f" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Structures/1_yxg14z9f">(Video)</a>
+  <li><a href="#data-structures-video" id="toc-data-structures-video" class="nav-link" data-scroll-target="#data-structures-video"><span class="header-section-number">3.5</span> Data Structures </a><a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Structures/1_yxg14z9f" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Structures/1_yxg14z9f">(Video)</a>
   <ul class="collapse">
-  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors"><span class="header-section-number">4.5.1</span> Vectors</a></li>
-  <li><a href="#doing-math-on-vectors" id="toc-doing-math-on-vectors" class="nav-link" data-scroll-target="#doing-math-on-vectors"><span class="header-section-number">4.5.2</span> Doing math on vectors</a></li>
-  <li><a href="#subsetting-vectors" id="toc-subsetting-vectors" class="nav-link" data-scroll-target="#subsetting-vectors"><span class="header-section-number">4.5.3</span> Subsetting vectors</a></li>
-  <li><a href="#conditional-subsetting" id="toc-conditional-subsetting" class="nav-link" data-scroll-target="#conditional-subsetting"><span class="header-section-number">4.5.4</span> Conditional subsetting</a></li>
-  <li><a href="#order-matters." id="toc-order-matters." class="nav-link" data-scroll-target="#order-matters."><span class="header-section-number">4.5.5</span> Order matters.</a></li>
+  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors"><span class="header-section-number">3.5.1</span> Vectors</a></li>
+  <li><a href="#doing-math-on-vectors" id="toc-doing-math-on-vectors" class="nav-link" data-scroll-target="#doing-math-on-vectors"><span class="header-section-number">3.5.2</span> Doing math on vectors</a></li>
+  <li><a href="#subsetting-vectors" id="toc-subsetting-vectors" class="nav-link" data-scroll-target="#subsetting-vectors"><span class="header-section-number">3.5.3</span> Subsetting vectors</a></li>
+  <li><a href="#conditional-subsetting" id="toc-conditional-subsetting" class="nav-link" data-scroll-target="#conditional-subsetting"><span class="header-section-number">3.5.4</span> Conditional subsetting</a></li>
+  <li><a href="#order-matters." id="toc-order-matters." class="nav-link" data-scroll-target="#order-matters."><span class="header-section-number">3.5.5</span> Order matters.</a></li>
   </ul></li>
-  <li><a href="#data-frames-video" id="toc-data-frames-video" class="nav-link" data-scroll-target="#data-frames-video"><span class="header-section-number">4.6</span> Data Frames </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Data+Frames/1_8v7zwwro" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Data+Frames/1_8v7zwwro">(Video)</a>
+  <li><a href="#data-frames-video" id="toc-data-frames-video" class="nav-link" data-scroll-target="#data-frames-video"><span class="header-section-number">3.6</span> Data Frames </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Data+Frames/1_8v7zwwro" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Data+Frames/1_8v7zwwro">(Video)</a>
   <ul class="collapse">
-  <li><a href="#to-see-the-raw-data-values-click-on-the-square-spreadsheet-icon-to-the-right-of-the-data-set-name-in-the-top-right-panel-of-rstudio-circled-in-green-in-the-image-below." id="toc-to-see-the-raw-data-values-click-on-the-square-spreadsheet-icon-to-the-right-of-the-data-set-name-in-the-top-right-panel-of-rstudio-circled-in-green-in-the-image-below." class="nav-link" data-scroll-target="#to-see-the-raw-data-values-click-on-the-square-spreadsheet-icon-to-the-right-of-the-data-set-name-in-the-top-right-panel-of-rstudio-circled-in-green-in-the-image-below."><span class="header-section-number">4.6.1</span> To see the raw data values, click on the square spreadsheet icon to the right of the data set name in the top right panel of RStudio (circled in green in the image below).</a></li>
-  <li><a href="#inspecting-data.frame-objects" id="toc-inspecting-data.frame-objects" class="nav-link" data-scroll-target="#inspecting-data.frame-objects"><span class="header-section-number">4.6.2</span> Inspecting <code>data.frame</code> objects</a></li>
-  <li><a href="#identifying-variables" id="toc-identifying-variables" class="nav-link" data-scroll-target="#identifying-variables"><span class="header-section-number">4.6.3</span> Identifying variables</a></li>
+  <li><a href="#inspecting-data.frame-objects" id="toc-inspecting-data.frame-objects" class="nav-link" data-scroll-target="#inspecting-data.frame-objects"><span class="header-section-number">3.6.1</span> Inspecting <code>data.frame</code> objects</a></li>
+  <li><a href="#identifying-variables" id="toc-identifying-variables" class="nav-link" data-scroll-target="#identifying-variables"><span class="header-section-number">3.6.2</span> Identifying variables</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -257,9 +299,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup_tools.html">Getting Started</a></li><li class="breadcrumb-item"><a href="./programming_in_r.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with R</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Started with R</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with R</span></h1>
 </div>
 
 
@@ -304,21 +346,31 @@ Learning Objectives
 <li>Extract vectors out of data frames using variable names.</li>
 </ul>
 <hr>
-<section id="start-a-new-quarto-file" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="start-a-new-quarto-file"><span class="header-section-number">4.1</span> Start a new Quarto file</h2>
+<div class="callout callout-style-default callout-important callout-titled" title="FIXME">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+FIXME
+</div>
+</div>
+<section id="start-a-new-quarto-file" class="level2 callout-body-container callout-body" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="start-a-new-quarto-file"><span class="header-section-number">3.1</span> Start a new Quarto file</h2>
 <ul>
 <li>Go to File –&gt; New File –&gt; Quarto document to open a new Quarto window.</li>
 <li>Give this file a name such as “Lesson 04 notes”, and put your name as the author.</li>
 <li>Delete all the template language below line 11.</li>
 </ul>
-<p>Now let’s go back to that long expression from lesson 2 (corrected), but this time type it into a new code chunk. Recall we can make a new code chunk by pressing <kbd><code>CTRL</code></kbd>+<kbd><code>ALT</code></kbd>+<kbd><code>I</code></kbd>, or by clicking on <em>Insert</em> then <em>R</em>. Also recall that we submit this code by pressing <kbd><code>Ctrl</code></kbd>+<kbd><code>Enter</code></kbd> or clicking the green play arrow in the top right corner of the code chunk.</p>
+</section>
+</div>
+<p>Let’s go back to that long expression from lesson 2 (corrected), but this time type it into a new code chunk. Recall we can make a new code chunk by pressing <kbd><code>CTRL</code></kbd>+<kbd><code>ALT</code></kbd>+<kbd><code>I</code></kbd>, or by clicking on <em>Insert</em> then <em>R</em>. Also recall that we submit this code by pressing <kbd><code>Ctrl</code></kbd>+<kbd><code>Enter</code></kbd> or clicking the green play arrow in the top right corner of the code chunk.</p>
 <pre><code>2 + 5*(8^3)- 3*log(10)</code></pre>
 <p><strong>Make a change to the above expression and run the command again.</strong></p>
 <p>For the rest of this lesson, retype each code chunk below into the notes file you just created. Be sure to annotate these notes as you would take notes in any other class. For you to retain what you are reading and learning, writing out what these pieces of code are doing (e.g.&nbsp;the assignment operator <code>&lt;-</code>) in <strong>your own words</strong> is an effective learning technique.</p>
 <hr>
-</section>
-<section id="creating-objects-in-r-video" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="creating-objects-in-r-video"><span class="header-section-number">4.2</span> Creating objects in R <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Creating+Objects+in+R/1_dxcx1qiy" target="_blank">(Video)</a></h2>
+<section id="creating-objects-in-r-video" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="creating-objects-in-r-video"><span class="header-section-number">3.2</span> Creating objects in R <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Creating+Objects+in+R/1_dxcx1qiy" target="_blank">(Video)</a></h2>
 <p>To do useful and interesting things, we need to assign <em>values</em> to <em>objects</em>. To create an object, we need to give it a name followed by the assignment operator <code>&lt;-</code>, and the value we want to give it:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>weight_kg <span class="ot">&lt;-</span> <span class="dv">55</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -372,8 +424,8 @@ Learning Objectives
 <p><em><strong>Comments.</strong></em> <em>The comment character in R is <code>#</code>, anything to the right of a <code>#</code> in a script will be ignored by R. It is useful to leave notes, and explanations in your scripts as demonstrated earlier.</em></p>
 <hr>
 </section>
-<section id="functions-and-their-arguments-video" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="functions-and-their-arguments-video"><span class="header-section-number">4.3</span> Functions and their arguments <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Functions+and+their+Arguments/1_7q6v5abj" target="_blank">(Video)</a></h2>
+<section id="functions-and-their-arguments-video" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="functions-and-their-arguments-video"><span class="header-section-number">3.3</span> Functions and their arguments <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Functions+and+their+Arguments/1_7q6v5abj" target="_blank">(Video)</a></h2>
 <p>Functions are “canned scripts” that automate more complicated sets of commands including operations assignments, etc. Many functions are predefined, or can be made available by importing R <em>packages</em> (lesson 02).</p>
 <p>A function usually takes one or more inputs called <em>arguments</em>, and often (but not always) return a <em>value</em>.</p>
 <p>A typical example would be the function <code>sqrt()</code>. The input is the number <code>4</code>, and the return value (the output) is the square root of 4, namely 2. Executing a function (‘running it’) is called <em>calling</em> the function.</p>
@@ -423,11 +475,11 @@ Learning Objectives
 <p>This is a simple function with only one argument. Functions are the backbone of how R does it’s thing. You will get lots of practice with functions, and quickly encounter functions that require many arguments.</p>
 <hr>
 </section>
-<section id="data-types-video" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="data-types-video"><span class="header-section-number">4.4</span> Data Types <a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Types/1_e2j7qadw" target="_blank">(Video)</a></h2>
+<section id="data-types-video" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="data-types-video"><span class="header-section-number">3.4</span> Data Types <a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Types/1_e2j7qadw" target="_blank">(Video)</a></h2>
 <p>R objects come in different data types.</p>
-<section id="numbers" class="level3" data-number="4.4.1">
-<h3 data-number="4.4.1" class="anchored" data-anchor-id="numbers"><span class="header-section-number">4.4.1</span> Numbers</h3>
+<section id="numbers" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="numbers"><span class="header-section-number">3.4.1</span> Numbers</h3>
 <p>When a number is stored in an object it is now called a <strong>numerical</strong> variable. We can do math on numeric variables.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>im_a_number <span class="ot">&lt;-</span> <span class="dv">50</span></span>
@@ -437,8 +489,8 @@ Learning Objectives
 </div>
 </div>
 </section>
-<section id="letters" class="level3" data-number="4.4.2">
-<h3 data-number="4.4.2" class="anchored" data-anchor-id="letters"><span class="header-section-number">4.4.2</span> Letters</h3>
+<section id="letters" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="letters"><span class="header-section-number">3.4.2</span> Letters</h3>
 <p>Letters, words, and entire sentences can also be stored in objects. These are then called <strong>character</strong> or <strong>string</strong> variables. We can’t do math on character variables, and if we try to R gives us an error message.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>(im_a_character <span class="ot">&lt;-</span> <span class="st">"dog"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -452,8 +504,8 @@ Learning Objectives
 </div>
 <p>In statistics classes, character variables are often treated as <strong>categorical</strong> variables, which can also be called <strong>factor</strong> variables. Factor variables in R are special types of categorical variables. We will learn how to work with factor variables in week 2.</p>
 </section>
-<section id="boolean" class="level3" data-number="4.4.3">
-<h3 data-number="4.4.3" class="anchored" data-anchor-id="boolean"><span class="header-section-number">4.4.3</span> Boolean</h3>
+<section id="boolean" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="boolean"><span class="header-section-number">3.4.3</span> Boolean</h3>
 <p>When the value of an object can only be <code>TRUE</code> or <code>FALSE</code> it is called a <strong>Boolean</strong> variable. These are created by writing a <strong>logical statement</strong> where the answer is either TRUE or FALSE. Silly examples include “Is 3 greater than 4?” and “Is the square root of 4 equal to 2?”</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">&gt;</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -468,11 +520,11 @@ Learning Objectives
 <p>We will see how to use these logical statements to do things such as subsetting data and creating new variables.</p>
 </section>
 </section>
-<section id="data-structures-video" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="data-structures-video"><span class="header-section-number">4.5</span> Data Structures <a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Structures/1_yxg14z9f" target="_blank">(Video)</a></h2>
+<section id="data-structures-video" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="data-structures-video"><span class="header-section-number">3.5</span> Data Structures <a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Structures/1_yxg14z9f" target="_blank">(Video)</a></h2>
 <p>Data structures is how we refer to a collection of pieces of data, like a series of numbers, or a list of words.</p>
-<section id="vectors" class="level3" data-number="4.5.1">
-<h3 data-number="4.5.1" class="anchored" data-anchor-id="vectors"><span class="header-section-number">4.5.1</span> Vectors</h3>
+<section id="vectors" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="vectors"><span class="header-section-number">3.5.1</span> Vectors</h3>
 <p>A vector is the most common and basic data structure in R, and is pretty much the workhorse of R.</p>
 <p>We can assign a series of values to a vector using the <code>c()</code> function. For example we can create a vector of animal weights and assign it to a new object <code>weight_g</code>:</p>
 <div class="cell">
@@ -514,8 +566,8 @@ Learning Objectives
 <p>This is VERY important to keep in mind when you import data into R from another program like Excel. If you have any letters (like the word “missing”, or “NA”) in a column, all data from that column will be treated as character strings. And you can’t do math (such as take a mean) on words.</p>
 <p>Vectors are one of the many <strong>data structures</strong> that R uses. Other important ones are lists (<code>list</code>), matrices (<code>matrix</code>), data frames (<code>data.frame</code>), factors (<code>factor</code>) and arrays (<code>array</code>). We will only talk about <code>vectors</code>,<code>data.frame</code>s and <code>factors</code> in this class (not all in this lesson).</p>
 </section>
-<section id="doing-math-on-vectors" class="level3" data-number="4.5.2">
-<h3 data-number="4.5.2" class="anchored" data-anchor-id="doing-math-on-vectors"><span class="header-section-number">4.5.2</span> Doing math on vectors</h3>
+<section id="doing-math-on-vectors" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="doing-math-on-vectors"><span class="header-section-number">3.5.2</span> Doing math on vectors</h3>
 <p>You can perform math operations on the elements of a vector such as</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>weight_KG <span class="ot">&lt;-</span> weight_g<span class="sc">/</span><span class="dv">1000</span></span>
@@ -560,8 +612,8 @@ Learning Objectives
 </div>
 </div>
 </section>
-<section id="subsetting-vectors" class="level3" data-number="4.5.3">
-<h3 data-number="4.5.3" class="anchored" data-anchor-id="subsetting-vectors"><span class="header-section-number">4.5.3</span> Subsetting vectors</h3>
+<section id="subsetting-vectors" class="level3" data-number="3.5.3">
+<h3 data-number="3.5.3" class="anchored" data-anchor-id="subsetting-vectors"><span class="header-section-number">3.5.3</span> Subsetting vectors</h3>
 <p>If we want to extract one or several values from a vector, we must provide one or several indices in square brackets. For instance:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>animals <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"mouse"</span>, <span class="st">"rat"</span>, <span class="st">"dog"</span>, <span class="st">"cat"</span>)</span>
@@ -582,8 +634,8 @@ Learning Objectives
 </div>
 </div>
 </section>
-<section id="conditional-subsetting" class="level3" data-number="4.5.4">
-<h3 data-number="4.5.4" class="anchored" data-anchor-id="conditional-subsetting"><span class="header-section-number">4.5.4</span> Conditional subsetting</h3>
+<section id="conditional-subsetting" class="level3" data-number="3.5.4">
+<h3 data-number="3.5.4" class="anchored" data-anchor-id="conditional-subsetting"><span class="header-section-number">3.5.4</span> Conditional subsetting</h3>
 <p>Another common way of subsetting is by using a logical vector. <code>TRUE</code> will select the element with the same index, while <code>FALSE</code> will not. Typically, these logical vectors are not typed by hand, but are the output of other functions or logical tests such as:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>weight_g <span class="sc">&gt;</span> <span class="dv">50</span>  <span class="co"># returns TRUE or FALSE depending on which elements that meet the condition</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -631,8 +683,8 @@ Learning Objectives
 </div>
 </div>
 </section>
-<section id="order-matters." class="level3" data-number="4.5.5">
-<h3 data-number="4.5.5" class="anchored" data-anchor-id="order-matters."><span class="header-section-number">4.5.5</span> Order matters.</h3>
+<section id="order-matters." class="level3" data-number="3.5.5">
+<h3 data-number="3.5.5" class="anchored" data-anchor-id="order-matters."><span class="header-section-number">3.5.5</span> Order matters.</h3>
 <p>When considering string or character vectors or data elements, R treats everything in alphabetical order. Thus</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="st">"four"</span> <span class="sc">&gt;</span> <span class="st">"five"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -643,8 +695,8 @@ Learning Objectives
 <p>This will come back to bug you when dealing with categorical data types called <code>factor</code>s in a later lesson. Don’t worry, we’ll show you how to be the boss of your factors and not let R tell you that “one” is greater than “four”.</p>
 </section>
 </section>
-<section id="data-frames-video" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="data-frames-video"><span class="header-section-number">4.6</span> Data Frames <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Data+Frames/1_8v7zwwro" target="_blank">(Video)</a></h2>
+<section id="data-frames-video" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="data-frames-video"><span class="header-section-number">3.6</span> Data Frames <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Data+Frames/1_8v7zwwro" target="_blank">(Video)</a></h2>
 <p>Data frames are like spreadsheet data, rectangular with rows and columns. Ideally each row represents data on a single observation and each column contains data on a single variable, or characteristic, of the observation. This is called <code>tidy data</code>. This is an important concept that you are encouraged to read more about if you will be doing your own data collection and research. <a href="https://www.jstatsoft.org/article/view/v059i10">This article is a good place to start</a>.</p>
 <p>A data frame is the representation of data in the format of a table where the columns are vectors that all have the same length. Because columns are vectors, each column must contain a single type of data (e.g., characters, integers, factors). For example, here is a figure depicting a data frame comprising a numeric, a character, and a logical vector.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -657,8 +709,19 @@ Learning Objectives
 <div class="cell">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>diamonds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="to-see-the-raw-data-values-click-on-the-square-spreadsheet-icon-to-the-right-of-the-data-set-name-in-the-top-right-panel-of-rstudio-circled-in-green-in-the-image-below." class="level3" data-number="4.6.1">
-<h3 data-number="4.6.1" class="anchored" data-anchor-id="to-see-the-raw-data-values-click-on-the-square-spreadsheet-icon-to-the-right-of-the-data-set-name-in-the-top-right-panel-of-rstudio-circled-in-green-in-the-image-below."><span class="header-section-number">4.6.1</span> To see the raw data values, click on the square spreadsheet icon to the right of the data set name in the top right panel of RStudio (circled in green in the image below).</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="Look at your data often">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Look at your data often
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To see the raw data values, click on the square spreadsheet icon to the right of the data set name in the top right panel of RStudio (circled in green in the image below).</p>
+</div>
+</div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../static/img/data.PNG" class="img-fluid figure-img"></p>
@@ -684,9 +747,8 @@ Learning Objectives
 </div>
 </div>
 <p>The <code>diamonds</code> data set contains numeric variables such as <code>carat</code>, <code>depth</code>, and <code>price</code>, and ordered factor variables including the <code>cut</code>, <code>color</code>, and <code>clarity</code> of those diamonds.</p>
-</section>
-<section id="inspecting-data.frame-objects" class="level3" data-number="4.6.2">
-<h3 data-number="4.6.2" class="anchored" data-anchor-id="inspecting-data.frame-objects"><span class="header-section-number">4.6.2</span> Inspecting <code>data.frame</code> objects</h3>
+<section id="inspecting-data.frame-objects" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="inspecting-data.frame-objects"><span class="header-section-number">3.6.1</span> Inspecting <code>data.frame</code> objects</h3>
 <p>Here is a non-exhaustive list of functions to get a sense of the content/structure of the data. Let’s try them out!</p>
 <ul>
 <li>Size:
@@ -713,8 +775,8 @@ Learning Objectives
 </ul>
 <p>Note: most of these functions are “generic”, they can be used on other types of objects besides a data.frame</p>
 </section>
-<section id="identifying-variables" class="level3" data-number="4.6.3">
-<h3 data-number="4.6.3" class="anchored" data-anchor-id="identifying-variables"><span class="header-section-number">4.6.3</span> Identifying variables</h3>
+<section id="identifying-variables" class="level3" data-number="3.6.2">
+<h3 data-number="3.6.2" class="anchored" data-anchor-id="identifying-variables"><span class="header-section-number">3.6.2</span> Identifying variables</h3>
 <p>Data frames can be subset by specifying indices (as shown previously), but also by calling their column names directly:</p>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>diamonds[, <span class="st">"depth"</span>]</span>
 <span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>diamonds[, <span class="dv">5</span>] </span>
@@ -761,6 +823,150 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -776,18 +982,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -819,7 +1014,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -827,7 +1042,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -924,7 +1139,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1153,12 +1367,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./quarto.html" class="pagination-link" aria-label="Reproducibility with Quarto">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reproducibility with Quarto</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reproducibility with Quarto</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./dm.html" class="pagination-link" aria-label="Working with Data">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Working with Data</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Graphing Enhancements – Introduction to R</title>
+<title>9&nbsp; Graphing Enhancements – Introduction to R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,9 +21,8 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -34,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -65,18 +64,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./project.html" rel="next">
+<link href="./help.html" rel="next">
 <link href="./import.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a26c67caf6de3d1b0db4c204379513fa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-b2bea1b993f23d24829151e1fafd31f2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-495add37648e2abd34f1cfaf1465a323.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./plots2.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./plots2.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -133,6 +133,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to R</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -145,81 +148,120 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface &amp; Course Overview</span></a>
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Getting Started</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./setup_tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Your New Tools</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./help.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Seeking Help</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Reproducibility with Quarto</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reproducibility with Quarto</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./programming_in_r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Getting Started with R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with R</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Working with Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Working with Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./factors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Working with Factors</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Working with Factors</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Creating Graphics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Graphics</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Getting data into R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Getting data into R</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendix</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Putting it all together</span></a>
+  <a href="./help.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Seeking Help</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./assignments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignments</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Putting it all together</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -231,40 +273,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#introduction-video" id="toc-introduction-video" class="nav-link active" data-scroll-target="#introduction-video">Introduction </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Introduction/1_qmt3ls9l" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Introduction/1_qmt3ls9l">(Video)</a></li>
-  <li><a href="#themes-video" id="toc-themes-video" class="nav-link" data-scroll-target="#themes-video"><span class="header-section-number">10.1</span> Themes </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Themes/1_kwh2ucf7" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Themes/1_kwh2ucf7">(Video)</a></li>
-  <li><a href="#legends-video" id="toc-legends-video" class="nav-link" data-scroll-target="#legends-video"><span class="header-section-number">10.2</span> Legends </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Legends/1_schkl6as" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Legends/1_schkl6as">(Video)</a>
+  <li><a href="#themes-video" id="toc-themes-video" class="nav-link" data-scroll-target="#themes-video"><span class="header-section-number">9.1</span> Themes </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Themes/1_kwh2ucf7" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Themes/1_kwh2ucf7">(Video)</a></li>
+  <li><a href="#legends-video" id="toc-legends-video" class="nav-link" data-scroll-target="#legends-video"><span class="header-section-number">9.2</span> Legends </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Legends/1_schkl6as" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Legends/1_schkl6as">(Video)</a>
   <ul class="collapse">
-  <li><a href="#titles" id="toc-titles" class="nav-link" data-scroll-target="#titles"><span class="header-section-number">10.2.1</span> Titles</a></li>
-  <li><a href="#removing-the-legend" id="toc-removing-the-legend" class="nav-link" data-scroll-target="#removing-the-legend"><span class="header-section-number">10.2.2</span> Removing the legend</a></li>
+  <li><a href="#titles" id="toc-titles" class="nav-link" data-scroll-target="#titles"><span class="header-section-number">9.2.1</span> Titles</a></li>
+  <li><a href="#removing-the-legend" id="toc-removing-the-legend" class="nav-link" data-scroll-target="#removing-the-legend"><span class="header-section-number">9.2.2</span> Removing the legend</a></li>
   </ul></li>
-  <li><a href="#titles-video" id="toc-titles-video" class="nav-link" data-scroll-target="#titles-video"><span class="header-section-number">10.3</span> Titles </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Titles/1_xvnu92g7" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Titles/1_xvnu92g7">(Video)</a></li>
-  <li><a href="#removing-na-categories-video" id="toc-removing-na-categories-video" class="nav-link" data-scroll-target="#removing-na-categories-video"><span class="header-section-number">10.4</span> Removing NA categories </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Removing+NA+Categories/1_75ripf3f" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Removing+NA+Categories/1_75ripf3f">(Video)</a></li>
-  <li><a href="#changing-colors-video" id="toc-changing-colors-video" class="nav-link" data-scroll-target="#changing-colors-video"><span class="header-section-number">10.5</span> Changing colors </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Changing+Colors/1_kb31ew49" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Changing+Colors/1_kb31ew49">(Video)</a>
+  <li><a href="#titles-video" id="toc-titles-video" class="nav-link" data-scroll-target="#titles-video"><span class="header-section-number">9.3</span> Titles </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Titles/1_xvnu92g7" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Titles/1_xvnu92g7">(Video)</a></li>
+  <li><a href="#removing-na-categories-video" id="toc-removing-na-categories-video" class="nav-link" data-scroll-target="#removing-na-categories-video"><span class="header-section-number">9.4</span> Removing NA categories </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Removing+NA+Categories/1_75ripf3f" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Removing+NA+Categories/1_75ripf3f">(Video)</a></li>
+  <li><a href="#changing-colors-video" id="toc-changing-colors-video" class="nav-link" data-scroll-target="#changing-colors-video"><span class="header-section-number">9.5</span> Changing colors </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Changing+Colors/1_kb31ew49" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Changing+Colors/1_kb31ew49">(Video)</a>
   <ul class="collapse">
-  <li><a href="#manual" id="toc-manual" class="nav-link" data-scroll-target="#manual"><span class="header-section-number">10.5.1</span> Manual</a></li>
-  <li><a href="#using-a-color-palette-recommended" id="toc-using-a-color-palette-recommended" class="nav-link" data-scroll-target="#using-a-color-palette-recommended"><span class="header-section-number">10.5.2</span> Using a color palette (recommended)</a></li>
+  <li><a href="#manual" id="toc-manual" class="nav-link" data-scroll-target="#manual"><span class="header-section-number">9.5.1</span> Manual</a></li>
+  <li><a href="#using-a-color-palette-recommended" id="toc-using-a-color-palette-recommended" class="nav-link" data-scroll-target="#using-a-color-palette-recommended"><span class="header-section-number">9.5.2</span> Using a color palette (recommended)</a></li>
   </ul></li>
-  <li><a href="#barchart-enhancements-video" id="toc-barchart-enhancements-video" class="nav-link" data-scroll-target="#barchart-enhancements-video"><span class="header-section-number">10.6</span> Barchart enhancements </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Barchart+Enhancements/1_j8ze36jn" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Barchart+Enhancements/1_j8ze36jn">(Video)</a>
+  <li><a href="#barchart-enhancements-video" id="toc-barchart-enhancements-video" class="nav-link" data-scroll-target="#barchart-enhancements-video"><span class="header-section-number">9.6</span> Barchart enhancements </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Barchart+Enhancements/1_j8ze36jn" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Barchart+Enhancements/1_j8ze36jn">(Video)</a>
   <ul class="collapse">
-  <li><a href="#numbers-to-the-top-of-bars." id="toc-numbers-to-the-top-of-bars." class="nav-link" data-scroll-target="#numbers-to-the-top-of-bars."><span class="header-section-number">10.6.1</span> Numbers to the top of bars.</a></li>
-  <li><a href="#plotting-proportions" id="toc-plotting-proportions" class="nav-link" data-scroll-target="#plotting-proportions"><span class="header-section-number">10.6.2</span> Plotting Proportions</a></li>
+  <li><a href="#numbers-to-the-top-of-bars." id="toc-numbers-to-the-top-of-bars." class="nav-link" data-scroll-target="#numbers-to-the-top-of-bars."><span class="header-section-number">9.6.1</span> Numbers to the top of bars.</a></li>
+  <li><a href="#plotting-proportions" id="toc-plotting-proportions" class="nav-link" data-scroll-target="#plotting-proportions"><span class="header-section-number">9.6.2</span> Plotting Proportions</a></li>
   </ul></li>
-  <li><a href="#multivariate-plotting-video" id="toc-multivariate-plotting-video" class="nav-link" data-scroll-target="#multivariate-plotting-video"><span class="header-section-number">10.7</span> Multivariate plotting </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Multivariate+Plotting/1_xp1whb0f" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Multivariate+Plotting/1_xp1whb0f">(Video)</a>
+  <li><a href="#multivariate-plotting-video" id="toc-multivariate-plotting-video" class="nav-link" data-scroll-target="#multivariate-plotting-video"><span class="header-section-number">9.7</span> Multivariate plotting </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Multivariate+Plotting/1_xp1whb0f" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Multivariate+Plotting/1_xp1whb0f">(Video)</a>
   <ul class="collapse">
-  <li><a href="#boxplots-with-three-variables." id="toc-boxplots-with-three-variables." class="nav-link" data-scroll-target="#boxplots-with-three-variables."><span class="header-section-number">10.7.1</span> Boxplots with three variables.</a></li>
+  <li><a href="#boxplots-with-three-variables." id="toc-boxplots-with-three-variables." class="nav-link" data-scroll-target="#boxplots-with-three-variables."><span class="header-section-number">9.7.1</span> Boxplots with three variables.</a></li>
   </ul></li>
-  <li><a href="#faceting-paneling" id="toc-faceting-paneling" class="nav-link" data-scroll-target="#faceting-paneling"><span class="header-section-number">10.8</span> Faceting / paneling</a></li>
-  <li><a href="#multiple-plots-per-window" id="toc-multiple-plots-per-window" class="nav-link" data-scroll-target="#multiple-plots-per-window"><span class="header-section-number">10.9</span> Multiple plots per window</a></li>
-  <li><a href="#paneling-on-two-variables" id="toc-paneling-on-two-variables" class="nav-link" data-scroll-target="#paneling-on-two-variables"><span class="header-section-number">10.10</span> Paneling on two variables</a></li>
+  <li><a href="#faceting-paneling" id="toc-faceting-paneling" class="nav-link" data-scroll-target="#faceting-paneling"><span class="header-section-number">9.8</span> Faceting / paneling</a></li>
+  <li><a href="#multiple-plots-per-window" id="toc-multiple-plots-per-window" class="nav-link" data-scroll-target="#multiple-plots-per-window"><span class="header-section-number">9.9</span> Multiple plots per window</a></li>
+  <li><a href="#paneling-on-two-variables" id="toc-paneling-on-two-variables" class="nav-link" data-scroll-target="#paneling-on-two-variables"><span class="header-section-number">9.10</span> Paneling on two variables</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./plots2.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></h1>
 </div>
 
 
@@ -341,8 +383,8 @@ Preparation
 </div>
 </div>
 </section>
-<section id="themes-video" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="themes-video"><span class="header-section-number">10.1</span> Themes <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Themes/1_kwh2ucf7" target="_blank">(Video)</a></h2>
+<section id="themes-video" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="themes-video"><span class="header-section-number">9.1</span> Themes <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Themes/1_kwh2ucf7" target="_blank">(Video)</a></h2>
 <p>The standard theme has a gray background, white grid lines etc. Themes can be changed by adding <code>theme_X()</code> where <code>X</code> has several options</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>line_breaks, <span class="at">y=</span>num_char)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -372,10 +414,10 @@ Preparation
 </div>
 <p>See more about themes here: http://www.sthda.com/english/wiki/ggplot2-themes-and-background-colors-the-3-elements</p>
 </section>
-<section id="legends-video" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="legends-video"><span class="header-section-number">10.2</span> Legends <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Legends/1_schkl6as" target="_blank">(Video)</a></h2>
-<section id="titles" class="level3" data-number="10.2.1">
-<h3 data-number="10.2.1" class="anchored" data-anchor-id="titles"><span class="header-section-number">10.2.1</span> Titles</h3>
+<section id="legends-video" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="legends-video"><span class="header-section-number">9.2</span> Legends <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Legends/1_schkl6as" target="_blank">(Video)</a></h2>
+<section id="titles" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="titles"><span class="header-section-number">9.2.1</span> Titles</h3>
 <p>Add the <code>name=</code> argument to whatever layer you added that created the legend. Here I specified a <code>fill</code>, and it was a <code>discrete</code> variable. So I use the <code>scale_fill_discrete()</code> layer.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">y=</span>num_char, <span class="at">x=</span>number, <span class="at">fill=</span>number)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
@@ -401,8 +443,8 @@ Preparation
 </div>
 </div>
 </section>
-<section id="removing-the-legend" class="level3" data-number="10.2.2">
-<h3 data-number="10.2.2" class="anchored" data-anchor-id="removing-the-legend"><span class="header-section-number">10.2.2</span> Removing the legend</h3>
+<section id="removing-the-legend" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="removing-the-legend"><span class="header-section-number">9.2.2</span> Removing the legend</h3>
 <p>In this case the legend show the same information. That’s redundant and takes up space, so let’s remove it entirely by adding <code>guide="none"</code> to the <code>scale_</code> layer.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">y=</span>num_char, <span class="at">x=</span>number, <span class="at">col=</span>number)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
@@ -417,8 +459,8 @@ Preparation
 </div>
 </section>
 </section>
-<section id="titles-video" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="titles-video"><span class="header-section-number">10.3</span> Titles <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Titles/1_xvnu92g7" target="_blank">(Video)</a></h2>
+<section id="titles-video" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="titles-video"><span class="header-section-number">9.3</span> Titles <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Titles/1_xvnu92g7" target="_blank">(Video)</a></h2>
 <p>A good plot needs to stand alone and convey as much information as possible.</p>
 <ul>
 <li><code>ggtitle()</code> adds an overall plot title</li>
@@ -438,8 +480,8 @@ Preparation
 </div>
 </div>
 </section>
-<section id="removing-na-categories-video" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="removing-na-categories-video"><span class="header-section-number">10.4</span> Removing NA categories <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Removing+NA+Categories/1_75ripf3f" target="_blank">(Video)</a></h2>
+<section id="removing-na-categories-video" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="removing-na-categories-video"><span class="header-section-number">9.4</span> Removing NA categories <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Removing+NA+Categories/1_75ripf3f" target="_blank">(Video)</a></h2>
 <p>This happens when there is no data is present for one or more levels. One way to get around this is to use <code>select</code> to only choose variables that we are going to use in the plot directly, delete all rows with any missing values using <code>na.omit()</code>, then pipe <code>ggplot</code> directly in after deleting all rows with missing data.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>NCbirths <span class="sc">%&gt;%</span> <span class="fu">select</span>(mage, whitemom, marital, habit) <span class="sc">%&gt;%</span> <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span> </span>
@@ -457,10 +499,10 @@ Preparation
 <p>Warning: <code>na.omit()</code> can be dangerous to use. It will drop EVERY row with ANY value missing. We are using it safely here because we are only selecting the variables that we will use in the plot.</p>
 </blockquote>
 </section>
-<section id="changing-colors-video" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="changing-colors-video"><span class="header-section-number">10.5</span> Changing colors <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Changing+Colors/1_kb31ew49" target="_blank">(Video)</a></h2>
-<section id="manual" class="level3" data-number="10.5.1">
-<h3 data-number="10.5.1" class="anchored" data-anchor-id="manual"><span class="header-section-number">10.5.1</span> Manual</h3>
+<section id="changing-colors-video" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="changing-colors-video"><span class="header-section-number">9.5</span> Changing colors <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Changing+Colors/1_kb31ew49" target="_blank">(Video)</a></h2>
+<section id="manual" class="level3" data-number="9.5.1">
+<h3 data-number="9.5.1" class="anchored" data-anchor-id="manual"><span class="header-section-number">9.5.1</span> Manual</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>number, <span class="at">fill=</span>number)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -497,8 +539,8 @@ Preparation
 </div>
 </div>
 </section>
-<section id="using-a-color-palette-recommended" class="level3" data-number="10.5.2">
-<h3 data-number="10.5.2" class="anchored" data-anchor-id="using-a-color-palette-recommended"><span class="header-section-number">10.5.2</span> Using a color palette (recommended)</h3>
+<section id="using-a-color-palette-recommended" class="level3" data-number="9.5.2">
+<h3 data-number="9.5.2" class="anchored" data-anchor-id="using-a-color-palette-recommended"><span class="header-section-number">9.5.2</span> Using a color palette (recommended)</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>number, <span class="at">fill=</span>number)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
@@ -515,10 +557,10 @@ Preparation
 <hr>
 </section>
 </section>
-<section id="barchart-enhancements-video" class="level2" data-number="10.6">
-<h2 data-number="10.6" class="anchored" data-anchor-id="barchart-enhancements-video"><span class="header-section-number">10.6</span> Barchart enhancements <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Barchart+Enhancements/1_j8ze36jn" target="_blank">(Video)</a></h2>
-<section id="numbers-to-the-top-of-bars." class="level3" data-number="10.6.1">
-<h3 data-number="10.6.1" class="anchored" data-anchor-id="numbers-to-the-top-of-bars."><span class="header-section-number">10.6.1</span> Numbers to the top of bars.</h3>
+<section id="barchart-enhancements-video" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="barchart-enhancements-video"><span class="header-section-number">9.6</span> Barchart enhancements <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Barchart+Enhancements/1_j8ze36jn" target="_blank">(Video)</a></h2>
+<section id="numbers-to-the-top-of-bars." class="level3" data-number="9.6.1">
+<h3 data-number="9.6.1" class="anchored" data-anchor-id="numbers-to-the-top-of-bars."><span class="header-section-number">9.6.1</span> Numbers to the top of bars.</h3>
 <p>The biggest addition to a barchart is the numbers on top of the bars.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>number)) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
@@ -537,8 +579,8 @@ Preparation
 <li>Play with the <code>size</code> modifier to find something readable.</li>
 </ul>
 </section>
-<section id="plotting-proportions" class="level3" data-number="10.6.2">
-<h3 data-number="10.6.2" class="anchored" data-anchor-id="plotting-proportions"><span class="header-section-number">10.6.2</span> Plotting Proportions</h3>
+<section id="plotting-proportions" class="level3" data-number="9.6.2">
+<h3 data-number="9.6.2" class="anchored" data-anchor-id="plotting-proportions"><span class="header-section-number">9.6.2</span> Plotting Proportions</h3>
 <p>Often you don’t want to compare counts but percents. To accomplish this in ggplot is doable, but involves pre-calculating the percentages first and then plotting the summary numbers. This is a great place to introduce a different package: <code>sjPlot</code>.</p>
 <p><code>ggplot2</code> is pretty great for easy out-of-the-box plots that don’t look half bad. Well for something a bit better when it comes to labeled barcharts let’s turn to the <code>sjPlot</code> package. Note this package uses ggplot graphics, but does not follow the syntax. So you’ll need to reference the <a href="https://strengejacke.github.io/sjPlot/">vignette</a> often to to learn more of what this package can do and what syntax it uses.</p>
 <p>To plot the frequency distribution of a single categorical variable we use the “plot freq” function <code>plot_frq</code></p>
@@ -581,11 +623,11 @@ Preparation
 <hr>
 </section>
 </section>
-<section id="multivariate-plotting-video" class="level2" data-number="10.7">
-<h2 data-number="10.7" class="anchored" data-anchor-id="multivariate-plotting-video"><span class="header-section-number">10.7</span> Multivariate plotting <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Multivariate+Plotting/1_xp1whb0f" target="_blank">(Video)</a></h2>
+<section id="multivariate-plotting-video" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="multivariate-plotting-video"><span class="header-section-number">9.7</span> Multivariate plotting <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Multivariate+Plotting/1_xp1whb0f" target="_blank">(Video)</a></h2>
 <p>So far we’ve only looked at how to plot 2 variables on the same plot. Let’s up our game some.</p>
-<section id="boxplots-with-three-variables." class="level3" data-number="10.7.1">
-<h3 data-number="10.7.1" class="anchored" data-anchor-id="boxplots-with-three-variables."><span class="header-section-number">10.7.1</span> Boxplots with three variables.</h3>
+<section id="boxplots-with-three-variables." class="level3" data-number="9.7.1">
+<h3 data-number="9.7.1" class="anchored" data-anchor-id="boxplots-with-three-variables."><span class="header-section-number">9.7.1</span> Boxplots with three variables.</h3>
 <p>In the first plotting lesson, we saw that for boxplots the continuous variable goes on the y, categorical on the x. Well you can also fill (or color) the boxes by a third variable if you want an additional comparison within the categories on the x axis.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(NCbirths, <span class="fu">aes</span>(<span class="at">y=</span>weeks, <span class="at">x=</span>mature, <span class="at">fill=</span>habit)) <span class="sc">+</span> </span>
@@ -614,8 +656,8 @@ Preparation
 <p>This way of grouping levels of one aspect within categories of another aspect is extended and enhanced using faceting or paneling.</p>
 </section>
 </section>
-<section id="faceting-paneling" class="level2" data-number="10.8">
-<h2 data-number="10.8" class="anchored" data-anchor-id="faceting-paneling"><span class="header-section-number">10.8</span> Faceting / paneling</h2>
+<section id="faceting-paneling" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="faceting-paneling"><span class="header-section-number">9.8</span> Faceting / paneling</h2>
 <p>ggplot introduces yet another term called <code>faceting</code>. The definition is <em>a particular aspect or feature of something</em>, or <em>one side of something many-sided, especially of a cut gem</em>. Basically instead of plotting the grouped graphics on the same plotting area, we let each group have it’s own plot, or facet.</p>
 <p>We add a <code>facet_wrap()</code> and specify that we want to panel on the color group. Note the twiddle in front of color. (Not here we’re switching to the <code>NCbirths</code> data set.)</p>
 <div class="cell">
@@ -641,8 +683,8 @@ Preparation
 </div>
 <p>It is important to compare distributions across groups on the same scale, and our eyes can compare items vertically better than horizontally.</p>
 </section>
-<section id="multiple-plots-per-window" class="level2" data-number="10.9">
-<h2 data-number="10.9" class="anchored" data-anchor-id="multiple-plots-per-window"><span class="header-section-number">10.9</span> Multiple plots per window</h2>
+<section id="multiple-plots-per-window" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="multiple-plots-per-window"><span class="header-section-number">9.9</span> Multiple plots per window</h2>
 <p>This method works only for plots created with <code>ggplot</code>. Here we use the <code>grid.arrange</code> function in the <code>gridExtra</code> package.</p>
 <ol type="1">
 <li>assign the output of a ggplot object to an object (here it’s <code>plot1</code> and <code>plot2</code>).</li>
@@ -662,8 +704,8 @@ Preparation
 </div>
 </div>
 </section>
-<section id="paneling-on-two-variables" class="level2" data-number="10.10">
-<h2 data-number="10.10" class="anchored" data-anchor-id="paneling-on-two-variables"><span class="header-section-number">10.10</span> Paneling on two variables</h2>
+<section id="paneling-on-two-variables" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="paneling-on-two-variables"><span class="header-section-number">9.10</span> Paneling on two variables</h2>
 <p>Who says we’re stuck with only faceting on one variable? A variant on <code>facet_wrap</code> is <code>facet_grid</code>. Here we can specify multiple variables to panel on.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(NCbirths, <span class="fu">aes</span>(<span class="at">x=</span>mage, <span class="at">fill=</span>whitemom)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">2</span>) <span class="sc">+</span> <span class="fu">facet_grid</span>(marital<span class="sc">~</span>habit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -681,242 +723,380 @@ Preparation
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
         }
       }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
       return false;
     }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
       }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
     }
-    const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
-        }
-        return codeEl.innerText;
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
     }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
         }
       }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
     }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
     }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
       } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
         }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
       }
     }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
           }
         } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
+          // See if we can fetch this
+          fetch(url.split('#')[0])
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
+            const note = htmlDoc.getElementById(id);
             if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
+              const html = processXRef(id, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -924,170 +1104,194 @@ Preparation
             instance.show();
           });
         }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
       } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
         });
       }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
     }
-  });
-  </script>
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./import.html" class="pagination-link" aria-label="Getting data into R">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Getting data into R</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Getting data into R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./project.html" class="pagination-link" aria-label="Putting it all together">
-        <span class="nav-page-text">Putting it all together</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./help.html" class="pagination-link" aria-label="Seeking Help">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Seeking Help</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

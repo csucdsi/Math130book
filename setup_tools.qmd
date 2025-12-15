@@ -52,7 +52,8 @@ When you download a file, right click and "Save as" or "Save target as" and **ac
 
 > to what?
 
-## Installing R and R Studio
+## Installing R and R Studio {#sec-install}
+
 
 **Download and install R and R Studio**
 
@@ -348,9 +349,8 @@ to finish before entering the next command.
 
 **Saving and closing your work.**
 
-Unless you're returning to work in R Studio in a short while, you should
-make a habit to save all open tabs and completely shut down R studio
-when you are done working. This ensures your environment is cleared.
+Unless you're returning to work in R Studio in a short while, you should make a habit to save all open tabs and completely shut down R studio when you are done working. This ensures your environment is cleared.
+
 *This is a good thing.*
 
 **Restart R**
