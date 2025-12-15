@@ -1,13 +1,18 @@
+---
+format: 
+  html:
+    toc: false
+---
+
 # Preface {.unnumbered}
 
-This notebook was created to host learning materials for Math 130: Introduction to R at California State University, Chico.
+This notebook was created to host learning materials for Math 130: Introduction to R at California State University, Chico. From the course catalog: 
 
-Some of this material presented is a derivation from work that is Copyright © Software Carpentry (http://software-carpentry.org/) which is under a [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/) which allows for adaptations and reuse of the work.
+> _This accelerated short course is designed as a primer to get the complete novice up and running with basic knowledge of how to use the statistical programming language R. The target audience is anyone who wants to become the boss of their data and conduct analyses. The course covers getting data into R, manipulating data into an analyzable format, and creating informative plots. Emphasis is placed on reproducibility and literate programming. The course culminates with a data exploration project._
 
-Math 130 is designed as a short-course "primer" to be taken before, or concurrently with, an upper division or graduate level Statistics course such as Math 315 or Math 615. This can also be used a prepratory learning for classified admission into the [Masters in Data Science and Analytics Program](https://www.csuchico.edu/math/degrees/msdsa.shtml)
+Math 130 is designed as a short-course "primer" to be taken before, or concurrently with, an upper division or graduate Statistics course such as Math 315 or Math 615. This can also be used a prepratory learning for classified admission into the [Masters in Data Science and Analytics Program](https://www.csuchico.edu/math/degrees/msdsa.shtml)[Want to Learn Python? <a href="https://roualdes.us/MATH131/intro.html">Check out Math 131 </a>]{.aside} 
 
 The goal of Math 130 is to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. We recognize there are many topics and many approaches to teach an introduction to the R programming language. We have picked specific topics and methods that we believe learners will need to succeed in subsequent classes.
-
 
 
 ::: {.callout-note title="Course Learning Objectives"}
@@ -23,5 +28,6 @@ By the end of this class you will be able to:
 
 ## References & Acknowledgements
 
-The material in the first section "Getting Started" is based heavily off of, and sometimes used directly, from the [Data Carpentry: R for Social Scientists](https://datacarpentry.github.io/r-socialsci/index.html) which is CC-BY 4.0.
+Some of this material presented is a derivation from work that is Copyright © by [The Carpentries](https://carpentries.org/) which is under a [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/) allowing for adaptations and reuse of the work.
 
+We would like to thank [Jayana Sarma](https://github.com/jayana714) for her assistance in porting these notes from R Markdown to Quarto.

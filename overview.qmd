@@ -96,21 +96,26 @@ Red boxes contain warnings such as common errors or pitfalls.
 :::
 
 
-::: {.callout-caution title="Caution"}
-not sure if using yellow boxes 
+::: {.callout-caution title="Videos"}
+Yellow boxes contain links to supporting videos. 
 :::
 
+<!---
 ### Follow along videos
 Sections that have associated videos will be denoted with a 🎦. 
-### Code appearance
+--->
 
-In these notes, code is displayed like this:
+### Code and keystroke appearance
+
+In these notes, code that is referenced in text is `displayed in this format`, code is executed (run) by R is displayed like this:
 
 ```{r}
 2+2
 ```
 
-where the output or result of the code is displayed directly after. 
+where the output or result of the code is displayed directly after. The `[1]` that is sometimes displayed with the output helps count the lines of output (sometimes), and can be ignored _most_ of the time. 
+
+When giving instructions on which keys to press, buttons are shown as boxes like <kbd>CTRL</kbd> or <kbd>ENTER</kbd> . 
 
 ## Getting and Submitting Assignments
 

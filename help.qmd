@@ -1,5 +1,4 @@
-
-## Seeking Help
+# Seeking Help {.unnumbered}
 
 > help me help you
 

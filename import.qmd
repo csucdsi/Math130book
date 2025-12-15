@@ -1,4 +1,4 @@
-# Getting data into R
+# Getting data into R {#sec-import}
 
 ## Introduction <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+Introduction/1_qwkzetht" target="_blank">(Video)</a>
 In this lesson we will introduce ways to get data from external files into R, how R works with data, and how to use functions to explore your data frame. 

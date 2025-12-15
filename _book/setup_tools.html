@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./quarto.html" rel="next">
-<link href="./preface.html" rel="prev">
+<link href="./overview.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -108,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -153,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+  <a href="./overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Course Overview</span></a>
   </div>
 </li>
@@ -245,7 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./help.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Seeking Help</span></span></a>
+ <span class="menu-text">Seeking Help</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -272,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#setup-your-class-folder-for-success-cinema" id="toc-setup-your-class-folder-for-success-cinema" class="nav-link active" data-scroll-target="#setup-your-class-folder-for-success-cinema"><span class="header-section-number">1.1</span> Setup your class folder for success! :cinema:</a>
+  <li><a href="#setup-your-class-folder-for-success" id="toc-setup-your-class-folder-for-success" class="nav-link active" data-scroll-target="#setup-your-class-folder-for-success"><span class="header-section-number">1.1</span> Setup your class folder for success!</a>
   <ul class="collapse">
   <li><a href="#naming-things" id="toc-naming-things" class="nav-link" data-scroll-target="#naming-things"><span class="header-section-number">1.1.1</span> Naming Things</a></li>
   <li><a href="#create-folders" id="toc-create-folders" class="nav-link" data-scroll-target="#create-folders"><span class="header-section-number">1.1.2</span> Create Folders</a></li>
@@ -288,12 +288,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#files-plots-packages-help" id="toc-files-plots-packages-help" class="nav-link" data-scroll-target="#files-plots-packages-help">Files / Plots / Packages / Help</a></li>
   </ul></li>
   <li><a href="#customizing" id="toc-customizing" class="nav-link" data-scroll-target="#customizing"><span class="header-section-number">1.5</span> Customizing</a></li>
-  <li><a href="#final-tips" id="toc-final-tips" class="nav-link" data-scroll-target="#final-tips"><span class="header-section-number">1.6</span> Final Tips</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"><span class="header-section-number">1.6</span> Packages</a>
+  <ul class="collapse">
+  <li><a href="#installing-packages" id="toc-installing-packages" class="nav-link" data-scroll-target="#installing-packages"><span class="header-section-number">1.6.1</span> Installing Packages</a></li>
+  </ul></li>
+  <li><a href="#final-tips" id="toc-final-tips" class="nav-link" data-scroll-target="#final-tips"><span class="header-section-number">1.7</span> Final Tips</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup_tools.html">Getting Started</a></li><li class="breadcrumb-item"><a href="./setup_tools.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Your New Tools</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -314,10 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<blockquote class="blockquote">
-<p>update obj</p>
-</blockquote>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-note callout-titled" title="Learning Objectives">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -329,21 +330,28 @@ Learning Objectives
 <div class="callout-body-container callout-body">
 <p>After completing this lesson learners will be able to:</p>
 <ul>
-<li>Use R and R Studio on their personal computer.</li>
-<li>Describe the purpose of the RStudio Script, Console, Environment, and Plots panes.</li>
-<li>Organize files and directories for a set of analyses as an R Project, and understand the purpose of the working directory.</li>
-<li>Execute simple commands in the console</li>
-<li>Use the built-in RStudio help interface to search for more information on R functions.</li>
-<li>Demonstrate how to provide sufficient information for troubleshooting with the R user community.</li>
+<li>Create an organized directory of files and folders directories.</li>
+<li>Access R and R Studio.</li>
+<li>Navigate the RStudio GUI.</li>
+<li>Install additional packages using R code.</li>
 </ul>
 </div>
 </div>
-<section id="setup-your-class-folder-for-success-cinema" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="setup-your-class-folder-for-success-cinema"><span class="header-section-number">1.1</span> Setup your class folder for success! :cinema:</h2>
-<blockquote class="blockquote">
-<p>link to chapter video?</p>
-</blockquote>
-<p>Using a consistent folder structure across your projects will help keep things organized, and will also make it easy to find/file things in the future. This can be especially helpful when you have multiple projects.</p>
+<section id="setup-your-class-folder-for-success" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="setup-your-class-folder-for-success"><span class="header-section-number">1.1</span> Setup your class folder for success!</h2>
+<p>It is good practice to keep a set of related data, analyses, and text self-contained in a single folder called the <em>working directory</em>. All of the files within this folder can then be accessed using relative <em>paths</em>.</p>
+<p>Think of a <em>path</em> as driving directions to your instructors office in Holt Hall. It will be different for everyone if we start from your home. However, once you get onto campus, it’s the same for everyone.</p>
+<ul>
+<li><strong>Absolute paths</strong> point to where a file is on a specific computer.
+<ul>
+<li>Example: <code>/Users/rdonatello/Library/CloudStorage/Box-Box/Teaching/MATH 130/data</code> This path to the <code>data</code> folder only exists on Dr.&nbsp;Donatello’s macbook.</li>
+</ul></li>
+<li><strong>Relative paths</strong> indicate where inside the project folder a file is located.
+<ul>
+<li>Example: <code>MATH 130/data</code>. This path to the <code>data</code> folder once you’re already in the <code>MATH 130</code> folder.</li>
+</ul></li>
+</ul>
+<p>Additionally, working this way makes it a lot easier to move your project around on your computer and share it with others without having to directly modify file paths in the individual scripts. This will be super important when we start importing data from an external file in <span class="quarto-unresolved-ref">?sec-import</span>.</p>
 <section id="naming-things" class="level3" data-number="1.1.1">
 <h3 data-number="1.1.1" class="anchored" data-anchor-id="naming-things"><span class="header-section-number">1.1.1</span> Naming Things</h3>
 <p>You also need to choose a naming convention for your class folder and stick with it. Recommended options are:</p>
@@ -359,8 +367,7 @@ Learning Objectives
 <h3 data-number="1.1.2" class="anchored" data-anchor-id="create-folders"><span class="header-section-number">1.1.2</span> Create Folders</h3>
 <ol type="1">
 <li>On your computer, in an easy to find place, create a new folder named <code>math130</code>.</li>
-<li>Then create three subfolders: <code>data</code>, <code>homework</code>, <code>notes</code>.<br>
-<img src="img/folder_org.PNG" class="img-fluid quarto-figure quarto-figure-center" width="149"></li>
+<li>Then create three subfolders: <code>data</code>, <code>homework</code>, <code>notes</code>. <img src="img/folder_org.PNG" class="img-fluid quarto-figure quarto-figure-center"></li>
 </ol>
 </section>
 <section id="adding-files-into-your-class-folder" class="level3" data-number="1.1.3">
@@ -445,22 +452,7 @@ and download <strong>RStudio Desktop (Free)</strong> for macOS.<br>
 <li>After installation, eject the downloaded drive by dragging it to <strong>Trash</strong>, then open RStudio from Applications.</li>
 </ol>
 </details>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-🎦 Video Tutorials for both R and R Studio.
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><a href="https://youtu.be/KAeHFzxbHTA?si=xpeDGqt7gurg_rFR">Windows</a></li>
-<li><a href="https://youtu.be/ay25o485YXs?si=7r4qmmvtD15RM_eS">Mac</a></li>
-</ul>
-</div>
-</div>
+<p>::: callout-important {title = “Video Tutorials for both R and R Studio.} - <a href="https://youtu.be/KAeHFzxbHTA?si=xpeDGqt7gurg_rFR">Windows</a> - <a href="https://youtu.be/ay25o485YXs?si=7r4qmmvtD15RM_eS">Mac</a> :::</p>
 </section>
 <section id="terminology" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="terminology"><span class="header-section-number">1.3</span> Terminology</h2>
@@ -531,23 +523,11 @@ We won’t cover those here, but RStudio has many additional tools and features 
 <h3 class="unnumbered anchored" data-anchor-id="files-plots-packages-help">Files / Plots / Packages / Help</h3>
 <p><img src="img/files-pane.png" class="img-fluid" alt="RStudio Files, Plots, Help, and Viewer pane highlighted in the default white theme." width="600"></p>
 <p>The <strong>Files / Plots / Packages / Help</strong> pane (bottom-right) is used to explore files, view plots, manage packages, and read help pages.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-yellow for videos?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>🎦 Watch one of the following short videos to learn how to navigate R Studio.</p>
+<p>::: callout-caution {title = “Navigating R Studio”} Watch one of the following short videos to learn how to navigate R Studio.</p>
 <ul>
 <li><a href="https://youtu.be/vx4SPeNvols?si=1iSqsH1uNLFkB7yF&amp;t=239">R Girls on YouTube</a></li>
-<li><a href="https://media.csuchico.edu/media/t/1_93i6jwy8">Dr.&nbsp;D’s overview</a></li>
+<li><a href="https://media.csuchico.edu/media/t/1_93i6jwy8">Dr.&nbsp;D’s overview</a> :::</li>
 </ul>
-</div>
-</div>
 </section>
 </section>
 <section id="customizing" class="level2" data-number="1.5">
@@ -571,64 +551,82 @@ yellow for videos?
 <p>This ensures that each time you restart R, you start with a clean environment instead of carrying forward objects from a previous session.</p>
 </div>
 </div>
-<p><strong>Packages</strong></p>
-<p><a href="https://spaceballs.fandom.com/wiki/Spaceballs:_The%E2%80%A6" class="aside"><em>“Where the real money from the movie is made.</em>”</a></p>
+</section>
+<section id="packages" class="level2 page-columns page-full" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="packages"><span class="header-section-number">1.6</span> Packages</h2>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><a href="https://spaceballs.fandom.com/wiki/Spaceballs:_The%E2%80%A6">“Where the real money from the movie is made.”</a></span></div></div>
 <p>R is considered an <strong>Open Source</strong> software program. That means many (thousands) of people contribute to the software. They do this by writing commands (called functions) to make a particular analysis easier, or to make a graphic prettier.</p>
 <p>When you download R, you get access to a lot of functions that we will use. However these other <em>user-written</em> packages add so much good stuff that it really is the backbone of the customizability and functionality that makes R so powerful of a language.</p>
 <p>For example we will be creating graphics using functions like <code>boxplot()</code> and <code>hist()</code> that exist in base R. But we will quickly move on to creating graphics using functions contained in the <code>ggplot2</code> package. We will be managing data using functions in <code>dplyr</code> and reading in Excel files using <code>readxl</code>. Installing packages will become your favorite past-time.</p>
-<p><strong>Installing Packages</strong></p>
-<p>:pencil: Start by typing the following in the console to install the <code>ggplot2</code> package.</p>
+<section id="installing-packages" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="installing-packages"><span class="header-section-number">1.6.1</span> Installing Packages</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="Install `ggplot2`">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Install <code>ggplot2</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Typing the following in the console to install the <code>ggplot2</code> package.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>When the download and install is complete, you should see a message simliar to:</p>
+</div>
+</div>
+<p>When the download and install is complete, you should see a message similar to:</p>
 <pre><code>The downloaded binary packages are in
     C:\Users\Robin\AppData\Local\Temp\Rtmpi8NAym\downloaded_packages</code></pre>
 <p>:warning: R is case sensitive and spelling matters. If you get an error message like the following:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Warning <span class="cf">in</span> install.packages <span class="sc">:</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  package ‘ggplot’ is not <span class="fu">available</span> (<span class="cf">for</span> R version <span class="dv">3</span>.<span class="fl">5.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The correct package name is <code>ggplot2</code>, not <code>ggplot</code>.</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Alternative Method of installing Packages:</strong><br>
-Use the Package tab in the lower right pane in R Studio.</p>
-</div>
-</div>
+<p>::: callout-caution {title = “Alternative Method of installing Packages”} Additional packages can be installed from the ‘packages’ tab.</p>
+<ul>
+<li>On the packages tab, click the ‘Install’ icon and start typing the name of the package you want in the text box.</li>
+<li>At the bottom of the Install Packages window is a check box to ‘Install’ dependencies. This is ticked by default, which is usually what you want. Packages can (and do) make use of functionality built into other packages, so for the functionality contained in the package you are installing to work properly, there may be other packages which have to be installed with them. The ‘Install dependencies’ option makes sure that this happens.</li>
+</ul>
+<p>:::</p>
 <p><strong>Install all the things!</strong></p>
 <p><img src="img/allthethings.jpg" class="img-fluid" alt="Cartoon shouting 'Get all the things!' representing package installation excitement." width="500"></p>
 <p>Now that you’re a package installing pro, go ahead and install the following packages that we will be using in the next few weeks.</p>
 <p>Install the list of packages to the left one at a time and wait for it to finish before entering the next command.</p>
-<table>
-<tbody><tr>
-<td>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
 <li><code>tidyverse</code><br>
 </li>
 <li><code>sjPlot</code></li>
 <li><code>quarto</code></li>
 </ul>
-</td>
-<td>
+</div><div class="column" style="width:50%;">
 <ul>
 <li><code>openintro</code><br>
 </li>
 <li><code>palmerpenguins</code></li>
 <li><code>tinytex</code></li>
 </ul>
-</td>
-</tr>
-</tbody></table>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Trust but Verify">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Trust but Verify
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Check to see if you have a package installed by looking in the packages tab. You can also type the command <code>installed.packages()</code> into the console and examine the output.</p>
+</div>
+</div>
 </section>
-<section id="final-tips" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="final-tips"><span class="header-section-number">1.6</span> Final Tips</h2>
+</section>
+<section id="final-tips" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="final-tips"><span class="header-section-number">1.7</span> Final Tips</h2>
 <p><strong>Saving and closing your work.</strong></p>
 <p>Unless you’re returning to work in R Studio in a short while, you should make a habit to save all open tabs and completely shut down R studio when you are done working. This ensures your environment is cleared.</p>
 <p><em>This is a good thing.</em></p>
@@ -1207,7 +1205,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./preface.html" class="pagination-link" aria-label="Course Overview">
+      <a href="./overview.html" class="pagination-link" aria-label="Course Overview">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Course Overview</span>
       </a>          
   </div>
