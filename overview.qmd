@@ -13,7 +13,7 @@ format:
     - **[RStudio](https://posit.co/downloads/)** has been a very popular IDE since around 2011 that has continued to flourish and improve throughtout the years. 
     - **[Positron](https://positron.posit.co/)** is a new IDE created by the developers of RStudio that is based off another popular IDE called VSCode - and aimed primarily at Data Scientists
     
-![Manual car gear shift representing coding in R](img/r-manual.jpeg){fig-alt="Manual car gear shift representing coding in R" fig-align="left" width="250"} ![Automatic car gear shift representing RStudio environment](img/r-automatic.jpeg){fig-alt="Automatic car gear shift representing RStudio environment" fig-align="right" width="250"}
+![Manual car gear shift representing coding in R](img/r-manual.jpeg){fig-alt="Manual car gear shift representing coding in R" fig-align="left" width="250"} ![Automatic car gear shift representing RStudio integrated development environment](img/r-automatic.jpeg){fig-alt="Automatic car gear shift representing RStudio integrated development environment" fig-align="right" width="250"}
 [RStudio extends what R can do, and makes it easier to write R code and interact with R. <a href="https://unsplash.com/photos/D19rXKDUPYM">Left photo credit</a>; <a href="https://unsplash.com/photos/Wec3M4dY_LE">Right photo credit</a>.]{.aside}
 
 This book teaches you how to use R from within the **R Studio** IDE as we feel it is easier for new learners to start with.  You will have to install both onto your computer. Setup instructions are discussed later in @sec-install
@@ -49,7 +49,13 @@ This book teaches you how to use R from within the **R Studio** IDE as we feel i
 It's important to acknowledge that computer programming is a new skill, that may bring a roller coaster of emotions with it while you learn. 
 
 ![Learning curve diagram by Allison Horst showing how much you think you know about R over time](img/r-learning-curve-horst.png){fig-alt="Line chart labeled 'How much I think I know about R' versus time, showing ups and downs with smiley faces at different stages." width="600"}
+
 [<a href = "https://allisonhorst.com/">Artwork by @allison_horst – used under CC BY 4.0.</a>]{.aside}
+
+But you don't have to go at it alone! You are now part of a _learning community_ that you can lean on for questions and support. 
+
+![Coding is a social activity!](img/r-community.png){fig-alt="A person in a cape that reads “code hero” who looks like they are flying through the air while typing on a computer while saying “I’m doing a think all on my own!” The coder’s arms and legs have ropes attached to two hot air balloons lifting them up, with labels on the balloons including “teachers”, “bloggers”, “friends”, “developers”. Below the code hero, several people carry a trampoline with labels “support” and “community” that will catch them if they fall" width="600"}
+[<a href = "https://datascience.csuchico.edu/communitycoding">Drop in help available at Community Coding</a>]{.aside}
 
 Learning to program has lots of benefits
 

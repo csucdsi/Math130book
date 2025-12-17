@@ -10,121 +10,105 @@ After completing this lesson learners will be able to:
 
 :::
 
-## Setup your class folder for success!
+## Get oRganized!
 
-It is good practice to keep a set of related data, analyses, and text self-contained in a single folder called the _working directory_. All of the files within this folder can then be accessed using relative *paths*.
+It is good practice to keep a set of related data, analyses, and text self-contained in a single folder called the _working directory_. For example keeping all files related to one class in it's own folder, separate from other classes. If you are taking another class using R at the same time as this one, it's even MORE important to keep your files separate. 
 
-Think of a *path* as driving directions to your instructors office in Holt Hall. It will be different for everyone if we start from your home. However, once you get onto campus, it's the same for everyone. 
+:::{.callout-important}
+THIS SHOULD NOT BE YOUR DOWNLOADS FOLDER
+:::
 
-* **Absolute paths** point to where a file is on a specific computer. 
-    * Example: `/Users/rdonatello/Library/CloudStorage/Box-Box/Teaching/MATH 130/data` This path to the `data` folder only exists on Dr. Donatello's macbook. 
-* **Relative paths** indicate where inside the project folder a file is located. 
-    * Example: `MATH 130/data`. This path to the `data` folder once you're already in the `MATH 130` folder.  
+### Names are important
 
+Choose one of the four naming convention shown below for your class folder and stick with it. These are `snake_case`, `camelCase`, `kebab-case` or `UPPER_SNAKE`. 
 
-Additionally, working this way makes it a lot easier to move your project around on your computer and share it with others without having to directly modify file paths in the individual scripts. This will be super important when we start importing data from an external file in @sec-import. 
+![Common Naming Conventions](img/name_things.png){fig-alt="Cartoon representations of common cases in coding. A snake screams 'SCREAMING_SNAKE_CASE' into the face of a camel (wearing ear muffs) with 'camelCase' written along its back. Vegetables on a skewer spell out 'kebab-case' (words on a skewer). A mellow, happy looking snake has text 'snake_case' along it." width="600"}
 
+[<a href = "https://allisonhorst.com/">Artwork by @allison_horst – used under CC BY 4.0.</a>]{.aside}
 
-### Naming Things
-
-You also need to choose a naming convention for your class folder and stick with it. Recommended options are:
-
--   ALL CAPS (`MATH130`)\
--   no caps (`math130`)
--   snake_case (`math_130`)
--   CamelCase (`Math130`)
-
-### Create Folders
-
-1.  On your computer, in an easy to find place, create a new folder named `math130`.
+:::{.callout-tip title = "Create your folders"}
+1.  On your computer, in an easy to find place, create a new folder named `math130` using your chosen naming convention.
 2.  Then create three subfolders: `data`, `homework`, `notes`.
-    ![](img/folder_org.PNG){fig-align="center"}
 
-### Adding files into your class folder
+![](img/folder_org.PNG){fig-align="center"}
+
+:::
+
+### Be the boss of your files
 
 When you download a file, right click and "Save as" or "Save target as" and **actively choose** where to download this file.
 
-:x: Do not let files live in your downloads folder.
+:::{.callout-important title = "Avoid these pain points"}
 
-:x: Do not open any files from your browser window after downloading.
+* Do not left click on the links
+* Do not let files live in your downloads folder.
+* Do not open any files from your browser window after downloading.
+:::
 
-:pencil2: Right click [\[this link\]](../hw/hw1.Rmd) to download and save Assignment 1 into your `homework` folder now.
+:::{.callout-tip title = "👉 Your Turn" icon=false}
+Right click [[this link]](https://quarto.org/docs/get-started/hello/rstudio/_hello.qmd) to download and save this file into your `homework` folder. 
 
-> need to fix hw1 link loc and qmd
+We will use this file in the next lesson. 
+:::
 
-:cinema: [Windows video walk through.](https://youtu.be/ayar0LFRg0U)
 
-> to what?
 
 ## Installing R and R Studio {#sec-install}
 
+Follow the instructions appropriate for your operating system. 
 
-**Download and install R and R Studio**
-
-<details>
-
-<summary><strong>Ipad, Tablet and Chromebook users</strong></summary>
-
+:::{.callout-warning icon=false collapse="true" appearance=minimal title = "Tablet / iPad / Chromebook"}
 If you are using a tablet, Chromebook or otherwise do not have a computer that you can install programs on, you can use Posit Cloud for this class.
 
 -   Make a **Cloud FREE** account at https://posit.cloud/plans/free
 -   Start a new project by clicking on the button in the top right corner
 -   Then go to (#intro_rstudio) to learn how to navigate RStudio.
 
-The free account allows for 25 project hours/month, which may not be enough for this class. If you run into time limits or you are using this for another class you will have to upgrade to the **Cloud Student** plan which is \$5/month.
+The free account allows for 25 project hours/month, which may not be enough for this class. If you run into time limits or you are using this for another class you will have to upgrade to the **Cloud Student** plan which is $5/month.
 
 Using the cloud is easier to initially setup, but having your own installation on your computer ensures that
 
 -   you want to keep the program free forever
 -   you will be able to put your files under version control
 -   you always have access to your code even with unstable or no internet
+:::
 
-</details>
 
-<details>
-
-<summary><strong>Windows</strong></summary>
+:::{.callout-warning icon=false collapse="true" appearance=minimal title = "Windows"}
 
 **Install R**  
 
-1.  Go to <https://cran.r-project.org/bin/windows/base/>\
-    and download the latest **R installer**.\
-2.  Double-click the downloaded file and follow the prompts (default settings are fine).\
-3.  When finished, you can delete the desktop shortcut that looks like the icon above.
+1.  Go to <https://cran.r-project.org/bin/windows/base/> and download the latest **R installer**.
+2.  Double-click the downloaded file and follow the prompts (default settings are fine).
+3.  When finished, you can delete the desktop shortcut that looks like a blue R. 
 
 **Install RStudio**  
 
-1.  Go to <https://posit.co/download/rstudio-desktop/>\
-    and download **RStudio Desktop (Free)** for Windows.\
-2.  Double-click the installer and follow the prompts.\
+1.  Go to <https://posit.co/download/rstudio-desktop/> and download **RStudio Desktop (Free)** for Windows. 
+2.  Double-click the installer and follow the prompts.
 3.  When installation finishes, open **RStudio** — it should detect R automatically.
 
-</details>
+[Walk through video for Windows](https://youtu.be/KAeHFzxbHTA?si=xpeDGqt7gurg_rFR)
+:::
 
-<details>
+:::{.callout-warning icon=false collapse="true" appearance=minimal title = "MacOS"}
 
-<summary><strong>macOS</strong></summary>
+**Install R** 
 
-**Install R**  
-
-1.  Go to <https://cran.r-project.org/bin/macosx/>\
-    and download the latest **.pkg** installer (Intel or Apple Silicon).\
-2.  Double-click to install R.\
+1.  Go to <https://cran.r-project.org/bin/macosx/> and download the latest **.pkg** installer (Intel or Apple Silicon).
+2.  Double-click to install R.
 3.  If prompted to install **XQuartz**, use the link on that page to complete the setup.
 
-**Install RStudio**  
+**Install RStudio**
 
-1.  Go to <https://posit.co/download/rstudio-desktop/>\
-    and download **RStudio Desktop (Free)** for macOS.\
-2.  Drag the **RStudio** icon into your **Applications** folder.\
+1.  Go to <https://posit.co/download/rstudio-desktop/> and download **RStudio Desktop (Free)** for macOS.
+2.  Drag the **RStudio** icon into your **Applications** folder.
 3.  After installation, eject the downloaded drive by dragging it to **Trash**, then open RStudio from Applications.
 
-</details>
-
-::: callout-important {title = "Video Tutorials for both R and R Studio.}
--   [Windows](https://youtu.be/KAeHFzxbHTA?si=xpeDGqt7gurg_rFR)
--   [Mac](https://youtu.be/ay25o485YXs?si=7r4qmmvtD15RM_eS)
+[Walkthrough video for Mac](https://youtu.be/ay25o485YXs?si=7r4qmmvtD15RM_eS)
 :::
+
+# FIXME ------
 
 ## Terminology
 
@@ -144,12 +128,16 @@ also where the results will be shown for commands that have been
 executed.
 
 You can type commands directly into the console and press
-<kbd>`Enter`</kbd> to execute those commands, but they will be forgotten
+<kbd>Enter</kbd> to execute those commands, but they will be forgotten
 when you close the session.
+
+_Click on **File --> New File --> R Script**_ to open a script fie.
+
 
 ## Navigating R Studio
 
-We will be interacting with the programming language R *only* through R Studio. Not by itself. There are four panes, or windows, in R Studio.
+We will be interacting with the programming language R *only* through R Studio. Not by itself. Typically are four panes, or windows, in R Studio. When you first start the program, you may only see three. 
+
 
 ![](img/rstudio-four-panes.png){fig-alt="Screenshot of RStudio using the default white theme showing four panes: Source, Console, Environment/History, and Files/Plots/Packages/Help." width="600"}
 

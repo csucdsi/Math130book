@@ -272,11 +272,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#setup-your-class-folder-for-success" id="toc-setup-your-class-folder-for-success" class="nav-link active" data-scroll-target="#setup-your-class-folder-for-success"><span class="header-section-number">1.1</span> Setup your class folder for success!</a>
+  <li><a href="#get-organized" id="toc-get-organized" class="nav-link active" data-scroll-target="#get-organized"><span class="header-section-number">1.1</span> Get oRganized!</a>
   <ul class="collapse">
-  <li><a href="#naming-things" id="toc-naming-things" class="nav-link" data-scroll-target="#naming-things"><span class="header-section-number">1.1.1</span> Naming Things</a></li>
-  <li><a href="#create-folders" id="toc-create-folders" class="nav-link" data-scroll-target="#create-folders"><span class="header-section-number">1.1.2</span> Create Folders</a></li>
-  <li><a href="#adding-files-into-your-class-folder" id="toc-adding-files-into-your-class-folder" class="nav-link" data-scroll-target="#adding-files-into-your-class-folder"><span class="header-section-number">1.1.3</span> Adding files into your class folder</a></li>
+  <li><a href="#names-are-important" id="toc-names-are-important" class="nav-link" data-scroll-target="#names-are-important"><span class="header-section-number">1.1.1</span> Names are important</a></li>
+  <li><a href="#be-the-boss-of-your-files" id="toc-be-the-boss-of-your-files" class="nav-link" data-scroll-target="#be-the-boss-of-your-files"><span class="header-section-number">1.1.2</span> Be the boss of your files</a></li>
   </ul></li>
   <li><a href="#sec-install" id="toc-sec-install" class="nav-link" data-scroll-target="#sec-install"><span class="header-section-number">1.2</span> Installing R and R Studio</a></li>
   <li><a href="#terminology" id="toc-terminology" class="nav-link" data-scroll-target="#terminology"><span class="header-section-number">1.3</span> Terminology</a></li>
@@ -337,61 +336,105 @@ Learning Objectives
 </ul>
 </div>
 </div>
-<section id="setup-your-class-folder-for-success" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="setup-your-class-folder-for-success"><span class="header-section-number">1.1</span> Setup your class folder for success!</h2>
-<p>It is good practice to keep a set of related data, analyses, and text self-contained in a single folder called the <em>working directory</em>. All of the files within this folder can then be accessed using relative <em>paths</em>.</p>
-<p>Think of a <em>path</em> as driving directions to your instructors office in Holt Hall. It will be different for everyone if we start from your home. However, once you get onto campus, it’s the same for everyone.</p>
-<ul>
-<li><strong>Absolute paths</strong> point to where a file is on a specific computer.
-<ul>
-<li>Example: <code>/Users/rdonatello/Library/CloudStorage/Box-Box/Teaching/MATH 130/data</code> This path to the <code>data</code> folder only exists on Dr.&nbsp;Donatello’s macbook.</li>
-</ul></li>
-<li><strong>Relative paths</strong> indicate where inside the project folder a file is located.
-<ul>
-<li>Example: <code>MATH 130/data</code>. This path to the <code>data</code> folder once you’re already in the <code>MATH 130</code> folder.</li>
-</ul></li>
-</ul>
-<p>Additionally, working this way makes it a lot easier to move your project around on your computer and share it with others without having to directly modify file paths in the individual scripts. This will be super important when we start importing data from an external file in <span class="quarto-unresolved-ref">?sec-import</span>.</p>
-<section id="naming-things" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="naming-things"><span class="header-section-number">1.1.1</span> Naming Things</h3>
-<p>You also need to choose a naming convention for your class folder and stick with it. Recommended options are:</p>
-<ul>
-<li>ALL CAPS (<code>MATH130</code>)<br>
-</li>
-<li>no caps (<code>math130</code>)</li>
-<li>snake_case (<code>math_130</code>)</li>
-<li>CamelCase (<code>Math130</code>)</li>
-</ul>
-</section>
-<section id="create-folders" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="create-folders"><span class="header-section-number">1.1.2</span> Create Folders</h3>
+<section id="get-organized" class="level2 page-columns page-full" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="get-organized"><span class="header-section-number">1.1</span> Get oRganized!</h2>
+<p>It is good practice to keep a set of related data, analyses, and text self-contained in a single folder called the <em>working directory</em>. For example keeping all files related to one class in it’s own folder, separate from other classes. If you are taking another class using R at the same time as this one, it’s even MORE important to keep your files separate.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>THIS SHOULD NOT BE YOUR DOWNLOADS FOLDER</p>
+</div>
+</div>
+<section id="names-are-important" class="level3 page-columns page-full" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="names-are-important"><span class="header-section-number">1.1.1</span> Names are important</h3>
+<p>Choose one of the four naming convention shown below for your class folder and stick with it. These are <code>snake_case</code>, <code>camelCase</code>, <code>kebab-case</code> or <code>UPPER_SNAKE</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/name_things.png" class="img-fluid figure-img" alt="Cartoon representations of common cases in coding. A snake screams 'SCREAMING_SNAKE_CASE' into the face of a camel (wearing ear muffs) with 'camelCase' written along its back. Vegetables on a skewer spell out 'kebab-case' (words on a skewer). A mellow, happy looking snake has text 'snake_case' along it." width="600"></p>
+<figcaption>Common Naming Conventions</figcaption>
+</figure>
+</div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><a href="https://allisonhorst.com/">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span> – used under CC BY 4.0.</a></span></div></div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Create your folders">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Create your folders
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
-<li>On your computer, in an easy to find place, create a new folder named <code>math130</code>.</li>
-<li>Then create three subfolders: <code>data</code>, <code>homework</code>, <code>notes</code>. <img src="img/folder_org.PNG" class="img-fluid quarto-figure quarto-figure-center"></li>
+<li>On your computer, in an easy to find place, create a new folder named <code>math130</code> using your chosen naming convention.</li>
+<li>Then create three subfolders: <code>data</code>, <code>homework</code>, <code>notes</code>.</li>
 </ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/folder_org.PNG" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="adding-files-into-your-class-folder" class="level3" data-number="1.1.3">
-<h3 data-number="1.1.3" class="anchored" data-anchor-id="adding-files-into-your-class-folder"><span class="header-section-number">1.1.3</span> Adding files into your class folder</h3>
+<section id="be-the-boss-of-your-files" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="be-the-boss-of-your-files"><span class="header-section-number">1.1.2</span> Be the boss of your files</h3>
 <p>When you download a file, right click and “Save as” or “Save target as” and <strong>actively choose</strong> where to download this file.</p>
-<p>:x: Do not let files live in your downloads folder.</p>
-<p>:x: Do not open any files from your browser window after downloading.</p>
-<p>:pencil2: Right click <a href="../hw/hw1.Rmd">[this link]</a> to download and save Assignment 1 into your <code>homework</code> folder now.</p>
-<blockquote class="blockquote">
-<p>need to fix hw1 link loc and qmd</p>
-</blockquote>
-<p>:cinema: <a href="https://youtu.be/ayar0LFRg0U">Windows video walk through.</a></p>
-<blockquote class="blockquote">
-<p>to what?</p>
-</blockquote>
+<div class="callout callout-style-default callout-important callout-titled" title="Avoid these pain points">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Avoid these pain points
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Do not left click on the links</li>
+<li>Do not let files live in your downloads folder.</li>
+<li>Do not open any files from your browser window after downloading.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="👉 Your Turn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Your Turn
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Right click <a href="https://quarto.org/docs/get-started/hello/rstudio/_hello.qmd">[this link]</a> to download and save this file into your <code>homework</code> folder.</p>
+<p>We will use this file in the next lesson.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="sec-install" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="sec-install"><span class="header-section-number">1.2</span> Installing R and R Studio</h2>
-<p><strong>Download and install R and R Studio</strong></p>
-<details>
-<summary>
-<strong>Ipad, Tablet and Chromebook users</strong>
-</summary>
+<p>Follow the instructions appropriate for your operating system.</p>
+<div class="callout callout-style-simple callout-warning no-icon callout-titled" title="Tablet / iPad / Chromebook">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tablet / iPad / Chromebook
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>If you are using a tablet, Chromebook or otherwise do not have a computer that you can install programs on, you can use Posit Cloud for this class.</p>
 <ul>
 <li>Make a <strong>Cloud FREE</strong> account at https://posit.cloud/plans/free</li>
@@ -405,54 +448,65 @@ Learning Objectives
 <li>you will be able to put your files under version control</li>
 <li>you always have access to your code even with unstable or no internet</li>
 </ul>
-</details>
-<details>
-<summary>
-<strong>Windows</strong>
-</summary>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-warning no-icon callout-titled" title="Windows">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Windows
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Install R</strong></p>
 <ol type="1">
-<li>Go to <a href="https://cran.r-project.org/bin/windows/base/" class="uri">https://cran.r-project.org/bin/windows/base/</a><br>
-and download the latest <strong>R installer</strong>.<br>
-</li>
-<li>Double-click the downloaded file and follow the prompts (default settings are fine).<br>
-</li>
-<li>When finished, you can delete the desktop shortcut that looks like the icon above.</li>
+<li>Go to <a href="https://cran.r-project.org/bin/windows/base/" class="uri">https://cran.r-project.org/bin/windows/base/</a> and download the latest <strong>R installer</strong>.</li>
+<li>Double-click the downloaded file and follow the prompts (default settings are fine).</li>
+<li>When finished, you can delete the desktop shortcut that looks like a blue R.</li>
 </ol>
 <p><strong>Install RStudio</strong></p>
 <ol type="1">
-<li>Go to <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a><br>
-and download <strong>RStudio Desktop (Free)</strong> for Windows.<br>
-</li>
-<li>Double-click the installer and follow the prompts.<br>
-</li>
+<li>Go to <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a> and download <strong>RStudio Desktop (Free)</strong> for Windows.</li>
+<li>Double-click the installer and follow the prompts.</li>
 <li>When installation finishes, open <strong>RStudio</strong> — it should detect R automatically.</li>
 </ol>
-</details>
-<details>
-<summary>
-<strong>macOS</strong>
-</summary>
+<p><a href="https://youtu.be/KAeHFzxbHTA?si=xpeDGqt7gurg_rFR">Walk through video for Windows</a></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-warning no-icon callout-titled" title="MacOS">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+MacOS
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Install R</strong></p>
 <ol type="1">
-<li>Go to <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a><br>
-and download the latest <strong>.pkg</strong> installer (Intel or Apple Silicon).<br>
-</li>
-<li>Double-click to install R.<br>
-</li>
+<li>Go to <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a> and download the latest <strong>.pkg</strong> installer (Intel or Apple Silicon).</li>
+<li>Double-click to install R.</li>
 <li>If prompted to install <strong>XQuartz</strong>, use the link on that page to complete the setup.</li>
 </ol>
 <p><strong>Install RStudio</strong></p>
 <ol type="1">
-<li>Go to <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a><br>
-and download <strong>RStudio Desktop (Free)</strong> for macOS.<br>
-</li>
-<li>Drag the <strong>RStudio</strong> icon into your <strong>Applications</strong> folder.<br>
-</li>
+<li>Go to <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a> and download <strong>RStudio Desktop (Free)</strong> for macOS.</li>
+<li>Drag the <strong>RStudio</strong> icon into your <strong>Applications</strong> folder.</li>
 <li>After installation, eject the downloaded drive by dragging it to <strong>Trash</strong>, then open RStudio from Applications.</li>
 </ol>
-</details>
-<p>::: callout-important {title = “Video Tutorials for both R and R Studio.} - <a href="https://youtu.be/KAeHFzxbHTA?si=xpeDGqt7gurg_rFR">Windows</a> - <a href="https://youtu.be/ay25o485YXs?si=7r4qmmvtD15RM_eS">Mac</a> :::</p>
+<p><a href="https://youtu.be/ay25o485YXs?si=7r4qmmvtD15RM_eS">Walkthrough video for Mac</a></p>
+</div>
+</div>
+</div>
 </section>
 <section id="terminology" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="terminology"><span class="header-section-number">1.3</span> Terminology</h2>

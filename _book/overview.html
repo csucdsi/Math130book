@@ -312,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong><a href="https://positron.posit.co/">Positron</a></strong> is a new IDE created by the developers of RStudio that is based off another popular IDE called VSCode - and aimed primarily at Data Scientists</li>
 </ul></li>
 </ul>
-<div class="page-columns page-full"><p><img src="img/r-manual.jpeg" class="img-fluid quarto-figure quarto-figure-left" alt="Manual car gear shift representing coding in R" width="250"> <img src="img/r-automatic.jpeg" class="img-fluid quarto-figure quarto-figure-right" alt="Automatic car gear shift representing RStudio environment" width="250"> </p><div class="no-row-height column-margin column-container"><span class="margin-aside">RStudio extends what R can do, and makes it easier to write R code and interact with R. <a href="https://unsplash.com/photos/D19rXKDUPYM">Left photo credit</a>; <a href="https://unsplash.com/photos/Wec3M4dY_LE">Right photo credit</a>.</span></div></div>
+<div class="page-columns page-full"><p><img src="img/r-manual.jpeg" class="img-fluid quarto-figure quarto-figure-left" alt="Manual car gear shift representing coding in R" width="250"> <img src="img/r-automatic.jpeg" class="img-fluid quarto-figure quarto-figure-right" alt="Automatic car gear shift representing RStudio integrated development environment" width="250"> </p><div class="no-row-height column-margin column-container"><span class="margin-aside">RStudio extends what R can do, and makes it easier to write R code and interact with R. <a href="https://unsplash.com/photos/D19rXKDUPYM">Left photo credit</a>; <a href="https://unsplash.com/photos/Wec3M4dY_LE">Right photo credit</a>.</span></div></div>
 <p>This book teaches you how to use R from within the <strong>R Studio</strong> IDE as we feel it is easier for new learners to start with. You will have to install both onto your computer. Setup instructions are discussed later in <a href="setup_tools.html#sec-install" class="quarto-xref"><span>1.2 Installing R and R Studio</span></a></p>
 </section>
 <section id="motivation" class="level2 page-columns page-full">
@@ -348,7 +348,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="programming-can-be-scary" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="programming-can-be-scary">Programming can be scary!</h2>
 <p>It’s important to acknowledge that computer programming is a new skill, that may bring a roller coaster of emotions with it while you learn.</p>
-<div class="page-columns page-full"><p><img src="img/r-learning-curve-horst.png" class="img-fluid" alt="Line chart labeled 'How much I think I know about R' versus time, showing ups and downs with smiley faces at different stages." width="600"> </p><div class="no-row-height column-margin column-container"><span class="margin-aside"><a href="https://allisonhorst.com/">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span> – used under CC BY 4.0.</a></span></div></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/r-learning-curve-horst.png" class="img-fluid figure-img" alt="Line chart labeled 'How much I think I know about R' versus time, showing ups and downs with smiley faces at different stages." width="600"></p>
+<figcaption>Learning curve diagram by Allison Horst showing how much you think you know about R over time</figcaption>
+</figure>
+</div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><a href="https://allisonhorst.com/">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span> – used under CC BY 4.0.</a></span></div></div>
+<p>But you don’t have to go at it alone! You are now part of a <em>learning community</em> that you can lean on for questions and support.</p>
+<div class="page-columns page-full"><p><img src="img/r-community.png" class="img-fluid" alt="A person in a cape that reads “code hero” who looks like they are flying through the air while typing on a computer while saying “I’m doing a think all on my own!” The coder’s arms and legs have ropes attached to two hot air balloons lifting them up, with labels on the balloons including “teachers”, “bloggers”, “friends”, “developers”. Below the code hero, several people carry a trampoline with labels “support” and “community” that will catch them if they fall" width="600"> </p><div class="no-row-height column-margin column-container"><span class="margin-aside"><a href="https://datascience.csuchico.edu/communitycoding">Drop in help available at Community Coding</a></span></div></div>
 <p>Learning to program has lots of benefits</p>
 <ul>
 <li>Improves your logical skills and critical problem solving</li>
@@ -418,34 +426,35 @@ Danger
 <p>Red boxes contain warnings such as common errors or pitfalls.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-caution callout-titled" title="Caution">
+<div class="callout callout-style-default callout-caution callout-titled" title="Videos">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Caution
+Videos
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>not sure if using yellow boxes</p>
+<p>Yellow boxes contain links to supporting videos.</p>
 </div>
 </div>
+<!---
+### Follow along videos
+Sections that have associated videos will be denoted with a 🎦. 
+--->
 </section>
-<section id="follow-along-videos" class="level3">
-<h3 class="anchored" data-anchor-id="follow-along-videos">Follow along videos</h3>
-<p>Sections that have associated videos will be denoted with a 🎦.</p>
-</section>
-<section id="code-appearance" class="level3">
-<h3 class="anchored" data-anchor-id="code-appearance">Code appearance</h3>
-<p>In these notes, code is displayed like this:</p>
+<section id="code-and-keystroke-appearance" class="level3">
+<h3 class="anchored" data-anchor-id="code-and-keystroke-appearance">Code and keystroke appearance</h3>
+<p>In these notes, code that is referenced in text is <code>displayed in this format</code>, code is executed (run) by R is displayed like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
 </div>
-<p>where the output or result of the code is displayed directly after. The<code>[1]</code> that is sometimes displayed with the output helps count the lines of output (sometimes), and can be ignored <em>most</em> of the time.</p>
+<p>where the output or result of the code is displayed directly after. The <code>[1]</code> that is sometimes displayed with the output helps count the lines of output (sometimes), and can be ignored <em>most</em> of the time.</p>
+<p>When giving instructions on which keys to press, buttons are shown as boxes like <kbd>CTRL</kbd> or <kbd>ENTER</kbd> .</p>
 </section>
 </section>
 <section id="getting-and-submitting-assignments" class="level2">

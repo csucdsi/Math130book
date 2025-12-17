@@ -8,9 +8,6 @@
 Workshop](https://bcgov.github.io/ds-cop-intro-to-r/seeking-help-fr%20om-others-with-reprex.html)\](img/debugging.jpg){fig-align="center"
 width="149"}
 
-*Much of this information is also on the [FAQ](../faq.html) page*
-
-> still accurate?
 
 ### Advice on asking for help
 
@@ -98,7 +95,7 @@ in the search to find the answers:
 results from the past 1-2 years. Anything over 5 years old for packages
 such as `ggplot`, `dplyr`, and `forcats` are likely obsolete.
 
-### In Person help
+### In Person help {#sec-iphelp}
 
 -   Start by ask the person sitting next to you! Don't hesitate to talk
     to your neighbor, compare your answers, and ask for help.
