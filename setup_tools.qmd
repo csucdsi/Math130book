@@ -10,53 +10,9 @@ After completing this lesson learners will be able to:
 
 :::
 
-## Get oRganized!
-
-It is good practice to keep a set of related data, analyses, and text self-contained in a single folder called the _working directory_. For example keeping all files related to one class in it's own folder, separate from other classes. If you are taking another class using R at the same time as this one, it's even MORE important to keep your files separate. 
-
-:::{.callout-important}
-THIS SHOULD NOT BE YOUR DOWNLOADS FOLDER
-:::
-
-### Names are important
-
-Choose one of the four naming convention shown below for your class folder and stick with it. These are `snake_case`, `camelCase`, `kebab-case` or `UPPER_SNAKE`. 
-
-![Common Naming Conventions](img/name_things.png){fig-alt="Cartoon representations of common cases in coding. A snake screams 'SCREAMING_SNAKE_CASE' into the face of a camel (wearing ear muffs) with 'camelCase' written along its back. Vegetables on a skewer spell out 'kebab-case' (words on a skewer). A mellow, happy looking snake has text 'snake_case' along it." width="600"}
-
-[<a href = "https://allisonhorst.com/">Artwork by @allison_horst – used under CC BY 4.0.</a>]{.aside}
-
-:::{.callout-tip title = "Create your folders"}
-1.  On your computer, in an easy to find place, create a new folder named `math130` using your chosen naming convention.
-2.  Then create three subfolders: `data`, `homework`, `notes`.
-
-![](img/folder_org.PNG){fig-align="center"}
-
-:::
-
-### Be the boss of your files
-
-When you download a file, right click and "Save as" or "Save target as" and **actively choose** where to download this file.
-
-:::{.callout-important title = "Avoid these pain points"}
-
-* Do not left click on the links
-* Do not let files live in your downloads folder.
-* Do not open any files from your browser window after downloading.
-:::
-
-:::{.callout-tip title = "👉 Your Turn" icon=false}
-Right click [[this link]](https://quarto.org/docs/get-started/hello/rstudio/_hello.qmd) to download and save this file into your `homework` folder. 
-
-We will use this file in the next lesson. 
-:::
-
-
-
 ## Installing R and R Studio {#sec-install}
 
 Follow the instructions appropriate for your operating system. 
-
 :::{.callout-warning icon=false collapse="true" appearance=minimal title = "Tablet / iPad / Chromebook"}
 If you are using a tablet, Chromebook or otherwise do not have a computer that you can install programs on, you can use Posit Cloud for this class.
 
@@ -189,6 +145,11 @@ You will see the command echoed down in the Console along with the answer. We wi
 The **Environment / History** pane (top-right) shows all the objects you’ve created in your current R session — for example, data frames, variables, or plots you’ve assigned.
 
 - The **Environment** tab lists everything that currently exists in memory. This could be data sets, model results and defined variables. 
+
+:::{.callout-tip title = "👉 Your Turn" icon=false}
+In console run `data(cars)`. This loads a built-in data set named `cars` into your environment. Click on the word `cars` in the top right, and notice it opens the data set in a spreadsheet like view in the Source pane. 
+:::
+
 - The **History** tab keeps a record of all the commands you’ve run.
 
 There are also some additional tabs in this area, like **Connections**, **Build**, **Tutorial**, and sometimes **Git**.  We won’t cover those here, but RStudio has many additional tools and features available as you learn more.
@@ -196,7 +157,6 @@ There are also some additional tabs in this area, like **Connections**, **Build*
 ### Files / Plots / Packages / Help {.unnumbered}
 
 The **Files / Plots / Packages / Help** pane is used to explore files, view plots, manage packages, and read help pages.
-
 
 
 ## Customizing
@@ -291,12 +251,14 @@ Install the list of packages to the left one at a time and wait for it to finish
 - `tidyverse`  
 - `sjPlot`
 - `quarto`
+- `gtsummary`
 :::
 
 ::: {.column width="50%"}
 - `openintro`  
 - `palmerpenguins`
 - `tinytex`
+- `here`
 :::
 
 ::::
@@ -309,6 +271,69 @@ Check to see if you have a package installed by looking in the packages tab.
 You can also type the command `installed.packages()` into the console and examine the output.
 :::
 
+
+
+## Get oRganized!
+
+It is good practice to keep a set of related data, analyses, and text self-contained in a single folder called the _working directory_. For example keeping all files related to one class in it's own folder, separate from other classes. If you are taking another class using R at the same time as this one, it's even MORE important to keep your files separate. 
+
+:::{.callout-important}
+THIS SHOULD NOT BE YOUR DOWNLOADS FOLDER
+:::
+
+### Names are important
+
+Choose one of the four naming convention shown below for your class folder and stick with it. These are `snake_case`, `camelCase`, `kebab-case` or `UPPER_SNAKE`. 
+
+![Common Naming Conventions](img/name_things.png){fig-alt="Cartoon representations of common cases in coding. A snake screams 'SCREAMING_SNAKE_CASE' into the face of a camel (wearing ear muffs) with 'camelCase' written along its back. Vegetables on a skewer spell out 'kebab-case' (words on a skewer). A mellow, happy looking snake has text 'snake_case' along it." width="600"}
+
+[<a href = "https://allisonhorst.com/">Artwork by @allison_horst – used under CC BY 4.0.</a>]{.aside}
+
+:::{.callout-tip title = "Create your folders"}
+1.  On your computer, in an easy to find place, create a new folder named `math130` using your chosen naming convention.
+2.  Then create three subfolders: `data`, `homework`, `notes`.
+
+![](img/folder_org.PNG){fig-align="center"}
+
+:::
+
+### Be the boss of your files
+
+When you download a file, right click and "Save as" or "Save target as" and **actively choose** where to download this file.
+
+:::{.callout-important title = "Avoid these pain points"}
+
+* Do not left click on the links
+* Do not let files live in your downloads folder.
+* Do not open any files from your browser window after downloading.
+:::
+
+:::{.callout-tip title = "👉 Your Turn" icon=false}
+Right click [[this link]](https://quarto.org/docs/get-started/hello/rstudio/_hello.qmd) to download and save this file into your `homework` folder. 
+
+We will use this file in the next lesson. 
+:::
+
+
+## Organization using R Projects
+
+R projects are a great way of keeping all files for one project all together, and makes importing data much easier by using relative paths instead of absolute ones. Plus this ensures reproducibility by others (because no-one else has a path at `C:\users\rdonatello\myprojects\math130`)
+
+
+:::{.callout-tip title = "👉 Your Turn" icon=false}
+* Click on the R cube icon in the top right corner of RStudio  and select _Crete new project_. 
+* Choose _Existing Directory_ and navigate to your Math 130 folder. 
+* Check _Open in new session_. This allows you to have multiple Rstudio windows open for different projects and the files/data/objects don't get cross-contaminated. 
+* Click _Create Project_. 
+:::
+
+This will open a new R Studio window. Go ahead and close both R Studio windows for now (Don't save `Untitled1.R`). We'll see how to use R Projects next. 
+
+:::{.callout-tip title = "👉 Using R Projects" icon=false}
+* Navigate in your file explorer to the folder where you created your project. 
+* Click on the R cube icon to open the whole project. 
+* Using the `files` tab (bottom right) open the `_hello.qmd` script files.
+:::
 
 
 ## Final Tips
