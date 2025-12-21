@@ -137,20 +137,18 @@ We will be interacting with the programming language R *only* through R Studio. 
 
 [<a href = "https://datacarpentry.github.io/genomics-r-intro/00-introduction.html#overview-and-customization-of-the-rstudio-layout">Details pulled from the Data Carpentry Genomics lesson</a>]{.aside}
 
-#### Source {.unnumbered}
 
-This pane is where you will write/view R and Quarto scripts. Some outputs (such as a dataset) will appear as a tab here.
+::: {.callout-caution icon=false title = "(Optional videos) Navigating R Studio"}
+Watch one of the following short videos to learn how to navigate R Studio.
 
-:::{.callout-tip title = "👉 Your Turn" icon=false}
-_Click on **File --> New File --> R Script**_ to open an R script file.
-
+-   [R Girls on YouTube](https://youtu.be/vx4SPeNvols?si=1iSqsH1uNLFkB7yF&t=239)
+-   [Dr. D's overview](https://media.csuchico.edu/media/t/1_93i6jwy8)
 :::
+
 
 #### Console/Terminal/Jobs {.unnumbered}
 
-The **console** is where you see the execution of commands.  
-You can type commands directly into the console and press
-<kbd>Enter</kbd> to execute those commands, but they will be forgotten when you close the session.
+The **console** (left side) is where you see the execution of commands.  You can type commands directly into the console and press <kbd>Enter</kbd> to execute those commands. 
 
 **R is an overgrown calculator**
 
@@ -162,41 +160,35 @@ In the console type the following code, then press <kbd>Enter</kbd>.
 ```
 :::
 
+Once these commands are submitted (the code is run) they will be forgotten when you close the session. To save your commands you'll want to write them in a _script_ file. 
+
+#### Source {.unnumbered}
+
+This pane is where you will write/view R and Quarto _scripts_. Some outputs (such as a dataset) will appear as a tab here. 
+
 :::{.callout-tip title = "👉 Your Turn" icon=false}
-Now try a more complicated equation. Type this in _exactly_ as it is written below. 
+_Click on **File --> New File --> R Script**_ to open an R script file.
+
+:::
+
+You should now have four panes, with a new `untitled1.R` script file in the top left. When you write R code here you can save these commands, and rerun them later on demand. 
+
+:::{.callout-tip title = "👉 Your Turn" icon=false}
+In the script file type `2+2` and then then press <kbd>CTRL+Enter</kbd> while your cursor is still on the same line.
 ```{r}
-#| error: true
-2 + 5*(8^3)- 3*log10)
+#| eval: true
+#| code-line-numbers: true
+2+2
 ```
 :::
 
-Uh oh, we got an Error. Nothing to worry about, errors happen all the time.
-
-:::{.callout-tip title = "👉 Your Turn" icon=false}
-Put a open parenthesis `(` before `log10` to fix it and try
-again.
-:::
-
-**\> R is waiting on you...**
-
-:::{.callout-tip title = "👉 Your Turn" icon=false}
-Run the following code in the console. 
-``` r
-2 + 5*(8^3)- 3*log(10
-```
-:::
-
-Notice the console shows a `+` prompt. This means that you haven't finished entering a complete command.
-
-This is because you have not 'closed' a parenthesis or quotation, i.e. you don't have the same number of left-parentheses as right-parentheses, or the same number of opening and closing quotation marks.
-
-When this happens, and you thought you finished typing your command, click inside the console window and press <kbd>Esc</kbd>; this will cancel the incomplete command and return you to the `>` prompt.
+You will see the command echoed down in the Console along with the answer. We will come back to using scripts in the next lesson. 
 
 ### Environment / History {.unnumbered}
 
 The **Environment / History** pane (top-right) shows all the objects you’ve created in your current R session — for example, data frames, variables, or plots you’ve assigned.
 
-- The **Environment** tab lists everything that currently exists in memory.  
+- The **Environment** tab lists everything that currently exists in memory. This could be data sets, model results and defined variables. 
 - The **History** tab keeps a record of all the commands you’ve run.
 
 There are also some additional tabs in this area, like **Connections**, **Build**, **Tutorial**, and sometimes **Git**.  We won’t cover those here, but RStudio has many additional tools and features available as you learn more.
@@ -206,19 +198,12 @@ There are also some additional tabs in this area, like **Connections**, **Build*
 The **Files / Plots / Packages / Help** pane is used to explore files, view plots, manage packages, and read help pages.
 
 
-::: {.callout-caution icon=false title = "Navigating R Studio"}
-Optional: Watch one of the following short videos to learn how to navigate R Studio.
-
--   [R Girls on YouTube](https://youtu.be/vx4SPeNvols?si=1iSqsH1uNLFkB7yF&t=239)
--   [Dr. D's overview](https://media.csuchico.edu/media/t/1_93i6jwy8)
-:::
-
 
 ## Customizing
 
 Setting preferences in R Studio
 
-AKA: Retain sanity while troubleshooting
+[AKA: Retain sanity while troubleshooting]{.aside}
 
 ::: {.grid}
 ::: {.g-col-6}
@@ -252,15 +237,9 @@ that it really is the backbone of the customizability and functionality
 that makes R so powerful of a language.
 
 For example we will be creating graphics using functions like
-`boxplot()` and `hist()` that exist in base R. But we will quickly move
-on to creating graphics using functions contained in the `ggplot2`
-package. We will be managing data using functions in `dplyr` and reading
-in Excel files using `readxl`. Installing packages will become your
-favorite past-time.
+`boxplot()` and `hist()` that exist in base R. But we will quickly move on to creating graphics using functions contained in the `ggplot2` package. We will be managing data using functions in `dplyr` and reading in Excel files using `readxl`. Installing packages will become your favorite past-time.
 
-### Installing Packages
-
-:::{.callout-tip title = "Install `ggplot2`"}
+:::{.callout-tip title = "👉 Install `ggplot2`" icon=false}
 Typing the following in the console to install the `ggplot2` package.
 ```{r}
 #| eval: false
@@ -268,16 +247,15 @@ install.packages("ggplot2")
 ```
 :::
 
-When the download and install is complete, you should see a message
-similar to:
+When the download and install is complete, you should see a message similar to:
 
 ```         
 The downloaded binary packages are in
     C:\Users\Robin\AppData\Local\Temp\Rtmpi8NAym\downloaded_packages
 ```
 
-:warning: R is case sensitive and spelling matters. If you get an error
-message like the following:
+:::{.callout-important title = "R is Case sensitive"}
+R is case sensitive and spelling matters. If you get an error message like the following. 
 
 ``` r
 Warning in install.packages :
@@ -286,7 +264,9 @@ Warning in install.packages :
 
 The correct package name is `ggplot2`, not `ggplot`.
 
-::: callout-caution {title = "Alternative Method of installing Packages"}
+:::
+
+:::{.callout-note title = "Alternative Method of installing Packages"}
 Additional packages can be installed from the ‘packages’ tab. 
 
 * On the packages tab, click the ‘Install’ icon and start typing the name of the package you want in the text box. 
@@ -298,11 +278,12 @@ Additional packages can be installed from the ‘packages’ tab.
 
 ![](img/allthethings.jpg){fig-alt="Cartoon shouting 'Get all the things!' representing package installation excitement." width="500"}
 
-Now that you're a package installing pro, go ahead and install the
-following packages that we will be using in the next few weeks.
+Now that you're a package installing pro, go ahead and install the following packages that we will be using in the next few weeks.
 
-Install the list of packages to the left one at a time and wait for it
-to finish before entering the next command.
+:::{.callout-tip title = "👉 Your Turn" icon=false}
+
+
+Install the list of packages to the left one at a time and wait for it to finish before entering the next command.
 
 :::: {.columns}
 
@@ -320,7 +301,10 @@ to finish before entering the next command.
 
 ::::
 
-:::{.callout-tip title = "Trust but Verify"}
+:::
+
+
+:::{.callout-important title = "Trust but Verify"}
 Check to see if you have a package installed by looking in the packages tab.
 You can also type the command `installed.packages()` into the console and examine the output.
 :::
@@ -333,16 +317,14 @@ You can also type the command `installed.packages()` into the console and examin
 
 Unless you're returning to work in R Studio in a short while, you should make a habit to save all open tabs and completely shut down R studio when you are done working. This ensures your environment is cleared.
 
-*This is a good thing.*
+*This is a good thing.* 
 
 **Restart R**
 
-To restart R without shutting the entire window down, go to the file
-menu bar in the top,
+To restart R without shutting the entire window down, go to the file menu bar in the top,
 
 > *Session* --\> Restart R and Clear Output
 
 This is good to do when switching between projects/classes.
 
-To effectively restart R, go to the file menu and click *Session* , then "Restart R", or "Restart R and clear output". :cinema: [Link to video walk through](https://youtu.be/49u5xAYfrgk)
 
