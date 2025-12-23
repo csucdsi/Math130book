@@ -1,4 +1,4 @@
-# Getting data into R
+# Getting data into R {#sec-import}
 
 ## Introduction <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+Introduction/1_qwkzetht" target="_blank">(Video)</a>
 In this lesson we will introduce ways to get data from external files into R, how R works with data, and how to use functions to explore your data frame. 
@@ -13,6 +13,21 @@ After completing this lesson learners will be able to
 * Compare and contrast the three file types discussed in this lesson. 
 * Use functions to examine data objects to ensure data was imported correctly. 
 :::
+
+
+One advantage of keeping files separate (aside from your sanity)
+All of the files within this folder can then be accessed using relative *paths*.
+
+Think of a *path* as driving directions to your instructors office in Holt Hall. It will be different for everyone if we start from your home. However, once you get onto campus, it's the same for everyone. 
+
+* **Absolute paths** point to where a file is on a specific computer. 
+    * Example: `/Users/rdonatello/Library/CloudStorage/Box-Box/Teaching/MATH 130/data` This path to the `data` folder only exists on Dr. Donatello's macbook. 
+* **Relative paths** indicate where inside the project folder a file is located. 
+    * Example: `MATH 130/data`. This path to the `data` folder once you're already in the `MATH 130` folder.  
+
+
+Additionally, working this way makes it a lot easier to move your project around on your computer and share it with others without having to directly modify file paths in the individual scripts. This will be super important when we start importing data from an external file in @sec-import. 
+
 
 :::{.callout-important}
 ##### Prior to this lesson learners should

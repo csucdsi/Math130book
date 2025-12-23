@@ -1,77 +1,30 @@
 # Your New Tools
 
-> update obj
-
-::: callout-note
-### Learning Objectives
-
+::: {.callout-note title="Learning Objectives"}
 After completing this lesson learners will be able to:
 
--   Use R and R Studio on their personal computer.
--   Describe the purpose of the RStudio Script, Console, Environment, and Plots panes.
--   Organize files and directories for a set of analyses as an R Project, and understand the purpose of the working directory.
--   Execute simple commands in the console
--   Use the built-in RStudio help interface to search for more information on R functions.
--   Demonstrate how to provide sufficient information for troubleshooting with the R user community.
+-   Install and access R and R Studio.
+-   Navigate the RStudio GUI.
+-   Install additional packages using R code.
+-   Create an organized class folder. 
+-   Create and use an R Project.
+
 :::
 
+Follow the instructions appropriate for your operating system.
 
 
-## Setup your class folder for success! :cinema:
+## Installing R and R Studio {#sec-install}
 
-> link to chapter video? 
-
-Using a consistent folder structure across your projects will help keep things organized, and will also make it easy to find/file things in the future. This can be especially helpful when you have multiple projects. 
-
-### Naming Things
-
-You also need to choose a naming convention for your class folder and stick with it. Recommended options are: 
-
-* ALL CAPS (`MATH130`)  
-* no caps (`math130`)
-* snake_case (`math_130`) 
-* CamelCase (`Math130`) 
-
-
-### Create Folders
-
-1. On your computer, in an easy to find place, create a new folder named `math130`. 
-2. Then create three subfolders: `data`, `homework`, `notes`.  
-![](img/folder_org.PNG){fig-align="center" width="149"}
-
-
-### Adding files into your class folder
-
-When you download a file, right click and "Save as" or "Save target as" and **actively choose** where to download this file.
-
-:x: Do not let files live in your downloads folder. 
-
-:x: Do not open any files from your browser window after downloading.
-
-
-:pencil2: Right click [[this link]](../hw/hw1.Rmd) to download and save Assignment 1 into your `homework` folder now.  
-
-> need to fix hw1 link loc and qmd
-
-
-:cinema: [Windows video walk through.](https://youtu.be/ayar0LFRg0U)
-
-> to what? 
-
-
-## Installing R and R Studio
-
-::: callout-danger
-### Tablet and Chromebook users
+:::{.callout-warning title = "Tablet / iPad / Chromebook" icon=false collapse=true appearance=minimal}
 
 If you are using a tablet, Chromebook or otherwise do not have a computer that you can install programs on, you can use Posit Cloud for this class.
 
 -   Make a **Cloud FREE** account at https://posit.cloud/plans/free
 -   Start a new project by clicking on the button in the top right corner
--   Then go to [slide #6](#intro_rstudio) to learn how to navigate RStudio.
+-   Then go to (#intro_rstudio) to learn how to navigate RStudio.
 
-The free account allows for 25 project hours/month, which may not be enough for this class. If you run into time limits or you are using this for another class you will have to upgrade to the **Cloud Student** plan which is \$5/month.
-:::
+The free account allows for 25 project hours/month, which may not be enough for this class. If you run into time limits or you are using this for another class you will have to upgrade to the **Cloud Student** plan which is $5/month.
 
 Using the cloud is easier to initially setup, but having your own installation on your computer ensures that
 
@@ -79,78 +32,323 @@ Using the cloud is easier to initially setup, but having your own installation o
 -   you will be able to put your files under version control
 -   you always have access to your code even with unstable or no internet
 
-## Download and install R
-
-![](img/R.png){fig-align="center" width="149"}
-
-### Step 1: Download R v 4.5+
-
--   Windows 10 https://cran.r-project.org/bin/windows/base/
--   Mac OS X page - https://cran.r-project.org/bin/macosx/
-    -   First link under "Latest Release" and looks like **R-4.5.0.pkg**.
-    -   :warning: You may later get a message about needing *X11* or *XQuartz*. The download for that program is also on this page. (Mac only)
--   Choose to save the file, do not open or run.
-
-### Step 2: Install R
-
--   Install R by double clicking on the downloaded file and following the prompts.
-    -   Default settings are OK.
-    -   Delete any desktop shortcuts that was created (looks like the icon above.)
-
-::: callout-important
-### 🎦 Video Tutorials for both R and R Studio.
-
--   [Windows](https://youtu.be/KAeHFzxbHTA?si=xpeDGqt7gurg_rFR)
--   [Mac](https://youtu.be/ay25o485YXs?si=7r4qmmvtD15RM_eS)
 :::
 
-## Download and install R Studio
+:::{.callout-warning icon=false collapse="true" appearance=minimal title = "Windows"}
 
-![](img/RStudio.png){fig-align="center" width="149"}
+**Install R**  
 
-### Step 1: Download the most recent version from
+1.  Go to <https://cran.r-project.org/bin/windows/base/> and download the latest **R installer**.
+2.  Double-click the downloaded file and follow the prompts (default settings are fine).
+3.  When finished, you can delete the desktop shortcut that looks like a blue R. 
 
--   <https://posit.co/download/rstudio-desktop/>
--   Your operating system should be automatically detected. If not, scroll down and choose your version.
+**Install RStudio**  
 
-### Install the program
+1.  Go to <https://posit.co/download/rstudio-desktop/> and download **RStudio Desktop (Free)** for Windows. 
+2.  Double-click the installer and follow the prompts.
+3.  When installation finishes, open **RStudio** — it should detect R automatically.
 
--   Windows: Double click on the downloaded file to run the installer program.
--   Mac: Double click on the downloaded file, then drag the R Studio Icon into your Applications folder.
-    -   After you are done, eject the "Drive" that you downloaded by dragging the icon to your trash.
+[Walk through video for Windows](https://youtu.be/KAeHFzxbHTA?si=xpeDGqt7gurg_rFR)
+:::
+
+:::{.callout-warning icon=false collapse="true" appearance=minimal title = "MacOS"}
+
+**Install R** 
+
+1.  Go to <https://cran.r-project.org/bin/macosx/> and download the latest **.pkg** installer (Intel or Apple Silicon).
+2.  Double-click to install R.
+3.  If prompted to install **XQuartz**, use the link on that page to complete the setup.
+
+**Install RStudio**
+
+1.  Go to <https://posit.co/download/rstudio-desktop/> and download **RStudio Desktop (Free)** for macOS.
+2.  Drag the **RStudio** icon into your **Applications** folder.
+3.  After installation, eject the downloaded drive by dragging it to **Trash**, then open RStudio from Applications.
+
+[Walkthrough video for Mac](https://youtu.be/ay25o485YXs?si=7r4qmmvtD15RM_eS)
+:::
+
+## Terminology
+
+The basis of programming is that we write down instructions for the computer to follow, and then we tell the computer to follow those instructions.
+
+We write, or *code*, instructions in R because it is a common language that both the computer and we can understand (with practice).
+
+We call the instructions *commands* and we tell the computer to follow the instructions by *executing* (also called *running*) those commands.
+
+Learning how to code is like learning a new language. There are rules and exceptions, and it can be extremely precise and sometimes frustrating in how literal it is. 
+
+[Writing clear commands can be like explaining how to make a PB&J sandwich to a child.]{.aside}
+{{< video https://www.youtube.com/watch?v=cDA3_5982h8>}}
+
+:::{.callout-note appearance=minimal}
+This class does not assume that you have any knowledge in programming, and will provide all the codes that you need. 
+For best results you should be trying to understand this new language, and how to tell R to do what you want it to do. 
+
+The tendency may be to reach out to AI to help write code for you, but this does not help you _learn_ and worse can provide code that is overly complicated and does not work as intended.
+:::
+
 
 ## Navigating R Studio
 
-We will be interacting with the programming language R *only* through R Studio. Not by itself. There are four panes, or windows, in R Studio.
+We will be interacting with the programming language R *only* through R Studio. Not by itself. Typically are four panes, or windows, in R Studio. When you first start the program, you may only see three. 
 
-> update to newest carpentry instructions
+![The major windows (or panes) of the RStudio environment:](https://datacarpentry.org/genomics-r-intro/fig/rstudio_session_4pane_layout.png){fig-alt="Screenshot of RStudio using the default white theme showing four panes"}
 
-::: {.callout-caution}
-### yellow for videos?
+[<a href = "https://datacarpentry.github.io/genomics-r-intro/00-introduction.html#overview-and-customization-of-the-rstudio-layout">Details pulled from the Data Carpentry Genomics lesson</a>]{.aside}
 
-🎦 Watch one of the following short videos to learn how to navigate R Studio.
 
--   [R Girls on YouTube](https://youtu.be/vx4SPeNvols?si=1iSqsH1uNLFkB7yF&t=239)
--   [Dr. D's overview](https://media.csuchico.edu/media/t/1_93i6jwy8)
+::: {.callout-caution icon=false title = "(Optional videos) Navigating R Studio"}
+[R Girls on YouTube](https://youtu.be/vx4SPeNvols?si=1iSqsH1uNLFkB7yF&t=239) 
 :::
 
-### Setting preferences in R Studio
 
-AKA: Retain sanity while troubleshooting 
+#### Console/Terminal/Jobs {.unnumbered}
 
-> side by side/text image
+The **console** (left side) is where you see the execution of commands.  You can type commands directly into the console and press <kbd>Enter</kbd> to execute those commands. 
 
-1. Open R Studio and go to the file menu go to _Tools_ then _Global Options_.
-2. Uncheck "Restore .RData into workspace at startup" 
-3. Where it says "Save workspace to .RData on exit:" Select "Never""
-4. Click apply then ok to close that window.
-  
-This will ensure that when you restart R you do not "carry forward" objects such as data sets that you were working on in a prior assignment. 
+**R is an overgrown calculator**
 
-To effectively restart R, go to the file menu and click _Session_ , then "Restart R", or "Restart R and clear output". 
-:cinema: [Link to video walk through](https://youtu.be/49u5xAYfrgk) 
+:::{.callout-tip title = "👉 Your Turn" icon=false}
+In the console type the following code, then press <kbd>Enter</kbd>.
+```{r}
+#| eval: true
+2+2
+```
+:::
+
+Once these commands are submitted (the code is run) they will be forgotten when you close the session. To save your commands you'll want to write them in a _script_ file. 
+
+#### Source {.unnumbered}
+
+This pane is where you will write/view R and Quarto _scripts_. Some outputs (such as a dataset) will appear as a tab here. 
+
+:::{.callout-tip title = "👉 Your Turn" icon=false}
+_Click on **File --> New File --> R Script**_ to open an R script file.
+
+:::
+
+You should now have four panes, with a new `untitled1.R` script file in the top left. When you write R code here you can save these commands, and rerun them later on demand. 
+
+:::{.callout-tip title = "👉 Your Turn" icon=false}
+In the script file type `2+2` and then then press <kbd>CTRL+Enter</kbd> while your cursor is still on the same line.
+```{r}
+#| eval: true
+#| code-line-numbers: true
+2+2
+```
+:::
+
+You will see the command echoed down in the Console along with the answer. We will come back to using scripts in the next lesson. 
+
+### Environment / History {.unnumbered}
+
+The **Environment / History** pane (top-right) shows all the objects you’ve created in your current R session — for example, data frames, variables, or plots you’ve assigned.
+
+- The **Environment** tab lists everything that currently exists in memory. This could be data sets, model results and defined variables. 
+
+:::{.callout-tip title = "👉 Your Turn" icon=false}
+In console run `data(cars)`. This loads a built-in data set named `cars` into your environment. Click on the word `cars` in the top right, and notice it opens the data set in a spreadsheet like view in the Source pane. 
+:::
+
+- The **History** tab keeps a record of all the commands you’ve run.
+
+There are also some additional tabs in this area, like **Connections**, **Build**, **Tutorial**, and sometimes **Git**.  We won’t cover those here, but RStudio has many additional tools and features available as you learn more.
+
+### Files / Plots / Packages / Help {.unnumbered}
+
+The **Files / Plots / Packages / Help** pane is used to explore files, view plots, manage packages, and read help pages.
+
+
+## Customizing
+
+Setting preferences in R Studio
+
+[AKA: Retain sanity while troubleshooting]{.aside}
+
+::: {.grid}
+::: {.g-col-6}
+![](img/rstudio_settings.png){fig-alt="RStudio General settings window showing 'Restore .RData into workspace at startup' unchecked and 'Save workspace to .RData on exit: Never' selected." width="100%"}
+:::
+
+::: {.g-col-6}
+1. Open **RStudio** and go to **Tools → Global Options…**  
+2. Uncheck **“Restore .RData into workspace at startup.”**  
+3. For **“Save workspace to .RData on exit:”** choose **Never.**  
+4. Click **Apply**, then **OK** to close the window.
+
+This ensures that each time you restart R, you start with a clean environment instead of carrying forward objects from a previous session.
+:::
+:::
+
+
+## Packages
+
+[<a href="https://spaceballs.fandom.com/wiki/Spaceballs:_The%E2%80%A6">"Where the real money from the movie is
+made."</a>]{.aside}
+
+R is considered an **Open Source** software program. That means many (thousands) of people contribute to the software. They do this by writing commands (called functions) to make a particular analysis easier, or to make a graphic prettier.
+
+When you download R, you get access to a lot of functions that we will use. However these other *user-written* packages add so much good stuff that it really is the backbone of the customizability and functionality that makes R so powerful of a language.
+
+For example we will be creating graphics using functions like
+`boxplot()` and `hist()` that exist in base R. But we will quickly move on to creating graphics using functions contained in the `ggplot2` package. We will be managing data using functions in `dplyr` and reading in Excel files using `readxl`. Installing packages will become your favorite past-time.
+
+:::{.callout-tip title = "👉 Install `ggplot2`" icon=false}
+Typing the following in the console to install the `ggplot2` package.
+```{r}
+#| eval: false
+install.packages("ggplot2")
+```
+:::
+
+When the download and install is complete, you should see a message similar to:
+
+```         
+The downloaded binary packages are in
+    C:\Users\Robin\AppData\Local\Temp\Rtmpi8NAym\downloaded_packages
+```
+
+:::{.callout-important title = "R is Case sensitive"}
+R is case sensitive and spelling matters. If you get an error message like the following. 
+
+``` r
+Warning in install.packages :
+  package ‘ggplot’ is not available (for R version 3.5.1)
+```
+
+The correct package name is `ggplot2`, not `ggplot`.
+
+:::
+
+:::{.callout-note title = "Alternative Method of installing Packages"}
+Additional packages can be installed from the ‘packages’ tab. 
+
+* On the packages tab, click the ‘Install’ icon and start typing the name of the package you want in the text box. 
+* At the bottom of the Install Packages window is a check box to ‘Install’ dependencies. This is ticked by default, which is usually what you want. Packages can (and do) make use of functionality built into other packages, so for the functionality contained in the package you are installing to work properly, there may be other packages which have to be installed with them. The ‘Install dependencies’ option makes sure that this happens.
+
+:::
+
+**Install all the things!**
+
+![](img/allthethings.jpg){fig-alt="Cartoon shouting 'Get all the things!' representing package installation excitement." width="500"}
+
+Now that you're a package installing pro, go ahead and install the following packages that we will be using in the next few weeks.
+
+:::{.callout-tip title = "👉 Your Turn" icon=false}
+
+
+Install the list of packages to the left one at a time and wait for it to finish before entering the next command.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- `tidyverse`  
+- `sjPlot`
+- `quarto`
+- `gtsummary`
+:::
+
+::: {.column width="50%"}
+- `openintro`  
+- `palmerpenguins`
+- `tinytex`
+- `here`
+:::
+
+::::
+
+:::
+
+
+:::{.callout-important title = "Trust but Verify"}
+Check to see if you have a package installed by looking in the packages tab. You can also type the command `installed.packages()` into the console and examine the output.
+:::
 
 
 
+## Get oRganized!
+
+It is good practice to keep a set of related data, analyses, and text self-contained in a single folder called the _working directory_. For example keeping all files related to one class in it's own folder, separate from other classes. If you are taking another class using R at the same time as this one, it's even MORE important to keep your files separate. 
+
+:::{.callout-important}
+THIS SHOULD NOT BE YOUR DOWNLOADS FOLDER
+:::
+
+### Names are important
+
+Choose one of the four naming convention shown below for your class folder and stick with it. These are `snake_case`, `camelCase`, `kebab-case` or `UPPER_SNAKE`. 
+
+![Common Naming Conventions](img/name_things.png){fig-alt="Cartoon representations of common cases in coding. A snake screams 'SCREAMING_SNAKE_CASE' into the face of a camel (wearing ear muffs) with 'camelCase' written along its back. Vegetables on a skewer spell out 'kebab-case' (words on a skewer). A mellow, happy looking snake has text 'snake_case' along it." width="600"}
+
+[<a href = "https://allisonhorst.com/">Artwork by @allison_horst – used under CC BY 4.0.</a>]{.aside}
+
+:::{.callout-tip title = "Create your folders"}
+1.  On your computer, in an easy to find place, create a new folder named `math130` using your chosen naming convention.
+2.  Then create three subfolders: `data`, `homework`, `notes`.
+
+![](img/folder_org.PNG){fig-align="center"}
+
+:::
+
+### Be the boss of your files
+
+When you download a file, right click and "Save as" or "Save target as" and **actively choose** where to download this file.
+
+:::{.callout-important title = "Avoid these pain points"}
+
+* Do not left click on the links
+* Do not let files live in your downloads folder.
+* Do not open any files from your browser window after downloading.
+:::
+
+:::{.callout-tip title = "👉 Your Turn" icon=false}
+Right click [[this link]](https://quarto.org/docs/get-started/hello/rstudio/_hello.qmd) to download and save this file into your `homework` folder. 
+
+We will use this file in the next lesson. 
+:::
+
+
+## Organization using R Projects
+
+R projects are a great way of keeping all files for one project all together, and makes importing data much easier by using relative paths instead of absolute ones. Plus this ensures reproducibility by others (because no-one else stores their files at `C:\users\rdonatello\myprojects\math130`)
+
+
+:::{.callout-tip title = "👉 Your Turn" icon=false}
+* Click on the R cube icon in the top right corner of RStudio  and select _Crete new project_. 
+* Choose _Existing Directory_ and navigate to your Math 130 folder. 
+* Check _Open in new session_. This allows you to have multiple Rstudio windows open for different projects and the files/data/objects don't get cross-contaminated. 
+* Click _Create Project_. 
+:::
+
+This will open a new R Studio window. Go ahead and close both R Studio windows for now (Don't save `Untitled1.R`). We'll see how to use R Projects next. 
+
+If you think about wanting to work on a report written in Microsoft Word, or a video that you want to edit, the common practice is to navigate to that file and double click to open that file in the appropriate program. We don't tend to open the program first, and then try to open the file from within the program. Using R Projects is somewhat the same. 
+
+:::{.callout-tip title = "👉 Using R Projects" icon=false}
+* Navigate in your file explorer to the folder where you created your project. 
+* Click on the R cube icon to open the whole project. 
+* Using the `files` tab (bottom right) find and click to open the `_hello.qmd` script file you downloaded earlier. 
+:::
+
+You can tell you are in an R Project by looking in the top right corner by the Environment pane and seeing if the R project cube has your class folder name
+
+![Example R Project](img/RProj.png)
+
+## Final Tips
+
+**Saving and closing your work.**
+
+Unless you're returning to work in R Studio in a short while, you should make a habit to save all open tabs and completely shut down R studio when you are done working. This ensures your environment is cleared.
+
+*This is a good thing.* 
+
+**Restart R**
+
+To restart R without shutting the entire window down, go to the file menu bar in the top,
+
+> *Session* --\> Restart R and Clear Output
+
+This is good to do when switching between projects/classes.
 
 

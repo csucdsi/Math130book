@@ -1,153 +1,33 @@
-# Preface & Course Overview {.unnumbered}
+---
+format: 
+  html:
+    toc: false
+---
 
-This notebook was created to host learning materials for Math 130: Introduction to R at California State University, Chico.
+# Preface {.unnumbered}
 
-Math 130 is designed as a short-course "primer" to be taken before, or concurrently with, an upper division or graduate level Statistics course such as Math 315 or Math 615.
+This notebook was created to host learning materials for Math 130: Introduction to R at California State University, Chico. From the course catalog: 
+
+> _This accelerated short course is designed as a primer to get the complete novice up and running with basic knowledge of how to use the statistical programming language R. The target audience is anyone who wants to become the boss of their data and conduct analyses. The course covers getting data into R, manipulating data into an analyzable format, and creating informative plots. Emphasis is placed on reproducibility and literate programming. The course culminates with a data exploration project._
+
+Math 130 is designed as a short-course "primer" to be taken before, or concurrently with, an upper division or graduate Statistics course such as Math 315 or Math 615. This can also be used a prepratory learning for classified admission into the [Masters in Data Science and Analytics Program](https://www.csuchico.edu/math/degrees/msdsa.shtml)[Want to Learn Python? <a href="https://roualdes.us/MATH131/intro.html">Check out Math 131 </a>]{.aside} 
 
 The goal of Math 130 is to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. We recognize there are many topics and many approaches to teach an introduction to the R programming language. We have picked specific topics and methods that we believe learners will need to succeed in subsequent classes.
 
-The target audience is anyone who wants to do their own data analysis. The course will culminate with an exploratory data analysis on either a pre-specified data set or your data set of choice.
 
-## Logistics
+::: {.callout-note title="Course Learning Objectives"}
+By the end of this class you will be able to: 
 
-This course may be offered as in person or (a)synchronous online. Regardless of the mode of instruction, all learning materials are found on this website. Class time (when applicable) is spent expanding on ideas and concepts, working through assignments as a class or in pairs.
+* Import spreadsheet-like data into R from an external file
+* Perform basic data wrangling like handling missing values, creating new variables, labeling categorical variables, and filtering rows. 
+* Create statistical data visualizations such as barcharts, histograms, boxplots, scatterplots, and extend to multivariate data by modifying colors, sizes, and panels. 
+* Create statistical data summaries such as tables, proportions, and summary statistics. 
+* Perform all of this work in a reproducible manner using professional tools. 
 
-The logistics of the course varies slightly by instructor and mode of instruction. See below for your specific section.
-
-::: callout-danger
-## Syllabus for current term
-
--   [HTML webpage](syllabus.html)
--   [Downloadable PDF](syllabus.pdf)
 :::
 
-<!-- updateme -->
+## References & Acknowledgements
 
-> move these to sub folder
+Some of this material presented is a derivation from work that is Copyright © by [The Carpentries](https://carpentries.org/) which is under a [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/) allowing for adaptations and reuse of the work.
 
--   [Fall 2025 Dr. Donatello - In person](slides/00_welcome_rad.html)
-
-```{=html}
-<!---
-* [Spring 2025 Dr. Roualdes](slides/01e_async_protocol.html)
-* [Summer 2025 Dr. Lytal](slides/01c_async_protocol.html)
---->
-```
-
-> where to put discord & common help? 
-
-## Callout boxes and icons
-
-::: callout-note
-### blue boxes
-
-mean this is a note
-:::
-
-::: callout-danger
-### orange boxes
-
-means danger. so this is red? 
-:::
-
-
-::: callout-caution
-### yellow boxes
-
-means caution
-:::
-
-::: callout-tip
-### green box
-
-is a tip or an example
-:::
-
-
-::: callout-important
-### this is important
-
-not sure what color
-:::
-
-* :cinema: associated video
-* :pencil2: You try it
-* :x: Don't do this thing
-
-
-
-## Tool choices
-
-### R + R Studio = Success
-
--   The term **R** refers to both the programming language and the software that interprets the scripts written using it.
-
--   **RStudio** is currently a very popular way to not only write your R scripts but also to interact with the R software.
-
--   We will be programming in the R language, using the R Studio platform. You will have to install both onto your computer. Setup instructions are discussed later in section `FIXME`
-
-### Why use R?
-
--   Open source, cross-platform, and free
--   Great for reproducibility
--   Flexible and extensible. Doesn't do something you want? Create a custom function for yourself.
--   Tons of learning resources
--   Currently R is used in all of Chico's upper division Statistics & Data Science courses, as well as in some Science, Public Health, Economics, Finance, and some graduate courses.
--   Does not involve lots of pointing and clicking (that's a good thing!)
--   Works on data of all shapes and sizes
--   Produces high-quality graphics
--   Large and welcoming community
-
-### Why use R Studio?
-
--   Customizable workspace that docks all windows together.
--   Notebook formats that allow for easy sharing of code and output, and integration with other languages (Python, C++, SQL, Stan)
--   Syntax highlighting, warning errors when missing a closing parentheses.
--   Cross-platform interface. Also works on Windows/iOS/Linux.
--   Tab completion for functions. Forget the syntax or a variable name? Popup helpers are available.
--   Free training videos available from the developers directly.
--   One button publishing of reproducible documents such as reports, interactive visualizations, presentations (like this one!), websites.
-
-::: callout-danger
-### make this side by side and add appropriate alt text
-
-![caption](img/r-manual.jpeg){fig-alt="alt text" fig-align="left" width="250"} ![caption](img/r-automatic.jpeg){fig-alt="alt text" fig-align="right" width="250"}
-
-<a href="https://unsplash.com/photos/D19rXKDUPYM">Left photo credit</a>; <a href="https://unsplash.com/photos/Wec3M4dY_LE">Right photo credit</a>. Entire figure credit: Data Carpentry R for Social Scientists.
-:::
-
-> check this link
-
-[Examples of things you can do in RStudio](https://rmarkdown.rstudio.com/gallery.html)
-
-## Programming is scary!
-
-![](img/hard.JPG){width="403"}
-
-> check links
-
-Learning to program has other benefits
-
--   Improves your logical skills and critical problem solving
--   Increases your attention to detail
--   Increases your self reliance and empowers you to control your own research.
--   Your PI will love your awesome graphics and reports.
--   Some people think what you do is magic.
--   Thinking graduate school? [\[expect to learn this on your own\]](http://www.nature.com/nature/journal/v541/n7638/full/nj7638-563a.html)
--   [\[A few\]](https://skillcrush.com/2015/01/28/laurence-bradford-10-reasons/) [\[other lists\]](https://careerfoundry.com/en/blog/web-development/7-benefits-of-learning-to-code/) [\[of reasons\]](https://skillcrush.com/2017/01/30/learn-to-code-benefits/)
-
-### Why no point and click?
-
-Because it's not reproducible.
-
--   Which boxes did you click last time?
--   New data? Gotta do it all over.
--   Need to expand your model? Gotta do it all over.
--   Made a mistake in the data coding? Gotta do it all over...
-
-
-::: callout-info
-## References
-
-Some of this material presented is a derivation from work that is Copyright © Software Carpentry (http://software-carpentry.org/) which is under a [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/) which allows for adaptations and reuse of the work.
-:::
+We would like to thank [Jayana Sarma](https://github.com/jayana714) for her assistance in porting these notes from R Markdown to Quarto.

@@ -6,9 +6,6 @@ In this lesson you will learn to write a document using R markdown, integrate li
 
 After completing this lesson learners will be able to create a new R markdown document, identify the components of a R Markdown document, and explain how R markdown files facilitates sharing of reproducible research. 
 
-### Pre-requisites
-* Have R and R Studio installed
-* Have the following packages installed: `rmarkdown`
 
 ## Document structure 
 
@@ -79,3 +76,21 @@ You are now ready to start the first assignment.
 * While the introductory video no longer works, there are additional lessons on using R Markdown at the following site: http://rmarkdown.rstudio.com/lesson-1.html
     - Relevant portions in this tutorial are "How it works", "Code Chunks", and "Output Formats"
 * Gallery of the vast range of output and product types that you can create using R Markdown including PDF reports, interactive dashboards, maps, webpages like this one and more:  https://rmarkdown.rstudio.com/gallery.html
+
+## Install TinyTex
+
+To convert your work into a professional looking PDF, or to write math symbols in your homework, or you need a typesetting program called $\LaTeX$ (pronounced "lay-tek" or "lah-tex"). It's a super neat program,
+but also nearly 4Gb. Too big for our needs. That's where the `tinytex`
+package came from. we're going to use it to install a lightweight
+version of $\LaTeX$. This will let us write math equations in Markdown/Quarto, and create nice PDF's of your work.
+
+In your console type the following and hit **Enter**
+
+```         
+tinytex::install_tinytex()
+```
+
+This may take a few minutes, but then you're good to go!
+
+Test it out now by rendering ... <thing> to PDF by clicking on the down arrow next to "Render" and choosing "PDF". 
+> FIXME
