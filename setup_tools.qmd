@@ -3,17 +3,21 @@
 ::: {.callout-note title="Learning Objectives"}
 After completing this lesson learners will be able to:
 
--   Create an organized directory of files and folders directories.
--   Access R and R Studio.
+-   Install and access R and R Studio.
 -   Navigate the RStudio GUI.
 -   Install additional packages using R code.
+-   Create an organized class folder. 
+-   Create and use an R Project.
 
 :::
 
+Follow the instructions appropriate for your operating system.
+
+
 ## Installing R and R Studio {#sec-install}
 
-Follow the instructions appropriate for your operating system. 
-:::{.callout-warning icon=false collapse="true" appearance=minimal title = "Tablet / iPad / Chromebook"}
+:::{.callout-warning title = "Tablet / iPad / Chromebook" icon=false collapse=true appearance=minimal}
+
 If you are using a tablet, Chromebook or otherwise do not have a computer that you can install programs on, you can use Posit Cloud for this class.
 
 -   Make a **Cloud FREE** account at https://posit.cloud/plans/free
@@ -27,8 +31,8 @@ Using the cloud is easier to initially setup, but having your own installation o
 -   you want to keep the program free forever
 -   you will be able to put your files under version control
 -   you always have access to your code even with unstable or no internet
-:::
 
+:::
 
 :::{.callout-warning icon=false collapse="true" appearance=minimal title = "Windows"}
 
@@ -95,10 +99,7 @@ We will be interacting with the programming language R *only* through R Studio. 
 
 
 ::: {.callout-caution icon=false title = "(Optional videos) Navigating R Studio"}
-Watch one of the following short videos to learn how to navigate R Studio.
-
--   [R Girls on YouTube](https://youtu.be/vx4SPeNvols?si=1iSqsH1uNLFkB7yF&t=239)
--   [Dr. D's overview](https://media.csuchico.edu/media/t/1_93i6jwy8)
+[R Girls on YouTube](https://youtu.be/vx4SPeNvols?si=1iSqsH1uNLFkB7yF&t=239) 
 :::
 
 
@@ -186,15 +187,9 @@ This ensures that each time you restart R, you start with a clean environment in
 [<a href="https://spaceballs.fandom.com/wiki/Spaceballs:_The%E2%80%A6">"Where the real money from the movie is
 made."</a>]{.aside}
 
-R is considered an **Open Source** software program. That means many
-(thousands) of people contribute to the software. They do this by
-writing commands (called functions) to make a particular analysis
-easier, or to make a graphic prettier.
+R is considered an **Open Source** software program. That means many (thousands) of people contribute to the software. They do this by writing commands (called functions) to make a particular analysis easier, or to make a graphic prettier.
 
-When you download R, you get access to a lot of functions that we will
-use. However these other *user-written* packages add so much good stuff
-that it really is the backbone of the customizability and functionality
-that makes R so powerful of a language.
+When you download R, you get access to a lot of functions that we will use. However these other *user-written* packages add so much good stuff that it really is the backbone of the customizability and functionality that makes R so powerful of a language.
 
 For example we will be creating graphics using functions like
 `boxplot()` and `hist()` that exist in base R. But we will quickly move on to creating graphics using functions contained in the `ggplot2` package. We will be managing data using functions in `dplyr` and reading in Excel files using `readxl`. Installing packages will become your favorite past-time.
@@ -267,8 +262,7 @@ Install the list of packages to the left one at a time and wait for it to finish
 
 
 :::{.callout-important title = "Trust but Verify"}
-Check to see if you have a package installed by looking in the packages tab.
-You can also type the command `installed.packages()` into the console and examine the output.
+Check to see if you have a package installed by looking in the packages tab. You can also type the command `installed.packages()` into the console and examine the output.
 :::
 
 
@@ -317,7 +311,7 @@ We will use this file in the next lesson.
 
 ## Organization using R Projects
 
-R projects are a great way of keeping all files for one project all together, and makes importing data much easier by using relative paths instead of absolute ones. Plus this ensures reproducibility by others (because no-one else has a path at `C:\users\rdonatello\myprojects\math130`)
+R projects are a great way of keeping all files for one project all together, and makes importing data much easier by using relative paths instead of absolute ones. Plus this ensures reproducibility by others (because no-one else stores their files at `C:\users\rdonatello\myprojects\math130`)
 
 
 :::{.callout-tip title = "👉 Your Turn" icon=false}
@@ -329,12 +323,17 @@ R projects are a great way of keeping all files for one project all together, an
 
 This will open a new R Studio window. Go ahead and close both R Studio windows for now (Don't save `Untitled1.R`). We'll see how to use R Projects next. 
 
+If you think about wanting to work on a report written in Microsoft Word, or a video that you want to edit, the common practice is to navigate to that file and double click to open that file in the appropriate program. We don't tend to open the program first, and then try to open the file from within the program. Using R Projects is somewhat the same. 
+
 :::{.callout-tip title = "👉 Using R Projects" icon=false}
 * Navigate in your file explorer to the folder where you created your project. 
 * Click on the R cube icon to open the whole project. 
-* Using the `files` tab (bottom right) open the `_hello.qmd` script files.
+* Using the `files` tab (bottom right) find and click to open the `_hello.qmd` script file you downloaded earlier. 
 :::
 
+You can tell you are in an R Project by looking in the top right corner by the Environment pane and seeing if the R project cube has your class folder name
+
+![Example R Project](img/RProj.png)
 
 ## Final Tips
 

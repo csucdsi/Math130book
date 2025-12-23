@@ -272,24 +272,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#get-organized" id="toc-get-organized" class="nav-link active" data-scroll-target="#get-organized"><span class="header-section-number">1.1</span> Get oRganized!</a>
-  <ul class="collapse">
-  <li><a href="#names-are-important" id="toc-names-are-important" class="nav-link" data-scroll-target="#names-are-important"><span class="header-section-number">1.1.1</span> Names are important</a></li>
-  <li><a href="#be-the-boss-of-your-files" id="toc-be-the-boss-of-your-files" class="nav-link" data-scroll-target="#be-the-boss-of-your-files"><span class="header-section-number">1.1.2</span> Be the boss of your files</a></li>
-  </ul></li>
-  <li><a href="#sec-install" id="toc-sec-install" class="nav-link" data-scroll-target="#sec-install"><span class="header-section-number">1.2</span> Installing R and R Studio</a></li>
-  <li><a href="#terminology" id="toc-terminology" class="nav-link" data-scroll-target="#terminology"><span class="header-section-number">1.3</span> Terminology</a></li>
-  <li><a href="#navigating-r-studio" id="toc-navigating-r-studio" class="nav-link" data-scroll-target="#navigating-r-studio"><span class="header-section-number">1.4</span> Navigating R Studio</a>
+  <li><a href="#sec-install" id="toc-sec-install" class="nav-link active" data-scroll-target="#sec-install"><span class="header-section-number">1.1</span> Installing R and R Studio</a></li>
+  <li><a href="#terminology" id="toc-terminology" class="nav-link" data-scroll-target="#terminology"><span class="header-section-number">1.2</span> Terminology</a></li>
+  <li><a href="#navigating-r-studio" id="toc-navigating-r-studio" class="nav-link" data-scroll-target="#navigating-r-studio"><span class="header-section-number">1.3</span> Navigating R Studio</a>
   <ul class="collapse">
   <li><a href="#environment-history" id="toc-environment-history" class="nav-link" data-scroll-target="#environment-history">Environment / History</a></li>
   <li><a href="#files-plots-packages-help" id="toc-files-plots-packages-help" class="nav-link" data-scroll-target="#files-plots-packages-help">Files / Plots / Packages / Help</a></li>
   </ul></li>
-  <li><a href="#customizing" id="toc-customizing" class="nav-link" data-scroll-target="#customizing"><span class="header-section-number">1.5</span> Customizing</a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"><span class="header-section-number">1.6</span> Packages</a>
+  <li><a href="#customizing" id="toc-customizing" class="nav-link" data-scroll-target="#customizing"><span class="header-section-number">1.4</span> Customizing</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"><span class="header-section-number">1.5</span> Packages</a></li>
+  <li><a href="#get-organized" id="toc-get-organized" class="nav-link" data-scroll-target="#get-organized"><span class="header-section-number">1.6</span> Get oRganized!</a>
   <ul class="collapse">
-  <li><a href="#installing-packages" id="toc-installing-packages" class="nav-link" data-scroll-target="#installing-packages"><span class="header-section-number">1.6.1</span> Installing Packages</a></li>
+  <li><a href="#names-are-important" id="toc-names-are-important" class="nav-link" data-scroll-target="#names-are-important"><span class="header-section-number">1.6.1</span> Names are important</a></li>
+  <li><a href="#be-the-boss-of-your-files" id="toc-be-the-boss-of-your-files" class="nav-link" data-scroll-target="#be-the-boss-of-your-files"><span class="header-section-number">1.6.2</span> Be the boss of your files</a></li>
   </ul></li>
-  <li><a href="#final-tips" id="toc-final-tips" class="nav-link" data-scroll-target="#final-tips"><span class="header-section-number">1.7</span> Final Tips</a></li>
+  <li><a href="#organization-using-r-projects" id="toc-organization-using-r-projects" class="nav-link" data-scroll-target="#organization-using-r-projects"><span class="header-section-number">1.7</span> Organization using R Projects</a></li>
+  <li><a href="#final-tips" id="toc-final-tips" class="nav-link" data-scroll-target="#final-tips"><span class="header-section-number">1.8</span> Final Tips</a></li>
   </ul>
 </nav>
     </div>
@@ -327,15 +325,367 @@ Learning Objectives
 <div class="callout-body-container callout-body">
 <p>After completing this lesson learners will be able to:</p>
 <ul>
-<li>Create an organized directory of files and folders directories.</li>
-<li>Access R and R Studio.</li>
+<li>Install and access R and R Studio.</li>
 <li>Navigate the RStudio GUI.</li>
 <li>Install additional packages using R code.</li>
+<li>Create an organized class folder.</li>
+<li>Create and use an R Project.</li>
 </ul>
 </div>
 </div>
-<section id="get-organized" class="level2 page-columns page-full" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="get-organized"><span class="header-section-number">1.1</span> Get oRganized!</h2>
+<p>Follow the instructions appropriate for your operating system.</p>
+<section id="sec-install" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="sec-install"><span class="header-section-number">1.1</span> Installing R and R Studio</h2>
+<div class="callout callout-style-simple callout-warning no-icon callout-titled" title="Tablet / iPad / Chromebook">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tablet / iPad / Chromebook
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If you are using a tablet, Chromebook or otherwise do not have a computer that you can install programs on, you can use Posit Cloud for this class.</p>
+<ul>
+<li>Make a <strong>Cloud FREE</strong> account at https://posit.cloud/plans/free</li>
+<li>Start a new project by clicking on the button in the top right corner</li>
+<li>Then go to (#intro_rstudio) to learn how to navigate RStudio.</li>
+</ul>
+<p>The free account allows for 25 project hours/month, which may not be enough for this class. If you run into time limits or you are using this for another class you will have to upgrade to the <strong>Cloud Student</strong> plan which is $5/month.</p>
+<p>Using the cloud is easier to initially setup, but having your own installation on your computer ensures that</p>
+<ul>
+<li>you want to keep the program free forever</li>
+<li>you will be able to put your files under version control</li>
+<li>you always have access to your code even with unstable or no internet</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-warning no-icon callout-titled" title="Windows">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Windows
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Install R</strong></p>
+<ol type="1">
+<li>Go to <a href="https://cran.r-project.org/bin/windows/base/" class="uri">https://cran.r-project.org/bin/windows/base/</a> and download the latest <strong>R installer</strong>.</li>
+<li>Double-click the downloaded file and follow the prompts (default settings are fine).</li>
+<li>When finished, you can delete the desktop shortcut that looks like a blue R.</li>
+</ol>
+<p><strong>Install RStudio</strong></p>
+<ol type="1">
+<li>Go to <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a> and download <strong>RStudio Desktop (Free)</strong> for Windows.</li>
+<li>Double-click the installer and follow the prompts.</li>
+<li>When installation finishes, open <strong>RStudio</strong> — it should detect R automatically.</li>
+</ol>
+<p><a href="https://youtu.be/KAeHFzxbHTA?si=xpeDGqt7gurg_rFR">Walk through video for Windows</a></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-warning no-icon callout-titled" title="MacOS">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+MacOS
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Install R</strong></p>
+<ol type="1">
+<li>Go to <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a> and download the latest <strong>.pkg</strong> installer (Intel or Apple Silicon).</li>
+<li>Double-click to install R.</li>
+<li>If prompted to install <strong>XQuartz</strong>, use the link on that page to complete the setup.</li>
+</ol>
+<p><strong>Install RStudio</strong></p>
+<ol type="1">
+<li>Go to <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a> and download <strong>RStudio Desktop (Free)</strong> for macOS.</li>
+<li>Drag the <strong>RStudio</strong> icon into your <strong>Applications</strong> folder.</li>
+<li>After installation, eject the downloaded drive by dragging it to <strong>Trash</strong>, then open RStudio from Applications.</li>
+</ol>
+<p><a href="https://youtu.be/ay25o485YXs?si=7r4qmmvtD15RM_eS">Walkthrough video for Mac</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="terminology" class="level2 page-columns page-full" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="terminology"><span class="header-section-number">1.2</span> Terminology</h2>
+<p>The basis of programming is that we write down instructions for the computer to follow, and then we tell the computer to follow those instructions.</p>
+<p>We write, or <em>code</em>, instructions in R because it is a common language that both the computer and we can understand (with practice).</p>
+<p>We call the instructions <em>commands</em> and we tell the computer to follow the instructions by <em>executing</em> (also called <em>running</em>) those commands.</p>
+<p>Learning how to code is like learning a new language. There are rules and exceptions, and it can be extremely precise and sometimes frustrating in how literal it is.</p>
+<div class="page-columns page-full"><p> </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Writing clear commands can be like explaining how to make a PB&amp;J sandwich to a child.</span></div></div><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/cDA3_5982h8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>This class does not assume that you have any knowledge in programming, and will provide all the codes that you need. For best results you should be trying to understand this new language, and how to tell R to do what you want it to do.</p>
+<p>The tendency may be to reach out to AI to help write code for you, but this does not help you <em>learn</em> and worse can provide code that is overly complicated and does not work as intended.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="navigating-r-studio" class="level2 page-columns page-full" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="navigating-r-studio"><span class="header-section-number">1.3</span> Navigating R Studio</h2>
+<p>We will be interacting with the programming language R <em>only</em> through R Studio. Not by itself. Typically are four panes, or windows, in R Studio. When you first start the program, you may only see three.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://datacarpentry.org/genomics-r-intro/fig/rstudio_session_4pane_layout.png" class="img-fluid figure-img" alt="Screenshot of RStudio using the default white theme showing four panes"></p>
+<figcaption>The major windows (or panes) of the RStudio environment:</figcaption>
+</figure>
+</div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><a href="https://datacarpentry.github.io/genomics-r-intro/00-introduction.html#overview-and-customization-of-the-rstudio-layout">Details pulled from the Data Carpentry Genomics lesson</a></span></div></div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="(Optional videos) Navigating R Studio">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+(Optional videos) Navigating R Studio
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://youtu.be/vx4SPeNvols?si=1iSqsH1uNLFkB7yF&amp;t=239">R Girls on YouTube</a></p>
+</div>
+</div>
+<section id="consoleterminaljobs" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="consoleterminaljobs">Console/Terminal/Jobs</h4>
+<p>The <strong>console</strong> (left side) is where you see the execution of commands. You can type commands directly into the console and press <kbd>Enter</kbd> to execute those commands.</p>
+<p><strong>R is an overgrown calculator</strong></p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Your Turn
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the console type the following code, then press <kbd>Enter</kbd>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>Once these commands are submitted (the code is run) they will be forgotten when you close the session. To save your commands you’ll want to write them in a <em>script</em> file.</p>
+</section>
+<section id="source" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="source">Source</h4>
+<p>This pane is where you will write/view R and Quarto <em>scripts</em>. Some outputs (such as a dataset) will appear as a tab here.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Your Turn
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>Click on <strong>File –&gt; New File –&gt; R Script</strong></em> to open an R script file.</p>
+</div>
+</div>
+<p>You should now have four panes, with a new <code>untitled1.R</code> script file in the top left. When you write R code here you can save these commands, and rerun them later on demand.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Your Turn
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the script file type <code>2+2</code> and then then press <kbd>CTRL+Enter</kbd> while your cursor is still on the same line.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>You will see the command echoed down in the Console along with the answer. We will come back to using scripts in the next lesson.</p>
+</section>
+<section id="environment-history" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="environment-history">Environment / History</h3>
+<p>The <strong>Environment / History</strong> pane (top-right) shows all the objects you’ve created in your current R session — for example, data frames, variables, or plots you’ve assigned.</p>
+<ul>
+<li>The <strong>Environment</strong> tab lists everything that currently exists in memory. This could be data sets, model results and defined variables.</li>
+</ul>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Your Turn
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In console run <code>data(cars)</code>. This loads a built-in data set named <code>cars</code> into your environment. Click on the word <code>cars</code> in the top right, and notice it opens the data set in a spreadsheet like view in the Source pane.</p>
+</div>
+</div>
+<ul>
+<li>The <strong>History</strong> tab keeps a record of all the commands you’ve run.</li>
+</ul>
+<p>There are also some additional tabs in this area, like <strong>Connections</strong>, <strong>Build</strong>, <strong>Tutorial</strong>, and sometimes <strong>Git</strong>. We won’t cover those here, but RStudio has many additional tools and features available as you learn more.</p>
+</section>
+<section id="files-plots-packages-help" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="files-plots-packages-help">Files / Plots / Packages / Help</h3>
+<p>The <strong>Files / Plots / Packages / Help</strong> pane is used to explore files, view plots, manage packages, and read help pages.</p>
+</section>
+</section>
+<section id="customizing" class="level2 page-columns page-full" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="customizing"><span class="header-section-number">1.4</span> Customizing</h2>
+<p>Setting preferences in R Studio</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">AKA: Retain sanity while troubleshooting</span></div></div>
+<div class="grid">
+<div class="g-col-6">
+<p><img src="img/rstudio_settings.png" class="img-fluid" style="width:100.0%" alt="RStudio General settings window showing 'Restore .RData into workspace at startup' unchecked and 'Save workspace to .RData on exit: Never' selected."></p>
+</div>
+<div class="g-col-6">
+<ol type="1">
+<li>Open <strong>RStudio</strong> and go to <strong>Tools → Global Options…</strong><br>
+</li>
+<li>Uncheck <strong>“Restore .RData into workspace at startup.”</strong><br>
+</li>
+<li>For <strong>“Save workspace to .RData on exit:”</strong> choose <strong>Never.</strong><br>
+</li>
+<li>Click <strong>Apply</strong>, then <strong>OK</strong> to close the window.</li>
+</ol>
+<p>This ensures that each time you restart R, you start with a clean environment instead of carrying forward objects from a previous session.</p>
+</div>
+</div>
+</section>
+<section id="packages" class="level2 page-columns page-full" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="packages"><span class="header-section-number">1.5</span> Packages</h2>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><a href="https://spaceballs.fandom.com/wiki/Spaceballs:_The%E2%80%A6">“Where the real money from the movie is made.”</a></span></div></div>
+<p>R is considered an <strong>Open Source</strong> software program. That means many (thousands) of people contribute to the software. They do this by writing commands (called functions) to make a particular analysis easier, or to make a graphic prettier.</p>
+<p>When you download R, you get access to a lot of functions that we will use. However these other <em>user-written</em> packages add so much good stuff that it really is the backbone of the customizability and functionality that makes R so powerful of a language.</p>
+<p>For example we will be creating graphics using functions like <code>boxplot()</code> and <code>hist()</code> that exist in base R. But we will quickly move on to creating graphics using functions contained in the <code>ggplot2</code> package. We will be managing data using functions in <code>dplyr</code> and reading in Excel files using <code>readxl</code>. Installing packages will become your favorite past-time.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Install `ggplot2`">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Install <code>ggplot2</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Typing the following in the console to install the <code>ggplot2</code> package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>When the download and install is complete, you should see a message similar to:</p>
+<pre><code>The downloaded binary packages are in
+    C:\Users\Robin\AppData\Local\Temp\Rtmpi8NAym\downloaded_packages</code></pre>
+<div class="callout callout-style-default callout-important callout-titled" title="R is Case sensitive">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+R is Case sensitive
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>R is case sensitive and spelling matters. If you get an error message like the following.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Warning <span class="cf">in</span> install.packages <span class="sc">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  package ‘ggplot’ is not <span class="fu">available</span> (<span class="cf">for</span> R version <span class="dv">3</span>.<span class="fl">5.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The correct package name is <code>ggplot2</code>, not <code>ggplot</code>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Alternative Method of installing Packages">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Alternative Method of installing Packages
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Additional packages can be installed from the ‘packages’ tab.</p>
+<ul>
+<li>On the packages tab, click the ‘Install’ icon and start typing the name of the package you want in the text box.</li>
+<li>At the bottom of the Install Packages window is a check box to ‘Install’ dependencies. This is ticked by default, which is usually what you want. Packages can (and do) make use of functionality built into other packages, so for the functionality contained in the package you are installing to work properly, there may be other packages which have to be installed with them. The ‘Install dependencies’ option makes sure that this happens.</li>
+</ul>
+</div>
+</div>
+<p><strong>Install all the things!</strong></p>
+<p><img src="img/allthethings.jpg" class="img-fluid" alt="Cartoon shouting 'Get all the things!' representing package installation excitement." width="500"></p>
+<p>Now that you’re a package installing pro, go ahead and install the following packages that we will be using in the next few weeks.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Your Turn
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Install the list of packages to the left one at a time and wait for it to finish before entering the next command.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><code>tidyverse</code><br>
+</li>
+<li><code>sjPlot</code></li>
+<li><code>quarto</code></li>
+<li><code>gtsummary</code></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><code>openintro</code><br>
+</li>
+<li><code>palmerpenguins</code></li>
+<li><code>tinytex</code></li>
+<li><code>here</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Trust but Verify">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Trust but Verify
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Check to see if you have a package installed by looking in the packages tab. You can also type the command <code>installed.packages()</code> into the console and examine the output.</p>
+</div>
+</div>
+</section>
+<section id="get-organized" class="level2 page-columns page-full" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="get-organized"><span class="header-section-number">1.6</span> Get oRganized!</h2>
 <p>It is good practice to keep a set of related data, analyses, and text self-contained in a single folder called the <em>working directory</em>. For example keeping all files related to one class in it’s own folder, separate from other classes. If you are taking another class using R at the same time as this one, it’s even MORE important to keep your files separate.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -350,8 +700,8 @@ Important
 <p>THIS SHOULD NOT BE YOUR DOWNLOADS FOLDER</p>
 </div>
 </div>
-<section id="names-are-important" class="level3 page-columns page-full" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="names-are-important"><span class="header-section-number">1.1.1</span> Names are important</h3>
+<section id="names-are-important" class="level3 page-columns page-full" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="names-are-important"><span class="header-section-number">1.6.1</span> Names are important</h3>
 <p>Choose one of the four naming convention shown below for your class folder and stick with it. These are <code>snake_case</code>, <code>camelCase</code>, <code>kebab-case</code> or <code>UPPER_SNAKE</code>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -382,8 +732,8 @@ Create your folders
 </div>
 </div>
 </section>
-<section id="be-the-boss-of-your-files" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="be-the-boss-of-your-files"><span class="header-section-number">1.1.2</span> Be the boss of your files</h3>
+<section id="be-the-boss-of-your-files" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="be-the-boss-of-your-files"><span class="header-section-number">1.6.2</span> Be the boss of your files</h3>
 <p>When you download a file, right click and “Save as” or “Save target as” and <strong>actively choose</strong> where to download this file.</p>
 <div class="callout callout-style-default callout-important callout-titled" title="Avoid these pain points">
 <div class="callout-header d-flex align-content-center">
@@ -418,367 +768,56 @@ Avoid these pain points
 </div>
 </section>
 </section>
-<section id="sec-install" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="sec-install"><span class="header-section-number">1.2</span> Installing R and R Studio</h2>
-<p>Follow the instructions appropriate for your operating system.</p>
-<div class="callout callout-style-simple callout-warning no-icon callout-titled" title="Tablet / iPad / Chromebook">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<section id="organization-using-r-projects" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="organization-using-r-projects"><span class="header-section-number">1.7</span> Organization using R Projects</h2>
+<p>R projects are a great way of keeping all files for one project all together, and makes importing data much easier by using relative paths instead of absolute ones. Plus this ensures reproducibility by others (because no-one else stores their files at <code>C:\users\rdonatello\myprojects\math130</code>)</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tablet / iPad / Chromebook
+👉 Your Turn
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>If you are using a tablet, Chromebook or otherwise do not have a computer that you can install programs on, you can use Posit Cloud for this class.</p>
 <ul>
-<li>Make a <strong>Cloud FREE</strong> account at https://posit.cloud/plans/free</li>
-<li>Start a new project by clicking on the button in the top right corner</li>
-<li>Then go to (#intro_rstudio) to learn how to navigate RStudio.</li>
-</ul>
-<p>The free account allows for 25 project hours/month, which may not be enough for this class. If you run into time limits or you are using this for another class you will have to upgrade to the <strong>Cloud Student</strong> plan which is $5/month.</p>
-<p>Using the cloud is easier to initially setup, but having your own installation on your computer ensures that</p>
-<ul>
-<li>you want to keep the program free forever</li>
-<li>you will be able to put your files under version control</li>
-<li>you always have access to your code even with unstable or no internet</li>
+<li>Click on the R cube icon in the top right corner of RStudio and select <em>Crete new project</em>.</li>
+<li>Choose <em>Existing Directory</em> and navigate to your Math 130 folder.</li>
+<li>Check <em>Open in new session</em>. This allows you to have multiple Rstudio windows open for different projects and the files/data/objects don’t get cross-contaminated.</li>
+<li>Click <em>Create Project</em>.</li>
 </ul>
 </div>
 </div>
-</div>
-<div class="callout callout-style-simple callout-warning no-icon callout-titled" title="Windows">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<p>This will open a new R Studio window. Go ahead and close both R Studio windows for now (Don’t save <code>Untitled1.R</code>). We’ll see how to use R Projects next.</p>
+<p>If you think about wanting to work on a report written in Microsoft Word, or a video that you want to edit, the common practice is to navigate to that file and double click to open that file in the appropriate program. We don’t tend to open the program first, and then try to open the file from within the program. Using R Projects is somewhat the same.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Using R Projects">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Windows
+👉 Using R Projects
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>Install R</strong></p>
-<ol type="1">
-<li>Go to <a href="https://cran.r-project.org/bin/windows/base/" class="uri">https://cran.r-project.org/bin/windows/base/</a> and download the latest <strong>R installer</strong>.</li>
-<li>Double-click the downloaded file and follow the prompts (default settings are fine).</li>
-<li>When finished, you can delete the desktop shortcut that looks like a blue R.</li>
-</ol>
-<p><strong>Install RStudio</strong></p>
-<ol type="1">
-<li>Go to <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a> and download <strong>RStudio Desktop (Free)</strong> for Windows.</li>
-<li>Double-click the installer and follow the prompts.</li>
-<li>When installation finishes, open <strong>RStudio</strong> — it should detect R automatically.</li>
-</ol>
-<p><a href="https://youtu.be/KAeHFzxbHTA?si=xpeDGqt7gurg_rFR">Walk through video for Windows</a></p>
+<ul>
+<li>Navigate in your file explorer to the folder where you created your project.</li>
+<li>Click on the R cube icon to open the whole project.</li>
+<li>Using the <code>files</code> tab (bottom right) find and click to open the <code>_hello.qmd</code> script file you downloaded earlier.</li>
+</ul>
 </div>
 </div>
-</div>
-<div class="callout callout-style-simple callout-warning no-icon callout-titled" title="MacOS">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-MacOS
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Install R</strong></p>
-<ol type="1">
-<li>Go to <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a> and download the latest <strong>.pkg</strong> installer (Intel or Apple Silicon).</li>
-<li>Double-click to install R.</li>
-<li>If prompted to install <strong>XQuartz</strong>, use the link on that page to complete the setup.</li>
-</ol>
-<p><strong>Install RStudio</strong></p>
-<ol type="1">
-<li>Go to <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a> and download <strong>RStudio Desktop (Free)</strong> for macOS.</li>
-<li>Drag the <strong>RStudio</strong> icon into your <strong>Applications</strong> folder.</li>
-<li>After installation, eject the downloaded drive by dragging it to <strong>Trash</strong>, then open RStudio from Applications.</li>
-</ol>
-<p><a href="https://youtu.be/ay25o485YXs?si=7r4qmmvtD15RM_eS">Walkthrough video for Mac</a></p>
-</div>
-</div>
-</div>
-</section>
-<section id="terminology" class="level2 page-columns page-full" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="terminology"><span class="header-section-number">1.3</span> Terminology</h2>
-<p>The basis of programming is that we write down instructions for the computer to follow, and then we tell the computer to follow those instructions.</p>
-<p>We write, or <em>code</em>, instructions in R because it is a common language that both the computer and we can understand (with practice).</p>
-<p>We call the instructions <em>commands</em> and we tell the computer to follow the instructions by <em>executing</em> (also called <em>running</em>) those commands.</p>
-<p>Learning how to code is like learning a new language. There are rules and exceptions, and it can be extremely precise and sometimes frustrating in how literal it is.</p>
-<div class="page-columns page-full"><p> </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Writing clear commands can be like explaining how to make a PB&amp;J sandwich to a child.</span></div></div><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/cDA3_5982h8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>This class does not assume that you have any knowledge in programming, and will provide all the codes that you need. For best results you should be trying to understand this new language, and how to tell R to do what you want it to do.</p>
-<p>The tendency may be to reach out to AI to help write code for you, but this does not help you <em>learn</em> and worse can provide code that is overly complicated and does not work as intended.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="navigating-r-studio" class="level2 page-columns page-full" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="navigating-r-studio"><span class="header-section-number">1.4</span> Navigating R Studio</h2>
-<p>We will be interacting with the programming language R <em>only</em> through R Studio. Not by itself. Typically are four panes, or windows, in R Studio. When you first start the program, you may only see three.</p>
+<p>You can tell you are in an R Project by looking in the top right corner by the Environment pane and seeing if the R project cube has your class folder name</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://datacarpentry.org/genomics-r-intro/fig/rstudio_session_4pane_layout.png" class="img-fluid figure-img" alt="Screenshot of RStudio using the default white theme showing four panes"></p>
-<figcaption>The major windows (or panes) of the RStudio environment:</figcaption>
+<p><img src="img/RProj.png" class="img-fluid figure-img"></p>
+<figcaption>Example R Project</figcaption>
 </figure>
 </div>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><a href="https://datacarpentry.github.io/genomics-r-intro/00-introduction.html#overview-and-customization-of-the-rstudio-layout">Details pulled from the Data Carpentry Genomics lesson</a></span></div></div>
-<section id="consoleterminaljobs" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="consoleterminaljobs">Console/Terminal/Jobs</h4>
-<p>The <strong>console</strong> (left side) is where you see the execution of commands. You can type commands directly into the console and press <kbd>Enter</kbd> to execute those commands, but they will be forgotten when you close the session.</p>
-<p><strong>R is an overgrown calculator</strong></p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-👉 Your Turn
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the console type the following code, then press <kbd>Enter</kbd>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-👉 Your Turn
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Now try a more complicated equation. Type this in <em>exactly</em> as it is written below.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">5</span><span class="sc">*</span>(<span class="dv">8</span><span class="sc">^</span><span class="dv">3</span>)<span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>log10<span class="er">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in parse(text = input): &lt;text&gt;:1:21: unexpected ')'
-1: 2 + 5*(8^3)- 3*log10)
-                        ^</code></pre>
-</div>
-</div>
-</div>
-</div>
-<p>Uh oh, we got an Error. Nothing to worry about, errors happen all the time.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-👉 Your Turn
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Put a open parenthesis <code>(</code> before <code>log10</code> to fix it and try again.</p>
-</div>
-</div>
-<p><strong>&gt; R is waiting on you…</strong></p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-👉 Your Turn
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Run the following code in the console.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">5</span><span class="sc">*</span>(<span class="dv">8</span><span class="sc">^</span><span class="dv">3</span>)<span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span><span class="fu">log</span>(<span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<p>Notice the console shows a <code>+</code> prompt. This means that you haven’t finished entering a complete command.</p>
-<p>This is because you have not ‘closed’ a parenthesis or quotation, i.e.&nbsp;you don’t have the same number of left-parentheses as right-parentheses, or the same number of opening and closing quotation marks.</p>
-<p>When this happens, and you thought you finished typing your command, click inside the console window and press <kbd>Esc</kbd>; this will cancel the incomplete command and return you to the <code>&gt;</code> prompt.</p>
 </section>
-<section id="source" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="source">Source</h4>
-<p>This pane is where you will write/view R and Quarto <em>scripts</em>. Some outputs (such as a dataset) will appear as a tab here.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-👉 Your Turn
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><em>Click on <strong>File –&gt; New File –&gt; R Script</strong></em> to open an R script file.</p>
-</div>
-</div>
-<p>You should now have four panes, with a new <code>untitled1.R</code> script file in the top left. When you write R code here you can save these commands, and rerun them later on demand. Let’s re-practice the same commands but from the script file.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-👉 Your Turn
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In the script file type <code>2+2</code> and then then press <kbd>CTRL+Enter</kbd>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-</div>
-</div>
-</div>
-<p>You will see the command echo’ed down in the Console along with the answer. We will come back to using scripts from the Source pane in the next lesson.</p>
-</section>
-<section id="environment-history" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="environment-history">Environment / History</h3>
-<p>The <strong>Environment / History</strong> pane (top-right) shows all the objects you’ve created in your current R session — for example, data frames, variables, or plots you’ve assigned.</p>
-<ul>
-<li>The <strong>Environment</strong> tab lists everything that currently exists in memory.<br>
-</li>
-<li>The <strong>History</strong> tab keeps a record of all the commands you’ve run.</li>
-</ul>
-<p>There are also some additional tabs in this area, like <strong>Connections</strong>, <strong>Build</strong>, <strong>Tutorial</strong>, and sometimes <strong>Git</strong>. We won’t cover those here, but RStudio has many additional tools and features available as you learn more.</p>
-</section>
-<section id="files-plots-packages-help" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="files-plots-packages-help">Files / Plots / Packages / Help</h3>
-<p>The <strong>Files / Plots / Packages / Help</strong> pane is used to explore files, view plots, manage packages, and read help pages.</p>
-<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Navigating R Studio">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Navigating R Studio
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Optional: Watch one of the following short videos to learn how to navigate R Studio.</p>
-<ul>
-<li><a href="https://youtu.be/vx4SPeNvols?si=1iSqsH1uNLFkB7yF&amp;t=239">R Girls on YouTube</a></li>
-<li><a href="https://media.csuchico.edu/media/t/1_93i6jwy8">Dr.&nbsp;D’s overview</a></li>
-</ul>
-</div>
-</div>
-</section>
-</section>
-<section id="customizing" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="customizing"><span class="header-section-number">1.5</span> Customizing</h2>
-<p>Setting preferences in R Studio</p>
-<p>AKA: Retain sanity while troubleshooting</p>
-<div class="grid">
-<div class="g-col-6">
-<p><img src="img/rstudio_settings.png" class="img-fluid" style="width:100.0%" alt="RStudio General settings window showing 'Restore .RData into workspace at startup' unchecked and 'Save workspace to .RData on exit: Never' selected."></p>
-</div>
-<div class="g-col-6">
-<ol type="1">
-<li>Open <strong>RStudio</strong> and go to <strong>Tools → Global Options…</strong><br>
-</li>
-<li>Uncheck <strong>“Restore .RData into workspace at startup.”</strong><br>
-</li>
-<li>For <strong>“Save workspace to .RData on exit:”</strong> choose <strong>Never.</strong><br>
-</li>
-<li>Click <strong>Apply</strong>, then <strong>OK</strong> to close the window.</li>
-</ol>
-<p>This ensures that each time you restart R, you start with a clean environment instead of carrying forward objects from a previous session.</p>
-</div>
-</div>
-</section>
-<section id="packages" class="level2 page-columns page-full" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="packages"><span class="header-section-number">1.6</span> Packages</h2>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><a href="https://spaceballs.fandom.com/wiki/Spaceballs:_The%E2%80%A6">“Where the real money from the movie is made.”</a></span></div></div>
-<p>R is considered an <strong>Open Source</strong> software program. That means many (thousands) of people contribute to the software. They do this by writing commands (called functions) to make a particular analysis easier, or to make a graphic prettier.</p>
-<p>When you download R, you get access to a lot of functions that we will use. However these other <em>user-written</em> packages add so much good stuff that it really is the backbone of the customizability and functionality that makes R so powerful of a language.</p>
-<p>For example we will be creating graphics using functions like <code>boxplot()</code> and <code>hist()</code> that exist in base R. But we will quickly move on to creating graphics using functions contained in the <code>ggplot2</code> package. We will be managing data using functions in <code>dplyr</code> and reading in Excel files using <code>readxl</code>. Installing packages will become your favorite past-time.</p>
-<section id="installing-packages" class="level3" data-number="1.6.1">
-<h3 data-number="1.6.1" class="anchored" data-anchor-id="installing-packages"><span class="header-section-number">1.6.1</span> Installing Packages</h3>
-<div class="callout callout-style-default callout-tip callout-titled" title="Install `ggplot2`">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Install <code>ggplot2</code>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Typing the following in the console to install the <code>ggplot2</code> package.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<p>When the download and install is complete, you should see a message similar to:</p>
-<pre><code>The downloaded binary packages are in
-    C:\Users\Robin\AppData\Local\Temp\Rtmpi8NAym\downloaded_packages</code></pre>
-<p>:warning: R is case sensitive and spelling matters. If you get an error message like the following:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Warning <span class="cf">in</span> install.packages <span class="sc">:</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  package ‘ggplot’ is not <span class="fu">available</span> (<span class="cf">for</span> R version <span class="dv">3</span>.<span class="fl">5.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The correct package name is <code>ggplot2</code>, not <code>ggplot</code>.</p>
-<p>::: callout-caution {title = “Alternative Method of installing Packages”} Additional packages can be installed from the ‘packages’ tab.</p>
-<ul>
-<li>On the packages tab, click the ‘Install’ icon and start typing the name of the package you want in the text box.</li>
-<li>At the bottom of the Install Packages window is a check box to ‘Install’ dependencies. This is ticked by default, which is usually what you want. Packages can (and do) make use of functionality built into other packages, so for the functionality contained in the package you are installing to work properly, there may be other packages which have to be installed with them. The ‘Install dependencies’ option makes sure that this happens.</li>
-</ul>
-<p>:::</p>
-<p><strong>Install all the things!</strong></p>
-<p><img src="img/allthethings.jpg" class="img-fluid" alt="Cartoon shouting 'Get all the things!' representing package installation excitement." width="500"></p>
-<p>Now that you’re a package installing pro, go ahead and install the following packages that we will be using in the next few weeks.</p>
-<p>Install the list of packages to the left one at a time and wait for it to finish before entering the next command.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li><code>tidyverse</code><br>
-</li>
-<li><code>sjPlot</code></li>
-<li><code>quarto</code></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<ul>
-<li><code>openintro</code><br>
-</li>
-<li><code>palmerpenguins</code></li>
-<li><code>tinytex</code></li>
-</ul>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Trust but Verify">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Trust but Verify
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Check to see if you have a package installed by looking in the packages tab. You can also type the command <code>installed.packages()</code> into the console and examine the output.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="final-tips" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="final-tips"><span class="header-section-number">1.7</span> Final Tips</h2>
+<section id="final-tips" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="final-tips"><span class="header-section-number">1.8</span> Final Tips</h2>
 <p><strong>Saving and closing your work.</strong></p>
 <p>Unless you’re returning to work in R Studio in a short while, you should make a habit to save all open tabs and completely shut down R studio when you are done working. This ensures your environment is cleared.</p>
 <p><em>This is a good thing.</em></p>
@@ -788,7 +827,6 @@ Trust but Verify
 <p><em>Session</em> –&gt; Restart R and Clear Output</p>
 </blockquote>
 <p>This is good to do when switching between projects/classes.</p>
-<p>To effectively restart R, go to the file menu and click <em>Session</em> , then “Restart R”, or “Restart R and clear output”. :cinema: <a href="https://youtu.be/49u5xAYfrgk">Link to video walk through</a></p>
 
 
 </section>

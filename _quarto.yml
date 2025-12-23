@@ -35,6 +35,7 @@ book:
 
 format:
   html:
+    from: markdown+emoji
     theme: 
       light: flatly
       dark: darkly
