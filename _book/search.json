@@ -157,8 +157,8 @@
     ]
   },
   {
-    "objectID": "setup_tools.html#organization-using-r-projects",
-    "href": "setup_tools.html#organization-using-r-projects",
+    "objectID": "setup_tools.html#sec-rproj",
+    "href": "setup_tools.html#sec-rproj",
     "title": "1  Your New Tools",
     "section": "1.7 Organization using R Projects",
     "text": "1.7 Organization using R Projects\nR projects are a great way of keeping all files for one project all together, and makes importing data much easier by using relative paths instead of absolute ones. Plus this ensures reproducibility by others (because no-one else stores their files at C:\\users\\rdonatello\\myprojects\\math130)\n\n\n\n\n\n\n👉 Your Turn\n\n\n\n\nClick on the R cube icon in the top right corner of RStudio and select Crete new project.\nChoose Existing Directory and navigate to your Math 130 folder.\nCheck Open in new session. This allows you to have multiple Rstudio windows open for different projects and the files/data/objects don’t get cross-contaminated.\nClick Create Project.\n\n\n\nThis will open a new R Studio window. Go ahead and close both R Studio windows for now (Don’t save Untitled1.R). We’ll see how to use R Projects next.\nIf you think about wanting to work on a report written in Microsoft Word, or a video that you want to edit, the common practice is to navigate to that file and double click to open that file in the appropriate program. We don’t tend to open the program first, and then try to open the file from within the program. Using R Projects is somewhat the same.\n\n\n\n\n\n\n👉 Using R Projects\n\n\n\n\nNavigate in your file explorer to the folder where you created your project.\nClick on the R cube icon to open the whole project.\nUsing the files tab (bottom right) find and click to open the _hello.qmd script file you downloaded earlier.\n\n\n\nYou can tell you are in an R Project by looking in the top right corner by the Environment pane and seeing if the R project cube has your class folder name\n\n\n\nExample R Project",
@@ -183,7 +183,7 @@
     "href": "quarto.html",
     "title": "2  Reproducibility with Quarto",
     "section": "",
-    "text": "2.1 Learning Objectives\nIn this lesson you will learn to write a document using R markdown, integrate live R code into a literate statistical program, compile R markdown documents using knitr and related tools, and organize a data analysis sandbox so that it is reproducible and accessible to others.\nAfter completing this lesson learners will be able to create a new R markdown document, identify the components of a R Markdown document, and explain how R markdown files facilitates sharing of reproducible research.",
+    "text": "2.1 Document structure\nQuarto is a versatile publishing system that allows users to create high-quality documents, reports, websites (like this one!) and presentations using multiple programming languages like R, Python, and Julia. It combines the functionalities of various tools into a single platform, making it easier to produce reproducible and collaborative scientific content.\nQuarto is an example of literate programming where the explanation of the program (or analysis) logic is presented in a natural language (such as English), with supporting pieces of code embedded in the document itself. Quarto combines normal text such as this sentence, code and the output from the code all in one file. It is similar to a scientific lab notebook where a scientist can write down their hypotheses, code to produce graphs and analysis results, and the discussion of those findings.\nThe  Render button in the RStudio IDE compiles or renders the file and opens a preview of the output with a single click or keyboard shortcut SHIFT+COMMAND+K.",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
@@ -193,8 +193,8 @@
     "objectID": "quarto.html#document-structure",
     "href": "quarto.html#document-structure",
     "title": "2  Reproducibility with Quarto",
-    "section": "2.2 Document structure",
-    "text": "2.2 Document structure\nR Markdown is an example of literate programming where the explanation of the program (or analysis) logic is presented in a natural language (such as English), with supporting pieces of code embedded in the document itself. R Markdown combines normal text such as this sentence, code and the output from the code all in one Rmarkdown (.Rmd) file.\nThe following page lays out the format of an RMarkdown document with several details included.\nImage credit on next page: Data Visualization by Kieran Healy. Available at http://socviz.co/",
+    "section": "",
+    "text": "A Quarto document with the extension .qmd (on the left), along with its rendered version as HTML (on the right). Credit: Quarto documentation.\n\n\n\n\n\n\n\n\nOptional Video\n\n\n\nGetting started with Quarto\n\n\n\n\n\n\n\n\n👉 Open the Quarto tutorial file\n\n\n\n\nMake sure you are in your Math 130 Project. (ref Section 1.7)\nFrom the file pane, open the _hello.qmd quarto document\nClick “Render” at the top of this file.\n\n\n\n\n\n\n\nThe Render button",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
@@ -204,8 +204,8 @@
     "objectID": "quarto.html#components-of-a-r-markdown-document",
     "href": "quarto.html#components-of-a-r-markdown-document",
     "title": "2  Reproducibility with Quarto",
-    "section": "2.3 Components of a R Markdown document",
-    "text": "2.3 Components of a R Markdown document\n‘../static/img/rmarkdown_components.png’",
+    "section": "2.2 Components of a R Markdown document",
+    "text": "2.2 Components of a R Markdown document\nQuarto files contains three types of content: a YAML header, code chunks, and markdown text.",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
@@ -913,6 +913,17 @@
     "crumbs": [
       "Appendix",
       "Putting it all together"
+    ]
+  },
+  {
+    "objectID": "quarto.html#yaml-header",
+    "href": "quarto.html#yaml-header",
+    "title": "2  Reproducibility with Quarto",
+    "section": "2.3 YAML Header",
+    "text": "2.3 YAML Header\nAn YAML header is demarcated by three dashes (—) on top and bottom. R is pretty finicky about these three dashes.\nWhen rendered, the title, \"Hello, Quarto\", will appear at the top of the rendered document with a larger font size than the rest of the document. The other two YAML fields denote that the output should be in html format and the document should open in the visual editor by default.\nThe basic syntax of YAML uses key-value pairs in the format key: value. Other YAML fields commonly found in headers of documents include metadata like author and date.\n\n\n\n\n\n\n👉 Add your name\n\n\n\n\nAdd a line after the title for an author and put your name here.\nChange the editor to source\nRender the document again.\n\n---\ntitle: \"Hello, Quarto\"\nauthor: Dr. D. \nformat: html\neditor: source\n---",
+    "crumbs": [
+      "Getting Started",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
     ]
   }
 ]
