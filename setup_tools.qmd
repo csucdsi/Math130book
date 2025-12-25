@@ -11,10 +11,9 @@ After completing this lesson learners will be able to:
 
 :::
 
-Follow the instructions appropriate for your operating system.
-
-
 ## Installing R and R Studio {#sec-install}
+
+Follow the instructions appropriate for your operating system.
 
 :::{.callout-warning title = "Tablet / iPad / Chromebook" icon=false collapse=true appearance=minimal}
 
@@ -98,8 +97,8 @@ We will be interacting with the programming language R *only* through R Studio. 
 [<a href = "https://datacarpentry.github.io/genomics-r-intro/00-introduction.html#overview-and-customization-of-the-rstudio-layout">Details pulled from the Data Carpentry Genomics lesson</a>]{.aside}
 
 
-::: {.callout-caution icon=false title = "(Optional videos) Navigating R Studio"}
-[R Girls on YouTube](https://youtu.be/vx4SPeNvols?si=1iSqsH1uNLFkB7yF&t=239) 
+::: {.callout-caution icon=false title = "Optional video"}
+[Navigating R Studio by R Girls on YouTube](https://youtu.be/vx4SPeNvols?si=1iSqsH1uNLFkB7yF&t=239) 
 :::
 
 
@@ -309,7 +308,7 @@ We will use this file in the next lesson.
 :::
 
 
-## Organization using R Projects
+## Organization using R Projects {#sec-rproj}
 
 R projects are a great way of keeping all files for one project all together, and makes importing data much easier by using relative paths instead of absolute ones. Plus this ensures reproducibility by others (because no-one else stores their files at `C:\users\rdonatello\myprojects\math130`)
 

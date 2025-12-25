@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -103,7 +137,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -267,20 +301,19 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">2.1</span> Learning Objectives</a></li>
-  <li><a href="#document-structure" id="toc-document-structure" class="nav-link" data-scroll-target="#document-structure"><span class="header-section-number">2.2</span> Document structure</a></li>
-  <li><a href="#components-of-a-r-markdown-document" id="toc-components-of-a-r-markdown-document" class="nav-link" data-scroll-target="#components-of-a-r-markdown-document"><span class="header-section-number">2.3</span> Components of a R Markdown document</a></li>
-  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks"><span class="header-section-number">2.4</span> Code Chunks</a></li>
-  <li><a href="#test-your-setup" id="toc-test-your-setup" class="nav-link" data-scroll-target="#test-your-setup"><span class="header-section-number">2.5</span> Test your setup</a></li>
-  <li><a href="#make-a-change" id="toc-make-a-change" class="nav-link" data-scroll-target="#make-a-change"><span class="header-section-number">2.6</span> Make a change</a></li>
-  <li><a href="#start-assignment-1" id="toc-start-assignment-1" class="nav-link" data-scroll-target="#start-assignment-1"><span class="header-section-number">2.7</span> Start Assignment 1</a></li>
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources"><span class="header-section-number">2.8</span> Additional Resources</a></li>
-  <li><a href="#install-tinytex" id="toc-install-tinytex" class="nav-link" data-scroll-target="#install-tinytex"><span class="header-section-number">2.9</span> Install TinyTex</a></li>
+  <li><a href="#document-structure" id="toc-document-structure" class="nav-link active" data-scroll-target="#document-structure"><span class="header-section-number">2.1</span> Document structure</a></li>
+  <li><a href="#sec-quarto-components" id="toc-sec-quarto-components" class="nav-link" data-scroll-target="#sec-quarto-components"><span class="header-section-number">2.2</span> Components of a Quarto file</a>
+  <ul class="collapse">
+  <li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header"><span class="header-section-number">2.2.1</span> YAML Header</a></li>
+  <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks"><span class="header-section-number">2.2.2</span> Code Chunks</a></li>
+  <li><a href="#sec-markdown" id="toc-sec-markdown" class="nav-link" data-scroll-target="#sec-markdown"><span class="header-section-number">2.2.3</span> Markdown Text</a></li>
+  </ul></li>
+  <li><a href="#create-professional-looking-pdf-reports." id="toc-create-professional-looking-pdf-reports." class="nav-link" data-scroll-target="#create-professional-looking-pdf-reports."><span class="header-section-number">2.3</span> Create professional looking PDF reports.</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./setup_tools.html">Getting Started</a></li><li class="breadcrumb-item"><a href="./quarto.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reproducibility with Quarto</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -301,94 +334,282 @@ window.Quarto = {
 </header>
 
 
-<p>In this lesson you will learn to write a document using R markdown, integrate live R code into a literate statistical program, compile R markdown documents using <code>knitr</code> and related tools, and organize a data analysis sandbox so that it is reproducible and accessible to others.</p>
-<section id="learning-objectives" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">2.1</span> Learning Objectives</h2>
-<p>After completing this lesson learners will be able to create a new R markdown document, identify the components of a R Markdown document, and explain how R markdown files facilitates sharing of reproducible research.</p>
-</section>
-<section id="document-structure" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="document-structure"><span class="header-section-number">2.2</span> Document structure</h2>
-<p>R Markdown is an example of literate programming where the explanation of the program (or analysis) logic is presented in a natural language (such as English), with supporting pieces of code embedded in the document itself. R Markdown combines normal text such as this sentence, code and the output from the code all in one Rmarkdown (<code>.Rmd</code>) file.</p>
-<p>The following page lays out the format of an RMarkdown document with several details included.</p>
-<p><em>Image credit on next page: Data Visualization by Kieran Healy. Available at http://socviz.co/</em></p>
-</section>
-<section id="components-of-a-r-markdown-document" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="components-of-a-r-markdown-document"><span class="header-section-number">2.3</span> Components of a R Markdown document</h2>
-<p>‘../static/img/rmarkdown_components.png’</p>
-</section>
-<section id="code-chunks" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="code-chunks"><span class="header-section-number">2.4</span> Code Chunks</h2>
+<p><a href="https://quarto.org/">Quarto</a> is a versatile publishing system that allows users to create high-quality documents, reports, websites (like this one!) and presentations using multiple programming languages like R, Python, and Julia. It combines the functionalities of various tools into a single platform, making it easier to produce reproducible and collaborative scientific content. If you have heard of R Markdown - Quarto is the “next generation” of R Markdown.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Learning Objectives">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After completing this lesson learners will be able to:</p>
 <ul>
-<li><p>Code chunks start with three back ticks (to the left of the 1) and an r in braces. Chunks close (end) with another three back ticks. Note the background color of this section has changed to a different shade. This helps you identify you have closed your code chunk properly.</p></li>
-<li><p>You can insert code chunks by using the button in the top right of an RMD file (Insert –&gt; R), or by typing <code>CTRL+ALT+I</code>.</p></li>
-<li><p>Only code goes in code chunks. That’s why they’re called <strong>code</strong> chunks.</p>
-<ul>
-<li>No normal text.</li>
-<li>All explanatory text goes outside a code chunk.</li>
-</ul></li>
+<li>Write code and text in a Quarto document</li>
+<li>Identify components of a Quarto document</li>
+<li>Compile Quarto documents into both HTML and PDF formats</li>
+<li>Understand the difference between running code interactively, and rendering an entire new document.</li>
 </ul>
-</section>
-<section id="test-your-setup" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="test-your-setup"><span class="header-section-number">2.5</span> Test your setup</h2>
-<p>Let’s create your first markdown file!</p>
+</div>
+</div>
+<p>While Quarto is also it’s own standalone program, it comes “built-in” to R Studio so <span style="color:red;"><strong>no additional installations needed!</strong></span></p>
+<section id="document-structure" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="document-structure"><span class="header-section-number">2.1</span> Document structure</h2>
+<p>Quarto is an example of literate programming where the explanation of the program (or analysis) logic is presented in a natural language (such as English), with supporting pieces of code embedded in the document itself. Quarto combines normal text such as this sentence, code and the output from the code all in one file. It is similar to a scientific lab notebook where a scientist can write down their hypotheses, code to produce graphs and analysis results, and the discussion of those findings.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://quarto.org/docs/get-started/hello/images/rstudio-hello.png" class="img-fluid figure-img"></p>
+<figcaption>A Quarto document with the extension .qmd (on the left), along with its rendered version as HTML (on the right). Credit: Quarto documentation.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-warning no-icon callout-titled" title="Optional Video">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Optional Video
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://youtu.be/_f3latmOhew">Getting started with Quarto</a></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Open the Quarto tutorial file">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Open the Quarto tutorial file
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
-<li>In R Studio go to <em>File</em> –&gt; <em>New File</em> –&gt; <em>R Markdown</em></li>
-<li>Title this document <strong>My First R Markdown Document</strong>, then click OK.</li>
-<li>Click the small blue disk icon to save this file into your class folder.</li>
-<li>Save this file using the file name <strong>test_markdown_document</strong>.
-<ul>
-<li>File names cannot have spaces or special characters.</li>
-<li>Do not specify the file type. It will be set automatically.</li>
-</ul></li>
-<li>Click the <strong>KNIT</strong> button (has the yarn ball next to it) to convert this file into HTML.</li>
-<li>Look at the HTML file that was created. You should be able to match the code with the resulting output.</li>
+<li>Make sure you are in your Math 130 Project. (ref <a href="setup_tools.html#sec-rproj" class="quarto-xref"><span>Section 1.7</span></a>)</li>
+<li>From the file pane, open the <code>_hello.qmd</code> quarto document</li>
+<li>Click “Render” at the top of this file.</li>
 </ol>
-<p>This is what we mean by reproducible. If you make a change in the code document, and re-knit (aka compile), your changes will be reflected in the generated document.</p>
-<p>If you are asked to install additional packages, go ahead and say yes. Then go back to <a href="02_setup_slides.html">lesson 02</a> and make sure you have all the necessary packages listed.</p>
+</div>
+</div>
+<p>The <img src="img/rstudio-render-button.png" class="img-fluid" width="25"> Render button in the RStudio IDE <em>compiles</em> or <em>renders</em> the file and opens a preview of the output with a single click or keyboard shortcut <kbd>SHIFT+COMMAND+K</kbd>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio-render.png" class="img-fluid figure-img"></p>
+<figcaption>The Render button</figcaption>
+</figure>
+</div>
 </section>
-<section id="make-a-change" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="make-a-change"><span class="header-section-number">2.6</span> Make a change</h2>
+<section id="sec-quarto-components" class="level2 page-columns page-full" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sec-quarto-components"><span class="header-section-number">2.2</span> Components of a Quarto file</h2>
+<p>Quarto files contains three types of content:</p>
+<ol type="1">
+<li>A YAML header</li>
+<li>Code chunks</li>
+<li>Markdown text</li>
+</ol>
+<section id="yaml-header" class="level3 page-columns page-full" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="yaml-header"><span class="header-section-number">2.2.1</span> YAML Header</h3>
+<p>An YAML header is demarcated by three dashes (—) on top and bottom. R is pretty finicky about these three dashes, so try not to disturb them.</p>
+<p>When rendered, the title, <code>"Hello, Quarto"</code>, will appear at the top of the rendered document with a larger font size than the rest of the document. The other two YAML fields denote that the output should be in <code>html format</code> and the document should open in the <code>visual editor</code> by default.</p>
+<p>The basic syntax of YAML uses key-value pairs in the format <code>key: value</code>. Other YAML fields commonly found in headers of documents include metadata like <code>author:</code> and <code>date:</code>.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Add your name">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Add your name
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Add a line after the title for an <code>author:</code> and put your name here.</li>
+<li>Click the “Source” button at the top left corner of the <code>Source</code> window.</li>
+<li>Render the document again.</li>
+</ol>
+</div>
+</div>
+<div class="page-columns page-full"><p><strong>Visual vs Source mode</strong> RStudio’s <strong>Visual</strong> editor offers a <a href="https://en.wikipedia.org/wiki/WYSIWYM">WYSIWYM</a>  authoring experience for markdown formatting of text. Each view has it’s benefits and drawbacks, and which you choose to use is purely a matter of personal preference.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">What You See Is What You Mean</span></div></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://quarto.org/docs/get-started/hello/images/rstudio-source-visual.png" class="img-fluid figure-img"></p>
+<figcaption>The same Quarto document in the two modes of the RStudio editor: visual (on the left) and source (on the right).</figcaption>
+</figure>
+</div>
+</section>
+<section id="code-chunks" class="level3 page-columns page-full" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="code-chunks"><span class="header-section-number">2.2.2</span> Code Chunks</h3>
+<div class="page-columns page-full"><p>Code chunks start with three back ticks <code>```</code>  and an <code>{r}</code> in braces. Chunks close (end) with another three back ticks. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">a back tick is the key to the left of the 1 on your keyboard</span><span class="margin-aside">Note the background color of this section has changed to a different shade. This helps you identify you have closed your code chunk properly.</span></div></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">2+2</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>You can insert code chunks by using the button in the top right of an RMD file (Insert -&gt; R), or by typing <kbd>CTRL+ALT+I</kbd>.</li>
+<li>R code chunks can also have a YAML style header, identified by <code>#|</code> at the beginning of the line. In this case I set <code>eval</code> to <code>false</code> to prevent the code inside this code chunk from being run when I render the whole document.</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled" title="Only code goes in code chunks">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Only code goes in code chunks
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>That’s why they’re called <code>code</code> chunks. No normal text. All explanatory text goes outside code chunks in normal Markdown text.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Make a change">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Make a change
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Play around with modifying the text and the R code.</p>
 <ol type="1">
-<li>Change the code from <code>summary(cars)</code> to <code>summary(iris)</code>.<br>
-</li>
-<li>Write a sentence below this code chunk. It could be “Hello world”.</li>
-<li>Add a code chunk and type the equation <code>2+2</code> in the code chunk.</li>
-<li>Re-knit this document and observe your changes.</li>
+<li>Change <code>echo:false</code> to <code>echo:true</code> in the <code>plot-penguins</code> code chunk header.</li>
+<li>Type <code>colors()</code> in your console to pull up all the named colors in R. Change at least one color in the penguin plot.</li>
+<li>Write “Hello Penguins!” on line 45, at least one blank line after the the end of the code chunk and your sentence.</li>
+<li>Render this document and observe your changes.</li>
 </ol>
-<p>You are now ready to start the first assignment.</p>
-</section>
-<section id="start-assignment-1" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="start-assignment-1"><span class="header-section-number">2.7</span> Start Assignment 1</h2>
+</div>
+</div>
+<p>In addition to rendering the complete document to view the results of code chunks, you can also run each code chunk interactively in the RStudio editor by clicking the play button icon in the top right corner of the code chunk, or keyboard shortcut <kbd>CTRL + SHIFT + ENTER</kbd>. RStudio executes the code and displays the results either inline within your file or in the Console, depending on your preference.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Add some code">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Add some code
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
-<li><strong>Right click</strong> and select <strong>save as</strong> (or save target as) to download <a href="../hw/hw1.Rmd">[HW 1.Rmd]</a> code file to your class folder.</li>
-<li>Navigate to your class folder and double click to open this file in R Studio
-<ul>
-<li>You might have to tell your computer what program to use.</li>
-<li>Do NOT open this file from your browser window.</li>
-</ul></li>
-<li>Double click on this file (from your class folder) to open it in R studio.</li>
-<li>This <code>.Rmd</code> file is a template for you to use to write your assignment. Write your answers directly into this document.</li>
-<li>After you answer each question, knit the file to ensure that your work is saved, and that your answers are being correctly displayed in the final document.</li>
+<li>Insert a new code chunk after your “Hello Penguins!” sentence. Make sure there is a blank line between your sentence and the code chunk</li>
+<li>Type the code <code>2+2</code> in this code chunk and click the play button to execute it immediately.<br>
+</li>
+<li>Render your document and observe your changes.</li>
 </ol>
+</div>
+</div>
 </section>
-<section id="additional-resources" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="additional-resources"><span class="header-section-number">2.8</span> Additional Resources</h2>
-<ul>
-<li>While the introductory video no longer works, there are additional lessons on using R Markdown at the following site: http://rmarkdown.rstudio.com/lesson-1.html
-<ul>
-<li>Relevant portions in this tutorial are “How it works”, “Code Chunks”, and “Output Formats”</li>
-</ul></li>
-<li>Gallery of the vast range of output and product types that you can create using R Markdown including PDF reports, interactive dashboards, maps, webpages like this one and more: https://rmarkdown.rstudio.com/gallery.html</li>
-</ul>
+<section id="sec-markdown" class="level3 page-columns page-full" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="sec-markdown"><span class="header-section-number">2.2.3</span> Markdown Text</h3>
+<div class="page-columns page-full"><p>Markdown is a popular markup language that allows you to add formatting elements to text. Markdown is useful because it is lightweight, flexible, and platform independent. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">See more basic syntax of Markdown at <a href="https://markdownguide.offshoot.io/basic-syntax/"> https://markdownguide.offshoot.io/basic-syntax/</a></span></div></div>
+<div class="columns">
+<div class="column" style="width:45%;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">What you type</th>
+<th style="text-align: center;">What you see</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>**bold**</code></td>
+<td style="text-align: center;"><strong>bold</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>_italics_</code></td>
+<td style="text-align: center;"><em>italics</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>`code`</code></td>
+<td style="text-align: center;"><code>code</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>$2\beta - \frac{\mu}{n}$</code></td>
+<td style="text-align: center;"><span class="math inline">\(2\beta - \frac{\mu}{n}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">What you type</th>
+<th style="text-align: center;">What you see</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><pre><code>1.  one
+2.  two</code></pre></td>
+<td style="text-align: center;"><ol type="1">
+<li>one</li>
+<li>two</li>
+</ol></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><pre><code>*  bullet
+*  points</code></pre></td>
+<td style="text-align: center;"><ul>
+<li>bullet</li>
+<li>points</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Additionally, using <code>#</code> and <code>##</code> symbols at the start of a line creates first (<code>#</code>) and second (<code>##</code>) level headers (larger font size, bold, numbered), such as <a href="#sec-quarto-components" class="quarto-xref"><span>Section 2.2</span></a> and line 15 in the <code>hello.qmd</code> file where it says <code>## Meet Quarto</code> . Properly formatted headers are an important part of document organization and accessibility for screen reader navigation.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Add some formatting">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Add some formatting
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Add some formatting to your “Hello Penguins!” sentence.</li>
+<li>Render your document and observe your changes.</li>
+</ol>
+</div>
+</div>
 </section>
-<section id="install-tinytex" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="install-tinytex"><span class="header-section-number">2.9</span> Install TinyTex</h2>
+</section>
+<section id="create-professional-looking-pdf-reports." class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="create-professional-looking-pdf-reports."><span class="header-section-number">2.3</span> Create professional looking PDF reports.</h2>
 <p>To convert your work into a professional looking PDF, or to write math symbols in your homework, or you need a typesetting program called <span class="math inline">\(\LaTeX\)</span> (pronounced “lay-tek” or “lah-tex”). It’s a super neat program, but also nearly 4Gb. Too big for our needs. That’s where the <code>tinytex</code> package came from. we’re going to use it to install a lightweight version of <span class="math inline">\(\LaTeX\)</span>. This will let us write math equations in Markdown/Quarto, and create nice PDF’s of your work.</p>
-<p>In your console type the following and hit <strong>Enter</strong></p>
-<pre><code>tinytex::install_tinytex()</code></pre>
-<p>This may take a few minutes, but then you’re good to go!</p>
-<p>Test it out now by rendering … <thing> to PDF by clicking on the down arrow next to “Render” and choosing “PDF”. &gt; FIXME</thing></p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Your Turn
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>In the <em>console</em> type <code>tinytex::install_tinytex()</code> and press <kbd>Enter</kbd>. This may take a few minutes to fully install.</li>
+<li>In the YAML header change <code>format: html</code> to <code>format: pdf</code></li>
+<li>Render your document again.</li>
+</ol>
+</div>
+</div>
 
 
 </section>
