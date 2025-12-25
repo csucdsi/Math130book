@@ -280,7 +280,6 @@ Choose one of the four naming convention shown below for your class folder and s
 
 ![Common Naming Conventions](img/name_things.png){fig-alt="Cartoon representations of common cases in coding. A snake screams 'SCREAMING_SNAKE_CASE' into the face of a camel (wearing ear muffs) with 'camelCase' written along its back. Vegetables on a skewer spell out 'kebab-case' (words on a skewer). A mellow, happy looking snake has text 'snake_case' along it." width="600"}
 
-[<a href = "https://allisonhorst.com/">Artwork by @allison_horst – used under CC BY 4.0.</a>]{.aside}
 
 :::{.callout-tip title = "Create your folders"}
 1.  On your computer, in an easy to find place, create a new folder named `math130` using your chosen naming convention.
