@@ -183,7 +183,7 @@
     "href": "quarto.html",
     "title": "2  Reproducibility with Quarto",
     "section": "",
-    "text": "2.1 Document structure\nQuarto is a versatile publishing system that allows users to create high-quality documents, reports, websites (like this one!) and presentations using multiple programming languages like R, Python, and Julia. It combines the functionalities of various tools into a single platform, making it easier to produce reproducible and collaborative scientific content.\nQuarto is an example of literate programming where the explanation of the program (or analysis) logic is presented in a natural language (such as English), with supporting pieces of code embedded in the document itself. Quarto combines normal text such as this sentence, code and the output from the code all in one file. It is similar to a scientific lab notebook where a scientist can write down their hypotheses, code to produce graphs and analysis results, and the discussion of those findings.\nThe  Render button in the RStudio IDE compiles or renders the file and opens a preview of the output with a single click or keyboard shortcut SHIFT+COMMAND+K.",
+    "text": "2.1 Document structure\nQuarto is a versatile publishing system that allows users to create high-quality documents, reports, websites (like this one!) and presentations using multiple programming languages like R, Python, and Julia. It combines the functionalities of various tools into a single platform, making it easier to produce reproducible and collaborative scientific content. If you have heard of R Markdown - Quarto is the “next generation” of R Markdown.\nWhile Quarto is also it’s own standalone program, it comes “built-in” to R Studio so no additional installations needed!\nQuarto is an example of literate programming where the explanation of the program (or analysis) logic is presented in a natural language (such as English), with supporting pieces of code embedded in the document itself. Quarto combines normal text such as this sentence, code and the output from the code all in one file. It is similar to a scientific lab notebook where a scientist can write down their hypotheses, code to produce graphs and analysis results, and the discussion of those findings.\nThe  Render button in the RStudio IDE compiles or renders the file and opens a preview of the output with a single click or keyboard shortcut SHIFT+COMMAND+K.",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
@@ -205,7 +205,7 @@
     "href": "quarto.html#components-of-a-r-markdown-document",
     "title": "2  Reproducibility with Quarto",
     "section": "2.2 Components of a R Markdown document",
-    "text": "2.2 Components of a R Markdown document\nQuarto files contains three types of content: a YAML header, code chunks, and markdown text.",
+    "text": "2.2 Components of a R Markdown document\nQuarto files contains three types of content:\n\nA YAML header\nCode chunks\nMarkdown text\n\n\n2.2.1 YAML Header\nAn YAML header is demarcated by three dashes (—) on top and bottom. R is pretty finicky about these three dashes.\nWhen rendered, the title, \"Hello, Quarto\", will appear at the top of the rendered document with a larger font size than the rest of the document. The other two YAML fields denote that the output should be in html format and the document should open in the visual editor by default.\nThe basic syntax of YAML uses key-value pairs in the format key: value. Other YAML fields commonly found in headers of documents include metadata like author and date.\n\n\n\n\n\n\n👉 Add your name\n\n\n\n\nAdd a line after the title for an author and put your name here.\nClick the “Source” button at the top left corner of the Source window.\nRender the document again.\n\n\n\nVisual vs Source mode RStudio’s visual editor offers a WYSIWYM authoring experience for markdown formatting of text. Each view has it’s benefits and drawbacks, and which you choose to use is purely a matter of personal preference.\n\n\n\nThe same Quarto document in the two modes of the RStudio editor: visual (on the left) and source (on the right).\n\n\n\n\n2.2.2 Code Chunks\n\nCode chunks start with three back ticks (to the left of the 1) and an r in braces. Chunks close (end) with another three back ticks. Note the background color of this section has changed to a different shade. This helps you identify you have closed your code chunk properly.\nYou can insert code chunks by using the button in the top right of an RMD file (Insert –&gt; R), or by typing CTRL+ALT+I.\nOnly code goes in code chunks. That’s why they’re called code chunks.\n\nNo normal text.\nAll explanatory text goes outside a code chunk.\n\n\n\n\n\n\n\n\n👉 Make a change\n\n\n\nPlay around with modifying the text and the R code.\n\nChange the code from summary(cars) to summary(iris).\n\nWrite a sentence below this code chunk. It could be “Hello world”.\nAdd a code chunk and type the equation 2+2 in the code chunk.\nRe-knit this document and observe your changes.\n\n\n\n\n\n2.2.3 Markdown Text\nMarkdown is a popular markup language that allows you to add formatting elements to text. Markdown is useful because it is lightweight, flexible, and platform independent. See more basic syntax of Markdown at  https://markdownguide.offshoot.io/basic-syntax/\n\n\n\n\n\nWhat you type\nWhat you see\n\n\n\n\n**bold**\nbold\n\n\n_italics_\nitalics\n\n\n`code`\ncode\n\n\n$\\beta$, $\\mu$\n\\(\\beta\\), \\(\\mu\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat you type\nWhat you see\n\n\n\n\n1.  one\n2.  two\n\none\ntwo\n\n\n\n*  bullet\n*  points\n\nbullet\npoints\n\n\n\n\n\n\nAdditionally, using # and ## symbols at the start of a line creates first (#) and second (##) level headers, such as Section 2.2.3 as which are an important part of document organization and accessibility for screen reader navigation.",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
@@ -215,8 +215,8 @@
     "objectID": "quarto.html#code-chunks",
     "href": "quarto.html#code-chunks",
     "title": "2  Reproducibility with Quarto",
-    "section": "2.4 Code Chunks",
-    "text": "2.4 Code Chunks\n\nCode chunks start with three back ticks (to the left of the 1) and an r in braces. Chunks close (end) with another three back ticks. Note the background color of this section has changed to a different shade. This helps you identify you have closed your code chunk properly.\nYou can insert code chunks by using the button in the top right of an RMD file (Insert –&gt; R), or by typing CTRL+ALT+I.\nOnly code goes in code chunks. That’s why they’re called code chunks.\n\nNo normal text.\nAll explanatory text goes outside a code chunk.",
+    "section": "2.5 Code Chunks",
+    "text": "2.5 Code Chunks\n\nCode chunks start with three back ticks (to the left of the 1) and an r in braces. Chunks close (end) with another three back ticks. Note the background color of this section has changed to a different shade. This helps you identify you have closed your code chunk properly.\nYou can insert code chunks by using the button in the top right of an RMD file (Insert –&gt; R), or by typing CTRL+ALT+I.\nOnly code goes in code chunks. That’s why they’re called code chunks.\n\nNo normal text.\nAll explanatory text goes outside a code chunk.",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
@@ -226,8 +226,8 @@
     "objectID": "quarto.html#test-your-setup",
     "href": "quarto.html#test-your-setup",
     "title": "2  Reproducibility with Quarto",
-    "section": "2.5 Test your setup",
-    "text": "2.5 Test your setup\nLet’s create your first markdown file!\n\nIn R Studio go to File –&gt; New File –&gt; R Markdown\nTitle this document My First R Markdown Document, then click OK.\nClick the small blue disk icon to save this file into your class folder.\nSave this file using the file name test_markdown_document.\n\nFile names cannot have spaces or special characters.\nDo not specify the file type. It will be set automatically.\n\nClick the KNIT button (has the yarn ball next to it) to convert this file into HTML.\nLook at the HTML file that was created. You should be able to match the code with the resulting output.\n\nThis is what we mean by reproducible. If you make a change in the code document, and re-knit (aka compile), your changes will be reflected in the generated document.\nIf you are asked to install additional packages, go ahead and say yes. Then go back to lesson 02 and make sure you have all the necessary packages listed.",
+    "section": "2.6 Test your setup",
+    "text": "2.6 Test your setup\nLet’s create your first markdown file!\n\nIn R Studio go to File –&gt; New File –&gt; R Markdown\nTitle this document My First R Markdown Document, then click OK.\nClick the small blue disk icon to save this file into your class folder.\nSave this file using the file name test_markdown_document.\n\nFile names cannot have spaces or special characters.\nDo not specify the file type. It will be set automatically.\n\nClick the KNIT button (has the yarn ball next to it) to convert this file into HTML.\nLook at the HTML file that was created. You should be able to match the code with the resulting output.\n\nThis is what we mean by reproducible. If you make a change in the code document, and re-knit (aka compile), your changes will be reflected in the generated document.\nIf you are asked to install additional packages, go ahead and say yes. Then go back to lesson 02 and make sure you have all the necessary packages listed.",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
@@ -237,8 +237,8 @@
     "objectID": "quarto.html#make-a-change",
     "href": "quarto.html#make-a-change",
     "title": "2  Reproducibility with Quarto",
-    "section": "2.6 Make a change",
-    "text": "2.6 Make a change\nPlay around with modifying the text and the R code.\n\nChange the code from summary(cars) to summary(iris).\n\nWrite a sentence below this code chunk. It could be “Hello world”.\nAdd a code chunk and type the equation 2+2 in the code chunk.\nRe-knit this document and observe your changes.\n\nYou are now ready to start the first assignment.",
+    "section": "2.3 Make a change",
+    "text": "2.3 Make a change\nPlay around with modifying the text and the R code.\n\nChange the code from summary(cars) to summary(iris).\n\nWrite a sentence below this code chunk. It could be “Hello world”.\nAdd a code chunk and type the equation 2+2 in the code chunk.\nRe-knit this document and observe your changes.\n\nYou are now ready to start the first assignment.\n\n2.3.1 Markdown Text\nMarkdown is a popular markup language that allows you to add formatting elements to text, such as bold, italics, and code. Markdown is useful because it is lightweight, flexible, and platform independent.\n\n\n\n\n\nWhat you type\nWhat you see\n\n\n\n\n**bold**\nbold\n\n\n_italics_\nitalics\n\n\n\ncode\n\n\n\n\n\n\n\n\n\n\n\nWhat you type\nWhat you see\n\n\n\n\n**bold**\nbold\n\n\n_italics_\nitalics\n\n\n\ncode\n\n\n\n\n\n\n\n\n\nSee more basic syntax of Markdown at  https://markdownguide.offshoot.io/basic-syntax/\n\\(\\mu\\) and \\(\\beta\\)",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
@@ -248,8 +248,8 @@
     "objectID": "quarto.html#start-assignment-1",
     "href": "quarto.html#start-assignment-1",
     "title": "2  Reproducibility with Quarto",
-    "section": "2.7 Start Assignment 1",
-    "text": "2.7 Start Assignment 1\n\nRight click and select save as (or save target as) to download [HW 1.Rmd] code file to your class folder.\nNavigate to your class folder and double click to open this file in R Studio\n\nYou might have to tell your computer what program to use.\nDo NOT open this file from your browser window.\n\nDouble click on this file (from your class folder) to open it in R studio.\nThis .Rmd file is a template for you to use to write your assignment. Write your answers directly into this document.\nAfter you answer each question, knit the file to ensure that your work is saved, and that your answers are being correctly displayed in the final document.",
+    "section": "2.8 Start Assignment 1",
+    "text": "2.8 Start Assignment 1\n\nRight click and select save as (or save target as) to download [HW 1.Rmd] code file to your class folder.\nNavigate to your class folder and double click to open this file in R Studio\n\nYou might have to tell your computer what program to use.\nDo NOT open this file from your browser window.\n\nDouble click on this file (from your class folder) to open it in R studio.\nThis .Rmd file is a template for you to use to write your assignment. Write your answers directly into this document.\nAfter you answer each question, knit the file to ensure that your work is saved, and that your answers are being correctly displayed in the final document.",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
@@ -259,8 +259,8 @@
     "objectID": "quarto.html#additional-resources",
     "href": "quarto.html#additional-resources",
     "title": "2  Reproducibility with Quarto",
-    "section": "2.8 Additional Resources",
-    "text": "2.8 Additional Resources\n\nWhile the introductory video no longer works, there are additional lessons on using R Markdown at the following site: http://rmarkdown.rstudio.com/lesson-1.html\n\nRelevant portions in this tutorial are “How it works”, “Code Chunks”, and “Output Formats”\n\nGallery of the vast range of output and product types that you can create using R Markdown including PDF reports, interactive dashboards, maps, webpages like this one and more: https://rmarkdown.rstudio.com/gallery.html",
+    "section": "2.9 Additional Resources",
+    "text": "2.9 Additional Resources\n\nWhile the introductory video no longer works, there are additional lessons on using R Markdown at the following site: http://rmarkdown.rstudio.com/lesson-1.html\n\nRelevant portions in this tutorial are “How it works”, “Code Chunks”, and “Output Formats”\n\nGallery of the vast range of output and product types that you can create using R Markdown including PDF reports, interactive dashboards, maps, webpages like this one and more: https://rmarkdown.rstudio.com/gallery.html",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
@@ -270,8 +270,8 @@
     "objectID": "quarto.html#install-tinytex",
     "href": "quarto.html#install-tinytex",
     "title": "2  Reproducibility with Quarto",
-    "section": "2.9 Install TinyTex",
-    "text": "2.9 Install TinyTex\nTo convert your work into a professional looking PDF, or to write math symbols in your homework, or you need a typesetting program called \\(\\LaTeX\\) (pronounced “lay-tek” or “lah-tex”). It’s a super neat program, but also nearly 4Gb. Too big for our needs. That’s where the tinytex package came from. we’re going to use it to install a lightweight version of \\(\\LaTeX\\). This will let us write math equations in Markdown/Quarto, and create nice PDF’s of your work.\nIn your console type the following and hit Enter\ntinytex::install_tinytex()\nThis may take a few minutes, but then you’re good to go!\nTest it out now by rendering …  to PDF by clicking on the down arrow next to “Render” and choosing “PDF”. &gt; FIXME",
+    "section": "2.10 Install TinyTex",
+    "text": "2.10 Install TinyTex\nTo convert your work into a professional looking PDF, or to write math symbols in your homework, or you need a typesetting program called \\(\\LaTeX\\) (pronounced “lay-tek” or “lah-tex”). It’s a super neat program, but also nearly 4Gb. Too big for our needs. That’s where the tinytex package came from. we’re going to use it to install a lightweight version of \\(\\LaTeX\\). This will let us write math equations in Markdown/Quarto, and create nice PDF’s of your work.\nIn your console type the following and hit Enter\ntinytex::install_tinytex()\nThis may take a few minutes, but then you’re good to go!\nTest it out now by rendering …  to PDF by clicking on the down arrow next to “Render” and choosing “PDF”. &gt; FIXME",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
@@ -920,7 +920,51 @@
     "href": "quarto.html#yaml-header",
     "title": "2  Reproducibility with Quarto",
     "section": "2.3 YAML Header",
-    "text": "2.3 YAML Header\nAn YAML header is demarcated by three dashes (—) on top and bottom. R is pretty finicky about these three dashes.\nWhen rendered, the title, \"Hello, Quarto\", will appear at the top of the rendered document with a larger font size than the rest of the document. The other two YAML fields denote that the output should be in html format and the document should open in the visual editor by default.\nThe basic syntax of YAML uses key-value pairs in the format key: value. Other YAML fields commonly found in headers of documents include metadata like author and date.\n\n\n\n\n\n\n👉 Add your name\n\n\n\n\nAdd a line after the title for an author and put your name here.\nChange the editor to source\nRender the document again.\n\n---\ntitle: \"Hello, Quarto\"\nauthor: Dr. D. \nformat: html\neditor: source\n---",
+    "text": "2.3 YAML Header\nAn YAML header is demarcated by three dashes (—) on top and bottom. R is pretty finicky about these three dashes.\nWhen rendered, the title, \"Hello, Quarto\", will appear at the top of the rendered document with a larger font size than the rest of the document. The other two YAML fields denote that the output should be in html format and the document should open in the visual editor by default.\nThe basic syntax of YAML uses key-value pairs in the format key: value. Other YAML fields commonly found in headers of documents include metadata like author and date.\n\n\n\n\n\n\n👉 Add your name\n\n\n\n\nAdd a line after the title for an author and put your name here.\nClick the “Source” button at the top left corner of the Source window.\nRender the document again.\n\n\n\nVisual vs Source mode RStudio’s visual editor offers a WYSIWYM authoring experience for markdown formatting of text. Each view has it’s benefits and drawbacks, and which you choose to use is purely a matter of personal preference.\n\n\n\nThe same Quarto document in the two modes of the RStudio editor: visual (on the left) and source (on the right).",
+    "crumbs": [
+      "Getting Started",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#here-here-here-",
+    "href": "quarto.html#here-here-here-",
+    "title": "2  Reproducibility with Quarto",
+    "section": "2.4 HERE HERE HERE—-",
+    "text": "2.4 HERE HERE HERE—-",
+    "crumbs": [
+      "Getting Started",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#create-professional-looking-pdfs",
+    "href": "quarto.html#create-professional-looking-pdfs",
+    "title": "2  Reproducibility with Quarto",
+    "section": "2.3 Create professional looking PDF’s",
+    "text": "2.3 Create professional looking PDF’s\nTo convert your work into a professional looking PDF, or to write math symbols in your homework, or you need a typesetting program called \\(\\LaTeX\\) (pronounced “lay-tek” or “lah-tex”). It’s a super neat program, but also nearly 4Gb. Too big for our needs. That’s where the tinytex package came from. we’re going to use it to install a lightweight version of \\(\\LaTeX\\). This will let us write math equations in Markdown/Quarto, and create nice PDF’s of your work.\n\n\n\n\n\n\n👉 Your Turn\n\n\n\n\nIn the console type tinytex::install_tinytex() and press Enter. This may take a few minutes to fully install.\nIn the YAML header change format: html to format: pdf.\nRender your document again.",
+    "crumbs": [
+      "Getting Started",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#sec-quarto-components",
+    "href": "quarto.html#sec-quarto-components",
+    "title": "2  Reproducibility with Quarto",
+    "section": "2.2 Components of a Quarto file",
+    "text": "2.2 Components of a Quarto file\nQuarto files contains three types of content:\n\nA YAML header\nCode chunks\nMarkdown text\n\n\n2.2.1 YAML Header\nAn YAML header is demarcated by three dashes (—) on top and bottom. R is pretty finicky about these three dashes, so try not to disturb them.\nWhen rendered, the title, \"Hello, Quarto\", will appear at the top of the rendered document with a larger font size than the rest of the document. The other two YAML fields denote that the output should be in html format and the document should open in the visual editor by default.\nThe basic syntax of YAML uses key-value pairs in the format key: value. Other YAML fields commonly found in headers of documents include metadata like author: and date:.\n\n\n\n\n\n\n👉 Add your name\n\n\n\n\nAdd a line after the title for an author: and put your name here.\nClick the “Source” button at the top left corner of the Source window.\nRender the document again.\n\n\n\nVisual vs Source mode RStudio’s Visual editor offers a WYSIWYM  authoring experience for markdown formatting of text. Each view has it’s benefits and drawbacks, and which you choose to use is purely a matter of personal preference.What You See Is What You Mean\n\n\n\nThe same Quarto document in the two modes of the RStudio editor: visual (on the left) and source (on the right).\n\n\n\n\n2.2.2 Code Chunks\nCode chunks start with three back ticks ```  and an {r} in braces. Chunks close (end) with another three back ticks. a back tick is the key to the left of the 1 on your keyboardNote the background color of this section has changed to a different shade. This helps you identify you have closed your code chunk properly.\n\n```{r}\n#| eval: false\n2+2\n```\n\n\nYou can insert code chunks by using the button in the top right of an RMD file (Insert -&gt; R), or by typing CTRL+ALT+I.\nR code chunks can also have a YAML style header, identified by #| at the beginning of the line. In this case I set eval to false to prevent the code inside this code chunk from being run when I render the whole document.\n\n\n\n\n\n\n\nOnly code goes in code chunks\n\n\n\nThat’s why they’re called code chunks. No normal text. All explanatory text goes outside code chunks in normal Markdown text.\n\n\n\n\n\n\n\n\n👉 Make a change\n\n\n\nPlay around with modifying the text and the R code.\n\nChange echo:false to echo:true in the plot-penguins code chunk header.\nType colors() in your console to pull up all the named colors in R. Change at least one color in the penguin plot.\nWrite “Hello Penguins!” on line 45, at least one blank line after the the end of the code chunk and your sentence.\nRender this document and observe your changes.\n\n\n\nIn addition to rendering the complete document to view the results of code chunks, you can also run each code chunk interactively in the RStudio editor by clicking the play button icon in the top right corner of the code chunk, or keyboard shortcut CTRL + SHIFT + ENTER. RStudio executes the code and displays the results either inline within your file or in the Console, depending on your preference.\n\n\n\n\n\n\n👉 Add some code\n\n\n\n\nInsert a new code chunk after your “Hello Penguins!” sentence. Make sure there is a blank line between your sentence and the code chunk\nType the code 2+2 in this code chunk and click the play button to execute it immediately.\n\nRender your document and observe your changes.\n\n\n\n\n\n2.2.3 Markdown Text\nMarkdown is a popular markup language that allows you to add formatting elements to text. Markdown is useful because it is lightweight, flexible, and platform independent. See more basic syntax of Markdown at  https://markdownguide.offshoot.io/basic-syntax/\n\n\n\n\n\nWhat you type\nWhat you see\n\n\n\n\n**bold**\nbold\n\n\n_italics_\nitalics\n\n\n`code`\ncode\n\n\n$2\\beta - \\frac{\\mu}{n}$\n\\(2\\beta - \\frac{\\mu}{n}\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat you type\nWhat you see\n\n\n\n\n1.  one\n2.  two\n\none\ntwo\n\n\n\n*  bullet\n*  points\n\nbullet\npoints\n\n\n\n\n\n\nAdditionally, using # and ## symbols at the start of a line creates first (#) and second (##) level headers (larger font size, bold, numbered), such as Section 2.2 and line 15 in the hello.qmd file where it says ## Meet Quarto . Properly formatted headers are an important part of document organization and accessibility for screen reader navigation.\n\n\n\n\n\n\n👉 Add some formatting\n\n\n\n\nAdd some formatting to your “Hello Penguins!” sentence.\nRender your document and observe your changes.",
+    "crumbs": [
+      "Getting Started",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
+    ]
+  },
+  {
+    "objectID": "quarto.html#create-professional-looking-pdf-reports.",
+    "href": "quarto.html#create-professional-looking-pdf-reports.",
+    "title": "2  Reproducibility with Quarto",
+    "section": "2.3 Create professional looking PDF reports.",
+    "text": "2.3 Create professional looking PDF reports.\nTo convert your work into a professional looking PDF, or to write math symbols in your homework, or you need a typesetting program called \\(\\LaTeX\\) (pronounced “lay-tek” or “lah-tex”). It’s a super neat program, but also nearly 4Gb. Too big for our needs. That’s where the tinytex package came from. we’re going to use it to install a lightweight version of \\(\\LaTeX\\). This will let us write math equations in Markdown/Quarto, and create nice PDF’s of your work.\n\n\n\n\n\n\n👉 Your Turn\n\n\n\n\nIn the console type tinytex::install_tinytex() and press Enter. This may take a few minutes to fully install.\nIn the YAML header change format: html to format: pdf\nRender your document again.",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
