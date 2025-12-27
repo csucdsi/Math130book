@@ -1,4 +1,4 @@
-# Putting it all together {.unnumbered}
+# Project {.unnumbered}
 
 Time to put everything you learned in this class into action. In an
 exploratory data analysis (EDA) you are just looking at (exploring) the
@@ -58,10 +58,8 @@ least 30 observations it should be fine.
 If you do not have your own data, you can choose from one of the
 following data sets, all of which can be downloaded from the
 [Data](https://norcalbiostat.netlify.com/data) page of Dr. D's teaching
-course website. Here are some viable choices:
+course website. Here are some common choices:
 
--   **Email Spam**: Characteristics of emails used to predict if the
-    email is spam or not.
 -   **HIV**: Data on adolescent children living with HIV positive
     parents.
 -   **Depression**: Level of depression (`cesd`), health care, and

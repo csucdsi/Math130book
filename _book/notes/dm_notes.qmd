@@ -1,0 +1,244 @@
+---
+title: "Working with Data Frames - Notes"
+author: "Put your name here"
+date: today
+format: pdf
+execute: 
+  error: true
+  message: false
+  warning: false
+---
+
+:::{.callout-important title = "How to use the Notes files"}
+This notes file follows along with the lesson materials. 
+Your job is to fill out the missing code, often denoted with _____, 
+and to complete the "you try it" type problems presented in the notes. 
+
+Render this document regularly, ensuring that it is complete before you submit.
+Before you submit, remove the `error: true` line in the YAML header then render. 
+:::
+
+# Setup
+
+```{r}
+library(________)               # replace the blank line with `ggplot2`
+library(gtsummary)              
+ncbirths <- openintro::ncbirths 
+```
+
+
+### Frequency Tables
+
+You can create a basic frequency table by using the `table()` function. 
+
+```{r}
+table(ncbirths$_________)
+```
+
+Relative frequencies (proportions or percentages) are calculated by putting the results of the `table` function inside the `prop_table` function. 
+
+```{r}
+_________(
+  table(_________$lowbirthweight)
+)
+```
+
+### Summary Statistics
+
+The function `summary()` prints out the five number summary, and includes the mean. This function also displays the number of missing values for that variable. 
+
+```{r}
+_________(ncbirths$visits)
+```
+
+
+### Fancy summary tables
+
+The `gtsummary` package provides a single function `tbl_summary` to create a really nicely formatted summary table for both quantitative and categorical data types. 
+
+```{r}
+_________(ncbirths, 
+            include = c(_________, _________)
+            )
+```
+
+The `statistic` argument can be used to change what values are displayed.
+```{r}
+tbl_summary(_________, 
+            _________ = c(visits, lowbirthweight), 
+            statistic = list(
+                _________() ~ "{mean} ({sd})",
+                _________() ~ "{n} / {N} ({p}%)"
+              )
+            )
+```
+
+## Missing Data 
+
+We can see 4 out of the first 6 values for the variable `fage` (fathers age) in the `ncbirths` data set are missing. 
+
+```{r}
+_________(ncbirths$_________)
+```
+
+
+**Problem 1: `R` can't do arithmetic on missing data.** 
+
+```{r}
+_________(ncbirths$fage)
+```
+
+:::{.callout-tip title = "👉 Fix this error" icon=false}
+Add the argument `na.rm=TRUE` to the `mean()` function inside the right hand parenthesis to calculate the mean after excluding missing values. 
+
+```{r}
+mean(ncbirths$fage, _________)
+```
+
+:::
+
+
+**Problem 2: Some plots will show `NA` as it's own category**
+
+Sometimes this is fine, other times this is undesirable. We'll see later how we can adjust this plot to remove that column of NA. 
+
+```{r}
+ggplot(_________, aes(_________)) + geom_bar()
+```
+
+
+### Identifying missing values 
+
+To find out how many values in a particular variable are missing we can use several different approaches. 
+
+#### Look at the raw data {.unnumbered} 
+
+```{r}
+_________(_________)
+```
+
+#### Look at data summaries {.unnumbered}  
+
+Functions such as `table()` have a `useNA="always"` option to show how many records have missing values, and `summary()` will always show a column for NA. 
+
+```{r}
+table(ncbirths$habit, useNA=_________)
+summary(ncbirths$_________)
+```
+
+#### Use a logical statement {.unnumbered}
+
+The function `is.na()` returns TRUE or FALSE for each element in the provided vector for whether or not that element is missing.  
+```{r}
+x <- c("_________", NA, 3)
+is.na(_________)
+```
+
+```{r}
+sum(_________(ncbirths$fage))
+```
+
+There are 171 records in this data set where the age for the father is not present. 
+
+:::{.callout-note title = "Negating `is.na()` to find the non-missing values"}
+Recall we can use the `!` to negate a boolean argument. 
+:::
+
+```{r}
+_________is.na(x)
+```
+
+
+:::{.callout-tip title = "👉 Hide the NA bar" icon=false}
+We can use this tactic to fix that barchart from above. Wrap `!is.na()` around the `premie` variable in the `ggplot` code to create a barchart that does not have a bar for missing values. 
+
+```{r}
+ggplot(ncbirths, aes(_________(premie))) + geom_bar()
+```
+
+:::
+
+
+
+## Data management 
+
+### Overwrite existing values
+
+:::{.callout-tip title = "Example 1: Too low birthweight"}
+Let's look at the numerical distribution of birthweight (in pounds) of the baby. 
+
+```{r}
+_________(ncbirths$_________)
+```
+:::
+
+The value of 1 lb seems very low. The researchers you are working with decide that is a mistake and should be excluded from the data. We would then set all records where `weight=1` to missing. 
+
+```{r}
+ncbirths$weight[ncbirths$weight_________] <- _________
+```
+
+```{r}
+_________(ncbirths$weight, na.rm=TRUE)
+```
+
+
+:::{.callout-tip title = "👉 Your Turn" icon=false}
+But what about other weights that aren't quite as low as 1, but still unusually low? 
+
+* Write the code to set all birth weights less than 4 lbs (`<4`) to missing (NA).
+* Then recalculate the mean to confirm your recode worked. 
+
+```{r}
+
+ncbirths$weight[ncbirths$_________] <- NA
+_________(ncbirths$weight, _________)
+```
+:::
+
+### Creating new variables 
+
+The following code creates a new variable `wtgain_mom` the weight gained by the mother, that is not due to the baby by subtracting `weight` from `gained`. 
+```{r}
+ncbirths$_________ <- _________ - ncbirths$_________
+```
+
+To confirm this variable was created correctly, we look at the data contained in three variables in question. 
+
+```{r}
+head(_________[,c('gained', 'weight', 'wtgain_mom')])
+```
+
+### Dichtomizing data 
+
+Let's add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth. Specifically Make a new variable `underage` on the `ncbirths` data set. If `mage` is under 18, then the value of this new variable is `underage`, else it is labeled as `adult`. 
+
+```{r}
+ncbirths$_________ <- _________(ncbirths$mage _________, "_________", "_________")
+```
+
+**Trust but Verify**
+
+
+```{r}
+table(ncbirths$underage, useNA="_________")
+```
+
+Next let's check it against the value of `mage` itself. Let's look at all rows where mothers age is either 17 or 18 `mage %in% c(17,18)`, and only the columns of interest. 
+
+```{r}
+ncbirths[ncbirths$mage _________,c('mage', 'underage')]
+```
+
+## Chaining commands
+
+:::{.callout-tip title = "👉Example: Frequency tables & summary statistics using the pipe" icon=false}
+
+First stating the variable, then pipe in the summary function. 
+```{r}
+ncbirths$mature ____ table() # instead of table(ncbirths$mature)
+ncbirths$mage ____ mean() #instead of mean(ncbirths$mage)
+```
+:::
+
+
