@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Introduction to R",
     "section": "",
-    "text": "Preface\nThis notebook was created to host learning materials for Math 130: Introduction to R at California State University, Chico. From the course catalog:\nThe goal of Math 130 is to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. We recognize there are many topics and many approaches to teach an introduction to the R programming language. We have picked specific topics and methods that we believe learners will need to succeed in subsequent classes.",
+    "text": "Preface\nThis notebook was created to host learning materials for Math 130: Introduction to R at California State University, Chico.\nFrom the course catalog:\nThe goal of Math 130 is to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. We recognize there are many topics and many approaches to teach an introduction to the R programming language. We have picked specific topics and methods that we believe learners will need to succeed in subsequent classes.",
     "crumbs": [
       "Preface"
     ]
