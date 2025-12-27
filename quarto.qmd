@@ -5,6 +5,9 @@ execute:
 
 # Reproducibility with Quarto
 
+![A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, html, Word documents, and more) versatility of Quarto.](img/quarto.png)
+
+
 [Quarto](https://quarto.org/) is a versatile publishing system that allows users to create high-quality documents, reports, websites (like this one!) and presentations using multiple programming languages like R, Python, and Julia. It combines the functionalities of various tools into a single platform, making it easier to produce reproducible and collaborative scientific content. If you have heard of R Markdown - Quarto is the "next generation" of R Markdown.
 
 ::: {.callout-note title="Learning Objectives"}
@@ -66,7 +69,7 @@ The basic syntax of YAML uses key-value pairs in the format `key: value`. Other 
 
 :::
 
-**Visual vs Source mode** RStudio’s **Visual** editor offers a [WYSIWYM](https://en.wikipedia.org/wiki/WYSIWYM) [What You See Is What You Mean]{.aside} authoring experience for markdown formatting of text. Each view has it's benefits and drawbacks, and which you choose to use is purely a matter of personal preference.
+**Visual vs Source mode** RStudio’s **Visual** editor offers a [WYSIWYM](https://en.wikipedia.org/wiki/WYSIWYM) [WYSIWYM: What You See Is What You Mean]{.aside} authoring experience for markdown formatting of text. Each view has it's benefits and drawbacks, and which you choose to use is purely a matter of personal preference.
 
 ![The same Quarto document in the two modes of the RStudio editor: visual (on the left) and source (on the right).](https://quarto.org/docs/get-started/hello/images/rstudio-source-visual.png)
 

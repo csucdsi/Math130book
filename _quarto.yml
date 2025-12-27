@@ -16,13 +16,15 @@ book:
         - setup_tools.qmd
         - quarto.qmd
         - programming_in_r.qmd
-    - part: "Working with Data"
+    - part: "Basic Functionality"
       chapters: 
         - dm.qmd  
         - factors.qmd
         - plots.qmd
         - dplyr.qmd
         - import.qmd
+    - part: "Advanced Features"
+      chapters: 
         - plots2.qmd
     - part: "Appendix"
       chapters: 
@@ -45,7 +47,12 @@ format:
     code-line-numbers: false
     code-block-bg: true
 
+# code highlighting quarto extension https://github.com/shafayetShafee/line-highlight
+filters:
+  - line-highlight
 
 execute: 
   freeze: auto
+  message: false
+  warning: false
 

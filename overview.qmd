@@ -13,37 +13,60 @@ format:
     - **[RStudio](https://posit.co/downloads/)** has been a very popular IDE since around 2011 that has continued to flourish and improve throughtout the years. 
     - **[Positron](https://positron.posit.co/)** is a new IDE created by the developers of RStudio that is based off another popular IDE called VSCode - and aimed primarily at Data Scientists
     
-![Manual car gear shift representing coding in R](img/r-manual.jpeg){fig-alt="Manual car gear shift representing coding in R" fig-align="left" width="250"} ![Automatic car gear shift representing RStudio integrated development environment](img/r-automatic.jpeg){fig-alt="Automatic car gear shift representing RStudio integrated development environment" fig-align="right" width="250"}
-[RStudio extends what R can do, and makes it easier to write R code and interact with R. <a href="https://unsplash.com/photos/D19rXKDUPYM">Left photo credit</a>; <a href="https://unsplash.com/photos/Wec3M4dY_LE">Right photo credit</a>.]{.aside}
 
-This book teaches you how to use R from within the **R Studio** IDE as we feel it is easier for new learners to start with.  You will have to install both onto your computer. Setup instructions are discussed later in @sec-install
-
+This book teaches you how to use R from within the **R Studio** IDE as we feel it is easier for new learners to start with.  You will have to install both onto your computer. Setup instructions are discussed later in Section @sec-install.
 
 ## Motivation
 
 ### Why use R?
 
+:::: {.columns}
+
+::: {.column width="60%"}
+
 -   Open source, cross-platform, and free
 -   Great for reproducibility
--   Flexible and extensible. Doesn't do something you want? Create a custom function for yourself.
 -   Tons of learning resources
--   Currently R is used in many upper division & graduate level Statistics and Research methods courses in domains such as Public Health, Economics, Finance, and Political Science.
--   Does not involve lots of pointing and clicking (that's a good thing!)
 -   Works on data of all shapes and sizes
 -   Produces high-quality graphics
 -   Large and welcoming community
+-   Flexible and extensible. Doesn't do something you want? Create a custom function for yourself.
+-   Currently R is used in many upper division & graduate level Statistics and Research methods courses in domains such as Public Health, Economics, Finance, and Political Science.
+:::
+
+::: {.column width="40%"}
+![Manual car gear shift representing coding in R <a href="https://unsplash.com/photos/D19rXKDUPYM">Photo credit</a>](img/r-manual.jpeg){fig-alt="Manual car gear shift representing coding in R" fig-align="center"}
+:::
+
+::::
+
 
 ### Why use R Studio?
+
+:::: {.columns}
+
+::: {.column width="60%"}
 
 -   Customizable workspace that docks all windows together.
 -   Notebook formats that allow for easy sharing of code and output, and integration with other languages (Python, C++, SQL, Stan)
 -   Syntax highlighting, warning errors when missing a closing parentheses.
 -   Cross-platform interface. Also works on Windows/iOS/Linux.
 -   Tab completion for functions. Forget the syntax or a variable name? Popup helpers are available.
--   Free training videos available from the developers directly.
--   One button publishing of reproducible documents such as reports, dashboards, presentations (like this one!), websites.
+-   One button publishing of [reproducible documents](https://quarto.org/docs/gallery/) such as reports, dashboards, presentations, websites like this one!
 
-[See a gallery of other examples at <a href = "https://quarto.org/docs/gallery/"> https://quarto.org/docs/gallery/</a>]{.aside}
+:::
+
+::: {.column width="40%"}
+
+![Automatic car gear shift representing RStudio integrated development environment <a href="https://unsplash.com/photos/Wec3M4dY_LE">Photo credit</a>](img/r-automatic.jpeg){fig-alt="Automatic car gear shift representing RStudio integrated development environment" fig-align="center"} 
+:::
+
+::::
+
+ 
+
+
+
 
 ## Programming can be scary!
 It's important to acknowledge that computer programming is a new skill, that may bring a roller coaster of emotions with it while you learn. 

@@ -77,6 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-b2bea1b993f23d24829151e1fafd31f2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-495add37648e2abd34f1cfaf1465a323.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -189,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Working with Data</span></a>
+ <span class="menu-text">Basic Functionality</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -198,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data Frames</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -225,6 +226,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Getting data into R</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced Features</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots2.html" class="sidebar-item-text sidebar-link">
@@ -235,13 +247,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendix</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./help.html" class="sidebar-item-text sidebar-link">
@@ -450,17 +462,17 @@ MacOS
 </figure>
 </div>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><a href="https://datacarpentry.github.io/genomics-r-intro/00-introduction.html#overview-and-customization-of-the-rstudio-layout">Details pulled from the Data Carpentry Genomics lesson</a></span></div></div>
-<div class="callout callout-style-default callout-caution no-icon callout-titled" title="(Optional videos) Navigating R Studio">
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Optional video">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-(Optional videos) Navigating R Studio
+Optional video
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><a href="https://youtu.be/vx4SPeNvols?si=1iSqsH1uNLFkB7yF&amp;t=239">R Girls on YouTube</a></p>
+<p><a href="https://youtu.be/vx4SPeNvols?si=1iSqsH1uNLFkB7yF&amp;t=239">Navigating R Studio by R Girls on YouTube</a></p>
 </div>
 </div>
 <section id="consoleterminaljobs" class="level4 unnumbered">
@@ -479,9 +491,9 @@ MacOS
 <div class="callout-body-container callout-body">
 <p>In the console type the following code, then press <kbd>Enter</kbd>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
+<pre data-code-line-numbers=""><code>[1] 4</code></pre>
 </div>
 </div>
 </div>
@@ -517,9 +529,9 @@ MacOS
 <div class="callout-body-container callout-body">
 <p>In the script file type <code>2+2</code> and then then press <kbd>CTRL+Enter</kbd> while your cursor is still on the same line.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
+<pre data-code-line-numbers=""><code>[1] 4</code></pre>
 </div>
 </div>
 </div>
@@ -595,12 +607,12 @@ MacOS
 <div class="callout-body-container callout-body">
 <p>Typing the following in the console to install the <code>ggplot2</code> package.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 <p>When the download and install is complete, you should see a message similar to:</p>
-<pre><code>The downloaded binary packages are in
+<pre data-code-line-numbers=""><code>The downloaded binary packages are in
     C:\Users\Robin\AppData\Local\Temp\Rtmpi8NAym\downloaded_packages</code></pre>
 <div class="callout callout-style-default callout-important callout-titled" title="R is Case sensitive">
 <div class="callout-header d-flex align-content-center">
@@ -613,7 +625,7 @@ R is Case sensitive
 </div>
 <div class="callout-body-container callout-body">
 <p>R is case sensitive and spelling matters. If you get an error message like the following.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Warning <span class="cf">in</span> install.packages <span class="sc">:</span></span>
+<div class="sourceCode" id="cb7" data-code-line-numbers=""><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Warning <span class="cf">in</span> install.packages <span class="sc">:</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  package ‘ggplot’ is not <span class="fu">available</span> (<span class="cf">for</span> R version <span class="dv">3</span>.<span class="fl">5.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The correct package name is <code>ggplot2</code>, not <code>ggplot</code>.</p>
 </div>
@@ -684,7 +696,7 @@ Trust but Verify
 </div>
 </div>
 </section>
-<section id="get-organized" class="level2 page-columns page-full" data-number="1.6">
+<section id="get-organized" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="get-organized"><span class="header-section-number">1.6</span> Get oRganized!</h2>
 <p>It is good practice to keep a set of related data, analyses, and text self-contained in a single folder called the <em>working directory</em>. For example keeping all files related to one class in it’s own folder, separate from other classes. If you are taking another class using R at the same time as this one, it’s even MORE important to keep your files separate.</p>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -700,7 +712,7 @@ Important
 <p>THIS SHOULD NOT BE YOUR DOWNLOADS FOLDER</p>
 </div>
 </div>
-<section id="names-are-important" class="level3 page-columns page-full" data-number="1.6.1">
+<section id="names-are-important" class="level3" data-number="1.6.1">
 <h3 data-number="1.6.1" class="anchored" data-anchor-id="names-are-important"><span class="header-section-number">1.6.1</span> Names are important</h3>
 <p>Choose one of the four naming convention shown below for your class folder and stick with it. These are <code>snake_case</code>, <code>camelCase</code>, <code>kebab-case</code> or <code>UPPER_SNAKE</code>.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -709,7 +721,6 @@ Important
 <figcaption>Common Naming Conventions</figcaption>
 </figure>
 </div>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><a href="https://allisonhorst.com/">Artwork by <span class="citation" data-cites="allison_horst">@allison_horst</span> – used under CC BY 4.0.</a></span></div></div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Create your folders">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1410,4 +1421,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
 </body></html>

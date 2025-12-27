@@ -77,6 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-b2bea1b993f23d24829151e1fafd31f2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-495add37648e2abd34f1cfaf1465a323.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -117,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./import.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Getting data into R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./import.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Getting data into R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -189,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Working with Data</span></a>
+ <span class="menu-text">Basic Functionality</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -198,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data Frames</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -225,6 +226,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Getting data into R</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced Features</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots2.html" class="sidebar-item-text sidebar-link">
@@ -235,13 +247,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendix</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./help.html" class="sidebar-item-text sidebar-link">
@@ -288,7 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./import.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Getting data into R</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./import.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Getting data into R</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-import" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Getting data into R</span></span></h1>
 </div>
@@ -382,7 +394,7 @@ Prior to this lesson learners should
 <p>To import data into R, we have to tell the program explicitly where to find the files you just downloaded. To do that we need to find the file’s <em>path</em>. The <em>path</em> is a programmatic way to direct your computer to the location of a file. It’s like the file’s address, or, where it lives on your computer. <!-- ([link]("../static/img/path.png") to picture to explain absolute vs relative path if there is time) --></p>
 <p>In all the examples below, the path shown (<code>data/</code>) is the path on <strong>MY</strong> computer. You will have to update this path to <strong>YOUR</strong> path on <strong>YOUR</strong> machine that points to your MATH130 folder.</p>
 <p>You can find the path of a file by navigating to the desired file in your finder or browser window. Right click and copy the file to the clipboard, then right click and pasting into a R markdown file. This will show a path that looks something like this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>file<span class="sc">:</span><span class="er">///</span>C<span class="sc">:</span><span class="er">/</span>Math <span class="dv">130</span><span class="sc">/</span>Data<span class="sc">/</span>Challenger.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>file<span class="sc">:</span><span class="er">///</span>C<span class="sc">:</span><span class="er">/</span>Math <span class="dv">130</span><span class="sc">/</span>Data<span class="sc">/</span>Challenger.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You will need to remove the <code>file:///</code> part at the beginning before using this path. You will have three chances in this lab to practice this.</p>
 <section id="special-instructions-for-mac" class="level3" data-number="8.3.1">
 <h3 data-number="8.3.1" class="anchored" data-anchor-id="special-instructions-for-mac"><span class="header-section-number">8.3.1</span> Special Instructions for Mac</h3>
@@ -414,13 +426,13 @@ Prior to this lesson learners should
 <p>Text files are very simple files that have a <code>.txt</code> file extension. Common delimiters include a space, a comma (,) or a tab. Uncommon delimiters could include a % or even a semi-colon. By opening the file directly on your computer (not in R) you can see what delimiter is being used.</p>
 <p>We will use the <code>read.table()</code> function that is in base R to read in any type of delimited file. A tab-delimited text file can be read in using <code>"\t"</code> as the deliminator character. In this class you <strong>ALWAYS</strong> want to include <code>header=TRUE</code> to signify that the data in the first row contains our column names.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/email.txt"</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/email.txt"</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here we call the <code>str()</code> or <em>structure</em> function to examine the data that was imported.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(email)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(email)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>'data.frame':   3921 obs. of  21 variables:
+<pre data-code-line-numbers=""><code>'data.frame':   3921 obs. of  21 variables:
  $ spam        : int  0 0 0 0 0 0 0 0 0 0 ...
  $ to_multiple : int  0 0 0 0 0 0 1 1 0 0 ...
  $ from        : int  1 1 1 1 1 1 1 1 1 1 ...
@@ -454,17 +466,17 @@ Prior to this lesson learners should
 </blockquote>
 <p><strong>Forgetting both arguments</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/email.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/email.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in read.table("data/email.txt"): duplicate 'row.names' are not allowed</code></pre>
+<pre data-code-line-numbers=""><code>Error in read.table("data/email.txt"): duplicate 'row.names' are not allowed</code></pre>
 </div>
 </div>
 <p><strong>Forgetting the header</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/email.txt"</span>, <span class="at">sep=</span><span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
+<div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/email.txt"</span>, <span class="at">sep=</span><span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(email)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    V1          V2   V3 V4         V5                  V6    V7     V8     V9
+<pre data-code-line-numbers=""><code>    V1          V2   V3 V4         V5                  V6    V7     V8     V9
 1 spam to_multiple from cc sent_email                time image attach dollar
 2    0           0    1  0          0 2011-12-31 22:16:41     0      0      0
 3    0           0    1  0          0 2011-12-31 23:03:59     0      0      0
@@ -489,13 +501,13 @@ Prior to this lesson learners should
 </div>
 <p><strong>Forgetting the separator</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/email.txt"</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/email.txt"</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in read.table("data/email.txt", header = TRUE): duplicate 'row.names' are not allowed</code></pre>
+<pre data-code-line-numbers=""><code>Error in read.table("data/email.txt", header = TRUE): duplicate 'row.names' are not allowed</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(email)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(email)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    V1          V2   V3 V4         V5                  V6    V7     V8     V9
+<pre data-code-line-numbers=""><code>    V1          V2   V3 V4         V5                  V6    V7     V8     V9
 1 spam to_multiple from cc sent_email                time image attach dollar
 2    0           0    1  0          0 2011-12-31 22:16:41     0      0      0
 3    0           0    1  0          0 2011-12-31 23:03:59     0      0      0
@@ -523,10 +535,10 @@ Prior to this lesson learners should
 <h2 data-number="8.6" class="anchored" data-anchor-id="csv-comma-separated-values"><span class="header-section-number">8.6</span> CSV: Comma Separated Values</h2>
 <p>CSV is a fancy way of saying a text file with comma-separated values (i.e.&nbsp;CSV). This file type can also open in Excel–the icons even look similar. We could use <code>read.table()</code> to import this data file, but <code>read.csv()</code> is optimized to read in CSV files.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>NCbirths <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/NCbirths.csv"</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
+<div class="sourceCode cell-code" id="cb13" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>NCbirths <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/NCbirths.csv"</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(NCbirths)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  fage mage      mature weeks    premie visits marital gained weight
+<pre data-code-line-numbers=""><code>  fage mage      mature weeks    premie visits marital gained weight
 1   NA   13 younger mom    39 full term     10 married     38   7.63
 2   NA   14 younger mom    42 full term     15 married     20   7.88
 3   19   15 younger mom    37 full term     11 married     38   6.63
@@ -554,11 +566,11 @@ Prior to this lesson learners should
 <p>The best method to read in Excel files is from the <a href="http://readxl.tidyverse.org/"><code>readxl</code> package</a> by <a href="http://hadley.nz/">Hadley Wickham</a>. This package need to be installed first, and then can be simply loaded using the <code>library()</code> function each time you start an <code>R</code> session where you will be reading in this type of data.</p>
 <p>The <code>read_excel()</code> function is what we are going to use. Note the use of the underscore <code>_</code> instead of a period <code>.</code> between <code>read</code> and <code>excel</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<div class="sourceCode cell-code" id="cb15" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>police  <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/fatal-police-shootings-data.xlsx"</span>, <span class="at">sheet=</span><span class="dv">1</span>, <span class="at">col_names=</span><span class="cn">TRUE</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>police[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 5
+<pre data-code-line-numbers=""><code># A tibble: 10 × 5
       id name                date                manner_of_death  armed     
    &lt;dbl&gt; &lt;chr&gt;               &lt;dttm&gt;              &lt;chr&gt;            &lt;chr&gt;     
  1     3 Tim Elliot          2015-01-02 00:00:00 shot             gun       
@@ -1161,4 +1173,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
 </body></html>

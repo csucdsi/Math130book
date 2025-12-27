@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Working with Data – Introduction to R</title>
+<title>4&nbsp; Working with Data Frames – Introduction to R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,6 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-b2bea1b993f23d24829151e1fafd31f2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-495add37648e2abd34f1cfaf1465a323.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -108,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -117,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./dm.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./dm.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data Frames</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -189,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Working with Data</span></a>
+ <span class="menu-text">Basic Functionality</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -198,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dm.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data Frames</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -225,6 +226,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Getting data into R</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced Features</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots2.html" class="sidebar-item-text sidebar-link">
@@ -235,13 +247,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendix</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./help.html" class="sidebar-item-text sidebar-link">
@@ -272,37 +284,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">4.0.1</span> Learning Objectives</a></li>
-  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">4.0.2</span> Preparation</a></li>
-  <li><a href="#missing-data-video" id="toc-missing-data-video" class="nav-link" data-scroll-target="#missing-data-video"><span class="header-section-number">4.1</span> Missing Data </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Missing+Data/1_3ignf1uh" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Missing+Data/1_3ignf1uh">(Video)</a>
+  <li><a href="#summarizing-data" id="toc-summarizing-data" class="nav-link active" data-scroll-target="#summarizing-data"><span class="header-section-number">4.1</span> Summarizing data</a>
   <ul class="collapse">
-  <li><a href="#identifying-missing-values" id="toc-identifying-missing-values" class="nav-link" data-scroll-target="#identifying-missing-values"><span class="header-section-number">4.1.1</span> Identifying missing values</a></li>
-  <li><a href="#is-it-na" id="toc-is-it-na" class="nav-link" data-scroll-target="#is-it-na"><span class="header-section-number">4.1.2</span> Is it NA?</a></li>
+  <li><a href="#frequency-tables" id="toc-frequency-tables" class="nav-link" data-scroll-target="#frequency-tables"><span class="header-section-number">4.1.1</span> Frequency Tables</a></li>
+  <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics"><span class="header-section-number">4.1.2</span> Summary Statistics</a></li>
+  <li><a href="#fancy-summary-tables" id="toc-fancy-summary-tables" class="nav-link" data-scroll-target="#fancy-summary-tables"><span class="header-section-number">4.1.3</span> Fancy summary tables</a></li>
   </ul></li>
-  <li><a href="#summarizing-data-video" id="toc-summarizing-data-video" class="nav-link" data-scroll-target="#summarizing-data-video"><span class="header-section-number">4.2</span> Summarizing data </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Summarizing+Data/1_5hztp76z" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Summarizing+Data/1_5hztp76z">(Video)</a></li>
-  <li><a href="#frequency-tables-for-categorical-data" id="toc-frequency-tables-for-categorical-data" class="nav-link" data-scroll-target="#frequency-tables-for-categorical-data"><span class="header-section-number">4.3</span> Frequency Tables for categorical data</a>
+  <li><a href="#missing-data" id="toc-missing-data" class="nav-link" data-scroll-target="#missing-data"><span class="header-section-number">4.2</span> Missing Data</a>
   <ul class="collapse">
-  <li><a href="#summary-statistics-for-numerical-data" id="toc-summary-statistics-for-numerical-data" class="nav-link" data-scroll-target="#summary-statistics-for-numerical-data"><span class="header-section-number">4.3.1</span> Summary statistics for numerical data</a></li>
+  <li><a href="#identifying-missing-values" id="toc-identifying-missing-values" class="nav-link" data-scroll-target="#identifying-missing-values"><span class="header-section-number">4.2.1</span> Identifying missing values</a></li>
   </ul></li>
-  <li><a href="#data-editing-recoding-video" id="toc-data-editing-recoding-video" class="nav-link" data-scroll-target="#data-editing-recoding-video"><span class="header-section-number">4.4</span> Data editing / Recoding </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Data+Editing+%28Recoding%29/1_kh8v7jk6" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Data+Editing+%28Recoding%29/1_kh8v7jk6">(Video)</a></li>
-  <li><a href="#creating-new-variables-video" id="toc-creating-new-variables-video" class="nav-link" data-scroll-target="#creating-new-variables-video"><span class="header-section-number">4.5</span> Creating new variables </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Creating+New+Variables/1_ivmj78et" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Creating+New+Variables/1_ivmj78et">(Video)</a>
+  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management"><span class="header-section-number">4.3</span> Data management</a>
   <ul class="collapse">
-  <li><a href="#example-row-wise-difference-between-two-existing-variables" id="toc-example-row-wise-difference-between-two-existing-variables" class="nav-link" data-scroll-target="#example-row-wise-difference-between-two-existing-variables"><span class="header-section-number">4.5.1</span> Example: Row-wise difference between two existing variables</a></li>
-  <li><a href="#dichtomizing-data" id="toc-dichtomizing-data" class="nav-link" data-scroll-target="#dichtomizing-data"><span class="header-section-number">4.5.2</span> Dichtomizing data</a></li>
+  <li><a href="#overwrite-existing-values" id="toc-overwrite-existing-values" class="nav-link" data-scroll-target="#overwrite-existing-values"><span class="header-section-number">4.3.1</span> Overwrite existing values</a></li>
+  <li><a href="#creating-new-variables" id="toc-creating-new-variables" class="nav-link" data-scroll-target="#creating-new-variables"><span class="header-section-number">4.3.2</span> Creating new variables</a></li>
+  <li><a href="#dichtomizing-data" id="toc-dichtomizing-data" class="nav-link" data-scroll-target="#dichtomizing-data"><span class="header-section-number">4.3.3</span> Dichtomizing data</a></li>
   </ul></li>
-  <li><a href="#chaining-using-the-pipe-video" id="toc-chaining-using-the-pipe-video" class="nav-link" data-scroll-target="#chaining-using-the-pipe-video"><span class="header-section-number">4.6</span> Chaining using the pipe </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Chaining+Using+the+Pipe+E/1_chcscua0" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Chaining+Using+the+Pipe+E/1_chcscua0">(Video)</a>
+  <li><a href="#chaining-commands" id="toc-chaining-commands" class="nav-link" data-scroll-target="#chaining-commands"><span class="header-section-number">4.4</span> Chaining commands</a>
   <ul class="collapse">
-  <li><a href="#example-frequency-tables-summary-statistics" id="toc-example-frequency-tables-summary-statistics" class="nav-link" data-scroll-target="#example-frequency-tables-summary-statistics"><span class="header-section-number">4.6.1</span> Example: Frequency tables &amp; summary statistics</a></li>
+  <li><a href="#what-is-chaining" id="toc-what-is-chaining" class="nav-link" data-scroll-target="#what-is-chaining"><span class="header-section-number">4.4.1</span> What is “Chaining”?</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./dm.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./dm.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data Frames</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data Frames</span></h1>
 </div>
 
 
@@ -319,9 +329,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In this lesson we will learn how to summarize data in a data frame, and to do basic data management tasks such as making new variables, recoding data and dealing with missing data. <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Intro/1_oifkz4hn" target="_blank">(Introduction Video)</a></p>
-<section id="learning-objectives" class="level3 .callout-note" data-number="4.0.1">
-<h3 data-number="4.0.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">4.0.1</span> Learning Objectives</h3>
+<p>In this lesson we will learn how to summarize data in a data frame, and to do basic data management tasks such as making new variables, recoding data and dealing with missing data.</p>
+<div class="callout callout-style-simple callout-warning no-icon callout-titled" title="Optional Video">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Optional Video
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Intro/1_oifkz4hn" target="_blank">Section Introduction</a></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="🎓 Learning Objectives">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🎓 Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>After completing this lesson learners will be able to</p>
 <ul>
 <li>Summarize variables inside a data frame</li>
@@ -330,31 +361,1199 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Identify when data values are missing</li>
 <li>Summarize data in the presence of missing values.</li>
 </ul>
-</section>
-<section id="preparation" class="level3" data-number="4.0.2">
-<h3 data-number="4.0.2" class="anchored" data-anchor-id="preparation"><span class="header-section-number">4.0.2</span> Preparation</h3>
-<p>Prior to this lesson learners should</p>
-<ul>
-<li>Download the <a href="05_dm_notes.Rmd">[05_dm_notes.Rmd]</a> R markdown file and save into your <code>notes/Math130</code> folder.
-<ul>
-<li>Open this in RStudio and ensure the first code chunk will run without error.</li>
-</ul></li>
-<li>Install the <code>ggplot2</code>, <code>openintro</code> and <code>dplyr</code> packages (<a href="https://norcalbiostat.github.io/MATH130/notes/02_setup_slides.html#19">this was done as part of lesson 02</a>).</li>
-</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Prepare">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Prepare
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Open your Math 130 R Project. _Forget how to do this? See <span class="quarto-unresolved-ref">?sec-rproj._</span></li>
+<li>Right click and “save as” this lessons <a href="04_dm_notes.qmd">[04_dm_notes.qmd]</a> Quarto notes file and save into your <code>notes/Math130</code> folder.</li>
+<li>In the <em>Files</em> pane, open this Quarto file and Render this file.<br>
+</li>
+</ol>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ncbirths <span class="ot">&lt;-</span> openintro<span class="sc">::</span>ncbirths</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)                    <span class="co"># this came installed with tidyverse</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)                  <span class="co"># for fancy summary tables</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ncbirths <span class="ot">&lt;-</span> openintro<span class="sc">::</span>ncbirths </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">In 2004, the state of North Carolina released to the public a large dataset containing information on births recorded in this state. This dataset has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. The <code>ncbirths</code> data frame is a random sample of 1,000 cases from this dataset.</span></div></div>
+<p>This first code chunk loads the <code>ggplot2</code> package so we can access plotting functions, and then load the <code>ncbirths</code> data set, which comes with the <code>openintro</code> package.</p>
+<section id="summarizing-data" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="summarizing-data"><span class="header-section-number">4.1</span> Summarizing data</h2>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Summarizing+Data/1_5hztp76z" target="_blank">Summarizing data section video</a></p>
+</div>
+</div>
+</div>
+<p>Two common methods used to summarize data are frequnecy tables for categorical variables (e.g.&nbsp;nominal, ordinal), and summary statistics for numeric (continuous or discrete) variables.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/numeric_data.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>An illustration of a chick, with text “Continuous - measured data, can have infinite values within possible range. I am 3.1” tall, I weight 34.16 grams.”</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/categorical_data.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>An illustrations of a turtle, snail, and butterfly with text “Nominal - unordered descriptions.”I’m a turtle! i’m a snail! i’m a butterfly!”</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<section id="frequency-tables" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="frequency-tables"><span class="header-section-number">4.1.1</span> Frequency Tables</h3>
+<p>Frequency tables are used only any type of categorical data (Nominal, ordinal or binary), and the table results show you how many records in the data set have that particular level.</p>
+<p>You can create a basic frequency table by using the <code>table()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ncbirths<span class="sc">$</span>lowbirthweight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>
+    low not low 
+    111     889 </code></pre>
+</div>
+</div>
+<p>Relative frequencies (proportions or percentages) are calculated by putting the results of the <code>table</code> function inside the <code>prop_table</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">table</span>(ncbirths<span class="sc">$</span>lowbirthweight)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>
+    low not low 
+  0.111   0.889 </code></pre>
+</div>
+</div>
+<p>The variable <code>ncbirths$lowbirthweight</code> has 111 (11.1%) records with a value of <code>low</code>, and 889 (88.9%) records with the value of <code>not low</code>.</p>
+</section>
+<section id="summary-statistics" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="summary-statistics"><span class="header-section-number">4.1.2</span> Summary Statistics</h3>
+<p>Numerical variables can be summarized using quantities called <em>summary statistics</em> which include the <code>min</code>, <code>max</code>, <code>mean</code> and median. The function <code>summary()</code> prints out the five number summary, and includes the mean. This function also displays the number of missing values for that variable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ncbirths<span class="sc">$</span>visits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+    0.0    10.0    12.0    12.1    15.0    30.0       9 </code></pre>
+</div>
+</div>
+<p>There are also individual functions available</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># not run</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(ncbirths<span class="sc">$</span>visits)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(ncbirths<span class="sc">$</span>visits)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(ncbirths<span class="sc">$</span>visits)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(ncbirths<span class="sc">$</span>visits)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(ncbirths<span class="sc">$</span>visits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="missing-data-video" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="missing-data-video"><span class="header-section-number">4.1</span> Missing Data <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Missing+Data/1_3ignf1uh" target="_blank">(Video)</a></h2>
-<p>Missing data occurs when the value for a variable is missing. Think of it as a blank cell in an spreadsheet. Missing values can cause some problems during analysis, so let’s see how to detect missing values and how to work around them.</p>
-<p>Consider the <code>ncbirths</code> data set, specifically the first column containing data on the father’s age (<code>fage</code>).</p>
+<section id="fancy-summary-tables" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="fancy-summary-tables"><span class="header-section-number">4.1.3</span> Fancy summary tables</h3>
+<p>The <code>gtsummary</code> package provides a single function <code>tbl_summary</code> to create a really nicely formatted summary table for both quantitative and categorical data types.</p>
+<p>The first argument is the data set, then you <code>include</code> the vector of variable that you want to display in the table. By default the sample size <em>n</em> and the relative percent are presented for categorical data, and the median, with first and third quartiles shown for quantitiatve data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ncbirths)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(ncbirths, </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">include =</span> <span class="fu">c</span>(visits, lowbirthweight)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="imrgmumwvk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#imrgmumwvk table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#imrgmumwvk thead, #imrgmumwvk tbody, #imrgmumwvk tfoot, #imrgmumwvk tr, #imrgmumwvk td, #imrgmumwvk th {
+  border-style: none;
+}
+
+#imrgmumwvk p {
+  margin: 0;
+  padding: 0;
+}
+
+#imrgmumwvk .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#imrgmumwvk .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#imrgmumwvk .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#imrgmumwvk .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#imrgmumwvk .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#imrgmumwvk .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#imrgmumwvk .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#imrgmumwvk .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#imrgmumwvk .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#imrgmumwvk .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#imrgmumwvk .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#imrgmumwvk .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#imrgmumwvk .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#imrgmumwvk .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#imrgmumwvk .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#imrgmumwvk .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#imrgmumwvk .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#imrgmumwvk .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#imrgmumwvk .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#imrgmumwvk .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#imrgmumwvk .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#imrgmumwvk .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#imrgmumwvk .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#imrgmumwvk .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#imrgmumwvk .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#imrgmumwvk .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#imrgmumwvk .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#imrgmumwvk .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#imrgmumwvk .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#imrgmumwvk .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#imrgmumwvk .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#imrgmumwvk .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#imrgmumwvk .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#imrgmumwvk .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#imrgmumwvk .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#imrgmumwvk .gt_left {
+  text-align: left;
+}
+
+#imrgmumwvk .gt_center {
+  text-align: center;
+}
+
+#imrgmumwvk .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#imrgmumwvk .gt_font_normal {
+  font-weight: normal;
+}
+
+#imrgmumwvk .gt_font_bold {
+  font-weight: bold;
+}
+
+#imrgmumwvk .gt_font_italic {
+  font-style: italic;
+}
+
+#imrgmumwvk .gt_super {
+  font-size: 65%;
+}
+
+#imrgmumwvk .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#imrgmumwvk .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#imrgmumwvk .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#imrgmumwvk .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#imrgmumwvk .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#imrgmumwvk .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#imrgmumwvk .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#imrgmumwvk .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#imrgmumwvk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="stat_0" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 1,000</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">visits</td>
+<td class="gt_row gt_center" headers="stat_0">12 (10, 15)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="stat_0">9</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">lowbirthweight</td>
+<td class="gt_row gt_center" headers="stat_0"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;low</td>
+<td class="gt_row gt_center" headers="stat_0">111 (11%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;not low</td>
+<td class="gt_row gt_center" headers="stat_0">889 (89%)</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="2" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Median (Q1, Q3); n (%)</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+<p>The <code>statistic</code> argument can be used to change what values are displayed. Here we are specifying we want the mean <code>{mean}</code> and standard deviation <code>{sd}</code> for all variables that R sees as continuous (numeric), and both the frequency <code>{n}</code>, the total number of non-missing values <code>{N}</code> and the percent <code>{p}</code> for each level of a categorical variable.</p>
+<div class="cell" data-source-line-numbers="3-6">
+<div class="sourceCode cell-code" id="cb10" data-source-line-numbers="3-6" data-code-line-numbers="3-6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(ncbirths, </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">include =</span> <span class="fu">c</span>(visits, lowbirthweight), </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">statistic =</span> <span class="fu">list</span>(</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="st">"{mean} ({sd})"</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>                <span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="st">"{n} / {N} ({p}%)"</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>              )</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="feuhjbhalu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#feuhjbhalu table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#feuhjbhalu thead, #feuhjbhalu tbody, #feuhjbhalu tfoot, #feuhjbhalu tr, #feuhjbhalu td, #feuhjbhalu th {
+  border-style: none;
+}
+
+#feuhjbhalu p {
+  margin: 0;
+  padding: 0;
+}
+
+#feuhjbhalu .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#feuhjbhalu .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#feuhjbhalu .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#feuhjbhalu .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#feuhjbhalu .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#feuhjbhalu .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#feuhjbhalu .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#feuhjbhalu .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#feuhjbhalu .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#feuhjbhalu .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#feuhjbhalu .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#feuhjbhalu .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#feuhjbhalu .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#feuhjbhalu .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#feuhjbhalu .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#feuhjbhalu .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#feuhjbhalu .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#feuhjbhalu .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#feuhjbhalu .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#feuhjbhalu .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#feuhjbhalu .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#feuhjbhalu .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#feuhjbhalu .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#feuhjbhalu .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#feuhjbhalu .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#feuhjbhalu .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#feuhjbhalu .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#feuhjbhalu .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#feuhjbhalu .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#feuhjbhalu .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#feuhjbhalu .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#feuhjbhalu .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#feuhjbhalu .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#feuhjbhalu .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#feuhjbhalu .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#feuhjbhalu .gt_left {
+  text-align: left;
+}
+
+#feuhjbhalu .gt_center {
+  text-align: center;
+}
+
+#feuhjbhalu .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#feuhjbhalu .gt_font_normal {
+  font-weight: normal;
+}
+
+#feuhjbhalu .gt_font_bold {
+  font-weight: bold;
+}
+
+#feuhjbhalu .gt_font_italic {
+  font-style: italic;
+}
+
+#feuhjbhalu .gt_super {
+  font-size: 65%;
+}
+
+#feuhjbhalu .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#feuhjbhalu .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#feuhjbhalu .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#feuhjbhalu .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#feuhjbhalu .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#feuhjbhalu .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#feuhjbhalu .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#feuhjbhalu .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#feuhjbhalu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="stat_0" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 1,000</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">visits</td>
+<td class="gt_row gt_center" headers="stat_0">12 (4)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="stat_0">9</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">lowbirthweight</td>
+<td class="gt_row gt_center" headers="stat_0"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;low</td>
+<td class="gt_row gt_center" headers="stat_0">111 / 1,000 (11%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;not low</td>
+<td class="gt_row gt_center" headers="stat_0">889 / 1,000 (89%)</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="2" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Mean (SD); n / N (%)</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="missing-data" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="missing-data"><span class="header-section-number">4.2</span> Missing Data</h2>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Missing+Data/1_3ignf1uh" target="_blank">Missing data section video</a></p>
+</div>
+</div>
+</div>
+<p>Sometimes the value for a variable is missing. Think of it as a blank cell in an spreadsheet. Missing data can be a result of many things: skip patterns in a survey (i.e.&nbsp;non-smokers don’t get asked how many packs per week they smoke), errors in data reads from a machine, researchers skipped a day of data collection for one plant on accident etc.</p>
+<p>R puts a <code>NA</code> as a placeholder when the value for that piece of data is missing. We can see 4 out of the first 6 values for the variable <code>fage</code> (fathers age) in the <code>ncbirths</code> data set are missing.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ncbirths<span class="sc">$</span>fage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 13
+<pre data-code-line-numbers=""><code>[1] NA NA 19 21 NA NA</code></pre>
+</div>
+</div>
+<p><strong>Problem 1: <code>R</code> can’t do arithmetic on missing data.</strong></p>
+<p>So <code>5 + NA = NA</code>, and if you were to try to calculate the <code>mean()</code> of a variable, you’d also get <code>NA</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(ncbirths<span class="sc">$</span>fage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>[1] NA</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Fix this error">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Fix this error
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Add the argument <code>na.rm=TRUE</code> to the <code>mean()</code> function inside the right hand parenthesis to calculate the mean after excluding missing values.</p>
+<p>Run this code chunk interactively to ensure that it works before continuing.</p>
+<details>
+<summary>
+Solution
+</summary>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(ncbirths<span class="sc">$</span>fage, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>[1] 30.25573</code></pre>
+</div>
+</div>
+</details>
+</div>
+</div>
+<p><strong>Problem 2: Some plots will show <code>NA</code> as it’s own category</strong></p>
+<p>Sometimes this is fine, other times this is undesirable. We’ll see later how we can adjust this plot to remove that column of NA.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ncbirths, <span class="fu">aes</span>(premie)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="dm_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Missing values can cause some problems during analysis or undesirable features in a plot so let’s see how to detect missing values and how to work around them.</p>
+<section id="identifying-missing-values" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="identifying-missing-values"><span class="header-section-number">4.2.1</span> Identifying missing values</h3>
+<p>To find out how many values in a particular variable are missing we can use several different approaches.</p>
+<section id="look-at-the-raw-data" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="look-at-the-raw-data">Look at the raw data</h4>
+<p>We can look at the raw data using <code>head()</code> or opening the data set in the spreadsheet view and skim with our eyes for <code>NA</code> values. This may not be helpful if there is no missing values in the first 6 rows, or if there is a large number of variables to look through.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ncbirths)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code># A tibble: 6 × 13
    fage  mage mature    weeks premie visits marital gained weight lowbirthweight
   &lt;int&gt; &lt;int&gt; &lt;fct&gt;     &lt;int&gt; &lt;fct&gt;   &lt;int&gt; &lt;fct&gt;    &lt;int&gt;  &lt;dbl&gt; &lt;fct&gt;         
 1    NA    13 younger …    39 full …     10 not ma…     38   7.63 not low       
@@ -366,172 +1565,221 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # ℹ 3 more variables: gender &lt;fct&gt;, habit &lt;fct&gt;, whitemom &lt;fct&gt;</code></pre>
 </div>
 </div>
-<ul>
-<li>R puts a <code>NA</code> as a placeholder when the value for that piece of data is missing.</li>
-<li>Missing data can be a result of many things: skip patterns in a survey (i.e.&nbsp;non-smokers don’t get asked how many packs per week they smoke), errors in data reads from a machine, etc.</li>
-</ul>
-<p><strong>Problem 1</strong> <code>R</code> can’t do arithmetic on missing data. So <code>5 + NA = NA</code>, and if you were to try to calculate the <code>mean()</code> of a variable, you’d also get <code>NA</code>.</p>
+</section>
+<section id="look-at-data-summaries" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="look-at-data-summaries">Look at data summaries</h4>
+<p>Functions such as <code>table()</code> have a <code>useNA="always"</code> option to show how many records have missing values, and <code>summary()</code> will always show a column for NA.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(ncbirths<span class="sc">$</span>fage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ncbirths<span class="sc">$</span>habit, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] NA</code></pre>
-</div>
-</div>
-<p><strong>Problem 2</strong> Some plots will show <code>NA</code> as it’s own category, which is undesirable.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ncbirths, <span class="fu">aes</span>(premie))<span class="sc">+</span><span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="dm_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="identifying-missing-values" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="identifying-missing-values"><span class="header-section-number">4.1.1</span> Identifying missing values</h3>
-<p>To find out how many values in a particular variable are missing we can use one of two approaches:</p>
-<ol type="1">
-<li>Look at the raw data using <code>head()</code> or <code>str()</code>. This may not be helpful if there is no missing values in the first 6 rows, or if there is a large number of variables to look through.</li>
-<li>Look at data summaries using <code>table()</code> for categorical data and <code>summary()</code> for numerical data. In the examples below you can see that entries for “NA” are included in the output.</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ncbirths<span class="sc">$</span>habit, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
+<pre data-code-line-numbers=""><code>
 nonsmoker    smoker      &lt;NA&gt; 
       873       126         1 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ncbirths<span class="sc">$</span>fage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ncbirths<span class="sc">$</span>fage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+<pre data-code-line-numbers=""><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
   14.00   25.00   30.00   30.26   35.00   55.00     171 </code></pre>
 </div>
 </div>
 </section>
-<section id="is-it-na" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="is-it-na"><span class="header-section-number">4.1.2</span> Is it NA?</h3>
+<section id="use-a-logical-statement" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="use-a-logical-statement">Use a logical statement</h4>
 <p>The function <code>is.na()</code> returns TRUE or FALSE for each element in the provided vector for whether or not that element is missing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"green"</span>, <span class="cn">NA</span>, <span class="dv">3</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"green"</span>, <span class="cn">NA</span>, <span class="dv">3</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE  TRUE FALSE</code></pre>
+<pre data-code-line-numbers=""><code>[1] FALSE  TRUE FALSE</code></pre>
 </div>
 </div>
 <p>In this example, the vector <code>x</code> is created with three elements, the second one is missing. Calling the function <code>is.na()</code> on the vector <code>x</code>, results in three values, where only the second one is TRUE – meaning the second element is missing.</p>
 <p>This can be extended to do things such as using the <code>sum()</code> function to count the number of missing values in a variable. Here we are <em>nesting</em> the functions <code>is.na()</code> is written entirely inside the <code>sum()</code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(ncbirths<span class="sc">$</span>fage))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(ncbirths<span class="sc">$</span>fage))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 171</code></pre>
+<pre data-code-line-numbers=""><code>[1] 171</code></pre>
 </div>
 </div>
 <p>There are 171 records in this data set where the age for the father is not present.</p>
-</section>
-</section>
-<section id="summarizing-data-video" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="summarizing-data-video"><span class="header-section-number">4.2</span> Summarizing data <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Summarizing+Data/1_5hztp76z" target="_blank">(Video)</a></h2>
-<p>Two common methods used to summarize data are <code>table()</code> for categorical factor variables, and <code>summary()</code> for numeric variables.</p>
-</section>
-<section id="frequency-tables-for-categorical-data" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="frequency-tables-for-categorical-data"><span class="header-section-number">4.3</span> Frequency Tables for categorical data</h2>
-<p>Frequency tables are used only on categorical data, and the table results show you how many records in the data set have that particular factor level.</p>
-<p>You can create a frequency table by using the <code>table()</code> function. The <code>useNA="always"</code> argument tells <code>R</code> to always include an entry for missing values <code>&lt;NA&gt;</code>, even if there are none.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Negating `is.na()` to find the non-missing values">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Negating <code>is.na()</code> to find the non-missing values
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sometimes you want to operate only only the non-missing values. Recall from <span class="quarto-unresolved-ref">?sec-logical</span> we can use the <code>!</code> to negate a boolean argument.</p>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ncbirths<span class="sc">$</span>lowbirthweight, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="fu">is.na</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-    low not low    &lt;NA&gt; 
-    111     889       0 </code></pre>
+<pre data-code-line-numbers=""><code>[1]  TRUE FALSE  TRUE</code></pre>
 </div>
 </div>
-<p>The variable <code>ncbirths$lowbirthweight</code> has 111 records with a value of <code>low</code>, and 889 records with the value of <code>not low</code>.</p>
-<section id="summary-statistics-for-numerical-data" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="summary-statistics-for-numerical-data"><span class="header-section-number">4.3.1</span> Summary statistics for numerical data</h3>
-<p>Numerical variables can be summarized using statistics such as the min, max, mean and median. The function <code>summary()</code> prints out the five number summary, and includes the mean. This function also displays the number of missing values for that variable.</p>
+<p>The first and third values are TRUE - so they are <strong>not</strong> missing.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Hide the NA bar">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Hide the NA bar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We can use this tactic to fix that barchart from above. Wrap <code>!is.na()</code> around the <code>premie</code> variable in the <code>ggplot</code> code to create a barchart that does not have a bar for missing values.</p>
+<details>
+<summary>
+Solution
+</summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ncbirths<span class="sc">$</span>visits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-    0.0    10.0    12.0    12.1    15.0    30.0       9 </code></pre>
+<div class="sourceCode cell-code" id="cb30" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ncbirths, <span class="fu">aes</span>(<span class="sc">!</span><span class="fu">is.na</span>(premie))) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</details>
 </div>
 </div>
-<p>Mothers included in this data set visited the doctor on average 12.1 times during their pregnancy.</p>
 </section>
 </section>
-<section id="data-editing-recoding-video" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="data-editing-recoding-video"><span class="header-section-number">4.4</span> Data editing / Recoding <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Data+Editing+%28Recoding%29/1_kh8v7jk6" target="_blank">(Video)</a></h2>
-<p>Sometimes we have a need to edit, or change data. We can change values of existing data by using logical statements.</p>
-<p>To choose all observations (rows) of a <code>data</code> set, where a <code>variable</code> is equal to some <code>value</code>, you would type</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>data[data<span class="sc">$</span>variable<span class="sc">==</span>value]  <span class="co"># example code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="data-management" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="data-management"><span class="header-section-number">4.3</span> Data management</h2>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-<p>We can use this method of selecting rows, to change data in those specific rows.</p>
-<p><strong>Example 1: Too low birthweight</strong></p>
-<p>Let’s look at the numerical distribution of birthweight of the baby.</p>
+<div class="callout-body-container">
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Data+Editing+%28Recoding%29/1_kh8v7jk6" target="_blank">Data editing section video</a></p>
+</div>
+</div>
+</div>
+<p>Sometimes we have a need to create or modify variables in a data frame. You will learn several ways to do this throughout this course, but we will start by using <em>base R</em> functions and methods. These are methods that use functions that come with R, not from additional packages.</p>
+<section id="overwrite-existing-values" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="overwrite-existing-values"><span class="header-section-number">4.3.1</span> Overwrite existing values</h3>
+<p>Choose all observations (rows) of a <code>data</code> set, where a <code>variable</code> is equal to some <code>value</code>, then set assign <code>&lt;-</code> a <code>new_value</code> to those rows.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ncbirths<span class="sc">$</span>weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>data[data<span class="sc">$</span>variable<span class="sc">==</span>value] <span class="ot">&lt;-</span> new_value  <span class="co"># example code to show syntax.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example 1: Too low birthweight">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 1: Too low birthweight
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let’s look at the numerical distribution of birthweight (in pounds) of the baby.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ncbirths<span class="sc">$</span>weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+<pre data-code-line-numbers=""><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   1.000   6.380   7.310   7.101   8.060  11.750 </code></pre>
+</div>
+</div>
 </div>
 </div>
 <p>The value of 1 lb seems very low. The researchers you are working with decide that is a mistake and should be excluded from the data. We would then set all records where <code>weight=1</code> to missing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>weight[ncbirths<span class="sc">$</span>weight<span class="sc">==</span><span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>weight[ncbirths<span class="sc">$</span>weight<span class="sc">==</span><span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Code explainer:</p>
 <ul>
-<li>The specific variable <code>ncbirths$weight</code> is on the left side outside the <code>[]</code>. So just the variable <code>weight</code> is being changed. * Recall that bracket notation <code>[]</code> can be used to select rows where a certain logical statement is true. So <code>[ncbirths$weight==1]</code> will only show records where <code>weight</code> is equal to 1.</li>
+<li>The specific variable <code>ncbirths$weight</code> is on the left side outside the <code>[]</code>. So just the variable <code>weight</code> is being changed.</li>
+<li>Recall that bracket notation <code>[]</code> can be used to select rows where a certain logical statement is true. So <code>[ncbirths$weight==1]</code> will only show records where <code>weight</code> is equal to 1.</li>
 <li>Notice where the assignment arrow (<code>&lt;-</code>) is at. This code assigns the value of <code>NA</code> (missing) to the variable <code>weight</code>, where <code>weight==1</code>.</li>
 </ul>
-<p>But what about other weights that aren’t quite as low as 1, but still unusually low? The boxplot below shows outlying values as dots on the low end of birthweight.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ncbirths<span class="sc">$</span>weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="dm_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div class="sourceCode cell-code" id="cb35" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(ncbirths<span class="sc">$</span>weight, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>[1] 1.19</code></pre>
 </div>
 </div>
+<p>The minimum weight is now 1.19.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-<p>Let’s set all birth weights less than 4 lbs to missing.</p>
+<div class="callout-title-container flex-fill">
+👉 Your Turn
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>But what about other weights that aren’t quite as low as 1, but still unusually low?</p>
+<ul>
+<li>Write the code to set all birth weights less than 4 lbs (<code>&lt;4</code>) to missing (NA).</li>
+<li>Then recalculate the mean to confirm your recode worked.</li>
+</ul>
+<details>
+<summary>
+Solution
+</summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>weight[ncbirths<span class="sc">$</span>weight <span class="sc">&lt;</span> <span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>weight[ncbirths<span class="sc">$</span>weight <span class="sc">&lt;</span> <span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(ncbirths<span class="sc">$</span>weight, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>It is important to plot the data again, to make sure that there are no values below 4 now.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ncbirths<span class="sc">$</span>weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="dm_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+</details>
 </div>
 </div>
 </section>
-<section id="creating-new-variables-video" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="creating-new-variables-video"><span class="header-section-number">4.5</span> Creating new variables <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Creating+New+Variables/1_ivmj78et" target="_blank">(Video)</a></h2>
-<p><strong>New variables should be added to the data frame.</strong> This can be done using <code>$</code> sign notation.</p>
+<section id="creating-new-variables" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="creating-new-variables"><span class="header-section-number">4.3.2</span> Creating new variables</h3>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Creating+New+Variables/1_ivmj78et" target="_blank">Creating new variables section video</a></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="New variables should be added to the data frame">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+New variables should be added to the data frame
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This can be done in base R using <code>$</code> sign notation.</p>
+</div>
+</div>
 <p>The new variable you want to create goes on the left side of the assignment operator <code>&lt;-</code>, and how you want to create that new variable goes on the right side.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>new_variable <span class="ot">&lt;-</span> creation statement</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>new_variable <span class="ot">&lt;-</span> creation_statement  <span class="co"># example code not run</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="example-row-wise-difference-between-two-existing-variables" class="level3 .callout-tip" data-number="4.5.1">
-<h3 data-number="4.5.1" class="anchored" data-anchor-id="example-row-wise-difference-between-two-existing-variables"><span class="header-section-number">4.5.1</span> Example: Row-wise difference between two existing variables</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: Row-wise difference between two existing variables">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: Row-wise difference between two existing variables
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>As a pregnancy progresses, both the mother and the baby gain weight. The variable <code>gained</code> is the total amount of weight the mother gained in her pregnancy. The variable <code>weight</code> is how much the baby weighed at birth.</p>
-</section>
-<p>The following code creates a new variable <code>wtgain_mom</code> the weight gained by the mother, that is not due to the baby by subtracting <code>weight</code> from <code>gained</code>.</p>
+</div>
+</div>
+<p>The following code creates a new variable <code>wtgain_mom</code> the weight gained by the mother, that is not due to the baby by subtracting <code>weight</code> from <code>gained</code>. Note all variables are prefaced with <code>$</code>, denoting that they exist inside the <code>ncbirths</code> data set.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>wtgain_mom <span class="ot">&lt;-</span> ncbirths<span class="sc">$</span>gained <span class="sc">-</span> ncbirths<span class="sc">$</span>weight</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>wtgain_mom <span class="ot">&lt;-</span> ncbirths<span class="sc">$</span>gained <span class="sc">-</span> ncbirths<span class="sc">$</span>weight</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To confirm this variable was created correctly, we look at the data contained in three variables in question.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ncbirths[,<span class="fu">c</span>(<span class="st">'gained'</span>, <span class="st">'weight'</span>, <span class="st">'wtgain_mom'</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ncbirths[,<span class="fu">c</span>(<span class="st">'gained'</span>, <span class="st">'weight'</span>, <span class="st">'wtgain_mom'</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 3
+<pre data-code-line-numbers=""><code># A tibble: 6 × 3
   gained weight wtgain_mom
    &lt;int&gt;  &lt;dbl&gt;      &lt;dbl&gt;
 1     38   7.63       30.4
@@ -542,44 +1790,52 @@ nonsmoker    smoker      &lt;NA&gt;
 6     22   5.38       16.6</code></pre>
 </div>
 </div>
-<section id="dichtomizing-data" class="level3" data-number="4.5.2">
-<h3 data-number="4.5.2" class="anchored" data-anchor-id="dichtomizing-data"><span class="header-section-number">4.5.2</span> Dichtomizing data</h3>
+<div class="callout callout-style-default callout-important callout-titled" title="Trust but Verify">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Trust but Verify
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It’s always important to visually confirm that the code you wrote actually had the intended effect.</p>
+</div>
+</div>
+</section>
+<section id="dichtomizing-data" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="dichtomizing-data"><span class="header-section-number">4.3.3</span> Dichtomizing data</h3>
 <p>The <code>ifelse()</code> is hands down the easiest way to create a binary variable (dichotomizing, only 2 levels)</p>
-<p>Let’s add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth.</p>
+<p>Let’s add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth. Specifically Make a new variable <code>underage</code> on the <code>ncbirths</code> data set. If <code>mage</code> is under 18, then the value of this new variable is <code>underage</code>, else it is labeled as <code>adult</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>underage <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(ncbirths<span class="sc">$</span>mage <span class="sc">&lt;</span> <span class="dv">18</span>, <span class="st">"underage"</span>, <span class="st">"adult"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Code explainer:</p>
 <ul>
-<li>We will define this as if the mothers age <code>mage</code> is under 18.</li>
-<li>We will create a new factor variable with two values: <code>underage</code> and <code>adult</code>.</li>
-<li>We will use the <code>ifelse()</code> function.
+<li>The function is <code>ifelse()</code> - one word.</li>
+<li>The arguments are: <code>ifelse(logical, value if TRUE, value if FALSE)</code>
 <ul>
-<li>It’s set of arguments are: <code>ifelse(logical, value if TRUE, value if FALSE)</code></li>
 <li>The <code>logical</code> argument is a statement that resolves as a <code>boolean</code> variable, as either TRUE or FALSE.</li>
-<li>The second argument is what you want the resulting variable to contain if the logical argument is <code>TRUE</code></li>
-<li>The last argument is what you want the resulting variable to contain if the logical argument is <code>FALSE</code></li>
+<li>The second argument is what you want the resulting variable to contain if the logical argument is <code>TRUE</code>.</li>
+<li>The last argument is what you want the resulting variable to contain if the logical argument is <code>FALSE</code>.</li>
 </ul></li>
 </ul>
-<p>Make a new variable <code>underage</code> on the <code>ncbirths</code> data set. If <code>mage</code> is under 18, then the value of this new variable is <code>underage</code>, else it is labeled as <code>adult</code>.</p>
+<p><strong>Trust but Verify</strong></p>
+<p>First let’s look at the frequency table of <code>underage</code> and see if records exist with the new categories, and if there are any missing values.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>underage <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(ncbirths<span class="sc">$</span>mage <span class="sc">&lt;</span> <span class="dv">18</span>, <span class="st">"underage"</span>, <span class="st">"adult"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>You should always make sure your code works as intended.</p>
-<ul>
-<li>First let’s look at the frequency table of <code>underage</code> and see if records exist with the new categories, and if there are any missing values.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ncbirths<span class="sc">$</span>underage, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ncbirths<span class="sc">$</span>underage, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
+<pre data-code-line-numbers=""><code>
    adult underage     &lt;NA&gt; 
      963       37        0 </code></pre>
 </div>
 </div>
-<ul>
-<li>Next let’s check it against the value of <code>mage</code> itself. Let’s look at all rows where mothers age is either 17 or 18 <code>mage %in% c(17,18)</code>, and only the columns of interest.</li>
-</ul>
+<p>Next let’s check it against the value of <code>mage</code> itself. Let’s look at all rows where mothers age is either 17 or 18 <code>mage %in% c(17,18)</code>, and only the columns of interest.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>ncbirths[ncbirths<span class="sc">$</span>mage <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">17</span>,<span class="dv">18</span>),<span class="fu">c</span>(<span class="st">'mage'</span>, <span class="st">'underage'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>ncbirths[ncbirths<span class="sc">$</span>mage <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">17</span>,<span class="dv">18</span>),<span class="fu">c</span>(<span class="st">'mage'</span>, <span class="st">'underage'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 57 × 2
+<pre data-code-line-numbers=""><code># A tibble: 57 × 2
     mage underage
    &lt;int&gt; &lt;chr&gt;   
  1    17 underage
@@ -598,43 +1854,67 @@ nonsmoker    smoker      &lt;NA&gt;
 <p>Notice I snuck a new operator in on you - <code>%in%</code>. This is a way you can provide a list of values (a.k.a a vector) and say “if the value of the variable I want is %in% any of these options in this vector…” do the thing.</p>
 </section>
 </section>
-<section id="chaining-using-the-pipe-video" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="chaining-using-the-pipe-video"><span class="header-section-number">4.6</span> Chaining using the pipe <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Chaining+Using+the+Pipe+E/1_chcscua0" target="_blank">(Video)</a></h2>
-<p><img src="../static/img/pipe.png" class="img-fluid"></p>
-<p>The pipe is technically part of the <code>magrittr</code> package, but quite often we will use it in conjunction with functions from the <code>dplyr</code> package introduced in a later lesson. In fact it’s so commonly used with <code>dplyr</code> functions that it the <code>magrittr</code> package is loaded when you load <code>dplyr</code> (which is what we do here). However, the pipe operator is so useful in many other places that it deserves it’s own introduction here.</p>
+<section id="chaining-commands" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="chaining-commands"><span class="header-section-number">4.4</span> Chaining commands</h2>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Chaining+Using+the+Pipe+E/1_chcscua0" target="_blank">Chaining commands section video</a></p>
+</div>
+</div>
+</div>
+<p>Two common styles:</p>
+<ul>
+<li><code>|&gt;</code> This is the “native” pipe that’s built into R.</li>
+<li><code>%&gt;%</code> This pipe is loaded with the <code>tidyverse</code> package.</li>
+</ul>
+<p>They both function the same, but you’ll see both being used so it’s good to know that they both exist. That way if you are not using other functions from the <code>tidyverse</code>, you can still enjoy the chaining functionality.</p>
+<section id="what-is-chaining" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="what-is-chaining"><span class="header-section-number">4.4.1</span> What is “Chaining”?</h3>
+<p>The pipe lets you string set of functions together, like links on a chain, to be completed in the order specified. This works with the majority of functions, specifically when the result of the function is a data frame, a vector, or sometimes the results of a model.</p>
 <blockquote class="blockquote">
 <p>“and then….”</p>
 </blockquote>
-<p>This is what I read to myself when using the pipe (<code>%&gt;%</code>). The pipe lets you chain functions together, as long as the first argument of the function is a <code>data.frame</code> or a variable in a <code>data.frame</code>.</p>
-<section id="example-frequency-tables-summary-statistics" class="level3" data-number="4.6.1">
-<h3 data-number="4.6.1" class="anchored" data-anchor-id="example-frequency-tables-summary-statistics"><span class="header-section-number">4.6.1</span> Example: Frequency tables &amp; summary statistics</h3>
-<p>Earlier we saw that to create a frequency table for categorical variable we can type:</p>
+<p>This is what I read to myself when using the pipe. “Do this |&gt; the next thing |&gt; do this third thing |&gt; this last”</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉Example: Frequency tables &amp; summary statistics using the pipe">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉Example: Frequency tables &amp; summary statistics using the pipe
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>First stating the variable, then pipe in the summary function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ncbirths<span class="sc">$</span>mature)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>mature <span class="sc">|&gt;</span> <span class="fu">table</span>() <span class="co"># instead of table(ncbirths$mature)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
+<pre data-code-line-numbers=""><code>
  mature mom younger mom 
         133         867 </code></pre>
 </div>
-</div>
-<p>This is also accomplished by first stating the variable, then piping in the summary function.</p>
-<blockquote class="blockquote">
-<p>If you get an error message saying something like <span style="color:red;">function not found</span>, that is a message to you that you need to load the library. See the <a href="#preparation">preparation</a> section of these notes to remind yourself how to do this.</p>
-</blockquote>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>mature <span class="sc">%&gt;%</span> <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>mage <span class="sc">|&gt;</span> <span class="fu">mean</span>() <span class="co">#instead of mean(ncbirths$mage)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>.
- mature mom younger mom 
-        133         867 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>mage <span class="sc">%&gt;%</span> <span class="fu">mean</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 27</code></pre>
+<pre data-code-line-numbers=""><code>[1] 27</code></pre>
 </div>
 </div>
-<p>I read this as “Take the <code>mage</code> variable on the <code>ncbirths</code> data set, <em>and then</em> calculate the mean.”</p>
-<p>The pipe <code>%&gt;%</code> allows multiple steps to be chained together to execute a series of commands all at once. The usefulness of this approach will be apparent before the class is finished.</p>
+</div>
+</div>
+<p>These can be read as</p>
+<ol type="1">
+<li>Get the <code>mature</code> variable from the <code>ncbirths</code> data set</li>
+<li><em>and then</em> create a frequency table on that variable</li>
+</ol>
+<p>and</p>
+<ol type="1">
+<li>Get the <code>mage</code> variable from the <code>ncbirths</code> data set</li>
+<li><em>and then</em> calculate the mean of that variable</li>
+</ol>
+<p>These may be trivial examples now but the usefulness of this approach will be apparent before the class is finished.</p>
 
 
 </section>
@@ -1219,4 +2499,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
 </body></html>

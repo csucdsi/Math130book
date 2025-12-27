@@ -77,6 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-b2bea1b993f23d24829151e1fafd31f2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/bootstrap/bootstrap-dark-495add37648e2abd34f1cfaf1465a323.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -117,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./factors.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Working with Factors</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./factors.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Working with Factors</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -189,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Working with Data</span></a>
+ <span class="menu-text">Basic Functionality</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -198,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data Frames</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -225,6 +226,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Getting data into R</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Advanced Features</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots2.html" class="sidebar-item-text sidebar-link">
@@ -235,13 +247,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendix</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./help.html" class="sidebar-item-text sidebar-link">
@@ -292,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Working with Data</a></li><li class="breadcrumb-item"><a href="./factors.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Working with Factors</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./factors.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Working with Factors</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Working with Factors</span></h1>
 </div>
@@ -334,7 +346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>We’re going to use two data sets from the <code>openintro</code> package. The <code>email</code> data set contains information on emails received by a specific account for the first three months in 2012, and the <code>fastfood</code> data set describes nutrition amounts in 515 fast food items. More information can be seen about these data sets by viewing the help files using <code>?email</code> and <code>?fastfood</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> openintro<span class="sc">::</span>email</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ff    <span class="ot">&lt;-</span> openintro<span class="sc">::</span>fastfood</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -349,34 +361,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>An example of a categorical variable is the <code>number</code> variable in the <code>email</code> data set. This variable contains data on whether there was no number, a small number (under 1 million), or a big number in the content of the email.</p>
 <p>First we should confirm that R sees <code>number</code> as a factor.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "factor"</code></pre>
+<pre data-code-line-numbers=""><code>[1] "factor"</code></pre>
 </div>
 </div>
 <p>We can use the <code>levels()</code> function to get to know factor variables.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "none"  "small" "big"  </code></pre>
+<pre data-code-line-numbers=""><code>[1] "none"  "small" "big"  </code></pre>
 </div>
 </div>
 <p>There are three levels: <code>none</code>, <code>small</code>, and <code>big</code>.</p>
 <p>How many records are in each level? There are a few ways we can determine this, here are two:</p>
 <p><strong>Base R</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
+<pre data-code-line-numbers=""><code>
  none small   big 
   549  2827   545 </code></pre>
 </div>
 </div>
 <p><strong>forcats</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_count</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_count</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 2
+<pre data-code-line-numbers=""><code># A tibble: 3 × 2
   f         n
   &lt;fct&gt; &lt;int&gt;
 1 none    549
@@ -395,28 +407,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p><strong>Example: Is the email flagged as spam?</strong> The <code>spam</code> variable is recorded as an integer variable with values 0 and 1.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>spam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>spam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
+<pre data-code-line-numbers=""><code>
    0    1 
 3554  367 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(email<span class="sc">$</span>spam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(email<span class="sc">$</span>spam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "factor"</code></pre>
+<pre data-code-line-numbers=""><code>[1] "factor"</code></pre>
 </div>
 </div>
 <p>We use the function <code>factor()</code> to convert the numeric variable <code>spam</code> to a factor, applying <code>labels</code> to convert 0 to “no” and 1 to “yes”.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>spam_fac <span class="ot">&lt;-</span> <span class="fu">factor</span>(email<span class="sc">$</span>spam, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">"no"</span>, <span class="st">"yes"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>spam_fac <span class="ot">&lt;-</span> <span class="fu">factor</span>(email<span class="sc">$</span>spam, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">"no"</span>, <span class="st">"yes"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The ordering of the <code>labels</code> argument <em>must</em> be in the same order (left to right) as the factor levels themselves. Look back at the order of columns in the <code>table</code> - it goes 0 then 1. Thus our labels need to go “no” then “yes”.</p>
 <p><strong>Always confirm your recode</strong></p>
 <p>Here we confirm that the new variable was created correctly by creating a two-way contingency table by calling the <code>table(old variable, new variable)</code> function on both the old and new variables.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>spam, email<span class="sc">$</span>spam_fac, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>spam, email<span class="sc">$</span>spam_fac, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>      
+<pre data-code-line-numbers=""><code>      
          no  yes &lt;NA&gt;
   0    3554    0    0
   1       0  367    0
@@ -429,9 +441,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="5.4" class="anchored" data-anchor-id="factor-ordering-video"><span class="header-section-number">5.4</span> Factor ordering <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Factor+Ordering/1_jl8i52iu" target="_blank">(Video)</a></h2>
 <p>Let’s revisit the variable <code>number</code>, that contains the size of the number in the email.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
+<pre data-code-line-numbers=""><code>
  none small   big 
   549  2827   545 </code></pre>
 </div>
@@ -443,18 +455,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We need to take control of these factors! We can do that by re-factoring the existing factor variable, but this time specifying the <code>levels</code> of the factor (since it already has labels). Say we decide to reverse the order so we go from big to small to none, in decreasing order of size.</p>
 <p><strong>Base R</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">factor</span>(email<span class="sc">$</span>number, <span class="at">levels=</span><span class="fu">c</span>(<span class="st">"big"</span>, <span class="st">"small"</span>, <span class="st">"none"</span>)) <span class="sc">%&gt;%</span> <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">factor</span>(email<span class="sc">$</span>number, <span class="at">levels=</span><span class="fu">c</span>(<span class="st">"big"</span>, <span class="st">"small"</span>, <span class="st">"none"</span>)) <span class="sc">%&gt;%</span> <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>.
+<pre data-code-line-numbers=""><code>.
   big small  none 
   545  2827   549 </code></pre>
 </div>
 </div>
 <p><strong>forcats</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>number <span class="sc">%&gt;%</span> <span class="fu">fct_relevel</span>(<span class="st">"big"</span>, <span class="st">"small"</span>, <span class="st">"none"</span>) <span class="sc">%&gt;%</span> <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>number <span class="sc">%&gt;%</span> <span class="fu">fct_relevel</span>(<span class="st">"big"</span>, <span class="st">"small"</span>, <span class="st">"none"</span>) <span class="sc">%&gt;%</span> <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>.
+<pre data-code-line-numbers=""><code>.
   big small  none 
   545  2827   549 </code></pre>
 </div>
@@ -569,13 +581,13 @@ This just *happens* to be the same as in decreasing frequency order.
 <p>Sometimes factors come to us in names we don’t prefer. We want them to say something else.</p>
 <p><strong>Base R</strong> The easiest way here is to re-factor the variable and apply new <code>labels</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>my_new_number <span class="ot">&lt;-</span> <span class="fu">factor</span>(email<span class="sc">$</span>number, <span class="at">labels=</span><span class="fu">c</span>( <span class="st">"None"</span>, <span class="st">"&lt;1M"</span>,<span class="st">"1M+"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>my_new_number <span class="ot">&lt;-</span> <span class="fu">factor</span>(email<span class="sc">$</span>number, <span class="at">labels=</span><span class="fu">c</span>( <span class="st">"None"</span>, <span class="st">"&lt;1M"</span>,<span class="st">"1M+"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Ok, but did this work? Trust, but verify.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number, email<span class="sc">$</span>my_new_number, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number, email<span class="sc">$</span>my_new_number, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       
+<pre data-code-line-numbers=""><code>       
         None  &lt;1M  1M+ &lt;NA&gt;
   none   549    0    0    0
   small    0 2827    0    0
@@ -586,10 +598,10 @@ This just *happens* to be the same as in decreasing frequency order.
 <p>The “big” factor is now labeled “1M+”, “none” is named “None”, and “small” is “&lt;1M”.</p>
 <p><strong>forcats</strong>: use the <code>fct_recode("NEW" = "old")</code> function here.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>my_forcats_number <span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(email<span class="sc">$</span>number, <span class="st">"BIG"</span> <span class="ot">=</span> <span class="st">"big"</span>, <span class="st">"NONE"</span> <span class="ot">=</span> <span class="st">"none"</span>, <span class="st">"SMALL"</span> <span class="ot">=</span> <span class="st">"small"</span>)</span>
+<div class="sourceCode cell-code" id="cb26" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>my_forcats_number <span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(email<span class="sc">$</span>number, <span class="st">"BIG"</span> <span class="ot">=</span> <span class="st">"big"</span>, <span class="st">"NONE"</span> <span class="ot">=</span> <span class="st">"none"</span>, <span class="st">"SMALL"</span> <span class="ot">=</span> <span class="st">"small"</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number, email<span class="sc">$</span>my_forcats_number, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       
+<pre data-code-line-numbers=""><code>       
         NONE SMALL  BIG &lt;NA&gt;
   none   549     0    0    0
   small    0  2827    0    0
@@ -602,9 +614,9 @@ This just *happens* to be the same as in decreasing frequency order.
 <h2 data-number="5.6" class="anchored" data-anchor-id="collapsing-factor-levels-video"><span class="header-section-number">5.6</span> Collapsing factor levels <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Collapsing+Factor+Levels/1_23zku0qv" target="_blank">(Video)</a></h2>
 <p>For analysis purposes, sometimes you want to work with a smaller number of factor variables. Let’s look at the restaurants that are included in the <code>fastfood</code> data set.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
+<pre data-code-line-numbers=""><code>
       Arbys Burger King Chick Fil-A Dairy Queen   Mcdonalds       Sonic 
          55          70          27          42          57          53 
      Subway   Taco Bell 
@@ -614,13 +626,13 @@ This just *happens* to be the same as in decreasing frequency order.
 <p>Let’s combine all the sandwich, and burger joints together. I am going to save this new variable as <code>restaurant_new</code>.</p>
 <p>The syntax for the <code>fct_collapse</code> function is <code>new level</code> = <code>"old level"</code>, where the “old level” is in quotes. As always, it is good practice to create a two way table to make sure the code typed does what we expected it to do.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant_new <span class="ot">&lt;-</span> <span class="fu">fct_collapse</span>(ff<span class="sc">$</span>restaurant, </span>
+<div class="sourceCode cell-code" id="cb30" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant_new <span class="ot">&lt;-</span> <span class="fu">fct_collapse</span>(ff<span class="sc">$</span>restaurant, </span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">BurgerJoint =</span> <span class="fu">c</span>(<span class="st">"Burger King"</span>, <span class="st">"Mcdonalds"</span>, <span class="st">"Sonic"</span>), </span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">Sammich =</span> <span class="fu">c</span>(<span class="st">"Arbys"</span>, <span class="st">"Subway"</span>))</span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant, ff<span class="sc">$</span>restaurant_new, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>             
+<pre data-code-line-numbers=""><code>             
               Sammich BurgerJoint Chick Fil-A Dairy Queen Taco Bell &lt;NA&gt;
   Arbys            55           0           0           0         0    0
   Burger King       0          70           0           0         0    0
@@ -635,7 +647,7 @@ This just *happens* to be the same as in decreasing frequency order.
 </div>
 <p>Let’s take this one step further and shorten the factor names and rename the levels with spaces (like <code>Taco Bell</code>).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant_shortname <span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(ff<span class="sc">$</span>restaurant_new, </span>
+<div class="sourceCode cell-code" id="cb32" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant_shortname <span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(ff<span class="sc">$</span>restaurant_new, </span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Ckn"</span> <span class="ot">=</span> <span class="st">"Chick Fil-A"</span>, </span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"DQ"</span> <span class="ot">=</span> <span class="st">"Dairy Queen"</span>, </span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"TB"</span> <span class="ot">=</span> <span class="st">"Taco Bell"</span>, </span>
@@ -644,7 +656,7 @@ This just *happens* to be the same as in decreasing frequency order.
 <span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant, ff<span class="sc">$</span>restaurant_shortname, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>             
+<pre data-code-line-numbers=""><code>             
               Samm Burg Ckn  DQ  TB &lt;NA&gt;
   Arbys         55    0   0   0   0    0
   Burger King    0   70   0   0   0    0
@@ -662,7 +674,7 @@ This just *happens* to be the same as in decreasing frequency order.
 <p>Sporadically throughout this lesson, and at the end of the last lesson I’ve used the pipe <code>%&gt;%</code> operator as somewhat of a shortcut. This amazing piece of code lets us string together commands. Let’s see how to accomplish both changes to the restaurant variable in one single step.</p>
 </section>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant <span class="sc">%&gt;%</span> <span class="fu">fct_collapse</span>(<span class="at">BurgerJoint =</span> <span class="fu">c</span>(<span class="st">"Burger King"</span>, <span class="st">"Mcdonalds"</span>, <span class="st">"Sonic"</span>), </span>
+<div class="sourceCode cell-code" id="cb34" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant <span class="sc">%&gt;%</span> <span class="fu">fct_collapse</span>(<span class="at">BurgerJoint =</span> <span class="fu">c</span>(<span class="st">"Burger King"</span>, <span class="st">"Mcdonalds"</span>, <span class="st">"Sonic"</span>), </span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>                               <span class="at">Sammich     =</span> <span class="fu">c</span>(<span class="st">"Arbys"</span>, <span class="st">"Subway"</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">fct_recode</span>(<span class="st">"Ckn"</span>  <span class="ot">=</span> <span class="st">"Chick Fil-A"</span>, </span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"DQ"</span>   <span class="ot">=</span> <span class="st">"Dairy Queen"</span>, </span>
@@ -671,7 +683,7 @@ This just *happens* to be the same as in decreasing frequency order.
 <span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Burg "</span><span class="ot">=</span> <span class="st">"BurgerJoint"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>.
+<pre data-code-line-numbers=""><code>.
  Samm Burg    Ckn    DQ    TB 
   151   180    27    42   115 </code></pre>
 </div>
@@ -689,26 +701,26 @@ This just *happens* to be the same as in decreasing frequency order.
 <p>For demonstration purposes, let’s get rid of the data from DQ. Who eats something other than ice cream at that place anyhow?</p>
 <p>The most straight forward way to set a variable missing based on it’s value is to use a logical statement to choose what rows the variable is set to missing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant_shortname[ff<span class="sc">$</span>restaurant_shortname <span class="sc">==</span> <span class="st">"DQ"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<div class="sourceCode cell-code" id="cb36" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant_shortname[ff<span class="sc">$</span>restaurant_shortname <span class="sc">==</span> <span class="st">"DQ"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant_shortname, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>
+<pre data-code-line-numbers=""><code>
 Samm Burg  Ckn   DQ   TB &lt;NA&gt; 
  151  180   27    0  115   42 </code></pre>
 </div>
 </div>
 <p>This table shows that there are 42 records missing <code>restaraunt_shortname</code>, and 0 records with the level <code>DQ</code>. Unfortunately, the level itself still is there. R does not assume just because there are no records with that level, that the named level itself should be removed. We can use the function <code>fct_drop</code> to drop the levels with no records.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_drop</span>(ff<span class="sc">$</span>restaurant_shortname) <span class="sc">%&gt;%</span> <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_drop</span>(ff<span class="sc">$</span>restaurant_shortname) <span class="sc">%&gt;%</span> <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>.
+<pre data-code-line-numbers=""><code>.
 Samm Burg  Ckn   TB 
  151  180   27  115 </code></pre>
 </div>
 </div>
 <p>If we knew ahead of time we wanted to drop DQ, we could have set that level to <code>NULL</code> when we did the initial recode.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant <span class="sc">%&gt;%</span> <span class="fu">fct_collapse</span>(<span class="at">BurgerJoint =</span> <span class="fu">c</span>(<span class="st">"Burger King"</span>, <span class="st">"Mcdonalds"</span>, <span class="st">"Sonic"</span>), </span>
+<div class="sourceCode cell-code" id="cb40" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant <span class="sc">%&gt;%</span> <span class="fu">fct_collapse</span>(<span class="at">BurgerJoint =</span> <span class="fu">c</span>(<span class="st">"Burger King"</span>, <span class="st">"Mcdonalds"</span>, <span class="st">"Sonic"</span>), </span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>                               <span class="at">Sammich =</span> <span class="fu">c</span>(<span class="st">"Arbys"</span>, <span class="st">"Subway"</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">fct_recode</span>(<span class="st">"Ckn"</span>  <span class="ot">=</span> <span class="st">"Chick Fil-A"</span>, </span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>                              <span class="at">NULL   =</span> <span class="st">"Dairy Queen"</span>, </span>
@@ -717,7 +729,7 @@ Samm Burg  Ckn   TB
 <span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Burg "</span><span class="ot">=</span> <span class="st">"BurgerJoint"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>.
+<pre data-code-line-numbers=""><code>.
  Samm Burg    Ckn    TB 
   151   180    27   115 </code></pre>
 </div>
@@ -1290,8 +1302,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./dm.html" class="pagination-link" aria-label="Working with Data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data</span></span>
+      <a href="./dm.html" class="pagination-link" aria-label="Working with Data Frames">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data Frames</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1305,4 +1317,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
 </body></html>
