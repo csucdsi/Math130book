@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Working with Data – Introduction to R</title>
+<title>4&nbsp; Working with Data Frames – Introduction to R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./dm.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./dm.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data Frames</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -199,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dm.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data Frames</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -294,14 +294,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#identifying-missing-values" id="toc-identifying-missing-values" class="nav-link" data-scroll-target="#identifying-missing-values"><span class="header-section-number">4.2.1</span> Identifying missing values</a></li>
   </ul></li>
-  <li><a href="#data-editing" id="toc-data-editing" class="nav-link" data-scroll-target="#data-editing"><span class="header-section-number">4.3</span> Data editing</a></li>
-  <li><a href="#creating-new-variables" id="toc-creating-new-variables" class="nav-link" data-scroll-target="#creating-new-variables"><span class="header-section-number">4.4</span> Creating new variables</a>
+  <li><a href="#data-management" id="toc-data-management" class="nav-link" data-scroll-target="#data-management"><span class="header-section-number">4.3</span> Data management</a>
   <ul class="collapse">
-  <li><a href="#dichtomizing-data" id="toc-dichtomizing-data" class="nav-link" data-scroll-target="#dichtomizing-data"><span class="header-section-number">4.4.1</span> Dichtomizing data</a></li>
+  <li><a href="#overwrite-existing-values" id="toc-overwrite-existing-values" class="nav-link" data-scroll-target="#overwrite-existing-values"><span class="header-section-number">4.3.1</span> Overwrite existing values</a></li>
+  <li><a href="#creating-new-variables" id="toc-creating-new-variables" class="nav-link" data-scroll-target="#creating-new-variables"><span class="header-section-number">4.3.2</span> Creating new variables</a></li>
+  <li><a href="#dichtomizing-data" id="toc-dichtomizing-data" class="nav-link" data-scroll-target="#dichtomizing-data"><span class="header-section-number">4.3.3</span> Dichtomizing data</a></li>
   </ul></li>
-  <li><a href="#chaining-commands" id="toc-chaining-commands" class="nav-link" data-scroll-target="#chaining-commands"><span class="header-section-number">4.5</span> Chaining commands</a>
+  <li><a href="#chaining-commands" id="toc-chaining-commands" class="nav-link" data-scroll-target="#chaining-commands"><span class="header-section-number">4.4</span> Chaining commands</a>
   <ul class="collapse">
-  <li><a href="#what-is-chaining" id="toc-what-is-chaining" class="nav-link" data-scroll-target="#what-is-chaining"><span class="header-section-number">4.5.1</span> What is “Chaining”?</a></li>
+  <li><a href="#what-is-chaining" id="toc-what-is-chaining" class="nav-link" data-scroll-target="#what-is-chaining"><span class="header-section-number">4.4.1</span> What is “Chaining”?</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -309,9 +310,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./dm.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./dm.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data Frames</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data Frames</span></h1>
 </div>
 
 
@@ -385,6 +386,7 @@ Optional Video
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)                  <span class="co"># for fancy summary tables</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ncbirths <span class="ot">&lt;-</span> openintro<span class="sc">::</span>ncbirths </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">In 2004, the state of North Carolina released to the public a large dataset containing information on births recorded in this state. This dataset has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. The <code>ncbirths</code> data frame is a random sample of 1,000 cases from this dataset.</span></div></div>
 <p>This first code chunk loads the <code>ggplot2</code> package so we can access plotting functions, and then load the <code>ncbirths</code> data set, which comes with the <code>openintro</code> package.</p>
 <section id="summarizing-data" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="summarizing-data"><span class="header-section-number">4.1</span> Summarizing data</h2>
@@ -476,23 +478,23 @@ Optional Video
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">include =</span> <span class="fu">c</span>(visits, lowbirthweight)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="knqvsadlfh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#knqvsadlfh table {
+<div id="imrgmumwvk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#imrgmumwvk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#knqvsadlfh thead, #knqvsadlfh tbody, #knqvsadlfh tfoot, #knqvsadlfh tr, #knqvsadlfh td, #knqvsadlfh th {
+#imrgmumwvk thead, #imrgmumwvk tbody, #imrgmumwvk tfoot, #imrgmumwvk tr, #imrgmumwvk td, #imrgmumwvk th {
   border-style: none;
 }
 
-#knqvsadlfh p {
+#imrgmumwvk p {
   margin: 0;
   padding: 0;
 }
 
-#knqvsadlfh .gt_table {
+#imrgmumwvk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -518,12 +520,12 @@ Optional Video
   border-left-color: #D3D3D3;
 }
 
-#knqvsadlfh .gt_caption {
+#imrgmumwvk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#knqvsadlfh .gt_title {
+#imrgmumwvk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -535,7 +537,7 @@ Optional Video
   border-bottom-width: 0;
 }
 
-#knqvsadlfh .gt_subtitle {
+#imrgmumwvk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -547,7 +549,7 @@ Optional Video
   border-top-width: 0;
 }
 
-#knqvsadlfh .gt_heading {
+#imrgmumwvk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -559,13 +561,13 @@ Optional Video
   border-right-color: #D3D3D3;
 }
 
-#knqvsadlfh .gt_bottom_border {
+#imrgmumwvk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#knqvsadlfh .gt_col_headings {
+#imrgmumwvk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -580,7 +582,7 @@ Optional Video
   border-right-color: #D3D3D3;
 }
 
-#knqvsadlfh .gt_col_heading {
+#imrgmumwvk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -600,7 +602,7 @@ Optional Video
   overflow-x: hidden;
 }
 
-#knqvsadlfh .gt_column_spanner_outer {
+#imrgmumwvk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -612,15 +614,15 @@ Optional Video
   padding-right: 4px;
 }
 
-#knqvsadlfh .gt_column_spanner_outer:first-child {
+#imrgmumwvk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#knqvsadlfh .gt_column_spanner_outer:last-child {
+#imrgmumwvk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#knqvsadlfh .gt_column_spanner {
+#imrgmumwvk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -632,11 +634,11 @@ Optional Video
   width: 100%;
 }
 
-#knqvsadlfh .gt_spanner_row {
+#imrgmumwvk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#knqvsadlfh .gt_group_heading {
+#imrgmumwvk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -662,7 +664,7 @@ Optional Video
   text-align: left;
 }
 
-#knqvsadlfh .gt_empty_group_heading {
+#imrgmumwvk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -677,15 +679,15 @@ Optional Video
   vertical-align: middle;
 }
 
-#knqvsadlfh .gt_from_md > :first-child {
+#imrgmumwvk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#knqvsadlfh .gt_from_md > :last-child {
+#imrgmumwvk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#knqvsadlfh .gt_row {
+#imrgmumwvk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -704,7 +706,7 @@ Optional Video
   overflow-x: hidden;
 }
 
-#knqvsadlfh .gt_stub {
+#imrgmumwvk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -717,7 +719,7 @@ Optional Video
   padding-right: 5px;
 }
 
-#knqvsadlfh .gt_stub_row_group {
+#imrgmumwvk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -731,15 +733,15 @@ Optional Video
   vertical-align: top;
 }
 
-#knqvsadlfh .gt_row_group_first td {
+#imrgmumwvk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#knqvsadlfh .gt_row_group_first th {
+#imrgmumwvk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#knqvsadlfh .gt_summary_row {
+#imrgmumwvk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -749,16 +751,16 @@ Optional Video
   padding-right: 5px;
 }
 
-#knqvsadlfh .gt_first_summary_row {
+#imrgmumwvk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#knqvsadlfh .gt_first_summary_row.thick {
+#imrgmumwvk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#knqvsadlfh .gt_last_summary_row {
+#imrgmumwvk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -768,7 +770,7 @@ Optional Video
   border-bottom-color: #D3D3D3;
 }
 
-#knqvsadlfh .gt_grand_summary_row {
+#imrgmumwvk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -778,7 +780,7 @@ Optional Video
   padding-right: 5px;
 }
 
-#knqvsadlfh .gt_first_grand_summary_row {
+#imrgmumwvk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -788,7 +790,7 @@ Optional Video
   border-top-color: #D3D3D3;
 }
 
-#knqvsadlfh .gt_last_grand_summary_row_top {
+#imrgmumwvk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -798,11 +800,11 @@ Optional Video
   border-bottom-color: #D3D3D3;
 }
 
-#knqvsadlfh .gt_striped {
+#imrgmumwvk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#knqvsadlfh .gt_table_body {
+#imrgmumwvk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -811,7 +813,7 @@ Optional Video
   border-bottom-color: #D3D3D3;
 }
 
-#knqvsadlfh .gt_footnotes {
+#imrgmumwvk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -825,7 +827,7 @@ Optional Video
   border-right-color: #D3D3D3;
 }
 
-#knqvsadlfh .gt_footnote {
+#imrgmumwvk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -834,7 +836,7 @@ Optional Video
   padding-right: 5px;
 }
 
-#knqvsadlfh .gt_sourcenotes {
+#imrgmumwvk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -848,7 +850,7 @@ Optional Video
   border-right-color: #D3D3D3;
 }
 
-#knqvsadlfh .gt_sourcenote {
+#imrgmumwvk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -856,72 +858,72 @@ Optional Video
   padding-right: 5px;
 }
 
-#knqvsadlfh .gt_left {
+#imrgmumwvk .gt_left {
   text-align: left;
 }
 
-#knqvsadlfh .gt_center {
+#imrgmumwvk .gt_center {
   text-align: center;
 }
 
-#knqvsadlfh .gt_right {
+#imrgmumwvk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#knqvsadlfh .gt_font_normal {
+#imrgmumwvk .gt_font_normal {
   font-weight: normal;
 }
 
-#knqvsadlfh .gt_font_bold {
+#imrgmumwvk .gt_font_bold {
   font-weight: bold;
 }
 
-#knqvsadlfh .gt_font_italic {
+#imrgmumwvk .gt_font_italic {
   font-style: italic;
 }
 
-#knqvsadlfh .gt_super {
+#imrgmumwvk .gt_super {
   font-size: 65%;
 }
 
-#knqvsadlfh .gt_footnote_marks {
+#imrgmumwvk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#knqvsadlfh .gt_asterisk {
+#imrgmumwvk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#knqvsadlfh .gt_indent_1 {
+#imrgmumwvk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#knqvsadlfh .gt_indent_2 {
+#imrgmumwvk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#knqvsadlfh .gt_indent_3 {
+#imrgmumwvk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#knqvsadlfh .gt_indent_4 {
+#imrgmumwvk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#knqvsadlfh .gt_indent_5 {
+#imrgmumwvk .gt_indent_5 {
   text-indent: 25px;
 }
 
-#knqvsadlfh .katex-display {
+#imrgmumwvk .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#knqvsadlfh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#imrgmumwvk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -980,23 +982,23 @@ Optional Video
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>              )</span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="ptgxnusrkm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ptgxnusrkm table {
+<div id="feuhjbhalu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#feuhjbhalu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ptgxnusrkm thead, #ptgxnusrkm tbody, #ptgxnusrkm tfoot, #ptgxnusrkm tr, #ptgxnusrkm td, #ptgxnusrkm th {
+#feuhjbhalu thead, #feuhjbhalu tbody, #feuhjbhalu tfoot, #feuhjbhalu tr, #feuhjbhalu td, #feuhjbhalu th {
   border-style: none;
 }
 
-#ptgxnusrkm p {
+#feuhjbhalu p {
   margin: 0;
   padding: 0;
 }
 
-#ptgxnusrkm .gt_table {
+#feuhjbhalu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1022,12 +1024,12 @@ Optional Video
   border-left-color: #D3D3D3;
 }
 
-#ptgxnusrkm .gt_caption {
+#feuhjbhalu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ptgxnusrkm .gt_title {
+#feuhjbhalu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1039,7 +1041,7 @@ Optional Video
   border-bottom-width: 0;
 }
 
-#ptgxnusrkm .gt_subtitle {
+#feuhjbhalu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1051,7 +1053,7 @@ Optional Video
   border-top-width: 0;
 }
 
-#ptgxnusrkm .gt_heading {
+#feuhjbhalu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1063,13 +1065,13 @@ Optional Video
   border-right-color: #D3D3D3;
 }
 
-#ptgxnusrkm .gt_bottom_border {
+#feuhjbhalu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ptgxnusrkm .gt_col_headings {
+#feuhjbhalu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1084,7 +1086,7 @@ Optional Video
   border-right-color: #D3D3D3;
 }
 
-#ptgxnusrkm .gt_col_heading {
+#feuhjbhalu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1104,7 +1106,7 @@ Optional Video
   overflow-x: hidden;
 }
 
-#ptgxnusrkm .gt_column_spanner_outer {
+#feuhjbhalu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1116,15 +1118,15 @@ Optional Video
   padding-right: 4px;
 }
 
-#ptgxnusrkm .gt_column_spanner_outer:first-child {
+#feuhjbhalu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ptgxnusrkm .gt_column_spanner_outer:last-child {
+#feuhjbhalu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ptgxnusrkm .gt_column_spanner {
+#feuhjbhalu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1136,11 +1138,11 @@ Optional Video
   width: 100%;
 }
 
-#ptgxnusrkm .gt_spanner_row {
+#feuhjbhalu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ptgxnusrkm .gt_group_heading {
+#feuhjbhalu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1166,7 +1168,7 @@ Optional Video
   text-align: left;
 }
 
-#ptgxnusrkm .gt_empty_group_heading {
+#feuhjbhalu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1181,15 +1183,15 @@ Optional Video
   vertical-align: middle;
 }
 
-#ptgxnusrkm .gt_from_md > :first-child {
+#feuhjbhalu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ptgxnusrkm .gt_from_md > :last-child {
+#feuhjbhalu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ptgxnusrkm .gt_row {
+#feuhjbhalu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1208,7 +1210,7 @@ Optional Video
   overflow-x: hidden;
 }
 
-#ptgxnusrkm .gt_stub {
+#feuhjbhalu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1221,7 +1223,7 @@ Optional Video
   padding-right: 5px;
 }
 
-#ptgxnusrkm .gt_stub_row_group {
+#feuhjbhalu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1235,15 +1237,15 @@ Optional Video
   vertical-align: top;
 }
 
-#ptgxnusrkm .gt_row_group_first td {
+#feuhjbhalu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ptgxnusrkm .gt_row_group_first th {
+#feuhjbhalu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ptgxnusrkm .gt_summary_row {
+#feuhjbhalu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1253,16 +1255,16 @@ Optional Video
   padding-right: 5px;
 }
 
-#ptgxnusrkm .gt_first_summary_row {
+#feuhjbhalu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ptgxnusrkm .gt_first_summary_row.thick {
+#feuhjbhalu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ptgxnusrkm .gt_last_summary_row {
+#feuhjbhalu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1272,7 +1274,7 @@ Optional Video
   border-bottom-color: #D3D3D3;
 }
 
-#ptgxnusrkm .gt_grand_summary_row {
+#feuhjbhalu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1282,7 +1284,7 @@ Optional Video
   padding-right: 5px;
 }
 
-#ptgxnusrkm .gt_first_grand_summary_row {
+#feuhjbhalu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1292,7 +1294,7 @@ Optional Video
   border-top-color: #D3D3D3;
 }
 
-#ptgxnusrkm .gt_last_grand_summary_row_top {
+#feuhjbhalu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1302,11 +1304,11 @@ Optional Video
   border-bottom-color: #D3D3D3;
 }
 
-#ptgxnusrkm .gt_striped {
+#feuhjbhalu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ptgxnusrkm .gt_table_body {
+#feuhjbhalu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1315,7 +1317,7 @@ Optional Video
   border-bottom-color: #D3D3D3;
 }
 
-#ptgxnusrkm .gt_footnotes {
+#feuhjbhalu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1329,7 +1331,7 @@ Optional Video
   border-right-color: #D3D3D3;
 }
 
-#ptgxnusrkm .gt_footnote {
+#feuhjbhalu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1338,7 +1340,7 @@ Optional Video
   padding-right: 5px;
 }
 
-#ptgxnusrkm .gt_sourcenotes {
+#feuhjbhalu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1352,7 +1354,7 @@ Optional Video
   border-right-color: #D3D3D3;
 }
 
-#ptgxnusrkm .gt_sourcenote {
+#feuhjbhalu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1360,72 +1362,72 @@ Optional Video
   padding-right: 5px;
 }
 
-#ptgxnusrkm .gt_left {
+#feuhjbhalu .gt_left {
   text-align: left;
 }
 
-#ptgxnusrkm .gt_center {
+#feuhjbhalu .gt_center {
   text-align: center;
 }
 
-#ptgxnusrkm .gt_right {
+#feuhjbhalu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ptgxnusrkm .gt_font_normal {
+#feuhjbhalu .gt_font_normal {
   font-weight: normal;
 }
 
-#ptgxnusrkm .gt_font_bold {
+#feuhjbhalu .gt_font_bold {
   font-weight: bold;
 }
 
-#ptgxnusrkm .gt_font_italic {
+#feuhjbhalu .gt_font_italic {
   font-style: italic;
 }
 
-#ptgxnusrkm .gt_super {
+#feuhjbhalu .gt_super {
   font-size: 65%;
 }
 
-#ptgxnusrkm .gt_footnote_marks {
+#feuhjbhalu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ptgxnusrkm .gt_asterisk {
+#feuhjbhalu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ptgxnusrkm .gt_indent_1 {
+#feuhjbhalu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ptgxnusrkm .gt_indent_2 {
+#feuhjbhalu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ptgxnusrkm .gt_indent_3 {
+#feuhjbhalu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ptgxnusrkm .gt_indent_4 {
+#feuhjbhalu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ptgxnusrkm .gt_indent_5 {
+#feuhjbhalu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ptgxnusrkm .katex-display {
+#feuhjbhalu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ptgxnusrkm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#feuhjbhalu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1476,7 +1478,7 @@ Optional Video
 </div>
 </section>
 </section>
-<section id="missing-data" class="level2 page-columns page-full" data-number="4.2">
+<section id="missing-data" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="missing-data"><span class="header-section-number">4.2</span> Missing Data</h2>
 <div class="callout callout-style-simple callout-warning no-icon">
 <div class="callout-body d-flex">
@@ -1488,7 +1490,7 @@ Optional Video
 </div>
 </div>
 </div>
-<p>Sometimes the value for a variable is missing. Think of it as a blank cell in an spreadsheet. Missing data can be a result of many things: skip patterns in a survey (i.e.&nbsp;non-smokers don’t get asked how many packs per week they smoke), errors in data reads from a machine, etc.</p>
+<p>Sometimes the value for a variable is missing. Think of it as a blank cell in an spreadsheet. Missing data can be a result of many things: skip patterns in a survey (i.e.&nbsp;non-smokers don’t get asked how many packs per week they smoke), errors in data reads from a machine, researchers skipped a day of data collection for one plant on accident etc.</p>
 <p>R puts a <code>NA</code> as a placeholder when the value for that piece of data is missing. We can see 4 out of the first 6 values for the variable <code>fage</code> (fathers age) in the <code>ncbirths</code> data set are missing.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ncbirths<span class="sc">$</span>fage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1496,7 +1498,7 @@ Optional Video
 <pre data-code-line-numbers=""><code>[1] NA NA 19 21 NA NA</code></pre>
 </div>
 </div>
-<p><strong>Example problem 1: <code>R</code> can’t do arithmetic on missing data.</strong></p>
+<p><strong>Problem 1: <code>R</code> can’t do arithmetic on missing data.</strong></p>
 <p>So <code>5 + NA = NA</code>, and if you were to try to calculate the <code>mean()</code> of a variable, you’d also get <code>NA</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(ncbirths<span class="sc">$</span>fage)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1529,8 +1531,8 @@ Solution
 </details>
 </div>
 </div>
-<p><strong>Example Problem 2: Some plots will show <code>NA</code> as it’s own category</strong></p>
-<p>Sometimes this is fine, other times this is undesirable. We’ll see later how we can fix this problem</p>
+<p><strong>Problem 2: Some plots will show <code>NA</code> as it’s own category</strong></p>
+<p>Sometimes this is fine, other times this is undesirable. We’ll see later how we can adjust this plot to remove that column of NA.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ncbirths, <span class="fu">aes</span>(premie)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -1542,12 +1544,12 @@ Solution
 </div>
 </div>
 <p>Missing values can cause some problems during analysis or undesirable features in a plot so let’s see how to detect missing values and how to work around them.</p>
-<section id="identifying-missing-values" class="level3 page-columns page-full" data-number="4.2.1">
+<section id="identifying-missing-values" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="identifying-missing-values"><span class="header-section-number">4.2.1</span> Identifying missing values</h3>
 <p>To find out how many values in a particular variable are missing we can use several different approaches.</p>
 <section id="look-at-the-raw-data" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="look-at-the-raw-data">Look at the raw data</h4>
-<p>We can look at the raw data using <code>head()</code> or opening the data set in the spreadsheet view. This may not be helpful if there is no missing values in the first 6 rows, or if there is a large number of variables to look through.</p>
+<p>We can look at the raw data using <code>head()</code> or opening the data set in the spreadsheet view and skim with our eyes for <code>NA</code> values. This may not be helpful if there is no missing values in the first 6 rows, or if there is a large number of variables to look through.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ncbirths)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1581,7 +1583,7 @@ nonsmoker    smoker      &lt;NA&gt;
 </div>
 </div>
 </section>
-<section id="use-a-logical-statement" class="level4 unnumbered page-columns page-full">
+<section id="use-a-logical-statement" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="use-a-logical-statement">Use a logical statement</h4>
 <p>The function <code>is.na()</code> returns TRUE or FALSE for each element in the provided vector for whether or not that element is missing.</p>
 <div class="cell">
@@ -1610,10 +1612,16 @@ Negating <code>is.na()</code> to find the non-missing values
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Sometimes you want to operate only only the non-missing values. Recall from <span class="quarto-unresolved-ref">?sec-logical</span> we can use the <code>!</code> to negate a boolean argument. We can use this tactic to fix that barchart from above.</p>
+<p>Sometimes you want to operate only only the non-missing values. Recall from <span class="quarto-unresolved-ref">?sec-logical</span> we can use the <code>!</code> to negate a boolean argument.</p>
 </div>
 </div>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">FIXME</span></div></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="fu">is.na</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>[1]  TRUE FALSE  TRUE</code></pre>
+</div>
+</div>
+<p>The first and third values are TRUE - so they are <strong>not</strong> missing.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Hide the NA bar">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1624,13 +1632,13 @@ Negating <code>is.na()</code> to find the non-missing values
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Wrap <code>!is.na()</code> around the <code>premie</code> variable in the <code>ggplot</code> code to create a barchart that does not have a bar for missing values.</p>
+<p>We can use this tactic to fix that barchart from above. Wrap <code>!is.na()</code> around the <code>premie</code> variable in the <code>ggplot</code> code to create a barchart that does not have a bar for missing values.</p>
 <details>
 <summary>
 Solution
 </summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ncbirths, <span class="fu">aes</span>(<span class="sc">!</span><span class="fu">is.na</span>(premie))) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ncbirths, <span class="fu">aes</span>(<span class="sc">!</span><span class="fu">is.na</span>(premie))) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </details>
 </div>
@@ -1638,8 +1646,8 @@ Solution
 </section>
 </section>
 </section>
-<section id="data-editing" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="data-editing"><span class="header-section-number">4.3</span> Data editing</h2>
+<section id="data-management" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="data-management"><span class="header-section-number">4.3</span> Data management</h2>
 <div class="callout callout-style-simple callout-warning no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1650,10 +1658,12 @@ Solution
 </div>
 </div>
 </div>
-<p>Sometimes we have a need to edit, or change data. This is also known as <strong>recoding</strong>. One way to change values of existing data is by using logical statements that you learned earlier.</p>
-<p>To choose all observations (rows) of a <code>data</code> set, where a <code>variable</code> is equal to some <code>value</code>, then set assign <code>&lt;-</code> a <code>new value</code> to those rows.</p>
+<p>Sometimes we have a need to create or modify variables in a data frame. You will learn several ways to do this throughout this course, but we will start by using <em>base R</em> functions and methods. These are methods that use functions that come with R, not from additional packages.</p>
+<section id="overwrite-existing-values" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="overwrite-existing-values"><span class="header-section-number">4.3.1</span> Overwrite existing values</h3>
+<p>Choose all observations (rows) of a <code>data</code> set, where a <code>variable</code> is equal to some <code>value</code>, then set assign <code>&lt;-</code> a <code>new_value</code> to those rows.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>data[data<span class="sc">$</span>variable<span class="sc">==</span>value] <span class="ot">&lt;-</span> new_value  <span class="co"># example code. do not run</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>data[data<span class="sc">$</span>variable<span class="sc">==</span>value] <span class="ot">&lt;-</span> new_value  <span class="co"># example code to show syntax.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Example 1: Too low birthweight">
 <div class="callout-header d-flex align-content-center">
@@ -1665,54 +1675,62 @@ Example 1: Too low birthweight
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let’s look at the numerical distribution of birthweight of the baby.</p>
+<p>Let’s look at the numerical distribution of birthweight (in pounds) of the baby.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ncbirths<span class="sc">$</span>weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ncbirths<span class="sc">$</span>weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   1.000   6.380   7.310   7.101   8.060  11.750 </code></pre>
 </div>
 </div>
+</div>
+</div>
 <p>The value of 1 lb seems very low. The researchers you are working with decide that is a mistake and should be excluded from the data. We would then set all records where <code>weight=1</code> to missing.</p>
-</div>
-</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>weight[ncbirths<span class="sc">$</span>weight<span class="sc">==</span><span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>weight[ncbirths<span class="sc">$</span>weight<span class="sc">==</span><span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Code explainer:</p>
 <ul>
 <li>The specific variable <code>ncbirths$weight</code> is on the left side outside the <code>[]</code>. So just the variable <code>weight</code> is being changed.</li>
 <li>Recall that bracket notation <code>[]</code> can be used to select rows where a certain logical statement is true. So <code>[ncbirths$weight==1]</code> will only show records where <code>weight</code> is equal to 1.</li>
 <li>Notice where the assignment arrow (<code>&lt;-</code>) is at. This code assigns the value of <code>NA</code> (missing) to the variable <code>weight</code>, where <code>weight==1</code>.</li>
 </ul>
-<p>But what about other weights that aren’t quite as low as 1, but still unusually low? The boxplot below shows outlying values as dots on the low end of birthweight.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ncbirths<span class="sc">$</span>weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="dm_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div class="sourceCode cell-code" id="cb35" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(ncbirths<span class="sc">$</span>weight, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>[1] 1.19</code></pre>
 </div>
 </div>
+<p>The minimum weight is now 1.19.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-<p>Let’s set all birth weights less than 4 lbs to missing.</p>
+<div class="callout-title-container flex-fill">
+👉 Your Turn
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>But what about other weights that aren’t quite as low as 1, but still unusually low?</p>
+<ul>
+<li>Write the code to set all birth weights less than 4 lbs (<code>&lt;4</code>) to missing (NA).</li>
+<li>Then recalculate the mean to confirm your recode worked.</li>
+</ul>
+<details>
+<summary>
+Solution
+</summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>weight[ncbirths<span class="sc">$</span>weight <span class="sc">&lt;</span> <span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>weight[ncbirths<span class="sc">$</span>weight <span class="sc">&lt;</span> <span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(ncbirths<span class="sc">$</span>weight, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>It is important to plot the data again, to make sure that there are no values below 4 now.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(ncbirths<span class="sc">$</span>weight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="dm_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+</details>
 </div>
 </div>
 </section>
-<section id="creating-new-variables" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="creating-new-variables"><span class="header-section-number">4.4</span> Creating new variables</h2>
+<section id="creating-new-variables" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="creating-new-variables"><span class="header-section-number">4.3.2</span> Creating new variables</h3>
 <div class="callout callout-style-simple callout-warning no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1723,19 +1741,22 @@ Example 1: Too low birthweight
 </div>
 </div>
 </div>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
+<div class="callout callout-style-default callout-important callout-titled" title="New variables should be added to the data frame">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
-<div class="callout-body-container">
-<p><strong>New variables should be added to the data frame.</strong> This can be done using <code>$</code> sign notation.</p>
+<div class="callout-title-container flex-fill">
+New variables should be added to the data frame
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This can be done in base R using <code>$</code> sign notation.</p>
 </div>
 </div>
 <p>The new variable you want to create goes on the left side of the assignment operator <code>&lt;-</code>, and how you want to create that new variable goes on the right side.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>new_variable <span class="ot">&lt;-</span> creation_statement  <span class="co"># example code not run</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>new_variable <span class="ot">&lt;-</span> creation_statement  <span class="co"># example code not run</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled" title="Example: Row-wise difference between two existing variables">
 <div class="callout-header d-flex align-content-center">
@@ -1752,11 +1773,11 @@ Example: Row-wise difference between two existing variables
 </div>
 <p>The following code creates a new variable <code>wtgain_mom</code> the weight gained by the mother, that is not due to the baby by subtracting <code>weight</code> from <code>gained</code>. Note all variables are prefaced with <code>$</code>, denoting that they exist inside the <code>ncbirths</code> data set.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>wtgain_mom <span class="ot">&lt;-</span> ncbirths<span class="sc">$</span>gained <span class="sc">-</span> ncbirths<span class="sc">$</span>weight</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>wtgain_mom <span class="ot">&lt;-</span> ncbirths<span class="sc">$</span>gained <span class="sc">-</span> ncbirths<span class="sc">$</span>weight</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To confirm this variable was created correctly, we look at the data contained in three variables in question.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ncbirths[,<span class="fu">c</span>(<span class="st">'gained'</span>, <span class="st">'weight'</span>, <span class="st">'wtgain_mom'</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ncbirths[,<span class="fu">c</span>(<span class="st">'gained'</span>, <span class="st">'weight'</span>, <span class="st">'wtgain_mom'</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code># A tibble: 6 × 3
   gained weight wtgain_mom
@@ -1782,42 +1803,37 @@ Trust but Verify
 <p>It’s always important to visually confirm that the code you wrote actually had the intended effect.</p>
 </div>
 </div>
-<section id="dichtomizing-data" class="level3" data-number="4.4.1">
-<h3 data-number="4.4.1" class="anchored" data-anchor-id="dichtomizing-data"><span class="header-section-number">4.4.1</span> Dichtomizing data</h3>
+</section>
+<section id="dichtomizing-data" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="dichtomizing-data"><span class="header-section-number">4.3.3</span> Dichtomizing data</h3>
 <p>The <code>ifelse()</code> is hands down the easiest way to create a binary variable (dichotomizing, only 2 levels)</p>
-<p>Let’s add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth.</p>
+<p>Let’s add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth. Specifically Make a new variable <code>underage</code> on the <code>ncbirths</code> data set. If <code>mage</code> is under 18, then the value of this new variable is <code>underage</code>, else it is labeled as <code>adult</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>underage <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(ncbirths<span class="sc">$</span>mage <span class="sc">&lt;</span> <span class="dv">18</span>, <span class="st">"underage"</span>, <span class="st">"adult"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Code explainer:</p>
 <ul>
-<li>We will define this as if the mothers age <code>mage</code> is under 18.</li>
-<li>We will create a new factor variable with two values: <code>underage</code> and <code>adult</code>.</li>
-<li>We will use the <code>ifelse()</code> function.
+<li>The function is <code>ifelse()</code> - one word.</li>
+<li>The arguments are: <code>ifelse(logical, value if TRUE, value if FALSE)</code>
 <ul>
-<li>It’s set of arguments are: <code>ifelse(logical, value if TRUE, value if FALSE)</code></li>
 <li>The <code>logical</code> argument is a statement that resolves as a <code>boolean</code> variable, as either TRUE or FALSE.</li>
-<li>The second argument is what you want the resulting variable to contain if the logical argument is <code>TRUE</code></li>
-<li>The last argument is what you want the resulting variable to contain if the logical argument is <code>FALSE</code></li>
+<li>The second argument is what you want the resulting variable to contain if the logical argument is <code>TRUE</code>.</li>
+<li>The last argument is what you want the resulting variable to contain if the logical argument is <code>FALSE</code>.</li>
 </ul></li>
 </ul>
-<p>Make a new variable <code>underage</code> on the <code>ncbirths</code> data set. If <code>mage</code> is under 18, then the value of this new variable is <code>underage</code>, else it is labeled as <code>adult</code>.</p>
+<p><strong>Trust but Verify</strong></p>
+<p>First let’s look at the frequency table of <code>underage</code> and see if records exist with the new categories, and if there are any missing values.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>underage <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(ncbirths<span class="sc">$</span>mage <span class="sc">&lt;</span> <span class="dv">18</span>, <span class="st">"underage"</span>, <span class="st">"adult"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>You should always make sure your code works as intended.</p>
-<ul>
-<li>First let’s look at the frequency table of <code>underage</code> and see if records exist with the new categories, and if there are any missing values.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb41" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ncbirths<span class="sc">$</span>underage, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ncbirths<span class="sc">$</span>underage, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>
    adult underage     &lt;NA&gt; 
      963       37        0 </code></pre>
 </div>
 </div>
-<ul>
-<li>Next let’s check it against the value of <code>mage</code> itself. Let’s look at all rows where mothers age is either 17 or 18 <code>mage %in% c(17,18)</code>, and only the columns of interest.</li>
-</ul>
+<p>Next let’s check it against the value of <code>mage</code> itself. Let’s look at all rows where mothers age is either 17 or 18 <code>mage %in% c(17,18)</code>, and only the columns of interest.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>ncbirths[ncbirths<span class="sc">$</span>mage <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">17</span>,<span class="dv">18</span>),<span class="fu">c</span>(<span class="st">'mage'</span>, <span class="st">'underage'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>ncbirths[ncbirths<span class="sc">$</span>mage <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">17</span>,<span class="dv">18</span>),<span class="fu">c</span>(<span class="st">'mage'</span>, <span class="st">'underage'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code># A tibble: 57 × 2
     mage underage
@@ -1838,8 +1854,8 @@ Trust but Verify
 <p>Notice I snuck a new operator in on you - <code>%in%</code>. This is a way you can provide a list of values (a.k.a a vector) and say “if the value of the variable I want is %in% any of these options in this vector…” do the thing.</p>
 </section>
 </section>
-<section id="chaining-commands" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="chaining-commands"><span class="header-section-number">4.5</span> Chaining commands</h2>
+<section id="chaining-commands" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="chaining-commands"><span class="header-section-number">4.4</span> Chaining commands</h2>
 <div class="callout callout-style-simple callout-warning no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1856,8 +1872,8 @@ Trust but Verify
 <li><code>%&gt;%</code> This pipe is loaded with the <code>tidyverse</code> package.</li>
 </ul>
 <p>They both function the same, but you’ll see both being used so it’s good to know that they both exist. That way if you are not using other functions from the <code>tidyverse</code>, you can still enjoy the chaining functionality.</p>
-<section id="what-is-chaining" class="level3" data-number="4.5.1">
-<h3 data-number="4.5.1" class="anchored" data-anchor-id="what-is-chaining"><span class="header-section-number">4.5.1</span> What is “Chaining”?</h3>
+<section id="what-is-chaining" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="what-is-chaining"><span class="header-section-number">4.4.1</span> What is “Chaining”?</h3>
 <p>The pipe lets you string set of functions together, like links on a chain, to be completed in the order specified. This works with the majority of functions, specifically when the result of the function is a data frame, a vector, or sometimes the results of a model.</p>
 <blockquote class="blockquote">
 <p>“and then….”</p>
@@ -1875,13 +1891,13 @@ Trust but Verify
 <div class="callout-body-container callout-body">
 <p>First stating the variable, then pipe in the summary function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>mature <span class="sc">|&gt;</span> <span class="fu">table</span>() <span class="co"># instead of table(ncbirths$mature)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>mature <span class="sc">|&gt;</span> <span class="fu">table</span>() <span class="co"># instead of table(ncbirths$mature)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>
  mature mom younger mom 
         133         867 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb47" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>mage <span class="sc">|&gt;</span> <span class="fu">mean</span>() <span class="co">#instead of mean(ncbirths$mage)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>ncbirths<span class="sc">$</span>mage <span class="sc">|&gt;</span> <span class="fu">mean</span>() <span class="co">#instead of mean(ncbirths$mage)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>[1] 27</code></pre>
 </div>

@@ -1,4 +1,4 @@
-# Working with Data
+# Working with Data Frames
 
 In this lesson we will learn how to summarize data in a data frame, and to do basic data management tasks such as making new variables, recoding data and dealing with missing data.
 
@@ -31,7 +31,10 @@ library(gtsummary)                  # for fancy summary tables
 ncbirths <- openintro::ncbirths 
 ```
 
+[In 2004, the state of North Carolina released to the public a large dataset containing information on births recorded in this state. This dataset has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. The `ncbirths` data frame is a random sample of 1,000 cases from this dataset.]{.aside}
+
 This first code chunk loads the `ggplot2` package so we can access plotting functions, and then load the `ncbirths` data set, which comes with the `openintro` package. 
+
 
 
 ## Summarizing data 
@@ -126,7 +129,7 @@ tbl_summary(ncbirths,
 <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Missing+Data/1_3ignf1uh" target="_blank">Missing data section video</a>
 :::
 
-Sometimes the value for a variable is missing. Think of it as a blank cell in an spreadsheet. Missing data can be a result of many things: skip patterns in a survey (i.e. non-smokers don't get asked how many packs per week they smoke), errors in data reads from a machine, etc. 
+Sometimes the value for a variable is missing. Think of it as a blank cell in an spreadsheet. Missing data can be a result of many things: skip patterns in a survey (i.e. non-smokers don't get asked how many packs per week they smoke), errors in data reads from a machine, researchers skipped a day of data collection for one plant on accident etc. 
 
 R puts a `NA` as a placeholder when the value for that piece of data is missing. We can see 4 out of the first 6 values for the variable `fage` (fathers age) in the `ncbirths` data set are missing. 
 
@@ -135,7 +138,7 @@ head(ncbirths$fage)
 ```
 
 
-**Example problem 1: `R` can't do arithmetic on missing data.** 
+**Problem 1: `R` can't do arithmetic on missing data.** 
 
 So `5 + NA = NA`, and if you were to try to calculate the `mean()` of a variable, you'd also get `NA`. 
 
@@ -158,9 +161,9 @@ mean(ncbirths$fage, na.rm = TRUE)
 :::
 
 
-**Example Problem 2: Some plots will show `NA` as it's own category**
+**Problem 2: Some plots will show `NA` as it's own category**
 
-Sometimes this is fine, other times this is undesirable. We'll see later how we can fix this problem 
+Sometimes this is fine, other times this is undesirable. We'll see later how we can adjust this plot to remove that column of NA. 
 
 ```{r}
 ggplot(ncbirths, aes(premie)) + geom_bar()
@@ -175,7 +178,7 @@ To find out how many values in a particular variable are missing we can use seve
 
 #### Look at the raw data {.unnumbered} 
 
-We can look at the raw data using `head()` or opening the data set in the spreadsheet view. This may not be helpful if there is no missing values in the first 6 rows, or if there is a large number of variables to look through. 
+We can look at the raw data using `head()` or opening the data set in the spreadsheet view and skim with our eyes for `NA` values. This may not be helpful if there is no missing values in the first 6 rows, or if there is a large number of variables to look through. 
 
 ```{r}
 head(ncbirths)
@@ -209,14 +212,17 @@ sum(is.na(ncbirths$fage))
 There are 171 records in this data set where the age for the father is not present. 
 
 :::{.callout-note title = "Negating `is.na()` to find the non-missing values"}
-Sometimes you want to operate only only the non-missing values. Recall from @sec-logical we can use the `!` to negate a boolean argument. We can use this tactic to fix that barchart from above.
-
+Sometimes you want to operate only only the non-missing values. Recall from @sec-logical we can use the `!` to negate a boolean argument. 
 :::
 
-[FIXME]{.aside}
+```{r}
+!is.na(x)
+```
+
+The first and third values are TRUE - so they are **not** missing. 
 
 :::{.callout-tip title = "👉 Hide the NA bar" icon=false}
-Wrap `!is.na()` around the `premie` variable in the `ggplot` code to create a barchart that does not have a bar for missing values. 
+We can use this tactic to fix that barchart from above. Wrap `!is.na()` around the `premie` variable in the `ggplot` code to create a barchart that does not have a bar for missing values. 
 
 <details>
   <summary>Solution</summary>
@@ -230,23 +236,24 @@ ggplot(ncbirths, aes(!is.na(premie))) + geom_bar()
 
 
 
-## Data editing 
+## Data management 
 
 :::{.callout-warning icon=false appearance=minimal}
 <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Data+Editing+%28Recoding%29/1_kh8v7jk6" target="_blank">Data editing section video</a>
 :::
 
+Sometimes we have a need to create or modify variables in a data frame. You will learn several ways to do this throughout this course, but we will start by using _base R_ functions and methods. These are methods that use functions that come with R, not from additional packages. 
 
-Sometimes we have a need to edit, or change data. This is also known as **recoding**. One way to change values of existing data is by using logical statements that you learned earlier. 
+### Overwrite existing values
 
-To choose all observations (rows) of a `data` set, where a `variable` is equal to some `value`, then set assign `<-` a `new value` to those rows. 
+Choose all observations (rows) of a `data` set, where a `variable` is equal to some `value`, then set assign `<-` a `new_value` to those rows. 
 ```{r}
 #| eval: false
-data[data$variable==value] <- new_value  # example code. do not run
+data[data$variable==value] <- new_value  # example code to show syntax.
 ```
 
 :::{.callout-tip title = "Example 1: Too low birthweight"}
-Let's look at the numerical distribution of birthweight of the baby. 
+Let's look at the numerical distribution of birthweight (in pounds) of the baby. 
 
 ```{r}
 summary(ncbirths$weight)
@@ -259,37 +266,42 @@ The value of 1 lb seems very low. The researchers you are working with decide th
 ncbirths$weight[ncbirths$weight==1] <- NA
 ```
 
+Code explainer: 
+
 * The specific variable `ncbirths$weight` is on the left side outside the `[]`. So just the variable `weight` is being changed. 
 * Recall that bracket notation `[]` can be used to select rows where a certain logical statement is true. So `[ncbirths$weight==1]` will only show records where `weight` is equal to 1. 
 * Notice where the assignment arrow (`<-`) is at. This code assigns the value of `NA` (missing) to the variable `weight`, where `weight==1`. 
 
-
-But what about other weights that aren't quite as low as 1, but still unusually low? The boxplot below shows outlying values as dots on the low end of birthweight. 
-
 ```{r}
-boxplot(ncbirths$weight)
+min(ncbirths$weight, na.rm=TRUE)
 ```
 
-Let's set all birth weights less than 4 lbs to missing. 
+The minimum weight is now 1.19. 
 
+:::{.callout-tip title = "👉 Your Turn" icon=false}
+But what about other weights that aren't quite as low as 1, but still unusually low? 
+
+* Write the code to set all birth weights less than 4 lbs (`<4`) to missing (NA).
+* Then recalculate the mean to confirm your recode worked. 
+
+<details>
+  <summary>Solution</summary>
 ```{r}
+#| eval: false
 ncbirths$weight[ncbirths$weight < 4] <- NA
+min(ncbirths$weight, na.rm=TRUE)
 ```
+</details>
+:::
 
-It is important to plot the data again, to make sure that there are no values below 4 now. 
-```{r}
-boxplot(ncbirths$weight)
-```
-
-
-## Creating new variables 
+### Creating new variables 
 
 :::{.callout-warning icon=false appearance=minimal}
 <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Creating+New+Variables/1_ivmj78et" target="_blank">Creating new variables section video</a>
 :::
 
-:::{.callout-note appearance=minimal}
-**New variables should be added to the data frame.** This can be done using `$` sign notation. 
+:::{.callout-important title = "New variables should be added to the data frame"}
+This can be done in base R using `$` sign notation. 
 :::
 
 The new variable you want to create goes on the left side of the assignment operator `<-`, and how you want to create that new variable goes on the right side. 
@@ -323,29 +335,28 @@ It's always important to visually confirm that the code you wrote actually had t
 
 The `ifelse()` is hands down the easiest way to create a binary variable (dichotomizing, only 2 levels)
 
-Let's add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth. 
-
-* We will define this as if the mothers age `mage` is under 18. 
-* We will create a new factor variable with two values: `underage` and `adult`. 
-* We will use the `ifelse()` function. 
-    - It's set of arguments are: `ifelse(logical, value if TRUE, value if FALSE)`
-    - The `logical` argument is a statement that resolves as a `boolean` variable, as either TRUE or FALSE.
-    - The second argument is what you want the resulting variable to contain if the logical argument is `TRUE`
-    - The last argument is what you want the resulting variable to contain if the logical argument is `FALSE`
-
-Make a new variable `underage` on the `ncbirths` data set. If `mage` is under 18, then the value of this new variable is `underage`, else it is labeled as `adult`. 
+Let's add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth. Specifically Make a new variable `underage` on the `ncbirths` data set. If `mage` is under 18, then the value of this new variable is `underage`, else it is labeled as `adult`. 
 
 ```{r}
 ncbirths$underage <- ifelse(ncbirths$mage < 18, "underage", "adult")
 ```
 
-You should always make sure your code works as intended.
+Code explainer: 
 
-* First let's look at the frequency table of `underage` and see if records exist with the new categories, and if there are any missing values. 
+* The function is `ifelse()` - one word. 
+* The arguments are: `ifelse(logical, value if TRUE, value if FALSE)`
+    - The `logical` argument is a statement that resolves as a `boolean` variable, as either TRUE or FALSE.
+    - The second argument is what you want the resulting variable to contain if the logical argument is `TRUE`.
+    - The last argument is what you want the resulting variable to contain if the logical argument is `FALSE`.
+
+**Trust but Verify**
+
+First let's look at the frequency table of `underage` and see if records exist with the new categories, and if there are any missing values. 
 ```{r}
 table(ncbirths$underage, useNA="always")
 ```
-* Next let's check it against the value of `mage` itself. Let's look at all rows where mothers age is either 17 or 18 `mage %in% c(17,18)`, and only the columns of interest. 
+
+Next let's check it against the value of `mage` itself. Let's look at all rows where mothers age is either 17 or 18 `mage %in% c(17,18)`, and only the columns of interest. 
 
 ```{r}
 ncbirths[ncbirths$mage %in% c(17,18),c('mage', 'underage')]
