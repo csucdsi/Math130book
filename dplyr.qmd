@@ -1,6 +1,8 @@
 # Data management and aggregation
 
-## Introduction <a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Introduction/1_r7jhnwgd" target="_blank">(Video)</a>
+:::{.callout-warning icon=false appearance=minimal}
+<a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Introduction/1_r7jhnwgd" target="_blank">Introduction Video</a>
+:::
 
 When working with data you must:
 
@@ -17,41 +19,35 @@ The dplyr package makes each of these steps as fast and easy as possible by:
 3. Using efficient data storage back ends, so that you spend as little time 
    waiting for the computer as possible.
 
-::: {.callout-note}
-### Learning Objectives
-
+:::{.callout-note title = "🎓 Learning Objectives" icon=false}
 After completing this lesson students will be able to
 
-* Explain the difference between a `data.table` and a `tibble`. 
+* Explain the difference between a `data.table` and a `tibble`
 * Build and execute a chain of command to accomplish a data management task
-* Extract certain rows using `select`. 
-* Create new variables using `mutate`. 
-* Rename variables using `rename`
-* Subset the data based on a criteria using `filter`.
+* Extract certain rows using `select`
+* Reorganize the order using `relocate` and rename using `rename`
+* Create new variables using `mutate` and `case_when`
+* Subset rows based on a logical criteria using `filter`
 * Create summary statistics using `group_by` and `summarize`
-* Learn how to use code chunk options to disable warning messages. 
+
 :::
 
+:::{.callout-tip title = "👉 Prepare" icon=false}
 
-:::{.callout-important}
-#### Preparation
+1.  Open your Math 130 R Project.
+2.  Right click and "save as" this lessons [[Quarto notes file]](notes/dplyr_notes.qmd) and save into your `notes/Math130` folder.
+3.  In the *Files* pane, open this Quarto file and Render this file.
 
-Prior to this lesson students should
-
-* Download the [[08_dplyr_notes.Rmd]](08_dplyr_notes.Rmd) R markdown file and save into your `Math130/notes` folder. 
-* Ensure that the `dplyr` and `nycflights13` packages are installed by running the first code chunk. 
+:::
 
 ```{r, warning=FALSE, message=FALSE}
 library(dplyr)
 flights <- nycflights13::flights
 ```
-:::
-
-### Exploring airline flight data with dplyr. 
 
 The `nycflights13` package contains several data sets that can be used to help understand what causes delays. We will be using the `flights` data set which contains information about all flights that departed from NYC (e.g. EWR, JFK and LGA) in 2013. 
 
-### Tibbles
+## Tibbles
 
 The `flights` data set, and any data set created with `dplyr`, has a specific data type called a `tibble`. These are not as furry and prolific as their cousins the `tribbles`. `tibbles` behaves for all intents and purposes as a `data.frame`, just gets displayed differently. For example, the `flights` data set contains data on 19 characteristics (variables) from 336,776 flights. There's no way I would want to print out a data set that large. But I'm gonna....  
 
@@ -59,20 +55,28 @@ The `flights` data set, and any data set created with `dplyr`, has a specific da
 flights
 ```
 
-The output has been trimmed to something more reasonable for our viewing pleasure. This may not seem such a big deal because R Studio already provides some level of truncation for our viewing pleasure. 
+The output has been trimmed to something more reasonable for our viewing pleasure. This may not seem such a big deal because R Studio already provides some level of truncation for our viewing pleasure, but when you accidentally print out 400 pages of data set in your homework assignment, your instructor (and your wallet if you print it without looking) won't be happy. 
 
-## Basic verbs <a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Basic+Verbs/1_ndesnisk" target="_blank">(Video)</a>
-The `dplyr` package contains new data manipulation functions, also called verbs. We will look at the following verbs: 
+## Basic verbs
 
-* `filter()`: Returns a subset of the rows.
-* `select()`: Returns only the listed columns.
-* `rename()`: Renames the variables listed. 
-* `mutate()`: Adds columns from existing data.
-* `summarise()`: Reduces each group to a single row by calculating aggregate measures.
-* `group_by()`: Groups a data set on a factor variable, such that all functions performed are then done on each level of the factor.
+:::{.callout-warning icon=false appearance=minimal}
+<a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Basic+Verbs/1_ndesnisk" target="_blank">Lesson Video</a>
+:::
+
+The `dplyr` package contains many functions to perform data manipulation "actions", also called verbs. We will look at the following verbs: 
+
+* `filter()`: Returns a subset of the rows
+* `select()`: Returns only the listed columns
+* `rename()`: Renames the variables listed
+* `mutate()`: Adds columns from existing data
+* `relocate()`: Moves the order of the columns 
+* `case_when()`: A useful expansion of `ifelse`
+* `summarise()`: Reduces each group to a single row by calculating aggregate measures
+* `group_by()`: Groups a data set on a factor variable, such that all functions performed are then done on each level of the factor
 
 
 ### Filter
+
 `filter()` allows you to select a subset of the rows of a data frame. 
 The first argument is the name of the data frame, and the second and subsequent are filtering expressions evaluated in the context of that data frame. For example, we can select all flights on January 1st with 
 ```{r}
@@ -85,6 +89,7 @@ filter(flights, month == 1 | month == 2)
 ```
 
 ### Select
+
 Often you work with large data sets with many columns where only a few are actually of interest to you. `select()` allows you to rapidly zoom in on a useful subset using operations that usually only work on numeric variable positions.
 ```{r}
 select(flights, month, day, year)
@@ -106,7 +111,8 @@ select(flights, -(year:day))
 ```
 
 ### Rename
-Sometimes variables come to you in really obscure naming conventions. What the heck is SBA641? New to `dplyr` 1.0.0 is the `rename()` function. Works like magic to convert `old name` to a `new name`. The generic syntax is `rename(new = old)`
+
+Sometimes variables come to you in really obscure naming conventions. What the heck is SBA641? The `rename()` function converts an `old name` to a `new name`. The generic syntax is `rename(new = old)`. [For the purpose of these lecture notes I am not making this change permenant. There is no assignment operator `<-` used here, so this change is not going to persist into later code.]{.aside}
 
 So to rename `dep_time` to `departure_time` we would type
 
@@ -116,9 +122,10 @@ rename(flights, departure_time = dep_time)
 
 The variable name on the 3rd column now says `departure_time` instead of `dep_time`. 
 
-> For the purpose of these lecture notes I am not making this change permenant. There is no assignment operator `<-` used here, so this change is not going to persist into later code. 
+
 
 ### Mutate
+
 As well as selecting from the set of existing columns, it's often useful to add new columns that are functions of existing columns. This is the job of `mutate()`!
 
 Here we create two variables: gain (as arrival delay minus departure delay) and speed (as distance divided by time, converted to hours). 
@@ -129,7 +136,8 @@ select(a, gain, distance, air_time, speed)
 ```
 
 
-One key advantage of mutate is that you can refer to the columns you just created. Mutate flights to create two variables, `gain = arr_delay - dep_delay` and `gain_per_hour = gain / (air_time / 60)`. 
+One key advantage of mutate is that you can refer to the columns you just created. In one mutate call we can create the `gain` variable, and then use it to create `gain_per_hour`. 
+
 ```{r}
 mutate(flights, gain = arr_delay - dep_delay, 
                 gain_per_hour = gain / (air_time / 60 ))
@@ -137,14 +145,57 @@ mutate(flights, gain = arr_delay - dep_delay,
 
 
 ### Summarize
+
 The last verb is `summarise()`, which collapses a data frame to a single row. It's not very useful yet. We can create a new variable called delay that is the average departure delay on the entire flights data set. 
 ```{r}
 summarise(flights, delay = mean(dep_delay, na.rm = TRUE))
 ```
 
+## Additional helper verbs
+
+### Relocate
+
+Use `relocate()` to change column positions, using the same syntax as select() to make it easy to move blocks of columns at once.
+
+**Current order of names**
+```{r}
+names(flights)
+```
+
+**Bring `origin` to the front**
+
+```{r}
+#| source-line-numbers: "2"
+flights <- flights %>% 
+  relocate(origin)
+names(flights)
+```
+
+**Move `dest` right after `origin`** using the `.after` argument. 
+
+```{r}
+#| source-line-numbers: "2"
+flights <- flights %>% relocate(dest, 
+                                .after = origin)
+names(flights)
+```
+
+**Move multiple variables to the end** 
+```{r}
+#| source-line-numbers: "2"
+flights <- flights %>% 
+  relocate(c(carrier, flight, tailnum), .after = last_col())
+names(flights)
+```
+
+### Case when
 
 
-## Grouped Operations  <a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Grouped+Operations/1_w9x1kd5m" target="_blank">(Video)</a>
+## Grouped Operations  
+
+:::{.callout-warning icon=false appearance=minimal}
+<a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Grouped+Operations/1_w9x1kd5m" target="_blank">Introduction Video</a>
+:::
 
 The above verbs are useful, but they become really powerful when you combine them with the idea of "group by", repeating the operation individually on groups of observations within the dataset. In dplyr, you use the `group_by()` function to describe how to break a dataset down into groups of rows. You can then use the resulting object in exactly the same functions as above; they'll automatically work "by group" when the input is a grouped.
 
@@ -154,8 +205,7 @@ Let's demonstrate how some of these functions work after grouping the flights da
 by_month <- group_by(flights, month)
 ```
 
-
-* The `summarise()` verb allows you to calculate summary statistics for each group. This is probably the most common function that is used in conjunction with `group_by`. For example, the average distance flown per month. 
+The `summarise()` verb allows you to calculate summary statistics for each group. This is probably the most common function that is used in conjunction with `group_by`. For example, the average distance flown per month. 
 ```{r}
 summarise(by_month, avg_airtime = mean(distance, na.rm=TRUE))
 ```
@@ -166,7 +216,16 @@ summarize(by_month, count=n())
 ``` 
 
 
-## Chaining Operations  <a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Chaining+Operations/1_6xzk59i7" target="_blank">(Video)</a>
+## Chaining Operations 
+
+:::{.callout-warning icon=false appearance=minimal}
+<a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Chaining+Operations/1_6xzk59i7" target="_blank">Introduction Video</a>
+:::
+
+:::{.callout-important title = "Same pipe, different symbol"}
+We've seen chaining before using the base R pipe `|>`. The `%>%` symbol is also called a pipe, but is only accessible after you load the `dplyr` package. They function the same. We show both here because you will see both used out in the wild and need to know they are interchangeable. 
+:::
+
 Consider the following group of operations that take the data set `flights`, and produce a final data set (`a4`) that contains only the flights where the daily average delay is greater than a half hour. 
 ```{r}
 a1 <- group_by(flights, year, month, day)

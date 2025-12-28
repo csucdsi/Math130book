@@ -237,7 +237,7 @@ Now that you're a package installing pro, go ahead and install the following pac
 :::{.callout-tip title = "👉 Your Turn" icon=false}
 
 
-Install the list of packages to the left one at a time and wait for it to finish before entering the next command.
+Install the list of packages to the left one at a time and wait for it to finish before entering the next command. Some of these contain functions that we will use, others contain data sets that we will be working with. 
 
 :::: {.columns}
 
@@ -246,13 +246,14 @@ Install the list of packages to the left one at a time and wait for it to finish
 - `sjPlot`
 - `gtsummary`
 - `ggpubr`
+- `tinytex`
 :::
 
 ::: {.column width="50%"}
+- `here`
 - `openintro`  
 - `palmerpenguins`
-- `tinytex`
-- `here`
+- `nycflights13`
 :::
 
 ::::
