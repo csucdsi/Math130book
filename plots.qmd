@@ -229,7 +229,7 @@ ggplot(dsmall, aes(y=price)) + geom_boxplot() # right
 ```
 
 ## `ggpubr`
-You can also make a boxplot using the `ggbpxplot` function from the `ggpubr` package, however it you must specify that the quantitative variable is on the `y` axis. 
+You can also make a boxplot using the `ggbpxplot` function from the `ggpubr` package, however it you must specify that the quantitative variable is on the `y` axis otherwise it yells at you. 
 
 :::: {.columns}
 
@@ -389,11 +389,9 @@ We won't talk about changing colors or the background in this lab, but the yello
 The `ggdensity` function also has a `color` and `fill` option. In addition to moving the legend to the top of the plot, the transparency of the density plots are automatically 
 ```{r}
 #| layout-ncol: 2
-ggdensity(dsmall, x="depth", color = "cut")
-ggdensity(dsmall, x="depth", fill = "cut")
+ggdensity(dsmall, x="depth", color = "cut") # left
+ggdensity(dsmall, x="depth", fill = "cut") # right
 ```
-
-
 
 ### Boxplots
 
@@ -401,8 +399,8 @@ To create basic grouped boxplots, put the continuous variable on one axis, and t
 
 ```{r}
 #| layout-ncol: 2
-ggplot(dsmall, aes(x=price, y=cut)) + geom_boxplot()
-ggplot(dsmall, aes(x=cut, y=carat)) + geom_boxplot()
+ggplot(dsmall, aes(x=price, y=cut)) + geom_boxplot() # left
+ggplot(dsmall, aes(x=cut, y=carat)) + geom_boxplot() # right
 ```
 
 If you want an additional color feature (and the corresponding legend), you can either `fill` or `color` the boxes by the same categorical variable. 
