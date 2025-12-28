@@ -1,4 +1,4 @@
-# Working with Data Frames
+# Working with Data Frames {#sec-dm}
 
 In this lesson we will learn how to summarize data in a data frame, and to do basic data management tasks such as making new variables, recoding data and dealing with missing data.
 
@@ -50,7 +50,7 @@ Two common methods used to summarize data are frequnecy tables for categorical v
 ![An illustrations of a turtle, snail, and butterfly with text "Nominal - unordered descriptions. "I'm a turtle! i'm a snail! i'm a butterfly!"](img/categorical_data.png){width="50%"}
 :::
 
-### Frequency Tables
+### Frequency Tables {#sec-intro-tables}
 
 Frequency tables are used only any type of categorical data (Nominal, ordinal or binary), and the table results show you how many records in the data set have that particular level.
 
@@ -90,7 +90,7 @@ max(ncbirths$visits)
 min(ncbirths$visits)
 ```
 
-### Fancy summary tables
+### Fancy summary tables {#sec-intro-tbl_summary}
 
 The `gtsummary` package provides a single function `tbl_summary` to create a really nicely formatted summary table for both quantitative and categorical data types.
 

@@ -59,42 +59,6 @@ The `::` notation is a shortcut to use a function from inside a package without 
 https://r-graph-gallery.com/piechart-ggplot2.html
 
 
-### Adding trend lines lines
-
-Two most common trend lines added to a scatterplots are the "best fit" straight line and the "loess" (low-ess) smoother line. Adding a trend line to this plot using base R is a bit tricker, so we won't bother.   
-
-::: {.panel-tabset}
-## `ggplot2`
-
-A trend line can be added by adding a `geom_smooth()` layer.
-
-```{r}
-ggplot(dsmall, aes(x=carat, y=price)) + geom_point() + 
-  geom_smooth() 
-```
-
-Here the point-wise confidence interval for this loess line is shown in grey. If you want to turn the confidence interval off, use `se=FALSE`. 
-
-We can add another `geom_smooth()` layer for the `lm` (linear model) line in blue, and the loess line (by not specifying a method) in red.
-
-```{r}
-ggplot(dsmall, aes(x=carat, y=price)) + geom_point() + 
-  geom_smooth(se=FALSE, method="lm", color="blue") + 
-  geom_smooth(se=FALSE, color="red")
-```
-
-
-## `ggpubr`
-
-You can add _either_ a linear model line _or_ a loess line to a `ggscatter` using the `add=` argument. 
-```{r}
-#| layout-ncol: 2
-ggscatter(dsmall, x="carat", y="price", add = "loess")
-ggscatter(dsmall, x="carat", y="price", add = "reg.line")
-```
-:::
-
-
 ## Adding summary statistics
 
 Adding annotation on these plots to indicate where the mean is located is often a nice informative feature. 
