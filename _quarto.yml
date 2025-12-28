@@ -4,7 +4,7 @@ project:
 book:
   title: "Introduction to R"  
   author: "Robin Donatello, Nicholas Lytal"
-  date: "Spring 2026"
+  # date: "January, 10, 2026"
   search: true
   #downloads: [pdf, epub]
   

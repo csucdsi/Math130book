@@ -441,7 +441,7 @@ tbl_summary(pen, include = "species", by = "sex", percent = "cell")
 More often than not, we want to compare percents of one group -- within each level of the other group. For example is the male to female ratio the same for each species? 
 :::
 
-#### Row percents
+#### Row percents {#sec-row-pct-table}
 
 To compare the distribution of sex (columns) within each of the sepecies (rows) we need row percentages. The percentages now add up to 1 across the rows and the comparison groups are each species. 
  
@@ -466,6 +466,7 @@ tbl_summary(pen, include = "species", by = "sex", percent = "row")
 
 
 #### Column percents
+
 To compare the distribution of species (rows) within each of the columns (sex) we need column percentages. The percentages now add up to 1 down the columns and the comparison groups are male and female. 
 
 ::: {.panel-tabset}
@@ -486,31 +487,101 @@ tbl_summary(pen, include = "species", by = "sex", percent = "column")
 44% _of female penguins_ are Adelie species, 36% _of male penguins_ are Gentoo. 
 
 
-## HERE HERE HERE 
+### Stacked bar charts
 
-### Grouped bar charts
-Sometimes pictures are better than tables. 
-
-
-
-Plot the species on the x axis, but then `fill` using the second categorical variable. This has the effect of visualizing the **row** percents from the table above. Here it is the percent of `sex`, within each type of `species`. 
+Sometimes pictures are better than tables, so let's try to apply the same `fill` tactic that we used in the last section. 
 
 ```{r}
 ggplot(pen, aes(x=species, fill=sex)) + geom_bar()
 ```
 
-The default is a stacked barchart. So add the argument `position=dodge` inside the `geom_bar` layer to put the bars side by side. 
+:::{.callout-important title = "Stacked barcharts are the ggplot2 default"}
+Stacked barcharts are generally only useful when comparing percents out of a whole. To get the correct view you can add a `position = "fill"` argument to the `geom_bar()` layer. 
+:::
+
+```{r}
+#| source-line-numbers: "2"
+ggplot(pen, aes(x=species, fill=sex)) + 
+  geom_bar(position = "fill") + 
+  ylab("Proportion")
+```
+
+### Side by side bar charts
+
+::: {.panel-tabset}
+## `ggplot2`
+
+Add the argument `position=dodge` inside the `geom_bar` layer to put the bars side by side. 
+```{r}
+#| source-line-numbers: "2"
+ggplot(pen, aes(x=species, fill=sex)) + 
+  geom_bar(position = "dodge")
+```
+
+## `sjPlot`
+
+The `plot_xtab` function is the two-way table analogy to `plot_frq` to create a barchart with clear lables on the bars for the N and % (and NA values dropped). Note you have to use dollar sign notation here for the variables. 
+
+```{r}
+plot_xtab(x = pen$species, grp = pen$sex)
+```
+
+By default this plots the vertical axis as percents, not counts, and it shows the marginal total for the variable that's on the x-axis. We can remove the total by setting `show.total` to `false`. 
+
+```{r}
+#| source-line-numbers: "2"
+plot_xtab(x = pen$species, grp = pen$sex, 
+          show.total = "false")
+```
+:::
+
+As before, typically we aren't interested in comparing proportions out of the whole, but proportions out of one of the two margins (variables). 
+
+
+### Comparing Percents
+
+Our eyes make comparisons the best when the bars are physically close to each other. So generally you want to put the groups we want to compare _within_ on the x-axis, and have separate bars for each level of the variable we want to compare _across_. 
+
+See each tab on how to compare the distribution of `sex` within each `species`. This corresponds to the **row** percents from @sec-row-pct-table . 
+
+::: {.panel-tabset}
+## `ggplot2`
+
+Put `species` on the x-axis and `fill` by `sex`.
 ```{r}
 ggplot(pen, aes(x=species, fill=sex)) + geom_bar(position = "dodge")
 ```
 
-And look, an automatic legend. What if I wanted to better compare species within body_mass_g range? This is the **column** percentages. Just switch which variable is the x axis and which one is used to fill the colors!
+## `sjPlot`
+
+Put `species` on the x-axis and `grp` by `sex`, and specify `margin = "row"`. 
+```{r}
+#| source-line-numbers: "2"
+plot_xtab(x = pen$species, grp = pen$sex, show.total = "false", 
+          margin = "row")
+```
+
+:::
+
+:::{.callout-tip title = "👉 Your Turn" icon=false}
+Modify the code above to create a plot to compare the distribution of species within each sex. 
+
+<details>
+  <summary> ggplot2 solution </summary>
 ```{r}
 ggplot(pen, aes(x=sex, fill=species)) + geom_bar(position = "dodge")
 ```
+</details>
 
-And this easy change is why we love `ggplot2`. 
+<details>
+  <summary> sjPlot solution </summary>
+```{r}
+plot_xtab(x = pen$sex, grp = pen$species, show.total = "false", margin = "row")
+```
+</details>
 
-    
+:::
+
+
 
 

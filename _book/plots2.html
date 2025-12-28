@@ -211,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Graphics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -269,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Putting it all together</span></a>
+ <span class="menu-text">Project</span></a>
   </div>
 </li>
       </ul>
@@ -285,31 +285,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#introduction-video" id="toc-introduction-video" class="nav-link active" data-scroll-target="#introduction-video">Introduction </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Introduction/1_qmt3ls9l" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Introduction/1_qmt3ls9l">(Video)</a></li>
-  <li><a href="#themes-video" id="toc-themes-video" class="nav-link" data-scroll-target="#themes-video"><span class="header-section-number">9.1</span> Themes </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Themes/1_kwh2ucf7" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Themes/1_kwh2ucf7">(Video)</a></li>
-  <li><a href="#legends-video" id="toc-legends-video" class="nav-link" data-scroll-target="#legends-video"><span class="header-section-number">9.2</span> Legends </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Legends/1_schkl6as" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Legends/1_schkl6as">(Video)</a>
+  <li><a href="#nicer-plots" id="toc-nicer-plots" class="nav-link" data-scroll-target="#nicer-plots"><span class="header-section-number">9.1</span> Nicer plots</a></li>
+  <li><a href="#barcharts-sjplot" id="toc-barcharts-sjplot" class="nav-link" data-scroll-target="#barcharts-sjplot"><span class="header-section-number">9.2</span> Barcharts (<code>sjPlot</code>)</a></li>
+  <li><a href="#adding-summary-statistics" id="toc-adding-summary-statistics" class="nav-link" data-scroll-target="#adding-summary-statistics"><span class="header-section-number">9.3</span> Adding summary statistics</a>
   <ul class="collapse">
-  <li><a href="#titles" id="toc-titles" class="nav-link" data-scroll-target="#titles"><span class="header-section-number">9.2.1</span> Titles</a></li>
-  <li><a href="#removing-the-legend" id="toc-removing-the-legend" class="nav-link" data-scroll-target="#removing-the-legend"><span class="header-section-number">9.2.2</span> Removing the legend</a></li>
+  <li><a href="#histograms-density-curve" id="toc-histograms-density-curve" class="nav-link" data-scroll-target="#histograms-density-curve"><span class="header-section-number">9.3.1</span> Histograms + density curve</a></li>
+  <li><a href="#adding-violins-to-the-boxplot" id="toc-adding-violins-to-the-boxplot" class="nav-link" data-scroll-target="#adding-violins-to-the-boxplot"><span class="header-section-number">9.3.2</span> Adding violins to the boxplot</a></li>
   </ul></li>
-  <li><a href="#titles-video" id="toc-titles-video" class="nav-link" data-scroll-target="#titles-video"><span class="header-section-number">9.3</span> Titles </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Titles/1_xvnu92g7" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Titles/1_xvnu92g7">(Video)</a></li>
-  <li><a href="#removing-na-categories-video" id="toc-removing-na-categories-video" class="nav-link" data-scroll-target="#removing-na-categories-video"><span class="header-section-number">9.4</span> Removing NA categories </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Removing+NA+Categories/1_75ripf3f" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Removing+NA+Categories/1_75ripf3f">(Video)</a></li>
-  <li><a href="#changing-colors-video" id="toc-changing-colors-video" class="nav-link" data-scroll-target="#changing-colors-video"><span class="header-section-number">9.5</span> Changing colors </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Changing+Colors/1_kb31ew49" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Changing+Colors/1_kb31ew49">(Video)</a>
+  <li><a href="#themes-video" id="toc-themes-video" class="nav-link" data-scroll-target="#themes-video"><span class="header-section-number">9.4</span> Themes </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Themes/1_kwh2ucf7" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Themes/1_kwh2ucf7">(Video)</a></li>
+  <li><a href="#legends-video" id="toc-legends-video" class="nav-link" data-scroll-target="#legends-video"><span class="header-section-number">9.5</span> Legends </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Legends/1_schkl6as" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Legends/1_schkl6as">(Video)</a>
   <ul class="collapse">
-  <li><a href="#manual" id="toc-manual" class="nav-link" data-scroll-target="#manual"><span class="header-section-number">9.5.1</span> Manual</a></li>
-  <li><a href="#using-a-color-palette-recommended" id="toc-using-a-color-palette-recommended" class="nav-link" data-scroll-target="#using-a-color-palette-recommended"><span class="header-section-number">9.5.2</span> Using a color palette (recommended)</a></li>
+  <li><a href="#titles" id="toc-titles" class="nav-link" data-scroll-target="#titles"><span class="header-section-number">9.5.1</span> Titles</a></li>
+  <li><a href="#removing-the-legend" id="toc-removing-the-legend" class="nav-link" data-scroll-target="#removing-the-legend"><span class="header-section-number">9.5.2</span> Removing the legend</a></li>
   </ul></li>
-  <li><a href="#barchart-enhancements-video" id="toc-barchart-enhancements-video" class="nav-link" data-scroll-target="#barchart-enhancements-video"><span class="header-section-number">9.6</span> Barchart enhancements </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Barchart+Enhancements/1_j8ze36jn" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Barchart+Enhancements/1_j8ze36jn">(Video)</a>
+  <li><a href="#titles-video" id="toc-titles-video" class="nav-link" data-scroll-target="#titles-video"><span class="header-section-number">9.6</span> Titles </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Titles/1_xvnu92g7" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Titles/1_xvnu92g7">(Video)</a></li>
+  <li><a href="#changing-colors-video" id="toc-changing-colors-video" class="nav-link" data-scroll-target="#changing-colors-video"><span class="header-section-number">9.7</span> Changing colors </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Changing+Colors/1_kb31ew49" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Changing+Colors/1_kb31ew49">(Video)</a>
   <ul class="collapse">
-  <li><a href="#numbers-to-the-top-of-bars." id="toc-numbers-to-the-top-of-bars." class="nav-link" data-scroll-target="#numbers-to-the-top-of-bars."><span class="header-section-number">9.6.1</span> Numbers to the top of bars.</a></li>
-  <li><a href="#plotting-proportions" id="toc-plotting-proportions" class="nav-link" data-scroll-target="#plotting-proportions"><span class="header-section-number">9.6.2</span> Plotting Proportions</a></li>
+  <li><a href="#manual" id="toc-manual" class="nav-link" data-scroll-target="#manual"><span class="header-section-number">9.7.1</span> Manual</a></li>
+  <li><a href="#using-a-color-palette-recommended" id="toc-using-a-color-palette-recommended" class="nav-link" data-scroll-target="#using-a-color-palette-recommended"><span class="header-section-number">9.7.2</span> Using a color palette (recommended)</a></li>
   </ul></li>
-  <li><a href="#multivariate-plotting-video" id="toc-multivariate-plotting-video" class="nav-link" data-scroll-target="#multivariate-plotting-video"><span class="header-section-number">9.7</span> Multivariate plotting </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Multivariate+Plotting/1_xp1whb0f" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Multivariate+Plotting/1_xp1whb0f">(Video)</a>
+  <li><a href="#barchart-enhancements-video" id="toc-barchart-enhancements-video" class="nav-link" data-scroll-target="#barchart-enhancements-video"><span class="header-section-number">9.8</span> Barchart enhancements </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Barchart+Enhancements/1_j8ze36jn" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Barchart+Enhancements/1_j8ze36jn">(Video)</a>
   <ul class="collapse">
-  <li><a href="#boxplots-with-three-variables." id="toc-boxplots-with-three-variables." class="nav-link" data-scroll-target="#boxplots-with-three-variables."><span class="header-section-number">9.7.1</span> Boxplots with three variables.</a></li>
+  <li><a href="#numbers-to-the-top-of-bars." id="toc-numbers-to-the-top-of-bars." class="nav-link" data-scroll-target="#numbers-to-the-top-of-bars."><span class="header-section-number">9.8.1</span> Numbers to the top of bars.</a></li>
+  <li><a href="#plotting-proportions" id="toc-plotting-proportions" class="nav-link" data-scroll-target="#plotting-proportions"><span class="header-section-number">9.8.2</span> Plotting Proportions</a></li>
   </ul></li>
-  <li><a href="#faceting-paneling" id="toc-faceting-paneling" class="nav-link" data-scroll-target="#faceting-paneling"><span class="header-section-number">9.8</span> Faceting / paneling</a></li>
-  <li><a href="#multiple-plots-per-window" id="toc-multiple-plots-per-window" class="nav-link" data-scroll-target="#multiple-plots-per-window"><span class="header-section-number">9.9</span> Multiple plots per window</a></li>
-  <li><a href="#paneling-on-two-variables" id="toc-paneling-on-two-variables" class="nav-link" data-scroll-target="#paneling-on-two-variables"><span class="header-section-number">9.10</span> Paneling on two variables</a></li>
+  <li><a href="#multivariate-plotting-video" id="toc-multivariate-plotting-video" class="nav-link" data-scroll-target="#multivariate-plotting-video"><span class="header-section-number">9.9</span> Multivariate plotting </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Multivariate+Plotting/1_xp1whb0f" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Multivariate+Plotting/1_xp1whb0f">(Video)</a>
+  <ul class="collapse">
+  <li><a href="#boxplots-with-three-variables." id="toc-boxplots-with-three-variables." class="nav-link" data-scroll-target="#boxplots-with-three-variables."><span class="header-section-number">9.9.1</span> Boxplots with three variables.</a></li>
+  </ul></li>
+  <li><a href="#faceting-paneling" id="toc-faceting-paneling" class="nav-link" data-scroll-target="#faceting-paneling"><span class="header-section-number">9.10</span> Faceting / paneling</a></li>
+  <li><a href="#multiple-plots-per-window" id="toc-multiple-plots-per-window" class="nav-link" data-scroll-target="#multiple-plots-per-window"><span class="header-section-number">9.11</span> Multiple plots per window</a></li>
+  <li><a href="#paneling-on-two-variables" id="toc-paneling-on-two-variables" class="nav-link" data-scroll-target="#paneling-on-two-variables"><span class="header-section-number">9.12</span> Paneling on two variables</a></li>
   </ul>
 </nav>
     </div>
@@ -357,6 +363,9 @@ Learning Objectives
 </ul>
 </div>
 </div>
+<blockquote class="blockquote">
+<p>introduce plot_frq, plot_xtab, ggpubr functions</p>
+</blockquote>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -395,339 +404,254 @@ Preparation
 </div>
 </div>
 </section>
-<section id="themes-video" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="themes-video"><span class="header-section-number">9.1</span> Themes <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Themes/1_kwh2ucf7" target="_blank">(Video)</a></h2>
+<section id="nicer-plots" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="nicer-plots"><span class="header-section-number">9.1</span> Nicer plots</h2>
+</section>
+<section id="barcharts-sjplot" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="barcharts-sjplot"><span class="header-section-number">9.2</span> Barcharts (<code>sjPlot</code>)</h2>
+<p>We can reorder these levels on the fly so they are being shown in decreasing frequency using the <code>fct_infreq</code> function from the <code>forcats</code> library.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>forcats<span class="sc">::</span><span class="fu">fct_infreq</span>(cut))) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"cut"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Using the :: shortcut">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Using the :: shortcut
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>::</code> notation is a shortcut to use a function from inside a package without actually loading the entire package. This can be useful when you’re only using a function once or twice in an analysis. Here we used it to call <code>forcats::fct_infreq()</code> and <code>gtsummary::tbl_summary()</code>.</p>
+</div>
+</div>
+<p>https://r-graph-gallery.com/piechart-ggplot2.html</p>
+</section>
+<section id="adding-summary-statistics" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="adding-summary-statistics"><span class="header-section-number">9.3</span> Adding summary statistics</h2>
+<p>Adding annotation on these plots to indicate where the mean is located is often a nice informative feature.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">ggplot2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">header2</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>The mean can be denoted on <code>geom_histogram</code> and <code>geom_density</code> by adding a new layer called `geom</p>
+<div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price)) <span class="sc">+</span> <span class="fu">geom_histogram</span>() <span class="sc">+</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept=</span><span class="fu">mean</span>(price)),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">color=</span><span class="st">"blue"</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price)) <span class="sc">+</span> <span class="fu">geom_density</span>()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-layout-ncol="3">
+
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Tab content</p>
+</div>
+</div>
+</div>
+<section id="histograms-density-curve" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="histograms-density-curve"><span class="header-section-number">9.3.1</span> Histograms + density curve</h3>
+<p>Often it is more helpful to have the density (or kernel density) plot <em>on top of</em> a histogram plot.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><code>ggplot2</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Code explainer</p>
+<ol type="1">
+<li>The syntax starts the same: we’ll add a new geom, <code>geom_density</code> and color the line blue for funsies.</li>
+<li>Then we add the histogram geom using <code>geom_histogram</code> but must specify that the y axis should be on the density, not frequency, scale.
+<ul>
+<li>Note that this has to go inside the aesthetic statement <code>aes()</code>.</li>
+</ul></li>
+<li>I’m also going to get rid of the fill by using <code>NA</code> so the colored bars don’t plot over the density line.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price)) <span class="sc">+</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">col=</span><span class="st">"blue"</span>) <span class="sc">+</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..), <span class="at">colour=</span><span class="st">"black"</span>, <span class="at">fill=</span><span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="adding-violins-to-the-boxplot" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="adding-violins-to-the-boxplot"><span class="header-section-number">9.3.2</span> Adding violins to the boxplot</h3>
+<p>A violin plot is like a density plot, turned on its side, and reflected around the axis for symmetry purposes. Overlaying a boxplot and a violin plot serves a similar purpose to Histograms + Density plots. It shows outliers, the location of most the data, and better shows the shape/skew of the distribution. Let’s also <code>fill</code> the geometries with the same color as what is on the x-axis. Not 100% needed but nice for display sometimes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price_range, <span class="at">y=</span>carat, <span class="at">fill=</span>price_range)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_violin</span>(<span class="at">alpha=</span>.<span class="dv">1</span>) <span class="sc">+</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>(<span class="at">alpha=</span>.<span class="dv">5</span>, <span class="at">width=</span>.<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="themes-video" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="themes-video"><span class="header-section-number">9.4</span> Themes <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Themes/1_kwh2ucf7" target="_blank">(Video)</a></h2>
 <p>The standard theme has a gray background, white grid lines etc. Themes can be changed by adding <code>theme_X()</code> where <code>X</code> has several options</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>line_breaks, <span class="at">y=</span>num_char)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>line_breaks, <span class="at">y=</span>num_char)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>line_breaks, <span class="at">y=</span>num_char)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_dark</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-2-3.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>line_breaks, <span class="at">y=</span>num_char)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>line_breaks, <span class="at">y=</span>num_char)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_void</span>()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>line_breaks, <span class="at">y=</span>num_char)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_dark</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>See more about themes here: http://www.sthda.com/english/wiki/ggplot2-themes-and-background-colors-the-3-elements</p>
 </section>
-<section id="legends-video" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="legends-video"><span class="header-section-number">9.2</span> Legends <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Legends/1_schkl6as" target="_blank">(Video)</a></h2>
-<section id="titles" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="titles"><span class="header-section-number">9.2.1</span> Titles</h3>
+<section id="legends-video" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="legends-video"><span class="header-section-number">9.5</span> Legends <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Legends/1_schkl6as" target="_blank">(Video)</a></h2>
+<section id="titles" class="level3" data-number="9.5.1">
+<h3 data-number="9.5.1" class="anchored" data-anchor-id="titles"><span class="header-section-number">9.5.1</span> Titles</h3>
 <p>Add the <code>name=</code> argument to whatever layer you added that created the legend. Here I specified a <code>fill</code>, and it was a <code>discrete</code> variable. So I use the <code>scale_fill_discrete()</code> layer.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">y=</span>num_char, <span class="at">x=</span>number, <span class="at">fill=</span>number)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">name=</span><span class="st">"Size of number"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">y=</span>num_char, <span class="at">x=</span>number, <span class="at">fill=</span>number)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">name=</span><span class="st">"Size of number"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here I <code>col</code>or the box outlines so the layer is <code>scale_color_discrete()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">y=</span>num_char, <span class="at">x=</span>number, <span class="at">col=</span>number)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">name=</span><span class="st">"Size of number"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">y=</span>num_char, <span class="at">x=</span>number, <span class="at">col=</span>number)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">name=</span><span class="st">"Size of number"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="removing-the-legend" class="level3" data-number="9.2.2">
-<h3 data-number="9.2.2" class="anchored" data-anchor-id="removing-the-legend"><span class="header-section-number">9.2.2</span> Removing the legend</h3>
+<section id="removing-the-legend" class="level3" data-number="9.5.2">
+<h3 data-number="9.5.2" class="anchored" data-anchor-id="removing-the-legend"><span class="header-section-number">9.5.2</span> Removing the legend</h3>
 <p>In this case the legend show the same information. That’s redundant and takes up space, so let’s remove it entirely by adding <code>guide="none"</code> to the <code>scale_</code> layer.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">y=</span>num_char, <span class="at">x=</span>number, <span class="at">col=</span>number)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">guide=</span><span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">y=</span>num_char, <span class="at">x=</span>number, <span class="at">col=</span>number)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">guide=</span><span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="titles-video" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="titles-video"><span class="header-section-number">9.3</span> Titles <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Titles/1_xvnu92g7" target="_blank">(Video)</a></h2>
+<section id="titles-video" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="titles-video"><span class="header-section-number">9.6</span> Titles <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Titles/1_xvnu92g7" target="_blank">(Video)</a></h2>
 <p>A good plot needs to stand alone and convey as much information as possible.</p>
 <ul>
 <li><code>ggtitle()</code> adds an overall plot title</li>
 <li><code>ylab()</code> and <code>xlab()</code> adjust the axis labels.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">y=</span>num_char, <span class="at">x=</span>number, <span class="at">col=</span>number)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">guide=</span><span class="st">"none"</span>) <span class="sc">+</span> </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Distribution of the number of characters in an email based on the size of the number in the email"</span>) <span class="sc">+</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Number of characters"</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Size of number in email"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">y=</span>num_char, <span class="at">x=</span>number, <span class="at">col=</span>number)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>(<span class="at">guide=</span><span class="st">"none"</span>) <span class="sc">+</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Distribution of the number of characters in an email based on the size of the number in the email"</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Number of characters"</span>) <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Size of number in email"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="removing-na-categories-video" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="removing-na-categories-video"><span class="header-section-number">9.4</span> Removing NA categories <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Removing+NA+Categories/1_75ripf3f" target="_blank">(Video)</a></h2>
-<p>This happens when there is no data is present for one or more levels. One way to get around this is to use <code>select</code> to only choose variables that we are going to use in the plot directly, delete all rows with any missing values using <code>na.omit()</code>, then pipe <code>ggplot</code> directly in after deleting all rows with missing data.</p>
+<section id="changing-colors-video" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="changing-colors-video"><span class="header-section-number">9.7</span> Changing colors <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Changing+Colors/1_kb31ew49" target="_blank">(Video)</a></h2>
+<section id="manual" class="level3" data-number="9.7.1">
+<h3 data-number="9.7.1" class="anchored" data-anchor-id="manual"><span class="header-section-number">9.7.1</span> Manual</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>NCbirths <span class="sc">%&gt;%</span> <span class="fu">select</span>(mage, whitemom, marital, habit) <span class="sc">%&gt;%</span> <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>mage, <span class="at">fill=</span>whitemom)) <span class="sc">+</span> </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">2</span>) <span class="sc">+</span> <span class="fu">facet_grid</span>(marital<span class="sc">~</span>habit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<blockquote class="blockquote">
-<p>Warning: <code>na.omit()</code> can be dangerous to use. It will drop EVERY row with ANY value missing. We are using it safely here because we are only selecting the variables that we will use in the plot.</p>
-</blockquote>
-</section>
-<section id="changing-colors-video" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="changing-colors-video"><span class="header-section-number">9.5</span> Changing colors <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Changing+Colors/1_kb31ew49" target="_blank">(Video)</a></h2>
-<section id="manual" class="level3" data-number="9.5.1">
-<h3 data-number="9.5.1" class="anchored" data-anchor-id="manual"><span class="header-section-number">9.5.1</span> Manual</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>number, <span class="at">fill=</span>number)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>number, <span class="at">fill=</span>number)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>There’s some spectacularly named colors as well, here is the <a href="https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf">full list of names</a>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>number, <span class="at">fill=</span>number)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"salmon"</span>, <span class="st">"slategray4"</span>, <span class="st">"violet"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb12" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>number, <span class="at">fill=</span>number)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"salmon"</span>, <span class="st">"slategray4"</span>, <span class="st">"violet"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>And you can use <a href="https://www.w3schools.com/colors/colors_picker.asp">hex colors</a></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>number, <span class="at">fill=</span>number)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#47dbff"</span>, <span class="st">"#b3b3cc"</span>, <span class="st">"#ff531a"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb13" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>number, <span class="at">fill=</span>number)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">"#47dbff"</span>, <span class="st">"#b3b3cc"</span>, <span class="st">"#ff531a"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="using-a-color-palette-recommended" class="level3" data-number="9.5.2">
-<h3 data-number="9.5.2" class="anchored" data-anchor-id="using-a-color-palette-recommended"><span class="header-section-number">9.5.2</span> Using a color palette (recommended)</h3>
+<section id="using-a-color-palette-recommended" class="level3" data-number="9.7.2">
+<h3 data-number="9.7.2" class="anchored" data-anchor-id="using-a-color-palette-recommended"><span class="header-section-number">9.7.2</span> Using a color palette (recommended)</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>number, <span class="at">fill=</span>number)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_brewer</span>(<span class="at">palette=</span><span class="st">"Spectral"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb14" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>number, <span class="at">fill=</span>number)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_brewer</span>(<span class="at">palette=</span><span class="st">"Spectral"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Review the links in the additional resources section of the <a href="../wk4.html">Week 4 overview</a> on how to choose colors. With great power comes great responsibility. Colors can just as easily detract from a plot as they can enhance it.</p>
 <hr>
 </section>
 </section>
-<section id="barchart-enhancements-video" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="barchart-enhancements-video"><span class="header-section-number">9.6</span> Barchart enhancements <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Barchart+Enhancements/1_j8ze36jn" target="_blank">(Video)</a></h2>
-<section id="numbers-to-the-top-of-bars." class="level3" data-number="9.6.1">
-<h3 data-number="9.6.1" class="anchored" data-anchor-id="numbers-to-the-top-of-bars."><span class="header-section-number">9.6.1</span> Numbers to the top of bars.</h3>
+<section id="barchart-enhancements-video" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="barchart-enhancements-video"><span class="header-section-number">9.8</span> Barchart enhancements <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Barchart+Enhancements/1_j8ze36jn" target="_blank">(Video)</a></h2>
+<section id="numbers-to-the-top-of-bars." class="level3" data-number="9.8.1">
+<h3 data-number="9.8.1" class="anchored" data-anchor-id="numbers-to-the-top-of-bars."><span class="header-section-number">9.8.1</span> Numbers to the top of bars.</h3>
 <p>The biggest addition to a barchart is the numbers on top of the bars.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>number)) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..count..)) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Frequency of emails by size of number"</span>) <span class="sc">+</span> </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">y=</span>..count.. <span class="sc">+</span> <span class="dv">50</span>, <span class="at">label=</span>..count..), <span class="at">stat=</span><span class="st">'count'</span>, <span class="at">size =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb15" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>number)) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..count..)) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Frequency of emails by size of number"</span>) <span class="sc">+</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">y=</span>..count.. <span class="sc">+</span> <span class="dv">50</span>, <span class="at">label=</span>..count..), <span class="at">stat=</span><span class="st">'count'</span>, <span class="at">size =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Play with the <code>+50</code> on the y axis to move the numbers up/down the bars.</li>
 <li>Play with the <code>size</code> modifier to find something readable.</li>
 </ul>
 </section>
-<section id="plotting-proportions" class="level3" data-number="9.6.2">
-<h3 data-number="9.6.2" class="anchored" data-anchor-id="plotting-proportions"><span class="header-section-number">9.6.2</span> Plotting Proportions</h3>
+<section id="plotting-proportions" class="level3" data-number="9.8.2">
+<h3 data-number="9.8.2" class="anchored" data-anchor-id="plotting-proportions"><span class="header-section-number">9.8.2</span> Plotting Proportions</h3>
 <p>Often you don’t want to compare counts but percents. To accomplish this in ggplot is doable, but involves pre-calculating the percentages first and then plotting the summary numbers. This is a great place to introduce a different package: <code>sjPlot</code>.</p>
 <p><code>ggplot2</code> is pretty great for easy out-of-the-box plots that don’t look half bad. Well for something a bit better when it comes to labeled barcharts let’s turn to the <code>sjPlot</code> package. Note this package uses ggplot graphics, but does not follow the syntax. So you’ll need to reference the <a href="https://strengejacke.github.io/sjPlot/">vignette</a> often to to learn more of what this package can do and what syntax it uses.</p>
 <p>To plot the frequency distribution of a single categorical variable we use the “plot freq” function <code>plot_frq</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjPlot)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_frq</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb16" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjPlot)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_frq</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To plot the results of a contingency table we can use the <code>plot_xtab</code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_xtab</span>(NCbirths<span class="sc">$</span>mature, NCbirths<span class="sc">$</span>marital)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb17" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_xtab</span>(NCbirths<span class="sc">$</span>mature, NCbirths<span class="sc">$</span>marital)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>As before, you <em>MUST</em> do a common sense check on the proportions that are shown, which also means knowing what the default settings for a function are. The defaults for <code>plot_xtab</code> show the proportion of the fill variable, within the variable that’s on the x. In context of the plot above, 17.5% of women who are not married are mature moms. 86.8% of all moms are younger moms.</p>
 <p>You can see the available adjustments using function arguments by reviewing the <a href="https://strengejacke.github.io/sjPlot/reference/plot_xtab.html">vignette for that function</a>. Here I will turn off the total column by adding <code>show.total=FALSE</code> and turn it into row percents by adding <code>margin='row'</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_xtab</span>(NCbirths<span class="sc">$</span>mature, NCbirths<span class="sc">$</span>marital, <span class="at">margin=</span><span class="st">'row'</span>, <span class="at">show.total =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb18" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_xtab</span>(NCbirths<span class="sc">$</span>mature, NCbirths<span class="sc">$</span>marital, <span class="at">margin=</span><span class="st">'row'</span>, <span class="at">show.total =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now 81.1% of mature moms are not married, and 41.6% of younger moms are married. Always make sure your %’s being displayed match your interpretation.</p>
 <hr>
 </section>
 </section>
-<section id="multivariate-plotting-video" class="level2" data-number="9.7">
-<h2 data-number="9.7" class="anchored" data-anchor-id="multivariate-plotting-video"><span class="header-section-number">9.7</span> Multivariate plotting <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Multivariate+Plotting/1_xp1whb0f" target="_blank">(Video)</a></h2>
+<section id="multivariate-plotting-video" class="level2" data-number="9.9">
+<h2 data-number="9.9" class="anchored" data-anchor-id="multivariate-plotting-video"><span class="header-section-number">9.9</span> Multivariate plotting <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Multivariate+Plotting/1_xp1whb0f" target="_blank">(Video)</a></h2>
 <p>So far we’ve only looked at how to plot 2 variables on the same plot. Let’s up our game some.</p>
-<section id="boxplots-with-three-variables." class="level3" data-number="9.7.1">
-<h3 data-number="9.7.1" class="anchored" data-anchor-id="boxplots-with-three-variables."><span class="header-section-number">9.7.1</span> Boxplots with three variables.</h3>
+<section id="boxplots-with-three-variables." class="level3" data-number="9.9.1">
+<h3 data-number="9.9.1" class="anchored" data-anchor-id="boxplots-with-three-variables."><span class="header-section-number">9.9.1</span> Boxplots with three variables.</h3>
 <p>In the first plotting lesson, we saw that for boxplots the continuous variable goes on the y, categorical on the x. Well you can also fill (or color) the boxes by a third variable if you want an additional comparison within the categories on the x axis.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(NCbirths, <span class="fu">aes</span>(<span class="at">y=</span>weeks, <span class="at">x=</span>mature, <span class="at">fill=</span>habit)) <span class="sc">+</span> </span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb19" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(NCbirths, <span class="fu">aes</span>(<span class="at">y=</span>weeks, <span class="at">x=</span>mature, <span class="at">fill=</span>habit)) <span class="sc">+</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This lets us compare the average gestation period for smokers vs non smokers, and mature vs younger moms. Displaying the boxes this way allows for easy comparison of weeks between smokers &amp; non smokers, within maturity status. If we flip the x axis and fill,</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(NCbirths, <span class="fu">aes</span>(<span class="at">y=</span>weeks, <span class="at">x=</span>habit, <span class="at">fill=</span>mature)) <span class="sc">+</span> </span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb20" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(NCbirths, <span class="fu">aes</span>(<span class="at">y=</span>weeks, <span class="at">x=</span>habit, <span class="at">fill=</span>mature)) <span class="sc">+</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now the emphasis is on comparing weeks between mature &amp; younger moms, within each smoking status.</p>
 <p>This way of grouping levels of one aspect within categories of another aspect is extended and enhanced using faceting or paneling.</p>
 </section>
 </section>
-<section id="faceting-paneling" class="level2" data-number="9.8">
-<h2 data-number="9.8" class="anchored" data-anchor-id="faceting-paneling"><span class="header-section-number">9.8</span> Faceting / paneling</h2>
+<section id="faceting-paneling" class="level2" data-number="9.10">
+<h2 data-number="9.10" class="anchored" data-anchor-id="faceting-paneling"><span class="header-section-number">9.10</span> Faceting / paneling</h2>
 <p>ggplot introduces yet another term called <code>faceting</code>. The definition is <em>a particular aspect or feature of something</em>, or <em>one side of something many-sided, especially of a cut gem</em>. Basically instead of plotting the grouped graphics on the same plotting area, we let each group have it’s own plot, or facet.</p>
 <p>We add a <code>facet_wrap()</code> and specify that we want to panel on the color group. Note the twiddle in front of color. (Not here we’re switching to the <code>NCbirths</code> data set.)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(NCbirths, <span class="fu">aes</span>(<span class="at">x=</span>mage, <span class="at">fill=</span>gender)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">3</span>) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>mature)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb21" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(NCbirths, <span class="fu">aes</span>(<span class="at">x=</span>mage, <span class="at">fill=</span>gender)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">3</span>) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>mature)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The grid placement can be semi-controlled by using the <code>ncol</code> argument in the <code>facet_wrap()</code> statement.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(NCbirths, <span class="fu">aes</span>(<span class="at">x=</span>mage, <span class="at">fill=</span>gender)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">3</span>) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>mature, <span class="at">ncol=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb22" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(NCbirths, <span class="fu">aes</span>(<span class="at">x=</span>mage, <span class="at">fill=</span>gender)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">3</span>) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>mature, <span class="at">ncol=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>It is important to compare distributions across groups on the same scale, and our eyes can compare items vertically better than horizontally.</p>
 </section>
-<section id="multiple-plots-per-window" class="level2" data-number="9.9">
-<h2 data-number="9.9" class="anchored" data-anchor-id="multiple-plots-per-window"><span class="header-section-number">9.9</span> Multiple plots per window</h2>
+<section id="multiple-plots-per-window" class="level2" data-number="9.11">
+<h2 data-number="9.11" class="anchored" data-anchor-id="multiple-plots-per-window"><span class="header-section-number">9.11</span> Multiple plots per window</h2>
 <p>This method works only for plots created with <code>ggplot</code>. Here we use the <code>grid.arrange</code> function in the <code>gridExtra</code> package.</p>
 <ol type="1">
 <li>assign the output of a ggplot object to an object (here it’s <code>plot1</code> and <code>plot2</code>).</li>
 <li>Use <code>grid.arrange()</code> to arrange them either side by side or top and bottom.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>plot1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(NCbirths, <span class="fu">aes</span>(<span class="at">x=</span>mage, <span class="at">fill=</span>whitemom)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">2</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>plot2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(NCbirths, <span class="fu">aes</span>(<span class="at">x=</span>mage, <span class="at">col=</span>whitemom)) <span class="sc">+</span> <span class="fu">geom_density</span>() </span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(plot1,plot2, <span class="at">ncol=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb23" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>plot1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(NCbirths, <span class="fu">aes</span>(<span class="at">x=</span>mage, <span class="at">fill=</span>whitemom)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">2</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>plot2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(NCbirths, <span class="fu">aes</span>(<span class="at">x=</span>mage, <span class="at">col=</span>whitemom)) <span class="sc">+</span> <span class="fu">geom_density</span>() </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(plot1,plot2, <span class="at">ncol=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="paneling-on-two-variables" class="level2" data-number="9.10">
-<h2 data-number="9.10" class="anchored" data-anchor-id="paneling-on-two-variables"><span class="header-section-number">9.10</span> Paneling on two variables</h2>
+<section id="paneling-on-two-variables" class="level2" data-number="9.12">
+<h2 data-number="9.12" class="anchored" data-anchor-id="paneling-on-two-variables"><span class="header-section-number">9.12</span> Paneling on two variables</h2>
 <p>Who says we’re stuck with only faceting on one variable? A variant on <code>facet_wrap</code> is <code>facet_grid</code>. Here we can specify multiple variables to panel on.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(NCbirths, <span class="fu">aes</span>(<span class="at">x=</span>mage, <span class="at">fill=</span>whitemom)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">2</span>) <span class="sc">+</span> <span class="fu">facet_grid</span>(marital<span class="sc">~</span>habit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots2_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="960"></p>
-</figure>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb24" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(NCbirths, <span class="fu">aes</span>(<span class="at">x=</span>mage, <span class="at">fill=</span>whitemom)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">2</span>) <span class="sc">+</span> <span class="fu">facet_grid</span>(marital<span class="sc">~</span>habit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

@@ -311,8 +311,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#two-categorical-variables" id="toc-two-categorical-variables" class="nav-link" data-scroll-target="#two-categorical-variables"><span class="header-section-number">6.6</span> Two categorical variables</a>
   <ul class="collapse">
-  <li><a href="#frequency-table" id="toc-frequency-table" class="nav-link" data-scroll-target="#frequency-table"><span class="header-section-number">6.6.1</span> Frequency table</a></li>
-  <li><a href="#grouped-bar-charts" id="toc-grouped-bar-charts" class="nav-link" data-scroll-target="#grouped-bar-charts"><span class="header-section-number">6.6.2</span> Grouped bar charts</a></li>
+  <li><a href="#frequency-and-proportion-tables" id="toc-frequency-and-proportion-tables" class="nav-link" data-scroll-target="#frequency-and-proportion-tables"><span class="header-section-number">6.6.1</span> Frequency and proportion tables</a></li>
+  <li><a href="#stacked-bar-charts" id="toc-stacked-bar-charts" class="nav-link" data-scroll-target="#stacked-bar-charts"><span class="header-section-number">6.6.2</span> Stacked bar charts</a></li>
+  <li><a href="#side-by-side-bar-charts" id="toc-side-by-side-bar-charts" class="nav-link" data-scroll-target="#side-by-side-bar-charts"><span class="header-section-number">6.6.3</span> Side by side bar charts</a></li>
+  <li><a href="#comparing-percents" id="toc-comparing-percents" class="nav-link" data-scroll-target="#comparing-percents"><span class="header-section-number">6.6.4</span> Comparing Percents</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -878,11 +880,11 @@ Variables names in quotes
 </section>
 <section id="two-categorical-variables" class="level2 page-columns page-full" data-number="6.6">
 <h2 data-number="6.6" class="anchored" data-anchor-id="two-categorical-variables"><span class="header-section-number">6.6</span> Two categorical variables</h2>
-<p>Recall from Section <span class="quarto-unresolved-ref">?sec-intro-tables</span> that frequency tables are a common way to summarize categorical variables, and that both the frequency and relative percent are important summary numbers. Those percentages are even more important when comparing the joint distribution of two categorical variables.</p>
-<div class="page-columns page-full"><p>Cross-tabs, cross-tabulations and two-way tables are different names for the same thing, and can be created by using the <code>table()</code> and <code>tbl_summary</code> functions. The values in each cell are the number of observations in that combination of characteristics. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">We use this tactic in Chapter <span class="quarto-unresolved-ref">?sec-dm</span> to check our recodes.</span></div></div>
+<p>Recall from Section <a href="dm.html#sec-intro-tables" class="quarto-xref"><span>Section 4.1.1</span></a> that frequency tables are a common way to summarize categorical variables, and that both the frequency and relative percent are important summary numbers. Those percentages are even more important when comparing the joint distribution of two categorical variables.</p>
+<div class="page-columns page-full"><p>Cross-tabs, cross-tabulations and two-way tables are different names for the same thing, and can be created by using the <code>table()</code> and <code>tbl_summary</code> functions. The values in each cell are the number of observations in that combination of characteristics. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">We use this tactic in Chapter <a href="dm.html" class="quarto-xref"><span>Chapter 4</span></a> to check our recodes.</span></div></div>
 <p>Let’s explore the relationship between the penguins sex and species.</p>
-<section id="frequency-table" class="level3" data-number="6.6.1">
-<h3 data-number="6.6.1" class="anchored" data-anchor-id="frequency-table"><span class="header-section-number">6.6.1</span> Frequency table</h3>
+<section id="frequency-and-proportion-tables" class="level3" data-number="6.6.1">
+<h3 data-number="6.6.1" class="anchored" data-anchor-id="frequency-and-proportion-tables"><span class="header-section-number">6.6.1</span> Frequency and proportion tables</h3>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true">base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false"><code>tbl_summary</code></a></li></ul>
 <div class="tab-content">
@@ -904,23 +906,23 @@ Variables names in quotes
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(pen, <span class="at">include =</span> <span class="st">"species"</span>, <span class="at">by =</span> <span class="st">"sex"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="pbbaxrskis" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pbbaxrskis table {
+<div id="nmcadaryqy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#nmcadaryqy table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pbbaxrskis thead, #pbbaxrskis tbody, #pbbaxrskis tfoot, #pbbaxrskis tr, #pbbaxrskis td, #pbbaxrskis th {
+#nmcadaryqy thead, #nmcadaryqy tbody, #nmcadaryqy tfoot, #nmcadaryqy tr, #nmcadaryqy td, #nmcadaryqy th {
   border-style: none;
 }
 
-#pbbaxrskis p {
+#nmcadaryqy p {
   margin: 0;
   padding: 0;
 }
 
-#pbbaxrskis .gt_table {
+#nmcadaryqy .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -946,12 +948,12 @@ Variables names in quotes
   border-left-color: #D3D3D3;
 }
 
-#pbbaxrskis .gt_caption {
+#nmcadaryqy .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pbbaxrskis .gt_title {
+#nmcadaryqy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -963,7 +965,7 @@ Variables names in quotes
   border-bottom-width: 0;
 }
 
-#pbbaxrskis .gt_subtitle {
+#nmcadaryqy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -975,7 +977,7 @@ Variables names in quotes
   border-top-width: 0;
 }
 
-#pbbaxrskis .gt_heading {
+#nmcadaryqy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -987,13 +989,13 @@ Variables names in quotes
   border-right-color: #D3D3D3;
 }
 
-#pbbaxrskis .gt_bottom_border {
+#nmcadaryqy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pbbaxrskis .gt_col_headings {
+#nmcadaryqy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1008,7 +1010,7 @@ Variables names in quotes
   border-right-color: #D3D3D3;
 }
 
-#pbbaxrskis .gt_col_heading {
+#nmcadaryqy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1028,7 +1030,7 @@ Variables names in quotes
   overflow-x: hidden;
 }
 
-#pbbaxrskis .gt_column_spanner_outer {
+#nmcadaryqy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1040,15 +1042,15 @@ Variables names in quotes
   padding-right: 4px;
 }
 
-#pbbaxrskis .gt_column_spanner_outer:first-child {
+#nmcadaryqy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pbbaxrskis .gt_column_spanner_outer:last-child {
+#nmcadaryqy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pbbaxrskis .gt_column_spanner {
+#nmcadaryqy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1060,11 +1062,11 @@ Variables names in quotes
   width: 100%;
 }
 
-#pbbaxrskis .gt_spanner_row {
+#nmcadaryqy .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pbbaxrskis .gt_group_heading {
+#nmcadaryqy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1090,7 +1092,7 @@ Variables names in quotes
   text-align: left;
 }
 
-#pbbaxrskis .gt_empty_group_heading {
+#nmcadaryqy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1105,15 +1107,15 @@ Variables names in quotes
   vertical-align: middle;
 }
 
-#pbbaxrskis .gt_from_md > :first-child {
+#nmcadaryqy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pbbaxrskis .gt_from_md > :last-child {
+#nmcadaryqy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pbbaxrskis .gt_row {
+#nmcadaryqy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1132,7 +1134,7 @@ Variables names in quotes
   overflow-x: hidden;
 }
 
-#pbbaxrskis .gt_stub {
+#nmcadaryqy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1145,7 +1147,7 @@ Variables names in quotes
   padding-right: 5px;
 }
 
-#pbbaxrskis .gt_stub_row_group {
+#nmcadaryqy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1159,15 +1161,15 @@ Variables names in quotes
   vertical-align: top;
 }
 
-#pbbaxrskis .gt_row_group_first td {
+#nmcadaryqy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pbbaxrskis .gt_row_group_first th {
+#nmcadaryqy .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pbbaxrskis .gt_summary_row {
+#nmcadaryqy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1177,16 +1179,16 @@ Variables names in quotes
   padding-right: 5px;
 }
 
-#pbbaxrskis .gt_first_summary_row {
+#nmcadaryqy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pbbaxrskis .gt_first_summary_row.thick {
+#nmcadaryqy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pbbaxrskis .gt_last_summary_row {
+#nmcadaryqy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1196,7 +1198,7 @@ Variables names in quotes
   border-bottom-color: #D3D3D3;
 }
 
-#pbbaxrskis .gt_grand_summary_row {
+#nmcadaryqy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1206,7 +1208,7 @@ Variables names in quotes
   padding-right: 5px;
 }
 
-#pbbaxrskis .gt_first_grand_summary_row {
+#nmcadaryqy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1216,7 +1218,7 @@ Variables names in quotes
   border-top-color: #D3D3D3;
 }
 
-#pbbaxrskis .gt_last_grand_summary_row_top {
+#nmcadaryqy .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1226,11 +1228,11 @@ Variables names in quotes
   border-bottom-color: #D3D3D3;
 }
 
-#pbbaxrskis .gt_striped {
+#nmcadaryqy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pbbaxrskis .gt_table_body {
+#nmcadaryqy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1239,7 +1241,7 @@ Variables names in quotes
   border-bottom-color: #D3D3D3;
 }
 
-#pbbaxrskis .gt_footnotes {
+#nmcadaryqy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1253,7 +1255,7 @@ Variables names in quotes
   border-right-color: #D3D3D3;
 }
 
-#pbbaxrskis .gt_footnote {
+#nmcadaryqy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1262,7 +1264,7 @@ Variables names in quotes
   padding-right: 5px;
 }
 
-#pbbaxrskis .gt_sourcenotes {
+#nmcadaryqy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1276,7 +1278,7 @@ Variables names in quotes
   border-right-color: #D3D3D3;
 }
 
-#pbbaxrskis .gt_sourcenote {
+#nmcadaryqy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1284,72 +1286,72 @@ Variables names in quotes
   padding-right: 5px;
 }
 
-#pbbaxrskis .gt_left {
+#nmcadaryqy .gt_left {
   text-align: left;
 }
 
-#pbbaxrskis .gt_center {
+#nmcadaryqy .gt_center {
   text-align: center;
 }
 
-#pbbaxrskis .gt_right {
+#nmcadaryqy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pbbaxrskis .gt_font_normal {
+#nmcadaryqy .gt_font_normal {
   font-weight: normal;
 }
 
-#pbbaxrskis .gt_font_bold {
+#nmcadaryqy .gt_font_bold {
   font-weight: bold;
 }
 
-#pbbaxrskis .gt_font_italic {
+#nmcadaryqy .gt_font_italic {
   font-style: italic;
 }
 
-#pbbaxrskis .gt_super {
+#nmcadaryqy .gt_super {
   font-size: 65%;
 }
 
-#pbbaxrskis .gt_footnote_marks {
+#nmcadaryqy .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pbbaxrskis .gt_asterisk {
+#nmcadaryqy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pbbaxrskis .gt_indent_1 {
+#nmcadaryqy .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pbbaxrskis .gt_indent_2 {
+#nmcadaryqy .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pbbaxrskis .gt_indent_3 {
+#nmcadaryqy .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pbbaxrskis .gt_indent_4 {
+#nmcadaryqy .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pbbaxrskis .gt_indent_5 {
+#nmcadaryqy .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pbbaxrskis .katex-display {
+#nmcadaryqy .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pbbaxrskis div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#nmcadaryqy div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1430,23 +1432,23 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(pen, <span class="at">include =</span> <span class="st">"species"</span>, <span class="at">by =</span> <span class="st">"sex"</span>, <span class="at">percent =</span> <span class="st">"cell"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="evfwsqmatm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#evfwsqmatm table {
+<div id="fwhutlwbkx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fwhutlwbkx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#evfwsqmatm thead, #evfwsqmatm tbody, #evfwsqmatm tfoot, #evfwsqmatm tr, #evfwsqmatm td, #evfwsqmatm th {
+#fwhutlwbkx thead, #fwhutlwbkx tbody, #fwhutlwbkx tfoot, #fwhutlwbkx tr, #fwhutlwbkx td, #fwhutlwbkx th {
   border-style: none;
 }
 
-#evfwsqmatm p {
+#fwhutlwbkx p {
   margin: 0;
   padding: 0;
 }
 
-#evfwsqmatm .gt_table {
+#fwhutlwbkx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1472,12 +1474,12 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-left-color: #D3D3D3;
 }
 
-#evfwsqmatm .gt_caption {
+#fwhutlwbkx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#evfwsqmatm .gt_title {
+#fwhutlwbkx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1489,7 +1491,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-width: 0;
 }
 
-#evfwsqmatm .gt_subtitle {
+#fwhutlwbkx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1501,7 +1503,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-top-width: 0;
 }
 
-#evfwsqmatm .gt_heading {
+#fwhutlwbkx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1513,13 +1515,13 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#evfwsqmatm .gt_bottom_border {
+#fwhutlwbkx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#evfwsqmatm .gt_col_headings {
+#fwhutlwbkx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1534,7 +1536,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#evfwsqmatm .gt_col_heading {
+#fwhutlwbkx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1554,7 +1556,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   overflow-x: hidden;
 }
 
-#evfwsqmatm .gt_column_spanner_outer {
+#fwhutlwbkx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1566,15 +1568,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 4px;
 }
 
-#evfwsqmatm .gt_column_spanner_outer:first-child {
+#fwhutlwbkx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#evfwsqmatm .gt_column_spanner_outer:last-child {
+#fwhutlwbkx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#evfwsqmatm .gt_column_spanner {
+#fwhutlwbkx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1586,11 +1588,11 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   width: 100%;
 }
 
-#evfwsqmatm .gt_spanner_row {
+#fwhutlwbkx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#evfwsqmatm .gt_group_heading {
+#fwhutlwbkx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1616,7 +1618,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   text-align: left;
 }
 
-#evfwsqmatm .gt_empty_group_heading {
+#fwhutlwbkx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1631,15 +1633,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   vertical-align: middle;
 }
 
-#evfwsqmatm .gt_from_md > :first-child {
+#fwhutlwbkx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#evfwsqmatm .gt_from_md > :last-child {
+#fwhutlwbkx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#evfwsqmatm .gt_row {
+#fwhutlwbkx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1658,7 +1660,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   overflow-x: hidden;
 }
 
-#evfwsqmatm .gt_stub {
+#fwhutlwbkx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1671,7 +1673,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#evfwsqmatm .gt_stub_row_group {
+#fwhutlwbkx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1685,15 +1687,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   vertical-align: top;
 }
 
-#evfwsqmatm .gt_row_group_first td {
+#fwhutlwbkx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#evfwsqmatm .gt_row_group_first th {
+#fwhutlwbkx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#evfwsqmatm .gt_summary_row {
+#fwhutlwbkx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1703,16 +1705,16 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#evfwsqmatm .gt_first_summary_row {
+#fwhutlwbkx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#evfwsqmatm .gt_first_summary_row.thick {
+#fwhutlwbkx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#evfwsqmatm .gt_last_summary_row {
+#fwhutlwbkx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1722,7 +1724,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#evfwsqmatm .gt_grand_summary_row {
+#fwhutlwbkx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1732,7 +1734,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#evfwsqmatm .gt_first_grand_summary_row {
+#fwhutlwbkx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1742,7 +1744,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-top-color: #D3D3D3;
 }
 
-#evfwsqmatm .gt_last_grand_summary_row_top {
+#fwhutlwbkx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1752,11 +1754,11 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#evfwsqmatm .gt_striped {
+#fwhutlwbkx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#evfwsqmatm .gt_table_body {
+#fwhutlwbkx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1765,7 +1767,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#evfwsqmatm .gt_footnotes {
+#fwhutlwbkx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1779,7 +1781,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#evfwsqmatm .gt_footnote {
+#fwhutlwbkx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1788,7 +1790,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#evfwsqmatm .gt_sourcenotes {
+#fwhutlwbkx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1802,7 +1804,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#evfwsqmatm .gt_sourcenote {
+#fwhutlwbkx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1810,72 +1812,72 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#evfwsqmatm .gt_left {
+#fwhutlwbkx .gt_left {
   text-align: left;
 }
 
-#evfwsqmatm .gt_center {
+#fwhutlwbkx .gt_center {
   text-align: center;
 }
 
-#evfwsqmatm .gt_right {
+#fwhutlwbkx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#evfwsqmatm .gt_font_normal {
+#fwhutlwbkx .gt_font_normal {
   font-weight: normal;
 }
 
-#evfwsqmatm .gt_font_bold {
+#fwhutlwbkx .gt_font_bold {
   font-weight: bold;
 }
 
-#evfwsqmatm .gt_font_italic {
+#fwhutlwbkx .gt_font_italic {
   font-style: italic;
 }
 
-#evfwsqmatm .gt_super {
+#fwhutlwbkx .gt_super {
   font-size: 65%;
 }
 
-#evfwsqmatm .gt_footnote_marks {
+#fwhutlwbkx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#evfwsqmatm .gt_asterisk {
+#fwhutlwbkx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#evfwsqmatm .gt_indent_1 {
+#fwhutlwbkx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#evfwsqmatm .gt_indent_2 {
+#fwhutlwbkx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#evfwsqmatm .gt_indent_3 {
+#fwhutlwbkx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#evfwsqmatm .gt_indent_4 {
+#fwhutlwbkx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#evfwsqmatm .gt_indent_5 {
+#fwhutlwbkx .gt_indent_5 {
   text-indent: 25px;
 }
 
-#evfwsqmatm .katex-display {
+#fwhutlwbkx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#evfwsqmatm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fwhutlwbkx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1947,8 +1949,8 @@ Comparing percentages
 </div>
 </div>
 </section>
-<section id="row-percents" class="level4" data-number="6.6.1.2">
-<h4 data-number="6.6.1.2" class="anchored" data-anchor-id="row-percents"><span class="header-section-number">6.6.1.2</span> Row percents</h4>
+<section id="sec-row-pct-table" class="level4" data-number="6.6.1.2">
+<h4 data-number="6.6.1.2" class="anchored" data-anchor-id="sec-row-pct-table"><span class="header-section-number">6.6.1.2</span> Row percents</h4>
 <p>To compare the distribution of sex (columns) within each of the sepecies (rows) we need row percentages. The percentages now add up to 1 across the rows and the comparison groups are each species.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true">base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false"><code>tbl_summary</code></a></li></ul>
@@ -1971,23 +1973,23 @@ Comparing percentages
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(pen, <span class="at">include =</span> <span class="st">"species"</span>, <span class="at">by =</span> <span class="st">"sex"</span>, <span class="at">percent =</span> <span class="st">"row"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="dxbhwnmwgt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dxbhwnmwgt table {
+<div id="rgregewsip" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rgregewsip table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dxbhwnmwgt thead, #dxbhwnmwgt tbody, #dxbhwnmwgt tfoot, #dxbhwnmwgt tr, #dxbhwnmwgt td, #dxbhwnmwgt th {
+#rgregewsip thead, #rgregewsip tbody, #rgregewsip tfoot, #rgregewsip tr, #rgregewsip td, #rgregewsip th {
   border-style: none;
 }
 
-#dxbhwnmwgt p {
+#rgregewsip p {
   margin: 0;
   padding: 0;
 }
 
-#dxbhwnmwgt .gt_table {
+#rgregewsip .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2013,12 +2015,12 @@ Comparing percentages
   border-left-color: #D3D3D3;
 }
 
-#dxbhwnmwgt .gt_caption {
+#rgregewsip .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dxbhwnmwgt .gt_title {
+#rgregewsip .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2030,7 +2032,7 @@ Comparing percentages
   border-bottom-width: 0;
 }
 
-#dxbhwnmwgt .gt_subtitle {
+#rgregewsip .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2042,7 +2044,7 @@ Comparing percentages
   border-top-width: 0;
 }
 
-#dxbhwnmwgt .gt_heading {
+#rgregewsip .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2054,13 +2056,13 @@ Comparing percentages
   border-right-color: #D3D3D3;
 }
 
-#dxbhwnmwgt .gt_bottom_border {
+#rgregewsip .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dxbhwnmwgt .gt_col_headings {
+#rgregewsip .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2075,7 +2077,7 @@ Comparing percentages
   border-right-color: #D3D3D3;
 }
 
-#dxbhwnmwgt .gt_col_heading {
+#rgregewsip .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2095,7 +2097,7 @@ Comparing percentages
   overflow-x: hidden;
 }
 
-#dxbhwnmwgt .gt_column_spanner_outer {
+#rgregewsip .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2107,15 +2109,15 @@ Comparing percentages
   padding-right: 4px;
 }
 
-#dxbhwnmwgt .gt_column_spanner_outer:first-child {
+#rgregewsip .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dxbhwnmwgt .gt_column_spanner_outer:last-child {
+#rgregewsip .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dxbhwnmwgt .gt_column_spanner {
+#rgregewsip .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2127,11 +2129,11 @@ Comparing percentages
   width: 100%;
 }
 
-#dxbhwnmwgt .gt_spanner_row {
+#rgregewsip .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dxbhwnmwgt .gt_group_heading {
+#rgregewsip .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2157,7 +2159,7 @@ Comparing percentages
   text-align: left;
 }
 
-#dxbhwnmwgt .gt_empty_group_heading {
+#rgregewsip .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2172,15 +2174,15 @@ Comparing percentages
   vertical-align: middle;
 }
 
-#dxbhwnmwgt .gt_from_md > :first-child {
+#rgregewsip .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dxbhwnmwgt .gt_from_md > :last-child {
+#rgregewsip .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dxbhwnmwgt .gt_row {
+#rgregewsip .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2199,7 +2201,7 @@ Comparing percentages
   overflow-x: hidden;
 }
 
-#dxbhwnmwgt .gt_stub {
+#rgregewsip .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2212,7 +2214,7 @@ Comparing percentages
   padding-right: 5px;
 }
 
-#dxbhwnmwgt .gt_stub_row_group {
+#rgregewsip .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2226,15 +2228,15 @@ Comparing percentages
   vertical-align: top;
 }
 
-#dxbhwnmwgt .gt_row_group_first td {
+#rgregewsip .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dxbhwnmwgt .gt_row_group_first th {
+#rgregewsip .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dxbhwnmwgt .gt_summary_row {
+#rgregewsip .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2244,16 +2246,16 @@ Comparing percentages
   padding-right: 5px;
 }
 
-#dxbhwnmwgt .gt_first_summary_row {
+#rgregewsip .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dxbhwnmwgt .gt_first_summary_row.thick {
+#rgregewsip .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dxbhwnmwgt .gt_last_summary_row {
+#rgregewsip .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2263,7 +2265,7 @@ Comparing percentages
   border-bottom-color: #D3D3D3;
 }
 
-#dxbhwnmwgt .gt_grand_summary_row {
+#rgregewsip .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2273,7 +2275,7 @@ Comparing percentages
   padding-right: 5px;
 }
 
-#dxbhwnmwgt .gt_first_grand_summary_row {
+#rgregewsip .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2283,7 +2285,7 @@ Comparing percentages
   border-top-color: #D3D3D3;
 }
 
-#dxbhwnmwgt .gt_last_grand_summary_row_top {
+#rgregewsip .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2293,11 +2295,11 @@ Comparing percentages
   border-bottom-color: #D3D3D3;
 }
 
-#dxbhwnmwgt .gt_striped {
+#rgregewsip .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dxbhwnmwgt .gt_table_body {
+#rgregewsip .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2306,7 +2308,7 @@ Comparing percentages
   border-bottom-color: #D3D3D3;
 }
 
-#dxbhwnmwgt .gt_footnotes {
+#rgregewsip .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2320,7 +2322,7 @@ Comparing percentages
   border-right-color: #D3D3D3;
 }
 
-#dxbhwnmwgt .gt_footnote {
+#rgregewsip .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2329,7 +2331,7 @@ Comparing percentages
   padding-right: 5px;
 }
 
-#dxbhwnmwgt .gt_sourcenotes {
+#rgregewsip .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2343,7 +2345,7 @@ Comparing percentages
   border-right-color: #D3D3D3;
 }
 
-#dxbhwnmwgt .gt_sourcenote {
+#rgregewsip .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2351,72 +2353,72 @@ Comparing percentages
   padding-right: 5px;
 }
 
-#dxbhwnmwgt .gt_left {
+#rgregewsip .gt_left {
   text-align: left;
 }
 
-#dxbhwnmwgt .gt_center {
+#rgregewsip .gt_center {
   text-align: center;
 }
 
-#dxbhwnmwgt .gt_right {
+#rgregewsip .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dxbhwnmwgt .gt_font_normal {
+#rgregewsip .gt_font_normal {
   font-weight: normal;
 }
 
-#dxbhwnmwgt .gt_font_bold {
+#rgregewsip .gt_font_bold {
   font-weight: bold;
 }
 
-#dxbhwnmwgt .gt_font_italic {
+#rgregewsip .gt_font_italic {
   font-style: italic;
 }
 
-#dxbhwnmwgt .gt_super {
+#rgregewsip .gt_super {
   font-size: 65%;
 }
 
-#dxbhwnmwgt .gt_footnote_marks {
+#rgregewsip .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dxbhwnmwgt .gt_asterisk {
+#rgregewsip .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dxbhwnmwgt .gt_indent_1 {
+#rgregewsip .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dxbhwnmwgt .gt_indent_2 {
+#rgregewsip .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dxbhwnmwgt .gt_indent_3 {
+#rgregewsip .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dxbhwnmwgt .gt_indent_4 {
+#rgregewsip .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dxbhwnmwgt .gt_indent_5 {
+#rgregewsip .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dxbhwnmwgt .katex-display {
+#rgregewsip .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dxbhwnmwgt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rgregewsip div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2475,8 +2477,8 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 </div>
 <p>50% <em>of Adelie penguins</em> are male, but 51.3% <em>of Gentoo penguins</em> are male.</p>
 </section>
-<section id="column-percents" class="level4" data-number="6.6.1.3">
-<h4 data-number="6.6.1.3" class="anchored" data-anchor-id="column-percents"><span class="header-section-number">6.6.1.3</span> Column percents</h4>
+<section id="sec-row-pct-table" class="level4" data-number="6.6.1.3">
+<h4 data-number="6.6.1.3" class="anchored" data-anchor-id="sec-row-pct-table"><span class="header-section-number">6.6.1.3</span> Column percents</h4>
 <p>To compare the distribution of species (rows) within each of the columns (sex) we need column percentages. The percentages now add up to 1 down the columns and the comparison groups are male and female.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true">base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false"><code>tbl_summary</code></a></li></ul>
@@ -2498,23 +2500,23 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(pen, <span class="at">include =</span> <span class="st">"species"</span>, <span class="at">by =</span> <span class="st">"sex"</span>, <span class="at">percent =</span> <span class="st">"column"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="flsapddzzi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#flsapddzzi table {
+<div id="oddjxdcyyc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#oddjxdcyyc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#flsapddzzi thead, #flsapddzzi tbody, #flsapddzzi tfoot, #flsapddzzi tr, #flsapddzzi td, #flsapddzzi th {
+#oddjxdcyyc thead, #oddjxdcyyc tbody, #oddjxdcyyc tfoot, #oddjxdcyyc tr, #oddjxdcyyc td, #oddjxdcyyc th {
   border-style: none;
 }
 
-#flsapddzzi p {
+#oddjxdcyyc p {
   margin: 0;
   padding: 0;
 }
 
-#flsapddzzi .gt_table {
+#oddjxdcyyc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2540,12 +2542,12 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-left-color: #D3D3D3;
 }
 
-#flsapddzzi .gt_caption {
+#oddjxdcyyc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#flsapddzzi .gt_title {
+#oddjxdcyyc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2557,7 +2559,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-width: 0;
 }
 
-#flsapddzzi .gt_subtitle {
+#oddjxdcyyc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2569,7 +2571,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-top-width: 0;
 }
 
-#flsapddzzi .gt_heading {
+#oddjxdcyyc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2581,13 +2583,13 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#flsapddzzi .gt_bottom_border {
+#oddjxdcyyc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#flsapddzzi .gt_col_headings {
+#oddjxdcyyc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2602,7 +2604,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#flsapddzzi .gt_col_heading {
+#oddjxdcyyc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2622,7 +2624,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   overflow-x: hidden;
 }
 
-#flsapddzzi .gt_column_spanner_outer {
+#oddjxdcyyc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2634,15 +2636,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 4px;
 }
 
-#flsapddzzi .gt_column_spanner_outer:first-child {
+#oddjxdcyyc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#flsapddzzi .gt_column_spanner_outer:last-child {
+#oddjxdcyyc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#flsapddzzi .gt_column_spanner {
+#oddjxdcyyc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2654,11 +2656,11 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   width: 100%;
 }
 
-#flsapddzzi .gt_spanner_row {
+#oddjxdcyyc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#flsapddzzi .gt_group_heading {
+#oddjxdcyyc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2684,7 +2686,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   text-align: left;
 }
 
-#flsapddzzi .gt_empty_group_heading {
+#oddjxdcyyc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2699,15 +2701,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   vertical-align: middle;
 }
 
-#flsapddzzi .gt_from_md > :first-child {
+#oddjxdcyyc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#flsapddzzi .gt_from_md > :last-child {
+#oddjxdcyyc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#flsapddzzi .gt_row {
+#oddjxdcyyc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2726,7 +2728,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   overflow-x: hidden;
 }
 
-#flsapddzzi .gt_stub {
+#oddjxdcyyc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2739,7 +2741,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#flsapddzzi .gt_stub_row_group {
+#oddjxdcyyc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2753,15 +2755,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   vertical-align: top;
 }
 
-#flsapddzzi .gt_row_group_first td {
+#oddjxdcyyc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#flsapddzzi .gt_row_group_first th {
+#oddjxdcyyc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#flsapddzzi .gt_summary_row {
+#oddjxdcyyc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2771,16 +2773,16 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#flsapddzzi .gt_first_summary_row {
+#oddjxdcyyc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#flsapddzzi .gt_first_summary_row.thick {
+#oddjxdcyyc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#flsapddzzi .gt_last_summary_row {
+#oddjxdcyyc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2790,7 +2792,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#flsapddzzi .gt_grand_summary_row {
+#oddjxdcyyc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2800,7 +2802,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#flsapddzzi .gt_first_grand_summary_row {
+#oddjxdcyyc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2810,7 +2812,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-top-color: #D3D3D3;
 }
 
-#flsapddzzi .gt_last_grand_summary_row_top {
+#oddjxdcyyc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2820,11 +2822,11 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#flsapddzzi .gt_striped {
+#oddjxdcyyc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#flsapddzzi .gt_table_body {
+#oddjxdcyyc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2833,7 +2835,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#flsapddzzi .gt_footnotes {
+#oddjxdcyyc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2847,7 +2849,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#flsapddzzi .gt_footnote {
+#oddjxdcyyc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2856,7 +2858,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#flsapddzzi .gt_sourcenotes {
+#oddjxdcyyc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2870,7 +2872,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#flsapddzzi .gt_sourcenote {
+#oddjxdcyyc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2878,72 +2880,72 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#flsapddzzi .gt_left {
+#oddjxdcyyc .gt_left {
   text-align: left;
 }
 
-#flsapddzzi .gt_center {
+#oddjxdcyyc .gt_center {
   text-align: center;
 }
 
-#flsapddzzi .gt_right {
+#oddjxdcyyc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#flsapddzzi .gt_font_normal {
+#oddjxdcyyc .gt_font_normal {
   font-weight: normal;
 }
 
-#flsapddzzi .gt_font_bold {
+#oddjxdcyyc .gt_font_bold {
   font-weight: bold;
 }
 
-#flsapddzzi .gt_font_italic {
+#oddjxdcyyc .gt_font_italic {
   font-style: italic;
 }
 
-#flsapddzzi .gt_super {
+#oddjxdcyyc .gt_super {
   font-size: 65%;
 }
 
-#flsapddzzi .gt_footnote_marks {
+#oddjxdcyyc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#flsapddzzi .gt_asterisk {
+#oddjxdcyyc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#flsapddzzi .gt_indent_1 {
+#oddjxdcyyc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#flsapddzzi .gt_indent_2 {
+#oddjxdcyyc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#flsapddzzi .gt_indent_3 {
+#oddjxdcyyc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#flsapddzzi .gt_indent_4 {
+#oddjxdcyyc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#flsapddzzi .gt_indent_5 {
+#oddjxdcyyc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#flsapddzzi .katex-display {
+#oddjxdcyyc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#flsapddzzi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#oddjxdcyyc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3003,10 +3005,9 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 <p>44% <em>of female penguins</em> are Adelie species, 36% <em>of male penguins</em> are Gentoo.</p>
 </section>
 </section>
-<section id="grouped-bar-charts" class="level3" data-number="6.6.2">
-<h3 data-number="6.6.2" class="anchored" data-anchor-id="grouped-bar-charts"><span class="header-section-number">6.6.2</span> Grouped bar charts</h3>
-<p>To compare proportions of one categorical variable within the same level of another, is to use grouped barcharts.</p>
-<p>Plot the species on the x axis, but then <code>fill</code> using the second categorical variable. This has the effect of visualizing the <strong>row</strong> percents from the table above. Here it is the percent of <code>sex</code>, within each type of <code>species</code>.</p>
+<section id="stacked-bar-charts" class="level3" data-number="6.6.2">
+<h3 data-number="6.6.2" class="anchored" data-anchor-id="stacked-bar-charts"><span class="header-section-number">6.6.2</span> Stacked bar charts</h3>
+<p>Sometimes pictures are better than tables, so let’s try to apply the same <code>fill</code> tactic that we used in the last section.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">fill=</span>sex)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -3017,9 +3018,23 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 </div>
 </div>
 </div>
-<p>The default is a stacked barchart. So add the argument <code>position=dodge</code> inside the <code>geom_bar</code> layer to put the bars side by side.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">fill=</span>sex)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled" title="Stacked barcharts are the ggplot2 default">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Stacked barcharts are the ggplot2 default
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Stacked barcharts are generally only useful when comparing percents out of a whole. To get the correct view you can add a <code>position = "fill"</code> argument to the <code>geom_bar()</code> layer.</p>
+</div>
+</div>
+<div class="cell" data-source-line-numbers="2">
+<div class="sourceCode cell-code" id="cb43" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">fill=</span>sex)) <span class="sc">+</span> </span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span> </span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Proportion"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3028,9 +3043,17 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 </div>
 </div>
 </div>
-<p>And look, an automatic legend. What if I wanted to better compare species within body_mass_g range? This is the <strong>column</strong> percentages. Just switch which variable is the x axis and which one is used to fill the colors!</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb44" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>sex, <span class="at">fill=</span>species)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="side-by-side-bar-charts" class="level3" data-number="6.6.3">
+<h3 data-number="6.6.3" class="anchored" data-anchor-id="side-by-side-bar-charts"><span class="header-section-number">6.6.3</span> Side by side bar charts</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-14-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-1" role="tab" aria-controls="tabset-14-1" aria-selected="true"><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-2" role="tab" aria-controls="tabset-14-2" aria-selected="false"><code>sjPlot</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-14-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-14-1-tab">
+<p>Add the argument <code>position=dodge</code> inside the <code>geom_bar</code> layer to put the bars side by side.</p>
+<div class="cell" data-source-line-numbers="2">
+<div class="sourceCode cell-code" id="cb44" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">fill=</span>sex)) <span class="sc">+</span> </span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3039,7 +3062,115 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 </div>
 </div>
 </div>
-<p>And this easy change is why we love <code>ggplot2</code>.</p>
+</div>
+<div id="tabset-14-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-14-2-tab">
+<p>The <code>plot_xtab</code> function is the two-way table analogy to <code>plot_frq</code> to create a barchart with clear lables on the bars for the N and % (and NA values dropped). Note you have to use dollar sign notation here for the variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_xtab</span>(<span class="at">x =</span> pen<span class="sc">$</span>species, <span class="at">grp =</span> pen<span class="sc">$</span>sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="plots_files/figure-html/unnamed-chunk-39-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>By default this plots the vertical axis as percents, not counts, and it shows the marginal total for the variable that’s on the x-axis. We can remove the total by setting <code>show.total</code> to <code>false</code>.</p>
+<div class="cell" data-source-line-numbers="2">
+<div class="sourceCode cell-code" id="cb46" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_xtab</span>(<span class="at">x =</span> pen<span class="sc">$</span>species, <span class="at">grp =</span> pen<span class="sc">$</span>sex, </span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">show.total =</span> <span class="st">"false"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="plots_files/figure-html/unnamed-chunk-40-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>As before, typically we aren’t interested in comparing proportions out of the whole, but proportions out of one of the two margins (variables).</p>
+</section>
+<section id="comparing-percents" class="level3" data-number="6.6.4">
+<h3 data-number="6.6.4" class="anchored" data-anchor-id="comparing-percents"><span class="header-section-number">6.6.4</span> Comparing Percents</h3>
+<p>Our eyes make comparisons the best when the bars are physically close to each other. So generally you want to put the groups we want to compare <em>within</em> on the x-axis, and have separate bars for each level of the variable we want to compare <em>across</em>.</p>
+<p>See each tab on how to compare the distribution of <code>sex</code> within each <code>species</code>. This corresponds to the <strong>row</strong> percents from <a href="#sec-row-pct-table" class="quarto-xref"><span>Section 6.6.1.3</span></a> .</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-15-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-1" role="tab" aria-controls="tabset-15-1" aria-selected="true"><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-2" role="tab" aria-controls="tabset-15-2" aria-selected="false"><code>sjPlot</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-15-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-15-1-tab">
+<p>Put <code>species</code> on the x-axis and <code>fill</code> by <code>sex</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">fill=</span>sex)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="plots_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-15-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-15-2-tab">
+<p>Put <code>species</code> on the x-axis and <code>grp</code> by <code>sex</code>, and specify <code>margin = "row"</code>.</p>
+<div class="cell" data-source-line-numbers="2">
+<div class="sourceCode cell-code" id="cb48" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_xtab</span>(<span class="at">x =</span> pen<span class="sc">$</span>species, <span class="at">grp =</span> pen<span class="sc">$</span>sex, <span class="at">show.total =</span> <span class="st">"false"</span>, </span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">margin =</span> <span class="st">"row"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="plots_files/figure-html/unnamed-chunk-42-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Your Turn
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Modify the code above to create a plot to compare the distribution of species within each sex.</p>
+<details>
+<summary>
+ggplot2 solution
+</summary>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>sex, <span class="at">fill=</span>species)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="plots_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
+<details>
+<summary>
+sjPlot solution
+</summary>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_xtab</span>(<span class="at">x =</span> pen<span class="sc">$</span>sex, <span class="at">grp =</span> pen<span class="sc">$</span>species, <span class="at">show.total =</span> <span class="st">"false"</span>, <span class="at">margin =</span> <span class="st">"row"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="plots_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
+</div>
+</div>
 
 
 </section>

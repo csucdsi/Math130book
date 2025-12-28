@@ -1,3 +1,8 @@
+---
+execute: 
+  eval: false
+---
+
 # Graphing Enhancements
 
 ## Introduction <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Introduction/1_qmt3ls9l" target="_blank">(Video)</a> {.unnumbered}
