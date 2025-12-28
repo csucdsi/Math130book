@@ -14,6 +14,9 @@ After completing this lesson students will be able to
 * Know of a few new packages that contain functions that enhance plots
 :::
 
+
+> introduce plot_frq, plot_xtab, ggpubr functions
+
 :::{.callout-important}
 #### Too much to memorize!
 
@@ -37,6 +40,118 @@ NCbirths <- read.csv("data/NCbirths.csv", header=TRUE)
 ```
 
 :::
+
+## Nicer plots
+
+## Barcharts (`sjPlot`)
+
+
+We can reorder these levels on the fly so they are being shown in decreasing frequency using the `fct_infreq` function from the `forcats` library. 
+```{r}
+ggplot(dsmall, aes(x=forcats::fct_infreq(cut))) + geom_bar() + xlab("cut")
+```
+
+:::{.callout-important title = "Using the :: shortcut"}
+The `::` notation is a shortcut to use a function from inside a package without actually loading the entire package. This can be useful when you're only using a function once or twice in an analysis. Here we used it to call `forcats::fct_infreq()` and `gtsummary::tbl_summary()`. 
+:::
+
+
+https://r-graph-gallery.com/piechart-ggplot2.html
+
+
+### Adding trend lines lines
+
+Two most common trend lines added to a scatterplots are the "best fit" straight line and the "loess" (low-ess) smoother line. Adding a trend line to this plot using base R is a bit tricker, so we won't bother.   
+
+::: {.panel-tabset}
+## `ggplot2`
+
+A trend line can be added by adding a `geom_smooth()` layer.
+
+```{r}
+ggplot(dsmall, aes(x=carat, y=price)) + geom_point() + 
+  geom_smooth() 
+```
+
+Here the point-wise confidence interval for this loess line is shown in grey. If you want to turn the confidence interval off, use `se=FALSE`. 
+
+We can add another `geom_smooth()` layer for the `lm` (linear model) line in blue, and the loess line (by not specifying a method) in red.
+
+```{r}
+ggplot(dsmall, aes(x=carat, y=price)) + geom_point() + 
+  geom_smooth(se=FALSE, method="lm", color="blue") + 
+  geom_smooth(se=FALSE, color="red")
+```
+
+
+## `ggpubr`
+
+You can add _either_ a linear model line _or_ a loess line to a `ggscatter` using the `add=` argument. 
+```{r}
+#| layout-ncol: 2
+ggscatter(dsmall, x="carat", y="price", add = "loess")
+ggscatter(dsmall, x="carat", y="price", add = "reg.line")
+```
+:::
+
+
+## Adding summary statistics
+
+Adding annotation on these plots to indicate where the mean is located is often a nice informative feature. 
+
+
+::: {.panel-tabset}
+## ggplot2
+
+The mean can be denoted on `geom_histogram` and `geom_density` by adding a new layer called `geom
+```{r}
+#| layout-ncol: 3
+ggplot(dsmall, aes(x=price)) + geom_histogram() + 
+  geom_vline(aes(xintercept=mean(price)),
+            color="blue", linetype="dashed")
+ggplot(dsmall, aes(x=price)) + geom_density()
+ggplot(dsmall, aes(x=price)) + geom_boxplot()
+```
+
+
+## header2
+
+Tab content
+:::
+
+### Histograms + density curve
+
+Often it is more helpful to have the density (or kernel density) plot _on top of_ a histogram plot. 
+
+::: {.panel-tabset}
+## `ggplot2`
+
+Code explainer
+
+1. The syntax starts the same: we'll add a new geom, `geom_density` and color the line blue for funsies. 
+2. Then we add the histogram geom using `geom_histogram` but must specify that the y axis should be on the density, not frequency, scale. 
+    - Note that this has to go inside the aesthetic statement `aes()`. 
+3. I'm also going to get rid of the fill by using `NA` so the colored bars don't plot over the density line. 
+
+```{r}
+ggplot(dsmall, aes(x=price)) + 
+  geom_density(col="blue") + 
+  geom_histogram(aes(y=..density..), colour="black", fill=NA)
+```
+
+
+:::
+
+
+### Adding violins to the boxplot
+A violin plot is like a density plot, turned on its side, and reflected around the axis for symmetry purposes. Overlaying a boxplot and a violin plot serves a similar purpose to Histograms + Density plots. It shows outliers, the location of most the data, and better shows the shape/skew of the distribution. Let's also `fill` the geometries with the same color as what is on the x-axis. Not 100% needed but nice for display sometimes. 
+
+```{r}
+ggplot(dsmall, aes(x=price_range, y=carat, fill=price_range)) +
+        geom_violin(alpha=.1) + 
+        geom_boxplot(alpha=.5, width=.2)
+```
+
 
 ## Themes <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Themes/1_kwh2ucf7" target="_blank">(Video)</a>
 
@@ -89,19 +204,6 @@ ggplot(email, aes(y=num_char, x=number, col=number)) + geom_boxplot() +
 ```
 
 
-## Removing NA categories <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Removing+NA+Categories/1_75ripf3f" target="_blank">(Video)</a>
-
-This happens when there is no data is present for one or more levels. One way to get around this is to 
-use `select` to only choose variables that we are going to use in the plot directly, delete all rows with any missing values using `na.omit()`, then pipe `ggplot` directly in after deleting all rows with missing data.
-
-
-```{r}
-NCbirths %>% select(mage, whitemom, marital, habit) %>% na.omit() %>% 
-  ggplot(aes(x=mage, fill=whitemom)) + 
-  geom_density(alpha=.2) + facet_grid(marital~habit)
-```
-
-> Warning: `na.omit()` can be dangerous to use. It will drop EVERY row with ANY value missing. We are using it safely here because we are only selecting the variables that we will use in the plot.  
 
 ## Changing colors <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Changing+Colors/1_kb31ew49" target="_blank">(Video)</a>
 

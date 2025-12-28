@@ -1,142 +1,256 @@
-# Creating Graphics
+---
+execute:
+  fig-width: 4
+  fig-height: 4
+format: 
+  html:
+    toc-depth: 3
+---
+# Creating Plots
 
-
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
-library(dplyr)
-knitr::opts_chunk$set(warning=FALSE, message=FALSE) 
-```
-
+:::{.callout-warning icon=false appearance=minimal}
+<a href="https://media.csuchico.edu/media/MATH+130+Lecture+07A+Introduction/1_jlh6zm14" target="_blank">Introduction Video</a>
+:::
 
 Visualizing your data is hands down the most important thing you can learn to do. Seeing is critical to understanding. There are two audiences in mind when creating data visualizations: 
 
-1. For your eyes only (FYEO). These are quick and dirty plots, without annotation. Meant to be looked at once or twice.
-2. To share with others. These need to completely stand on their own. Axes labels, titles, colors as needed, possibly captions.
+1. **(meh)** For your eyes only. These are quick and dirty plots, without annotation. Meant to be looked at once or twice.
+2. **(good)** To share with others. Nicer looking plots with more information, but not needing a lot of additional code to create. 
+3. **(best)** Publication quality. These need to completely stand on their own. Informative captions, axes labels, titles, colors as needed, etc. We won't spend time on these in this lesson. 
 
-You will see, and slowly learn, how to add these annotations and how to clean up your graphics to make them sharable. Functions inside the `ggplot2` package automatically does a lot of this work for you. Remember this package has to be loaded prior to being able to access the functions within. 
+The functions from the `ggplot2` package, along with those from packages built on `ggplot2` such as `ggpubr` and `sjPlot`, automatically do a lot of this work for you. They can produce **good** and **better** quality plots with very little code and are quite extensible and flexible. 
 
-<a href="https://media.csuchico.edu/media/MATH+130+Lecture+07A+Introduction/1_jlh6zm14" target="_blank">(Introduction Video)</a>
+:::{.callout-note title = "🎓 Learning Objectives" icon=false}
 
+After completing this lesson students will be able to create basic statistical data visualizations for one and two variables, using multiple approaches. 
 
-::: .callout-note
-### Learning Objectives
+:::
 
-After completing this lesson students will be able to create basic data visualizations using both base R and the `ggplot2` package.  
+:::{.callout-tip title = "👉 Prepare" icon=false}
+
+1.  Open your Math 130 R Project.
+2.  Right click and "save as" this lessons [[Quarto notes file]](notes/plot_notes.qmd) and save into your `notes/Math130` folder.
+3.  In the *Files* pane, open this Quarto file and Render this file.
 
 :::
 
 
-##### Prior to this lesson learners should
-
-* Download the [[07_plots_notes.Rmd]](07_plots_notes.Rmd) R markdown file and save into your `Math130/notes` folder. 
-
 ## The syntax of `ggplot`
+
 The reason we use the functions in `ggplot2` is for consistency in the structure of it's arguments. Here is a bare bones generic plotting function: 
 
 ```r
 ggplot(data, aes(x=x, y=y, col=col, fill=fill, group=group)) +  geom_THING() 
 ```
 
-### Required arguments
+### Required arguments {.unnumbered}
 
 * `data`: What data set is this plot using? This is ALWAYS the first argument.
-* `aes()`: This is the _aesthetics_ of the plot. What variable is on the x, and what is on 
-   the y? Do you want to color by another variable, perhaps fill some box by the value
-   of another variable, or group by a variable. 
-* `geom_THING()`: Every plot has to have a geometry. What is the shape of the thing you 
-   want to plot? Do you want to plot point? Use `geom_points()`. Want to connect those
-   points with a line? Use `geom_lines()`. We will see many varieties in this lab. 
+* `aes()`: This is the _aesthetics_ of the plot. What variable is on the x, and what is on the y? Do you want to color by another variable, perhaps fill some box by the value of another variable, or group by a variable. 
+* `geom_THING()`: Every plot has to have a geometry. What is the shape of the thing you want to plot? Do you want to plot point? Use `geom_points()`. Want to connect those points with a line? Use `geom_lines()`. We will see many varieties in this lesson. 
 
-
-### The Diamonds Data
-
+:::{.callout-note icon = false title = "The Diamonds Data"}
 We will use a subset of the `diamonds` dataset that comes with the `ggplot2` package. This dataset contains the prices and other attributes of almost 54,000 diamonds. Review `?diamonds` to learn about the variables we will be using. 
 
 ```{r}
 library(ggplot2)
+library(sjPlot)    
+library(ggpubr)     
 diamonds <- ggplot2::diamonds
 set.seed(1410) # Make the sample reproducible
 dsmall <- diamonds[sample(nrow(diamonds), 1000), ]
 ```
+:::
 
 
+## One categorical variable
 
-## Univariate (One Variable) <a href="https://media.csuchico.edu/media/MATH+130+Lecture+07A+Univariate+Plots/1_yxer79dh" target="_blank">(Video)</a>
+Both Nominal and Ordinal data types can be visualized using barcharts or pie charts.
 
-### Categorical variables
-Both Nominal and Ordinal data types can be visualized using the same methods: tables, barcharts and pie charts. 
+### Barchart
 
-#### Tables
-Tables are the most common way to get summary statistics of a categorical variable. The `table()` function produces a frequency table, where each entry represents the number of records in the data set holding the corresponding labeled value. 
-```{r}
-table(dsmall$cut)
-```
-There are 34 Fair quality diamonds, 99 Good quality diamonds, and 390 Ideal quality diamonds in this sample. 
-
-#### Barcharts / Barplots
 A Barchart or barplot takes these frequencies, and draws bars along the X-axis where the height of the bars is determined by the frequencies seen in the table. 
 
-The geometry needed to draw a barchart in ggplot is `geom_bar()`.
+::: {.panel-tabset}
+
+## Base R (meh)
+
+We could create a frequency `table` and then `plot` the results.
+```{r}
+table(dsmall$cut) |> plot()
+```
+
+
+## `ggplot` (good)
+
+Using `ggplot2` with the `geom_bar()` geometry layer gives us actual wide bars, and better axis labels. 
 ```{r}
 ggplot(dsmall, aes(x=cut)) + geom_bar()
 ```
 
-We can reorder these levels on the fly so they are being shown in decreasing frequency using the `fct_infreq` function from the `forcats` library. 
+## `sjPlot` (better)
+
+Using the `plot_frq` function from the `sjPlot` package builds on the `geom_bar()` type plot from `ggplot`, but adds frequncies and relative percentages on the plot. 
 ```{r}
-ggplot(dsmall, aes(x=forcats::fct_infreq(cut))) + geom_bar() + xlab("cut")
+plot_frq(dsmall, "cut")
 ```
 
-> Special note. The `::` notation is a shortcut to use a function from inside a package without actually loading the entire package. This can be useful when you're only using a function once or twice in an analysis. 
+This single graph provides a lot of good information and is a recommended choice to use. 
 
-### Continuous variable
-The price, carat, and depth of the diamonds are all continuous variables. Let's explore the distribution of `price`. 
+:::
 
-#### Histograms
+### Pie charts
+
+A pie chart is a circular statistical graphic which is divided into slices to illustrate percentages out of a whole. While pie charts are very widely used in the media and business, there are some major drawbacks in that "_humans are pretty bad at reading angles_" [(Ref: The Issue with Pie Chart)](https://www.data-to-viz.com/caveat/pie.html)
+
+Similar to a barchart, we can convert the results of a `table` to a `pie` using base R. But the results are kinda "meh". 
+
+:::: {.columns}
+::: {.column width="50%"}
+
+```{r}
+#| eval: false
+table(dsmall$cut) |> pie()
+```
+
+Nicer pie charts using `ggplot2` or `ggpubr` functions require the data set to be pre-aggregated, and so we will come back to these approaches in a later lesson. 
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+table(dsmall$cut) |> pie()
+```
+:::
+::::
+
+
+## One continuous variable
+
+The price, carat, and depth of the diamonds are all continuous numeric variables. We will see how to plot several types of appropriate visualizations including histograms, density plots, boxplots and violin plots. 
+
+### Histogram
+
 Rather than showing the value of each observation, we prefer to think of the value as belonging to a _bin_. The height of the bars in a histogram display the frequency of values that fall into those of those bins. 
 
 Since the x-axis is continuous the bars touch. This is unlike the barchart that has a categorical x-axis, and vertical bars that are separated.
 
+::: {.panel-tabset}
+## Base R
+
+```{r}
+hist(dsmall$price)
+```
+
+The base R function `hist` doesn't produce a pretty graph, but it's quick and easy to create. 
+
+## `ggplot2`
+
+Using the `ggplot2` package we can create a better looking histogram by adding the layer `geom_histogram()`. 
 ```{r}
 ggplot(dsmall, aes(x=price)) + geom_histogram()
 ```
 
+## `ggpubr`
 
-#### Density plots
+In contrast to `ggplot2`'s common starter code and different `geom`etries, the  `ggpubr` package uses specific functions for each type of plot. The `gghistogram` package makes a histogram very similar to the `ggplot2` default, but with a different theme applied (different appearance). Otherwise it's the same. 
+
+```{r}
+gghistogram(dsmall, x="price")
+```
+
+:::{.callout-important title = "Variables names in quotes"}
+This is a feature of `ggpubr` functions - variable names are always in quotes. 
+:::
+
+::: 
+
+### Density curves
+
 To get a better idea of the true shape of the distribution we can "smooth" out the bins and create what's called a `density` plot or curve. Notice that the shape of this distribution curve is much... "wigglier" than the histogram may have implied. 
+
+::: {.panel-tabset}
+
+## Base R
+
+```{r}
+density(dsmall$price) |> plot()
+```
+
+Similar to `hist`, `plot`ting the `density` of a variable does create a plot, but it's pretty meh. 
+
+## `ggplot2`
+
+With `ggplot2` we use the `geom_density()` geometry to produce a nicer looking density plot with minimal additional code. 
 
 ```{r}
 ggplot(dsmall, aes(x=price)) + geom_density()
 ```
 
-#### Histograms + density 
-Often it is more helpful to have the density (or kernel density) plot _on top of_ a histogram plot. 
+## `ggpubr`
 
-* The syntax starts the same: we'll add a new geom, `geom_density` and color the line blue. 
-* Then we add the histogram geom using `geom_histogram` but must specify that the y axis should be on the density, not frequency, scale. 
-    - Note that this has to go inside the aesthetic statement `aes()`. 
-* I'm also going to get rid of the fill by using `NA` so the colored bars don't plot over the density line. 
+And the `ggdensity` function from the `ggpubr` package creates a very similar density plot with a different default theme. 
 
 ```{r}
-ggplot(dsmall, aes(x=price)) + geom_density(col="blue") + 
-  geom_histogram(aes(y=..density..), colour="black", fill=NA)
+ggdensity(dsmall, x="price")
 ```
 
-#### Boxplots
+:::
+
+### Boxplots
+
 Another very common way to visualize the distribution of a continuous variable is using a boxplot. Boxplots are useful for quickly identifying where the bulk of your data lie. R specifically draws a "modified" boxplot where values that are considered outliers are plotted as dots. 
 
-##### base
-```{r}
-boxplot(dsmall$price)
-```
+::: {.panel-tabset}
+## Base R
 
 Notice that the only axis labeled is the y=axis. Like a dotplot the x axis, or "width", of the boxplot is meaningless here. We can make the axis more readable by flipping the plot on its side. 
+
 ```{r}
-boxplot(dsmall$price, horizontal = TRUE, main="Distribution of diamond prices", xlab="Dollars")
+#| layout-ncol: 2
+boxplot(dsmall$price)           # left plot
+boxplot(dsmall$price,           # right plot
+        horizontal = TRUE, 
+        main="Distribution of diamond prices", 
+        xlab="Dollars")
 ```
 
 Horizontal is a bit easier to read in my opinion. 
 
-What about ggplot? ggplot doesn't really like to do univariate boxplots. You'll see those later when we create one boxplot per group. 
+## `ggplot2`
 
+With `ggplot` you can create either a horizontal or vertical boxplot by specifying your numeric variable to be on either `x` or `y` . Notice the middle of the box is centered on 0, this is just a placeholder. This axis has no inherent meaning. 
+
+```{r}
+#| layout-ncol: 2
+ggplot(dsmall, aes(x=price)) + geom_boxplot() # left
+ggplot(dsmall, aes(y=price)) + geom_boxplot() # right
+```
+
+## `ggpubr`
+You can also make a boxplot using the `ggbpxplot` function from the `ggpubr` package, however it you must specify that the quantitative variable is on the `y` axis. 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{r}
+ggboxplot(dsmall, y="price")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| error: true
+ggboxplot(dsmall, x="price")
+```
+:::
+
+::::
+
+
+
+:::
 
 #### New variable
 
@@ -152,10 +266,7 @@ Notice I also divided price by 1000, so 2.5 means 2500. Now that `price_range` i
 ggplot(dsmall, aes(x=price_range)) + geom_bar()
 ```
 
-
-## Bivariate (Two Variables) <a href="https://media.csuchico.edu/media/MATH+130+Lecture+07A+Bivariate+Plots/1_n9dyviwp" target="_blank">(Video)</a>
-
-### Categorical v. Categorical
+## Categorical v. Categorical
 
 #### Two-way Tables
 Cross-tabs, cross-tabulations and two-way tables (all the same thing, different names) can be created by using the `table()` function. 
@@ -171,7 +282,7 @@ There are 4 Fair diamonds that cost between 7.5 and 12.5 thousand dollars, and 1
 ##### Cell proportions
 Wrapping `prop.table()` around a table gives you the **cell** proportions. 
 ```{r}
-table(dsmall$cut, dsmall$price_range) %>% prop.table()
+table(dsmall$cut, dsmall$price_range) |> prop.table()
 ```
 
 * 1.5% of all diamonds are Fair cut and cost under 2.5k.
@@ -180,7 +291,7 @@ table(dsmall$cut, dsmall$price_range) %>% prop.table()
 ##### Row proportions
 To get the **row** proportions, specify `margin=1`. The percentages now add up to 1 across the rows. 
 ```{r}
-table(dsmall$cut, dsmall$price_range) %>% prop.table(margin=1) %>% round(3)
+table(dsmall$cut, dsmall$price_range) |> prop.table(margin=1) |> round(3)
 ```
 
 * 44.1% of Fair quality diamonds cost under 2.5k
@@ -189,7 +300,7 @@ table(dsmall$cut, dsmall$price_range) %>% prop.table(margin=1) %>% round(3)
 ##### Column proportions
 To get the **column** proportions, you specify `margin=2`. The percentages now add up to 1 down the columns. 
 ```{r}
-table(dsmall$cut, dsmall$price_range) %>% prop.table(margin=2) %>% round(3)
+table(dsmall$cut, dsmall$price_range) |> prop.table(margin=2) |> round(3)
 ```
 
 * 8% of diamonds that cost under 2.5k are of Good quality
@@ -216,38 +327,42 @@ ggplot(dsmall, aes(x=price_range, fill=cut)) + geom_bar(position = "dodge")
 
 And this easy change is why we love `ggplot2`. 
 
-### Continuous v. Continuous 
+## Two continuous variables
 
-#### Scatterplot
-The most common method of visualizing the relationship between two continuous variables is by using a scatterplot. 
+Visualizing the relationship between two continuous variables is done using a scatterplot. Let's compare the `carat` of a diamond to it's `price`. 
 
-With ggplot we specify both the x and y variables, and add a point. 
+::: {.panel-tabset}
+## Base R
+
+Using the generic `plot(x, y)` function we get a good enough, but kinda 'meh' scatterplot with `carat` on the x axis and `price` on the y axis. 
+
+```{r}
+plot(dsmall$carat, dsmall$price)
+```
+ 
+## `ggplot2`
+
+With ggplot we specify both the x and y variables, and add `geom_point` geometry layer. 
 ```{r}
 ggplot(dsmall, aes(x=carat, y=price)) + geom_point()
 ```
 
-##### Adding lines to the scatterplots 
-Two most common trend lines added to a scatterplots are the "best fit" straight line and the "lowess" smoother line. This is done by adding a `geom_smooth()` layer. 
+## `ggpubr`
 
+The `ggscatter` function creates a similar scatterplot. Notice again that the variable names must be in quotes, compared to not in quotes when using `ggplot2`. 
 ```{r}
-ggplot(dsmall, aes(x=carat, y=price)) + geom_point() + geom_smooth() 
+ggscatter(dsmall, x="carat", y="price")
 ```
-
-Here the point-wise confidence interval for this lowess line is shown in grey. If you want to turn the confidence interval off, use `se=FALSE`. Also notice that the smoothing geom uses a different function or window than the `lowess` function used in base graphics. 
-
-Here it is again using the `ggplot` plotting function and adding another `geom_smooth()` layer for the `lm` (linear model) line in blue, and the lowess line (by not specifying a method) in red.
-
-```{r}
-ggplot(dsmall, aes(x=carat, y=price)) + geom_point() + 
-  geom_smooth(se=FALSE, method="lm", color="blue") + 
-  geom_smooth(se=FALSE, color="red")
-```
+:::
 
 
-### Continuous v. Categorical
-Create an appropriate plot for a continuous variable, and plot it for each level of the categorical variable by shading the plots or coloring the lines depending on the group. 
+## One continuous vs. one categorical 
 
-#### Overlaid density plots
+The tactic here is to create an appropriate plot for a continuous variable, and plot it for each level of the categorical variable by shading or coloring the lines depending on the level.  
+
+### Histograms
+
+### Density curves
 
 You could `fill` the density curves depending on the group, but then it's hard to see overlap. 
 ```{r}
@@ -269,24 +384,34 @@ ggplot(dsmall, aes(x=depth, color=cut)) + geom_density()
 
 We won't talk about changing colors or the background in this lab, but the yellow is pretty hard to read. 
 
+#### Using `ggpubr`
 
-#### Grouped boxplots
-
-`ggplot` is happy to do grouped boxplots. Put the continuous variable on the y, categorical on the x. 
-
+The `ggdensity` function also has a `color` and `fill` option. In addition to moving the legend to the top of the plot, the transparency of the density plots are automatically 
 ```{r}
-ggplot(dsmall, aes(x=price_range, y=carat)) + geom_boxplot()
+#| layout-ncol: 2
+ggdensity(dsmall, x="depth", color = "cut")
+ggdensity(dsmall, x="depth", fill = "cut")
 ```
 
 
-##### Adding violins to the boxplot
-A violin plot is like a density plot, turned on its side, and reflected around the axis for symmetry purposes. Overlaying a boxplot and a violin plot serves a similar purpose to Histograms + Density plots. It shows outliers, the location of most the data, and better shows the shape/skew of the distribution. Let's also `fill` the geometries with the same color as what is on the x-axis. Not 100% needed but nice for display sometimes. 
+
+### Boxplots
+
+To create basic grouped boxplots, put the continuous variable on one axis, and the categorical on the other axis. 
 
 ```{r}
-ggplot(dsmall, aes(x=price_range, y=carat, fill=price_range)) +
-        geom_violin(alpha=.1) + 
-        geom_boxplot(alpha=.5, width=.2)
+#| layout-ncol: 2
+ggplot(dsmall, aes(x=price, y=cut)) + geom_boxplot()
+ggplot(dsmall, aes(x=cut, y=carat)) + geom_boxplot()
 ```
+
+If you want an additional color feature (and the corresponding legend), you can either `fill` or `color` the boxes by the same categorical variable. 
+```{r}
+#| layout-ncol: 2
+ggplot(dsmall, aes(x=price, y=cut, fill = cut)) + geom_boxplot() # left
+ggplot(dsmall, aes(x=cut, y=carat, color = cut)) + geom_boxplot() # right
+```
+
 
     
 

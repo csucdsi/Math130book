@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Creating Graphics – Introduction to R</title>
+<title>6&nbsp; Creating Plots – Introduction to R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./plots.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Graphics</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./plots.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Plots</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -211,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Graphics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -269,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Putting it all together</span></a>
+ <span class="menu-text">Project</span></a>
   </div>
 </li>
       </ul>
@@ -284,22 +284,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">6.0.1</span> Learning Objectives</a></li>
-  <li><a href="#the-syntax-of-ggplot" id="toc-the-syntax-of-ggplot" class="nav-link" data-scroll-target="#the-syntax-of-ggplot"><span class="header-section-number">6.1</span> The syntax of <code>ggplot</code></a>
+  <li><a href="#the-syntax-of-ggplot" id="toc-the-syntax-of-ggplot" class="nav-link active" data-scroll-target="#the-syntax-of-ggplot"><span class="header-section-number">6.1</span> The syntax of <code>ggplot</code></a>
   <ul class="collapse">
-  <li><a href="#required-arguments" id="toc-required-arguments" class="nav-link" data-scroll-target="#required-arguments"><span class="header-section-number">6.1.1</span> Required arguments</a></li>
-  <li><a href="#the-diamonds-data" id="toc-the-diamonds-data" class="nav-link" data-scroll-target="#the-diamonds-data"><span class="header-section-number">6.1.2</span> The Diamonds Data</a></li>
+  <li><a href="#required-arguments" id="toc-required-arguments" class="nav-link" data-scroll-target="#required-arguments">Required arguments</a></li>
   </ul></li>
-  <li><a href="#univariate-one-variable-video" id="toc-univariate-one-variable-video" class="nav-link" data-scroll-target="#univariate-one-variable-video"><span class="header-section-number">6.2</span> Univariate (One Variable) </a><a href="https://media.csuchico.edu/media/MATH+130+Lecture+07A+Univariate+Plots/1_yxer79dh" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+Lecture+07A+Univariate+Plots/1_yxer79dh">(Video)</a>
+  <li><a href="#one-categorical-variable" id="toc-one-categorical-variable" class="nav-link" data-scroll-target="#one-categorical-variable"><span class="header-section-number">6.2</span> One categorical variable</a>
   <ul class="collapse">
-  <li><a href="#categorical-variables" id="toc-categorical-variables" class="nav-link" data-scroll-target="#categorical-variables"><span class="header-section-number">6.2.1</span> Categorical variables</a></li>
-  <li><a href="#continuous-variable" id="toc-continuous-variable" class="nav-link" data-scroll-target="#continuous-variable"><span class="header-section-number">6.2.2</span> Continuous variable</a></li>
+  <li><a href="#barchart" id="toc-barchart" class="nav-link" data-scroll-target="#barchart"><span class="header-section-number">6.2.1</span> Barchart</a></li>
+  <li><a href="#pie-charts" id="toc-pie-charts" class="nav-link" data-scroll-target="#pie-charts"><span class="header-section-number">6.2.2</span> Pie charts</a></li>
   </ul></li>
-  <li><a href="#bivariate-two-variables-video" id="toc-bivariate-two-variables-video" class="nav-link" data-scroll-target="#bivariate-two-variables-video"><span class="header-section-number">6.3</span> Bivariate (Two Variables) </a><a href="https://media.csuchico.edu/media/MATH+130+Lecture+07A+Bivariate+Plots/1_n9dyviwp" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+Lecture+07A+Bivariate+Plots/1_n9dyviwp">(Video)</a>
+  <li><a href="#one-continuous-variable" id="toc-one-continuous-variable" class="nav-link" data-scroll-target="#one-continuous-variable"><span class="header-section-number">6.3</span> One continuous variable</a>
   <ul class="collapse">
-  <li><a href="#categorical-v.-categorical" id="toc-categorical-v.-categorical" class="nav-link" data-scroll-target="#categorical-v.-categorical"><span class="header-section-number">6.3.1</span> Categorical v. Categorical</a></li>
-  <li><a href="#continuous-v.-continuous" id="toc-continuous-v.-continuous" class="nav-link" data-scroll-target="#continuous-v.-continuous"><span class="header-section-number">6.3.2</span> Continuous v. Continuous</a></li>
-  <li><a href="#continuous-v.-categorical" id="toc-continuous-v.-categorical" class="nav-link" data-scroll-target="#continuous-v.-categorical"><span class="header-section-number">6.3.3</span> Continuous v. Categorical</a></li>
+  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"><span class="header-section-number">6.3.1</span> Histogram</a></li>
+  <li><a href="#density-curves" id="toc-density-curves" class="nav-link" data-scroll-target="#density-curves"><span class="header-section-number">6.3.2</span> Density curves</a></li>
+  <li><a href="#boxplots" id="toc-boxplots" class="nav-link" data-scroll-target="#boxplots"><span class="header-section-number">6.3.3</span> Boxplots</a></li>
+  </ul></li>
+  <li><a href="#categorical-v.-categorical" id="toc-categorical-v.-categorical" class="nav-link" data-scroll-target="#categorical-v.-categorical"><span class="header-section-number">6.4</span> Categorical v. Categorical</a></li>
+  <li><a href="#two-continuous-variables" id="toc-two-continuous-variables" class="nav-link" data-scroll-target="#two-continuous-variables"><span class="header-section-number">6.5</span> Two continuous variables</a></li>
+  <li><a href="#one-continuous-vs.-one-categorical" id="toc-one-continuous-vs.-one-categorical" class="nav-link" data-scroll-target="#one-continuous-vs.-one-categorical"><span class="header-section-number">6.6</span> One continuous vs.&nbsp;one categorical</a>
+  <ul class="collapse">
+  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms"><span class="header-section-number">6.6.1</span> Histograms</a></li>
+  <li><a href="#density-curves-1" id="toc-density-curves-1" class="nav-link" data-scroll-target="#density-curves-1"><span class="header-section-number">6.6.2</span> Density curves</a></li>
+  <li><a href="#boxplots-1" id="toc-boxplots-1" class="nav-link" data-scroll-target="#boxplots-1"><span class="header-section-number">6.6.3</span> Boxplots</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -307,9 +313,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./plots.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Graphics</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./plots.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Plots</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Graphics</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Plots</span></h1>
 </div>
 
 
@@ -326,192 +332,355 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://media.csuchico.edu/media/MATH+130+Lecture+07A+Introduction/1_jlh6zm14" target="_blank">Introduction Video</a></p>
+</div>
+</div>
+</div>
 <p>Visualizing your data is hands down the most important thing you can learn to do. Seeing is critical to understanding. There are two audiences in mind when creating data visualizations:</p>
 <ol type="1">
-<li>For your eyes only (FYEO). These are quick and dirty plots, without annotation. Meant to be looked at once or twice.</li>
-<li>To share with others. These need to completely stand on their own. Axes labels, titles, colors as needed, possibly captions.</li>
+<li><strong>(meh)</strong> For your eyes only. These are quick and dirty plots, without annotation. Meant to be looked at once or twice.</li>
+<li><strong>(good)</strong> To share with others. Nicer looking plots with more information, but not needing a lot of additional code to create.</li>
+<li><strong>(best)</strong> Publication quality. These need to completely stand on their own. Informative captions, axes labels, titles, colors as needed, etc. We won’t spend time on these in this lesson.</li>
 </ol>
-<p>You will see, and slowly learn, how to add these annotations and how to clean up your graphics to make them sharable. Functions inside the <code>ggplot2</code> package automatically does a lot of this work for you. Remember this package has to be loaded prior to being able to access the functions within.</p>
-<p><a href="https://media.csuchico.edu/media/MATH+130+Lecture+07A+Introduction/1_jlh6zm14" target="_blank">(Introduction Video)</a></p>
-<section id="learning-objectives" class="level3 .callout-note" data-number="6.0.1">
-<h3 data-number="6.0.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">6.0.1</span> Learning Objectives</h3>
-<p>After completing this lesson students will be able to create basic data visualizations using both base R and the <code>ggplot2</code> package.</p>
-</section>
-<section id="prior-to-this-lesson-learners-should" class="level5" data-number="6.0.1.0.1">
-<h5 data-number="6.0.1.0.1" class="anchored" data-anchor-id="prior-to-this-lesson-learners-should"><span class="header-section-number">6.0.1.0.1</span> Prior to this lesson learners should</h5>
-<ul>
-<li>Download the <a href="07_plots_notes.Rmd">[07_plots_notes.Rmd]</a> R markdown file and save into your <code>Math130/notes</code> folder.</li>
-</ul>
-</section>
+<p>The functions from the <code>ggplot2</code> package, along with those from packages built on <code>ggplot2</code> such as <code>ggpubr</code> and <code>sjPlot</code>, automatically do a lot of this work for you. They can produce <strong>good</strong> and <strong>better</strong> quality plots with very little code and are quite extensible and flexible.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="🎓 Learning Objectives">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🎓 Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After completing this lesson students will be able to create basic statistical data visualizations for one and two variables, using multiple approaches.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Prepare">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Prepare
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Open your Math 130 R Project.</li>
+<li>Right click and “save as” this lessons <a href="notes/plot_notes.qmd">[Quarto notes file]</a> and save into your <code>notes/Math130</code> folder.</li>
+<li>In the <em>Files</em> pane, open this Quarto file and Render this file.</li>
+</ol>
+</div>
+</div>
 <section id="the-syntax-of-ggplot" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="the-syntax-of-ggplot"><span class="header-section-number">6.1</span> The syntax of <code>ggplot</code></h2>
 <p>The reason we use the functions in <code>ggplot2</code> is for consistency in the structure of it’s arguments. Here is a bare bones generic plotting function:</p>
 <div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">col=</span>col, <span class="at">fill=</span>fill, <span class="at">group=</span>group)) <span class="sc">+</span>  <span class="fu">geom_THING</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="required-arguments" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="required-arguments"><span class="header-section-number">6.1.1</span> Required arguments</h3>
+<section id="required-arguments" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="required-arguments">Required arguments</h3>
 <ul>
 <li><code>data</code>: What data set is this plot using? This is ALWAYS the first argument.</li>
 <li><code>aes()</code>: This is the <em>aesthetics</em> of the plot. What variable is on the x, and what is on the y? Do you want to color by another variable, perhaps fill some box by the value of another variable, or group by a variable.</li>
-<li><code>geom_THING()</code>: Every plot has to have a geometry. What is the shape of the thing you want to plot? Do you want to plot point? Use <code>geom_points()</code>. Want to connect those points with a line? Use <code>geom_lines()</code>. We will see many varieties in this lab.</li>
+<li><code>geom_THING()</code>: Every plot has to have a geometry. What is the shape of the thing you want to plot? Do you want to plot point? Use <code>geom_points()</code>. Want to connect those points with a line? Use <code>geom_lines()</code>. We will see many varieties in this lesson.</li>
 </ul>
-</section>
-<section id="the-diamonds-data" class="level3" data-number="6.1.2">
-<h3 data-number="6.1.2" class="anchored" data-anchor-id="the-diamonds-data"><span class="header-section-number">6.1.2</span> The Diamonds Data</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="The Diamonds Data">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Diamonds Data
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>We will use a subset of the <code>diamonds</code> dataset that comes with the <code>ggplot2</code> package. This dataset contains the prices and other attributes of almost 54,000 diamonds. Review <code>?diamonds</code> to learn about the variables we will be using.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>diamonds <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>diamonds</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1410</span>) <span class="co"># Make the sample reproducible</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>dsmall <span class="ot">&lt;-</span> diamonds[<span class="fu">sample</span>(<span class="fu">nrow</span>(diamonds), <span class="dv">1000</span>), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjPlot)    </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)     </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>diamonds <span class="ot">&lt;-</span> ggplot2<span class="sc">::</span>diamonds</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1410</span>) <span class="co"># Make the sample reproducible</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>dsmall <span class="ot">&lt;-</span> diamonds[<span class="fu">sample</span>(<span class="fu">nrow</span>(diamonds), <span class="dv">1000</span>), ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
-<section id="univariate-one-variable-video" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="univariate-one-variable-video"><span class="header-section-number">6.2</span> Univariate (One Variable) <a href="https://media.csuchico.edu/media/MATH+130+Lecture+07A+Univariate+Plots/1_yxer79dh" target="_blank">(Video)</a></h2>
-<section id="categorical-variables" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="categorical-variables"><span class="header-section-number">6.2.1</span> Categorical variables</h3>
-<p>Both Nominal and Ordinal data types can be visualized using the same methods: tables, barcharts and pie charts.</p>
-<section id="tables" class="level4" data-number="6.2.1.1">
-<h4 data-number="6.2.1.1" class="anchored" data-anchor-id="tables"><span class="header-section-number">6.2.1.1</span> Tables</h4>
-<p>Tables are the most common way to get summary statistics of a categorical variable. The <code>table()</code> function produces a frequency table, where each entry represents the number of records in the data set holding the corresponding labeled value.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dsmall<span class="sc">$</span>cut)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>
-     Fair      Good Very Good   Premium     Ideal 
-       34        99       220       257       390 </code></pre>
-</div>
-</div>
-<p>There are 34 Fair quality diamonds, 99 Good quality diamonds, and 390 Ideal quality diamonds in this sample.</p>
-</section>
-<section id="barcharts-barplots" class="level4" data-number="6.2.1.2">
-<h4 data-number="6.2.1.2" class="anchored" data-anchor-id="barcharts-barplots"><span class="header-section-number">6.2.1.2</span> Barcharts / Barplots</h4>
+<section id="one-categorical-variable" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="one-categorical-variable"><span class="header-section-number">6.2</span> One categorical variable</h2>
+<p>Both Nominal and Ordinal data types can be visualized using barcharts or pie charts.</p>
+<section id="barchart" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="barchart"><span class="header-section-number">6.2.1</span> Barchart</h3>
 <p>A Barchart or barplot takes these frequencies, and draws bars along the X-axis where the height of the bars is determined by the frequencies seen in the table.</p>
-<p>The geometry needed to draw a barchart in ggplot is <code>geom_bar()</code>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Base R (meh)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><code>ggplot</code> (good)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false"><code>sjPlot</code> (better)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>We could create a frequency <code>table</code> and then <code>plot</code> the results.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>cut)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dsmall<span class="sc">$</span>cut) <span class="sc">|&gt;</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plots_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>We can reorder these levels on the fly so they are being shown in decreasing frequency using the <code>fct_infreq</code> function from the <code>forcats</code> library.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Using <code>ggplot2</code> with the <code>geom_bar()</code> geometry layer gives us actual wide bars, and better axis labels.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>forcats<span class="sc">::</span><span class="fu">fct_infreq</span>(cut))) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"cut"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>cut)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plots_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
 </div>
-<blockquote class="blockquote">
-<p>Special note. The <code>::</code> notation is a shortcut to use a function from inside a package without actually loading the entire package. This can be useful when you’re only using a function once or twice in an analysis.</p>
-</blockquote>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>Using the <code>plot_frq</code> function from the <code>sjPlot</code> package builds on the <code>geom_bar()</code> type plot from <code>ggplot</code>, but adds frequncies and relative percentages on the plot.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_frq</span>(dsmall, <span class="st">"cut"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="plots_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This single graph provides a lot of good information and is a recommended choice to use.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="pie-charts" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="pie-charts"><span class="header-section-number">6.2.2</span> Pie charts</h3>
+<p>A pie chart is a circular statistical graphic which is divided into slices to illustrate percentages out of a whole. While pie charts are very widely used in the media and business, there are some major drawbacks in that “<em>humans are pretty bad at reading angles</em>” <a href="https://www.data-to-viz.com/caveat/pie.html">(Ref: The Issue with Pie Chart)</a></p>
+<p>Similar to a barchart, we can convert the results of a <code>table</code> to a <code>pie</code> using base R. But the results are kinda “meh”.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dsmall<span class="sc">$</span>cut) <span class="sc">|&gt;</span> <span class="fu">pie</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Nicer pie charts using <code>ggplot2</code> or <code>ggpubr</code> functions require the data set to be pre-aggregated, and so we will come back to these approaches in a later lesson.</p>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="plots_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="continuous-variable" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="continuous-variable"><span class="header-section-number">6.2.2</span> Continuous variable</h3>
-<p>The price, carat, and depth of the diamonds are all continuous variables. Let’s explore the distribution of <code>price</code>.</p>
-<section id="histograms" class="level4" data-number="6.2.2.1">
-<h4 data-number="6.2.2.1" class="anchored" data-anchor-id="histograms"><span class="header-section-number">6.2.2.1</span> Histograms</h4>
+<section id="one-continuous-variable" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="one-continuous-variable"><span class="header-section-number">6.3</span> One continuous variable</h2>
+<p>The price, carat, and depth of the diamonds are all continuous numeric variables. We will see how to plot several types of appropriate visualizations including histograms, density plots, boxplots and violin plots.</p>
+<section id="histogram" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="histogram"><span class="header-section-number">6.3.1</span> Histogram</h3>
 <p>Rather than showing the value of each observation, we prefer to think of the value as belonging to a <em>bin</em>. The height of the bars in a histogram display the frequency of values that fall into those of those bins.</p>
 <p>Since the x-axis is continuous the bars touch. This is unlike the barchart that has a categorical x-axis, and vertical bars that are separated.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false"><code>ggpubr</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(dsmall<span class="sc">$</span>price)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plots_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
 </div>
+<p>The base R function <code>hist</code> doesn’t produce a pretty graph, but it’s quick and easy to create.</p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Using the <code>ggplot2</code> package we can create a better looking histogram by adding the layer <code>geom_histogram()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="plots_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<p>In contrast to <code>ggplot2</code>’s common starter code and different <code>geom</code>etries, the <code>ggpubr</code> package uses specific functions for each type of plot. The <code>gghistogram</code> package makes a histogram very similar to the <code>ggplot2</code> default, but with a different theme applied (different appearance). Otherwise it’s the same.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gghistogram</span>(dsmall, <span class="at">x=</span><span class="st">"price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="plots_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Variables names in quotes">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Variables names in quotes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is a feature of <code>ggpubr</code> functions - variable names are always in quotes.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="density-plots" class="level4" data-number="6.2.2.2">
-<h4 data-number="6.2.2.2" class="anchored" data-anchor-id="density-plots"><span class="header-section-number">6.2.2.2</span> Density plots</h4>
+<section id="density-curves" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="density-curves"><span class="header-section-number">6.3.2</span> Density curves</h3>
 <p>To get a better idea of the true shape of the distribution we can “smooth” out the bins and create what’s called a <code>density</code> plot or curve. Notice that the shape of this distribution curve is much… “wigglier” than the histogram may have implied.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false"><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false"><code>ggpubr</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price)) <span class="sc">+</span> <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">density</span>(dsmall<span class="sc">$</span>price) <span class="sc">|&gt;</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plots_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="histograms-density" class="level4" data-number="6.2.2.3">
-<h4 data-number="6.2.2.3" class="anchored" data-anchor-id="histograms-density"><span class="header-section-number">6.2.2.3</span> Histograms + density</h4>
-<p>Often it is more helpful to have the density (or kernel density) plot <em>on top of</em> a histogram plot.</p>
-<ul>
-<li>The syntax starts the same: we’ll add a new geom, <code>geom_density</code> and color the line blue.</li>
-<li>Then we add the histogram geom using <code>geom_histogram</code> but must specify that the y axis should be on the density, not frequency, scale.
-<ul>
-<li>Note that this has to go inside the aesthetic statement <code>aes()</code>.</li>
-</ul></li>
-<li>I’m also going to get rid of the fill by using <code>NA</code> so the colored bars don’t plot over the density line.</li>
-</ul>
+<p>Similar to <code>hist</code>, <code>plot</code>ting the <code>density</code> of a variable does create a plot, but it’s pretty meh.</p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>With <code>ggplot2</code> we use the <code>geom_density()</code> geometry to produce a nicer looking density plot with minimal additional code.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">col=</span><span class="st">"blue"</span>) <span class="sc">+</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..), <span class="at">colour=</span><span class="st">"black"</span>, <span class="at">fill=</span><span class="cn">NA</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price)) <span class="sc">+</span> <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plots_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
 </div>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<p>And the <code>ggdensity</code> function from the <code>ggpubr</code> package creates a very similar density plot with a different default theme.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdensity</span>(dsmall, <span class="at">x=</span><span class="st">"price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="plots_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="boxplots" class="level4" data-number="6.2.2.4">
-<h4 data-number="6.2.2.4" class="anchored" data-anchor-id="boxplots"><span class="header-section-number">6.2.2.4</span> Boxplots</h4>
+<section id="boxplots" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="boxplots"><span class="header-section-number">6.3.3</span> Boxplots</h3>
 <p>Another very common way to visualize the distribution of a continuous variable is using a boxplot. Boxplots are useful for quickly identifying where the bulk of your data lie. R specifically draws a “modified” boxplot where values that are considered outliers are plotted as dots.</p>
-<section id="base" class="level5" data-number="6.2.2.4.1">
-<h5 data-number="6.2.2.4.1" class="anchored" data-anchor-id="base"><span class="header-section-number">6.2.2.4.1</span> base</h5>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(dsmall<span class="sc">$</span>price)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false"><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false"><code>ggpubr</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <p>Notice that the only axis labeled is the y=axis. Like a dotplot the x axis, or “width”, of the boxplot is meaningless here. We can make the axis more readable by flipping the plot on its side.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(dsmall<span class="sc">$</span>price, <span class="at">horizontal =</span> <span class="cn">TRUE</span>, <span class="at">main=</span><span class="st">"Distribution of diamond prices"</span>, <span class="at">xlab=</span><span class="st">"Dollars"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<div class="sourceCode cell-code" id="cb13" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(dsmall<span class="sc">$</span>price)           <span class="co"># left plot</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(dsmall<span class="sc">$</span>price,           <span class="co"># right plot</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">horizontal =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">main=</span><span class="st">"Distribution of diamond prices"</span>, </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab=</span><span class="st">"Dollars"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="plots_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="384"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="plots_files/figure-html/unnamed-chunk-13-2.png" class="img-fluid" width="384"></p>
 </div>
 </div>
 </div>
 <p>Horizontal is a bit easier to read in my opinion.</p>
-<p>What about ggplot? ggplot doesn’t really like to do univariate boxplots. You’ll see those later when we create one boxplot per group.</p>
-</section>
-</section>
-<section id="new-variable" class="level4" data-number="6.2.2.5">
-<h4 data-number="6.2.2.5" class="anchored" data-anchor-id="new-variable"><span class="header-section-number">6.2.2.5</span> New variable</h4>
-<p>Before we move on, I want to see <code>price</code> displayed as ranges of 5,000 instead of a continuous measure from 0 to 20,000. I will us the <code>cut_width</code> function to create a new categorical variable here called <code>price_range</code>. <a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">See this page for this, and other functions in ggplot that discretize numeric data into categorical</a>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dsmall<span class="sc">$</span>price_range <span class="ot">&lt;-</span> <span class="fu">cut_width</span>(dsmall<span class="sc">$</span>price<span class="sc">/</span><span class="dv">1000</span>, <span class="at">width=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Notice I also divided price by 1000, so 2.5 means 2500. Now that <code>price_range</code> is a categorical variable, I can create a barchart to visualize the frequencies of each bin.</p>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p>With <code>ggplot</code> you can create either a horizontal or vertical boxplot by specifying your numeric variable to be on either <code>x</code> or <code>y</code> . Notice the middle of the box is centered on 0, this is just a placeholder. This axis has no inherent meaning.</p>
+<div class="sourceCode cell-code" id="cb14" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="co"># left</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">y=</span>price)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="co"># right</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="plots_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="384"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="plots_files/figure-html/unnamed-chunk-14-2.png" class="img-fluid" width="384"></p>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<p>You can also make a boxplot using the <code>ggbpxplot</code> function from the <code>ggpubr</code> package, however it you must specify that the quantitative variable is on the <code>y</code> axis.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price_range)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggboxplot</span>(dsmall, <span class="at">y=</span><span class="st">"price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plots_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="384"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggboxplot</span>(dsmall, <span class="at">x=</span><span class="st">"price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre data-code-line-numbers=""><code>Error in (function (fun, data, x, y, combine = FALSE, merge = FALSE, color = "black", : argument "y" is missing, with no default</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="new-variable" class="level4" data-number="6.3.3.1">
+<h4 data-number="6.3.3.1" class="anchored" data-anchor-id="new-variable"><span class="header-section-number">6.3.3.1</span> New variable</h4>
+<p>Before we move on, I want to see <code>price</code> displayed as ranges of 5,000 instead of a continuous measure from 0 to 20,000. I will us the <code>cut_width</code> function to create a new categorical variable here called <code>price_range</code>. <a href="https://ggplot2.tidyverse.org/reference/cut_interval.html">See this page for this, and other functions in ggplot that discretize numeric data into categorical</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>dsmall<span class="sc">$</span>price_range <span class="ot">&lt;-</span> <span class="fu">cut_width</span>(dsmall<span class="sc">$</span>price<span class="sc">/</span><span class="dv">1000</span>, <span class="at">width=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Notice I also divided price by 1000, so 2.5 means 2500. Now that <code>price_range</code> is a categorical variable, I can create a barchart to visualize the frequencies of each bin.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price_range)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="plots_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
@@ -519,19 +688,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 </section>
-<section id="bivariate-two-variables-video" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="bivariate-two-variables-video"><span class="header-section-number">6.3</span> Bivariate (Two Variables) <a href="https://media.csuchico.edu/media/MATH+130+Lecture+07A+Bivariate+Plots/1_n9dyviwp" target="_blank">(Video)</a></h2>
-<section id="categorical-v.-categorical" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="categorical-v.-categorical"><span class="header-section-number">6.3.1</span> Categorical v. Categorical</h3>
-<section id="two-way-tables" class="level4" data-number="6.3.1.1">
-<h4 data-number="6.3.1.1" class="anchored" data-anchor-id="two-way-tables"><span class="header-section-number">6.3.1.1</span> Two-way Tables</h4>
+<section id="categorical-v.-categorical" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="categorical-v.-categorical"><span class="header-section-number">6.4</span> Categorical v. Categorical</h2>
+<section id="two-way-tables" class="level4" data-number="6.4.0.1">
+<h4 data-number="6.4.0.1" class="anchored" data-anchor-id="two-way-tables"><span class="header-section-number">6.4.0.1</span> Two-way Tables</h4>
 <p>Cross-tabs, cross-tabulations and two-way tables (all the same thing, different names) can be created by using the <code>table()</code> function.</p>
 </section>
-<section id="frequency-table" class="level4" data-number="6.3.1.2">
-<h4 data-number="6.3.1.2" class="anchored" data-anchor-id="frequency-table"><span class="header-section-number">6.3.1.2</span> Frequency table</h4>
+<section id="frequency-table" class="level4" data-number="6.4.0.2">
+<h4 data-number="6.4.0.2" class="anchored" data-anchor-id="frequency-table"><span class="header-section-number">6.4.0.2</span> Frequency table</h4>
 <p>The frequency table is constructed using the <code>table()</code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dsmall<span class="sc">$</span>cut, dsmall<span class="sc">$</span>price_range)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dsmall<span class="sc">$</span>cut, dsmall<span class="sc">$</span>price_range)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>           
             [-2.5,2.5] (2.5,7.5] (7.5,12.5] (12.5,17.5] (17.5,22.5]
@@ -543,11 +710,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>There are 4 Fair diamonds that cost between 7.5 and 12.5 thousand dollars, and 103 Ideal quality diamonds that cost between 2.5 and 7.5k.</p>
-<section id="cell-proportions" class="level5" data-number="6.3.1.2.1">
-<h5 data-number="6.3.1.2.1" class="anchored" data-anchor-id="cell-proportions"><span class="header-section-number">6.3.1.2.1</span> Cell proportions</h5>
+<section id="cell-proportions" class="level5" data-number="6.4.0.2.1">
+<h5 data-number="6.4.0.2.1" class="anchored" data-anchor-id="cell-proportions"><span class="header-section-number">6.4.0.2.1</span> Cell proportions</h5>
 <p>Wrapping <code>prop.table()</code> around a table gives you the <strong>cell</strong> proportions.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dsmall<span class="sc">$</span>cut, dsmall<span class="sc">$</span>price_range) <span class="sc">%&gt;%</span> <span class="fu">prop.table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dsmall<span class="sc">$</span>cut, dsmall<span class="sc">$</span>price_range) <span class="sc">|&gt;</span> <span class="fu">prop.table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>           
             [-2.5,2.5] (2.5,7.5] (7.5,12.5] (12.5,17.5] (17.5,22.5]
@@ -563,11 +730,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>0.5% of all diamonds are Premium cut and cost over 17.5k</li>
 </ul>
 </section>
-<section id="row-proportions" class="level5" data-number="6.3.1.2.2">
-<h5 data-number="6.3.1.2.2" class="anchored" data-anchor-id="row-proportions"><span class="header-section-number">6.3.1.2.2</span> Row proportions</h5>
+<section id="row-proportions" class="level5" data-number="6.4.0.2.2">
+<h5 data-number="6.4.0.2.2" class="anchored" data-anchor-id="row-proportions"><span class="header-section-number">6.4.0.2.2</span> Row proportions</h5>
 <p>To get the <strong>row</strong> proportions, specify <code>margin=1</code>. The percentages now add up to 1 across the rows.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dsmall<span class="sc">$</span>cut, dsmall<span class="sc">$</span>price_range) <span class="sc">%&gt;%</span> <span class="fu">prop.table</span>(<span class="at">margin=</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dsmall<span class="sc">$</span>cut, dsmall<span class="sc">$</span>price_range) <span class="sc">|&gt;</span> <span class="fu">prop.table</span>(<span class="at">margin=</span><span class="dv">1</span>) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>           
             [-2.5,2.5] (2.5,7.5] (7.5,12.5] (12.5,17.5] (17.5,22.5]
@@ -583,11 +750,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>1.9% of Premium quality diamonds cost over 17.5k.</li>
 </ul>
 </section>
-<section id="column-proportions" class="level5" data-number="6.3.1.2.3">
-<h5 data-number="6.3.1.2.3" class="anchored" data-anchor-id="column-proportions"><span class="header-section-number">6.3.1.2.3</span> Column proportions</h5>
+<section id="column-proportions" class="level5" data-number="6.4.0.2.3">
+<h5 data-number="6.4.0.2.3" class="anchored" data-anchor-id="column-proportions"><span class="header-section-number">6.4.0.2.3</span> Column proportions</h5>
 <p>To get the <strong>column</strong> proportions, you specify <code>margin=2</code>. The percentages now add up to 1 down the columns.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dsmall<span class="sc">$</span>cut, dsmall<span class="sc">$</span>price_range) <span class="sc">%&gt;%</span> <span class="fu">prop.table</span>(<span class="at">margin=</span><span class="dv">2</span>) <span class="sc">%&gt;%</span> <span class="fu">round</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(dsmall<span class="sc">$</span>cut, dsmall<span class="sc">$</span>price_range) <span class="sc">|&gt;</span> <span class="fu">prop.table</span>(<span class="at">margin=</span><span class="dv">2</span>) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>           
             [-2.5,2.5] (2.5,7.5] (7.5,12.5] (12.5,17.5] (17.5,22.5]
@@ -604,38 +771,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 </section>
-<section id="grouped-bar-charts" class="level4" data-number="6.3.1.3">
-<h4 data-number="6.3.1.3" class="anchored" data-anchor-id="grouped-bar-charts"><span class="header-section-number">6.3.1.3</span> Grouped bar charts</h4>
+<section id="grouped-bar-charts" class="level4" data-number="6.4.0.3">
+<h4 data-number="6.4.0.3" class="anchored" data-anchor-id="grouped-bar-charts"><span class="header-section-number">6.4.0.3</span> Grouped bar charts</h4>
 <p>To compare proportions of one categorical variable within the same level of another, is to use grouped barcharts.</p>
 <p>Plot the cut on the x axis, but then <code>fill</code> using the second categorical variable. This has the effect of visualizing the <strong>row</strong> percents from the table above. Here it is the percent of <code>price_range</code>, within each type of <code>cut</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>cut, <span class="at">fill=</span>price_range)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>cut, <span class="at">fill=</span>price_range)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plots_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>The default is a stacked barchart. So add the argument <code>position=dodge</code> inside the <code>geom_bar</code> layer to put the bars side by side.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>cut, <span class="at">fill=</span>price_range)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>cut, <span class="at">fill=</span>price_range)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plots_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>And look, an automatic legend. What if I wanted to better compare cut within price range? This is the <strong>column</strong> percentages. Just switch which variable is the x axis and which one is used to fill the colors!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price_range, <span class="at">fill=</span>cut)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price_range, <span class="at">fill=</span>cut)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plots_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
@@ -643,75 +810,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>And this easy change is why we love <code>ggplot2</code>.</p>
 </section>
 </section>
-<section id="continuous-v.-continuous" class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" data-anchor-id="continuous-v.-continuous"><span class="header-section-number">6.3.2</span> Continuous v. Continuous</h3>
-<section id="scatterplot" class="level4" data-number="6.3.2.1">
-<h4 data-number="6.3.2.1" class="anchored" data-anchor-id="scatterplot"><span class="header-section-number">6.3.2.1</span> Scatterplot</h4>
-<p>The most common method of visualizing the relationship between two continuous variables is by using a scatterplot.</p>
-<p>With ggplot we specify both the x and y variables, and add a point.</p>
+<section id="two-continuous-variables" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="two-continuous-variables"><span class="header-section-number">6.5</span> Two continuous variables</h2>
+<p>Visualizing the relationship between two continuous variables is done using a scatterplot. Let’s compare the <code>carat</code> of a diamond to it’s <code>price</code>.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false"><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false"><code>ggpubr</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<p>Using the generic <code>plot(x, y)</code> function we get a good enough, but kinda ‘meh’ scatterplot with <code>carat</code> on the x axis and <code>price</code> on the y axis.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>carat, <span class="at">y=</span>price)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dsmall<span class="sc">$</span>carat, dsmall<span class="sc">$</span>price)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plots_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
 </div>
-<section id="adding-lines-to-the-scatterplots" class="level5" data-number="6.3.2.1.1">
-<h5 data-number="6.3.2.1.1" class="anchored" data-anchor-id="adding-lines-to-the-scatterplots"><span class="header-section-number">6.3.2.1.1</span> Adding lines to the scatterplots</h5>
-<p>Two most common trend lines added to a scatterplots are the “best fit” straight line and the “lowess” smoother line. This is done by adding a <code>geom_smooth()</code> layer.</p>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<p>With ggplot we specify both the x and y variables, and add <code>geom_point</code> geometry layer.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>carat, <span class="at">y=</span>price)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>carat, <span class="at">y=</span>price)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plots_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Here the point-wise confidence interval for this lowess line is shown in grey. If you want to turn the confidence interval off, use <code>se=FALSE</code>. Also notice that the smoothing geom uses a different function or window than the <code>lowess</code> function used in base graphics.</p>
-<p>Here it is again using the <code>ggplot</code> plotting function and adding another <code>geom_smooth()</code> layer for the <code>lm</code> (linear model) line in blue, and the lowess line (by not specifying a method) in red.</p>
+</div>
+<div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
+<p>The <code>ggscatter</code> function creates a similar scatterplot. Notice again that the variable names must be in quotes, compared to not in quotes when using <code>ggplot2</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>carat, <span class="at">y=</span>price)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">method=</span><span class="st">"lm"</span>, <span class="at">color=</span><span class="st">"blue"</span>) <span class="sc">+</span> </span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">color=</span><span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggscatter</span>(dsmall, <span class="at">x=</span><span class="st">"carat"</span>, <span class="at">y=</span><span class="st">"price"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plots_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
 </section>
+<section id="one-continuous-vs.-one-categorical" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="one-continuous-vs.-one-categorical"><span class="header-section-number">6.6</span> One continuous vs.&nbsp;one categorical</h2>
+<p>The tactic here is to create an appropriate plot for a continuous variable, and plot it for each level of the categorical variable by shading or coloring the lines depending on the level.</p>
+<section id="histograms" class="level3" data-number="6.6.1">
+<h3 data-number="6.6.1" class="anchored" data-anchor-id="histograms"><span class="header-section-number">6.6.1</span> Histograms</h3>
 </section>
-</section>
-<section id="continuous-v.-categorical" class="level3" data-number="6.3.3">
-<h3 data-number="6.3.3" class="anchored" data-anchor-id="continuous-v.-categorical"><span class="header-section-number">6.3.3</span> Continuous v. Categorical</h3>
-<p>Create an appropriate plot for a continuous variable, and plot it for each level of the categorical variable by shading the plots or coloring the lines depending on the group.</p>
-<section id="overlaid-density-plots" class="level4" data-number="6.3.3.1">
-<h4 data-number="6.3.3.1" class="anchored" data-anchor-id="overlaid-density-plots"><span class="header-section-number">6.3.3.1</span> Overlaid density plots</h4>
+<section id="density-curves-1" class="level3" data-number="6.6.2">
+<h3 data-number="6.6.2" class="anchored" data-anchor-id="density-curves-1"><span class="header-section-number">6.6.2</span> Density curves</h3>
 <p>You could <code>fill</code> the density curves depending on the group, but then it’s hard to see overlap.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>depth, <span class="at">fill=</span>cut)) <span class="sc">+</span> <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>depth, <span class="at">fill=</span>cut)) <span class="sc">+</span> <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plots_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>We can adjust the transparency of the density curve by applying a value to <code>alpha</code> inside the density layer. Alpha is a measure of transparency, from 0=clear to 1=opaque.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>depth, <span class="at">fill=</span>cut)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>depth, <span class="at">fill=</span>cut)) <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plots_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
@@ -719,49 +891,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now we can see that there are some premium cut diamonds with depths around 62. This peak was hidden from us before.</p>
 <p>You could also just color the lines and leave the fill alone.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>depth, <span class="at">color=</span>cut)) <span class="sc">+</span> <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>depth, <span class="at">color=</span>cut)) <span class="sc">+</span> <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plots_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>We won’t talk about changing colors or the background in this lab, but the yellow is pretty hard to read.</p>
+<section id="using-ggpubr" class="level4" data-number="6.6.2.1">
+<h4 data-number="6.6.2.1" class="anchored" data-anchor-id="using-ggpubr"><span class="header-section-number">6.6.2.1</span> Using <code>ggpubr</code></h4>
+<p>The <code>ggdensity</code> function also has a <code>color</code> and <code>fill</code> option. In addition to moving the legend to the top of the plot, the transparency of the density plots are automatically</p>
+<div class="sourceCode cell-code" id="cb37" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdensity</span>(dsmall, <span class="at">x=</span><span class="st">"depth"</span>, <span class="at">color =</span> <span class="st">"cut"</span>)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdensity</span>(dsmall, <span class="at">x=</span><span class="st">"depth"</span>, <span class="at">fill =</span> <span class="st">"cut"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="plots_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid" width="384"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="plots_files/figure-html/unnamed-chunk-32-2.png" class="img-fluid" width="384"></p>
+</div>
+</div>
+</div>
 </section>
-<section id="grouped-boxplots" class="level4" data-number="6.3.3.2">
-<h4 data-number="6.3.3.2" class="anchored" data-anchor-id="grouped-boxplots"><span class="header-section-number">6.3.3.2</span> Grouped boxplots</h4>
-<p><code>ggplot</code> is happy to do grouped boxplots. Put the continuous variable on the y, categorical on the x.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb31" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price_range, <span class="at">y=</span>carat)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+</section>
+<section id="boxplots-1" class="level3" data-number="6.6.3">
+<h3 data-number="6.6.3" class="anchored" data-anchor-id="boxplots-1"><span class="header-section-number">6.6.3</span> Boxplots</h3>
+<p>To create basic grouped boxplots, put the continuous variable on one axis, and the categorical on the other axis.</p>
+<div class="sourceCode cell-code" id="cb38" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price, <span class="at">y=</span>cut)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>cut, <span class="at">y=</span>carat)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="plots_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid" width="384"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="plots_files/figure-html/unnamed-chunk-33-2.png" class="img-fluid" width="384"></p>
 </div>
 </div>
 </div>
-<section id="adding-violins-to-the-boxplot" class="level5" data-number="6.3.3.2.1">
-<h5 data-number="6.3.3.2.1" class="anchored" data-anchor-id="adding-violins-to-the-boxplot"><span class="header-section-number">6.3.3.2.1</span> Adding violins to the boxplot</h5>
-<p>A violin plot is like a density plot, turned on its side, and reflected around the axis for symmetry purposes. Overlaying a boxplot and a violin plot serves a similar purpose to Histograms + Density plots. It shows outliers, the location of most the data, and better shows the shape/skew of the distribution. Let’s also <code>fill</code> the geometries with the same color as what is on the x-axis. Not 100% needed but nice for display sometimes.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb32" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price_range, <span class="at">y=</span>carat, <span class="at">fill=</span>price_range)) <span class="sc">+</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_violin</span>(<span class="at">alpha=</span>.<span class="dv">1</span>) <span class="sc">+</span> </span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">geom_boxplot</span>(<span class="at">alpha=</span>.<span class="dv">5</span>, <span class="at">width=</span>.<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="plots_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<p>If you want an additional color feature (and the corresponding legend), you can either <code>fill</code> or <code>color</code> the boxes by the same categorical variable.</p>
+<div class="sourceCode cell-code" id="cb39" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>price, <span class="at">y=</span>cut, <span class="at">fill =</span> cut)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="co"># left</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dsmall, <span class="fu">aes</span>(<span class="at">x=</span>cut, <span class="at">y=</span>carat, <span class="at">color =</span> cut)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="co"># right</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="plots_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid" width="384"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="plots_files/figure-html/unnamed-chunk-34-2.png" class="img-fluid" width="384"></p>
 </div>
 </div>
 </div>
 
 
-</section>
-</section>
 </section>
 </section>
 
