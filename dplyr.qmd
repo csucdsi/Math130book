@@ -157,7 +157,7 @@ summarise(flights, delay = mean(dep_delay, na.rm = TRUE))
 
 Use `relocate()` to change column positions, using the same syntax as select() to make it easy to move blocks of columns at once.
 
-**Current order of names**
+**Current order of names** for reference purposes. 
 ```{r}
 names(flights)
 ```
@@ -175,8 +175,8 @@ names(flights)
 
 ```{r}
 #| source-line-numbers: "2"
-flights <- flights %>% relocate(dest, 
-                                .after = origin)
+flights <- flights %>% 
+  relocate(dest, .after = origin)
 names(flights)
 ```
 
@@ -189,6 +189,60 @@ names(flights)
 ```
 
 ### Case when
+
+This function allows you to vectorise multiple `if_else()` statements. Each case is evaluated sequentially and the first match for each element determines the corresponding value in the output vector. If no cases match, the `.default` is used as a final "else" statment.
+
+The general syntax is `logical statment` ~ `value`.
+On the left hand side you specify a logical statement to identify a certain "case", then a tilde `~`, then on the right hand side you specify what you want the value of the new variable to be when this case is true. 
+```{r}
+#| code-annotations: below
+
+flights <- flights %>%  # <1>
+  mutate(distance_cat = case_when(  # <2> 
+    distance <= 400 ~ "short",  # <3> 
+    distance > 400 & distance <= 1000 ~ "medium", # <4> 
+    distance > 1000 ~ "long")# <5> 
+  )
+  
+```
+
+1. Take the `flights` data set, and then, 
+2. Create a new variable called `distance_cat` where
+3. if the `distance`of the flight is less than or equal to 400 miles, set the value of `distance_cat` to "short"
+4. if the `distance` is between 400 and 1000 miles, set the value of `distance_cat` to "medium"
+5. if the `distance` is over 1000 miles, set the value of `distance_cat` to "long". 
+
+
+:::{.callout-tip title = "👉 Trust but verify" icon=false}
+Create a grouped boxplot of `distance` against `distance_cat` to confirm that this recode worked. 
+
+<details>
+  <summary> Solution </summary>
+```{r}
+ggpubr::ggboxplot(flights, y="distance", fill = "distance_cat")
+```
+  
+</details>
+
+:::
+
+This `case_when` function can be used with complex logical statements involving multiple variables. Additionally, you don't have to specify every single possible combiantion. If none of the statments specified evaluate as TRUE, the `.default` value will be used. 
+
+```{r}
+#| code-annotations: below
+flights <- flights %>% # <1> 
+  mutate(delay_type = case_when( # <2> 
+             dep_delay > 0 & arr_delay > 0 ~ "two delays", # <2> 
+             dep_delay <= 0 & arr_delay <= 0 ~ "no delays", # <2> 
+             .default = "one delay" # <3> 
+           )
+  )
+table(flights$delay_type, useNA="always")
+```
+
+1. Take the `flights` data set, and then, 
+2. Create a new variable called `delay_type` based on whether or not there was a delay at both sides (departure and arrival), if there was no delays either departing or arriving
+3. If neither of these two statments are true, there is a delay at either the departure or arrival and so we set `delay_type` to "one delay". 
 
 
 ## Grouped Operations  
@@ -255,22 +309,22 @@ filter(
 Woah, that is HARD to read! This is difficult to read because the order of the operations is from inside to out, and the arguments are a long way away from the function. To get around this problem, dplyr provides the `%>%` operator. `x %>% f(y)` turns into `f(x, y)` so you can use it to rewrite multiple operations so you can read from left-to-right, top-to-bottom:
 
 ```{r}
-flights %>%
-  group_by(year, month, day) %>%
-  select(arr_delay, dep_delay) %>%
-  summarise(
-    arr = mean(arr_delay, na.rm = TRUE),
+#| code-annotations: below
+flights %>% # <1> 
+  group_by(year, month, day) %>% # <2> 
+  select(arr_delay, dep_delay) %>% # <3> 
+  summarise( # <4> 
+    arr = mean(arr_delay, na.rm = TRUE), 
     dep = mean(dep_delay, na.rm = TRUE)
   ) %>%
-  filter(arr > 30 | dep > 30)
+  filter(arr > 30 | dep > 30) # <5> 
 ```
 
-Another way you can read this is by thinking "and then" when you see the `%>%` 
-operator. So the above code takes the data set flights  
-.. and then groups by day  
-.. and then selects the delay variables  
-.. and then calculates the means  
-.. and then filters on a delay over half hour. 
+1. Take the `flights` data set and then, 
+2. `group` it by date and then, 
+3. `select`s the necessary variables, and then, 
+4. calculate the mean arrival and departure delays, and then, 
+5. `filter` to only keep rows with a daily average delay over half hour. 
 
 The same 4 steps that resulted in the `a4` data set, but without all the intermediate data saved! This can be **very important** when dealing with Big Data. `R` stores all data in memory, so if your little computer only has 2G of RAM and you're working with a data set that is 500M in size, your computers memory will be used up fast. `a1` takes 500M, `a2` another 500M, by now your computer is getting slow. Make another copy at `a3` and it gets worse, `a4` now likely won't even be able to be created because you'll be out of memory. 
 

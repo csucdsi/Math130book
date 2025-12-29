@@ -675,7 +675,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="relocate" class="level3" data-number="7.3.1">
 <h3 data-number="7.3.1" class="anchored" data-anchor-id="relocate"><span class="header-section-number">7.3.1</span> Relocate</h3>
 <p>Use <code>relocate()</code> to change column positions, using the same syntax as select() to make it easy to move blocks of columns at once.</p>
-<p><strong>Current order of names</strong></p>
+<p><strong>Current order of names</strong> for reference purposes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -701,8 +701,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><strong>Move <code>dest</code> right after <code>origin</code></strong> using the <code>.after</code> argument.</p>
 <div class="cell" data-source-line-numbers="2">
-<div class="sourceCode cell-code" id="cb28" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>flights <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span> <span class="fu">relocate</span>(dest, </span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>                                <span class="at">.after =</span> origin)</span>
+<div class="sourceCode cell-code" id="cb28" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>flights <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(dest, <span class="at">.after =</span> origin)</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code> [1] "origin"         "dest"           "year"           "month"         
@@ -728,6 +728,100 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="case-when" class="level3" data-number="7.3.2">
 <h3 data-number="7.3.2" class="anchored" data-anchor-id="case-when"><span class="header-section-number">7.3.2</span> Case when</h3>
+<p>This function allows you to vectorise multiple <code>if_else()</code> statements. Each case is evaluated sequentially and the first match for each element determines the corresponding value in the output vector. If no cases match, the <code>.default</code> is used as a final “else” statment.</p>
+<p>The general syntax is <code>logical statment</code> ~ <code>value</code>. On the left hand side you specify a logical statement to identify a certain “case”, then a tilde <code>~</code>, then on the right hand side you specify what you want the value of the new variable to be when this case is true.</p>
+<div class="cell" data-code-annotations="below">
+<div class="sourceCode cell-code" id="annotated-cell-17" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-17-1" class="code-annotation-target"><a href="#annotated-cell-17-1" aria-hidden="true" tabindex="-1"></a>flights <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-17-2" class="code-annotation-target"><a href="#annotated-cell-17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">distance_cat =</span> <span class="fu">case_when</span>(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-17-3" class="code-annotation-target"><a href="#annotated-cell-17-3" aria-hidden="true" tabindex="-1"></a>    distance <span class="sc">&lt;=</span> <span class="dv">400</span> <span class="sc">~</span> <span class="st">"short"</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-17-4" class="code-annotation-target"><a href="#annotated-cell-17-4" aria-hidden="true" tabindex="-1"></a>    distance <span class="sc">&gt;</span> <span class="dv">400</span> <span class="sc">&amp;</span> distance <span class="sc">&lt;=</span> <span class="dv">1000</span> <span class="sc">~</span> <span class="st">"medium"</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-17-5" class="code-annotation-target"><a href="#annotated-cell-17-5" aria-hidden="true" tabindex="-1"></a>    distance <span class="sc">&gt;</span> <span class="dv">1000</span> <span class="sc">~</span> <span class="st">"long"</span>)</span>
+<span id="annotated-cell-17-6"><a href="#annotated-cell-17-6" aria-hidden="true" tabindex="-1"></a>  )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-17" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-17" data-code-lines="1" data-code-annotation="1">Take the <code>flights</code> data set, and then,</span>
+</dd>
+<dt data-target-cell="annotated-cell-17" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-17" data-code-lines="2" data-code-annotation="2">Create a new variable called <code>distance_cat</code> where</span>
+</dd>
+<dt data-target-cell="annotated-cell-17" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-17" data-code-lines="3" data-code-annotation="3">if the <code>distance</code>of the flight is less than or equal to 400 miles, set the value of <code>distance_cat</code> to “short”</span>
+</dd>
+<dt data-target-cell="annotated-cell-17" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-17" data-code-lines="4" data-code-annotation="4">if the <code>distance</code> is between 400 and 1000 miles, set the value of <code>distance_cat</code> to “medium”</span>
+</dd>
+<dt data-target-cell="annotated-cell-17" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-17" data-code-lines="5" data-code-annotation="5">if the <code>distance</code> is over 1000 miles, set the value of <code>distance_cat</code> to “long”.</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Trust but verify">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Trust but verify
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create a grouped boxplot of <code>distance</code> against <code>distance_cat</code> to confirm that this recode worked.</p>
+<details>
+<summary>
+Solution
+</summary>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>ggpubr<span class="sc">::</span><span class="fu">ggboxplot</span>(flights, <span class="at">y=</span><span class="st">"distance"</span>, <span class="at">fill =</span> <span class="st">"distance_cat"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="dplyr_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
+</div>
+</div>
+<p>This <code>case_when</code> function can be used with complex logical statements involving multiple variables. Additionally, you don’t have to specify every single possible combiantion. If none of the statments specified evaluate as TRUE, the <code>.default</code> value will be used.</p>
+<div class="cell" data-code-annotations="below">
+<div class="sourceCode cell-code" id="annotated-cell-18" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-18" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-18-1" class="code-annotation-target"><a href="#annotated-cell-18-1" aria-hidden="true" tabindex="-1"></a>flights <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-18" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-18-2" class="code-annotation-target"><a href="#annotated-cell-18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">delay_type =</span> <span class="fu">case_when</span>(</span>
+<span id="annotated-cell-18-3"><a href="#annotated-cell-18-3" aria-hidden="true" tabindex="-1"></a>             dep_delay <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> arr_delay <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"two delays"</span>,</span>
+<span id="annotated-cell-18-4"><a href="#annotated-cell-18-4" aria-hidden="true" tabindex="-1"></a>             dep_delay <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> arr_delay <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"no delays"</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-18" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-18-5" class="code-annotation-target"><a href="#annotated-cell-18-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">.default =</span> <span class="st">"one delay"</span></span>
+<span id="annotated-cell-18-6"><a href="#annotated-cell-18-6" aria-hidden="true" tabindex="-1"></a>           )</span>
+<span id="annotated-cell-18-7"><a href="#annotated-cell-18-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="annotated-cell-18-8"><a href="#annotated-cell-18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(flights<span class="sc">$</span>delay_type, <span class="at">useNA=</span><span class="st">"always"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-18" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-18" data-code-lines="1" data-code-annotation="1">Take the <code>flights</code> data set, and then,</span>
+</dd>
+<dt data-target-cell="annotated-cell-18" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-18" data-code-lines="2,3,4" data-code-annotation="2">Create a new variable called <code>delay_type</code> based on whether or not there was a delay at both sides (departure and arrival), if there was no delays either departing or arriving</span>
+</dd>
+<dt data-target-cell="annotated-cell-18" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-18" data-code-lines="5" data-code-annotation="3">If neither of these two statments are true, there is a delay at either the departure or arrival and so we set <code>delay_type</code> to “one delay”.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>
+ no delays  one delay two delays       &lt;NA&gt; 
+    158900      85573      92303          0 </code></pre>
+</div>
+</div>
 </section>
 </section>
 <section id="grouped-operations" class="level2" data-number="7.4">
@@ -745,11 +839,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The above verbs are useful, but they become really powerful when you combine them with the idea of “group by”, repeating the operation individually on groups of observations within the dataset. In dplyr, you use the <code>group_by()</code> function to describe how to break a dataset down into groups of rows. You can then use the resulting object in exactly the same functions as above; they’ll automatically work “by group” when the input is a grouped.</p>
 <p>Let’s demonstrate how some of these functions work after grouping the flights data set by month. First we’ll create a new data set that is grouped by month.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>by_month <span class="ot">&lt;-</span> <span class="fu">group_by</span>(flights, month)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>by_month <span class="ot">&lt;-</span> <span class="fu">group_by</span>(flights, month)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>summarise()</code> verb allows you to calculate summary statistics for each group. This is probably the most common function that is used in conjunction with <code>group_by</code>. For example, the average distance flown per month.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(by_month, <span class="at">avg_airtime =</span> <span class="fu">mean</span>(distance, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(by_month, <span class="at">avg_airtime =</span> <span class="fu">mean</span>(distance, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code># A tibble: 12 × 2
    month avg_airtime
@@ -770,7 +864,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Or simply the total number of flights per month.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(by_month, <span class="at">count=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(by_month, <span class="at">count=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code># A tibble: 12 × 2
    month count
@@ -817,13 +911,13 @@ Same pipe, different symbol
 </div>
 <p>Consider the following group of operations that take the data set <code>flights</code>, and produce a final data set (<code>a4</code>) that contains only the flights where the daily average delay is greater than a half hour.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">group_by</span>(flights, year, month, day)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> <span class="fu">select</span>(a1, arr_delay, dep_delay)</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>a3 <span class="ot">&lt;-</span> <span class="fu">summarise</span>(a2,</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">arr =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">dep =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>a4 <span class="ot">&lt;-</span> <span class="fu">filter</span>(a3, arr <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">|</span> dep <span class="sc">&gt;</span> <span class="dv">30</span>)</span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(a4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">group_by</span>(flights, year, month, day)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> <span class="fu">select</span>(a1, arr_delay, dep_delay)</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>a3 <span class="ot">&lt;-</span> <span class="fu">summarise</span>(a2,</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">arr =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">dep =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>a4 <span class="ot">&lt;-</span> <span class="fu">filter</span>(a3, arr <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">|</span> dep <span class="sc">&gt;</span> <span class="dv">30</span>)</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(a4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code># A tibble: 6 × 5
 # Groups:   year, month [3]
@@ -839,28 +933,52 @@ Same pipe, different symbol
 </div>
 <p>It does the trick, but what if you don’t want to save all the intermediate results (<code>a1</code> - <code>a3</code>)? Well these verbs are <code>function</code>, so they can be wrapped inside other functions to create a nesting type structure.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">group_by</span>(flights, year, month, day),</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>      arr_delay, dep_delay</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">arr =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">dep =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>  arr <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">|</span> dep <span class="sc">&gt;</span> <span class="dv">30</span></span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">group_by</span>(flights, year, month, day),</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>      arr_delay, dep_delay</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">arr =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">dep =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>  arr <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">|</span> dep <span class="sc">&gt;</span> <span class="dv">30</span></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Woah, that is HARD to read! This is difficult to read because the order of the operations is from inside to out, and the arguments are a long way away from the function. To get around this problem, dplyr provides the <code>%&gt;%</code> operator. <code>x %&gt;% f(y)</code> turns into <code>f(x, y)</code> so you can use it to rewrite multiple operations so you can read from left-to-right, top-to-bottom:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb40" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, month, day) <span class="sc">%&gt;%</span></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(arr_delay, dep_delay) <span class="sc">%&gt;%</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">arr =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">dep =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(arr <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">|</span> dep <span class="sc">&gt;</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-code-annotations="below">
+<div class="sourceCode cell-code" id="annotated-cell-24" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-24" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-24-1" class="code-annotation-target"><a href="#annotated-cell-24-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-24" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-24-2" class="code-annotation-target"><a href="#annotated-cell-24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, month, day) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-24" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-24-3" class="code-annotation-target"><a href="#annotated-cell-24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(arr_delay, dep_delay) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-24" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-24-4" class="code-annotation-target"><a href="#annotated-cell-24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="annotated-cell-24-5"><a href="#annotated-cell-24-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">arr =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="annotated-cell-24-6"><a href="#annotated-cell-24-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">dep =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="annotated-cell-24-7"><a href="#annotated-cell-24-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-24" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-24-8" class="code-annotation-target"><a href="#annotated-cell-24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(arr <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">|</span> dep <span class="sc">&gt;</span> <span class="dv">30</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-24" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-24" data-code-lines="1" data-code-annotation="1">Take the <code>flights</code> data set and then,</span>
+</dd>
+<dt data-target-cell="annotated-cell-24" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-24" data-code-lines="2" data-code-annotation="2"><code>group</code> it by date and then,</span>
+</dd>
+<dt data-target-cell="annotated-cell-24" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-24" data-code-lines="3" data-code-annotation="3"><code>select</code>s the necessary variables, and then,</span>
+</dd>
+<dt data-target-cell="annotated-cell-24" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-24" data-code-lines="4" data-code-annotation="4">calculate the mean arrival and departure delays, and then,</span>
+</dd>
+<dt data-target-cell="annotated-cell-24" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-24" data-code-lines="8" data-code-annotation="5"><code>filter</code> to only keep rows with a daily average delay over half hour.</span>
+</dd>
+</dl>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code># A tibble: 49 × 5
 # Groups:   year, month [11]
@@ -879,11 +997,6 @@ Same pipe, different symbol
 # ℹ 39 more rows</code></pre>
 </div>
 </div>
-<p>Another way you can read this is by thinking “and then” when you see the <code>%&gt;%</code> operator. So the above code takes the data set flights<br>
-.. and then groups by day<br>
-.. and then selects the delay variables<br>
-.. and then calculates the means<br>
-.. and then filters on a delay over half hour.</p>
 <p>The same 4 steps that resulted in the <code>a4</code> data set, but without all the intermediate data saved! This can be <strong>very important</strong> when dealing with Big Data. <code>R</code> stores all data in memory, so if your little computer only has 2G of RAM and you’re working with a data set that is 500M in size, your computers memory will be used up fast. <code>a1</code> takes 500M, <code>a2</code> another 500M, by now your computer is getting slow. Make another copy at <code>a3</code> and it gets worse, <code>a4</code> now likely won’t even be able to be created because you’ll be out of memory.</p>
 
 
