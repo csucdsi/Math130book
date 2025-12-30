@@ -660,7 +660,7 @@ Alternative Method of installing Packages
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Install the list of packages to the left one at a time and wait for it to finish before entering the next command.</p>
+<p>Install the list of packages to the left one at a time and wait for it to finish before entering the next command. Some of these contain functions that we will use, others contain data sets that we will be working with.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -669,14 +669,15 @@ Alternative Method of installing Packages
 <li><code>sjPlot</code></li>
 <li><code>gtsummary</code></li>
 <li><code>ggpubr</code></li>
+<li><code>tinytex</code></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <ul>
+<li><code>here</code></li>
 <li><code>openintro</code><br>
 </li>
 <li><code>palmerpenguins</code></li>
-<li><code>tinytex</code></li>
-<li><code>here</code></li>
+<li><code>nycflights13</code></li>
 </ul>
 </div>
 </div>
@@ -693,6 +694,20 @@ Trust but Verify
 </div>
 <div class="callout-body-container callout-body">
 <p>Check to see if you have a package installed by looking in the packages tab. You can also type the command <code>installed.packages()</code> into the console and examine the output.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="A note about the `tidyverse`.">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A note about the <code>tidyverse</code>.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>“The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.”</em></p>
+<p>We will specifically be using the <code>dplyr</code>, <code>ggplot2</code> and <code>readxl</code> packages that are part of, and thus installed with, the <code>tidyverse</code>. In these lessons we will load the specific package that we need (e.g.&nbsp;only <code>dplyr</code> or only <code>ggplot2</code>), but loading the <code>tidyverse</code> has the same effect of readying the necessary functions as loading each individual package. Learn more about the <a href="https://tidyverse.org/">tidyverse</a>.</p>
 </div>
 </div>
 </section>
@@ -814,8 +829,8 @@ Avoid these pain points
 <div class="callout-body-container callout-body">
 <ul>
 <li>Navigate in your file explorer to the folder where you created your project.</li>
-<li>Click on the R cube icon to open the whole project.</li>
-<li>Using the <code>files</code> tab (bottom right) find and click to open the <code>_hello.qmd</code> script file you downloaded earlier.</li>
+<li>Click on the R cube icon to open the whole project. <img src="img/Rproj_cube.png" class="img-fluid" style="width:10.0%"></li>
+<li>Using the <code>files</code> tab (bottom right) find and click to open the <code>hello.qmd</code> script file you downloaded earlier.</li>
 </ul>
 </div>
 </div>

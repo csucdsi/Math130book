@@ -47,7 +47,7 @@ flights <- nycflights13::flights
 
 The `nycflights13` package contains several data sets that can be used to help understand what causes delays. We will be using the `flights` data set which contains information about all flights that departed from NYC (e.g. EWR, JFK and LGA) in 2013. 
 
-## Tibbles
+## Tibbles {#sec-tibble}
 
 The `flights` data set, and any data set created with `dplyr`, has a specific data type called a `tibble`. These are not as furry and prolific as their cousins the `tribbles`. `tibbles` behaves for all intents and purposes as a `data.frame`, just gets displayed differently. For example, the `flights` data set contains data on 19 characteristics (variables) from 336,776 flights. There's no way I would want to print out a data set that large. But I'm gonna....  
 
@@ -76,6 +76,10 @@ The `dplyr` package contains many functions to perform data manipulation "action
 
 
 ### Filter
+
+![Cartoon showing three fuzzy monsters either selecting or crossing out rows of a data table. If the type of animal in the table is "otter" and the site is "bay", a monster is drawing a purple rectangle around the row. If those conditions are not met, another monster is putting a line through the column indicating it will be excluded. Stylized text reads "dplyr::filter() - keep rows that satisfy your conditions."](img/filter.png)
+
+[Learn more about [dplyr::filter](https://dplyr.tidyverse.org/reference/filter.html).]{.aside}
 
 `filter()` allows you to select a subset of the rows of a data frame. 
 The first argument is the name of the data frame, and the second and subsequent are filtering expressions evaluated in the context of that data frame. For example, we can select all flights on January 1st with 
@@ -112,6 +116,10 @@ select(flights, -(year:day))
 
 ### Rename
 
+![Header text: "dplyr:: rename() - rename columns". Below, an illustration of a mouse standing on a wedge of swiss cheese, changing column names from "species" to "nemesis," and "site" to "lair." On a cork board next to the mouse are images of "Cheese thieves" suspects (narwhal, chicken and pika) and maps of their locations.](img/rename.png)
+
+[Learn more about [dplyr::rename](https://dplyr.tidyverse.org/reference/rename.html)]{.aside}
+
 Sometimes variables come to you in really obscure naming conventions. What the heck is SBA641? The `rename()` function converts an `old name` to a `new name`. The generic syntax is `rename(new = old)`. [For the purpose of these lecture notes I am not making this change permenant. There is no assignment operator `<-` used here, so this change is not going to persist into later code.]{.aside}
 
 So to rename `dep_time` to `departure_time` we would type
@@ -125,6 +133,10 @@ The variable name on the 3rd column now says `departure_time` instead of `dep_ti
 
 
 ### Mutate
+
+![Cartoon of cute fuzzy monsters dressed up as different X-men characters, working together to add a new column to an existing](img/mutate.png)
+
+[Learn more about [dplyr::mutate](https://dplyr.tidyverse.org/reference/mutate.html)]{.aside}
 
 As well as selecting from the set of existing columns, it's often useful to add new columns that are functions of existing columns. This is the job of `mutate()`!
 
@@ -146,14 +158,24 @@ mutate(flights, gain = arr_delay - dep_delay,
 
 ### Summarize
 
-The last verb is `summarise()`, which collapses a data frame to a single row. It's not very useful yet. We can create a new variable called delay that is the average departure delay on the entire flights data set. 
+The last verb is `summarise()`, which is most often used to calculate summary statistics. 
 ```{r}
-summarise(flights, delay = mean(dep_delay, na.rm = TRUE))
+summarise(flights, 
+          ave_departure_delay = mean(dep_delay, na.rm = TRUE), 
+          n_flights_with_delay = sum(!is.na(dep_delay)>0), 
+          max_depart_delay = max(dep_delay, na.rm=TRUE)
+)
 ```
+
+It may seem like a lot of code compared to base R functions such as `mean()`, `sum()` and `max()`, but we'll see how this is used in combination with grouping in the next section to easily create grouped summary statistics.  
 
 ## Additional helper verbs
 
 ### Relocate
+
+![Cartoon of fuzzy monsters moving columns around in fork lifts, while one supervises. Stylized text reads "dplyr::relocate() - move columns around! Default: move to FRONT , or move to .before or .after a specified column."](img/relocate.png)
+
+[Learn more about [dplyr::relocate](https://dplyr.tidyverse.org/reference/relocate.html)]{.aside}
 
 Use `relocate()` to change column positions, using the same syntax as select() to make it easy to move blocks of columns at once.
 
@@ -189,6 +211,10 @@ names(flights)
 ```
 
 ### Case when
+
+![Cartoon showing a table with creature type (kraken, dragon, or cyclops) and age (baby, teen, or adult). The three creatures listed are adding a new column named “danger”, which contains the word “extreme!” if the type is “kraken”, or “high” for any other type. Stylized text reads “dplyr::case_when() - IF ELSE...but you love it? An example of code is shown: mutate(danger = case_when(type == “kraken” ~ “extreme!”, TRUE ~ “high”).](img/case_when.png)
+
+[Learn more about [case_when](https://dplyr.tidyverse.org/reference/case_when.html)]{.aside}
 
 This function allows you to vectorise multiple `if_else()` statements. Each case is evaluated sequentially and the first match for each element determines the corresponding value in the output vector. If no cases match, the `.default` is used as a final "else" statment.
 
@@ -234,7 +260,7 @@ flights <- flights %>% # <1>
   mutate(delay_type = case_when( # <2> 
              dep_delay > 0 & arr_delay > 0 ~ "two delays", # <2> 
              dep_delay <= 0 & arr_delay <= 0 ~ "no delays", # <2> 
-             .default = "one delay" # <3> 
+             TRUE ~ "one delay" # <3> 
            )
   )
 table(flights$delay_type, useNA="always")
@@ -264,11 +290,23 @@ The `summarise()` verb allows you to calculate summary statistics for each group
 summarise(by_month, avg_airtime = mean(distance, na.rm=TRUE))
 ```
 
-Or simply the total number of flights per month. 
+Or simply the total number of flights per month, 
 ```{r}
 summarize(by_month, count=n())
 ``` 
 
+Or even more interstingly, the average departure delay, number of flights with delays, and the maximum length of delay at each of the three origin airports. 
+
+```{r}
+by_airport <- group_by(flights, origin)
+summarise(by_airport, 
+          ave_departure_delay = mean(dep_delay, na.rm = TRUE), 
+          n_flights_with_delay = sum(!is.na(dep_delay)>0), 
+          max_depart_delay = max(dep_delay, na.rm=TRUE)
+)
+```
+
+Seems like Laguardia (LGA) is the better airport for the least delays. 
 
 ## Chaining Operations 
 

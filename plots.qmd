@@ -7,6 +7,11 @@ format:
 ---
 # Creating Plots
 
+![A fuzzy monster in a beret and scarf, critiquing their own column graph on a canvas in front of them while other assistant monsters (also in berets) carry over boxes full of elements that can be used to customize a graph (like themes and geometric shapes). In the background is a wall with framed data visualizations. Stylized text reads “ggplot2: build a data masterpiece.”](img/ggplot2.png)
+
+[Learn more about [ggplot2](https://ggplot2.tidyverse.org/)]{.aside}
+
+
 :::{.callout-warning icon=false appearance=minimal}
 <a href="https://media.csuchico.edu/media/MATH+130+Lecture+07A+Introduction/1_jlh6zm14" target="_blank">Introduction Video</a>
 :::

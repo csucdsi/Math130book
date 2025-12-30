@@ -265,6 +265,14 @@ Install the list of packages to the left one at a time and wait for it to finish
 Check to see if you have a package installed by looking in the packages tab. You can also type the command `installed.packages()` into the console and examine the output.
 :::
 
+:::{.callout-note title = "A note about the `tidyverse`."}
+
+_"The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures."_ 
+
+We will specifically be using the `dplyr`, `ggplot2` and `readxl` packages that are part of, and thus installed with, the `tidyverse`. In these lessons we will load the specific package that we need (e.g. only `dplyr` or only `ggplot2`), but loading the `tidyverse` has the same effect of readying the necessary functions as loading each individual package. Learn more about the [tidyverse](https://tidyverse.org/).
+
+:::
+
 
 
 ## Get oRganized!
@@ -325,9 +333,10 @@ This will open a new R Studio window. Go ahead and close both R Studio windows f
 If you think about wanting to work on a report written in Microsoft Word, or a video that you want to edit, the common practice is to navigate to that file and double click to open that file in the appropriate program. We don't tend to open the program first, and then try to open the file from within the program. Using R Projects is somewhat the same. 
 
 :::{.callout-tip title = "👉 Using R Projects" icon=false}
+
 * Navigate in your file explorer to the folder where you created your project. 
-* Click on the R cube icon to open the whole project. 
-* Using the `files` tab (bottom right) find and click to open the `_hello.qmd` script file you downloaded earlier. 
+* Click on the R cube icon to open the whole project.  ![](img/Rproj_cube.png){width=10%}
+* Using the `files` tab (bottom right) find and click to open the `hello.qmd` script file you downloaded earlier. 
 :::
 
 You can tell you are in an R Project by looking in the top right corner by the Environment pane and seeing if the R project cube has your class folder name
