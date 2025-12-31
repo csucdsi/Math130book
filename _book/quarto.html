@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./programming_in_r.html" rel="next">
+<link href="./intro_r.html" rel="next">
 <link href="./setup_tools.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -210,7 +210,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./programming_in_r.html" class="sidebar-item-text sidebar-link">
+  <a href="./intro_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with R</span></span></a>
   </div>
 </li>
@@ -240,13 +240,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Graphics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient data management</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -269,7 +269,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Plot Enhancements</span></span></a>
   </div>
 </li>
       </ul>
@@ -285,20 +285,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./help.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Seeking Help</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./assignments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Assignments</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Putting it all together</span></a>
+ <span class="menu-text">Project</span></a>
   </div>
 </li>
       </ul>
@@ -469,9 +475,9 @@ Optional Video
 </div>
 <ul>
 <li>You can insert code chunks by using the button in the top right of an RMD file (Insert -&gt; R), or by typing <kbd>CTRL+ALT+I</kbd>.</li>
-<li>R code chunks can also have a YAML style header, identified by <code>#|</code> at the beginning of the line. In this case I set <code>eval</code> to <code>false</code> to prevent the code inside this code chunk from being run when I render the whole document.</li>
+<li>R code chunks can also have a YAML style header, prefixed by a “hash-pipe” <code>#|</code> at the top of the code chunk.  In this case I set <code>eval</code> to <code>false</code> to prevent the code inside this code chunk from being run when I render the whole document.</li>
 </ul>
-<div class="callout callout-style-default callout-important callout-titled" title="Only code goes in code chunks">
+<div class="no-row-height column-margin column-container"><span class="margin-aside"><code>|</code> is the first of three pipes we’ll see in this course</span></div><div class="callout callout-style-default callout-important callout-titled" title="Only code goes in code chunks">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -525,7 +531,7 @@ Only code goes in code chunks
 </section>
 <section id="sec-markdown" class="level3 page-columns page-full" data-number="2.2.3">
 <h3 data-number="2.2.3" class="anchored" data-anchor-id="sec-markdown"><span class="header-section-number">2.2.3</span> Markdown Text</h3>
-<div class="page-columns page-full"><p>Markdown is a popular markup language that allows you to add formatting elements to text. Markdown is useful because it is lightweight, flexible, and platform independent. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">See more basic syntax of Markdown at <a href="https://markdownguide.offshoot.io/basic-syntax/"> https://markdownguide.offshoot.io/basic-syntax/</a></span></div></div>
+<div class="page-columns page-full"><p>Markdown is a popular markup language that allows you to add formatting elements to text. Markdown is useful because it is lightweight, flexible, and platform independent. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">See more basic syntax of Markdown at <a href="https://quarto.org/docs/authoring/markdown-basics.html"> https://quarto.org/docs/authoring/markdown-basics.html</a></span></div></div><a href="https://quarto.org/docs/authoring/markdown-basics.html">
 <div class="columns">
 <div class="column" style="width:45%;">
 <table class="caption-top table">
@@ -589,7 +595,7 @@ Only code goes in code chunks
 </table>
 </div>
 </div>
-<p>Additionally, using <code>#</code> and <code>##</code> symbols at the start of a line creates first (<code>#</code>) and second (<code>##</code>) level headers (larger font size, bold, numbered), such as <a href="#sec-quarto-components" class="quarto-xref"><span>Section 2.2</span></a> and line 15 in the <code>hello.qmd</code> file where it says <code>## Meet Quarto</code> . Properly formatted headers are an important part of document organization and accessibility for screen reader navigation.</p>
+</a><p><a href="https://quarto.org/docs/authoring/markdown-basics.html">Additionally, using <code>#</code> and <code>##</code> symbols at the start of a line creates first (<code>#</code>) and second (<code>##</code>) level headers (larger font size, bold, numbered), such as </a><a href="#sec-quarto-components" class="quarto-xref"><span>Section 2.2</span></a> and line 15 in the <code>hello.qmd</code> file where it says <code>## Meet Quarto</code> . Properly formatted headers are an important part of document organization and accessibility for screen reader navigation.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Add some formatting">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1201,7 +1207,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./programming_in_r.html" class="pagination-link" aria-label="Getting Started with R">
+      <a href="./intro_r.html" class="pagination-link" aria-label="Getting Started with R">
         <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

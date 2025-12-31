@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Data management and aggregation – Introduction to R</title>
+<title>7&nbsp; Efficient data management – Introduction to R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./dplyr.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./dplyr.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient data management</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -181,7 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./programming_in_r.html" class="sidebar-item-text sidebar-link">
+  <a href="./intro_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with R</span></span></a>
   </div>
 </li>
@@ -211,13 +211,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Graphics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dplyr.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient data management</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -240,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Plot Enhancements</span></span></a>
   </div>
 </li>
       </ul>
@@ -256,20 +256,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./help.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Seeking Help</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./assignments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Assignments</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Putting it all together</span></a>
+ <span class="menu-text">Project</span></a>
   </div>
 </li>
       </ul>
@@ -284,12 +290,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction-video" id="toc-introduction-video" class="nav-link active" data-scroll-target="#introduction-video"><span class="header-section-number">7.1</span> Introduction </a><a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Introduction/1_r7jhnwgd" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+Lecture+08A+Introduction/1_r7jhnwgd">(Video)</a>
-  <ul class="collapse">
-  <li><a href="#exploring-airline-flight-data-with-dplyr." id="toc-exploring-airline-flight-data-with-dplyr." class="nav-link" data-scroll-target="#exploring-airline-flight-data-with-dplyr."><span class="header-section-number">7.1.1</span> Exploring airline flight data with dplyr.</a></li>
-  <li><a href="#tibbles" id="toc-tibbles" class="nav-link" data-scroll-target="#tibbles"><span class="header-section-number">7.1.2</span> Tibbles</a></li>
-  </ul></li>
-  <li><a href="#basic-verbs-video" id="toc-basic-verbs-video" class="nav-link" data-scroll-target="#basic-verbs-video"><span class="header-section-number">7.2</span> Basic verbs </a><a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Basic+Verbs/1_ndesnisk" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+Lecture+08A+Basic+Verbs/1_ndesnisk">(Video)</a>
+  <li><a href="#sec-tibble" id="toc-sec-tibble" class="nav-link active" data-scroll-target="#sec-tibble"><span class="header-section-number">7.1</span> Tibbles</a></li>
+  <li><a href="#basic-verbs" id="toc-basic-verbs" class="nav-link" data-scroll-target="#basic-verbs"><span class="header-section-number">7.2</span> Basic verbs</a>
   <ul class="collapse">
   <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="header-section-number">7.2.1</span> Filter</a></li>
   <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="header-section-number">7.2.2</span> Select</a></li>
@@ -297,17 +299,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><span class="header-section-number">7.2.4</span> Mutate</a></li>
   <li><a href="#summarize" id="toc-summarize" class="nav-link" data-scroll-target="#summarize"><span class="header-section-number">7.2.5</span> Summarize</a></li>
   </ul></li>
-  <li><a href="#grouped-operations-video" id="toc-grouped-operations-video" class="nav-link" data-scroll-target="#grouped-operations-video"><span class="header-section-number">7.3</span> Grouped Operations </a><a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Grouped+Operations/1_w9x1kd5m" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+Lecture+08A+Grouped+Operations/1_w9x1kd5m">(Video)</a></li>
-  <li><a href="#chaining-operations-video" id="toc-chaining-operations-video" class="nav-link" data-scroll-target="#chaining-operations-video"><span class="header-section-number">7.4</span> Chaining Operations </a><a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Chaining+Operations/1_6xzk59i7" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+Lecture+08A+Chaining+Operations/1_6xzk59i7">(Video)</a></li>
+  <li><a href="#additional-helper-verbs" id="toc-additional-helper-verbs" class="nav-link" data-scroll-target="#additional-helper-verbs"><span class="header-section-number">7.3</span> Additional helper verbs</a>
+  <ul class="collapse">
+  <li><a href="#relocate" id="toc-relocate" class="nav-link" data-scroll-target="#relocate"><span class="header-section-number">7.3.1</span> Relocate</a></li>
+  <li><a href="#case-when" id="toc-case-when" class="nav-link" data-scroll-target="#case-when"><span class="header-section-number">7.3.2</span> Case when</a></li>
+  </ul></li>
+  <li><a href="#grouped-operations" id="toc-grouped-operations" class="nav-link" data-scroll-target="#grouped-operations"><span class="header-section-number">7.4</span> Grouped Operations</a></li>
+  <li><a href="#chaining-operations" id="toc-chaining-operations" class="nav-link" data-scroll-target="#chaining-operations"><span class="header-section-number">7.5</span> Chaining Operations</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./dplyr.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./dplyr.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient data management</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></h1>
+<h1 class="title"><span id="sec-dplyr" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient data management</span></span></h1>
 </div>
 
 
@@ -324,8 +331,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction-video" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="introduction-video"><span class="header-section-number">7.1</span> Introduction <a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Introduction/1_r7jhnwgd" target="_blank">(Video)</a></h2>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Introduction/1_r7jhnwgd" target="_blank">Introduction Video</a></p>
+</div>
+</div>
+</div>
 <p>When working with data you must:</p>
 <ol type="1">
 <li>Figure out what you want to do.</li>
@@ -338,56 +353,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Providing simple functions that correspond to the most common data manipulation verbs, so that you can easily translate your thoughts into code.</li>
 <li>Using efficient data storage back ends, so that you spend as little time waiting for the computer as possible.</li>
 </ol>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="🎓 Learning Objectives">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Learning Objectives
+🎓 Learning Objectives
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>After completing this lesson students will be able to</p>
 <ul>
-<li>Explain the difference between a <code>data.table</code> and a <code>tibble</code>.</li>
+<li>Explain the difference between a <code>data.table</code> and a <code>tibble</code></li>
 <li>Build and execute a chain of command to accomplish a data management task</li>
-<li>Extract certain rows using <code>select</code>.</li>
-<li>Create new variables using <code>mutate</code>.</li>
-<li>Rename variables using <code>rename</code></li>
-<li>Subset the data based on a criteria using <code>filter</code>.</li>
+<li>Extract certain rows using <code>select</code></li>
+<li>Reorganize the order using <code>relocate</code> and rename using <code>rename</code></li>
+<li>Create new variables using <code>mutate</code> and <code>case_when</code></li>
+<li>Subset rows based on a logical criteria using <code>filter</code></li>
 <li>Create summary statistics using <code>group_by</code> and <code>summarize</code></li>
-<li>Learn how to use code chunk options to disable warning messages.</li>
 </ul>
 </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Prepare">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Preparation
+👉 Prepare
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Prior to this lesson students should</p>
-<ul>
-<li>Download the <a href="08_dplyr_notes.Rmd">[08_dplyr_notes.Rmd]</a> R markdown file and save into your <code>Math130/notes</code> folder.</li>
-<li>Ensure that the <code>dplyr</code> and <code>nycflights13</code> packages are installed by running the first code chunk.</li>
-</ul>
+<ol type="1">
+<li>Open your Math 130 R Project.</li>
+<li>Right click and “save as” this lessons <a href="notes/dplyr_notes.qmd">[Quarto notes file]</a> and save into your <code>Math130/notes</code> folder.</li>
+<li>In the <em>Files</em> pane, open this Quarto file and Render this file.</li>
+</ol>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>flights <span class="ot">&lt;-</span> nycflights13<span class="sc">::</span>flights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-<section id="exploring-airline-flight-data-with-dplyr." class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="exploring-airline-flight-data-with-dplyr."><span class="header-section-number">7.1.1</span> Exploring airline flight data with dplyr.</h3>
 <p>The <code>nycflights13</code> package contains several data sets that can be used to help understand what causes delays. We will be using the <code>flights</code> data set which contains information about all flights that departed from NYC (e.g.&nbsp;EWR, JFK and LGA) in 2013.</p>
-</section>
-<section id="tibbles" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="tibbles"><span class="header-section-number">7.1.2</span> Tibbles</h3>
+<section id="sec-tibble" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-tibble"><span class="header-section-number">7.1</span> Tibbles</h2>
 <p>The <code>flights</code> data set, and any data set created with <code>dplyr</code>, has a specific data type called a <code>tibble</code>. These are not as furry and prolific as their cousins the <code>tribbles</code>. <code>tibbles</code> behaves for all intents and purposes as a <code>data.frame</code>, just gets displayed differently. For example, the <code>flights</code> data set contains data on 19 characteristics (variables) from 336,776 flights. There’s no way I would want to print out a data set that large. But I’m gonna….</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>flights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -411,22 +422,40 @@ Preparation
 #   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
 </div>
 </div>
-<p>The output has been trimmed to something more reasonable for our viewing pleasure. This may not seem such a big deal because R Studio already provides some level of truncation for our viewing pleasure.</p>
+<p>The output has been trimmed to something more reasonable for our viewing pleasure. This may not seem such a big deal because R Studio already provides some level of truncation for our viewing pleasure, but when you accidentally print out 400 pages of data set in your homework assignment, your instructor (and your wallet if you print it without looking) won’t be happy.</p>
 </section>
-</section>
-<section id="basic-verbs-video" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="basic-verbs-video"><span class="header-section-number">7.2</span> Basic verbs <a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Basic+Verbs/1_ndesnisk" target="_blank">(Video)</a></h2>
-<p>The <code>dplyr</code> package contains new data manipulation functions, also called verbs. We will look at the following verbs:</p>
+<section id="basic-verbs" class="level2 page-columns page-full" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="basic-verbs"><span class="header-section-number">7.2</span> Basic verbs</h2>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Basic+Verbs/1_ndesnisk" target="_blank">Lesson Video</a></p>
+</div>
+</div>
+</div>
+<p>The <code>dplyr</code> package contains many functions to perform data manipulation “actions”, also called verbs. We will look at the following verbs:</p>
 <ul>
-<li><code>filter()</code>: Returns a subset of the rows.</li>
-<li><code>select()</code>: Returns only the listed columns.</li>
-<li><code>rename()</code>: Renames the variables listed.</li>
-<li><code>mutate()</code>: Adds columns from existing data.</li>
-<li><code>summarise()</code>: Reduces each group to a single row by calculating aggregate measures.</li>
-<li><code>group_by()</code>: Groups a data set on a factor variable, such that all functions performed are then done on each level of the factor.</li>
+<li><code>filter()</code>: Returns a subset of the rows</li>
+<li><code>select()</code>: Returns only the listed columns</li>
+<li><code>rename()</code>: Renames the variables listed</li>
+<li><code>mutate()</code>: Adds columns from existing data</li>
+<li><code>relocate()</code>: Moves the order of the columns</li>
+<li><code>case_when()</code>: A useful expansion of <code>ifelse</code></li>
+<li><code>summarise()</code>: Reduces each group to a single row by calculating aggregate measures</li>
+<li><code>group_by()</code>: Groups a data set on a factor variable, such that all functions performed are then done on each level of the factor</li>
 </ul>
-<section id="filter" class="level3" data-number="7.2.1">
+<section id="filter" class="level3 page-columns page-full" data-number="7.2.1">
 <h3 data-number="7.2.1" class="anchored" data-anchor-id="filter"><span class="header-section-number">7.2.1</span> Filter</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/filter.png" class="img-fluid figure-img"></p>
+<figcaption>Cartoon showing three fuzzy monsters either selecting or crossing out rows of a data table. If the type of animal in the table is “otter” and the site is “bay”, a monster is drawing a purple rectangle around the row. If those conditions are not met, another monster is putting a line through the column indicating it will be excluded. Stylized text reads “dplyr::filter() - keep rows that satisfy your conditions.”</figcaption>
+</figure>
+</div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Learn more about <a href="https://dplyr.tidyverse.org/reference/filter.html">dplyr::filter</a>.</span></div></div>
 <p><code>filter()</code> allows you to select a subset of the rows of a data frame. The first argument is the name of the data frame, and the second and subsequent are filtering expressions evaluated in the context of that data frame. For example, we can select all flights on January 1st with</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(flights, month <span class="sc">==</span> <span class="dv">1</span>, day <span class="sc">==</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -562,9 +591,16 @@ Preparation
 </div>
 </div>
 </section>
-<section id="rename" class="level3" data-number="7.2.3">
+<section id="rename" class="level3 page-columns page-full" data-number="7.2.3">
 <h3 data-number="7.2.3" class="anchored" data-anchor-id="rename"><span class="header-section-number">7.2.3</span> Rename</h3>
-<p>Sometimes variables come to you in really obscure naming conventions. What the heck is SBA641? New to <code>dplyr</code> 1.0.0 is the <code>rename()</code> function. Works like magic to convert <code>old name</code> to a <code>new name</code>. The generic syntax is <code>rename(new = old)</code></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rename.png" class="img-fluid figure-img"></p>
+<figcaption>Header text: “dplyr:: rename() - rename columns”. Below, an illustration of a mouse standing on a wedge of swiss cheese, changing column names from “species” to “nemesis,” and “site” to “lair.” On a cork board next to the mouse are images of “Cheese thieves” suspects (narwhal, chicken and pika) and maps of their locations.</figcaption>
+</figure>
+</div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Learn more about <a href="https://dplyr.tidyverse.org/reference/rename.html">dplyr::rename</a></span></div></div>
+<div class="page-columns page-full"><p>Sometimes variables come to you in really obscure naming conventions. What the heck is SBA641? The <code>rename()</code> function converts an <code>old name</code> to a <code>new name</code>. The generic syntax is <code>rename(new = old)</code>. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">For the purpose of these lecture notes I am not making this change permenant. There is no assignment operator <code>&lt;-</code> used here, so this change is not going to persist into later code.</span></div></div>
 <p>So to rename <code>dep_time</code> to <code>departure_time</code> we would type</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rename</span>(flights, <span class="at">departure_time =</span> dep_time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -589,12 +625,16 @@ Preparation
 </div>
 </div>
 <p>The variable name on the 3rd column now says <code>departure_time</code> instead of <code>dep_time</code>.</p>
-<blockquote class="blockquote">
-<p>For the purpose of these lecture notes I am not making this change permenant. There is no assignment operator <code>&lt;-</code> used here, so this change is not going to persist into later code.</p>
-</blockquote>
 </section>
-<section id="mutate" class="level3" data-number="7.2.4">
+<section id="mutate" class="level3 page-columns page-full" data-number="7.2.4">
 <h3 data-number="7.2.4" class="anchored" data-anchor-id="mutate"><span class="header-section-number">7.2.4</span> Mutate</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/mutate.png" class="img-fluid figure-img"></p>
+<figcaption>Cartoon of cute fuzzy monsters dressed up as different X-men characters, working together to add a new column to an existing</figcaption>
+</figure>
+</div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Learn more about <a href="https://dplyr.tidyverse.org/reference/mutate.html">dplyr::mutate</a></span></div></div>
 <p>As well as selecting from the set of existing columns, it’s often useful to add new columns that are functions of existing columns. This is the job of <code>mutate()</code>!</p>
 <p>Here we create two variables: gain (as arrival delay minus departure delay) and speed (as distance divided by time, converted to hours).</p>
 <div class="cell">
@@ -618,7 +658,7 @@ Preparation
 # ℹ 336,766 more rows</code></pre>
 </div>
 </div>
-<p>One key advantage of mutate is that you can refer to the columns you just created. Mutate flights to create two variables, <code>gain = arr_delay - dep_delay</code> and <code>gain_per_hour = gain / (air_time / 60)</code>.</p>
+<p>One key advantage of mutate is that you can refer to the columns you just created. In one mutate call we can create the <code>gain</code> variable, and then use it to create <code>gain_per_hour</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(flights, <span class="at">gain =</span> arr_delay <span class="sc">-</span> dep_delay, </span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">gain_per_hour =</span> gain <span class="sc">/</span> (air_time <span class="sc">/</span> <span class="dv">60</span> ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -645,30 +685,211 @@ Preparation
 </section>
 <section id="summarize" class="level3" data-number="7.2.5">
 <h3 data-number="7.2.5" class="anchored" data-anchor-id="summarize"><span class="header-section-number">7.2.5</span> Summarize</h3>
-<p>The last verb is <code>summarise()</code>, which collapses a data frame to a single row. It’s not very useful yet. We can create a new variable called delay that is the average departure delay on the entire flights data set.</p>
+<p>The last verb is <code>summarise()</code>, which is most often used to calculate summary statistics.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(flights, <span class="at">delay =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(flights, </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">ave_departure_delay =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">n_flights_with_delay =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(dep_delay)<span class="sc">&gt;</span><span class="dv">0</span>), </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">max_depart_delay =</span> <span class="fu">max</span>(dep_delay, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code># A tibble: 1 × 1
-  delay
-  &lt;dbl&gt;
-1  12.6</code></pre>
+<pre data-code-line-numbers=""><code># A tibble: 1 × 3
+  ave_departure_delay n_flights_with_delay max_depart_delay
+                &lt;dbl&gt;                &lt;int&gt;            &lt;dbl&gt;
+1                12.6               328521             1301</code></pre>
+</div>
+</div>
+<p>It may seem like a lot of code compared to base R functions such as <code>mean()</code>, <code>sum()</code> and <code>max()</code>, but we’ll see how this is used in combination with grouping in the next section to easily create grouped summary statistics.</p>
+</section>
+</section>
+<section id="additional-helper-verbs" class="level2 page-columns page-full" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="additional-helper-verbs"><span class="header-section-number">7.3</span> Additional helper verbs</h2>
+<section id="relocate" class="level3 page-columns page-full" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="relocate"><span class="header-section-number">7.3.1</span> Relocate</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/relocate.png" class="img-fluid figure-img"></p>
+<figcaption>Cartoon of fuzzy monsters moving columns around in fork lifts, while one supervises. Stylized text reads “dplyr::relocate() - move columns around! Default: move to FRONT , or move to .before or .after a specified column.”</figcaption>
+</figure>
+</div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Learn more about <a href="https://dplyr.tidyverse.org/reference/relocate.html">dplyr::relocate</a></span></div></div>
+<p>Use <code>relocate()</code> to change column positions, using the same syntax as select() to make it easy to move blocks of columns at once.</p>
+<p><strong>Current order of names</strong> for reference purposes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code> [1] "year"           "month"          "day"            "dep_time"      
+ [5] "sched_dep_time" "dep_delay"      "arr_time"       "sched_arr_time"
+ [9] "arr_delay"      "carrier"        "flight"         "tailnum"       
+[13] "origin"         "dest"           "air_time"       "distance"      
+[17] "hour"           "minute"         "time_hour"     </code></pre>
+</div>
+</div>
+<p><strong>Bring <code>origin</code> to the front</strong></p>
+<div class="cell" data-source-line-numbers="2">
+<div class="sourceCode cell-code" id="cb26" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>flights <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span> </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(origin)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code> [1] "origin"         "year"           "month"          "day"           
+ [5] "dep_time"       "sched_dep_time" "dep_delay"      "arr_time"      
+ [9] "sched_arr_time" "arr_delay"      "carrier"        "flight"        
+[13] "tailnum"        "dest"           "air_time"       "distance"      
+[17] "hour"           "minute"         "time_hour"     </code></pre>
+</div>
+</div>
+<p><strong>Move <code>dest</code> right after <code>origin</code></strong> using the <code>.after</code> argument.</p>
+<div class="cell" data-source-line-numbers="2">
+<div class="sourceCode cell-code" id="cb28" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>flights <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(dest, <span class="at">.after =</span> origin)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code> [1] "origin"         "dest"           "year"           "month"         
+ [5] "day"            "dep_time"       "sched_dep_time" "dep_delay"     
+ [9] "arr_time"       "sched_arr_time" "arr_delay"      "carrier"       
+[13] "flight"         "tailnum"        "air_time"       "distance"      
+[17] "hour"           "minute"         "time_hour"     </code></pre>
+</div>
+</div>
+<p><strong>Move multiple variables to the end</strong></p>
+<div class="cell" data-source-line-numbers="2">
+<div class="sourceCode cell-code" id="cb30" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>flights <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span> </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(<span class="fu">c</span>(carrier, flight, tailnum), <span class="at">.after =</span> <span class="fu">last_col</span>())</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code> [1] "origin"         "dest"           "year"           "month"         
+ [5] "day"            "dep_time"       "sched_dep_time" "dep_delay"     
+ [9] "arr_time"       "sched_arr_time" "arr_delay"      "air_time"      
+[13] "distance"       "hour"           "minute"         "time_hour"     
+[17] "carrier"        "flight"         "tailnum"       </code></pre>
+</div>
+</div>
+</section>
+<section id="case-when" class="level3 page-columns page-full" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="case-when"><span class="header-section-number">7.3.2</span> Case when</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/case_when.png" class="img-fluid figure-img"></p>
+<figcaption>Cartoon showing a table with creature type (kraken, dragon, or cyclops) and age (baby, teen, or adult). The three creatures listed are adding a new column named “danger”, which contains the word “extreme!” if the type is “kraken”, or “high” for any other type. Stylized text reads “dplyr::case_when() - IF ELSE…but you love it? An example of code is shown: mutate(danger = case_when(type == “kraken” ~ “extreme!”, TRUE ~ “high”).</figcaption>
+</figure>
+</div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Learn more about <a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span></div></div>
+<p>This function allows you to vectorise multiple <code>if_else()</code> statements. Each case is evaluated sequentially and the first match for each element determines the corresponding value in the output vector. If no cases match, the <code>.default</code> is used as a final “else” statment.</p>
+<p>The general syntax is <code>logical statment</code> ~ <code>value</code>. On the left hand side you specify a logical statement to identify a certain “case”, then a tilde <code>~</code>, then on the right hand side you specify what you want the value of the new variable to be when this case is true.</p>
+<div class="cell" data-code-annotations="below">
+<div class="sourceCode cell-code" id="annotated-cell-17" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-17-1" class="code-annotation-target"><a href="#annotated-cell-17-1" aria-hidden="true" tabindex="-1"></a>flights <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-17-2" class="code-annotation-target"><a href="#annotated-cell-17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">distance_cat =</span> <span class="fu">case_when</span>(</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-17-3" class="code-annotation-target"><a href="#annotated-cell-17-3" aria-hidden="true" tabindex="-1"></a>    distance <span class="sc">&lt;=</span> <span class="dv">400</span> <span class="sc">~</span> <span class="st">"short"</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-17-4" class="code-annotation-target"><a href="#annotated-cell-17-4" aria-hidden="true" tabindex="-1"></a>    distance <span class="sc">&gt;</span> <span class="dv">400</span> <span class="sc">&amp;</span> distance <span class="sc">&lt;=</span> <span class="dv">1000</span> <span class="sc">~</span> <span class="st">"medium"</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-17" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-17-5" class="code-annotation-target"><a href="#annotated-cell-17-5" aria-hidden="true" tabindex="-1"></a>    distance <span class="sc">&gt;</span> <span class="dv">1000</span> <span class="sc">~</span> <span class="st">"long"</span>)</span>
+<span id="annotated-cell-17-6"><a href="#annotated-cell-17-6" aria-hidden="true" tabindex="-1"></a>  )</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-17" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-17" data-code-lines="1" data-code-annotation="1">Take the <code>flights</code> data set, and then,</span>
+</dd>
+<dt data-target-cell="annotated-cell-17" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-17" data-code-lines="2" data-code-annotation="2">Create a new variable called <code>distance_cat</code> where</span>
+</dd>
+<dt data-target-cell="annotated-cell-17" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-17" data-code-lines="3" data-code-annotation="3">if the <code>distance</code>of the flight is less than or equal to 400 miles, set the value of <code>distance_cat</code> to “short”</span>
+</dd>
+<dt data-target-cell="annotated-cell-17" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-17" data-code-lines="4" data-code-annotation="4">if the <code>distance</code> is between 400 and 1000 miles, set the value of <code>distance_cat</code> to “medium”</span>
+</dd>
+<dt data-target-cell="annotated-cell-17" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-17" data-code-lines="5" data-code-annotation="5">if the <code>distance</code> is over 1000 miles, set the value of <code>distance_cat</code> to “long”.</span>
+</dd>
+</dl>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Trust but verify">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Trust but verify
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Create a grouped boxplot of <code>distance</code> against <code>distance_cat</code> to confirm that this recode worked.</p>
+<details>
+<summary>
+Solution
+</summary>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>ggpubr<span class="sc">::</span><span class="fu">ggboxplot</span>(flights, <span class="at">y=</span><span class="st">"distance"</span>, <span class="at">fill =</span> <span class="st">"distance_cat"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="dplyr_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</details>
+</div>
+</div>
+<p>This <code>case_when</code> function can be used with complex logical statements involving multiple variables. Additionally, you don’t have to specify every single possible combiantion. If none of the statments specified evaluate as TRUE, the <code>.default</code> value will be used.</p>
+<div class="cell" data-code-annotations="below">
+<div class="sourceCode cell-code" id="annotated-cell-18" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-18" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-18-1" class="code-annotation-target"><a href="#annotated-cell-18-1" aria-hidden="true" tabindex="-1"></a>flights <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-18" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-18-2" class="code-annotation-target"><a href="#annotated-cell-18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">delay_type =</span> <span class="fu">case_when</span>(</span>
+<span id="annotated-cell-18-3"><a href="#annotated-cell-18-3" aria-hidden="true" tabindex="-1"></a>             dep_delay <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> arr_delay <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"two delays"</span>,</span>
+<span id="annotated-cell-18-4"><a href="#annotated-cell-18-4" aria-hidden="true" tabindex="-1"></a>             dep_delay <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">&amp;</span> arr_delay <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"no delays"</span>,</span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-18" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-18-5" class="code-annotation-target"><a href="#annotated-cell-18-5" aria-hidden="true" tabindex="-1"></a>             <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"one delay"</span></span>
+<span id="annotated-cell-18-6"><a href="#annotated-cell-18-6" aria-hidden="true" tabindex="-1"></a>           )</span>
+<span id="annotated-cell-18-7"><a href="#annotated-cell-18-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="annotated-cell-18-8"><a href="#annotated-cell-18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(flights<span class="sc">$</span>delay_type, <span class="at">useNA=</span><span class="st">"always"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-18" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-18" data-code-lines="1" data-code-annotation="1">Take the <code>flights</code> data set, and then,</span>
+</dd>
+<dt data-target-cell="annotated-cell-18" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-18" data-code-lines="2,3,4" data-code-annotation="2">Create a new variable called <code>delay_type</code> based on whether or not there was a delay at both sides (departure and arrival), if there was no delays either departing or arriving</span>
+</dd>
+<dt data-target-cell="annotated-cell-18" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-18" data-code-lines="5" data-code-annotation="3">If neither of these two statments are true, there is a delay at either the departure or arrival and so we set <code>delay_type</code> to “one delay”.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>
+ no delays  one delay two delays       &lt;NA&gt; 
+    158900      85573      92303          0 </code></pre>
 </div>
 </div>
 </section>
 </section>
-<section id="grouped-operations-video" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="grouped-operations-video"><span class="header-section-number">7.3</span> Grouped Operations <a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Grouped+Operations/1_w9x1kd5m" target="_blank">(Video)</a></h2>
+<section id="grouped-operations" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="grouped-operations"><span class="header-section-number">7.4</span> Grouped Operations</h2>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Grouped+Operations/1_w9x1kd5m" target="_blank">Introduction Video</a></p>
+</div>
+</div>
+</div>
 <p>The above verbs are useful, but they become really powerful when you combine them with the idea of “group by”, repeating the operation individually on groups of observations within the dataset. In dplyr, you use the <code>group_by()</code> function to describe how to break a dataset down into groups of rows. You can then use the resulting object in exactly the same functions as above; they’ll automatically work “by group” when the input is a grouped.</p>
 <p>Let’s demonstrate how some of these functions work after grouping the flights data set by month. First we’ll create a new data set that is grouped by month.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>by_month <span class="ot">&lt;-</span> <span class="fu">group_by</span>(flights, month)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>by_month <span class="ot">&lt;-</span> <span class="fu">group_by</span>(flights, month)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ul>
-<li>The <code>summarise()</code> verb allows you to calculate summary statistics for each group. This is probably the most common function that is used in conjunction with <code>group_by</code>. For example, the average distance flown per month.</li>
-</ul>
+<p>The <code>summarise()</code> verb allows you to calculate summary statistics for each group. This is probably the most common function that is used in conjunction with <code>group_by</code>. For example, the average distance flown per month.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(by_month, <span class="at">avg_airtime =</span> <span class="fu">mean</span>(distance, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(by_month, <span class="at">avg_airtime =</span> <span class="fu">mean</span>(distance, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code># A tibble: 12 × 2
    month avg_airtime
@@ -687,9 +908,9 @@ Preparation
 12    12       1065.</code></pre>
 </div>
 </div>
-<p>Or simply the total number of flights per month.</p>
+<p>Or simply the total number of flights per month,</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(by_month, <span class="at">count=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(by_month, <span class="at">count=</span><span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code># A tibble: 12 × 2
    month count
@@ -708,25 +929,59 @@ Preparation
 12    12 28135</code></pre>
 </div>
 </div>
+<p>Or even more interstingly, the average departure delay, number of flights with delays, and the maximum length of delay at each of the three origin airports.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>by_airport <span class="ot">&lt;-</span> <span class="fu">group_by</span>(flights, origin)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(by_airport, </span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>          <span class="at">ave_departure_delay =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">n_flights_with_delay =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(dep_delay)<span class="sc">&gt;</span><span class="dv">0</span>), </span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">max_depart_delay =</span> <span class="fu">max</span>(dep_delay, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code># A tibble: 3 × 4
+  origin ave_departure_delay n_flights_with_delay max_depart_delay
+  &lt;chr&gt;                &lt;dbl&gt;                &lt;int&gt;            &lt;dbl&gt;
+1 EWR                   15.1               117596             1126
+2 JFK                   12.1               109416             1301
+3 LGA                   10.3               101509              911</code></pre>
+</div>
+</div>
+<p>Seems like Laguardia (LGA) is the better airport for the least delays.</p>
 </section>
-<section id="chaining-operations-video" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="chaining-operations-video"><span class="header-section-number">7.4</span> Chaining Operations <a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Chaining+Operations/1_6xzk59i7" target="_blank">(Video)</a></h2>
+<section id="chaining-operations" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="chaining-operations"><span class="header-section-number">7.5</span> Chaining Operations</h2>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Chaining+Operations/1_6xzk59i7" target="_blank">Introduction Video</a></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Same pipe, different symbol">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Same pipe, different symbol
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We’ve seen chaining before using the base R pipe <code>|&gt;</code>. The <code>%&gt;%</code> symbol is also called a pipe, but is only accessible after you load the <code>dplyr</code> package. They function the same. We show both here because you will see both used out in the wild and need to know they are interchangeable.</p>
+</div>
+</div>
 <p>Consider the following group of operations that take the data set <code>flights</code>, and produce a final data set (<code>a4</code>) that contains only the flights where the daily average delay is greater than a half hour.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">group_by</span>(flights, year, month, day)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> <span class="fu">select</span>(a1, arr_delay, dep_delay)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre data-code-line-numbers=""><code>Adding missing grouping variables: `year`, `month`, `day`</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb31" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>a3 <span class="ot">&lt;-</span> <span class="fu">summarise</span>(a2,</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">arr =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">dep =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre data-code-line-numbers=""><code>`summarise()` has grouped output by 'year', 'month'. You can override using the
-`.groups` argument.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb33" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>a4 <span class="ot">&lt;-</span> <span class="fu">filter</span>(a3, arr <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">|</span> dep <span class="sc">&gt;</span> <span class="dv">30</span>)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(a4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>a1 <span class="ot">&lt;-</span> <span class="fu">group_by</span>(flights, year, month, day)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>a2 <span class="ot">&lt;-</span> <span class="fu">select</span>(a1, arr_delay, dep_delay)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>a3 <span class="ot">&lt;-</span> <span class="fu">summarise</span>(a2,</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">arr =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">dep =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>a4 <span class="ot">&lt;-</span> <span class="fu">filter</span>(a3, arr <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">|</span> dep <span class="sc">&gt;</span> <span class="dv">30</span>)</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(a4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code># A tibble: 6 × 5
 # Groups:   year, month [3]
@@ -742,32 +997,51 @@ Preparation
 </div>
 <p>It does the trick, but what if you don’t want to save all the intermediate results (<code>a1</code> - <code>a3</code>)? Well these verbs are <code>function</code>, so they can be wrapped inside other functions to create a nesting type structure.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">group_by</span>(flights, year, month, day),</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>      arr_delay, dep_delay</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">arr =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">dep =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>  arr <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">|</span> dep <span class="sc">&gt;</span> <span class="dv">30</span></span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">group_by</span>(flights, year, month, day),</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>      arr_delay, dep_delay</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">arr =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">dep =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>  arr <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">|</span> dep <span class="sc">&gt;</span> <span class="dv">30</span></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Woah, that is HARD to read! This is difficult to read because the order of the operations is from inside to out, and the arguments are a long way away from the function. To get around this problem, dplyr provides the <code>%&gt;%</code> operator. <code>x %&gt;% f(y)</code> turns into <code>f(x, y)</code> so you can use it to rewrite multiple operations so you can read from left-to-right, top-to-bottom:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb36" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, month, day) <span class="sc">%&gt;%</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(arr_delay, dep_delay) <span class="sc">%&gt;%</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">arr =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">dep =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(arr <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">|</span> dep <span class="sc">&gt;</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre data-code-line-numbers=""><code>Adding missing grouping variables: `year`, `month`, `day`
-`summarise()` has grouped output by 'year', 'month'. You can override using the
-`.groups` argument.</code></pre>
+<div class="cell" data-code-annotations="below">
+<div class="sourceCode cell-code" id="annotated-cell-25" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-25" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-25-1" class="code-annotation-target"><a href="#annotated-cell-25-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-25" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-25-2" class="code-annotation-target"><a href="#annotated-cell-25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, month, day) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-25" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-25-3" class="code-annotation-target"><a href="#annotated-cell-25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(arr_delay, dep_delay) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-25" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-25-4" class="code-annotation-target"><a href="#annotated-cell-25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="annotated-cell-25-5"><a href="#annotated-cell-25-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">arr =</span> <span class="fu">mean</span>(arr_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="annotated-cell-25-6"><a href="#annotated-cell-25-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">dep =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="annotated-cell-25-7"><a href="#annotated-cell-25-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-25" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-25-8" class="code-annotation-target"><a href="#annotated-cell-25-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(arr <span class="sc">&gt;</span> <span class="dv">30</span> <span class="sc">|</span> dep <span class="sc">&gt;</span> <span class="dv">30</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-25" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-25" data-code-lines="1" data-code-annotation="1">Take the <code>flights</code> data set and then,</span>
+</dd>
+<dt data-target-cell="annotated-cell-25" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-25" data-code-lines="2" data-code-annotation="2"><code>group</code> it by date and then,</span>
+</dd>
+<dt data-target-cell="annotated-cell-25" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-25" data-code-lines="3" data-code-annotation="3"><code>select</code>s the necessary variables, and then,</span>
+</dd>
+<dt data-target-cell="annotated-cell-25" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-25" data-code-lines="4" data-code-annotation="4">calculate the mean arrival and departure delays, and then,</span>
+</dd>
+<dt data-target-cell="annotated-cell-25" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-25" data-code-lines="8" data-code-annotation="5"><code>filter</code> to only keep rows with a daily average delay over half hour.</span>
+</dd>
+</dl>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code># A tibble: 49 × 5
@@ -787,11 +1061,6 @@ Preparation
 # ℹ 39 more rows</code></pre>
 </div>
 </div>
-<p>Another way you can read this is by thinking “and then” when you see the <code>%&gt;%</code> operator. So the above code takes the data set flights<br>
-.. and then groups by day<br>
-.. and then selects the delay variables<br>
-.. and then calculates the means<br>
-.. and then filters on a delay over half hour.</p>
 <p>The same 4 steps that resulted in the <code>a4</code> data set, but without all the intermediate data saved! This can be <strong>very important</strong> when dealing with Big Data. <code>R</code> stores all data in memory, so if your little computer only has 2G of RAM and you’re working with a data set that is 500M in size, your computers memory will be used up fast. <code>a1</code> takes 500M, <code>a2</code> another 500M, by now your computer is getting slow. Make another copy at <code>a3</code> and it gets worse, <code>a4</code> now likely won’t even be able to be created because you’ll be out of memory.</p>
 
 
@@ -1361,8 +1630,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./plots.html" class="pagination-link" aria-label="Creating Graphics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Graphics</span></span>
+      <a href="./plots.html" class="pagination-link" aria-label="Creating Plots">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Plots</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

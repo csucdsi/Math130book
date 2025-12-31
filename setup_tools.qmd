@@ -19,9 +19,9 @@ Follow the instructions appropriate for your operating system.
 
 If you are using a tablet, Chromebook or otherwise do not have a computer that you can install programs on, you can use Posit Cloud for this class.
 
--   Make a **Cloud FREE** account at https://posit.cloud/plans/free
+-   Make a **Cloud FREE** account at [https://posit.cloud/plans/free](https://posit.cloud/plans/free)
 -   Start a new project by clicking on the button in the top right corner
--   Then go to (#intro_rstudio) to learn how to navigate RStudio.
+-   Then go to @sec-nav_Rstudio to learn how to navigate RStudio.
 
 The free account allows for 25 project hours/month, which may not be enough for this class. If you run into time limits or you are using this for another class you will have to upgrade to the **Cloud Student** plan which is $5/month.
 
@@ -78,17 +78,18 @@ We call the instructions *commands* and we tell the computer to follow the instr
 Learning how to code is like learning a new language. There are rules and exceptions, and it can be extremely precise and sometimes frustrating in how literal it is. 
 
 [Writing clear commands can be like explaining how to make a PB&J sandwich to a child.]{.aside}
-{{< video https://www.youtube.com/watch?v=cDA3_5982h8>}}
+{{< video https://www.youtube.com/watch?v=cDA3_5982h8
+    title="Literal Programming"
+    start="37">}}
 
 :::{.callout-note appearance=minimal}
-This class does not assume that you have any knowledge in programming, and will provide all the codes that you need. 
-For best results you should be trying to understand this new language, and how to tell R to do what you want it to do. 
+This class does not assume that you have any knowledge in programming, and will provide all the codes that you need. For best results you should be trying to understand this new language, and how to tell R to do what you want it to do. 
 
 The tendency may be to reach out to AI to help write code for you, but this does not help you _learn_ and worse can provide code that is overly complicated and does not work as intended.
 :::
 
 
-## Navigating R Studio
+## Navigating R Studio {#sec-nav_Rstudio}
 
 We will be interacting with the programming language R *only* through R Studio. Not by itself. Typically are four panes, or windows, in R Studio. When you first start the program, you may only see three. 
 
@@ -237,22 +238,24 @@ Now that you're a package installing pro, go ahead and install the following pac
 :::{.callout-tip title = "👉 Your Turn" icon=false}
 
 
-Install the list of packages to the left one at a time and wait for it to finish before entering the next command.
+Install the list of packages to the left one at a time and wait for it to finish before entering the next command. Some of these contain functions that we will use, others contain data sets that we will be working with. 
 
 :::: {.columns}
 
 ::: {.column width="50%"}
 - `tidyverse`  
 - `sjPlot`
-- `quarto`
 - `gtsummary`
+- `ggpubr`
+- `tinytex`
 :::
 
 ::: {.column width="50%"}
+- `here`
+- `paletteer`
 - `openintro`  
 - `palmerpenguins`
-- `tinytex`
-- `here`
+- `nycflights13`
 :::
 
 ::::
@@ -262,6 +265,14 @@ Install the list of packages to the left one at a time and wait for it to finish
 
 :::{.callout-important title = "Trust but Verify"}
 Check to see if you have a package installed by looking in the packages tab. You can also type the command `installed.packages()` into the console and examine the output.
+:::
+
+:::{.callout-note title = "A note about the `tidyverse`."}
+
+_"The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures."_ 
+
+We will specifically be using the `dplyr`, `ggplot2` and `readxl` packages that are part of, and thus installed with, the `tidyverse`. In these lessons we will load the specific package that we need (e.g. only `dplyr` or only `ggplot2`), but loading the `tidyverse` has the same effect of readying the necessary functions as loading each individual package. Learn more about the [tidyverse](https://tidyverse.org/).
+
 :::
 
 
@@ -324,9 +335,10 @@ This will open a new R Studio window. Go ahead and close both R Studio windows f
 If you think about wanting to work on a report written in Microsoft Word, or a video that you want to edit, the common practice is to navigate to that file and double click to open that file in the appropriate program. We don't tend to open the program first, and then try to open the file from within the program. Using R Projects is somewhat the same. 
 
 :::{.callout-tip title = "👉 Using R Projects" icon=false}
+
 * Navigate in your file explorer to the folder where you created your project. 
-* Click on the R cube icon to open the whole project. 
-* Using the `files` tab (bottom right) find and click to open the `_hello.qmd` script file you downloaded earlier. 
+* Click on the R cube icon to open the whole project.  ![](img/Rproj_cube.png){width=10%}
+* Using the `files` tab (bottom right) find and click to open the `hello.qmd` script file you downloaded earlier. 
 :::
 
 You can tell you are in an R Project by looking in the top right corner by the Environment pane and seeing if the R project cube has your class folder name

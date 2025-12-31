@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -181,7 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./programming_in_r.html" class="sidebar-item-text sidebar-link">
+  <a href="./intro_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with R</span></span></a>
   </div>
 </li>
@@ -211,13 +211,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Graphics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient data management</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -240,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Plot Enhancements</span></span></a>
   </div>
 </li>
       </ul>
@@ -256,20 +256,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./help.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Seeking Help</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./assignments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Assignments</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Putting it all together</span></a>
+ <span class="menu-text">Project</span></a>
   </div>
 </li>
       </ul>
@@ -284,29 +290,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#student-learning-objectives" id="toc-student-learning-objectives" class="nav-link active" data-scroll-target="#student-learning-objectives"><span class="header-section-number">5.0.1</span> Student Learning Objectives</a></li>
-  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">5.1</span> Preparation</a></li>
-  <li><a href="#what-is-a-factor-video" id="toc-what-is-a-factor-video" class="nav-link" data-scroll-target="#what-is-a-factor-video"><span class="header-section-number">5.2</span> What is a factor? </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+What+is+a+FactorF/1_abke2v0c" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+06A+What+is+a+FactorF/1_abke2v0c">(Video)</a></li>
-  <li><a href="#convert-a-number-to-factor-video" id="toc-convert-a-number-to-factor-video" class="nav-link" data-scroll-target="#convert-a-number-to-factor-video"><span class="header-section-number">5.3</span> Convert a number to Factor </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Convert+a+Number+to+Factor/1_rfnetvxy" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Convert+a+Number+to+Factor/1_rfnetvxy">(Video)</a></li>
-  <li><a href="#factor-ordering-video" id="toc-factor-ordering-video" class="nav-link" data-scroll-target="#factor-ordering-video"><span class="header-section-number">5.4</span> Factor ordering </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Factor+Ordering/1_jl8i52iu" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Factor+Ordering/1_jl8i52iu">(Video)</a>
+  <li><a href="#what-is-a-factor" id="toc-what-is-a-factor" class="nav-link active" data-scroll-target="#what-is-a-factor"><span class="header-section-number">5.1</span> What is a factor?</a></li>
+  <li><a href="#confirming-the-factor-data-type" id="toc-confirming-the-factor-data-type" class="nav-link" data-scroll-target="#confirming-the-factor-data-type"><span class="header-section-number">5.2</span> Confirming the factor data type</a></li>
+  <li><a href="#convert-a-character-variable-to-factor" id="toc-convert-a-character-variable-to-factor" class="nav-link" data-scroll-target="#convert-a-character-variable-to-factor"><span class="header-section-number">5.3</span> Convert a character variable to factor</a></li>
+  <li><a href="#convert-a-number-variable-to-factor" id="toc-convert-a-number-variable-to-factor" class="nav-link" data-scroll-target="#convert-a-number-variable-to-factor"><span class="header-section-number">5.4</span> Convert a number variable to factor</a></li>
+  <li><a href="#factor-renaming" id="toc-factor-renaming" class="nav-link" data-scroll-target="#factor-renaming"><span class="header-section-number">5.5</span> Factor (re)naming</a></li>
+  <li><a href="#factor-ordering" id="toc-factor-ordering" class="nav-link" data-scroll-target="#factor-ordering"><span class="header-section-number">5.6</span> Factor ordering</a></li>
+  <li><a href="#decreasing-number-of-levels" id="toc-decreasing-number-of-levels" class="nav-link" data-scroll-target="#decreasing-number-of-levels"><span class="header-section-number">5.7</span> Decreasing number of levels</a>
   <ul class="collapse">
-  <li><a href="#manually-specified" id="toc-manually-specified" class="nav-link" data-scroll-target="#manually-specified"><span class="header-section-number">5.4.1</span> Manually specified</a></li>
+  <li><a href="#combining-multiple-categories-into-one" id="toc-combining-multiple-categories-into-one" class="nav-link" data-scroll-target="#combining-multiple-categories-into-one"><span class="header-section-number">5.7.1</span> Combining multiple categories into one</a></li>
+  <li><a href="#keeping-the-most-frequent-categories" id="toc-keeping-the-most-frequent-categories" class="nav-link" data-scroll-target="#keeping-the-most-frequent-categories"><span class="header-section-number">5.7.2</span> Keeping the most frequent categories</a></li>
+  <li><a href="#removing-categories-entirely" id="toc-removing-categories-entirely" class="nav-link" data-scroll-target="#removing-categories-entirely"><span class="header-section-number">5.7.3</span> Removing categories entirely</a></li>
   </ul></li>
-  <li><a href="#factor-renaming-video" id="toc-factor-renaming-video" class="nav-link" data-scroll-target="#factor-renaming-video"><span class="header-section-number">5.5</span> Factor (re)naming </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Factor+%28Re%29naming/1_f34h4fuw" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Factor+%28Re%29naming/1_f34h4fuw">(Video)</a></li>
-  <li><a href="#collapsing-factor-levels-video" id="toc-collapsing-factor-levels-video" class="nav-link" data-scroll-target="#collapsing-factor-levels-video"><span class="header-section-number">5.6</span> Collapsing factor levels </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Collapsing+Factor+Levels/1_23zku0qv" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Collapsing+Factor+Levels/1_23zku0qv">(Video)</a>
-  <ul class="collapse">
-  <li><a href="#lets-chain-this-all-together." id="toc-lets-chain-this-all-together." class="nav-link" data-scroll-target="#lets-chain-this-all-together."><span class="header-section-number">5.6.1</span> Let’s chain this all together.</a></li>
-  </ul></li>
-  <li><a href="#removing-factor-levels-video" id="toc-removing-factor-levels-video" class="nav-link" data-scroll-target="#removing-factor-levels-video"><span class="header-section-number">5.7</span> Removing factor levels </a><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Removing+Factor+Levels/1_dv1a8kgh" target="_blank" class="nav-link" data-scroll-target="https\://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Removing+Factor+Levels/1_dv1a8kgh">(Video)</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./factors.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Working with Factors</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Working with Factors</span></h1>
+<h1 class="title"><span id="sec-factors" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Working with Factors</span></span></h1>
 </div>
 
 
@@ -323,43 +327,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In this lesson we will discuss ways to organize and deal with categorical data, also known as factor data types. <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Intro/1_h8a1glfl" target="_blank">(Intro Video)</a></p>
-<section id="student-learning-objectives" class="level3" data-number="5.0.1">
-<h3 data-number="5.0.1" class="anchored" data-anchor-id="student-learning-objectives"><span class="header-section-number">5.0.1</span> Student Learning Objectives</h3>
+<p>In this lesson we will discuss ways to organize and deal with categorical data, also known as factor data types.</p>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Intro/1_h8a1glfl" target="_blank">Lesson Introduction Video</a></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="🎓 Learning Objectives">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🎓 Learning Objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="columns">
+<div class="column" style="width:70%;">
 <p>After completing this lesson students will be able to</p>
 <ul>
 <li>Convert a numeric variable to a factor variable.</li>
 <li>Apply and change labels to factor</li>
 <li>Understand and control the ordering of the factor.</li>
 <li>Combine multiple levels of a factor variable into one level</li>
+<li>Learn how to use the <code>forcats</code> package</li>
 </ul>
-</section>
-<section id="preparation" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="preparation"><span class="header-section-number">5.1</span> Preparation</h2>
-<p>Prior to this lesson learners should</p>
-<ul>
-<li>Download the <a href="notes/factors_notes.qmd">[factors_notes.qmd]</a> Quarto file and save into your <code>notes/Math130</code> folder.
-<ul>
-<li>Open this in RStudio and ensure the first code chunk will run without error.</li>
-</ul></li>
-<li>Install the <code>forcats</code> package (<a href="https://norcalbiostat.github.io/MATH130/notes/02_setup_slides.html#19">this was done as part of lesson 02</a>).</li>
-</ul>
-<p>We’re going to use two data sets from the <code>openintro</code> package. The <code>email</code> data set contains information on emails received by a specific account for the first three months in 2012, and the <code>fastfood</code> data set describes nutrition amounts in 515 fast food items. More information can be seen about these data sets by viewing the help files using <code>?email</code> and <code>?fastfood</code>.</p>
+</div><div class="column" style="width:30%;">
+<p><img src="img/forcats.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Prepare">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+👉 Prepare
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Open your Math 130 R Project.</li>
+<li>Right click and “save as” this lessons <a href="notes/factor_notes.qmd">[Quarto notes file]</a> and save into your <code>Math130/notes</code> folder.</li>
+<li>In the <em>Files</em> pane, open this Quarto file and Render this file.</li>
+</ol>
+</div>
+</div>
+<div class="page-columns page-full"><p>  </p><div class="no-row-height column-margin column-container"><span class="margin-aside">The <code>email</code> data set contains information on emails received by one of the OpenIntro authors for the first three months in 2012. See <code>?email</code> for more details.</span><span class="margin-aside">The <code>fastfood</code> data set from the <code>openintro</code> package describes nutrition amounts in 515 fast food items. See <code>?fastfood</code> for more details.</span><span class="margin-aside">The <code>mtcars</code> data set contains data from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles. See <code>?mtcars</code> for more details.</span></div></div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>email <span class="ot">&lt;-</span> openintro<span class="sc">::</span>email</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ff    <span class="ot">&lt;-</span> openintro<span class="sc">::</span>fastfood</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ff    <span class="ot">&lt;-</span> openintro<span class="sc">::</span>fastfood</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>nc    <span class="ot">&lt;-</span> openintro<span class="sc">::</span>ncbirths <span class="co"># note the name change</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>mtcars <span class="ot">&lt;-</span> mtcars <span class="co"># comes with R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<img src="../static/img/forcats.png" align="left" style="margin: 0px 20px 0px 20px;">
-<p>
-<br><br><br> The goal of the <code>forcats</code> package is to provide a suite of useful tools that solve common problems with factors. Often in R there are multiple ways to accomplish the same task. Some examples in this lesson will show how to perform a certain task using base R functions, as well as functions from the <code>forcats</code> package.
-</p>
-</section>
-<section id="what-is-a-factor-video" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="what-is-a-factor-video"><span class="header-section-number">5.2</span> What is a factor? <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+What+is+a+FactorF/1_abke2v0c" target="_blank">(Video)</a></h2>
+<p>The goal of the <code>forcats</code> package is to provide a suite of useful tools that solve common problems with factors. Often in R there are multiple ways to accomplish the same task. Some examples in this lesson will show how to perform a certain task using base R functions, as well as functions from the <code>forcats</code> package.</p>
+<section id="what-is-a-factor" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="what-is-a-factor"><span class="header-section-number">5.1</span> What is a factor?</h2>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+What+is+a+FactorF/1_abke2v0c" target="_blank">What is a factor - lesson video</a></p>
+</div>
+</div>
+</div>
 <p>The term factor refers to a data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable corresponds to a limited number of categories, while a continuous variable can correspond to an infinite number of values.</p>
 <p>An example of a categorical variable is the <code>number</code> variable in the <code>email</code> data set. This variable contains data on whether there was no number, a small number (under 1 million), or a big number in the content of the email.</p>
-<p>First we should confirm that R sees <code>number</code> as a factor.</p>
+</section>
+<section id="confirming-the-factor-data-type" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="confirming-the-factor-data-type"><span class="header-section-number">5.2</span> Confirming the factor data type</h2>
+<p>First we should confirm that R sees <code>number</code> as a factor. We can use the <code>class</code> function we saw earlier, or <code>str</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -374,218 +422,142 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>There are three levels: <code>none</code>, <code>small</code>, and <code>big</code>.</p>
-<p>How many records are in each level? There are a few ways we can determine this, here are two:</p>
-<p><strong>Base R</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Character data types">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Character data types
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let’s look at the variable <code>restaurant</code> from the fast food (<code>ff</code>) data set.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(ff<span class="sc">$</span>restaurant)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>
- none small   big 
-  549  2827   545 </code></pre>
+<pre data-code-line-numbers=""><code>NULL</code></pre>
 </div>
 </div>
-<p><strong>forcats</strong></p>
+</div>
+</div>
+<p>Wait - NULL? But this is a categorical variable.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_count</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(ff<span class="sc">$</span>restaurant)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code># A tibble: 3 × 2
-  f         n
-  &lt;fct&gt; &lt;int&gt;
-1 none    549
-2 small  2827
-3 big     545</code></pre>
+<pre data-code-line-numbers=""><code>[1] "character"</code></pre>
 </div>
 </div>
-<p>Note that <code>fct_count</code> also gives you the number of records with that factor level. This is yet another way to generate a frequency table.</p>
+<p>There is a subtle difference between <code>factor</code> and <code>character</code> data types in R. Both are categorical measures (not numbers), but factor variables have an assigned order and character variables do not. If we want to specifically control the ordering of the levels, the data type must be <code>factor</code>.</p>
 </section>
-<section id="convert-a-number-to-factor-video" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="convert-a-number-to-factor-video"><span class="header-section-number">5.3</span> Convert a number to Factor <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Convert+a+Number+to+Factor/1_rfnetvxy" target="_blank">(Video)</a></h2>
+<section id="convert-a-character-variable-to-factor" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="convert-a-character-variable-to-factor"><span class="header-section-number">5.3</span> Convert a character variable to factor</h2>
+<p>We can use the <code>as.factor()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(ff<span class="sc">$</span>restaurant)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(ff<span class="sc">$</span>restaurant)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>[1] "Arbys"       "Burger King" "Chick Fil-A" "Dairy Queen" "Mcdonalds"  
+[6] "Sonic"       "Subway"      "Taco Bell"  </code></pre>
+</div>
+</div>
+<p>The <code>forcats</code> package has a similar function <code>as_factor()</code> that could be used here also.</p>
+</section>
+<section id="convert-a-number-variable-to-factor" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="convert-a-number-variable-to-factor"><span class="header-section-number">5.4</span> Convert a number variable to factor</h2>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Convert+a+Number+to+Factor/1_rfnetvxy" target="_blank">Lesson video</a></p>
+</div>
+</div>
+</div>
 <p>Sometimes data are entered into the computer using numeric codes such as 0 and 1. These codes stand for categories, such as “no” and “yes”. Sometimes we want to analyze these binary variables in two ways:</p>
 <ul>
 <li>For statistical analyses, the data must be numeric 0/1.</li>
 <li>For many graphics, the data must be a factor, “no/yes”.</li>
 </ul>
-<p><strong>Example: Is the email flagged as spam?</strong> The <code>spam</code> variable is recorded as an integer variable with values 0 and 1.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: What type of transmission does that car have?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: What type of transmission does that car have?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>am</code> variable from the <code>mtcars</code> data set records whether or not the car has an automatic transmission, or a manual one. However, the values were recorded as 0 for automatic and 1 for manual.</p>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>spam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(mtcars<span class="sc">$</span>am) <span class="co"># view which values are present</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>
-   0    1 
-3554  367 </code></pre>
+ 0  1 
+19 13 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(email<span class="sc">$</span>spam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(mtcars<span class="sc">$</span>am) <span class="co"># confirm what R thinks the data type is</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>[1] "factor"</code></pre>
+<pre data-code-line-numbers=""><code>[1] "numeric"</code></pre>
 </div>
 </div>
-<p>We use the function <code>factor()</code> to convert the numeric variable <code>spam</code> to a factor, applying <code>labels</code> to convert 0 to “no” and 1 to “yes”.</p>
+<p>R thinks this variable is numeric, but we know that’s not the case. We can use the function <code>factor()</code> to convert the numeric variable <code>am</code> to a factor, applying <code>labels</code> to convert 0 to “automatic” and 1 to “manual”.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>spam_fac <span class="ot">&lt;-</span> <span class="fu">factor</span>(email<span class="sc">$</span>spam, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">"no"</span>, <span class="st">"yes"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>mtcars<span class="sc">$</span>transmission_type <span class="ot">&lt;-</span> <span class="fu">factor</span>(mtcars<span class="sc">$</span>am, </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">labels=</span><span class="fu">c</span>(<span class="st">"automatic"</span>, <span class="st">"manual"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The ordering of the <code>labels</code> argument <em>must</em> be in the same order (left to right) as the factor levels themselves. Look back at the order of columns in the <code>table</code> - it goes 0 then 1. Thus our labels need to go “no” then “yes”.</p>
-<p><strong>Always confirm your recode</strong></p>
-<p>Here we confirm that the new variable was created correctly by creating a two-way contingency table by calling the <code>table(old variable, new variable)</code> function on both the old and new variables.</p>
+<p>The ordering of the <code>labels</code> argument <em>must</em> be in the same order (left to right) as the factor levels themselves. Look back at the order of columns in the <code>table</code> - it goes 0 then 1. Thus our labels need to go “automatic” then “manual”.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Trust but verify">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Trust but verify
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We can confirm that the new variable was created correctly by creating a two-way contingency table by calling the <code>table(old variable, new variable)</code> function on both the old and new variables.</p>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>spam, email<span class="sc">$</span>spam_fac, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(mtcars<span class="sc">$</span>am, mtcars<span class="sc">$</span>transmission_type, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>      
-         no  yes &lt;NA&gt;
-  0    3554    0    0
-  1       0  367    0
-  &lt;NA&gt;    0    0    0</code></pre>
+       automatic manual &lt;NA&gt;
+  0           19      0    0
+  1            0     13    0
+  &lt;NA&gt;         0      0    0</code></pre>
 </div>
 </div>
-<p>Here we see that all the 0’s were recoded to ’no’s, and all the 1’s recoded to “yes”’s, and there are no new missing values. Success!</p>
+<p>Here we see that all the 0’s were recoded to automatic, and all the 1’s recoded to manual, and there are no new missing values. Success!</p>
 </section>
-<section id="factor-ordering-video" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="factor-ordering-video"><span class="header-section-number">5.4</span> Factor ordering <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Factor+Ordering/1_jl8i52iu" target="_blank">(Video)</a></h2>
-<p>Let’s revisit the variable <code>number</code>, that contains the size of the number in the email.</p>
+<section id="factor-renaming" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="factor-renaming"><span class="header-section-number">5.5</span> Factor (re)naming</h2>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Factor+%28Re%29naming/1_f34h4fuw" target="_blank">Lesson Video</a></p>
+</div>
+</div>
+</div>
+<p>What if the variable is already a factor, but has names we don’t prefer. We want them to say something else. We can accomplish this in both base R and using <code>forcats</code> package.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><code>forcats</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Re-factor the variable and apply new <code>labels</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>
- none small   big 
-  549  2827   545 </code></pre>
-</div>
-</div>
-<p>Specifically the ordering from left to right of the factors. This is ordinal data, in that <code>none</code> is inherently “smaller” than <code>small</code>, which is smaller than <code>big</code>. Though R correctly ordered these data, it may default to alphabetical order in other cases, so beware! You may need to correct the ordering for other data sets.</p>
-<p>Let’s see a few ways of how to control the ordering.</p>
-<section id="manually-specified" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="manually-specified"><span class="header-section-number">5.4.1</span> Manually specified</h3>
-<p>We need to take control of these factors! We can do that by re-factoring the existing factor variable, but this time specifying the <code>levels</code> of the factor (since it already has labels). Say we decide to reverse the order so we go from big to small to none, in decreasing order of size.</p>
-<p><strong>Base R</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">factor</span>(email<span class="sc">$</span>number, <span class="at">levels=</span><span class="fu">c</span>(<span class="st">"big"</span>, <span class="st">"small"</span>, <span class="st">"none"</span>)) <span class="sc">%&gt;%</span> <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>.
-  big small  none 
-  545  2827   549 </code></pre>
-</div>
-</div>
-<p><strong>forcats</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>number <span class="sc">%&gt;%</span> <span class="fu">fct_relevel</span>(<span class="st">"big"</span>, <span class="st">"small"</span>, <span class="st">"none"</span>) <span class="sc">%&gt;%</span> <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>.
-  big small  none 
-  545  2827   549 </code></pre>
-</div>
-</div>
-<p>In each of these examples, I pipe (<code>%&gt;%</code>) the <code>table()</code> function at the end so I can see the results of the reordering. This helps me visually confirm that the code used changed the factor levels to be left to right in decreasing content size order. This will be important for graphing.</p>
-<blockquote class="blockquote">
-<p>Since I did not use the assignment operator (<code>&lt;-</code>) here, these changes were not made to the variable in the <code>email</code> data set. The examples below demonstrate making an adjustmet to a factor variable and saving that adjustment as a new variable in the data set.</p>
-</blockquote>
-<!---
-## Order by frequency
-The size of the number in an email is _ordinal_, meaning the levels have an internal order. _Nominal_ categorical
-data does not have a natural ordering. One preferrable way to order the levels of a nominal variable is by the frequency of the levels. The `forcats` function `fct_infreq()` accomplishes this task. 
-
-
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-email$number %>% fct_infreq() %>% table()
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-.
-small  none   big 
- 2827   549   545 
-```
-
-
-:::
-:::
-
-
-
-
-
-
-There are more emails with small numbers in it than there are emails with no numbers, which shows up more often than emails with big numbers. 
-
-## Reversed order
-
-Again, `forcats` to the rescue here. Let's remind ourselves what the original ordering was: 
-
-
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-table(email$number)
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-
- none small   big 
-  549  2827   545 
-```
-
-
-:::
-:::
-
-
-
-
-
-
-And now to reverse this ordering, 
-
-
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-email$number %>% fct_rev() %>% table()
-```
-
-::: {.cell-output .cell-output-stdout}
-
-```
-.
-  big small  none 
-  545  2827   549 
-```
-
-
-:::
-:::
-
-
-
-
-
-
-This just *happens* to be the same as in decreasing frequency order. 
-
---->
-</section>
-</section>
-<section id="factor-renaming-video" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="factor-renaming-video"><span class="header-section-number">5.5</span> Factor (re)naming <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Factor+%28Re%29naming/1_f34h4fuw" target="_blank">(Video)</a></h2>
-<p>Sometimes factors come to us in names we don’t prefer. We want them to say something else.</p>
-<p><strong>Base R</strong> The easiest way here is to re-factor the variable and apply new <code>labels</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>my_new_number <span class="ot">&lt;-</span> <span class="fu">factor</span>(email<span class="sc">$</span>number, <span class="at">labels=</span><span class="fu">c</span>( <span class="st">"None"</span>, <span class="st">"&lt;1M"</span>,<span class="st">"1M+"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Ok, but did this work? Trust, but verify.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb24" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number, email<span class="sc">$</span>my_new_number, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>my_new_number <span class="ot">&lt;-</span> <span class="fu">factor</span>(email<span class="sc">$</span>number, </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">labels=</span><span class="fu">c</span>( <span class="st">"None"</span>, <span class="st">"&lt;1M"</span>,<span class="st">"1M+"</span>))</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number, email<span class="sc">$</span>my_new_number, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>       
         None  &lt;1M  1M+ &lt;NA&gt;
@@ -595,11 +567,16 @@ This just *happens* to be the same as in decreasing frequency order.
   &lt;NA&gt;     0    0    0    0</code></pre>
 </div>
 </div>
-<p>The “big” factor is now labeled “1M+”, “none” is named “None”, and “small” is “&lt;1M”.</p>
-<p><strong>forcats</strong>: use the <code>fct_recode("NEW" = "old")</code> function here.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Use the <code>fct_recode("NEW" = "old")</code> function here.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>my_forcats_number <span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(email<span class="sc">$</span>number, <span class="st">"BIG"</span> <span class="ot">=</span> <span class="st">"big"</span>, <span class="st">"NONE"</span> <span class="ot">=</span> <span class="st">"none"</span>, <span class="st">"SMALL"</span> <span class="ot">=</span> <span class="st">"small"</span>)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number, email<span class="sc">$</span>my_forcats_number, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>email<span class="sc">$</span>my_forcats_number <span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(email<span class="sc">$</span>number, </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"BIG"</span> <span class="ot">=</span> <span class="st">"big"</span>, </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"NONE"</span> <span class="ot">=</span> <span class="st">"none"</span>, </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"SMALL"</span> <span class="ot">=</span> <span class="st">"small"</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(email<span class="sc">$</span>number, email<span class="sc">$</span>my_forcats_number, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>       
         NONE SMALL  BIG &lt;NA&gt;
@@ -609,12 +586,109 @@ This just *happens* to be the same as in decreasing frequency order.
   &lt;NA&gt;     0     0    0    0</code></pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+<p>The <code>big</code> factor is now labeled <code>1M+</code>, <code>none</code> is named <code>None</code>, and <code>small</code> is <code>&lt;1M</code>.</p>
 </section>
-<section id="collapsing-factor-levels-video" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="collapsing-factor-levels-video"><span class="header-section-number">5.6</span> Collapsing factor levels <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Collapsing+Factor+Levels/1_23zku0qv" target="_blank">(Video)</a></h2>
+<section id="factor-ordering" class="level2 page-columns page-full" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="factor-ordering"><span class="header-section-number">5.6</span> Factor ordering</h2>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>No lesson video</p>
+</div>
+</div>
+</div>
+<p>Let’s look back at the variable <code>restaurant</code> from the fast food (<code>ff</code>) data set.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(ff<span class="sc">$</span>restaurant)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>[1] "Arbys"       "Burger King" "Chick Fil-A" "Dairy Queen" "Mcdonalds"  
+[6] "Sonic"       "Subway"      "Taco Bell"  </code></pre>
+</div>
+</div>
+<p>R defaults to alphabetical order in other cases, so beware! You may need to correct the ordering for other data sets.</p>
+<p>We need to take control of these factors! We can do that by re-factoring the existing factor variable, but this time specifying the <code>levels</code> of the factor (since it already has labels). Say we decide to order the restaraunts by putting all the places that sell burgers together.</p>
+<blockquote class="blockquote">
+<p>Original Order: Arbys, Burger King, Chick Fil-A, Dairy Queen, Mcdonalds, Sonic, Subway, Taco Bell</p>
+<p>Desired Order: Arbys, Burger King, Dairy Queen, Mcdonalds, Sonic, Chick Fil-A, Subway, Taco Bell</p>
+</blockquote>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Since I did not use the assignment operator (<code>&lt;-</code>) here, these changes were not made to the variable in the <code>ff</code> data set. The examples below demonstrate making an adjustmet to a factor variable and saving that adjustment as a new variable in the data set.</span></div></div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><code>forcats</code></a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Use the <code>factor</code> function again, and write out <strong>each</strong> factor level in the desired order. Make sure you are spelling each level correctly.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># results not saved</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">factor</span>(ff<span class="sc">$</span>restaurant, </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">levels=</span><span class="fu">c</span>(<span class="st">"Arbys"</span>, <span class="st">"Burger King"</span>, <span class="st">"Dairy Queen"</span>, <span class="st">"Mcdonalds"</span>, <span class="st">"Sonic"</span>, </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>                <span class="st">"Chick Fil-A"</span>, <span class="st">"Subway"</span>, <span class="st">"Taco Bell"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>
+      Arbys Burger King Dairy Queen   Mcdonalds       Sonic Chick Fil-A 
+         55          70          42          57          53          27 
+     Subway   Taco Bell 
+         96         115 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Using the <code>fct_relevel</code> function, you only need to specifiy the levels that you want to move.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># results not saved</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant <span class="sc">|&gt;</span> </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fct_relevel</span>(<span class="st">"Arbys"</span>, <span class="st">"Burger King"</span>, <span class="st">"Dairy Queen"</span>, <span class="st">"Mcdonalds"</span>, <span class="st">"Sonic"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fct_count</span>() <span class="co"># new function - acts like table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code># A tibble: 8 × 2
+  f               n
+  &lt;fct&gt;       &lt;int&gt;
+1 Arbys          55
+2 Burger King    70
+3 Dairy Queen    42
+4 Mcdonalds      57
+5 Sonic          53
+6 Chick Fil-A    27
+7 Subway         96
+8 Taco Bell     115</code></pre>
+</div>
+</div>
+<p>The <code>fct_relevel</code> function has nice shortcuts as well for example to keep the rest of the ordering but only one or two items. See <code>?fct_relevel</code> for other options.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant <span class="sc">|&gt;</span> </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fct_relevel</span>(<span class="st">"Subway"</span>, <span class="at">after =</span> <span class="cn">Inf</span>) <span class="sc">|&gt;</span> <span class="co"># move to end</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fct_relevel</span>(<span class="st">"Taco Bell"</span>) <span class="sc">|&gt;</span> <span class="co"># move to front</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">levels</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>[1] "Taco Bell"   "Arbys"       "Burger King" "Chick Fil-A" "Dairy Queen"
+[6] "Mcdonalds"   "Sonic"       "Subway"     </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="decreasing-number-of-levels" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="decreasing-number-of-levels"><span class="header-section-number">5.7</span> Decreasing number of levels</h2>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>No Video</p>
+</div>
+</div>
+</div>
 <p>For analysis purposes, sometimes you want to work with a smaller number of factor variables. Let’s look at the restaurants that are included in the <code>fastfood</code> data set.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>
       Arbys Burger King Chick Fil-A Dairy Queen   Mcdonalds       Sonic 
@@ -623,119 +697,90 @@ This just *happens* to be the same as in decreasing frequency order.
          96         115 </code></pre>
 </div>
 </div>
+<section id="combining-multiple-categories-into-one" class="level3" data-number="5.7.1">
+<h3 data-number="5.7.1" class="anchored" data-anchor-id="combining-multiple-categories-into-one"><span class="header-section-number">5.7.1</span> Combining multiple categories into one</h3>
 <p>Let’s combine all the sandwich, and burger joints together. I am going to save this new variable as <code>restaurant_new</code>.</p>
 <p>The syntax for the <code>fct_collapse</code> function is <code>new level</code> = <code>"old level"</code>, where the “old level” is in quotes. As always, it is good practice to create a two way table to make sure the code typed does what we expected it to do.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant_new <span class="ot">&lt;-</span> <span class="fu">fct_collapse</span>(ff<span class="sc">$</span>restaurant, </span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">BurgerJoint =</span> <span class="fu">c</span>(<span class="st">"Burger King"</span>, <span class="st">"Mcdonalds"</span>, <span class="st">"Sonic"</span>), </span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">Sammich =</span> <span class="fu">c</span>(<span class="st">"Arbys"</span>, <span class="st">"Subway"</span>))</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant, ff<span class="sc">$</span>restaurant_new, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant_new <span class="ot">&lt;-</span> <span class="fu">fct_collapse</span>(ff<span class="sc">$</span>restaurant, </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">BurgerJoint =</span> <span class="fu">c</span>(<span class="st">"Burger King"</span>, <span class="st">"Mcdonalds"</span>, <span class="st">"Sonic"</span>), </span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">Sandwich =</span> <span class="fu">c</span>(<span class="st">"Arbys"</span>, <span class="st">"Subway"</span>))</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant, ff<span class="sc">$</span>restaurant_new, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>             
-              Sammich BurgerJoint Chick Fil-A Dairy Queen Taco Bell &lt;NA&gt;
-  Arbys            55           0           0           0         0    0
-  Burger King       0          70           0           0         0    0
-  Chick Fil-A       0           0          27           0         0    0
-  Dairy Queen       0           0           0          42         0    0
-  Mcdonalds         0          57           0           0         0    0
-  Sonic             0          53           0           0         0    0
-  Subway           96           0           0           0         0    0
-  Taco Bell         0           0           0           0       115    0
-  &lt;NA&gt;              0           0           0           0         0    0</code></pre>
+              Sandwich BurgerJoint Chick Fil-A Dairy Queen Taco Bell &lt;NA&gt;
+  Arbys             55           0           0           0         0    0
+  Burger King        0          70           0           0         0    0
+  Chick Fil-A        0           0          27           0         0    0
+  Dairy Queen        0           0           0          42         0    0
+  Mcdonalds          0          57           0           0         0    0
+  Sonic              0          53           0           0         0    0
+  Subway            96           0           0           0         0    0
+  Taco Bell          0           0           0           0       115    0
+  &lt;NA&gt;               0           0           0           0         0    0</code></pre>
 </div>
 </div>
-<p>Let’s take this one step further and shorten the factor names and rename the levels with spaces (like <code>Taco Bell</code>).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb32" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant_shortname <span class="ot">&lt;-</span> <span class="fu">fct_recode</span>(ff<span class="sc">$</span>restaurant_new, </span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Ckn"</span> <span class="ot">=</span> <span class="st">"Chick Fil-A"</span>, </span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"DQ"</span> <span class="ot">=</span> <span class="st">"Dairy Queen"</span>, </span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"TB"</span> <span class="ot">=</span> <span class="st">"Taco Bell"</span>, </span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Samm"</span> <span class="ot">=</span> <span class="st">'Sammich'</span>, </span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>                                      <span class="st">"Burg"</span><span class="ot">=</span> <span class="st">"BurgerJoint"</span>)</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant, ff<span class="sc">$</span>restaurant_shortname, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>             
-              Samm Burg Ckn  DQ  TB &lt;NA&gt;
-  Arbys         55    0   0   0   0    0
-  Burger King    0   70   0   0   0    0
-  Chick Fil-A    0    0  27   0   0    0
-  Dairy Queen    0    0   0  42   0    0
-  Mcdonalds      0   57   0   0   0    0
-  Sonic          0   53   0   0   0    0
-  Subway        96    0   0   0   0    0
-  Taco Bell      0    0   0   0 115    0
-  &lt;NA&gt;           0    0   0   0   0    0</code></pre>
-</div>
-</div>
-<section id="lets-chain-this-all-together." class="level3 .callout-tip" data-number="5.6.1">
-<h3 data-number="5.6.1" class="anchored" data-anchor-id="lets-chain-this-all-together."><span class="header-section-number">5.6.1</span> Let’s chain this all together.</h3>
-<p>Sporadically throughout this lesson, and at the end of the last lesson I’ve used the pipe <code>%&gt;%</code> operator as somewhat of a shortcut. This amazing piece of code lets us string together commands. Let’s see how to accomplish both changes to the restaurant variable in one single step.</p>
 </section>
+<section id="keeping-the-most-frequent-categories" class="level3" data-number="5.7.2">
+<h3 data-number="5.7.2" class="anchored" data-anchor-id="keeping-the-most-frequent-categories"><span class="header-section-number">5.7.2</span> Keeping the most frequent categories</h3>
+<p>Sometimes we only want to keep the most frequent categories and then lump uncommon factor together levels into “other”. The <code>fct_lump_n</code> function</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant <span class="sc">%&gt;%</span> <span class="fu">fct_collapse</span>(<span class="at">BurgerJoint =</span> <span class="fu">c</span>(<span class="st">"Burger King"</span>, <span class="st">"Mcdonalds"</span>, <span class="st">"Sonic"</span>), </span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>                               <span class="at">Sammich     =</span> <span class="fu">c</span>(<span class="st">"Arbys"</span>, <span class="st">"Subway"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">fct_recode</span>(<span class="st">"Ckn"</span>  <span class="ot">=</span> <span class="st">"Chick Fil-A"</span>, </span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"DQ"</span>   <span class="ot">=</span> <span class="st">"Dairy Queen"</span>, </span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"TB"</span>   <span class="ot">=</span> <span class="st">"Taco Bell"</span>, </span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Samm"</span> <span class="ot">=</span> <span class="st">'Sammich'</span>, </span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Burg "</span><span class="ot">=</span> <span class="st">"BurgerJoint"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_lump_n</span>(ff<span class="sc">$</span>restaurant, <span class="at">n=</span><span class="dv">5</span>) <span class="sc">|&gt;</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fct_count</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>.
- Samm Burg    Ckn    DQ    TB 
-  151   180    27    42   115 </code></pre>
+<pre data-code-line-numbers=""><code># A tibble: 6 × 2
+  f               n
+  &lt;fct&gt;       &lt;int&gt;
+1 Arbys          55
+2 Burger King    70
+3 Mcdonalds      57
+4 Subway         96
+5 Taco Bell     115
+6 Other         122</code></pre>
 </div>
 </div>
-<p>A few things to note when chaining commands together:</p>
-<ol type="1">
-<li>the first argument (the data or variable) is not included.</li>
-<li>the pipe itself must be at the end of a “sentence”</li>
-</ol>
-<p>Don’t worry if this doesn’t make immediate sense right now. We’ll talk more on chaining commands together in a later lesson. There is no harm in accomplishing a task in more than one step.</p>
 </section>
-<section id="removing-factor-levels-video" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="removing-factor-levels-video"><span class="header-section-number">5.7</span> Removing factor levels <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Removing+Factor+Levels/1_dv1a8kgh" target="_blank">(Video)</a></h2>
+<section id="removing-categories-entirely" class="level3" data-number="5.7.3">
+<h3 data-number="5.7.3" class="anchored" data-anchor-id="removing-categories-entirely"><span class="header-section-number">5.7.3</span> Removing categories entirely</h3>
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Removing+Factor+Levels/1_dv1a8kgh" target="_blank">Lesson Video</a></p>
+</div>
+</div>
+</div>
 <p>Sometimes, you don’t even want to consider certain levels. This often occurs in survey data where the respondent provides an answer of “Refuse to answer” or the data is coded as the word “missing”. The word “missing’ is fundamentally different than the <code>NA</code> code for a missing value.</p>
 <p>For demonstration purposes, let’s get rid of the data from DQ. Who eats something other than ice cream at that place anyhow?</p>
-<p>The most straight forward way to set a variable missing based on it’s value is to use a logical statement to choose what rows the variable is set to missing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant_shortname[ff<span class="sc">$</span>restaurant_shortname <span class="sc">==</span> <span class="st">"DQ"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant_shortname, <span class="at">useNA=</span><span class="st">"always"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant[ff<span class="sc">$</span>restaurant <span class="sc">==</span> <span class="st">"Dairy Queen"</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>
-Samm Burg  Ckn   DQ   TB &lt;NA&gt; 
- 151  180   27    0  115   42 </code></pre>
+      Arbys Burger King Chick Fil-A Dairy Queen   Mcdonalds       Sonic 
+         55          70          27           0          57          53 
+     Subway   Taco Bell 
+         96         115 </code></pre>
 </div>
 </div>
-<p>This table shows that there are 42 records missing <code>restaraunt_shortname</code>, and 0 records with the level <code>DQ</code>. Unfortunately, the level itself still is there. R does not assume just because there are no records with that level, that the named level itself should be removed. We can use the function <code>fct_drop</code> to drop the levels with no records.</p>
+<p>Even though there are no records with the level <code>Dairy Queen</code>, the level itself still is there. R does not assume just because there are no records with that level, that the named level itself should be removed. We use the function <code>fct_drop</code> to drop the levels with no records.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_drop</span>(ff<span class="sc">$</span>restaurant_shortname) <span class="sc">%&gt;%</span> <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant <span class="ot">&lt;-</span> <span class="fu">fct_drop</span>(ff<span class="sc">$</span>restaurant)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>.
-Samm Burg  Ckn   TB 
- 151  180   27  115 </code></pre>
-</div>
-</div>
-<p>If we knew ahead of time we wanted to drop DQ, we could have set that level to <code>NULL</code> when we did the initial recode.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb40" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant <span class="sc">%&gt;%</span> <span class="fu">fct_collapse</span>(<span class="at">BurgerJoint =</span> <span class="fu">c</span>(<span class="st">"Burger King"</span>, <span class="st">"Mcdonalds"</span>, <span class="st">"Sonic"</span>), </span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>                               <span class="at">Sammich =</span> <span class="fu">c</span>(<span class="st">"Arbys"</span>, <span class="st">"Subway"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">fct_recode</span>(<span class="st">"Ckn"</span>  <span class="ot">=</span> <span class="st">"Chick Fil-A"</span>, </span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>                              <span class="at">NULL   =</span> <span class="st">"Dairy Queen"</span>, </span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"TB"</span>   <span class="ot">=</span> <span class="st">"Taco Bell"</span>, </span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Samm"</span> <span class="ot">=</span> <span class="st">'Sammich'</span>, </span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Burg "</span><span class="ot">=</span> <span class="st">"BurgerJoint"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>.
- Samm Burg    Ckn    TB 
-  151   180    27   115 </code></pre>
+<pre data-code-line-numbers=""><code>
+      Arbys Burger King Chick Fil-A   Mcdonalds       Sonic      Subway 
+         55          70          27          57          53          96 
+  Taco Bell 
+        115 </code></pre>
 </div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1307,8 +1352,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./plots.html" class="pagination-link" aria-label="Creating Graphics">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Graphics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./plots.html" class="pagination-link" aria-label="Creating Plots">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Plots</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

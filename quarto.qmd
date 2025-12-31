@@ -83,7 +83,7 @@ Code chunks start with three back ticks ` ``` ` [a back tick is the key to the l
 ```
 
 * You can insert code chunks by using the button in the top right of an RMD file (Insert -> R), or by typing  <kbd>CTRL+ALT+I</kbd>.
-* R code chunks can also have a YAML style header, identified by `#|` at the beginning of the line. In this case I set `eval` to `false` to prevent the code inside this code chunk from being run when I render the whole document. 
+* R code chunks can also have a YAML style header, prefixed by a "hash-pipe" `#|` at the top of the code chunk. [`|` is the first of three pipes we'll see in this course]{.aside}  In this case I set `eval` to `false` to prevent the code inside this code chunk from being run when I render the whole document. 
 
 :::{.callout-important title = "Only code goes in code chunks"}
 
@@ -115,7 +115,7 @@ In addition to rendering the complete document to view the results of code chunk
 ### Markdown Text {#sec-markdown}
 
 Markdown is a popular markup language that allows you to add formatting elements to text. Markdown is useful because it is lightweight, flexible, and platform independent. 
-[See more basic syntax of Markdown at <a href="https://markdownguide.offshoot.io/basic-syntax/"> https://markdownguide.offshoot.io/basic-syntax/</a>]{.aside}
+[See more basic syntax of Markdown at <a href="https://quarto.org/docs/authoring/markdown-basics.html"> https://quarto.org/docs/authoring/markdown-basics.html]{.aside}
 
 
 :::::: columns

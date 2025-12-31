@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Robin Donatello, Nicholas Lytal">
-<meta name="dcterms.date" content="2026-01-01">
 
 <title>Introduction to R</title>
 <style>
@@ -148,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./programming_in_r.html" class="sidebar-item-text sidebar-link">
+  <a href="./intro_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with R</span></span></a>
   </div>
 </li>
@@ -178,13 +177,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Graphics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient data management</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -207,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Plot Enhancements</span></span></a>
   </div>
 </li>
       </ul>
@@ -223,20 +222,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./help.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Seeking Help</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./assignments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Assignments</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Putting it all together</span></a>
+ <span class="menu-text">Project</span></a>
   </div>
 </li>
       </ul>
@@ -267,12 +272,6 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 1, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -284,7 +283,8 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="preface" class="level1 unnumbered page-columns page-full">
 <h1 class="unnumbered">Preface</h1>
-<p>This notebook was created to host learning materials for Math 130: Introduction to R at California State University, Chico. From the course catalog:</p>
+<p>This notebook was created to host learning materials for Math 130: Introduction to R at California State University, Chico.</p>
+<p>From the course catalog:</p>
 <blockquote class="blockquote">
 <p><em>This accelerated short course is designed as a primer to get the complete novice up and running with basic knowledge of how to use the statistical programming language R. The target audience is anyone who wants to become the boss of their data and conduct analyses. The course covers getting data into R, manipulating data into an analyzable format, and creating informative plots. Emphasis is placed on reproducibility and literate programming. The course culminates with a data exploration project.</em></p>
 </blockquote>
@@ -308,6 +308,33 @@ Course Learning Objectives
 <li>Create statistical data summaries such as tables, proportions, and summary statistics.</li>
 <li>Perform all of this work in a reproducible manner using professional tools.</li>
 </ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Details for Spring 2026">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Details for Spring 2026
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="grid course-details">
+<section id="meeting-pattern" class="level4 g-col-6">
+<h4 class="anchored" data-anchor-id="meeting-pattern">Meeting pattern</h4>
+<p>📅 &nbsp; MWF 9-950am<br>
+🏛 &nbsp; Holt 113<br>
+👥️ &nbsp; In Person 1/21-2/20</p>
+</section>
+<section id="instructor" class="level4 g-col-6">
+<h4 class="anchored" data-anchor-id="instructor">Instructor</h4>
+<p>🐾 &nbsp; <a href="https://www.norcalbiostat.com">Dr.&nbsp;Robin Donatello</a><br>
+🚪 &nbsp; Holt 202<br>
+📧 &nbsp; <a href="mailto:rdonatello@csuchico.edu">rdonatello@csuchico.edu</a></p>
+</section>
+</div>
+<p>🚧 This site was rebuilt in Quarto in December 2026 and should be considered still under construction.</p>
 </div>
 </div>
 <section id="references-acknowledgements" class="level2">

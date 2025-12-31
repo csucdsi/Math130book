@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./factors.html" rel="next">
-<link href="./programming_in_r.html" rel="prev">
+<link href="./intro_r.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -181,7 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./programming_in_r.html" class="sidebar-item-text sidebar-link">
+  <a href="./intro_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with R</span></span></a>
   </div>
 </li>
@@ -211,13 +211,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Graphics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient data management</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -240,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Plot Enhancements</span></span></a>
   </div>
 </li>
       </ul>
@@ -256,20 +256,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./help.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Seeking Help</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./assignments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Assignments</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Putting it all together</span></a>
+ <span class="menu-text">Project</span></a>
   </div>
 </li>
       </ul>
@@ -286,9 +292,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#summarizing-data" id="toc-summarizing-data" class="nav-link active" data-scroll-target="#summarizing-data"><span class="header-section-number">4.1</span> Summarizing data</a>
   <ul class="collapse">
-  <li><a href="#frequency-tables" id="toc-frequency-tables" class="nav-link" data-scroll-target="#frequency-tables"><span class="header-section-number">4.1.1</span> Frequency Tables</a></li>
+  <li><a href="#sec-intro-tables" id="toc-sec-intro-tables" class="nav-link" data-scroll-target="#sec-intro-tables"><span class="header-section-number">4.1.1</span> Frequency Tables</a></li>
   <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics"><span class="header-section-number">4.1.2</span> Summary Statistics</a></li>
-  <li><a href="#fancy-summary-tables" id="toc-fancy-summary-tables" class="nav-link" data-scroll-target="#fancy-summary-tables"><span class="header-section-number">4.1.3</span> Fancy summary tables</a></li>
+  <li><a href="#sec-intro-tbl_summary" id="toc-sec-intro-tbl_summary" class="nav-link" data-scroll-target="#sec-intro-tbl_summary"><span class="header-section-number">4.1.3</span> Fancy summary tables</a></li>
   </ul></li>
   <li><a href="#missing-data" id="toc-missing-data" class="nav-link" data-scroll-target="#missing-data"><span class="header-section-number">4.2</span> Missing Data</a>
   <ul class="collapse">
@@ -312,7 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./dm.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data Frames</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data Frames</span></h1>
+<h1 class="title"><span id="sec-dm" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Working with Data Frames</span></span></h1>
 </div>
 
 
@@ -330,23 +336,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>In this lesson we will learn how to summarize data in a data frame, and to do basic data management tasks such as making new variables, recoding data and dealing with missing data.</p>
-<div class="callout callout-style-simple callout-warning no-icon callout-titled" title="Optional Video">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-simple callout-warning no-icon">
+<div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
-Optional Video
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="callout-body-container">
 <p><a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Intro/1_oifkz4hn" target="_blank">Section Introduction</a></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="🎓 Learning Objectives">
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="🎓 Learning Objectives">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 🎓 Learning Objectives
@@ -374,10 +377,9 @@ Optional Video
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Open your Math 130 R Project. _Forget how to do this? See <span class="quarto-unresolved-ref">?sec-rproj._</span></li>
-<li>Right click and “save as” this lessons <a href="04_dm_notes.qmd">[04_dm_notes.qmd]</a> Quarto notes file and save into your <code>notes/Math130</code> folder.</li>
-<li>In the <em>Files</em> pane, open this Quarto file and Render this file.<br>
-</li>
+<li>Open your Math 130 R Project. <em>Forget how to do this? See <a href="setup_tools.html#sec-rproj" class="quarto-xref"><span>Section 1.7</span></a> .</em></li>
+<li>Right click and “save as” this lessons <a href="notes/dm_notes.qmd">[dm_notes.qmd]</a> Quarto notes file and save into your <code>Math130/notes</code> folder.</li>
+<li>In the <em>Files</em> pane, open this Quarto file and Render this file.</li>
 </ol>
 </div>
 </div>
@@ -424,8 +426,8 @@ Optional Video
 </div>
 </div>
 </div>
-<section id="frequency-tables" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="frequency-tables"><span class="header-section-number">4.1.1</span> Frequency Tables</h3>
+<section id="sec-intro-tables" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="sec-intro-tables"><span class="header-section-number">4.1.1</span> Frequency Tables</h3>
 <p>Frequency tables are used only any type of categorical data (Nominal, ordinal or binary), and the table results show you how many records in the data set have that particular level.</p>
 <p>You can create a basic frequency table by using the <code>table()</code> function.</p>
 <div class="cell">
@@ -469,8 +471,8 @@ Optional Video
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(ncbirths<span class="sc">$</span>visits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="fancy-summary-tables" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="fancy-summary-tables"><span class="header-section-number">4.1.3</span> Fancy summary tables</h3>
+<section id="sec-intro-tbl_summary" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="sec-intro-tbl_summary"><span class="header-section-number">4.1.3</span> Fancy summary tables</h3>
 <p>The <code>gtsummary</code> package provides a single function <code>tbl_summary</code> to create a really nicely formatted summary table for both quantitative and categorical data types.</p>
 <p>The first argument is the data set, then you <code>include</code> the vector of variable that you want to display in the table. By default the sample size <em>n</em> and the relative percent are presented for categorical data, and the median, with first and third quartiles shown for quantitiatve data.</p>
 <div class="cell">
@@ -478,23 +480,23 @@ Optional Video
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">include =</span> <span class="fu">c</span>(visits, lowbirthweight)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="imrgmumwvk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#imrgmumwvk table {
+<div id="yakyttnqxv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#yakyttnqxv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#imrgmumwvk thead, #imrgmumwvk tbody, #imrgmumwvk tfoot, #imrgmumwvk tr, #imrgmumwvk td, #imrgmumwvk th {
+#yakyttnqxv thead, #yakyttnqxv tbody, #yakyttnqxv tfoot, #yakyttnqxv tr, #yakyttnqxv td, #yakyttnqxv th {
   border-style: none;
 }
 
-#imrgmumwvk p {
+#yakyttnqxv p {
   margin: 0;
   padding: 0;
 }
 
-#imrgmumwvk .gt_table {
+#yakyttnqxv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -520,12 +522,12 @@ Optional Video
   border-left-color: #D3D3D3;
 }
 
-#imrgmumwvk .gt_caption {
+#yakyttnqxv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#imrgmumwvk .gt_title {
+#yakyttnqxv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -537,7 +539,7 @@ Optional Video
   border-bottom-width: 0;
 }
 
-#imrgmumwvk .gt_subtitle {
+#yakyttnqxv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -549,7 +551,7 @@ Optional Video
   border-top-width: 0;
 }
 
-#imrgmumwvk .gt_heading {
+#yakyttnqxv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -561,13 +563,13 @@ Optional Video
   border-right-color: #D3D3D3;
 }
 
-#imrgmumwvk .gt_bottom_border {
+#yakyttnqxv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#imrgmumwvk .gt_col_headings {
+#yakyttnqxv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -582,7 +584,7 @@ Optional Video
   border-right-color: #D3D3D3;
 }
 
-#imrgmumwvk .gt_col_heading {
+#yakyttnqxv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -602,7 +604,7 @@ Optional Video
   overflow-x: hidden;
 }
 
-#imrgmumwvk .gt_column_spanner_outer {
+#yakyttnqxv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -614,15 +616,15 @@ Optional Video
   padding-right: 4px;
 }
 
-#imrgmumwvk .gt_column_spanner_outer:first-child {
+#yakyttnqxv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#imrgmumwvk .gt_column_spanner_outer:last-child {
+#yakyttnqxv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#imrgmumwvk .gt_column_spanner {
+#yakyttnqxv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -634,11 +636,11 @@ Optional Video
   width: 100%;
 }
 
-#imrgmumwvk .gt_spanner_row {
+#yakyttnqxv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#imrgmumwvk .gt_group_heading {
+#yakyttnqxv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -664,7 +666,7 @@ Optional Video
   text-align: left;
 }
 
-#imrgmumwvk .gt_empty_group_heading {
+#yakyttnqxv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -679,15 +681,15 @@ Optional Video
   vertical-align: middle;
 }
 
-#imrgmumwvk .gt_from_md > :first-child {
+#yakyttnqxv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#imrgmumwvk .gt_from_md > :last-child {
+#yakyttnqxv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#imrgmumwvk .gt_row {
+#yakyttnqxv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -706,7 +708,7 @@ Optional Video
   overflow-x: hidden;
 }
 
-#imrgmumwvk .gt_stub {
+#yakyttnqxv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -719,7 +721,7 @@ Optional Video
   padding-right: 5px;
 }
 
-#imrgmumwvk .gt_stub_row_group {
+#yakyttnqxv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -733,15 +735,15 @@ Optional Video
   vertical-align: top;
 }
 
-#imrgmumwvk .gt_row_group_first td {
+#yakyttnqxv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#imrgmumwvk .gt_row_group_first th {
+#yakyttnqxv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#imrgmumwvk .gt_summary_row {
+#yakyttnqxv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -751,16 +753,16 @@ Optional Video
   padding-right: 5px;
 }
 
-#imrgmumwvk .gt_first_summary_row {
+#yakyttnqxv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#imrgmumwvk .gt_first_summary_row.thick {
+#yakyttnqxv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#imrgmumwvk .gt_last_summary_row {
+#yakyttnqxv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -770,7 +772,7 @@ Optional Video
   border-bottom-color: #D3D3D3;
 }
 
-#imrgmumwvk .gt_grand_summary_row {
+#yakyttnqxv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -780,7 +782,7 @@ Optional Video
   padding-right: 5px;
 }
 
-#imrgmumwvk .gt_first_grand_summary_row {
+#yakyttnqxv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -790,7 +792,7 @@ Optional Video
   border-top-color: #D3D3D3;
 }
 
-#imrgmumwvk .gt_last_grand_summary_row_top {
+#yakyttnqxv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -800,11 +802,11 @@ Optional Video
   border-bottom-color: #D3D3D3;
 }
 
-#imrgmumwvk .gt_striped {
+#yakyttnqxv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#imrgmumwvk .gt_table_body {
+#yakyttnqxv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -813,7 +815,7 @@ Optional Video
   border-bottom-color: #D3D3D3;
 }
 
-#imrgmumwvk .gt_footnotes {
+#yakyttnqxv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -827,7 +829,7 @@ Optional Video
   border-right-color: #D3D3D3;
 }
 
-#imrgmumwvk .gt_footnote {
+#yakyttnqxv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -836,7 +838,7 @@ Optional Video
   padding-right: 5px;
 }
 
-#imrgmumwvk .gt_sourcenotes {
+#yakyttnqxv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -850,7 +852,7 @@ Optional Video
   border-right-color: #D3D3D3;
 }
 
-#imrgmumwvk .gt_sourcenote {
+#yakyttnqxv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -858,72 +860,72 @@ Optional Video
   padding-right: 5px;
 }
 
-#imrgmumwvk .gt_left {
+#yakyttnqxv .gt_left {
   text-align: left;
 }
 
-#imrgmumwvk .gt_center {
+#yakyttnqxv .gt_center {
   text-align: center;
 }
 
-#imrgmumwvk .gt_right {
+#yakyttnqxv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#imrgmumwvk .gt_font_normal {
+#yakyttnqxv .gt_font_normal {
   font-weight: normal;
 }
 
-#imrgmumwvk .gt_font_bold {
+#yakyttnqxv .gt_font_bold {
   font-weight: bold;
 }
 
-#imrgmumwvk .gt_font_italic {
+#yakyttnqxv .gt_font_italic {
   font-style: italic;
 }
 
-#imrgmumwvk .gt_super {
+#yakyttnqxv .gt_super {
   font-size: 65%;
 }
 
-#imrgmumwvk .gt_footnote_marks {
+#yakyttnqxv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#imrgmumwvk .gt_asterisk {
+#yakyttnqxv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#imrgmumwvk .gt_indent_1 {
+#yakyttnqxv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#imrgmumwvk .gt_indent_2 {
+#yakyttnqxv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#imrgmumwvk .gt_indent_3 {
+#yakyttnqxv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#imrgmumwvk .gt_indent_4 {
+#yakyttnqxv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#imrgmumwvk .gt_indent_5 {
+#yakyttnqxv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#imrgmumwvk .katex-display {
+#yakyttnqxv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#imrgmumwvk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#yakyttnqxv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -982,23 +984,23 @@ Optional Video
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>              )</span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="feuhjbhalu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#feuhjbhalu table {
+<div id="khjmoblaka" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#khjmoblaka table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#feuhjbhalu thead, #feuhjbhalu tbody, #feuhjbhalu tfoot, #feuhjbhalu tr, #feuhjbhalu td, #feuhjbhalu th {
+#khjmoblaka thead, #khjmoblaka tbody, #khjmoblaka tfoot, #khjmoblaka tr, #khjmoblaka td, #khjmoblaka th {
   border-style: none;
 }
 
-#feuhjbhalu p {
+#khjmoblaka p {
   margin: 0;
   padding: 0;
 }
 
-#feuhjbhalu .gt_table {
+#khjmoblaka .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1024,12 +1026,12 @@ Optional Video
   border-left-color: #D3D3D3;
 }
 
-#feuhjbhalu .gt_caption {
+#khjmoblaka .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#feuhjbhalu .gt_title {
+#khjmoblaka .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1041,7 +1043,7 @@ Optional Video
   border-bottom-width: 0;
 }
 
-#feuhjbhalu .gt_subtitle {
+#khjmoblaka .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1053,7 +1055,7 @@ Optional Video
   border-top-width: 0;
 }
 
-#feuhjbhalu .gt_heading {
+#khjmoblaka .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1065,13 +1067,13 @@ Optional Video
   border-right-color: #D3D3D3;
 }
 
-#feuhjbhalu .gt_bottom_border {
+#khjmoblaka .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#feuhjbhalu .gt_col_headings {
+#khjmoblaka .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1086,7 +1088,7 @@ Optional Video
   border-right-color: #D3D3D3;
 }
 
-#feuhjbhalu .gt_col_heading {
+#khjmoblaka .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1106,7 +1108,7 @@ Optional Video
   overflow-x: hidden;
 }
 
-#feuhjbhalu .gt_column_spanner_outer {
+#khjmoblaka .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1118,15 +1120,15 @@ Optional Video
   padding-right: 4px;
 }
 
-#feuhjbhalu .gt_column_spanner_outer:first-child {
+#khjmoblaka .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#feuhjbhalu .gt_column_spanner_outer:last-child {
+#khjmoblaka .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#feuhjbhalu .gt_column_spanner {
+#khjmoblaka .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1138,11 +1140,11 @@ Optional Video
   width: 100%;
 }
 
-#feuhjbhalu .gt_spanner_row {
+#khjmoblaka .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#feuhjbhalu .gt_group_heading {
+#khjmoblaka .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1168,7 +1170,7 @@ Optional Video
   text-align: left;
 }
 
-#feuhjbhalu .gt_empty_group_heading {
+#khjmoblaka .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1183,15 +1185,15 @@ Optional Video
   vertical-align: middle;
 }
 
-#feuhjbhalu .gt_from_md > :first-child {
+#khjmoblaka .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#feuhjbhalu .gt_from_md > :last-child {
+#khjmoblaka .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#feuhjbhalu .gt_row {
+#khjmoblaka .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1210,7 +1212,7 @@ Optional Video
   overflow-x: hidden;
 }
 
-#feuhjbhalu .gt_stub {
+#khjmoblaka .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1223,7 +1225,7 @@ Optional Video
   padding-right: 5px;
 }
 
-#feuhjbhalu .gt_stub_row_group {
+#khjmoblaka .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1237,15 +1239,15 @@ Optional Video
   vertical-align: top;
 }
 
-#feuhjbhalu .gt_row_group_first td {
+#khjmoblaka .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#feuhjbhalu .gt_row_group_first th {
+#khjmoblaka .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#feuhjbhalu .gt_summary_row {
+#khjmoblaka .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1255,16 +1257,16 @@ Optional Video
   padding-right: 5px;
 }
 
-#feuhjbhalu .gt_first_summary_row {
+#khjmoblaka .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#feuhjbhalu .gt_first_summary_row.thick {
+#khjmoblaka .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#feuhjbhalu .gt_last_summary_row {
+#khjmoblaka .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1274,7 +1276,7 @@ Optional Video
   border-bottom-color: #D3D3D3;
 }
 
-#feuhjbhalu .gt_grand_summary_row {
+#khjmoblaka .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1284,7 +1286,7 @@ Optional Video
   padding-right: 5px;
 }
 
-#feuhjbhalu .gt_first_grand_summary_row {
+#khjmoblaka .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1294,7 +1296,7 @@ Optional Video
   border-top-color: #D3D3D3;
 }
 
-#feuhjbhalu .gt_last_grand_summary_row_top {
+#khjmoblaka .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1304,11 +1306,11 @@ Optional Video
   border-bottom-color: #D3D3D3;
 }
 
-#feuhjbhalu .gt_striped {
+#khjmoblaka .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#feuhjbhalu .gt_table_body {
+#khjmoblaka .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1317,7 +1319,7 @@ Optional Video
   border-bottom-color: #D3D3D3;
 }
 
-#feuhjbhalu .gt_footnotes {
+#khjmoblaka .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1331,7 +1333,7 @@ Optional Video
   border-right-color: #D3D3D3;
 }
 
-#feuhjbhalu .gt_footnote {
+#khjmoblaka .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1340,7 +1342,7 @@ Optional Video
   padding-right: 5px;
 }
 
-#feuhjbhalu .gt_sourcenotes {
+#khjmoblaka .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1354,7 +1356,7 @@ Optional Video
   border-right-color: #D3D3D3;
 }
 
-#feuhjbhalu .gt_sourcenote {
+#khjmoblaka .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1362,72 +1364,72 @@ Optional Video
   padding-right: 5px;
 }
 
-#feuhjbhalu .gt_left {
+#khjmoblaka .gt_left {
   text-align: left;
 }
 
-#feuhjbhalu .gt_center {
+#khjmoblaka .gt_center {
   text-align: center;
 }
 
-#feuhjbhalu .gt_right {
+#khjmoblaka .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#feuhjbhalu .gt_font_normal {
+#khjmoblaka .gt_font_normal {
   font-weight: normal;
 }
 
-#feuhjbhalu .gt_font_bold {
+#khjmoblaka .gt_font_bold {
   font-weight: bold;
 }
 
-#feuhjbhalu .gt_font_italic {
+#khjmoblaka .gt_font_italic {
   font-style: italic;
 }
 
-#feuhjbhalu .gt_super {
+#khjmoblaka .gt_super {
   font-size: 65%;
 }
 
-#feuhjbhalu .gt_footnote_marks {
+#khjmoblaka .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#feuhjbhalu .gt_asterisk {
+#khjmoblaka .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#feuhjbhalu .gt_indent_1 {
+#khjmoblaka .gt_indent_1 {
   text-indent: 5px;
 }
 
-#feuhjbhalu .gt_indent_2 {
+#khjmoblaka .gt_indent_2 {
   text-indent: 10px;
 }
 
-#feuhjbhalu .gt_indent_3 {
+#khjmoblaka .gt_indent_3 {
   text-indent: 15px;
 }
 
-#feuhjbhalu .gt_indent_4 {
+#khjmoblaka .gt_indent_4 {
   text-indent: 20px;
 }
 
-#feuhjbhalu .gt_indent_5 {
+#khjmoblaka .gt_indent_5 {
   text-indent: 25px;
 }
 
-#feuhjbhalu .katex-display {
+#khjmoblaka .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#feuhjbhalu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#khjmoblaka div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1665,13 +1667,13 @@ Solution
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>data[data<span class="sc">$</span>variable<span class="sc">==</span>value] <span class="ot">&lt;-</span> new_value  <span class="co"># example code to show syntax.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled" title="Example 1: Too low birthweight">
+<div class="callout callout-style-default callout-tip callout-titled" title="Example: Too low birthweight">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example 1: Too low birthweight
+Example: Too low birthweight
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1878,7 +1880,7 @@ Trust but Verify
 <blockquote class="blockquote">
 <p>“and then….”</p>
 </blockquote>
-<p>This is what I read to myself when using the pipe. “Do this |&gt; the next thing |&gt; do this third thing |&gt; this last”</p>
+<p>This is what I read to myself when using the pipe. “Do this <code>|&gt;</code> the next thing <code>|&gt;</code> do this third thing <code>|&gt;</code> this last”</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉Example: Frequency tables &amp; summary statistics using the pipe">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1915,6 +1917,42 @@ Trust but Verify
 <li><em>and then</em> calculate the mean of that variable</li>
 </ol>
 <p>These may be trivial examples now but the usefulness of this approach will be apparent before the class is finished.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Behind the scenes">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Behind the scenes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What actually is happening, is that the result from the code on the left of the <code>|&gt;</code> gets passed into the first argument of the commands on the right hand side. Two things to keep in mind:</p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<ol type="1">
+<li>Do not include the variable on both sides.</li>
+</ol>
+<pre data-code-line-numbers=""><code>ncbirths$mature |&gt;  ✅
+  table()    
+  
+ncbirths$mature |&gt; 
+  table(ncbirths$mature) ❌</code></pre>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<ol start="2" type="1">
+<li>the pipe itself must be at the end of a “sentence”.</li>
+</ol>
+<pre data-code-line-numbers=""><code>ncbirths$mature |&gt;   ✅
+  table()
+
+ncbirths$mature      ❌
+|&gt; table()</code></pre>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -2484,7 +2522,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./programming_in_r.html" class="pagination-link" aria-label="Getting Started with R">
+      <a href="./intro_r.html" class="pagination-link" aria-label="Getting Started with R">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with R</span></span>
       </a>          
   </div>

@@ -6,7 +6,9 @@ format:
 
 # Preface {.unnumbered}
 
-This notebook was created to host learning materials for Math 130: Introduction to R at California State University, Chico. From the course catalog: 
+This notebook was created to host learning materials for Math 130: Introduction to R at California State University, Chico. 
+
+From the course catalog: 
 
 > _This accelerated short course is designed as a primer to get the complete novice up and running with basic knowledge of how to use the statistical programming language R. The target audience is anyone who wants to become the boss of their data and conduct analyses. The course covers getting data into R, manipulating data into an analyzable format, and creating informative plots. Emphasis is placed on reproducibility and literate programming. The course culminates with a data exploration project._
 
@@ -23,6 +25,31 @@ By the end of this class you will be able to:
 * Create statistical data visualizations such as barcharts, histograms, boxplots, scatterplots, and extend to multivariate data by modifying colors, sizes, and panels. 
 * Create statistical data summaries such as tables, proportions, and summary statistics. 
 * Perform all of this work in a reproducible manner using professional tools. 
+
+:::
+
+:::{.callout-tip title = "Details for Spring 2026" icon=false}
+
+::: {.grid .course-details}
+::: {.g-col-6}
+#### Meeting pattern
+
+📅 &nbsp; MWF  9-950am  
+🏛 &nbsp; Holt 113  
+👥️ &nbsp; In Person 1/21-2/20
+:::
+
+::: {.g-col-6}
+#### Instructor
+
+🐾 &nbsp; [Dr. Robin Donatello](https://www.norcalbiostat.com)  
+🚪 &nbsp; Holt 202  
+📧 &nbsp; <a href="mailto:rdonatello@csuchico.edu">rdonatello@csuchico.edu</a>  
+:::
+
+:::
+
+🚧 This site was rebuilt in Quarto in December 2026 and should be considered still under construction. 
 
 :::
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Assignments – Introduction to R</title>
+<title>Assignment Files – Introduction to R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./project.html" rel="next">
-<link href="./help.html" rel="prev">
+<link href="./help.html" rel="next">
+<link href="./syllabus.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./help.html">Appendix</a></li><li class="breadcrumb-item"><a href="./assignments.html">Assignments</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syllabus.html">Appendix</a></li><li class="breadcrumb-item"><a href="./assignments.html">Assignment Files</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -147,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./programming_in_r.html" class="sidebar-item-text sidebar-link">
+  <a href="./intro_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with R</span></span></a>
   </div>
 </li>
@@ -177,13 +177,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Graphics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient data management</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -206,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Plot Enhancements</span></span></a>
   </div>
 </li>
       </ul>
@@ -222,20 +222,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./assignments.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Assignment Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./help.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Seeking Help</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./assignments.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Assignments</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Putting it all together</span></a>
+ <span class="menu-text">Project</span></a>
   </div>
 </li>
       </ul>
@@ -250,16 +256,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#need-help-getting-started" id="toc-need-help-getting-started" class="nav-link active" data-scroll-target="#need-help-getting-started">Need help getting started?</a></li>
+  <li><a href="#lesson-notes-files" id="toc-lesson-notes-files" class="nav-link active" data-scroll-target="#lesson-notes-files">Lesson notes files</a></li>
+  <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework">Homework</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./help.html">Appendix</a></li><li class="breadcrumb-item"><a href="./assignments.html">Assignments</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syllabus.html">Appendix</a></li><li class="breadcrumb-item"><a href="./assignments.html">Assignment Files</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-assignments" class="quarto-section-identifier">Assignments</span></h1>
+<h1 class="title"><span id="sec-assignments" class="quarto-section-identifier">Assignment Files</span></h1>
 </div>
 
 
@@ -276,19 +283,52 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Right click and save these files in your <code>Math 130/hw</code> folder. You will write your answers directly in them and submit your assignment as instructed by the due date.</p>
+<p>Right click and save these files in your <code>Math 130/notes</code> or <code>Math 130/hw</code> folder as appropriate. You will write your answers directly in them and submit your assignment as instructed by the due date.</p>
+<section id="lesson-notes-files" class="level2">
+<h2 class="anchored" data-anchor-id="lesson-notes-files">Lesson notes files</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
 <ul>
-<li><a href="hw1.qmd">HW 1</a></li>
-<li><a href="hw2.qmd">HW 2</a></li>
-<li><a href="hw3.qmd">HW 3</a></li>
-<li><a href="hw4.qmd">HW 4</a></li>
+<li><a href="notes/intro_r_notes.qmd">Lesson <span class="quarto-xref"><span>3&nbsp; Getting Started with R</span></span></a></li>
+<li><a href="notes/dm_notes.qmd">Lesson <span class="quarto-xref"><span>4&nbsp; Working with Data Frames</span></span></a></li>
+<li><a href="notes/factor_notes.qmd">Lesson <span class="quarto-xref"><span>5&nbsp; Working with Factors</span></span></a></li>
+<li><a href="notes/plots1_notes.qmd">Lesson <span class="quarto-xref"><span>6&nbsp; Creating Plots</span></span></a></li>
 </ul>
-<section id="need-help-getting-started" class="level3 .callout-caution">
-<h3 class="anchored" data-anchor-id="need-help-getting-started">Need help getting started?</h3>
-<p>Watch <a href="https://media.csuchico.edu/media/MATH130%20-%20Extra%20Video%20(Jan%2029)/1_9nsoxdy9">Dr.&nbsp;Lytals help video</a></p>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<ul>
+<li><a href="notes/dplyr_notes.qmd">Lesson <span class="quarto-xref"><span>7&nbsp; Efficient data management</span></span></a></li>
+<li><a href="notes/import_notes.qmd">Lesson <span class="quarto-xref"><span>8&nbsp; Getting data into R</span></span></a></li>
+<li><a href="notes/plots2_notes.qmd">Lesson <span class="quarto-xref"><span>9&nbsp; Plot Enhancements</span></span></a></li>
+</ul>
+</div>
+</div>
 </section>
+<section id="homework" class="level2">
+<h2 class="anchored" data-anchor-id="homework">Homework</h2>
+<ul>
+<li><a href="hw/hw1.qmd">HW 1 (Lessons 2-3)</a></li>
+<li><a href="hw/hw2.qmd">HW 2 (Lessons 4-5)</a></li>
+<li><a href="hw/hw3.qmd">HW 3 (Lessons 6-7)</a></li>
+<li><a href="hw/hw4.qmd">HW 4 (Lessons 8-9)</a></li>
+</ul>
+<div class="callout callout-style-simple callout-warning no-icon callout-titled" title="GNeed help getting started? ">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+GNeed help getting started?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>🚧 Watch <a href="https://media.csuchico.edu/media/MATH130%20-%20Extra%20Video%20(Jan%2029)/1_9nsoxdy9">Dr.&nbsp;Lytals help video</a></p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -854,13 +894,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./help.html" class="pagination-link" aria-label="Seeking Help">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Seeking Help</span>
+      <a href="./syllabus.html" class="pagination-link" aria-label="Syllabus">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Syllabus</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./project.html" class="pagination-link" aria-label="Putting it all together">
-        <span class="nav-page-text">Putting it all together</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./help.html" class="pagination-link" aria-label="Seeking Help">
+        <span class="nav-page-text">Seeking Help</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,28 +1,29 @@
-# Working with Data Frames
+# Working with Data Frames {#sec-dm}
 
 In this lesson we will learn how to summarize data in a data frame, and to do basic data management tasks such as making new variables, recoding data and dealing with missing data.
 
-:::{.callout-warning icon=false appearance=minimal title = "Optional Video"}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Intro/1_oifkz4hn" target="_blank">Section Introduction</a>
+:::{.callout-warning icon=false appearance=minimal} 
+<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Intro/1_oifkz4hn" target="_blank">Section Introduction</a> 
 :::
 
-:::{.callout-note title = "🎓 Learning Objectives"}
+:::{.callout-note title = "🎓 Learning Objectives" icon= false}
 
 After completing this lesson learners will be able to
 
-* Summarize variables inside a data frame
-* Make new variables inside a data frame. 
-* Selectively edit (and recode) data elements. 
-* Identify when data values are missing
-* Summarize data in the presence of missing values.
+-   Summarize variables inside a data frame
+-   Make new variables inside a data frame.
+-   Selectively edit (and recode) data elements.
+-   Identify when data values are missing
+-   Summarize data in the presence of missing values.
 
 :::
 
 :::{.callout-tip title = "👉 Prepare" icon=false}
 
-1. Open your Math 130 R Project. _Forget how to do this? See @sec-rproj._ 
-2. Right click and "save as" this lessons [[04_dm_notes.qmd]](04_dm_notes.qmd) Quarto notes file and save into your `notes/Math130` folder. 
-3. In the _Files_ pane, open this Quarto file and Render this file.   
+1.  Open your Math 130 R Project. _Forget how to do this? See @sec-rproj ._
+2.  Right click and "save as" this lessons [[dm_notes.qmd]](notes/dm_notes.qmd) Quarto notes file and save into your `Math130/notes` folder.
+3.  In the *Files* pane, open this Quarto file and Render this file.
+
 :::
 
 ```{r}
@@ -33,38 +34,33 @@ ncbirths <- openintro::ncbirths
 
 [In 2004, the state of North Carolina released to the public a large dataset containing information on births recorded in this state. This dataset has been of interest to medical researchers who are studying the relation between habits and practices of expectant mothers and the birth of their children. The `ncbirths` data frame is a random sample of 1,000 cases from this dataset.]{.aside}
 
-This first code chunk loads the `ggplot2` package so we can access plotting functions, and then load the `ncbirths` data set, which comes with the `openintro` package. 
+This first code chunk loads the `ggplot2` package so we can access plotting functions, and then load the `ncbirths` data set, which comes with the `openintro` package.
 
+## Summarizing data
 
-
-## Summarizing data 
-
-:::{.callout-warning icon=false appearance=minimal}
+::: {.callout-warning icon="false" appearance="minimal"}
 <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Summarizing+Data/1_5hztp76z" target="_blank">Summarizing data section video</a>
 :::
 
-Two common methods used to summarize data are frequnecy tables for categorical variables (e.g. nominal, ordinal), and summary statistics for numeric (continuous or discrete) variables. 
+Two common methods used to summarize data are frequnecy tables for categorical variables (e.g. nominal, ordinal), and summary statistics for numeric (continuous or discrete) variables.
 
+::: {layout-ncol="2"}
+![An illustration of a chick, with text "Continuous - measured data, can have infinite values within possible range. I am 3.1" tall, I weight 34.16 grams."](img/numeric_data.png){width="50%"}
 
-::: {layout-ncol=2}
-![An illustration of a chick, with text "Continuous - measured data, can have infinite values within possible range. I am 3.1" tall, I weight 34.16 grams."](img/numeric_data.png){width=50%}
-
-![An illustrations of a turtle, snail, and butterfly with text "Nominal - unordered descriptions. "I'm a turtle! i'm a snail! i'm a butterfly!"](img/categorical_data.png){width=50%}
+![An illustrations of a turtle, snail, and butterfly with text "Nominal - unordered descriptions. "I'm a turtle! i'm a snail! i'm a butterfly!"](img/categorical_data.png){width="50%"}
 :::
 
+### Frequency Tables {#sec-intro-tables}
 
+Frequency tables are used only any type of categorical data (Nominal, ordinal or binary), and the table results show you how many records in the data set have that particular level.
 
-### Frequency Tables
-
-Frequency tables are used only any type of categorical data (Nominal, ordinal or binary), and the table results show you how many records in the data set have that particular level. 
-
-You can create a basic frequency table by using the `table()` function. 
+You can create a basic frequency table by using the `table()` function.
 
 ```{r}
 table(ncbirths$lowbirthweight)
 ```
 
-Relative frequencies (proportions or percentages) are calculated by putting the results of the `table` function inside the `prop_table` function. 
+Relative frequencies (proportions or percentages) are calculated by putting the results of the `table` function inside the `prop_table` function.
 
 ```{r}
 prop.table(
@@ -72,12 +68,11 @@ prop.table(
 )
 ```
 
-
-The variable `ncbirths$lowbirthweight` has 111 (11.1%) records with a value of `low`, and 889 (88.9%) records with the value of `not low`. 
+The variable `ncbirths$lowbirthweight` has 111 (11.1%) records with a value of `low`, and 889 (88.9%) records with the value of `not low`.
 
 ### Summary Statistics
 
-Numerical variables can be summarized using quantities called _summary statistics_ which include the `min`, `max`, `mean` and median. The function `summary()` prints out the five number summary, and includes the mean. This function also displays the number of missing values for that variable. 
+Numerical variables can be summarized using quantities called *summary statistics* which include the `min`, `max`, `mean` and median. The function `summary()` prints out the five number summary, and includes the mean. This function also displays the number of missing values for that variable.
 
 ```{r}
 summary(ncbirths$visits)
@@ -95,11 +90,11 @@ max(ncbirths$visits)
 min(ncbirths$visits)
 ```
 
-### Fancy summary tables
+### Fancy summary tables {#sec-intro-tbl_summary}
 
-The `gtsummary` package provides a single function `tbl_summary` to create a really nicely formatted summary table for both quantitative and categorical data types. 
+The `gtsummary` package provides a single function `tbl_summary` to create a really nicely formatted summary table for both quantitative and categorical data types.
 
-The first argument is the data set, then you `include` the vector of variable that you want to display in the table. By default the sample size _n_ and the relative percent are presented for categorical data, and the median, with first and third quartiles shown for quantitiatve data. 
+The first argument is the data set, then you `include` the vector of variable that you want to display in the table. By default the sample size *n* and the relative percent are presented for categorical data, and the median, with first and third quartiles shown for quantitiatve data.
 
 ```{r}
 tbl_summary(ncbirths, 
@@ -107,7 +102,7 @@ tbl_summary(ncbirths,
             )
 ```
 
-The `statistic` argument can be used to change what values are displayed. Here we are specifying we want the mean `{mean}` and standard deviation `{sd}` for all variables that R sees as continuous (numeric), and both the frequency `{n}`, the total number of non-missing values `{N}` and the percent `{p}` for each level of a categorical variable. 
+The `statistic` argument can be used to change what values are displayed. Here we are specifying we want the mean `{mean}` and standard deviation `{sd}` for all variables that R sees as continuous (numeric), and both the frequency `{n}`, the total number of non-missing values `{N}` and the percent `{p}` for each level of a categorical variable.
 
 ```{r}
 #| source-line-numbers: "3-6"
@@ -120,36 +115,33 @@ tbl_summary(ncbirths,
             )
 ```
 
+## Missing Data
 
-
-
-## Missing Data 
-
-:::{.callout-warning icon=false appearance=minimal}
+::: {.callout-warning icon="false" appearance="minimal"}
 <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Missing+Data/1_3ignf1uh" target="_blank">Missing data section video</a>
 :::
 
-Sometimes the value for a variable is missing. Think of it as a blank cell in an spreadsheet. Missing data can be a result of many things: skip patterns in a survey (i.e. non-smokers don't get asked how many packs per week they smoke), errors in data reads from a machine, researchers skipped a day of data collection for one plant on accident etc. 
+Sometimes the value for a variable is missing. Think of it as a blank cell in an spreadsheet. Missing data can be a result of many things: skip patterns in a survey (i.e. non-smokers don't get asked how many packs per week they smoke), errors in data reads from a machine, researchers skipped a day of data collection for one plant on accident etc.
 
-R puts a `NA` as a placeholder when the value for that piece of data is missing. We can see 4 out of the first 6 values for the variable `fage` (fathers age) in the `ncbirths` data set are missing. 
+R puts a `NA` as a placeholder when the value for that piece of data is missing. We can see 4 out of the first 6 values for the variable `fage` (fathers age) in the `ncbirths` data set are missing.
 
 ```{r}
 head(ncbirths$fage)
 ```
 
+**Problem 1: `R` can't do arithmetic on missing data.**
 
-**Problem 1: `R` can't do arithmetic on missing data.** 
-
-So `5 + NA = NA`, and if you were to try to calculate the `mean()` of a variable, you'd also get `NA`. 
+So `5 + NA = NA`, and if you were to try to calculate the `mean()` of a variable, you'd also get `NA`.
 
 ```{r}
 mean(ncbirths$fage)
 ```
 
 :::{.callout-tip title = "👉 Fix this error" icon=false}
-Add the argument `na.rm=TRUE` to the `mean()` function inside the right hand parenthesis to calculate the mean after excluding missing values. 
 
-Run this code chunk interactively to ensure that it works before continuing. 
+Add the argument `na.rm=TRUE` to the `mean()` function inside the right hand parenthesis to calculate the mean after excluding missing values.
+
+Run this code chunk interactively to ensure that it works before continuing.
 
 <details>
   <summary>Solution</summary>
@@ -160,33 +152,31 @@ mean(ncbirths$fage, na.rm = TRUE)
 
 :::
 
-
 **Problem 2: Some plots will show `NA` as it's own category**
 
-Sometimes this is fine, other times this is undesirable. We'll see later how we can adjust this plot to remove that column of NA. 
+Sometimes this is fine, other times this is undesirable. We'll see later how we can adjust this plot to remove that column of NA.
 
 ```{r}
 ggplot(ncbirths, aes(premie)) + geom_bar()
 ```
 
+Missing values can cause some problems during analysis or undesirable features in a plot so let's see how to detect missing values and how to work around them.
 
-Missing values can cause some problems during analysis or undesirable features in a plot so let's see how to detect missing values and how to work around them. 
+### Identifying missing values
 
-### Identifying missing values 
+To find out how many values in a particular variable are missing we can use several different approaches.
 
-To find out how many values in a particular variable are missing we can use several different approaches. 
+#### Look at the raw data {.unnumbered}
 
-#### Look at the raw data {.unnumbered} 
-
-We can look at the raw data using `head()` or opening the data set in the spreadsheet view and skim with our eyes for `NA` values. This may not be helpful if there is no missing values in the first 6 rows, or if there is a large number of variables to look through. 
+We can look at the raw data using `head()` or opening the data set in the spreadsheet view and skim with our eyes for `NA` values. This may not be helpful if there is no missing values in the first 6 rows, or if there is a large number of variables to look through.
 
 ```{r}
 head(ncbirths)
 ```
 
-#### Look at data summaries {.unnumbered}  
+#### Look at data summaries {.unnumbered}
 
-Functions such as `table()` have a `useNA="always"` option to show how many records have missing values, and `summary()` will always show a column for NA. 
+Functions such as `table()` have a `useNA="always"` option to show how many records have missing values, and `summary()` will always show a column for NA.
 
 ```{r}
 table(ncbirths$habit, useNA="always")
@@ -195,21 +185,22 @@ summary(ncbirths$fage)
 
 #### Use a logical statement {.unnumbered}
 
-The function `is.na()` returns TRUE or FALSE for each element in the provided vector for whether or not that element is missing.  
+The function `is.na()` returns TRUE or FALSE for each element in the provided vector for whether or not that element is missing.
+
 ```{r}
 x <- c("green", NA, 3)
 is.na(x)
 ```
 
-In this example, the vector `x` is created with three elements, the second one is missing. Calling the function `is.na()` on the vector `x`, results in three values, where only the second one is TRUE -- meaning the second element is missing. 
+In this example, the vector `x` is created with three elements, the second one is missing. Calling the function `is.na()` on the vector `x`, results in three values, where only the second one is TRUE -- meaning the second element is missing.
 
-This can be extended to do things such as using the `sum()` function to count the number of missing values in a variable. Here we are _nesting_ the functions `is.na()` is written entirely inside the `sum()` function. 
+This can be extended to do things such as using the `sum()` function to count the number of missing values in a variable. Here we are *nesting* the functions `is.na()` is written entirely inside the `sum()` function.
 
 ```{r}
 sum(is.na(ncbirths$fage))
 ```
 
-There are 171 records in this data set where the age for the father is not present. 
+There are 171 records in this data set where the age for the father is not present.
 
 :::{.callout-note title = "Negating `is.na()` to find the non-missing values"}
 Sometimes you want to operate only only the non-missing values. Recall from @sec-logical we can use the `!` to negate a boolean argument. 
@@ -219,10 +210,11 @@ Sometimes you want to operate only only the non-missing values. Recall from @sec
 !is.na(x)
 ```
 
-The first and third values are TRUE - so they are **not** missing. 
+The first and third values are TRUE - so they are **not** missing.
 
 :::{.callout-tip title = "👉 Hide the NA bar" icon=false}
-We can use this tactic to fix that barchart from above. Wrap `!is.na()` around the `premie` variable in the `ggplot` code to create a barchart that does not have a bar for missing values. 
+
+We can use this tactic to fix that barchart from above. Wrap `!is.na()` around the `premie` variable in the `ggplot` code to create a barchart that does not have a bar for missing values.
 
 <details>
   <summary>Solution</summary>
@@ -234,77 +226,81 @@ ggplot(ncbirths, aes(!is.na(premie))) + geom_bar()
 
 :::
 
+## Data management
 
-
-## Data management 
-
-:::{.callout-warning icon=false appearance=minimal}
+::: {.callout-warning icon="false" appearance="minimal"}
 <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Data+Editing+%28Recoding%29/1_kh8v7jk6" target="_blank">Data editing section video</a>
 :::
 
-Sometimes we have a need to create or modify variables in a data frame. You will learn several ways to do this throughout this course, but we will start by using _base R_ functions and methods. These are methods that use functions that come with R, not from additional packages. 
+Sometimes we have a need to create or modify variables in a data frame. You will learn several ways to do this throughout this course, but we will start by using *base R* functions and methods. These are methods that use functions that come with R, not from additional packages.
 
 ### Overwrite existing values
 
-Choose all observations (rows) of a `data` set, where a `variable` is equal to some `value`, then set assign `<-` a `new_value` to those rows. 
+Choose all observations (rows) of a `data` set, where a `variable` is equal to some `value`, then set assign `<-` a `new_value` to those rows.
+
 ```{r}
 #| eval: false
 data[data$variable==value] <- new_value  # example code to show syntax.
 ```
 
-:::{.callout-tip title = "Example 1: Too low birthweight"}
-Let's look at the numerical distribution of birthweight (in pounds) of the baby. 
+:::{.callout-tip title = "Example: Too low birthweight"}
+Let's look at the numerical distribution of birthweight (in pounds) of the baby.
 
 ```{r}
 summary(ncbirths$weight)
 ```
 :::
 
-The value of 1 lb seems very low. The researchers you are working with decide that is a mistake and should be excluded from the data. We would then set all records where `weight=1` to missing. 
+The value of 1 lb seems very low. The researchers you are working with decide that is a mistake and should be excluded from the data. We would then set all records where `weight=1` to missing.
 
 ```{r}
 ncbirths$weight[ncbirths$weight==1] <- NA
 ```
 
-Code explainer: 
+Code explainer:
 
-* The specific variable `ncbirths$weight` is on the left side outside the `[]`. So just the variable `weight` is being changed. 
-* Recall that bracket notation `[]` can be used to select rows where a certain logical statement is true. So `[ncbirths$weight==1]` will only show records where `weight` is equal to 1. 
-* Notice where the assignment arrow (`<-`) is at. This code assigns the value of `NA` (missing) to the variable `weight`, where `weight==1`. 
+-   The specific variable `ncbirths$weight` is on the left side outside the `[]`. So just the variable `weight` is being changed.
+-   Recall that bracket notation `[]` can be used to select rows where a certain logical statement is true. So `[ncbirths$weight==1]` will only show records where `weight` is equal to 1.
+-   Notice where the assignment arrow (`<-`) is at. This code assigns the value of `NA` (missing) to the variable `weight`, where `weight==1`.
 
 ```{r}
 min(ncbirths$weight, na.rm=TRUE)
 ```
 
-The minimum weight is now 1.19. 
+The minimum weight is now 1.19.
 
 :::{.callout-tip title = "👉 Your Turn" icon=false}
-But what about other weights that aren't quite as low as 1, but still unusually low? 
+But what about other weights that aren't quite as low as 1, but still unusually low?
 
-* Write the code to set all birth weights less than 4 lbs (`<4`) to missing (NA).
-* Then recalculate the mean to confirm your recode worked. 
+-   Write the code to set all birth weights less than 4 lbs (`<4`) to missing (NA).
+-   Then recalculate the mean to confirm your recode worked.
 
 <details>
-  <summary>Solution</summary>
+
+<summary>Solution</summary>
+
 ```{r}
 #| eval: false
 ncbirths$weight[ncbirths$weight < 4] <- NA
 min(ncbirths$weight, na.rm=TRUE)
 ```
+
 </details>
 :::
 
-### Creating new variables 
 
-:::{.callout-warning icon=false appearance=minimal}
+### Creating new variables
+
+::: {.callout-warning icon="false" appearance="minimal"}
 <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Creating+New+Variables/1_ivmj78et" target="_blank">Creating new variables section video</a>
 :::
 
 :::{.callout-important title = "New variables should be added to the data frame"}
+
 This can be done in base R using `$` sign notation. 
 :::
 
-The new variable you want to create goes on the left side of the assignment operator `<-`, and how you want to create that new variable goes on the right side. 
+The new variable you want to create goes on the left side of the assignment operator `<-`, and how you want to create that new variable goes on the right side.
 
 ```{r}
 #| eval: false
@@ -312,102 +308,140 @@ data$new_variable <- creation_statement  # example code not run
 ```
 
 :::{.callout-tip title = "Example: Row-wise difference between two existing variables"}
+
 As a pregnancy progresses, both the mother and the baby gain weight. The variable `gained` is the total amount of weight the mother gained in her pregnancy. The variable `weight` is how much the baby weighed at birth.
 
 :::
 
-The following code creates a new variable `wtgain_mom` the weight gained by the mother, that is not due to the baby by subtracting `weight` from `gained`. Note all variables are prefaced with `$`, denoting that they exist inside the `ncbirths` data set. 
+
+The following code creates a new variable `wtgain_mom` the weight gained by the mother, that is not due to the baby by subtracting `weight` from `gained`. Note all variables are prefaced with `$`, denoting that they exist inside the `ncbirths` data set.
+
 ```{r}
 ncbirths$wtgain_mom <- ncbirths$gained - ncbirths$weight
 ```
 
-To confirm this variable was created correctly, we look at the data contained in three variables in question. 
+To confirm this variable was created correctly, we look at the data contained in three variables in question.
 
 ```{r}
 head(ncbirths[,c('gained', 'weight', 'wtgain_mom')])
 ```
 
 :::{.callout-important title = "Trust but Verify"}
-It's always important to visually confirm that the code you wrote actually had the intended effect. 
+It's always important to visually confirm that the code you wrote actually had the intended effect.
+
 :::
 
-### Dichtomizing data 
+
+### Dichtomizing data
 
 The `ifelse()` is hands down the easiest way to create a binary variable (dichotomizing, only 2 levels)
 
-Let's add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth. Specifically Make a new variable `underage` on the `ncbirths` data set. If `mage` is under 18, then the value of this new variable is `underage`, else it is labeled as `adult`. 
+Let's add a variable to identify if a mother in the North Carolina births data set was underage at the time of birth. Specifically Make a new variable `underage` on the `ncbirths` data set. If `mage` is under 18, then the value of this new variable is `underage`, else it is labeled as `adult`.
 
 ```{r}
 ncbirths$underage <- ifelse(ncbirths$mage < 18, "underage", "adult")
 ```
 
-Code explainer: 
+Code explainer:
 
-* The function is `ifelse()` - one word. 
-* The arguments are: `ifelse(logical, value if TRUE, value if FALSE)`
-    - The `logical` argument is a statement that resolves as a `boolean` variable, as either TRUE or FALSE.
-    - The second argument is what you want the resulting variable to contain if the logical argument is `TRUE`.
-    - The last argument is what you want the resulting variable to contain if the logical argument is `FALSE`.
+-   The function is `ifelse()` - one word.
+-   The arguments are: `ifelse(logical, value if TRUE, value if FALSE)`
+    -   The `logical` argument is a statement that resolves as a `boolean` variable, as either TRUE or FALSE.
+    -   The second argument is what you want the resulting variable to contain if the logical argument is `TRUE`.
+    -   The last argument is what you want the resulting variable to contain if the logical argument is `FALSE`.
 
 **Trust but Verify**
 
-First let's look at the frequency table of `underage` and see if records exist with the new categories, and if there are any missing values. 
+First let's look at the frequency table of `underage` and see if records exist with the new categories, and if there are any missing values.
+
 ```{r}
 table(ncbirths$underage, useNA="always")
 ```
 
-Next let's check it against the value of `mage` itself. Let's look at all rows where mothers age is either 17 or 18 `mage %in% c(17,18)`, and only the columns of interest. 
+Next let's check it against the value of `mage` itself. Let's look at all rows where mothers age is either 17 or 18 `mage %in% c(17,18)`, and only the columns of interest.
 
 ```{r}
 ncbirths[ncbirths$mage %in% c(17,18),c('mage', 'underage')]
 ```
 
-Notice I snuck a new operator in on you - `%in%`. This is a way you can provide a list of values (a.k.a a vector) and say "if the value of the variable I want is %in% any of these options in this vector..." do the thing. 
-
-
-
+Notice I snuck a new operator in on you - `%in%`. This is a way you can provide a list of values (a.k.a a vector) and say "if the value of the variable I want is %in% any of these options in this vector..." do the thing.
 
 ## Chaining commands
 
-:::{.callout-warning icon=false appearance=minimal}
+::: {.callout-warning icon="false" appearance="minimal"}
 <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Chaining+Using+the+Pipe+E/1_chcscua0" target="_blank">Chaining commands section video</a>
 :::
 
-Two common styles: 
+Two common styles:
 
-* `|>` This is the "native" pipe that's built into R. 
-* `%>%` This pipe is loaded with the `tidyverse` package. 
+-   `|>` This is the "native" pipe that's built into R.
+-   `%>%` This pipe is loaded with the `tidyverse` package.
 
-They both function the same, but you'll see both being used so it's good to know that they both exist. That way if you are not using other functions from the `tidyverse`, you can still enjoy the chaining functionality. 
+They both function the same, but you'll see both being used so it's good to know that they both exist. That way if you are not using other functions from the `tidyverse`, you can still enjoy the chaining functionality.
 
-### What is "Chaining"? 
+### What is "Chaining"?
 
-The pipe lets you string set of functions together, like links on a chain, to be completed in the order specified. This works with the majority of functions, specifically when the result of the function is a data frame, a vector, or sometimes the results of a model. 
+The pipe lets you string set of functions together, like links on a chain, to be completed in the order specified. This works with the majority of functions, specifically when the result of the function is a data frame, a vector, or sometimes the results of a model.
 
 > "and then...."
 
-This is what I read to myself when using the pipe. "Do this |> the next thing |> do this third thing |> this last" 
+This is what I read to myself when using the pipe. "Do this `|>` the next thing `|>` do this third thing `|>` this last"
 
 :::{.callout-tip title = "👉Example: Frequency tables & summary statistics using the pipe" icon=false}
 
-First stating the variable, then pipe in the summary function. 
+First stating the variable, then pipe in the summary function.
+
 ```{r}
 ncbirths$mature |> table() # instead of table(ncbirths$mature)
 ncbirths$mage |> mean() #instead of mean(ncbirths$mage)
 ```
+
 :::
 
 These can be read as
 
-1. Get the `mature` variable from the `ncbirths` data set
-2. _and then_ create a frequency table on that variable
+1.  Get the `mature` variable from the `ncbirths` data set
+2.  *and then* create a frequency table on that variable
 
-and 
+and
 
-1. Get the `mage` variable from the `ncbirths` data set 
-2. _and then_ calculate the mean of that variable
+1.  Get the `mage` variable from the `ncbirths` data set
+2.  *and then* calculate the mean of that variable
+
+These may be trivial examples now but the usefulness of this approach will be apparent before the class is finished.
+
+:::{.callout-important title = "Behind the scenes"}
+
+What actually is happening, is that the result from the code on the left of the `|>` gets passed into the first argument of the commands on the right hand side. Two things to keep in mind: 
 
 
-These may be trivial examples now but the usefulness of this approach will be apparent before the class is finished. 
+:::: {.columns}
+::: {.column width="45%"}
+1. Do not include the variable on both sides.
 
+```         
+ncbirths$mature |>  ✅
+  table()    
+  
+ncbirths$mature |> 
+  table(ncbirths$mature) ❌
+```
+:::
 
+::: {.column width="10%"}
+:::
+
+::: {.column width="45%"}
+2. the pipe itself must be at the end of a "sentence".
+
+```         
+ncbirths$mature |>   ✅
+  table()
+
+ncbirths$mature      ❌
+|> table()
+```
+:::
+::::
+
+:::

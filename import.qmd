@@ -1,52 +1,48 @@
 # Getting data into R {#sec-import}
 
-## Introduction <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+Introduction/1_qwkzetht" target="_blank">(Video)</a>
-In this lesson we will introduce ways to get data from external files into R, how R works with data, and how to use functions to explore your data frame. 
+In this lesson we will introduce methods to get data from external files into R. 
 
+:::{.callout-warning icon=false appearance=minimal}
+<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+Introduction/1_qwkzetht" target="_blank">Introduction Video</a>
+:::
 
-::: {.callout-note}
-### Learning Objectives
-
+:::{.callout-note title = "🎓 Learning Objectives" icon=false}
 After completing this lesson learners will be able to
 
+* Distinguish between an `absolute` and `relative` path, and identify which one is used from within an R Project. 
 * Import data that is stored in an external Excel, CSV or tab-delimited text file into R.
 * Compare and contrast the three file types discussed in this lesson. 
 * Use functions to examine data objects to ensure data was imported correctly. 
+
 :::
 
+:::{.callout-tip title = "👉 Prepare" icon=false}
 
-One advantage of keeping files separate (aside from your sanity)
-All of the files within this folder can then be accessed using relative *paths*.
+1.  Open your Math 130 R Project.
+2.  Right click and "save as" this lessons [[Quarto notes file]](notes/import_notes.qmd) and save into your `Math130/notes` folder.
+3. Right click each link and save the following data sets into your `Math130/data` folder.
+4.  In the *Files* pane, open this Quarto file and Render this file.
 
-Think of a *path* as driving directions to your instructors office in Holt Hall. It will be different for everyone if we start from your home. However, once you get onto campus, it's the same for everyone. 
-
-* **Absolute paths** point to where a file is on a specific computer. 
-    * Example: `/Users/rdonatello/Library/CloudStorage/Box-Box/Teaching/MATH 130/data` This path to the `data` folder only exists on Dr. Donatello's macbook. 
-* **Relative paths** indicate where inside the project folder a file is located. 
-    * Example: `MATH 130/data`. This path to the `data` folder once you're already in the `MATH 130` folder.  
-
-
-Additionally, working this way makes it a lot easier to move your project around on your computer and share it with others without having to directly modify file paths in the individual scripts. This will be super important when we start importing data from an external file in @sec-import. 
-
-
-:::{.callout-important}
-##### Prior to this lesson learners should
-
-* Download the [[09_import_notes.Rmd]](09_import_notes.Rmd) R markdown file and save into your `Math130/notes` folder. 
-* Install the following packages: `gridExtra`, `RColorBrewer` and `sjPlot`.
-* Right click each link and save the following data sets into your `Math130/data` folder.
-
-:x: **DO NOT RENAME ANYTHING** If you download multiple copies of the data, do not keep the versions that have a (1) or some number in the name. Do not leave these files in your downloads folder. 
-
-* [NCBirths](https://www.norcalbiostat.com/data/NCbirths.csv)
+* [County Complete](https://www.norcalbiostat.com/data/countyComplete.csv)
 * [email](https://www.norcalbiostat.com/data/email.txt)
 * [Police Shootings](https://www.norcalbiostat.com/data/fatal-police-shootings-data.xlsx)
+
 :::
 
-## File types <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+File+Types/1_9p0tuqjq" target="_blank">(Video)</a>
+:::{.callout-important title = "DO NOT RENAME ANYTHING"}
+If you download multiple copies of the data, do not keep the versions that have a (1) or some number in the name. Do not leave these files in your downloads folder. 
+:::
+
+
+## File types 
+
+:::{.callout-warning icon=false appearance=minimal}
+<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+File+Types/1_9p0tuqjq" target="_blank">File Types Video</a>
+:::
 
 In this lesson we are only going to explore reading files that exist on your computer into R from three most commonly used data sources: A tab-delimited text file, A CSV file and an Excel file. 
-The three different files we will be using have different file types, or extensions.  
+
+The three different files we will be using have different file types, or extensions. [.doc  (Microsoft word), .pdf (PDF) and .png (images) are examples of file extensions for other types of files]{.aside}
 
 * `email.txt` is a `.txt` or "text" file.
 * `NCBirths.csv` is a `.csv` or "comma separated values" file.
@@ -56,30 +52,58 @@ Each of these file types differ in the type of _delimiter_ used. The _delimiter_
 
 There are two main types of delimiters we will consider in this class; comma and tab. That does not mean that data can't be stored in other ways, these are just the two most common. 
 
-Each of these different data types requires a different function or mechanism to import the data into R. If you use the wrong mechanism, the data may not be read in correctly if at all. 
+::: {#fig-delim layout-ncol=2}
 
-## General Importing data  <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+General+Importing+Data/1_o1ggmj66" target="_blank">(Video)</a>
+![Tab separated data. Variable names are `id`, `gender`, `race`, and `ses`.](img/tab_sep.png){#fig-tab_sep}
 
-To import data into R, we have to tell the program explicitly where to find the files you just downloaded. To do that we need to find the file's _path_. The _path_ is a programmatic way to direct your computer to the location of a file. It's like the file's address, or, where it lives on your computer. 
-<!-- ([link]("../static/img/path.png") to picture to explain absolute vs relative path if there is time) -->
+![Comma separated data. Variable names are `Month`, `RsnStop`, `OffRace`, etc ](img/comma_sep.png){#fig-csv}
 
-In all the examples below, the path shown (`data/`) is the path on **MY** computer. You will have to update this path to **YOUR** path on **YOUR** machine that points to your MATH130 folder. 
+Example of two common types of delimiters. 
 
-You can find the path of a file by navigating to the desired file in your finder or browser window. Right click and copy the file to the clipboard, then right click and pasting into a R markdown file. This will show a path that looks something like this: 
+:::
 
-```r
-file:///C:/Math 130/Data/Challenger.txt
+Each delimiter type requires a different function or mechanism to import the data into R. If you use the wrong mechanism, the data may not be read in correctly if at all. 
+
+
+## Paths (where the data lives)
+
+In addition to using the correct function for the delimiter type, we have to then tell the program explicitly where to find the files you want to access. To do that we need to find the file's _path_. The _path_ is a programmatic way to direct your computer to the location of a file. 
+
+You can think of it as a file's address, or where it lives on your computer. But to get to that address depends on where you start your journey. For example to get to your instructors office in Holt Hall, it will be different depending on if you start from your house, vs start from Meriam Library. If someone else starts from their house, their path would look different than if you both started at the Library. 
+
+* **Absolute paths** point to where a file is on a specific computer. 
+    * Example: `/Users/rdonatello/Library/CloudStorage/Box-Box/Teaching/MATH 130/data` This path to the `data` folder only exists on Dr. Donatello's macbook. 
+* **Relative paths** indicate where inside the project folder a file is located. 
+    * Example: `MATH 130/data`. This path to the `data` folder once you're already in the `MATH 130` folder. Anyone that has a `MATH 130` folder with a `data` subfolder has the same path. 
+
+When we use R Projects, we are setting the starting point (called the _working directory_) to your Math 130 folder. We will also reinforce that by using the `here` package. We want to specify that all our paths start `"here"`, at the top of our project working directory. 
+[learn more about the [here](https://here.r-lib.org/articles/here.html) package]{.aside}
+
+![Cartoon showing two paths side-by-side. On the left is a scary spooky forest, with spiderwebs and gnarled trees, with file paths written on the branches like “~/mmm/nope.csv” and “setwd(“/haha/good/luck/”), with a scared looking cute fuzzy monster running out of it. On the right is a bright, colorful path with flowers, rainbow and sunshine, with signs saying “here!” and “it’s all right here!” A monster facing away from us in a backpack and walking stick is looking toward the right path. Stylized text reads “here: find your path.”](img/here.png){width=80%}
+
+[Learn more about [here](https://here.r-lib.org/).]{.aside}
+
+:::{.callout-tip title = "👉 Whats your path?" icon=false}
+
+In the console, type `here::here()` to have R show you what your current working directory is at. This is the *absolute path* to your Math 130 folder on your computer. 
+
+```{r}
+# Dr. D's path to the code to build this course website
+here::here()
 ```
+:::
+ 
 
-You will need to remove the `file:///` part at the beginning before using this path. You will have three chances in this lab to practice this. 
+   
+Working with a combination of R projects and the `here` package this way makes it a lot easier to move your project around on your computer and share it with others without having to directly modify file paths in the individual scripts.
 
+:::{.callout-important title = "Cannot open the Connection"}
+The import code in this lesson assumes that you are working in your R project, and that you have your data downloaded and in the `data` folder. If you get an error message saying `Cannot open the connection` - double check the following common places for mistakes: 
 
-### Special Instructions for Mac
-
-* Navigate to the file or folder you wish to copy the path for Right-click (or Control+Click, or a Two-Finger click on trackpads) on the file or folder in the Mac Finder
-* While in the right-click menu, hold down the OPTION key to reveal the “Copy (item name) as Pathname” option, which replaces the standard Copy option. Once selected, the file or folders path is now in the clipboard, ready to be pasted anywhere
-
-*Source: https://stackoverflow.com/questions/52695546/how-to-copy-path-of-a-file-in-mac-os*
+1. is the data file in the right place? 
+2. did you spell the name of the data set correctly? 
+3. are you in your R project and using the `here::here` function correctly? 
+:::
 
 ## Checking the import was successful
 
@@ -89,81 +113,99 @@ The first thing you should always do after importing a data file is look at the 
 2. Is there the expected number of rows and columns? 
 3. Are the data types for each variable as expected? 
 
-There are many ways this can be done. Here are three:
-
-1. `str()` to show you the structure of the data frame. 
-2. `head()` to show you the top 6 rows
-3. `data[1:x, 1:x]` - when the data frame is too large for the above two to work well, we can use matrix notation to view only the first X columns, and first X rows. 
-
 Next we will read in three different data sets, each with unique file types, and look at each one to make sure it was read in correctly. 
 
-## Text files
-Text files are very simple files that have a `.txt` file extension. Common delimiters include a space, a comma (,) or a tab. Uncommon delimiters could include a % or even a semi-colon. By opening the file directly on your computer (not in R) you can see what delimiter is being used. 
+## Text files 
 
-We will use the `read.table()` function that is in base R to read in any type of delimited file. A tab-delimited text file can be read in using `"\t"` as the deliminator character. In this class you **ALWAYS** want to include `header=TRUE` to signify that the data in the first row contains our column names. 
+Text files are very simple files that have a `.txt` file extension. Common delimiters include a space, a comma (,) or a tab. Uncommon delimiters could include a `%` or even a semi-colon (`;`). 
+
+:::{.callout-tip title = "👉 Open the file directly" icon=false}
+Navigate to your class folder, and open the `emamil.txt` file that should be in your `data` folder by double clicking. If your computer asks, you can open it with the `notepad` program. Identify the following: 
+
+1. what's in the first row - data or variable names? 
+2. what is the delimiter? - in this case it is a tab. 
+:::
+
+We will use the `read.table()` function that is in base R to read in any type of delimited file. 
 ```{r}
-email <- read.table("data/email.txt", header=TRUE, sep="\t")
+#| code-annotations: below
+email <- read.table( # <1> 
+          here::here("data/email.txt"), # <2> 
+          header=TRUE, # <3> 
+          sep="\t" # <4> 
+          )
 ```
 
-Here we call the `str()` or _structure_ function to examine the data that was imported. 
+1. Use the `read.table()` function because it is a text file
+2. Use `here::here` to ensure you start at the project directory, then go into the `data` folder, and find the `email.txt` data set. 
+3. Set `header=TRUE` to signify that the data in the first row contains our column names
+4. Specify that the delimiter is a tab (`"\t"`).  
+
+:::{.callout-important title = "Trust but verify"}
+Let's use the `head` function to look at the imported data, ensuring the variable names are intended, and that each column has data in it. 
 ```{r}
-str(email)
-```
-
-* The `email` data set has 3921 observations, and 21 variables. 
-* The variable names were read in correctly, as evidenced by the words in the far right corner after the `$`. 
-* Most variables are treated as numeric integers, except a few are factors. Including `time`. If we wanted to examine a time trend, we would need to convert the class into a `datetime` 
-
-> What happens if you forget to include the arguments for `header` or `sep`? Try that now and discuss what happened. 
-<!-- > What happens if you forget to include the arguments for `header` or `sep`? Try that now and discuss with your neighbor what happened.  -->
-
-**Forgetting both arguments**
-
-```{r, error=TRUE}
-email <- read.table("data/email.txt")
-```
-
-**Forgetting the header**
-```{r, error=TRUE}
-email <- read.table("data/email.txt", sep="\t")
 head(email)
 ```
 
-**Forgetting the separator**
+:::
+
+:::{.callout-important title = "Errors!"}
+What happens if you forget to include the arguments for `header` or `sep`? Try that now and discuss what happened. 
+
+<details>
+  <summary> Solution - Forgetting both arguments </summary>
 ```{r, error=TRUE}
-email <- read.table("data/email.txt", header=TRUE)
-head(email)
+email.noboth <- read.table(here::here("data/email.txt"))
+head(email.noboth)
 ```
+The data set won't successfully be read in, and won't show up in your environment. 
+</details>
+
+<details>
+  <summary> Solution - Forgetting the header </summary>
+```{r, error=TRUE}
+email.nohead <- read.table(here::here("data/email.txt"), sep="\t")
+head(email.nohead)
+```
+The data is read into the object `email.nohead`, but the variable names were read in as datta in the first row. R assigned generic `V1`, and `V2` data names as your clue. 
+</details>
+
+<details>
+  <summary> Solution - Forgetting the separator </summary>
+```{r, error=TRUE}
+email.nosep <- read.table(here::here("data/email.txt"), header=TRUE)
+```
+We get the same error message and it will not read the data into your environment. 
+</details>
+
+:::
 
 
-## CSV: Comma Separated Values
-CSV is a fancy way of saying a text file with comma-separated values (i.e. CSV). This file type can also open in Excel--the icons even look similar. We could use `read.table()` to import this data file, but `read.csv()` is optimized to read in CSV files. 
+
+## CSV: Comma Separated Values 
+
+CSV stands for "comma-separated values". This file type can also open in spreadsheet programs like MS Excel, Numbers or google sheets. The icons even look similar. Here we use the `read.csv()` function because it is optimized to read in this file type. [Not CVS the pharmacy]{.aside}
 
 ```{r}
-NCbirths <- read.csv("data/NCbirths.csv", header=TRUE)
-head(NCbirths)
+cc <- read.csv(here::here("data/countyComplete.csv"), header=TRUE)
+cc[1:5, 1:6] # peek at the first 5 rows and 6 columns of the data
 ```
 
-* The `NCbirths` data set has 1000 rows and 13 columns. 
-* Variable names are read in OK. 
-* Most the data is begin read in as factors and integers. 
-* There are some `NA` values for the variable `fage` (fathers age). 
-
+The variable names are present, the data are all in columns with reasonable data types. 
 
 ## Excel files
 
-The best method to read in Excel files is from the [`readxl` package](http://readxl.tidyverse.org/) by [Hadley Wickham](http://hadley.nz/). This package need to be installed first, and then can be simply loaded using the `library()` function each time you start an `R` session where you will be reading in this type of data. 
-
-The `read_excel()` function is what we are going to use. Note the use of the underscore `_` instead of a period `.` between `read` and `excel`. 
+Files with the `.xlsx` or `.xls` extensions are Microsoft Excel files. These are also comma separated, but have more features than a `.csv` file. We will use the `read_excel()` function from the [`readxl` package](http://readxl.tidyverse.org/), which is contained within the `tidyverse` package that we installed earlier.  
 
 ```{r}
 library(readxl)
-police  <- read_excel("data/fatal-police-shootings-data.xlsx", sheet=1, col_names=TRUE)
-police[1:10,1:5]
+police  <- read_excel(here::here("data/fatal-police-shootings-data.xlsx"), 
+                      sheet=1, col_names=TRUE)
+police[1:6,2:6] # peek at the first 5 rows and 6 columns of the data
 ```
 
-
-* The variable `date` is a `dttm` or _date-time_ variable. This means `R` recognizes it directly as a date, not some string of numbers. 
+* Notice this was read in as a `tibble`, not a `data.frame`. Ref Section @sec-tibble to recall the differences. 
+* The variable `date` is a `dttm` or _date-time_ variable. This means `R` recognizes it directly as a date, not some string of numbers. This is good. 
 * Categorical variables such as `manner_of_death` and `city` are read in as `character` instead of factor. We may or may not want to change that later.
 * Numeric variables such as `age` are of type `dbl` (double). This is similar to `integer` or `numeric`, so we are fine. 
 
