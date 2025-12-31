@@ -15,7 +15,7 @@ book:
       chapters: 
         - setup_tools.qmd
         - quarto.qmd
-        - programming_in_r.qmd
+        - intro_r.qmd
     - part: "Basic Functionality"
       chapters: 
         - dm.qmd  
@@ -28,13 +28,11 @@ book:
         - plots2.qmd
     - part: "Appendix"
       chapters: 
-        - help.qmd
+        - syllabus.qmd
         - assignments.qmd
+        - help.qmd
         - project.qmd
       
-
-#bibliography: references.bib
-
 format:
   html:
     from: markdown+emoji

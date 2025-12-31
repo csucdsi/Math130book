@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project – Introduction to R</title>
+<title>Syllabus – Introduction to R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./help.html" rel="prev">
+<link href="./assignments.html" rel="next">
+<link href="./plots2.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syllabus.html">Appendix</a></li><li class="breadcrumb-item"><a href="./project.html">Project</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syllabus.html">Appendix</a></li><li class="breadcrumb-item"><a href="./syllabus.html">Syllabus</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -221,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="./syllabus.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
@@ -239,7 +240,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project.html" class="sidebar-item-text sidebar-link active">
+  <a href="./project.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project</span></a>
   </div>
 </li>
@@ -255,19 +256,46 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#guidelines" id="toc-guidelines" class="nav-link" data-scroll-target="#guidelines">Guidelines</a></li>
-  <li><a href="#scoring-rubric" id="toc-scoring-rubric" class="nav-link" data-scroll-target="#scoring-rubric">Scoring Rubric</a></li>
+  <li><a href="#course-description" id="toc-course-description" class="nav-link active" data-scroll-target="#course-description">Course Description</a></li>
+  <li><a href="#logistics" id="toc-logistics" class="nav-link" data-scroll-target="#logistics">Logistics</a>
+  <ul class="collapse">
+  <li><a href="#office-hours" id="toc-office-hours" class="nav-link" data-scroll-target="#office-hours">Office Hours</a></li>
+  </ul></li>
+  <li><a href="#course-structure" id="toc-course-structure" class="nav-link" data-scroll-target="#course-structure">Course structure</a></li>
+  <li><a href="#canvas-usage" id="toc-canvas-usage" class="nav-link" data-scroll-target="#canvas-usage">Canvas Usage</a></li>
+  <li><a href="#student-support" id="toc-student-support" class="nav-link" data-scroll-target="#student-support">Student Support</a>
+  <ul class="collapse">
+  <li><a href="#discord" id="toc-discord" class="nav-link" data-scroll-target="#discord">Discord</a></li>
+  <li><a href="#community-coding" id="toc-community-coding" class="nav-link" data-scroll-target="#community-coding">Community Coding</a></li>
+  </ul></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning Outcomes</a></li>
+  <li><a href="#schedule-of-topics" id="toc-schedule-of-topics" class="nav-link" data-scroll-target="#schedule-of-topics">Schedule of Topics</a></li>
+  <li><a href="#required-materials" id="toc-required-materials" class="nav-link" data-scroll-target="#required-materials">Required Materials</a></li>
+  <li><a href="#time-commitment" id="toc-time-commitment" class="nav-link" data-scroll-target="#time-commitment">Time Commitment</a></li>
+  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  <li><a href="#class-policies-and-statements" id="toc-class-policies-and-statements" class="nav-link" data-scroll-target="#class-policies-and-statements">Class Policies and statements</a>
+  <ul class="collapse">
+  <li><a href="#everyone-is-welcome-here" id="toc-everyone-is-welcome-here" class="nav-link" data-scroll-target="#everyone-is-welcome-here">Everyone is welcome here</a></li>
+  </ul></li>
+  <li><a href="#university-policies-and-campus-resources" id="toc-university-policies-and-campus-resources" class="nav-link" data-scroll-target="#university-policies-and-campus-resources">University Policies and Campus Resources</a>
+  <ul class="collapse">
+  <li><a href="#adding-and-dropping-the-course" id="toc-adding-and-dropping-the-course" class="nav-link" data-scroll-target="#adding-and-dropping-the-course">Adding and Dropping the course</a></li>
+  <li><a href="#academic-integrity" id="toc-academic-integrity" class="nav-link" data-scroll-target="#academic-integrity">Academic Integrity</a></li>
+  <li><a href="#ai-and-chatgpt-policy" id="toc-ai-and-chatgpt-policy" class="nav-link" data-scroll-target="#ai-and-chatgpt-policy">AI and ChatGPT Policy</a></li>
+  <li><a href="#it-support-services" id="toc-it-support-services" class="nav-link" data-scroll-target="#it-support-services">IT Support Services</a></li>
+  <li><a href="#americans-with-disabilities-act" id="toc-americans-with-disabilities-act" class="nav-link" data-scroll-target="#americans-with-disabilities-act">Americans with Disabilities Act</a></li>
+  <li><a href="#chico-state-basic-needs-project" id="toc-chico-state-basic-needs-project" class="nav-link" data-scroll-target="#chico-state-basic-needs-project">Chico State Basic Needs Project</a></li>
+  <li><a href="#confidentiality-and-mandatory-reporting" id="toc-confidentiality-and-mandatory-reporting" class="nav-link" data-scroll-target="#confidentiality-and-mandatory-reporting">Confidentiality and Mandatory Reporting</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syllabus.html">Appendix</a></li><li class="breadcrumb-item"><a href="./project.html">Project</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./syllabus.html">Appendix</a></li><li class="breadcrumb-item"><a href="./syllabus.html">Syllabus</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Project</h1>
+<h1 class="title"><span id="sec-syllabus" class="quarto-section-identifier">Syllabus</span></h1>
 </div>
 
 
@@ -284,105 +312,256 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Time to put everything you learned in this class into action. In an exploratory data analysis (EDA) you are just looking at (exploring) the data and learning about the data and possible relationships between variables. This is not a formal statistical analysis, you cannot make any claims about groups being statistically different. This is just descriptive. You are allowed and encouraged to hypothesize why you observe certain relationships or data characteristics, just be sure not to draw any conclusions from the data.</p>
-<section id="instructions" class="level2">
-<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
-<p>Using your data set of choice, pose a brief research question that explores the relationship between 2-3 variables.</p>
-<p>Use markdown headers to make the following sections</p>
-<ol type="1">
-<li><strong>Introduction</strong>: A short introduction/description of the data.
-<ul>
-<li>Specifically mention the 2-3 variables you are going to explore.</li>
-<li>What is your research question? What are you interested in finding out more about?</li>
-</ul></li>
-<li><strong>Univariate Exploration</strong>: Describe each of the variables under consideration.
-<ul>
-<li>This means calculate some summary statistics (N(%) or mean(sd)) and make a graphic</li>
-</ul></li>
-<li><strong>Bivariate Exploration</strong>: Comparison between two variables of interest.
-<ul>
-<li>Calculate grouped summary statistics as appropriate. <strong>This is often the most often forgotten part</strong></li>
-<li>You can go further and explore more than two variables at a time using paneling, but be sure to explain what you learn from each graph.</li>
-</ul></li>
-<li><strong>Conclusion</strong>: What did you find? If you had a prior hypothesis, does the data seem to support it? Remember this is NOT a statistical analysis.</li>
-</ol>
-<p>All descriptions (univariate and bivariate) must be done using graphics, summary statistics, and words.</p>
-<p>This is a very vague set of instructions for a reason. I want you to explore and choose a pair of variables that you find interesting. Create tables, graphics, grouped summary statistics (mean of the continuous variable across levels of the categorical variable). Whatever you need to do to understand the relationship between these two measures.</p>
-<p>Use the grading rubric at the end of this document for guidance as to what you should present, in what order, and level of detail you need to present.</p>
+<section id="course-description" class="level2">
+<h2 class="anchored" data-anchor-id="course-description">Course Description</h2>
+<p>This course is designed as a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. The target audience is anyone who wants to do their own data analysis. The course will culminate with a peer-evaluated exploratory data analysis on either a pre-specified data set or your data set of choice.</p>
 </section>
-<section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>You have a choice here. If you are currently working on some data that you would like to explore, talk with your instructor to get your data set approved. As long as it has more than a few variables in it, and at least 30 observations it should be fine.</p>
-<p>If you do not have your own data, you can choose from one of the following data sets, all of which can be downloaded from the <a href="https://norcalbiostat.netlify.com/data">Data</a> page of Dr.&nbsp;D’s teaching course website. Here are some common choices:</p>
+<section id="logistics" class="level2">
+<h2 class="anchored" data-anchor-id="logistics">Logistics</h2>
+<!-- updateme -->
 <ul>
-<li><strong>HIV</strong>: Data on adolescent children living with HIV positive parents.</li>
-<li><strong>Depression</strong>: Level of depression (<code>cesd</code>), health care, and demographic characteristics.</li>
-<li><strong>High School and Beyond</strong>: Educational, vocational, and personal development of elementary and high school students.</li>
-<li><strong>Police Shootings</strong>: Characteristics of individuals killed by police in 2015.</li>
+<li><strong>Course Website:</strong> <a href="math130.netlify.app">math130.netlify.app</a></li>
+<li><strong>Prerequisites:</strong> Basic computer literacy</li>
+<li><strong>Workshop style:</strong> This workshop style class runs for 5 weeks only. See expectations for time commitment during these 5 weeks below.</li>
+<li><strong>Discord Server:</strong> <a href="https://discord.gg/ck497bJty5">https://discord.gg/ck497bJty5</a></li>
 </ul>
-<p>Any other data sets require instructor approval. Data sets such as the <code>plants</code> or <code>arm strength</code> data sets are insufficiently complex for this project. Also you can’t use the <code>dsmall</code>, <code>diamonds</code>, or <code>NCbirths</code> data sets because we’ve used them too much already.</p>
-</section>
-<section id="guidelines" class="level2">
-<h2 class="anchored" data-anchor-id="guidelines">Guidelines</h2>
-<ul>
-<li>Render early and often. As often as every time you include a new R code chunk.</li>
-<li>Spell check your report prior to submission using RStudio.</li>
-<li>Re-read your report and edit for clarification and removing duplicated information.</li>
-<li>Remove superfluous code and output (i.e.&nbsp;printing a data set to the screen).</li>
-<li>This is to be independent work. Papers that are too similar will receive no credit.</li>
-<li>Look at the grading rubric to help you decide the level of detail required.</li>
-</ul>
-</section>
-<section id="scoring-rubric" class="level2">
-<h2 class="anchored" data-anchor-id="scoring-rubric">Scoring Rubric</h2>
-<blockquote class="blockquote">
-<p>review these with others. we’re not really teaching how to interpret.</p>
-</blockquote>
-<p>The criteria below is what you will be graded on.</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Criteria</th>
-<th>Novice</th>
-<th>Competent</th>
-<th>Proficient</th>
+<th style="text-align: left;"></th>
+<th style="text-align: center;">Section 01</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Data Description</strong>: Provide a description of the data set and the variables of interest.</td>
-<td>There is no description or the description is a copy of the help file.</td>
-<td>There is a minor description of the data but not enough to understand what is being measured or compared.</td>
-<td>The data description is clear and concise, it is clear to me what data is being analyzed and where it was obtained.</td>
+<td style="text-align: left;"><strong>Meeting Days</strong></td>
+<td style="text-align: center;">01/21/26 - 02/20/26</td>
 </tr>
 <tr class="even">
-<td><strong>Univariate Description</strong>: Fully describe the distribution of <em>each variable</em> by itself</td>
-<td>There are no numerical or graphical summaries provided.</td>
-<td>Only numeric or only graphical summaries were created, but no textual description.</td>
-<td>The variable was fully described using both numeric and graphical summary methods. This information was summarized below the output in a paragraph form.</td>
+<td style="text-align: left;"><strong>Meeting Times</strong></td>
+<td style="text-align: center;">MWF 9:00 - 9:50 am</td>
 </tr>
 <tr class="odd">
-<td><strong>Bivariate Comparison</strong>: Describe the relationship between the two chosen variables.</td>
-<td>No comparison was made, or the variables were compared, but inappropriate graphics or summary statistics were created.</td>
-<td>The variables were compared using appropriate graphical methods and grouped summary statistics were created, but nothing was discussed.</td>
-<td>The variables were compared using appropriate graphical methods and a short textual explanation of what the summaries showed.</td>
+<td style="text-align: left;"><strong>Meeting Location</strong></td>
+<td style="text-align: center;">Holt Hall 113</td>
 </tr>
 <tr class="even">
-<td><strong>Organization / Grammar</strong>: How well does the report read? How well organized is it? Was it checked for grammar and spelling mistakes?</td>
-<td>Only R code, output is present. There is no discussion of results. Tons of extra R code that is not relevant to the discussion is present. Markdown headers were not used.</td>
-<td>An attempt was made to discuss the results, but the explanations are not in a report format or there are some large grammar and/or spelling problems. Some R code that is not relevant to the analysis question at hand is being displayed. Markdown headers were used to create sections.</td>
-<td>The report was spell written in well edited, full English sentences, and spell checked prior to submission. The report flowed well and followed the required order of discussion topics with markdown headers used successfully.</td>
+<td style="text-align: left;"><strong>Instructor</strong></td>
+<td style="text-align: center;">Robin Donatello</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Office Location</strong></td>
+<td style="text-align: center;">Holt 202</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>E-mail</strong></td>
+<td style="text-align: center;">rdonatello@csuchico.edu</td>
 </tr>
 </tbody>
 </table>
+<!-- |                        |        Section 01       | -->
+<!-- |:-----------------------|:-----------------------:| -->
+<!-- | **Meeting Days**       | 01/21/25 - 02/21/25     | -->
+<!-- | **Meeting Times**      | (Asynchronous)          | -->
+<!-- | **Meeting Location**   | (Asynchronous)          | -->
+<!-- | **Instructor**         | Edward Roualdes         | -->
+<!-- | **Office Location**    | Holt 204                | -->
+<!-- | **E-mail**             | eroualdes@csuchico.edu  | -->
+<section id="office-hours" class="level3">
+<h3 class="anchored" data-anchor-id="office-hours">Office Hours</h3>
+<!-- updateme -->
+<!---
+For the first five weeks of the semester (1/25/2025 - 9/26/2025), my office hours will be in the [Meriam Library Innovation Lab](https://library.csuchico.edu/innovation-lab):
+--->
+<ul>
+<li>Mondays:</li>
+<li>Tuesdays:</li>
+<li>Wednesdays:</li>
+<li>Thursdays:</li>
+<li>Fridays:</li>
+</ul>
+<p>If none of those times work for you, please use my booking link in Canvas to find a time that works for both of us. <!---email me so that we can find a time that works for us both: xxx@csuchico.edu---></p>
+</section>
+</section>
+<section id="course-structure" class="level2">
+<h2 class="anchored" data-anchor-id="course-structure">Course structure</h2>
+<!-- updateme -->
+<!-- **Asynchronous**: this class is fully online and asynchronous. -->
+<!-- There are no set meeting times, but assignments still have due dates. Lectures are all pre-recorded and linked from the class website. Students work through the material and complete assignments at their own pace.  -->
+<!--
+This is a flipped classroom. Before set meeting times, students are expected to watch the video lectures. Lectures are all pre-recorded and linked from the class website. During class meeting time, students complete assignments at their own pace and ask the instructor questions when needed.
+--->
+<p>This is an interactive in person class. We will go over the learning material together as a class. You will follow along on your laptop, filling out notes and working on examples and homework.</p>
+<!--- See Canvas for your specific section for more details. --->
+</section>
+<section id="canvas-usage" class="level2">
+<h2 class="anchored" data-anchor-id="canvas-usage">Canvas Usage</h2>
+<!-- updateme -->
+<p>Generally speaking, this course website will be used instead of Canvas. A link in Canvas leads to this website.</p>
+<!-- Canvas will only be used for announcements and friendly reminders to the class. --->
+<p>Canvas will be used to submit assignments, and your gradebook.</p>
+</section>
+<section id="student-support" class="level2">
+<h2 class="anchored" data-anchor-id="student-support">Student Support</h2>
+<section id="discord" class="level3">
+<h3 class="anchored" data-anchor-id="discord">Discord</h3>
+<p>To facilitate peer to peer and effective instructor to peer assistance Discord will be used for discussion and questions outside of class. This server hosts students across multiple Statistics and Data Science classes, with a specific channel for all sections of Math 130.</p>
+<ol type="1">
+<li>Click this link to join the server: https://discord.gg/ck497bJty5</li>
+<li>Verify your email and agree to the rules and code of conduct. This helps create a safe learning environment.</li>
+<li>Go to the <code>#class-selection</code> text channel in the left sidebar, and click the RStudio icon emoji under the any post to self-assign you to the Math-130 role. This will let you see and access the class channels.</li>
+<li>Post a question or 10 to the Math-130 channel.</li>
+</ol>
+</section>
+<section id="community-coding" class="level3">
+<h3 class="anchored" data-anchor-id="community-coding">Community Coding</h3>
+<p>Similar to drop in Mathematics tutoring hours, students, staff, faculty, and the public are invited to join our Community Coding sessions. Bring your computer, coding projects, and your questions to this open working environment. For asynchronous sections, this is the best way to get direct instructor assistance.</p>
+<p>Schedule and info found at <a href="https://datascience.csuchico.edu/communitycoding">https://datascience.csuchico.edu/communitycoding</a></p>
+</section>
+</section>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning Outcomes</h2>
+<p>By the end of the course, students will be able to</p>
+<ul>
+<li>Calculate summary statistics.</li>
+<li>Create new variables using different data types.</li>
+<li>Perform data management techniques such as filtering, grouping, summarizing.</li>
+<li>Create informative data visualizations and tables.</li>
+<li>Import data into R from external files such as text files and spreadsheets.</li>
+<li>Create a reproducible research document.</li>
+<li>Conduct an exploratory data analysis in a reproducible manner.</li>
+</ul>
+</section>
+<section id="schedule-of-topics" class="level2">
+<h2 class="anchored" data-anchor-id="schedule-of-topics">Schedule of Topics</h2>
+<p>The general outline of topics is listed below. A detailed most up to date schedule can be found on the course website.</p>
+<ul>
+<li>Week 1 (Lessons 1-3)
+<ul>
+<li>Introduction to the R language and the R Studio Environment</li>
+<li>Conducting reproducible research with Quarto</li>
+</ul></li>
+<li>Week 2 (Lessons 4-5)
+<ul>
+<li>How to use functions to get things done in data frames</li>
+<li>Working with factors</li>
+</ul></li>
+<li>Week 3 (Lessons 6-7)
+<ul>
+<li>Basic data visualizations using <code>ggplot2</code> and friends</li>
+<li>Efficient data processing and Aggregation with <code>dplyr</code></li>
+</ul></li>
+<li>Week 4 (Lessons 8-9)
+<ul>
+<li>Importing data into R from external files</li>
+<li>Next level plotting enhancements</li>
+</ul></li>
+<li>Week 5: Exploratory Data Analysis (individual project)</li>
+</ul>
+</section>
+<section id="required-materials" class="level1">
+<h1>Required Materials</h1>
+<ul>
+<li>A reliable laptop, chromebook, tablet that can use a browser to access the internet.</li>
+<li>Reliable internet connection while on and off campus.</li>
+</ul>
+<section id="software" class="level4">
+<h4 class="anchored" data-anchor-id="software">Software</h4>
+<p>If you have your own PC/Mac/*nix computer, you are advised to install R and R Studio on your personal computer. That way you can take what you’ve learned in this class and apply it to other classes. Both are free. Walk through installation instructions can be found on the course website: <a href="https://math130.netlify.app/setup_tools">https://math130.netlify.app/setup_tools</a></p>
+<!--updateme --->
+<ul>
+<li>R version 4.5.1 or later.</li>
+<li>R Studio version 2025.05.01 or later</li>
+<li>Download both from https://posit.co/download/rstudio-desktop/</li>
+</ul>
+<p>Students who do not have a computer that they install programs on (i.e.&nbsp;a iPad or Chromebook) can use the <a href="https://support.csuchico.edu/TDClient/1984/Portal/KB/ArticleDet?ID=112333">Wildcat virtual lab</a>, or sign up for <a href="https://posit.cloud">Posit Cloud</a>. The free or $5/month plan should be sufficient.</p>
+</section>
+</section>
+<section id="time-commitment" class="level1">
+<h1>Time Commitment</h1>
+<blockquote class="blockquote">
+<p>For all CSU degree programs and courses bearing academic credit, the “credit hour” is defined as … not less than one hour of classroom or direct faculty instruction and a minimum of two hours of out-of-class student work each week for approximately fifteen weeks for one semester or trimester hour of credit.</p>
+</blockquote>
+<p>This adds up to 15 hours in class, and 30 hours outside of class during these 5 weeks. That’s 3 hours in class, and 10 hours of homework per week. If you are new to programming and unfamiliar with computers, you may end up taking the entire time. Be sure to schedule sufficient time during week 5 to work on the project.</p>
+<p>You will get out of this class what you put into it. Recall this is just a co-curriculuar or supplemental basic introductory class. You will not learn everything there is to know about R, nor likely not feel proficient by the time you are done. But you will be solidly on the path where you can continue to learn and improve.</p>
+</section>
+<section id="grading" class="level1">
+<h1>Grading</h1>
+<!-- updateme -->
+<p>Credit / No Credit. There are 100 points available in this course. You must earn <strong>75</strong> points to receive credit for the course.</p>
+<ul>
+<li>Assignments: 4 @ 10 pts each.</li>
+<li>Fill out course notes: 7 @ 5 pts each</li>
+<li>Project:
+<ul>
+<li>Exploratory Data Analysis (20 pts)</li>
+<li>Peer Review (5 pts)</li>
+</ul></li>
+</ul>
+<p>Assignments are due after each week, see Canvas for due dates. <!--- Sunday by midnight. ---></p>
+<p>Any assignment can be submit as late within the week after it is due for a one point deduction.</p>
+<!--- 
+Assignments are submit by uploading the appropriate files to a Google
+Drive shared notebook, which I will create for you.  The shared Google
+Drive folder will be named MATH 130 Assignments for
+[student-username], where [student-username] is your student username.
+Only, specifically, you, me, and the course graders will have access
+to this folder.
+--->
+<p>Assignments are submitted to Canvas after rendering directly to PDF and graded using a rubric. You will learn how to create PDF’s from your code during the first week. Submitting files not in PDF format will be marked down, but you can resubmit for full credit.</p>
+<hr>
+</section>
+<section id="class-policies-and-statements" class="level1">
+<h1>Class Policies and statements</h1>
+<section id="everyone-is-welcome-here" class="level2">
+<h2 class="anchored" data-anchor-id="everyone-is-welcome-here">Everyone is welcome here</h2>
+<p>It is our intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit. It is our intent to present materials and activities that are respectful of diversity: gender identity, sexuality, disability, age, socioeconomic status, ethnicity, race, nationality, religion, and culture. Your suggestions are encouraged and appreciated. Please let us know ways to improve the effectiveness of the course for you personally, or for other students or student groups.</p>
+<p>We would like to create a learning environment that supports a diversity of thoughts, perspectives and experiences, and honors your identities (including race, gender, class, sexuality, religion, ability, etc.) To help accomplish this:</p>
+<ul>
+<li>If you have a name and/or set of pronouns that differ from those that appear in your official Chico records, please let us know!</li>
+<li>If you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with us. We want to be a resource for you. Remember that you can also submit anonymous feedback (which may lead to a general announcement to the class, if necessary to address the concerns).</li>
+<li>If you prefer to speak with someone outside of the course, the Office of Diversity and Inclusion is here to assist. Their number is 530-898-4764, and email diversityoffice@csuchico.edu</li>
+<li>We (like many people) are still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it. (Again, anonymous feedback is always an option).</li>
+</ul>
+<p><em>Adapted from <a href="https://www.brown.edu/sheridan/teaching-learning-resources/inclusive-teaching/statements">Monica Linden at Brown University</a></em>.</p>
+<p>We acknowledge and are mindful that Chico State stands on lands that were originally occupied by the first people of this area, the Mechoopda, and we recognize their distinctive spiritual relationship with this land, the flora, the fauna, and the waters that run through campus. We are humbled that our campus resides upon sacred lands that since time immemorial have sustained the Mechoopda people and continue to do so today.</p>
+<hr>
+</section>
+</section>
+<section id="university-policies-and-campus-resources" class="level1">
+<h1>University Policies and Campus Resources</h1>
+<section id="adding-and-dropping-the-course" class="level3">
+<h3 class="anchored" data-anchor-id="adding-and-dropping-the-course">Adding and Dropping the course</h3>
+<p>This course only runs for a few weeks and all materials are available on the course website. It will be difficult to get caught up if you add the class after the first week. The last day to add or drop classes without special permission by the instructor is X/XX/25. No adds or drops are allowed after X/XX/25 without a serious and compelling reason approved by the instructor, department chair, and college dean.</p>
+</section>
+<section id="academic-integrity" class="level3">
+<h3 class="anchored" data-anchor-id="academic-integrity">Academic Integrity</h3>
+<p>Students are expected to be familiar with the University’s Academic Integrity Policy. Your own commitment to learning, as evidenced by your enrollment at California State University, Chico, and the University’s Academic Integrity Policy requires you to be honest in all your academic course work. Faculty members are required to report all infractions to the Office of Student Judicial Affairs. The policy on academic integrity and other resources related to student conduct can be found on the Student Judicial Affairs web site at http://www.csuchico.edu/sjd/integrity.shtml.</p>
+</section>
+<section id="ai-and-chatgpt-policy" class="level3">
+<h3 class="anchored" data-anchor-id="ai-and-chatgpt-policy">AI and ChatGPT Policy</h3>
+<p>AI writing tools are not permitted for any stage or phase of work in this class. If you use these tools, your actions will be considered academically dishonest, and a violation of Chico State’s Integrity Policy and you may be reported to the Office of Students Rights and Responsibilities.</p>
+</section>
+<section id="it-support-services" class="level3">
+<h3 class="anchored" data-anchor-id="it-support-services">IT Support Services</h3>
+<p>Computer labs for student use are located on the first and fourth floor of the Meriam Library, Room 116 and 450, Tehama Hall Room 131, and the Bell Memorial Union (BMU) basement. You can get help using your computer from IT Support Services; contact them through the ITSS web site at http://www.csuchico.edu/itss. Additional labs may be available to students in your department or college.</p>
+</section>
+<section id="americans-with-disabilities-act" class="level3">
+<h3 class="anchored" data-anchor-id="americans-with-disabilities-act">Americans with Disabilities Act</h3>
+<p>If you need course adaptations or accommodations because of a disability or chronic illness, or if you need to make special arrangements in case the building must be evacuated, please make an appointment with me as soon as possible, or see me during office hours. Please also contact Accessibility Resource Center (ARC) as they are the designated department responsible for approving and coordinating reasonable accommodations and services for students with disabilities. ARC will help you understand your rights and responsibilities under the Americans with Disabilities Act and provide you further assistance with requesting and arranging accommodations.</p>
+<p>Accessibility Resource Center 530-898-5959 Student Services Center 170 arcdept@csuchico.edu http://www.csuchico.edu/arc</p>
+</section>
+<section id="chico-state-basic-needs-project" class="level3">
+<h3 class="anchored" data-anchor-id="chico-state-basic-needs-project">Chico State Basic Needs Project</h3>
+<p>The <strong>Hungry Wildcat Food Pantry</strong> provides supplemental food, fresh produce, CalFresh application assistance and basic needs referral services for students experiencing food and housing insecurity.</p>
+<p>All students are welcomed to visit the Pantry located in the Student Service Center 196. Check the website for a location map and for the most up to date information on open hours: https://www.csuchico.edu/basic-needs/pantry.shtml .</p>
+</section>
+<section id="confidentiality-and-mandatory-reporting" class="level2">
+<h2 class="anchored" data-anchor-id="confidentiality-and-mandatory-reporting">Confidentiality and Mandatory Reporting</h2>
+<p>As an instructor, one of my responsibilities is to help create a safe learning environment on our campus. I also have a mandatory reporting responsibility related to my role as a your instructor. I am required to share information regarding sexual misconduct with the University. Students may speak to someone confidentially by contacting the Counseling and Wellness Center (898-6345) or Safe Place (898-3030). Information on campus reporting obligations and other Title IX related resources are available here: www.csuchico.edu/title-ix.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -949,11 +1128,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./help.html" class="pagination-link" aria-label="Seeking Help">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Seeking Help</span>
+      <a href="./plots2.html" class="pagination-link" aria-label="Plot Enhancements">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Plot Enhancements</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./assignments.html" class="pagination-link" aria-label="Assignment Files">
+        <span class="nav-page-text">Assignment Files</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

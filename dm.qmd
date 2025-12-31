@@ -21,7 +21,7 @@ After completing this lesson learners will be able to
 :::{.callout-tip title = "👉 Prepare" icon=false}
 
 1.  Open your Math 130 R Project. _Forget how to do this? See @sec-rproj ._
-2.  Right click and "save as" this lessons [[dm_notes.qmd]](notes/dm_notes.qmd) Quarto notes file and save into your `notes/Math130` folder.
+2.  Right click and "save as" this lessons [[dm_notes.qmd]](notes/dm_notes.qmd) Quarto notes file and save into your `Math130/notes` folder.
 3.  In the *Files* pane, open this Quarto file and Render this file.
 
 :::

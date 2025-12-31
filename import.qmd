@@ -19,7 +19,7 @@ After completing this lesson learners will be able to
 :::{.callout-tip title = "👉 Prepare" icon=false}
 
 1.  Open your Math 130 R Project.
-2.  Right click and "save as" this lessons [[Quarto notes file]](notes/import_notes.qmd) and save into your `notes/Math130` folder.
+2.  Right click and "save as" this lessons [[Quarto notes file]](notes/import_notes.qmd) and save into your `Math130/notes` folder.
 3. Right click each link and save the following data sets into your `Math130/data` folder.
 4.  In the *Files* pane, open this Quarto file and Render this file.
 

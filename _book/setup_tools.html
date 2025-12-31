@@ -181,7 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./programming_in_r.html" class="sidebar-item-text sidebar-link">
+  <a href="./intro_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with R</span></span></a>
   </div>
 </li>
@@ -217,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dplyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient data management</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -256,14 +256,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./help.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Seeking Help</span></a>
+  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./assignments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Assignments</span></a>
+ <span class="menu-text">Assignment Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./help.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Seeking Help</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -286,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#sec-install" id="toc-sec-install" class="nav-link active" data-scroll-target="#sec-install"><span class="header-section-number">1.1</span> Installing R and R Studio</a></li>
   <li><a href="#terminology" id="toc-terminology" class="nav-link" data-scroll-target="#terminology"><span class="header-section-number">1.2</span> Terminology</a></li>
-  <li><a href="#navigating-r-studio" id="toc-navigating-r-studio" class="nav-link" data-scroll-target="#navigating-r-studio"><span class="header-section-number">1.3</span> Navigating R Studio</a>
+  <li><a href="#sec-nav_Rstudio" id="toc-sec-nav_Rstudio" class="nav-link" data-scroll-target="#sec-nav_Rstudio"><span class="header-section-number">1.3</span> Navigating R Studio</a>
   <ul class="collapse">
   <li><a href="#environment-history" id="toc-environment-history" class="nav-link" data-scroll-target="#environment-history">Environment / History</a></li>
   <li><a href="#files-plots-packages-help" id="toc-files-plots-packages-help" class="nav-link" data-scroll-target="#files-plots-packages-help">Files / Plots / Packages / Help</a></li>
@@ -362,9 +368,9 @@ Tablet / iPad / Chromebook
 <div class="callout-body-container callout-body">
 <p>If you are using a tablet, Chromebook or otherwise do not have a computer that you can install programs on, you can use Posit Cloud for this class.</p>
 <ul>
-<li>Make a <strong>Cloud FREE</strong> account at https://posit.cloud/plans/free</li>
+<li>Make a <strong>Cloud FREE</strong> account at <a href="https://posit.cloud/plans/free">https://posit.cloud/plans/free</a></li>
 <li>Start a new project by clicking on the button in the top right corner</li>
-<li>Then go to (#intro_rstudio) to learn how to navigate RStudio.</li>
+<li>Then go to <a href="#sec-nav_Rstudio" class="quarto-xref"><span>Section 1.3</span></a> to learn how to navigate RStudio.</li>
 </ul>
 <p>The free account allows for 25 project hours/month, which may not be enough for this class. If you run into time limits or you are using this for another class you will have to upgrade to the <strong>Cloud Student</strong> plan which is $5/month.</p>
 <p>Using the cloud is easier to initially setup, but having your own installation on your computer ensures that</p>
@@ -439,7 +445,7 @@ MacOS
 <p>We write, or <em>code</em>, instructions in R because it is a common language that both the computer and we can understand (with practice).</p>
 <p>We call the instructions <em>commands</em> and we tell the computer to follow the instructions by <em>executing</em> (also called <em>running</em>) those commands.</p>
 <p>Learning how to code is like learning a new language. There are rules and exceptions, and it can be extremely precise and sometimes frustrating in how literal it is.</p>
-<div class="page-columns page-full"><p> </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Writing clear commands can be like explaining how to make a PB&amp;J sandwich to a child.</span></div></div><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/cDA3_5982h8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<div class="page-columns page-full"><p> </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Writing clear commands can be like explaining how to make a PB&amp;J sandwich to a child.</span></div></div><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/cDA3_5982h8?start=37" title="Literal Programming" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -452,8 +458,8 @@ MacOS
 </div>
 </div>
 </section>
-<section id="navigating-r-studio" class="level2 page-columns page-full" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="navigating-r-studio"><span class="header-section-number">1.3</span> Navigating R Studio</h2>
+<section id="sec-nav_Rstudio" class="level2 page-columns page-full" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="sec-nav_Rstudio"><span class="header-section-number">1.3</span> Navigating R Studio</h2>
 <p>We will be interacting with the programming language R <em>only</em> through R Studio. Not by itself. Typically are four panes, or windows, in R Studio. When you first start the program, you may only see three.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

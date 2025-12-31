@@ -49,6 +49,8 @@ By the end of this class you will be able to:
 
 :::
 
+🚧 This site was rebuilt in Quarto in December 2026 and should be considered still under construction. 
+
 :::
 
 ## References & Acknowledgements

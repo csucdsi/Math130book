@@ -23,6 +23,7 @@ Visualizing your data is hands down the most important thing you can learn to do
 
 The functions from the `ggplot2` package, along with derivatives such as `ggpubr` and `sjPlot`, automatically do a lot of this work for you. While all of these can be made with base R plotting functions, we are intentionally choosing to highlight function that create good quality plots with very little code and are quite extensible and flexible.
 
+
 :::{.callout-note title = "🎓 Learning Objectives" icon=false}
 
 After completing this lesson students will be able to create basic statistical data visualizations for one and two variables, using multiple approaches. 
@@ -32,7 +33,7 @@ After completing this lesson students will be able to create basic statistical d
 :::{.callout-tip title = "👉 Prepare" icon=false}
 
 1.  Open your Math 130 R Project.
-2.  Right click and "save as" this lessons [[Quarto notes file]](notes/plot_notes.qmd) and save into your `notes/Math130` folder.
+2.  Right click and "save as" this lessons [[Quarto notes file]](notes/plot_notes.qmd) and save into your `Math130/notes` folder.
 3.  In the *Files* pane, open this Quarto file and Render this file.
 
 :::

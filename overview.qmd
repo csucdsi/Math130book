@@ -129,6 +129,9 @@ Red boxes contain warnings such as common errors or pitfalls.
 Yellow boxes contain links to supporting videos. 
 :::
 
+Sometimes there are side notes presented in the right margin [Over Here!]{.aside}
+
+🚧 Section under construction
 
 ### Code and keystroke appearance
 

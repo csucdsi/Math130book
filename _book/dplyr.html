@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Data management and aggregation – Introduction to R</title>
+<title>7&nbsp; Efficient data management – Introduction to R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./dplyr.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./dplyr.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient data management</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -181,7 +181,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./programming_in_r.html" class="sidebar-item-text sidebar-link">
+  <a href="./intro_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Getting Started with R</span></span></a>
   </div>
 </li>
@@ -217,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dplyr.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient data management</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -256,14 +256,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./help.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Seeking Help</span></a>
+  <a href="./syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./assignments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Assignments</span></a>
+ <span class="menu-text">Assignment Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./help.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Seeking Help</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -306,9 +312,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./dplyr.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./dplyr.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient data management</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data management and aggregation</span></h1>
+<h1 class="title"><span id="sec-dplyr" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Efficient data management</span></span></h1>
 </div>
 
 
@@ -381,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Open your Math 130 R Project.</li>
-<li>Right click and “save as” this lessons <a href="notes/dplyr_notes.qmd">[Quarto notes file]</a> and save into your <code>notes/Math130</code> folder.</li>
+<li>Right click and “save as” this lessons <a href="notes/dplyr_notes.qmd">[Quarto notes file]</a> and save into your <code>Math130/notes</code> folder.</li>
 <li>In the <em>Files</em> pane, open this Quarto file and Render this file.</li>
 </ol>
 </div>

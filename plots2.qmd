@@ -5,7 +5,7 @@ format:
   html:
     toc-depth: 3
 ---
-# Plot Enhancements
+# Plot Enhancements {#sec-plots2}
 
 :::{.callout-warning icon=false appearance=minimal}
 <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Introduction/1_qmt3ls9l" target="_blank">Lesson Introduction Video</a>
@@ -38,7 +38,7 @@ This lesson also has no specific order, but is a smattering of "things you shoul
 :::{.callout-tip title = "👉 Prepare" icon=false}
 
 1.  Open your Math 130 R Project.
-2.  Right click and "save as" this lessons [[Quarto notes file]](notes/plots2_notes.qmd) and save into your `notes/Math130` folder.
+2.  Right click and "save as" this lessons [[Quarto notes file]](notes/plots2_notes.qmd) and save into your `Math130/notes` folder.
 3.  In the *Files* pane, open this Quarto file and Render this file.
 
 ```{r}
