@@ -36,6 +36,9 @@ Go to [Dr. D's data website](https://www.norcalbiostat.com/data/) to find the fo
 # Graphing Enhancements
 This section will ask you to create graphics, often on data that needs pre-processing using the dplyr verbs you learned in the last homework. No one expects you to have all those commands memorized yet, the key is to know how to go find what you need. So reference last week's notes and homework while you do this section. 
 
+
+> make them switch boxplots and violins here, and add alphas etc
+
 ## Exploring the poverty rate 
 This section demonstrates how you can build a nice graph in stages. Each question will have you adjust one thing on the plot. Instead of retyping the entire code each time, copy the code from the prior question and then make the requested adjustment.
 

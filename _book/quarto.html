@@ -269,7 +269,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plots2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Graphing Enhancements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Plot Enhancements</span></span></a>
   </div>
 </li>
       </ul>
@@ -320,7 +320,8 @@ window.Quarto = {
   <li><a href="#code-chunks" id="toc-code-chunks" class="nav-link" data-scroll-target="#code-chunks"><span class="header-section-number">2.2.2</span> Code Chunks</a></li>
   <li><a href="#sec-markdown" id="toc-sec-markdown" class="nav-link" data-scroll-target="#sec-markdown"><span class="header-section-number">2.2.3</span> Markdown Text</a></li>
   </ul></li>
-  <li><a href="#create-professional-looking-pdf-reports." id="toc-create-professional-looking-pdf-reports." class="nav-link" data-scroll-target="#create-professional-looking-pdf-reports."><span class="header-section-number">2.3</span> Create professional looking PDF reports.</a></li>
+  <li><a href="#code-chunk-options" id="toc-code-chunk-options" class="nav-link" data-scroll-target="#code-chunk-options"><span class="header-section-number">2.3</span> Code chunk options</a></li>
+  <li><a href="#create-professional-looking-pdf-reports." id="toc-create-professional-looking-pdf-reports." class="nav-link" data-scroll-target="#create-professional-looking-pdf-reports."><span class="header-section-number">2.4</span> Create professional looking PDF reports.</a></li>
   </ul>
 </nav>
     </div>
@@ -525,7 +526,7 @@ Only code goes in code chunks
 </section>
 <section id="sec-markdown" class="level3 page-columns page-full" data-number="2.2.3">
 <h3 data-number="2.2.3" class="anchored" data-anchor-id="sec-markdown"><span class="header-section-number">2.2.3</span> Markdown Text</h3>
-<div class="page-columns page-full"><p>Markdown is a popular markup language that allows you to add formatting elements to text. Markdown is useful because it is lightweight, flexible, and platform independent. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">See more basic syntax of Markdown at <a href="https://markdownguide.offshoot.io/basic-syntax/"> https://markdownguide.offshoot.io/basic-syntax/</a></span></div></div>
+<div class="page-columns page-full"><p>Markdown is a popular markup language that allows you to add formatting elements to text. Markdown is useful because it is lightweight, flexible, and platform independent. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">See more basic syntax of Markdown at <a href="https://quarto.org/docs/authoring/markdown-basics.html"> https://quarto.org/docs/authoring/markdown-basics.html</a></span></div></div><a href="https://quarto.org/docs/authoring/markdown-basics.html">
 <div class="columns">
 <div class="column" style="width:45%;">
 <table class="caption-top table">
@@ -589,7 +590,7 @@ Only code goes in code chunks
 </table>
 </div>
 </div>
-<p>Additionally, using <code>#</code> and <code>##</code> symbols at the start of a line creates first (<code>#</code>) and second (<code>##</code>) level headers (larger font size, bold, numbered), such as <a href="#sec-quarto-components" class="quarto-xref"><span>Section 2.2</span></a> and line 15 in the <code>hello.qmd</code> file where it says <code>## Meet Quarto</code> . Properly formatted headers are an important part of document organization and accessibility for screen reader navigation.</p>
+</a><p><a href="https://quarto.org/docs/authoring/markdown-basics.html">Additionally, using <code>#</code> and <code>##</code> symbols at the start of a line creates first (<code>#</code>) and second (<code>##</code>) level headers (larger font size, bold, numbered), such as </a><a href="#sec-quarto-components" class="quarto-xref"><span>Section 2.2</span></a> and line 15 in the <code>hello.qmd</code> file where it says <code>## Meet Quarto</code> . Properly formatted headers are an important part of document organization and accessibility for screen reader navigation.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Add some formatting">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -608,8 +609,26 @@ Only code goes in code chunks
 </div>
 </section>
 </section>
-<section id="create-professional-looking-pdf-reports." class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="create-professional-looking-pdf-reports."><span class="header-section-number">2.3</span> Create professional looking PDF reports.</h2>
+<section id="code-chunk-options" class="level2 page-columns page-full" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="code-chunk-options"><span class="header-section-number">2.3</span> Code chunk options</h2>
+<div class="page-columns page-full"><p>Sometimes you want to hide your code, control the size and placement of figures, or not run a block of code at all. We can control these at the individual code chunk level using code chunk options. These are prefixed by a “hash-pipe” <code>#|</code> at the top of the code chunk. </p><div class="no-row-height column-margin column-container"><span class="margin-aside"><code>|</code> is the first of three pipes we’ll see in this course</span><span class="margin-aside">See more options in the <a href="https://quarto.org/docs/computations/execution-options.html">Quarto cocumentation</a></span></div></div>
+<p>If we set <code>eval: false</code> it will not render any code in that code chunk. Great for when you have an error but not sure how to fix it yet, but you want to render your full document.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| eval: false</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="in">2+2 # not evaluated</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Setting <code>echo: false</code> hides the code chunk from being shown, but shows the results.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>[1] 4</code></pre>
+</div>
+</div>
+<p>We will see more uses of code chunk options when we get to multiple plots from one code chunk.</p>
+</section>
+<section id="create-professional-looking-pdf-reports." class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="create-professional-looking-pdf-reports."><span class="header-section-number">2.4</span> Create professional looking PDF reports.</h2>
 <p>To convert your work into a professional looking PDF, or to write math symbols in your homework, or you need a typesetting program called <span class="math inline">\(\LaTeX\)</span> (pronounced “lay-tek” or “lah-tex”). It’s a super neat program, but also nearly 4Gb. Too big for our needs. That’s where the <code>tinytex</code> package came from. we’re going to use it to install a lightweight version of <span class="math inline">\(\LaTeX\)</span>. This will let us write math equations in Markdown/Quarto, and create nice PDF’s of your work.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Your Turn">
 <div class="callout-header d-flex align-content-center">

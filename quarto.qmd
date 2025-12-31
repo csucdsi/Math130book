@@ -115,7 +115,7 @@ In addition to rendering the complete document to view the results of code chunk
 ### Markdown Text {#sec-markdown}
 
 Markdown is a popular markup language that allows you to add formatting elements to text. Markdown is useful because it is lightweight, flexible, and platform independent. 
-[See more basic syntax of Markdown at <a href="https://markdownguide.offshoot.io/basic-syntax/"> https://markdownguide.offshoot.io/basic-syntax/</a>]{.aside}
+[See more basic syntax of Markdown at <a href="https://quarto.org/docs/authoring/markdown-basics.html"> https://quarto.org/docs/authoring/markdown-basics.html]{.aside}
 
 
 :::::: columns
@@ -156,6 +156,26 @@ Additionally, using `#` and `##` symbols at the start of a line creates first (`
 2.  Render your document and observe your changes.
 
 :::
+
+## Code chunk options
+
+Sometimes you want to hide your code, control the size and placement of figures, or not run a block of code at all. We can control these at the individual code chunk level using code chunk options. These are prefixed by a "hash-pipe" `#|` at the top of the code chunk.[`|` is the first of three pipes we'll see in this course]{.aside} 
+[See more options in the [Quarto cocumentation](https://quarto.org/docs/computations/execution-options.html)]{.aside}
+
+If we set `eval: false` it will not render any code in that code chunk. Great for when you have an error but not sure how to fix it yet, but you want to render your full document. 
+```{r}
+#| echo: fenced
+#| eval: false
+2+2 # not evaluated
+```
+
+Setting `echo: false` hides the code chunk from being shown, but shows the results. 
+```{r}
+#| echo: false
+2+2 
+```
+
+We will see more uses of code chunk options when we get to multiple plots from one code chunk. 
 
 ## Create professional looking PDF reports. 
 
