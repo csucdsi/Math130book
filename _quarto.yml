@@ -28,7 +28,6 @@ book:
         - plots2.qmd
     - part: "Appendix"
       chapters: 
-        - syllabus.qmd
         - assignments.qmd
         - help.qmd
         - project.qmd
