@@ -56,5 +56,3 @@ By the end of this class you will be able to:
 ## References & Acknowledgements
 
 Nearly all the artwork is by [@allison_horst](https://allisonhorst.com/) and some of the material presented is a derivation from work that is Copyright © by [The Carpentries](https://carpentries.org/) which is under a [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/) allowing for adaptations and reuse of the work.
-
-We would like to thank [Jayana Sarma](https://github.com/jayana714) for her assistance in porting these notes from R Markdown to Quarto.

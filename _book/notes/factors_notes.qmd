@@ -1,9 +1,12 @@
 ---
 title: Working with Factors
-author: "YOUR NAME HERE"
+author: YOUR NAME HERE
 date: today
 format: pdf
-execute: 
+execute:
+  fig-height: 4
+  message: false
+  warning: false
   error: true
 ---
 

@@ -6,7 +6,6 @@ book:
   author: "Robin Donatello, Nicholas Lytal"
   # date: "January, 10, 2026"
   search: true
-  #downloads: [pdf, epub]
   
   chapters:
     - index.qmd
@@ -20,7 +19,7 @@ book:
       chapters: 
         - dm.qmd  
         - factors.qmd
-        - plots.qmd
+        - plots1.qmd
         - dplyr.qmd
         - import.qmd
     - part: "Advanced Features"

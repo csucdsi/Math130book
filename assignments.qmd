@@ -1,4 +1,4 @@
-# Assignment Files {.unnumbered #sec-assignments}
+# Assignment Files
 
 Right click and save these files in your `Math 130/notes` or `Math 130/hw` folder as appropriate. You will write your answers directly in them and submit your assignment as instructed by the due date.
 
@@ -9,7 +9,7 @@ Right click and save these files in your `Math 130/notes` or `Math 130/hw` folde
 ::: {.column width="45%"}
 * [Lesson @sec-intro_r](notes/intro_r_notes.qmd)
 * [Lesson @sec-dm](notes/dm_notes.qmd)
-* [Lesson @sec-factors](notes/factor_notes.qmd)
+* [Lesson @sec-factors](notes/factors_notes.qmd)
 * [Lesson @sec-plots1](notes/plots1_notes.qmd)
 
 :::

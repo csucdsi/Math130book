@@ -14,7 +14,7 @@
     "href": "index.html#references-acknowledgements",
     "title": "Introduction to R",
     "section": "References & Acknowledgements",
-    "text": "References & Acknowledgements\nNearly all the artwork is by @allison_horst and some of the material presented is a derivation from work that is Copyright © by The Carpentries which is under a CC BY 4.0 license allowing for adaptations and reuse of the work.\nWe would like to thank Jayana Sarma for her assistance in porting these notes from R Markdown to Quarto.",
+    "text": "References & Acknowledgements\nNearly all the artwork is by @allison_horst and some of the material presented is a derivation from work that is Copyright © by The Carpentries which is under a CC BY 4.0 license allowing for adaptations and reuse of the work.",
     "crumbs": [
       "Preface"
     ]
@@ -443,8 +443,8 @@
     ]
   },
   {
-    "objectID": "plots.html",
-    "href": "plots.html",
+    "objectID": "plots1.html",
+    "href": "plots1.html",
     "title": "6  Creating Plots",
     "section": "",
     "text": "6.1 The syntax of ggplot\nVisualizing your data is hands down the most important thing you can learn to do. Seeing is critical to understanding. There are two audiences in mind when creating data visualizations:\nThe functions from the ggplot2 package, along with derivatives such as ggpubr and sjPlot, automatically do a lot of this work for you. While all of these can be made with base R plotting functions, we are intentionally choosing to highlight function that create good quality plots with very little code and are quite extensible and flexible.\nThe reason we use the functions in ggplot2 is for consistency in the structure of it’s arguments. Here is a bare bones generic plotting function:",
@@ -454,8 +454,8 @@
     ]
   },
   {
-    "objectID": "plots.html#the-syntax-of-ggplot",
-    "href": "plots.html#the-syntax-of-ggplot",
+    "objectID": "plots1.html#the-syntax-of-ggplot",
+    "href": "plots1.html#the-syntax-of-ggplot",
     "title": "6  Creating Plots",
     "section": "",
     "text": "ggplot(data, aes(x=x, y=y, col=col, fill=fill, group=group)) +  geom_THING() \n\nRequired arguments\n\ndata: What data set is this plot using? This is ALWAYS the first argument.\naes(): This is the aesthetics of the plot. What variable is on the x, and what is on the y? Do you want to color by another variable, perhaps fill some box by the value of another variable, or group by a variable.\ngeom_THING(): Every plot has to have a geometry. What is the shape of the thing you want to plot? Do you want to plot point? Use geom_points(). Want to connect those points with a line? Use geom_lines(). We will see many varieties in this lesson.\n\n\n\n\n\n\n\nMeet the Penguins\n\n\n\nThe palmerpenguins data contains size measurements for three penguin species observed on three islands in the Palmer Archipelago, Antarctica. \n\nlibrary(ggplot2); library(sjPlot)    \nlibrary(ggpubr);  library(gtsummary)\npen &lt;- palmerpenguins::penguins\n\n\n\nHorst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/I am loading the penguins data set out of the palmerpenguins package and storing it into a data frame named pen. We will be exploring variables such as species, body weight, the island and flipper lengths.\n\nstr(pen)\n\ntibble [344 × 8] (S3: tbl_df/tbl/data.frame)\n $ species          : Factor w/ 3 levels \"Adelie\",\"Chinstrap\",..: 1 1 1 1 1 1 1 1 1 1 ...\n $ island           : Factor w/ 3 levels \"Biscoe\",\"Dream\",..: 3 3 3 3 3 3 3 3 3 3 ...\n $ bill_length_mm   : num [1:344] 39.1 39.5 40.3 NA 36.7 39.3 38.9 39.2 34.1 42 ...\n $ bill_depth_mm    : num [1:344] 18.7 17.4 18 NA 19.3 20.6 17.8 19.6 18.1 20.2 ...\n $ flipper_length_mm: int [1:344] 181 186 195 NA 193 190 181 195 193 190 ...\n $ body_mass_g      : int [1:344] 3750 3800 3250 NA 3450 3650 3625 4675 3475 4250 ...\n $ sex              : Factor w/ 2 levels \"female\",\"male\": 2 1 1 NA 1 2 1 2 NA NA ...\n $ year             : int [1:344] 2007 2007 2007 2007 2007 2007 2007 2007 2007 2007 ...",
@@ -465,8 +465,8 @@
     ]
   },
   {
-    "objectID": "plots.html#one-categorical-variable",
-    "href": "plots.html#one-categorical-variable",
+    "objectID": "plots1.html#one-categorical-variable",
+    "href": "plots1.html#one-categorical-variable",
     "title": "6  Creating Plots",
     "section": "6.2 One categorical variable",
     "text": "6.2 One categorical variable\nBoth Nominal and Ordinal data types can be visualized using tables, barcharts or pie charts.\n\n6.2.1 Barchart\nA Barchart or barplot takes these frequencies, and draws bars along the X-axis where the height of the bars is determined by the frequencies seen in the table.\n\nggplotsjPlot\n\n\nUsing ggplot2 with the geom_bar() geometry layer gives us actual wide bars, and better axis labels.\n\nggplot(pen, aes(x=species)) + geom_bar()\n\n\n\n\n\n\n\n\n\n\nUsing the plot_frq function from the sjPlot package builds on the geom_bar() type plot from ggplot, but adds frequncies and relative percentages on the plot.\n\nplot_frq(pen, \"species\")\n\n\n\n\n\n\n\n\nThis single graph provides a lot of good information and is a recommended choice to use.\n\n\n\n\n\n6.2.2 Pie charts\nA pie chart is a circular statistical graphic which is divided into slices to illustrate percentages out of a whole. While pie charts are very widely used in the media and business, there are some major drawbacks in that “humans are pretty bad at reading angles” (Ref: The Issue with Pie Chart)\nThe approach is to pipe the results of a table to a pie using base R. But the results are kinda “meh”.\n\n\n\ntable(pen$species) |&gt; pie()\n\nNicer pie charts using ggplot2 or ggpubr functions require the data set to be pre-aggregated, and so we will come back to these approaches in a later lesson.",
@@ -476,8 +476,8 @@
     ]
   },
   {
-    "objectID": "plots.html#one-continuous-variable",
-    "href": "plots.html#one-continuous-variable",
+    "objectID": "plots1.html#one-continuous-variable",
+    "href": "plots1.html#one-continuous-variable",
     "title": "6  Creating Plots",
     "section": "6.3 One continuous variable",
     "text": "6.3 One continuous variable\nWe will examine the chonkiness of the penguin (body_mass_g) using several types of appropriate visualizations including histograms, density plots, boxplots and violin plots.\n\n6.3.1 Histogram\nRather than showing the value of each observation, we prefer to think of the value as belonging to a bin. The height of the bars in a histogram display the frequency of values that fall into those of those bins.\nSince the x-axis is continuous the bars touch. This is unlike the barchart that has a categorical x-axis, and vertical bars that are separated.\n\nggplot2ggpubr\n\n\nUsing the ggplot2 package we can create a histogram by adding the layer geom_histogram().\n\nggplot(pen, aes(x=body_mass_g)) + geom_histogram()\n\n\n\n\n\n\n\n\n\n\nIn contrast to ggplot2’s common starter code and different geometries, the ggpubr package uses specific functions for each type of plot. The gghistogram package makes a histogram very similar to the ggplot2 default, but with a different theme applied (different appearance). Otherwise it’s the same.\n\ngghistogram(pen, x=\"body_mass_g\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVariables names in quotes\n\n\n\nThis is a feature of ggpubr functions - variable names are always in quotes.\n\n\n\n\n\n\n\n6.3.2 Density curves\nTo get a better idea of the true shape of the distribution we can “smooth” out the bins and create what’s called a density plot or curve. Notice that the shape of this distribution curve is much… “wigglier” than the histogram may have implied.\n\nggplot2ggpubr\n\n\nWith ggplot2 we use the geom_density() geometry to produce a nicer looking density plot with minimal additional code.\n\nggplot(pen, aes(x=body_mass_g)) + geom_density()\n\n\n\n\n\n\n\n\n\n\nAnd the ggdensity function from the ggpubr package creates a very similar density plot with a different default theme.\n\nggdensity(pen, x=\"body_mass_g\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n6.3.3 Boxplots\nAnother very common way to visualize the distribution of a continuous variable is using a boxplot. Boxplots are useful for quickly identifying where the bulk of your data lie. R specifically draws a “modified” boxplot where values that are considered outliers are plotted as dots.\n\nggplot2ggpubr\n\n\nWith ggplot you can create either a horizontal or vertical boxplot by specifying your numeric variable to be on either x or y . Notice the middle of the box is centered on 0, this is just a placeholder. This axis has no inherent meaning.\nggplot(pen, aes(x=body_mass_g)) + geom_boxplot() # left\nggplot(pen, aes(y=body_mass_g)) + geom_boxplot() # right\n\n\n\n\n\n\n\n\n\n\n\n\nYou can also make a boxplot using the ggbpxplot function from the ggpubr package, however it you must specify that the quantitative variable is on the y axis otherwise it yells at you.\n\n\n\nggboxplot(pen, y=\"body_mass_g\")\n\n\n\n\n\n\n\n\n\n\nggboxplot(pen, x=\"body_mass_g\")\n\nError in (function (fun, data, x, y, combine = FALSE, merge = FALSE, color = \"black\", : argument \"y\" is missing, with no default",
@@ -487,8 +487,8 @@
     ]
   },
   {
-    "objectID": "plots.html#two-continuous-variables",
-    "href": "plots.html#two-continuous-variables",
+    "objectID": "plots1.html#two-continuous-variables",
+    "href": "plots1.html#two-continuous-variables",
     "title": "6  Creating Plots",
     "section": "6.4 Two continuous variables",
     "text": "6.4 Two continuous variables\nVisualizing the relationship between two continuous variables is done using a scatterplot. Let’s compare the flipper_length_mm of a penguin to it’s body_mass_g.\n\nggplot2ggpubr\n\n\nWith ggplot we specify both the x and y variables, and add geom_point geometry layer.\n\nggplot(pen, aes(x=flipper_length_mm, y=body_mass_g)) + geom_point()\n\n\n\n\n\n\n\n\n\n\nThe ggscatter function creates a similar scatterplot.\n\nggscatter(pen, x=\"flipper_length_mm\", y=\"body_mass_g\")\n\n\n\n\n\n\n\n\n\n\n\n\n6.4.1 Adding trend lines lines\nTwo most common trend lines added to a scatterplots are the “best fit” straight line and the “loess” (low-ess) smoother line. Adding a trend line to this plot using base R is a bit tricker, so we won’t bother.\n\nggplot2ggpubr\n\n\nA trend line can be added by adding a geom_smooth() layer.\n\nggplot(pen, aes(x=flipper_length_mm, y=body_mass_g)) + geom_point() + \n  geom_smooth() \n\n\n\n\n\n\n\n\nHere the point-wise confidence interval for this loess line is shown in grey. If you want to turn the confidence interval off, use se=FALSE.\nWe can add another geom_smooth() layer for the lm (linear model) line in blue, and the loess line (by not specifying a method) in red.\n\nggplot(pen, aes(x=flipper_length_mm, y=body_mass_g)) + geom_point() + \n  geom_smooth(se=FALSE, method=\"lm\", color=\"red\") + \n  geom_smooth(se=FALSE, color=\"blue\")\n\n\n\n\n\n\n\n\n\n\nYou can add either a linear model line or a loess line to a ggscatter using the add= argument.\nggscatter(pen, x=\"flipper_length_mm\", y=\"body_mass_g\", add = \"loess\")\nggscatter(pen, x=\"flipper_length_mm\", y=\"body_mass_g\", add = \"reg.line\")",
@@ -498,8 +498,8 @@
     ]
   },
   {
-    "objectID": "plots.html#one-continuous-vs.-one-categorical",
-    "href": "plots.html#one-continuous-vs.-one-categorical",
+    "objectID": "plots1.html#one-continuous-vs.-one-categorical",
+    "href": "plots1.html#one-continuous-vs.-one-categorical",
     "title": "6  Creating Plots",
     "section": "6.5 One continuous vs. one categorical",
     "text": "6.5 One continuous vs. one categorical\nThe tactic here is to create an appropriate plot for a continuous variable, and then fill the geometric area or color the lines depending on the level of the categorical variable.\n\n6.5.1 Histograms\nNeither filling or coloring the histogram bars using ggplot2 depending on the group work well due to the overlap.\n\nggplot2ggpubr\n\n\n\n\n\nggplot(pen, aes(x=body_mass_g, \n                   fill=species)) + \n  geom_histogram()\n\n\n\n\n\n\n\n\n\n\nggplot(pen, aes(x=body_mass_g, \n                   color=species)) + \n  geom_histogram()\n\n\n\n\n\n\n\n\n\n\n\n\nThe defaults for gghistogram automatically adjusts the transparency of the histogram bars to make the overlap a little less troublesome, but it doesn’t always work well.\n\ngghistogram(pen, x = \"body_mass_g\", fill = \"species\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n6.5.2 Density curves\nSimilar to histograms, you can fill or color the density curves depending on the group.\n\nggplot-fillggplot-colorggpubr\n\n\nIt’s still hard to see some groups due to the overlap, so we adjust the transparency by applying a value to alpha inside the geom_density layer. Alpha is a measure of transparency, from 0=clear to 1=opaque.\n\nggplot(pen, aes(x=body_mass_g, fill=species)) + \n  geom_density(alpha=.3)\n\n\n\n\n\n\n\n\n\n\nYou could also just color the lines and leave the fill alone.\n\nggplot(pen, aes(x=body_mass_g, color=species)) + geom_density()\n\n\n\n\n\n\n\n\n\n\nThe ggdensity function also has color and fill options, where the transparency of the density plots are automatically handled.\nggdensity(pen, x=\"body_mass_g\", color = \"species\") # left\nggdensity(pen, x=\"body_mass_g\", fill = \"species\") # right\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n6.5.3 Boxplots\nTo create grouped boxplots, put the continuous variable on one axis, and the categorical on the other axis.\n\nggplot2ggpubr\n\n\nggplot(pen, aes(x=body_mass_g, y=species)) + geom_boxplot() # left\nggplot(pen, aes(x=species, y=body_mass_g)) + geom_boxplot() # right\n\n\n\n\n\n\n\n\n\n\nIf you want an additional color feature (and the corresponding legend), you can either fill or color the boxes by the same categorical variable.\nggplot(pen, aes(x=body_mass_g, y=species, fill = species)) + geom_boxplot() # left\nggplot(pen, aes(x=species, y=body_mass_g, color = species)) + geom_boxplot() # right\n\n\n\n\n\n\n\n\n\n\n\n\nNot much difference in the style between the ggplot2 and ggboxplot versions. This method uses slightly less code.\nggboxplot(pen, y=\"body_mass_g\", fill = \"species\") # left\nggboxplot(pen, y=\"body_mass_g\", color = \"species\") # right",
@@ -509,8 +509,8 @@
     ]
   },
   {
-    "objectID": "plots.html#two-categorical-variables",
-    "href": "plots.html#two-categorical-variables",
+    "objectID": "plots1.html#two-categorical-variables",
+    "href": "plots1.html#two-categorical-variables",
     "title": "6  Creating Plots",
     "section": "6.6 Two categorical variables",
     "text": "6.6 Two categorical variables\nRecall from Section Section 4.1.1 that frequency tables are a common way to summarize categorical variables, and that both the frequency and relative percent are important summary numbers. Those percentages are even more important when comparing the joint distribution of two categorical variables.\nCross-tabs, cross-tabulations and two-way tables are different names for the same thing, and can be created by using the table() and tbl_summary functions. The values in each cell are the number of observations in that combination of characteristics. We use this tactic in Chapter Chapter 4 to check our recodes.\nLet’s explore the relationship between the penguins sex and species.\n\n6.6.1 Frequency and proportion tables\n\nbase Rtbl_summary\n\n\nThe first argument species specifies the levels that show on the rows, the second argument sex specifies the columns.\n\ntable(pen$species, pen$sex)\n\n           \n            female male\n  Adelie        73   73\n  Chinstrap     34   34\n  Gentoo        58   61\n\n\n\n\nTo achieve the same ordering with species on the rows and sex on the columns, we include=\"species\" and set by = \"sex\".\n\ntbl_summary(pen, include = \"species\", by = \"sex\")\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nfemale\nN = 1651\nmale\nN = 1681\n\n\n\n\nspecies\n\n\n\n\n\n\n    Adelie\n73 (44%)\n73 (43%)\n\n\n    Chinstrap\n34 (21%)\n34 (20%)\n\n\n    Gentoo\n58 (35%)\n61 (36%)\n\n\n\n1 n (%)\n\n\n\n\n\n\n\n\n\n\n\nThere are 73 female Adelie penguins, and 61 male Gentoo penguins.\n\n6.6.1.1 Proportions\nBy default, when we ask for proportions we get the cell proportions. That is, the percent out of all penguins in that data set that have that combination of traits. The percents add up to 1 across the entire table.\n\nbase Rtbl_summary\n\n\n\ntable(pen$species, pen$sex) |&gt; prop.table()\n\n           \n               female      male\n  Adelie    0.2192192 0.2192192\n  Chinstrap 0.1021021 0.1021021\n  Gentoo    0.1741742 0.1831832\n\n\n\n\nNote that gtsummary tables tend to round pretty heavily.\n\ntbl_summary(pen, include = \"species\", by = \"sex\", percent = \"cell\")\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nfemale\nN = 1651\nmale\nN = 1681\n\n\n\n\nspecies\n\n\n\n\n\n\n    Adelie\n73 (22%)\n73 (22%)\n\n\n    Chinstrap\n34 (10%)\n34 (10%)\n\n\n    Gentoo\n58 (17%)\n61 (18%)\n\n\n\n1 n (%)\n\n\n\n\n\n\n\n\n\n\n\n21.9% of all penguins are Adelie females, 18.3% of all penguins are male Gentoo’s.\n\n\n\n\n\n\nComparing percentages\n\n\n\nMore often than not, we want to compare percents of one group – within each level of the other group. For example is the male to female ratio the same for each species?\n\n\n\n\n6.6.1.2 Row percents\nTo compare the distribution of sex (columns) within each of the sepecies (rows) we need row percentages. The percentages now add up to 1 across the rows and the comparison groups are each species.\n\nbase Rtbl_summary\n\n\nSpecify margin=1 inside the prop.table()\n\ntable(pen$species, pen$sex) |&gt; prop.table(margin=1)  |&gt; round(3) \n\n           \n            female  male\n  Adelie     0.500 0.500\n  Chinstrap  0.500 0.500\n  Gentoo     0.487 0.513\n\n\nI added a round function to the end of this because noone needs that many decimal places.\n\n\n\ntbl_summary(pen, include = \"species\", by = \"sex\", percent = \"row\")\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nfemale\nN = 1651\nmale\nN = 1681\n\n\n\n\nspecies\n\n\n\n\n\n\n    Adelie\n73 (50%)\n73 (50%)\n\n\n    Chinstrap\n34 (50%)\n34 (50%)\n\n\n    Gentoo\n58 (49%)\n61 (51%)\n\n\n\n1 n (%)\n\n\n\n\n\n\n\n\n\n\n\n50% of Adelie penguins are male, but 51.3% of Gentoo penguins are male.\n\n\n6.6.1.3 Column percents\nTo compare the distribution of species (rows) within each of the columns (sex) we need column percentages. The percentages now add up to 1 down the columns and the comparison groups are male and female.\n\nbase Rtbl_summary\n\n\nSpecify margin=2 in prop.table()\n\ntable(pen$species, pen$sex) |&gt; prop.table(margin=2) |&gt; round(3) \n\n           \n            female  male\n  Adelie     0.442 0.435\n  Chinstrap  0.206 0.202\n  Gentoo     0.352 0.363\n\n\n\n\n\ntbl_summary(pen, include = \"species\", by = \"sex\", percent = \"column\")\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nfemale\nN = 1651\nmale\nN = 1681\n\n\n\n\nspecies\n\n\n\n\n\n\n    Adelie\n73 (44%)\n73 (43%)\n\n\n    Chinstrap\n34 (21%)\n34 (20%)\n\n\n    Gentoo\n58 (35%)\n61 (36%)\n\n\n\n1 n (%)\n\n\n\n\n\n\n\n\n\n\n\n44% of female penguins are Adelie species, 36% of male penguins are Gentoo.\n\n\n\n6.6.2 Stacked bar charts\nSometimes pictures are better than tables, so let’s try to apply the same fill tactic that we used in the last section.\n\nggplot(pen, aes(x=species, fill=sex)) + geom_bar()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStacked barcharts are the ggplot2 default\n\n\n\nStacked barcharts are generally only useful when comparing percents out of a whole. To get the correct view you can add a position = \"fill\" argument to the geom_bar() layer.\n\n\n\nggplot(pen, aes(x=species, fill=sex)) + \n  geom_bar(position = \"fill\") + \n  ylab(\"Proportion\")\n\n\n\n\n\n\n\n\n\n\n6.6.3 Side by side bar charts\n\nggplot2sjPlot\n\n\nAdd the argument position=dodge inside the geom_bar layer to put the bars side by side.\n\nggplot(pen, aes(x=species, fill=sex)) + \n  geom_bar(position = \"dodge\")\n\n\n\n\n\n\n\n\n\n\nThe plot_xtab function is the two-way table analogy to plot_frq to create a barchart with clear lables on the bars for the N and % (and NA values dropped). Note you have to use dollar sign notation here for the variables.\n\nplot_xtab(x = pen$species, grp = pen$sex)\n\n\n\n\n\n\n\n\nBy default this plots the vertical axis as percents, not counts, and it shows the marginal total for the variable that’s on the x-axis. We can remove the total by setting show.total to false.\n\nplot_xtab(x = pen$species, grp = pen$sex, \n          show.total = \"false\")\n\n\n\n\n\n\n\n\n\n\n\nAs before, typically we aren’t interested in comparing proportions out of the whole, but proportions out of one of the two margins (variables).\n\n\n6.6.4 Comparing Percents\nOur eyes make comparisons the best when the bars are physically close to each other. So generally you want to put the groups we want to compare within on the x-axis, and have separate bars for each level of the variable we want to compare across.\nSee each tab on how to compare the distribution of sex within each species. This corresponds to the row percents from Section 6.6.1.2 .\n\nggplot2sjPlot\n\n\nPut species on the x-axis and fill by sex.\n\nggplot(pen, aes(x=species, fill=sex)) + geom_bar(position = \"dodge\")\n\n\n\n\n\n\n\n\n\n\nPut species on the x-axis and grp by sex, and specify margin = \"row\".\n\nplot_xtab(x = pen$species, grp = pen$sex, show.total = \"false\", \n          margin = \"row\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n👉 Your Turn\n\n\n\nModify the code above to create a plot to compare the distribution of species within each sex.\n\n\nggplot2 solution\n\n\nggplot(pen, aes(x=sex, fill=species)) + geom_bar(position = \"dodge\")\n\n\n\n\n\n\n\n\n\n\n\nsjPlot solution\n\n\nplot_xtab(x = pen$sex, grp = pen$species, show.total = \"false\", margin = \"row\")",
@@ -689,7 +689,7 @@
     "href": "plots2.html#adding-the-mean",
     "title": "9  Plot Enhancements",
     "section": "9.4 Adding the mean",
-    "text": "9.4 Adding the mean\nAdding annotation on a numeric distribution plot to indicate where the mean is located is often a nice informative feature.\n\nggplot2ggpubr\n\n\nThe mean can be denoted on geom_histogram or geom_density using a vertical line (geom_vline) where the xintercept is set as the calculated mean of the variable being plotted.\nggplot(pen, aes(x=body_mass_g)) + \n  geom_histogram() + \n  geom_vline(aes(xintercept=mean(body_mass_g)),\n            color=\"blue\", linetype=\"dashed\")\nggplot(pen, aes(y=body_mass_g, x = island)) + \n  geom_boxplot() + \n  stat_summary(fun=\"mean\", geom=\"point\", \n               shape=17, size=4, \n               color=\"red\", fill=\"red\") \n\n\n\n\n\n\nusing geom_vline to add to a histogram or density\n\n\n\n\n\n\n\nusing stat_summary to add to a boxplot\n\n\n\n\n\nPlay around with the shape, fill/color, and size until you achieve your desired look.\n\n\nWith ggpubr you can use use the add=\"mean\" argument to both gghistogram and ggdensity to add a vertical dashed line to denote the location of the mean.\ngghistogram(pen, x=\"body_mass_g\", fill = \"species\",\n            add = \"mean\",)\nggboxplot(pen, y=\"body_mass_g\", x = \"species\", fill = \"species\", \n          add = \"mean_se\", add.params = list(color = \"white\"))\n\n\n\n\n\n\n\n\n\n\nWith ggpboxplot, you can add many summary statistics such as the mean as a dot and line representing uncertainty such as the standard deviation (sd) and standard error (se). I also used add.params to make the color of these means easier to see. See the add and add.params entries in the help file for ?ggboxplot for more options.\n\n\n\n\n9.4.1 Histograms + density curve\nOften it is more helpful to have the density (or kernel density) plot on top of a histogram plot.\n\nggplot2ggpubr\n\n\n\n1ggplot(pen, aes(x=body_mass_g)) +\n  geom_density(col=\"blue\") + \n2  geom_histogram(aes(y=..density..), colour=\"black\",\n3                 fill=NA)\n\n\n1\n\nThe syntax starts the same: we’ll add a geom_density and color the line blue for funsies.\n\n2\n\nThen we add the histogram geom using geom_histogram but must specify that the y axis should be on the density, not frequency, scale. Note that this has to go inside the aesthetic statement aes().\n\n3\n\nI’m also going to get rid of the fill by using NA so the colored bars don’t plot over the density line.\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou start with a gghistogram and then add_denstity to the plot. This does not always work well with every variable. Sometimes the density plot is too small to view.\n\ngghistogram(pen, x = \"bill_depth_mm\", fill = \"species\", \n            add_density = TRUE)",
+    "text": "9.4 Adding the mean\nAdding annotation on a numeric distribution plot to indicate where the mean is located is often a nice informative feature.\n\nggplot2ggpubr\n\n\nThe mean can be denoted on geom_histogram or geom_density using a vertical line (geom_vline) where the xintercept is set as the calculated mean of the variable being plotted.\nggplot(pen, aes(x=body_mass_g)) + \n  geom_histogram() + \n  geom_vline(aes(xintercept=mean(body_mass_g, na.rm = TRUE)),\n            color=\"blue\", linetype=\"dashed\")\nggplot(pen, aes(y=body_mass_g, x = island)) + \n  geom_boxplot() + \n  stat_summary(fun=\"mean\", geom=\"point\", \n               shape=17, size=4, \n               color=\"red\", fill=\"red\") \n\n\n\n\n\n\nusing geom_vline to add to a histogram or density\n\n\n\n\n\n\n\nusing stat_summary to add to a boxplot\n\n\n\n\n\nPlay around with the shape, fill/color, and size until you achieve your desired look.\n\n\nWith ggpubr you can use use the add=\"mean\" argument to both gghistogram and ggdensity to add a vertical dashed line to denote the location of the mean.\ngghistogram(pen, x=\"body_mass_g\", fill = \"species\",\n            add = \"mean\",)\nggboxplot(pen, y=\"body_mass_g\", x = \"species\", fill = \"species\", \n          add = \"mean_se\", add.params = list(color = \"white\"))\n\n\n\n\n\n\n\n\n\n\nWith ggpboxplot, you can add many summary statistics such as the mean as a dot and line representing uncertainty such as the standard deviation (sd) and standard error (se). I also used add.params to make the color of these means easier to see. See the add and add.params entries in the help file for ?ggboxplot for more options.\n\n\n\n\n9.4.1 Histograms + density curve\nOften it is more helpful to have the density (or kernel density) plot on top of a histogram plot.\n\nggplot2ggpubr\n\n\n\n1ggplot(pen, aes(x=body_mass_g)) +\n  geom_density(col=\"blue\") + \n2  geom_histogram(aes(y=..density..), colour=\"black\",\n3                 fill=NA)\n\n\n1\n\nThe syntax starts the same: we’ll add a geom_density and color the line blue for funsies.\n\n2\n\nThen we add the histogram geom using geom_histogram but must specify that the y axis should be on the density, not frequency, scale. Note that this has to go inside the aesthetic statement aes().\n\n3\n\nI’m also going to get rid of the fill by using NA so the colored bars don’t plot over the density line.\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou start with a gghistogram and then add_denstity to the plot. This does not always work well with every variable. Sometimes the density plot is too small to view.\n\ngghistogram(pen, x = \"bill_depth_mm\", fill = \"species\", \n            add_density = TRUE)",
     "crumbs": [
       "Advanced Features",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Plot Enhancements</span>"
@@ -744,7 +744,7 @@
     "href": "plots2.html#changing-colors",
     "title": "9  Plot Enhancements",
     "section": "9.9 Changing colors",
-    "text": "9.9 Changing colors\nFull guide on how to change colors in ggplot2 at https://r-graph-gallery.com/ggplot2-color.html\nSome palettes require you to install other packages - like ggsci if you want the Star Trek uniform colors\nManualUsing a color palette (recommended)\n\n\n\nggplot(email, aes(x=number, fill=number)) + geom_bar() +\n    scale_fill_manual(values=c(\"red\", \"green\", \"blue\"))\n\n\n\n\n\n\n\n\nThere’s some spectacularly colors available. See https://r-charts.com/colors/ for the full list. You can also type colors() in the console.\n\nggplot(email, aes(x=number, fill=number)) + geom_bar() +\n    scale_fill_manual(values=c(\"salmon\", \"slategray4\", \"violet\"))\n\n\n\n\n\n\n\n\nAnd you can use hex colors\n\nggplot(email, aes(x=number, fill=number)) + geom_bar() +\n    scale_fill_manual(values=c(\"#47dbff\", \"#b3b3cc\", \"#ff531a\"))\n\n\n\n\n\n\n\n\n\n\nThe R Charts website has a guide on how to use the paletteer package to access more color palettes. \n\nlibrary(paletteer)\nggplot(pen, aes(x=species, fill=species)) + geom_bar() +\n    scale_fill_paletteer_d(\"ggthemes::gdoc\")\n\n\n\n\n\n\n\n\nUse paleteer_d for a discrete (categorical) pallette, and paleteer_c for a continuous palette.\nSome palettes require you to install other packages - such as ggsci.\n\nggplot(pen, aes(x=species, fill=species)) + geom_bar() +\n    scale_fill_paletteer_d(\"ggsci::uniform_startrek\")",
+    "text": "9.9 Changing colors\nFull guide on how to change colors in ggplot2 at https://r-graph-gallery.com/ggplot2-color.html\nSome palettes require you to install other packages - like ggsci if you want the Star Trek uniform colors\nManualUsing a color palette (recommended)\n\n\n\nggplot(email, aes(x=number, fill=number)) + geom_bar() +\n    scale_fill_manual(values=c(\"red\", \"green\", \"blue\"))\n\n\n\n\n\n\n\n\nThere’s some spectacularly colors available. See https://r-charts.com/colors/ for the full list. You can also type colors() in the console.\n\nggplot(email, aes(x=number, fill=number)) + geom_bar() +\n    scale_fill_manual(values=c(\"salmon\", \"slategray4\", \"violet\"))\n\n\n\n\n\n\n\n\nAnd you can use hex colors\n\nggplot(email, aes(x=number, fill=number)) + geom_bar() +\n    scale_fill_manual(values=c(\"#47dbff\", \"#b3b3cc\", \"#ff531a\"))\n\n\n\n\n\n\n\n\n\n\nThe R Charts website has a guide on how to use the paletteer package to access more color palettes. \n\nggplot(pen, aes(x=species, fill=species)) + geom_bar() +\n    scale_fill_paletteer_d(\"ggthemes::gdoc\")\n\n\n\n\n\n\n\n\nUse paleteer_d for a discrete (categorical) pallette, and paleteer_c for a continuous palette.\nSome palettes require you to install other packages - such as ggsci.\n\nggplot(pen, aes(x=species, fill=species)) + geom_bar() +\n    scale_fill_paletteer_d(\"ggsci::uniform_startrek\")",
     "crumbs": [
       "Advanced Features",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Plot Enhancements</span>"
@@ -784,135 +784,36 @@
     ]
   },
   {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Syllabus",
-    "section": "",
-    "text": "Course Description\nThis course is designed as a primer to get the complete novice up and running with the basic knowledge of how to use the statistical programming language R in an environment that emphasizes reproducible research and literate programming for data analysis. The target audience is anyone who wants to do their own data analysis. The course will culminate with a peer-evaluated exploratory data analysis on either a pre-specified data set or your data set of choice.",
-    "crumbs": [
-      "Appendix",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#logistics",
-    "href": "syllabus.html#logistics",
-    "title": "Syllabus",
-    "section": "Logistics",
-    "text": "Logistics\n\n\nCourse Website: math130.netlify.app\nPrerequisites: Basic computer literacy\nWorkshop style: This workshop style class runs for 5 weeks only. See expectations for time commitment during these 5 weeks below.\nDiscord Server: https://discord.gg/ck497bJty5\n\n\n\n\n\nSection 01\n\n\n\n\nMeeting Days\n01/21/26 - 02/20/26\n\n\nMeeting Times\nMWF 9:00 - 9:50 am\n\n\nMeeting Location\nHolt Hall 113\n\n\nInstructor\nRobin Donatello\n\n\nOffice Location\nHolt 202\n\n\nE-mail\nrdonatello@csuchico.edu\n\n\n\n\n\n\n\n\n\n\n\n\nOffice Hours\n\n\n\nMondays:\nTuesdays:\nWednesdays:\nThursdays:\nFridays:\n\nIf none of those times work for you, please use my booking link in Canvas to find a time that works for both of us.",
-    "crumbs": [
-      "Appendix",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#course-structure",
-    "href": "syllabus.html#course-structure",
-    "title": "Syllabus",
-    "section": "Course structure",
-    "text": "Course structure\n\n\n\n\nThis is an interactive in person class. We will go over the learning material together as a class. You will follow along on your laptop, filling out notes and working on examples and homework.",
-    "crumbs": [
-      "Appendix",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#canvas-usage",
-    "href": "syllabus.html#canvas-usage",
-    "title": "Syllabus",
-    "section": "Canvas Usage",
-    "text": "Canvas Usage\n\nGenerally speaking, this course website will be used instead of Canvas. A link in Canvas leads to this website.\n\nCanvas will be used to submit assignments, and your gradebook.",
-    "crumbs": [
-      "Appendix",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#student-support",
-    "href": "syllabus.html#student-support",
-    "title": "Syllabus",
-    "section": "Student Support",
-    "text": "Student Support\n\nDiscord\nTo facilitate peer to peer and effective instructor to peer assistance Discord will be used for discussion and questions outside of class. This server hosts students across multiple Statistics and Data Science classes, with a specific channel for all sections of Math 130.\n\nClick this link to join the server: https://discord.gg/ck497bJty5\nVerify your email and agree to the rules and code of conduct. This helps create a safe learning environment.\nGo to the #class-selection text channel in the left sidebar, and click the RStudio icon emoji under the any post to self-assign you to the Math-130 role. This will let you see and access the class channels.\nPost a question or 10 to the Math-130 channel.\n\n\n\nCommunity Coding\nSimilar to drop in Mathematics tutoring hours, students, staff, faculty, and the public are invited to join our Community Coding sessions. Bring your computer, coding projects, and your questions to this open working environment. For asynchronous sections, this is the best way to get direct instructor assistance.\nSchedule and info found at https://datascience.csuchico.edu/communitycoding",
-    "crumbs": [
-      "Appendix",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#learning-outcomes",
-    "href": "syllabus.html#learning-outcomes",
-    "title": "Syllabus",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\nBy the end of the course, students will be able to\n\nCalculate summary statistics.\nCreate new variables using different data types.\nPerform data management techniques such as filtering, grouping, summarizing.\nCreate informative data visualizations and tables.\nImport data into R from external files such as text files and spreadsheets.\nCreate a reproducible research document.\nConduct an exploratory data analysis in a reproducible manner.",
-    "crumbs": [
-      "Appendix",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#schedule-of-topics",
-    "href": "syllabus.html#schedule-of-topics",
-    "title": "Syllabus",
-    "section": "Schedule of Topics",
-    "text": "Schedule of Topics\nThe general outline of topics is listed below. A detailed most up to date schedule can be found on the course website.\n\nWeek 1 (Lessons 1-3)\n\nIntroduction to the R language and the R Studio Environment\nConducting reproducible research with Quarto\n\nWeek 2 (Lessons 4-5)\n\nHow to use functions to get things done in data frames\nWorking with factors\n\nWeek 3 (Lessons 6-7)\n\nBasic data visualizations using ggplot2 and friends\nEfficient data processing and Aggregation with dplyr\n\nWeek 4 (Lessons 8-9)\n\nImporting data into R from external files\nNext level plotting enhancements\n\nWeek 5: Exploratory Data Analysis (individual project)",
-    "crumbs": [
-      "Appendix",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#everyone-is-welcome-here",
-    "href": "syllabus.html#everyone-is-welcome-here",
-    "title": "Syllabus",
-    "section": "Everyone is welcome here",
-    "text": "Everyone is welcome here\nIt is our intent that students from all diverse backgrounds and perspectives be well-served by this course, that students’ learning needs be addressed both in and out of class, and that the diversity that the students bring to this class be viewed as a resource, strength and benefit. It is our intent to present materials and activities that are respectful of diversity: gender identity, sexuality, disability, age, socioeconomic status, ethnicity, race, nationality, religion, and culture. Your suggestions are encouraged and appreciated. Please let us know ways to improve the effectiveness of the course for you personally, or for other students or student groups.\nWe would like to create a learning environment that supports a diversity of thoughts, perspectives and experiences, and honors your identities (including race, gender, class, sexuality, religion, ability, etc.) To help accomplish this:\n\nIf you have a name and/or set of pronouns that differ from those that appear in your official Chico records, please let us know!\nIf you feel like your performance in the class is being impacted by your experiences outside of class, please don’t hesitate to come and talk with us. We want to be a resource for you. Remember that you can also submit anonymous feedback (which may lead to a general announcement to the class, if necessary to address the concerns).\nIf you prefer to speak with someone outside of the course, the Office of Diversity and Inclusion is here to assist. Their number is 530-898-4764, and email diversityoffice@csuchico.edu\nWe (like many people) are still in the process of learning about diverse perspectives and identities. If something was said in class (by anyone) that made you feel uncomfortable, please talk to me about it. (Again, anonymous feedback is always an option).\n\nAdapted from Monica Linden at Brown University.\nWe acknowledge and are mindful that Chico State stands on lands that were originally occupied by the first people of this area, the Mechoopda, and we recognize their distinctive spiritual relationship with this land, the flora, the fauna, and the waters that run through campus. We are humbled that our campus resides upon sacred lands that since time immemorial have sustained the Mechoopda people and continue to do so today.",
-    "crumbs": [
-      "Appendix",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "syllabus.html#confidentiality-and-mandatory-reporting",
-    "href": "syllabus.html#confidentiality-and-mandatory-reporting",
-    "title": "Syllabus",
-    "section": "Confidentiality and Mandatory Reporting",
-    "text": "Confidentiality and Mandatory Reporting\nAs an instructor, one of my responsibilities is to help create a safe learning environment on our campus. I also have a mandatory reporting responsibility related to my role as a your instructor. I am required to share information regarding sexual misconduct with the University. Students may speak to someone confidentially by contacting the Counseling and Wellness Center (898-6345) or Safe Place (898-3030). Information on campus reporting obligations and other Title IX related resources are available here: www.csuchico.edu/title-ix.",
-    "crumbs": [
-      "Appendix",
-      "Syllabus"
-    ]
-  },
-  {
     "objectID": "assignments.html",
     "href": "assignments.html",
-    "title": "Assignment Files",
+    "title": "10  Assignment Files",
     "section": "",
-    "text": "Lesson notes files\nRight click and save these files in your Math 130/notes or Math 130/hw folder as appropriate. You will write your answers directly in them and submit your assignment as instructed by the due date.",
+    "text": "10.1 Lesson notes files\nRight click and save these files in your Math 130/notes or Math 130/hw folder as appropriate. You will write your answers directly in them and submit your assignment as instructed by the due date.",
     "crumbs": [
       "Appendix",
-      "Assignment Files"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Assignment Files</span>"
     ]
   },
   {
     "objectID": "assignments.html#lesson-notes-files",
     "href": "assignments.html#lesson-notes-files",
-    "title": "Assignment Files",
+    "title": "10  Assignment Files",
     "section": "",
-    "text": "Lesson 3  Getting Started with R\nLesson 4  Working with Data Frames\nLesson 5  Working with Factors\nLesson 6  Creating Plots\n\n\n\n\n\nLesson 7  Efficient data management\nLesson 8  Getting data into R\nLesson 9  Plot Enhancements",
+    "text": "Lesson Chapter 3\nLesson Chapter 4\nLesson Chapter 5\nLesson Chapter 6\n\n\n\n\n\nLesson Chapter 7\nLesson Chapter 8\nLesson Chapter 9",
     "crumbs": [
       "Appendix",
-      "Assignment Files"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Assignment Files</span>"
     ]
   },
   {
     "objectID": "assignments.html#homework",
     "href": "assignments.html#homework",
-    "title": "Assignment Files",
-    "section": "Homework",
-    "text": "Homework\n\nHW 1 (Lessons 2-3)\nHW 2 (Lessons 4-5)\nHW 3 (Lessons 6-7)\nHW 4 (Lessons 8-9)\n\n\n\n\n\n\n\nGNeed help getting started?\n\n\n\n🚧 Watch Dr. Lytals help video",
+    "title": "10  Assignment Files",
+    "section": "10.2 Homework",
+    "text": "10.2 Homework\n\nHW 1 (Lessons 2-3)\nHW 2 (Lessons 4-5)\nHW 3 (Lessons 6-7)\nHW 4 (Lessons 8-9)\n\n\n\n\n\n\n\nGNeed help getting started?\n\n\n\n🚧 Watch Dr. Lytals help video",
     "crumbs": [
       "Appendix",
-      "Assignment Files"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Assignment Files</span>"
     ]
   },
   {
@@ -1045,39 +946,6 @@
     "crumbs": [
       "Appendix",
       "Project"
-    ]
-  },
-  {
-    "objectID": "assignment_files.html",
-    "href": "assignment_files.html",
-    "title": "10  Assignment FIles",
-    "section": "",
-    "text": "10.1 Homework Assignments",
-    "crumbs": [
-      "Appendix",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Assignment FIles</span>"
-    ]
-  },
-  {
-    "objectID": "assignment_files.html#homework-assignments",
-    "href": "assignment_files.html#homework-assignments",
-    "title": "10  Assignment FIles",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          File Name\n        \n         \n          Modified - Oldest\n        \n         \n          Modified - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nFile Name\n\n\nModified\n\n\n\n\n\n\nhw1.qmd\n\n\n6/22/25, 9:58:11 PM\n\n\n\n\nhw2.qmd\n\n\n6/22/25, 9:58:11 PM\n\n\n\n\nhw3.qmd\n\n\n6/22/25, 9:58:11 PM\n\n\n\n\nhw4.qmd\n\n\n12/30/25, 8:11:20 AM\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Appendix",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Assignment FIles</span>"
-    ]
-  },
-  {
-    "objectID": "assignment_files.html#lesson-notes",
-    "href": "assignment_files.html#lesson-notes",
-    "title": "10  Assignment FIles",
-    "section": "10.2 Lesson Notes",
-    "text": "10.2 Lesson Notes\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          File Name\n        \n         \n          Modified - Oldest\n        \n         \n          Modified - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nFile Name\n\n\nModified\n\n\n\n\n\n\ndm_notes.qmd\n\n\n12/31/25, 8:23:32 PM\n\n\n\n\ndm_notes_key.qmd\n\n\n12/31/25, 8:21:01 PM\n\n\n\n\nfactors_notes.qmd\n\n\n12/31/25, 8:11:18 PM\n\n\n\n\nfactors_notes_key.qmd\n\n\n12/31/25, 8:21:38 PM\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Appendix",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Assignment FIles</span>"
     ]
   }
 ]

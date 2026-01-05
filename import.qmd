@@ -33,6 +33,12 @@ After completing this lesson learners will be able to
 If you download multiple copies of the data, do not keep the versions that have a (1) or some number in the name. Do not leave these files in your downloads folder. 
 :::
 
+:::{.callout-important title = "CAUTION FOR MAC USERS"}
+Be sure you download the CSV file as .csv and not as a .numbers file. If you create a file in Numbers, you can choose File > Export To > CSV to convert it.
+:::
+
+
+
 
 ## File types 
 

@@ -1,0 +1,152 @@
+---
+title: Getting data into R
+author: YOUR NAME HERE
+date: today
+format: pdf
+execute:
+  fig-height: 4
+  message: false
+  warning: false
+  error: true
+---
+
+In this lesson we will introduce methods to get data from external files into R. 
+
+## File types 
+
+In this lesson we are only going to explore reading files that exist on your computer into R from three most commonly used data sources: A tab-delimited text file, A CSV file and an Excel file. 
+
+* `email.txt` is a `.txt` or "text" file.
+* `NCBirths.csv` is a `.csv` or "comma separated values" file.
+* `fatal-police-shootings-data.xlsx` is a `.xlsx` or Excel file. 
+
+Each of these file types differ in the type of _delimiter_ used. The _delimiter_ is a character or symbol that separates columns of data from each other when stored in an external file.  Recall back to the earlier lesson on data frames and matrices. Each column in the matrix represented data on a specific variable. Something had to tell R how to distinguish which values went with which variable. 
+
+There are two main types of delimiters we will consider in this class; comma and tab. That does not mean that data can't be stored in other ways, these are just the two most common. 
+
+Each delimiter type requires a different function or mechanism to import the data into R. If you use the wrong mechanism, the data may not be read in correctly if at all. 
+
+
+## Paths (where the data lives)
+
+In addition to using the correct function for the delimiter type, we have to then tell the program explicitly where to find the files you want to access. To do that we need to find the file's _path_. The _path_ is a programmatic way to direct your computer to the location of a file. 
+
+You can think of it as a file's address, or where it lives on your computer. But to get to that address depends on where you start your journey. For example to get to your instructors office in Holt Hall, it will be different depending on if you start from your house, vs start from Meriam Library. If someone else starts from their house, their path would look different than if you both started at the Library. 
+
+* **Absolute paths** point to where a file is on a specific computer. 
+    * Example: `/Users/rdonatello/Library/CloudStorage/Box-Box/Teaching/MATH 130/data` This path to the `data` folder only exists on Dr. Donatello's macbook. 
+* **Relative paths** indicate where inside the project folder a file is located. 
+    * Example: `MATH 130/data`. This path to the `data` folder once you're already in the `MATH 130` folder. Anyone that has a `MATH 130` folder with a `data` subfolder has the same path. 
+
+When we use R Projects, we are setting the starting point (called the _working directory_) to your Math 130 folder. We will also reinforce that by using the `here` package. We want to specify that all our paths start `"here"`, at the top of our project working directory. 
+
+:::{.callout-tip title = "👉 Whats your path?" icon=false}
+
+In the console, type `here::here()` to have R show you what your current working directory is at. This is the *absolute path* to your Math 130 folder on your computer. 
+```{r}
+________::________
+```
+:::
+ 
+Working with a combination of R projects and the `here` package this way makes it a lot easier to move your project around on your computer and share it with others without having to directly modify file paths in the individual scripts.
+
+:::{.callout-important title = "Cannot open the Connection"}
+The import code in this lesson assumes that you are working in your R project, and that you have your data downloaded and in the `data` folder. If you get an error message saying `Cannot open the connection` - double check the following common places for mistakes: 
+
+1. is the data file in the right place? 
+2. did you spell the name of the data set correctly? 
+3. are you in your R project and using the `here::here` function correctly? 
+:::
+
+## Checking the import was successful
+
+The first thing you should always do after importing a data file is look at the raw data and ask yourself the following things: 
+
+1. Were the variable names read in correctly? 
+2. Is there the expected number of rows and columns? 
+3. Are the data types for each variable as expected? 
+
+Next we will read in three different data sets, each with unique file types, and look at each one to make sure it was read in correctly. 
+
+## Text files 
+
+Text files are very simple files that have a `.txt` file extension. Common delimiters include a space, a comma (,) or a tab. Uncommon delimiters could include a `%` or even a semi-colon (`;`). 
+
+We will use the `read.table()` function that is in base R to read in any type of delimited file. 
+```{r}
+email <- ________( # <1> 
+          ________("________"), # <2> 
+          ________, # <3> 
+          sep="________" # <4> 
+          )
+```
+
+1. Use the `read.table()` function because it is a text file
+2. Use `here::here` to ensure you start at the project directory, then go into the `data` folder, and find the `email.txt` data set. 
+3. Set `header=TRUE` to signify that the data in the first row contains our column names
+4. Specify that the delimiter is a tab (`"\t"`).  
+
+:::{.callout-important title = "Trust but verify"}
+Let's use the `head` function to look at the imported data, ensuring the variable names are intended, and that each column has data in it. 
+```{r}
+head(email)
+```
+
+:::
+
+:::{.callout-important title = "Errors!"}
+What happens if you forget to include the arguments for `header` or `sep`? Try that now and discuss what happened. 
+
+**Solution - Forgetting both arguments**
+```{r}
+#| error: true
+email.noboth <- ________
+head(email.noboth)
+```
+The data set won't successfully be read in, and won't show up in your environment. 
+
+**Solution - Forgetting the header**
+```{r}
+#| error: true
+email.nohead <- ________
+head(email.nohead)
+```
+The data is read into the object `email.nohead`, but the variable names were read in as datta in the first row. R assigned generic `V1`, and `V2` data names as your clue. 
+
+**Solution - Forgetting the separator**
+```{r, error=TRUE}
+email.nosep <- ________
+```
+We get the same error message and it will not read the data into your environment. 
+
+:::
+
+
+
+## CSV: Comma Separated Values 
+
+CSV stands for "comma-separated values". This file type can also open in spreadsheet programs like MS Excel, Numbers or google sheets. The icons even look similar. Here we use the `read.csv()` function because it is optimized to read in this file type. 
+```{r}
+cc <- ________(________("________"), ________)
+cc[1:5, 1:6] # peek at the first 5 rows and 6 columns of the data
+```
+
+The variable names are present, the data are all in columns with reasonable data types. 
+
+## Excel files
+
+Files with the `.xlsx` or `.xls` extensions are Microsoft Excel files. These are also comma separated, but have more features than a `.csv` file. We will use the `read_excel()` function from the `readxl` package, which is contained within the `tidyverse` package that we installed earlier.  
+
+```{r}
+library(________)
+police  <- ________(________("________"), 
+                      ________, ________)
+police[1:6,2:6] # peek at the first 5 rows and 6 columns of the data
+```
+
+* Notice this was read in as a `tibble`, not a `data.frame`. 
+* The variable `date` is a `dttm` or _date-time_ variable. This means `R` recognizes it directly as a date, not some string of numbers. This is good. 
+* Categorical variables such as `manner_of_death` and `city` are read in as `character` instead of factor. We may or may not want to change that later.
+* Numeric variables such as `age` are of type `dbl` (double). This is similar to `integer` or `numeric`, so we are fine. 
+
+

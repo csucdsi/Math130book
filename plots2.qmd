@@ -311,10 +311,10 @@ ggplot(email, aes(y=num_char, x=number, col=number)) + geom_boxplot() +
 <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Titles/1_xvnu92g7" target="_blank">Lesson Video</a>
 :::
 
-A good plot needs to stand alone and convey as much information as possible. 
+A good plot needs to stand alone and convey as much information as possible. `ggplot2` provides a single `labs` function that is very versitile and includes options for alt-text as well. See `?labs` for more information
 
-* `ggtitle()` adds an overall plot title
-* `ylab()` and `xlab()` adjust the axis labels. 
+* `title` for an overall plot title
+* `y` and `x` adjust the axis labels. 
 * using `\n` creates a line break
 
 ```{r}
@@ -322,10 +322,13 @@ A good plot needs to stand alone and convey as much information as possible.
 ggplot(email, aes(y=num_char, x=number, col=number)) + 
   geom_boxplot() + 
   scale_color_discrete(guide="none") + 
-  ggtitle("Distribution of the number of characters in an email \n based on the size of the number in the email") +
-  ylab("Number of characters") + 
-  xlab("Size of number in email")
+  labs(
+    title = "Distribution of the number of characters in an email \n based on the size of the number in the email", 
+    x = "Size of number in email", 
+    y = "Number of characters"
+  )
 ```
+
 
 
 

@@ -1,0 +1,390 @@
+---
+title: Plot Enhancements
+author: YOUR NAME HERE
+date: today
+format: 
+  pdf: 
+    fig-pos: H
+execute:
+  fig-height: 4
+  message: false
+  warning: false
+  error: true
+---
+
+Earlier we introduced the main plotting packages `ggplot2`, `ggpubr`, and `sjPlot` and focused on creating the correct graphics for the data types. This lesson expands on those tools and demonstrates how to customize some features and add enhancements to clarify or to add information to a plot. 
+
+```{r}
+library(_________) # ggplot, forcats
+library(_________)
+library(_________)
+email <- openintro::email
+NCbirths <- openintro::ncbirths
+pen <- palmerpenguins::penguins
+```
+
+This lesson uses several data sets that we have seen in prior lessons. 
+
+## Reorder barcharts in decreasing order
+
+We can reorder these levels on the fly so they are being shown in decreasing frequency using the `fct_infreq` function from the `forcats` library. You can add this layer to both `ggplot` and `ggpubr` creations. 
+
+```{r}
+#| fig-height: 3
+ggplot(pen, aes(
+  x=_________(island))) + 
+  geom_bar() + xlab("Island")
+```
+
+## Flipping the axis
+
+Sometimes barcharts and boxplots look better horizontally, especially when the category labels are long,  but the default is vertical. We can add a `coord_flip` layer to nearly any plot to rotate it 90*. 
+
+
+```{r}
+#| layout-ncol: 2
+ggplot(pen, aes(x=island)) + geom_bar() +  
+  _________
+
+ggboxplot(pen, y= "body_mass_g", x = "island") + 
+   _________
+```
+
+## A "better" Pie chart
+
+We need to pre-calculate the percentages first, then plot those summary numbers. So we will chain functions from `dplyr` and `ggpubr` together. 
+
+```{r}
+pen %>%  # <1>
+  _________(_________) %>%  # <2>
+  _________ %>% # <3>
+  _________(pct = scales::percent(n/sum(n)),  # <4>
+         labs = paste0(island, "\n n=", n, "(", pct, ")")) %>%  # <5>
+  _________(x = "_________",  # <6>
+        label = "_________",  # <7>
+        fill = "_________",  # <8>
+        lab.pos = "in") # <9>
+```
+
+1. Take the `penguin` data set
+2. perform these calculations for each `island` separately
+3. `tally()` counts the number of records by group (like `table`), and stores it in a new variable named `n` (this is a default name)
+4. create a new variable `pct` that calculates the percent in each group by dividing the group count `n`, by the total number of records `sum(n)`, then using the `percent` function from the `scales` package to display this decimal as a percent
+5. Create chart labels by `paste`ing the value of the variable `island`, then a line break (new line) `\n`, then the text `n=`, then the value of the variable `n`, followed by the value of the percent variable `pct` wrapped in parenthesis
+6. pass all of this summarized data into `ggpie` - the function to create the pie chart, and specify that the numbers to be plotted is in the variable `n`
+7. and that the wedge labels are found in the variable `labs` that was created in step 5
+8. color the wedges based on the `island` variable
+9. and put these labels inside the circle
+
+
+## Adding the mean
+
+Adding annotation on a numeric distribution plot to indicate where the mean is located is often a nice informative feature. 
+
+### ggplot2
+
+The mean can be denoted on `geom_histogram` or `geom_density` using a vertical line (`geom_vline`) where the `xintercept` is set as the calculated mean of the variable being plotted. 
+
+```{r}
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "using `geom_vline` to add to a histogram or density"
+#|   - "using `stat_summary` to add to a boxplot"
+ggplot(pen, aes(x=body_mass_g)) + 
+  geom_histogram() + 
+  geom_vline(_________,
+            color="blue", linetype="dashed")
+
+ggplot(pen, aes(y=body_mass_g, x = island)) + 
+  geom_boxplot() + 
+  _________(fun="_________", geom="_________", 
+               shape=17, size=4, 
+               color="red", fill="red") 
+```
+
+Play around with the `shape`, `fill`/`color`, and `size` until you achieve your desired look. 
+
+### ggpubr
+
+With `ggpubr` you can use use the `add="mean"` argument to both `gghistogram` and `ggdensity` to add a vertical dashed line to denote the location of the mean.  
+
+```{r}
+#| layout-ncol: 2
+gghistogram(pen, x="body_mass_g", fill = "species",
+            _________)
+ggboxplot(pen, y="body_mass_g", x = "species", fill = "species", 
+          _________)
+```
+
+With `ggpboxplot`, you can `add` many summary statistics such as the mean as a dot and line representing uncertainty such as the standard deviation (sd) and standard error (se). I also used `add.params` to make the color of these means easier to see. 
+See the `add` and `add.params` entries in the help file for `?ggboxplot` for more options. 
+
+
+### Histograms + density curve
+
+Often it is more helpful to have the density (or kernel density) plot _on top of_ a histogram plot. 
+
+#### `ggplot2`
+
+```{r}
+ggplot(pen, aes(x=body_mass_g)) +   # <1>
+  _________(col="_________") + 
+  _________aes(y=_________), colour="black", # <2>
+                 _________) # <3>
+```
+
+1. The syntax starts the same: we'll add a `geom_density` and color the line blue for funsies. 
+2. Then we add the histogram geom using `geom_histogram` but must specify that the y axis should be on the density, not frequency, scale. Note that this has to go inside the aesthetic statement `aes()`. 
+3. I'm also going to get rid of the fill by using `NA` so the colored bars don't plot over the density line. 
+
+#### `ggpubr`
+
+You start with a `gghistogram` and then `add_denstity` to the plot. This does not always work well with every variable. Sometimes the density plot is too small to view. 
+
+```{r}
+gghistogram(pen, x = "bill_depth_mm", fill = "species", 
+            _________)
+```
+
+
+## Adding violins to a boxplot
+
+A violin plot is like a density plot, turned on its side, and reflected around the axis for symmetry purposes. Overlaying a boxplot and a violin plot serves a similar purpose to Histograms + Density plots. It shows outliers, the location of most the data, and better shows the shape/skew of the distribution.
+
+### ggplot2
+
+```{r}
+ggplot(pen, aes(x=body_mass_g, y=island, fill=island)) + 
+  _________
+```
+
+### ggpubr
+
+We start with a `ggviolin` and then add a `boxplot`. Note that I also add `coord_flip()` to change the orientation of the boxplots to horizontal. 
+```{r}
+ggviolin(pen, 
+  x="island", y = "body_mass_g", 
+  color = "island", add = _________) + 
+  coord_flip()
+```
+
+
+## Themes 
+
+The standard theme has a gray background, white grid lines etc. 
+Themes can be changed by adding `theme_X()` where `X` has several options
+
+```{r}
+#| layout-ncol: 3
+#| fig-subcap: 
+#|  - "theme_bw()"
+#|  - "theme_void()"
+#|  - "theme_dark()"
+ggplot(email, aes(x=line_breaks, y=num_char)) + geom_point() + 
+  _________
+ggplot(email, aes(x=line_breaks, y=num_char)) + geom_point() + 
+  _________
+ggplot(email, aes(x=line_breaks, y=num_char)) + geom_point() + 
+  _________
+```
+
+
+## Legends (keys)
+
+
+### Title of legend
+
+Add the `name=` argument to whatever layer you added that created the legend. Here I specified a `fill`, and it was a `discrete` variable. So I use the `scale_fill_discrete()` layer. 
+
+```{r}
+ggplot(email, aes(y=num_char, x=number, _________=number)) + 
+  geom_boxplot() + 
+  _________(name="Size of number")
+```
+
+Here I `col`or the box outlines so the layer is `scale_color_discrete()`.
+```{r}
+ggplot(email, aes(y=num_char, x=number, _________=number)) + 
+  geom_boxplot() + 
+  _________(name="Size of number")
+```
+
+
+### Moving & removing the legend
+
+#### Moving
+
+The `legend.position` can be controlled using a `theme()` layer. 
+
+```{r}
+ggplot(email, aes(y=num_char, x=number, col=number)) + 
+  geom_boxplot() + 
+  _________
+```
+
+Note that this involves a call to `theme()`. If you have apply a named theme like `theme_bw()` _after_ setting legend.position using `theme`, it will overwrite that modification. The order of ggplot layers matters. 
+
+```{r}
+#| layout-ncol: 2
+ggplot(email, aes(y=num_char, x=number, col=number)) + 
+  geom_boxplot() + 
+  theme(legend.position = "top") + 
+  theme_minimal()
+
+ggplot(email, aes(y=num_char, x=number, col=number)) + 
+  geom_boxplot() + 
+  _________
+```
+
+#### Removing
+
+Sometimes the legend is not needed. It's providing redundant information and takes up space, so let's remove it entirely by adding `guide="none"` to the `scale_` layer. 
+
+```{r}
+ggplot(email, aes(y=num_char, x=number, col=number)) + 
+  geom_boxplot() + 
+  scale_color_discrete(_________)
+```
+
+
+## Title and axis labels
+
+A good plot needs to stand alone and convey as much information as possible. 
+
+* `ggtitle()` adds an overall plot title
+* `ylab()` and `xlab()` adjust the axis labels. 
+* using `\n` creates a line break
+
+```{r}
+ggplot(email, aes(y=num_char, x=number, col=number)) + 
+  geom_boxplot() + 
+  scale_color_discrete(guide="none") + 
+  _________("Distribution of the number of characters in an email \n based on the size of the number in the email") +
+  _________("Number of characters") + 
+  _________("Size of number in email")
+```
+
+
+
+## Changing colors 
+
+#### Manual
+
+```{r}
+ggplot(email, aes(x=number, fill=number)) + geom_bar() +
+    _________(values=c("red", "green", "blue"))
+```
+
+```{r}
+ggplot(email, aes(x=number, fill=number)) + geom_bar() +
+    scale_fill_manual(values=c("_________", "_________", "_________"))
+```
+ 
+```{r}
+ggplot(email, aes(x=number, fill=number)) + geom_bar() +
+    scale_fill_manual(values=c("#47dbff", "#b3b3cc", "#ff531a"))
+```
+
+## Using a color palette (recommended)
+
+```{r}
+ggplot(pen, aes(x=species, fill=species)) + geom_bar() +
+   _________
+```
+
+Use `paleteer_d` for a discrete (categorical) pallette, and `paleteer_c` for a continuous palette. 
+
+Some palettes require you to install other packages - such as `ggsci`. 
+
+```{r}
+ggplot(pen, aes(x=species, fill=species)) + geom_bar() +
+    scale_fill_paletteer_d("_________")
+```
+
+## Multivariate plotting 
+
+So far we've only looked at how to plot 2 variables on the same plot. Let's up our game some. 
+
+### Boxplots with three variables
+
+In the first plotting lesson, we `fill`ed the boxes with the same categorical variable that was on the x axis. We can also fill (or color) the boxes by a third variable if you want an additional comparison. 
+
+```{r}
+ggplot(NCbirths, aes(y=_________, x=_________, fill=_________)) + 
+  geom_boxplot()
+```
+
+This lets us compare the distribution of gestation period for smokers vs non smokers, within mature and younger moms. 
+
+### Scatterplots
+
+```{r}
+NCbirths %>%   # <1>
+  select(weeks, weight, habit) %>% 
+  filter(!is.na(habit)) %>% 
+ggplot(aes(x=_________, y=_________, color = _________)) +  # <2>
+         geom_point() + geom_smooth(se=FALSE) + 
+  theme_minimal() + 
+  scale_color_paletteer_d("ggthemes::colorblind") # <3>
+```
+
+1. Starting with the `NCbirths` data set, I `select` the variables i want to plot, and then use `filter` to drop rows with missing values for `habit`. 
+2. Create a scatterplot for gestation `weeks` against baby `weight`, coloring by the mothers smoking `habit`. Add both points and loess lines. 
+3. Make the graph more visually readable by modifying the theme and adding a color palette. 
+
+
+## Faceting / paneling 
+
+ggplot introduces yet another term called `faceting`. The definition is _a particular aspect or feature of something_, or _one side of something many-sided, especially of a cut gem_. Basically instead of plotting the grouped graphics on the same plotting area, we let each group have it's own plot, or facet.  
+
+We add a `facet_wrap()` and specify the variable we want to panel on after the `~` tilde. 
+
+```{r}
+ggplot(NCbirths, aes(x=mage, fill=gender)) + 
+  geom_density(alpha=.3) +
+  _________
+```
+
+The grid placement can be semi-controlled by using the `ncol` argument in the `facet_wrap()` statement. 
+
+```{r}
+#| fig-height: 6
+ggplot(NCbirths, aes(x=mage, fill=gender)) +
+  geom_density(alpha=.3) +
+  facet_wrap(~mature, _________)
+```
+
+It is important to compare distributions across groups on the same scale, and our eyes can compare items vertically better than horizontally. 
+
+### Paneling on two variables
+
+Who says we're stuck with only faceting on one variable? Using`facet_grid(` we can specify multiple variables to panel on. 
+
+```{r}
+#| fig-height: 6
+#| fig-width: 10
+NCbirths %>%   # <1>
+  select(weeks, marital, habit, mature) %>% 
+  filter(!is.na(habit)) %>% 
+ggplot(aes(x=weeks, fill=mature)) + geom_density(alpha=.2) + 
+  _________
+```
+
+* Distribution of weeks
+* colored by maturity status
+* paneled on the combination of smoking habit and marital status
+
+## Multiple plots per window
+
+We can set the number of columns figures show up in using code chunk option:  `layout-ncol`. This method works only in Quarto documents. 
+
+```{r}
+_________
+ggplot(pen, aes(x=body_mass_g, fill=species)) + geom_density(alpha=.2)
+ggplot(pen, aes(x=body_mass_g, col=island)) + geom_density() 
+```
+
+
+
+
+

@@ -4,7 +4,6 @@ author: "NAME"
 date: "DATE"
 output:
   pdf_document: default
-  html_document: default
 ---
 
 Here's your chance to demonstrate that you can integrate the topics and skills you learned so far into a literate report. 
