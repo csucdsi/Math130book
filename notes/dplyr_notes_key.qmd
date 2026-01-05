@@ -136,7 +136,40 @@ summarise(flights,
 
 It may seem like a lot of code compared to base R functions such as `mean()`, `sum()` and `max()`, but we'll see how this is used in combination with grouping in the next section to easily create grouped summary statistics.  
 
-## Additional helper verbs
+
+### Arrange
+
+The `arrange()` function changes the order of the rows for the whole data set based on the value of the variable being sorted. 
+
+Lets use a smaller data set with fewer variables so it's easier to visualize. 
+
+```{r}
+flights2 <- select(flights, distance, origin, dep_delay)
+```
+
+#### Sort by one variable
+
+Sort flights based on distance, from shortest to longest. This is Ascending order.
+```{r}
+arrange(flights2, distance)
+```
+
+To reverse the sort order, use `desc()`.  This is Decending order. 
+
+```{r}
+arrange(flights2, desc(distance))
+```
+
+
+#### Sort by two variables
+
+You can sort by more than one variable. Rows are ordered by the first variable, and ties are broken using the second variable.
+
+Here we sort flights first by origin airport, then by departure delay within each airport.
+
+```{r}
+arrange(flights2, origin, dep_delay)
+```
 
 ### Relocate
 

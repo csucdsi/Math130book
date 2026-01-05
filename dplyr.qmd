@@ -1,3 +1,9 @@
+---
+format: 
+  html:
+    toc-depth: 3
+---
+
 # Efficient data management {#sec-dplyr}
 
 :::{.callout-warning icon=false appearance=minimal}
@@ -25,7 +31,7 @@ After completing this lesson students will be able to
 * Explain the difference between a `data.table` and a `tibble`
 * Build and execute a chain of command to accomplish a data management task
 * Extract certain rows using `select`
-* Reorganize the order using `relocate` and rename using `rename`
+* Reorder columns using `relocate`, sort using `arrange`, and rename using `rename`
 * Create new variables using `mutate` and `case_when`
 * Subset rows based on a logical criteria using `filter`
 * Create summary statistics using `group_by` and `summarize`
@@ -70,6 +76,7 @@ The `dplyr` package contains many functions to perform data manipulation "action
 * `rename()`: Renames the variables listed
 * `mutate()`: Adds columns from existing data
 * `relocate()`: Moves the order of the columns 
+* `arrange()`: Sorts the rows by the value of a variable
 * `case_when()`: A useful expansion of `ifelse`
 * `summarise()`: Reduces each group to a single row by calculating aggregate measures
 * `group_by()`: Groups a data set on a factor variable, such that all functions performed are then done on each level of the factor
@@ -169,7 +176,51 @@ summarise(flights,
 
 It may seem like a lot of code compared to base R functions such as `mean()`, `sum()` and `max()`, but we'll see how this is used in combination with grouping in the next section to easily create grouped summary statistics.  
 
-## Additional helper verbs
+### Arrange
+
+The `arrange()` function changes the order of the rows for the whole data set based on the value of the variable being sorted. 
+
+
+Lets use a smaller data set with fewer variables so it's easier to visualize. 
+
+```{r}
+flights2 <- select(flights, distance, origin, dep_delay)
+```
+
+#### Sort by one variable
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Sort flights based on distance, from shortest to longest. This is Ascending order.
+```{r}
+arrange(flights2, distance)
+```
+:::
+
+::: {.column width="50%"}
+To reverse the sort order, use `desc()`.  This is Decending order. 
+
+```{r}
+arrange(flights2, desc(distance))
+```
+:::
+
+::::
+
+#### Sort by two variables
+
+You can sort by more than one variable. Rows are ordered by the first variable, and ties are broken using the second variable.
+
+Here we sort flights first by origin airport, then by departure delay within each airport.
+
+```{r}
+arrange(flights2, origin, dep_delay)
+```
+
+:::{.callout-important title = "Avoid the base `sort` function"}
+There is a `sort` and `order` functions in base R, but they operate on a single vector only. They do _not_ keep all rows in a data frame together when sorting rows, so avoid using it. 
+:::
 
 ### Relocate
 
