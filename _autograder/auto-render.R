@@ -47,8 +47,23 @@ make_result_row <- function(student, score = NA_real_, message = "ok") {
   )
 }
 
+# ---- NEW: score % complete based on key patterns ----
+score_from_key <- function(pdf_path, key_patterns) {
+  if (length(key_patterns) == 0) return(NA_real_)
+  
+  txt <- paste(pdf_text(pdf_path), collapse = "\n")
+  
+  hits <- sapply(
+    key_patterns,
+    function(p) grepl(p, txt, ignore.case = TRUE, perl = TRUE)
+  )
+  
+  round(100 * sum(hits) / length(hits), 1)
+}
+
+
 # ---- NEW: grade a single PDF (score placeholder for now) ----
-grade_one_pdf <- function(pdf_path) {
+grade_one_pdf <- function(pdf_path, key_patterns) {
   student <- student_from_filename(pdf_path)
   
   # Rule: YAML parse error anywhere => fix YAML
@@ -61,12 +76,14 @@ grade_one_pdf <- function(pdf_path) {
     return(make_result_row(student, score = NA_real_, message = "author/name not updated"))
   }
   
-  # Score will be filled in next sub-issue (key-based % complete)
-  return(make_result_row(student, score = NA_real_, message = "ok"))
+  # Score = % complete
+  score <- score_from_key(pdf_path, key_patterns)
+  return(make_result_row(student, score = score, message = "ok"))
 }
 
+
 # ---- NEW: grade all PDFs in entered folder ----
-grade_entered_pdfs <- function(lecnum) {
+grade_entered_pdfs <- function(lecnum, key_patterns) {
   entered_dir <- paste0(lecnum, "/entered/")
   if (!dir.exists(entered_dir)) {
     return(data.frame(student=character(), score=numeric(), message=character()))
@@ -77,13 +94,23 @@ grade_entered_pdfs <- function(lecnum) {
     return(data.frame(student=character(), score=numeric(), message=character()))
   }
   
-  results <- do.call(rbind, lapply(pdfs, grade_one_pdf))
+  results <- do.call(rbind, lapply(pdfs, grade_one_pdf, key_patterns = key_patterns))
   results
 }
 
 
+
 # define lecture number
 lecnum <- "lec10"
+
+# ---- NEW: key patterns for scoring (lecture-specific) ----
+key_patterns <- c(
+  "weight_kg\\s*<-\\s*55",
+  "sqrt\\(4\\)",
+  "round\\(",
+  "diamonds\\s*<-\\s*ggplot2::diamonds",
+  "mean\\(diamonds\\$price\\)"
+)
 
 # ---- NEW: delete PDFs in lec folder that already exist in entered/ ----
 entered_dir <- paste0(lecnum, "/entered/")
@@ -148,4 +175,9 @@ for(f in 1:length(filename)){
     file.remove(inpath[f])  
   }
 }
+
+# ---- NEW: run grading on entered PDFs and print/save results ----
+results <- grade_entered_pdfs(lecnum, key_patterns)
+print(results)
+
 
