@@ -76,7 +76,12 @@ For the rest of this lesson, retype each code chunk below into the notes file yo
 
 ----
 
-## Creating objects in R <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Creating+Objects+in+R/1_dxcx1qiy" target="_blank">(Video)</a>
+## Creating objects in R
+
+::: {.callout-caution title="Follow along video"}
+<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Creating+Objects+in+R/1_dxcx1qiy" target="_blank">(Video)</a>
+:::
+
 
 To do useful and interesting things, we need to assign _values_ to
 _objects_. To create an object, we need to give it a name followed by the
@@ -145,7 +150,15 @@ _The comment character in R is `#`, anything to the right of a `#` in a script w
 
 ----
 
-## Functions and their arguments <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Functions+and+their+Arguments/1_7q6v5abj" target="_blank">(Video)</a>
+::: {.callout-important title="Reminder: Render your document"}
+Pause here and render the Quarto document to make sure everything runs and displays correctly before continuing.
+:::
+
+## Functions and their arguments
+
+::: {.callout-caution title="Follow along video"}
+<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Functions+and+their+Arguments/1_7q6v5abj" target="_blank">(Video)</a>
+:::
 
 Functions are "canned scripts" that automate more complicated sets of commands
 including operations assignments, etc. Many functions are predefined, or can be
@@ -208,7 +221,11 @@ functions that require many arguments.
 
 ----
 
-## Data Types <a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Types/1_e2j7qadw" target="_blank">(Video)</a>
+## Data Types
+
+::: {.callout-caution title="Follow along video"}
+<a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Types/1_e2j7qadw" target="_blank">(Video)</a>
+:::
 
 
 R objects come in different data types. 
@@ -242,9 +259,16 @@ When the value of an object can only be `TRUE` or `FALSE` it is called a **Boole
 sqrt(4)==2
 ```
 
+### Negating logical statements using "!"
+
+
 We will see how to use these logical statements to do things such as subsetting data and creating new variables. 
 
-## Data Structures <a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Structures/1_yxg14z9f" target="_blank">(Video)</a>
+## Data Structures
+
+::: {.callout-caution title="Follow along video"}
+<a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Structures/1_yxg14z9f" target="_blank">(Video)</a>
+:::
 
 Data structures is how we refer to a collection of pieces of data, like a series of numbers, or a list of words. 
 
@@ -387,7 +411,15 @@ Thus
 
 This will come back to bug you when dealing with categorical data types called `factor`s in a later lesson. Don't worry, we'll show you how to be the boss of your factors and not let R tell you that "one" is greater than "four". 
 
-## Data Frames <a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Data+Frames/1_8v7zwwro" target="_blank">(Video)</a>
+::: {.callout-important title="Reminder: Render your document"}
+Pause here and render the Quarto document to make sure everything runs and displays correctly before continuing.
+:::
+
+## Data Frames
+
+::: {.callout-caution title="Follow along video"}
+<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Data+Frames/1_8v7zwwro" target="_blank">(Video)</a>
+:::
 
 Data frames are like spreadsheet data, rectangular with rows and columns. Ideally each row represents data on a single observation and each column contains data on a single variable, or characteristic, of the observation. This is called `tidy data`. This is an important concept that you are encouraged to read more about if you will be doing your own data collection and research.
 [This article is a good place to start](https://www.jstatsoft.org/article/view/v059i10).
@@ -464,4 +496,8 @@ mean(diamonds$price[diamonds$cut=="Good"])
 ```
 
 Note that the $ is used in both locations where we want to identify a variable. 
+
+::: {.callout-important title="Final check"}
+Render the document one last time to confirm that all code runs and the document displays correctly before submitting the notes.
+:::
 
