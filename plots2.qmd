@@ -45,7 +45,6 @@ This lesson also has no specific order, but is a smattering of "things you shoul
 library(tidyverse) # ggplot, forcats
 library(ggpubr)
 email <- openintro::email
-library(paletteer)
 NCbirths <- openintro::ncbirths
 pen <- palmerpenguins::penguins
 ```

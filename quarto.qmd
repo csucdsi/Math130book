@@ -10,7 +10,7 @@ execute:
 
 [Quarto](https://quarto.org/) is a versatile publishing system that allows users to create high-quality documents, reports, websites (like this one!) and presentations using multiple programming languages like R, Python, and Julia. It combines the functionalities of various tools into a single platform, making it easier to produce reproducible and collaborative scientific content. If you have heard of R Markdown - Quarto is the "next generation" of R Markdown.
 
-::: {.callout-note title="Learning Objectives"}
+:::{.callout-note title = "🎓 Learning Objectives" icon = false}
 After completing this lesson learners will be able to:
 
 -   Write code and text in a Quarto document
@@ -95,7 +95,7 @@ That's why they're called `code` chunks. No normal text. All explanatory text go
 Play around with modifying the text and the R code.
 
 1.  Change `echo:false` to `echo:true` in the `plot-penguins` code chunk header. 
-2.  Type `colors()` in your console to pull up all the named colors in R. Change at least one color in the penguin plot. 
+2.  Type `colors()` in your console to pull up all the named colors in R. Change at least one color in the penguin plot. You can find them in the code line `values = c("darkorange","purple","cyan4")`
 3. Write "Hello Penguins!" on line 45, at least one blank line after the the end of the code chunk and your sentence. 
 4.  Render this document and observe your changes.
 
@@ -115,7 +115,7 @@ In addition to rendering the complete document to view the results of code chunk
 ### Markdown Text {#sec-markdown}
 
 Markdown is a popular markup language that allows you to add formatting elements to text. Markdown is useful because it is lightweight, flexible, and platform independent. 
-[See more basic syntax of Markdown at <a href="https://quarto.org/docs/authoring/markdown-basics.html"> https://quarto.org/docs/authoring/markdown-basics.html]{.aside}
+[See more basic syntax of Markdown at <a href="https://quarto.org/docs/authoring/markdown-basics.html"> https://quarto.org/docs/authoring/markdown-basics.html]</a>{.aside}
 
 
 :::::: columns
