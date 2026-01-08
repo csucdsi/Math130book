@@ -47,7 +47,6 @@ Using the cloud is easier to initially setup, but having your own installation o
 2.  Double-click the installer and follow the prompts.
 3.  When installation finishes, open **RStudio** — it should detect R automatically.
 
-[Walk through video for Windows](https://youtu.be/KAeHFzxbHTA?si=xpeDGqt7gurg_rFR)
 :::
 
 :::{.callout-warning icon=false collapse="true" appearance=minimal title = "MacOS"}
@@ -64,6 +63,12 @@ Using the cloud is easier to initially setup, but having your own installation o
 2.  Drag the **RStudio** icon into your **Applications** folder.
 3.  After installation, eject the downloaded drive by dragging it to **Trash**, then open RStudio from Applications.
 
+
+:::
+
+
+:::{.callout-warning icon=false appearance=minimal title = "Walkthrough videos"}
+[Walk through video for Windows](https://youtu.be/KAeHFzxbHTA?si=xpeDGqt7gurg_rFR)
 [Walkthrough video for Mac](https://youtu.be/ay25o485YXs?si=7r4qmmvtD15RM_eS)
 :::
 
