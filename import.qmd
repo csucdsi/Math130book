@@ -2,9 +2,6 @@
 
 In this lesson we will introduce methods to get data from external files into R. 
 
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+Introduction/1_qwkzetht" target="_blank">Introduction Video</a>
-:::
 
 :::{.callout-note title = "🎓 Learning Objectives" icon=false}
 After completing this lesson learners will be able to
@@ -41,10 +38,6 @@ Be sure you download the CSV file as .csv and not as a .numbers file. If you cre
 
 
 ## File types 
-
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+File+Types/1_9p0tuqjq" target="_blank">File Types Video</a>
-:::
 
 In this lesson we are only going to explore reading files that exist on your computer into R from three most commonly used data sources: A tab-delimited text file, A CSV file and an Excel file. 
 

@@ -7,9 +7,6 @@ format:
 ---
 # Plot Enhancements {#sec-plots2}
 
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Introduction/1_qmt3ls9l" target="_blank">Lesson Introduction Video</a>
-:::
 
 Section @sec-plots1 introduced the main plotting packages `ggplot2`, `ggpubr`, and `sjPlot` and focused on creating the correct graphics for the data types. This lesson expands on those tools and demonstrates how to customize some features and add enhancements to clarify or to add information to a plot. 
 
@@ -217,10 +214,6 @@ ggviolin(pen,
 
 ## Themes 
 
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Themes/1_kwh2ucf7" target="_blank">Themes Video</a>
-:::
-
 The standard theme has a gray background, white grid lines etc. 
 Themes can be changed by adding `theme_X()` where `X` has several options
 
@@ -242,10 +235,6 @@ ggplot(email, aes(x=line_breaks, y=num_char)) + geom_point() +
 Explore tons more themes at [https://r-charts.com/ggplot2/themes/](https://r-charts.com/ggplot2/themes/)
 
 ## Legends (keys)
-
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Legends/1_schkl6as" target="_blank">Modifying plot legends video</a>
-:::
 
 
 ### Title of legend
@@ -307,9 +296,6 @@ ggplot(email, aes(y=num_char, x=number, col=number)) + geom_boxplot() +
 
 ## Title and axis labels
 
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Titles/1_xvnu92g7" target="_blank">Lesson Video</a>
-:::
 
 A good plot needs to stand alone and convey as much information as possible. `ggplot2` provides a single `labs` function that is very versitile and includes options for alt-text as well. See `?labs` for more information
 
@@ -395,10 +381,6 @@ ggplot(email, aes(x=number, fill=number)) + geom_bar() +
 
 
 ## Multivariate plotting 
-
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Multivariate+Plotting/1_xp1whb0f" target="_blank">Multivariate plotting video</a>
-:::
 
 So far we've only looked at how to plot 2 variables on the same plot. Let's up our game some. 
 

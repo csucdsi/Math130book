@@ -13,49 +13,13 @@ This lesson is designed to explain the basics of how R works as a programming la
 
 ## R as a calculator 
 
-In the last lesson you saw how to do basic math in the console. Now try a more complicated equation. 
-
-:::{.callout-tip title = "👉 Your Turn" icon=false}
-Type this in _exactly_ into the console as it is written below. 
-```{r}
-#| eval: false
-2 + 5*(8^3)- 3*log10)
-```
-:::
-
-Uh oh, we got an Error. Nothing to worry about, errors happen all the time.
-
-:::{.callout-tip title = "👉 Your Turn" icon=false}
-Put a open parenthesis `(` before `log10` to fix it and try again.
-:::
-
-**\> R is waiting on you...**
-
-:::{.callout-tip title = "👉 Your Turn" icon=false}
-Run the following code in the console. 
-```{r}
-#| eval: false
-2 + 5*(8^3)- 3*log(10
-```
-:::
-
-Notice the console shows a `+` prompt. This means that you haven't finished entering a complete command.
-
-This is because you have not 'closed' a parenthesis or quotation, i.e. you don't have the same number of left-parentheses as right-parentheses, or the same number of opening and closing quotation marks.
-
-When this happens, and you thought you finished typing your command, click inside the console window and press <kbd>Esc</kbd>; this will cancel the incomplete command and return you to the `>` prompt.
-
-
-Let's go back to that long expression but this time type it into a new code chunk. Recall we can make a new code chunk by pressing <kbd>`CTRL`</kbd>+<kbd>`ALT`</kbd>+<kbd>`I`</kbd>, or by clicking on _Insert_ then _R_. Also recall that we submit this code by pressing <kbd>`Ctrl`</kbd>+<kbd>`Enter`</kbd> or clicking the green play arrow in the top right corner of the code chunk.
-
-
 :::{.callout-tip title = "👉 Your Turn" icon=false}
 Type the following into a new code chunk in your notes, fix the mistake and run the code chunk
-
-``` r
-2 + 5*(8^3)- 3*log(10
-```
 :::
+
+```{r}
+2 + 5*(8^3)- 3*log(10)
+```
 
 
 As you go through these lessons, follow along in your own notes file. Filling in blanks and/or retype each code chunk. Think of this as taking notes off the chalkboard while the instructor teaches - it's important that you annotate these notes as you would take notes in any other class. For you to retain what you are reading and learning, writing out what these pieces of code are doing (e.g. the assignment operator `<-`) in **your own words** is an effective learning technique.
@@ -259,7 +223,7 @@ A vector is the most common and basic data structure in R, and is pretty much th
 We can assign a series of values to a vector using the `c()` function. For example we can create a vector of animal weights and assign it to a new object `weight_g`:
 
 ```{r}
-(weight_g <- c(50, 60, 65, 82))
+(weight_g <- c(25, 250, 7800, 3600))
 ```
 
 A vector can also contain characters:
@@ -328,10 +292,10 @@ animals[2]
 animals[c(2, 3)]
 ```
 
-The number in the indices indicates which element to extract. For example we can extract the 3rd element in `weight_g` by typing
+The number in the indices indicates which element to extract. For example we can extract the 3rd element in `weight_KG` by typing
 
 ```{r}
-weight_g[3]
+weight_KG[3]
 ```
 
 ### Conditional subsetting {#sec-cond_subset}
@@ -339,25 +303,30 @@ weight_g[3]
 Another common way of subsetting is by using a logical vector. `TRUE` will select the element with the same index, while `FALSE` will not. Typically, these logical vectors are not typed by hand, but are the output of other functions or logical tests such as: 
 
 ```{r}
-weight_g > 50  # returns TRUE or FALSE depending on which elements that meet the condition
+weight_KG > .5  # returns TRUE or FALSE depending on which elements that meet the condition
 ```
 
-We can use this output to select elements in a _different_ vector where the value of that logical statement is TRUE. For instance, if you wanted to select only the values where weight in grams is above 50 we would type:
+We can use this output to select elements where the value of that logical statement is TRUE. For instance, if you wanted to select only the values where weight in kilograms is above 1 we would type:
 
 ```{r}
-weight_g[weight_g > 50]
+weight_KG[weight_KG > 1]
 ```
 
 You can combine multiple tests using `&` (both conditions are true, AND) or `|` (at least one of the conditions is true, OR):
 
-_Weight is less than 30g or greater than 60g_
+**Weight is less than 1kg or greater than 5kg**
 ```{r}
-weight_g[weight_g < 30 | weight_g > 60]
+weight_KG[weight_KG < 1 | weight_KG > 5]
 ```
-_Weight is between 60 and 80lbs_
+
+
+We can also use this technique to use the values in one vector to subset the rows in a _different_ vector. 
+
+**Animals that weigh between .1 and 5kg**
 ```{r}
-weight_g[weight_g >= 60 & weight_g <= 80]
+animals[weight_KG >= .1 & weight_KG <= 5]
 ```
+
 
 A common task is to search for certain strings in a vector.  One could use the "or" operator `|` to test for equality to multiple values, but this can quickly become tedious. The function `%in%` allows you to test if any of the elements of a search vector are found:
 
@@ -384,7 +353,6 @@ Data frames are like spreadsheet data, rectangular with rows and columns. Ideall
 
 A data frame is the representation of data in the format of a table where the columns are vectors that all have the same length. Because columns are vectors, each column must contain a single type of data (e.g., characters, integers, factors). For example, here is a figure depicting a data frame comprising a numeric, a character, and a logical vector.
 
-![_figure depicting a data frame_](img/data-frame.png)
 
 
 For this part of the lesson we will use a data set called `diamonds` that comes with the `ggplot2` package that you installed as part of @sec-packages. In a later lesson we will learn how to import data from an external file into R. We can load the `diamonds` data set into our global environment by typing 
@@ -396,9 +364,6 @@ diamonds <- ggplot2::diamonds
 ::: {.callout-tip title="Look at your data often"}
 To see the raw data values, click on the square spreadsheet icon to the right of the data set name in the top right panel of RStudio (circled in green in the image below).
 :::
-
-
-![_screenshot of dataset in the global environment_](img/data.PNG)
 
 This area also tells us a little bit about the data set, specifically that it has 53,940 rows and 10 variables. 
 

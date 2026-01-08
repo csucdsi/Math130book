@@ -6,10 +6,6 @@ format:
 
 # Efficient data management {#sec-dplyr}
 
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Introduction/1_r7jhnwgd" target="_blank">Introduction Video</a>
-:::
-
 When working with data you must:
 
 1. Figure out what you want to do.
@@ -64,10 +60,6 @@ flights
 The output has been trimmed to something more reasonable for our viewing pleasure. This may not seem such a big deal because R Studio already provides some level of truncation for our viewing pleasure, but when you accidentally print out 400 pages of data set in your homework assignment, your instructor (and your wallet if you print it without looking) won't be happy. 
 
 ## Basic verbs
-
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Basic+Verbs/1_ndesnisk" target="_blank">Lesson Video</a>
-:::
 
 The `dplyr` package contains many functions to perform data manipulation "actions", also called verbs. We will look at the following verbs: 
 
@@ -324,10 +316,6 @@ table(flights$delay_type, useNA="always")
 
 ## Grouped Operations  
 
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Grouped+Operations/1_w9x1kd5m" target="_blank">Introduction Video</a>
-:::
-
 The above verbs are useful, but they become really powerful when you combine them with the idea of "group by", repeating the operation individually on groups of observations within the dataset. In dplyr, you use the `group_by()` function to describe how to break a dataset down into groups of rows. You can then use the resulting object in exactly the same functions as above; they'll automatically work "by group" when the input is a grouped.
 
 Let's demonstrate how some of these functions work after grouping the flights data set by month. First we'll create a new data set that is grouped by month. 
@@ -360,10 +348,6 @@ summarise(by_airport,
 Seems like Laguardia (LGA) is the better airport for the least delays. 
 
 ## Chaining Operations 
-
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Chaining+Operations/1_6xzk59i7" target="_blank">Introduction Video</a>
-:::
 
 :::{.callout-important title = "Same pipe, different symbol"}
 We've seen chaining before using the base R pipe `|>`. The `%>%` symbol is also called a pipe, but is only accessible after you load the `dplyr` package. They function the same. We show both here because you will see both used out in the wild and need to know they are interchangeable. 

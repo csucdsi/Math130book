@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -66,17 +67,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <link href="./dplyr.html" rel="next">
 <link href="./factors.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b2bea1b993f23d24829151e1fafd31f2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-495add37648e2abd34f1cfaf1465a323.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-f6c7be3311c85c94e08f08db61636199.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-ca4d527d8bfabaaf1a008ce7ecb22d3e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-f6c7be3311c85c94e08f08db61636199.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -109,7 +113,178 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar floating slimcontent">
+<body class="nav-sidebar floating slimcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const queryPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkModeDefault = queryPrefersDark.matches;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    queryPrefersDark.addEventListener("change", e => {
+      if(window.localStorage.getItem("quarto-color-scheme") !== null)
+        return;
+      const alternate = e.matches
+      toggleColorMode(alternate);
+      localAlternateSentinel = e.matches ? 'alternate' : 'default'; // this is used alongside local storage!
+      toggleGiscusIfUsed(alternate, darkModeDefault);
+    });
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -257,7 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./assignments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Assignment Files</span></span></a>
+ <span class="menu-text">Assignment Files</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -322,6 +497,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dm.html">Basic Functionality</a></li><li class="breadcrumb-item"><a href="./plots1.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Plots</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-plots1" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Creating Plots</span></span></h1>
@@ -348,16 +524,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Learn more about <a href="https://ggplot2.tidyverse.org/">ggplot2</a></span></div></div>
-<div class="callout callout-style-simple callout-warning no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><a href="https://media.csuchico.edu/media/MATH+130+Lecture+07A+Introduction/1_jlh6zm14" target="_blank">Introduction Video</a></p>
-</div>
-</div>
-</div>
 <p>Visualizing your data is hands down the most important thing you can learn to do. Seeing is critical to understanding. There are two audiences in mind when creating data visualizations:</p>
 <ol type="1">
 <li><strong>For your eyes only:</strong> These are quick and dirty plots, without annotation. Meant to be looked at once or twice.</li>
@@ -913,23 +1079,23 @@ Variables names in quotes
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(pen, <span class="at">include =</span> <span class="st">"species"</span>, <span class="at">by =</span> <span class="st">"sex"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="afhfyynubw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#afhfyynubw table {
+<div id="fsdxkqvaek" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fsdxkqvaek table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#afhfyynubw thead, #afhfyynubw tbody, #afhfyynubw tfoot, #afhfyynubw tr, #afhfyynubw td, #afhfyynubw th {
+#fsdxkqvaek thead, #fsdxkqvaek tbody, #fsdxkqvaek tfoot, #fsdxkqvaek tr, #fsdxkqvaek td, #fsdxkqvaek th {
   border-style: none;
 }
 
-#afhfyynubw p {
+#fsdxkqvaek p {
   margin: 0;
   padding: 0;
 }
 
-#afhfyynubw .gt_table {
+#fsdxkqvaek .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -955,12 +1121,12 @@ Variables names in quotes
   border-left-color: #D3D3D3;
 }
 
-#afhfyynubw .gt_caption {
+#fsdxkqvaek .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#afhfyynubw .gt_title {
+#fsdxkqvaek .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -972,7 +1138,7 @@ Variables names in quotes
   border-bottom-width: 0;
 }
 
-#afhfyynubw .gt_subtitle {
+#fsdxkqvaek .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -984,7 +1150,7 @@ Variables names in quotes
   border-top-width: 0;
 }
 
-#afhfyynubw .gt_heading {
+#fsdxkqvaek .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -996,13 +1162,13 @@ Variables names in quotes
   border-right-color: #D3D3D3;
 }
 
-#afhfyynubw .gt_bottom_border {
+#fsdxkqvaek .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#afhfyynubw .gt_col_headings {
+#fsdxkqvaek .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1017,7 +1183,7 @@ Variables names in quotes
   border-right-color: #D3D3D3;
 }
 
-#afhfyynubw .gt_col_heading {
+#fsdxkqvaek .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1037,7 +1203,7 @@ Variables names in quotes
   overflow-x: hidden;
 }
 
-#afhfyynubw .gt_column_spanner_outer {
+#fsdxkqvaek .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1049,15 +1215,15 @@ Variables names in quotes
   padding-right: 4px;
 }
 
-#afhfyynubw .gt_column_spanner_outer:first-child {
+#fsdxkqvaek .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#afhfyynubw .gt_column_spanner_outer:last-child {
+#fsdxkqvaek .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#afhfyynubw .gt_column_spanner {
+#fsdxkqvaek .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1069,11 +1235,11 @@ Variables names in quotes
   width: 100%;
 }
 
-#afhfyynubw .gt_spanner_row {
+#fsdxkqvaek .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#afhfyynubw .gt_group_heading {
+#fsdxkqvaek .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1099,7 +1265,7 @@ Variables names in quotes
   text-align: left;
 }
 
-#afhfyynubw .gt_empty_group_heading {
+#fsdxkqvaek .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1114,15 +1280,15 @@ Variables names in quotes
   vertical-align: middle;
 }
 
-#afhfyynubw .gt_from_md > :first-child {
+#fsdxkqvaek .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#afhfyynubw .gt_from_md > :last-child {
+#fsdxkqvaek .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#afhfyynubw .gt_row {
+#fsdxkqvaek .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1141,7 +1307,7 @@ Variables names in quotes
   overflow-x: hidden;
 }
 
-#afhfyynubw .gt_stub {
+#fsdxkqvaek .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1154,7 +1320,7 @@ Variables names in quotes
   padding-right: 5px;
 }
 
-#afhfyynubw .gt_stub_row_group {
+#fsdxkqvaek .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1168,15 +1334,15 @@ Variables names in quotes
   vertical-align: top;
 }
 
-#afhfyynubw .gt_row_group_first td {
+#fsdxkqvaek .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#afhfyynubw .gt_row_group_first th {
+#fsdxkqvaek .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#afhfyynubw .gt_summary_row {
+#fsdxkqvaek .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1186,16 +1352,16 @@ Variables names in quotes
   padding-right: 5px;
 }
 
-#afhfyynubw .gt_first_summary_row {
+#fsdxkqvaek .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#afhfyynubw .gt_first_summary_row.thick {
+#fsdxkqvaek .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#afhfyynubw .gt_last_summary_row {
+#fsdxkqvaek .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1205,7 +1371,7 @@ Variables names in quotes
   border-bottom-color: #D3D3D3;
 }
 
-#afhfyynubw .gt_grand_summary_row {
+#fsdxkqvaek .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1215,7 +1381,7 @@ Variables names in quotes
   padding-right: 5px;
 }
 
-#afhfyynubw .gt_first_grand_summary_row {
+#fsdxkqvaek .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1225,7 +1391,7 @@ Variables names in quotes
   border-top-color: #D3D3D3;
 }
 
-#afhfyynubw .gt_last_grand_summary_row_top {
+#fsdxkqvaek .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1235,11 +1401,11 @@ Variables names in quotes
   border-bottom-color: #D3D3D3;
 }
 
-#afhfyynubw .gt_striped {
+#fsdxkqvaek .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#afhfyynubw .gt_table_body {
+#fsdxkqvaek .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1248,7 +1414,7 @@ Variables names in quotes
   border-bottom-color: #D3D3D3;
 }
 
-#afhfyynubw .gt_footnotes {
+#fsdxkqvaek .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1262,7 +1428,7 @@ Variables names in quotes
   border-right-color: #D3D3D3;
 }
 
-#afhfyynubw .gt_footnote {
+#fsdxkqvaek .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1271,7 +1437,7 @@ Variables names in quotes
   padding-right: 5px;
 }
 
-#afhfyynubw .gt_sourcenotes {
+#fsdxkqvaek .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1285,7 +1451,7 @@ Variables names in quotes
   border-right-color: #D3D3D3;
 }
 
-#afhfyynubw .gt_sourcenote {
+#fsdxkqvaek .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1293,72 +1459,72 @@ Variables names in quotes
   padding-right: 5px;
 }
 
-#afhfyynubw .gt_left {
+#fsdxkqvaek .gt_left {
   text-align: left;
 }
 
-#afhfyynubw .gt_center {
+#fsdxkqvaek .gt_center {
   text-align: center;
 }
 
-#afhfyynubw .gt_right {
+#fsdxkqvaek .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#afhfyynubw .gt_font_normal {
+#fsdxkqvaek .gt_font_normal {
   font-weight: normal;
 }
 
-#afhfyynubw .gt_font_bold {
+#fsdxkqvaek .gt_font_bold {
   font-weight: bold;
 }
 
-#afhfyynubw .gt_font_italic {
+#fsdxkqvaek .gt_font_italic {
   font-style: italic;
 }
 
-#afhfyynubw .gt_super {
+#fsdxkqvaek .gt_super {
   font-size: 65%;
 }
 
-#afhfyynubw .gt_footnote_marks {
+#fsdxkqvaek .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#afhfyynubw .gt_asterisk {
+#fsdxkqvaek .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#afhfyynubw .gt_indent_1 {
+#fsdxkqvaek .gt_indent_1 {
   text-indent: 5px;
 }
 
-#afhfyynubw .gt_indent_2 {
+#fsdxkqvaek .gt_indent_2 {
   text-indent: 10px;
 }
 
-#afhfyynubw .gt_indent_3 {
+#fsdxkqvaek .gt_indent_3 {
   text-indent: 15px;
 }
 
-#afhfyynubw .gt_indent_4 {
+#fsdxkqvaek .gt_indent_4 {
   text-indent: 20px;
 }
 
-#afhfyynubw .gt_indent_5 {
+#fsdxkqvaek .gt_indent_5 {
   text-indent: 25px;
 }
 
-#afhfyynubw .katex-display {
+#fsdxkqvaek .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#afhfyynubw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fsdxkqvaek div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1401,8 +1567,8 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 <td class="gt_row gt_center" headers="stat_1">58 (35%)</td>
 <td class="gt_row gt_center" headers="stat_2">61 (36%)</td>
 </tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="odd">
+</tbody><tfoot>
+<tr class="gt_footnotes odd">
 <td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> n (%)</td>
 </tr>
 </tfoot>
@@ -1439,23 +1605,23 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(pen, <span class="at">include =</span> <span class="st">"species"</span>, <span class="at">by =</span> <span class="st">"sex"</span>, <span class="at">percent =</span> <span class="st">"cell"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="mzokqszqej" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mzokqszqej table {
+<div id="wxzehiqgxh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wxzehiqgxh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mzokqszqej thead, #mzokqszqej tbody, #mzokqszqej tfoot, #mzokqszqej tr, #mzokqszqej td, #mzokqszqej th {
+#wxzehiqgxh thead, #wxzehiqgxh tbody, #wxzehiqgxh tfoot, #wxzehiqgxh tr, #wxzehiqgxh td, #wxzehiqgxh th {
   border-style: none;
 }
 
-#mzokqszqej p {
+#wxzehiqgxh p {
   margin: 0;
   padding: 0;
 }
 
-#mzokqszqej .gt_table {
+#wxzehiqgxh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1481,12 +1647,12 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-left-color: #D3D3D3;
 }
 
-#mzokqszqej .gt_caption {
+#wxzehiqgxh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mzokqszqej .gt_title {
+#wxzehiqgxh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1498,7 +1664,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-width: 0;
 }
 
-#mzokqszqej .gt_subtitle {
+#wxzehiqgxh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1510,7 +1676,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-top-width: 0;
 }
 
-#mzokqszqej .gt_heading {
+#wxzehiqgxh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1522,13 +1688,13 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#mzokqszqej .gt_bottom_border {
+#wxzehiqgxh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mzokqszqej .gt_col_headings {
+#wxzehiqgxh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1543,7 +1709,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#mzokqszqej .gt_col_heading {
+#wxzehiqgxh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1563,7 +1729,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   overflow-x: hidden;
 }
 
-#mzokqszqej .gt_column_spanner_outer {
+#wxzehiqgxh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1575,15 +1741,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 4px;
 }
 
-#mzokqszqej .gt_column_spanner_outer:first-child {
+#wxzehiqgxh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mzokqszqej .gt_column_spanner_outer:last-child {
+#wxzehiqgxh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mzokqszqej .gt_column_spanner {
+#wxzehiqgxh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1595,11 +1761,11 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   width: 100%;
 }
 
-#mzokqszqej .gt_spanner_row {
+#wxzehiqgxh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mzokqszqej .gt_group_heading {
+#wxzehiqgxh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1625,7 +1791,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   text-align: left;
 }
 
-#mzokqszqej .gt_empty_group_heading {
+#wxzehiqgxh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1640,15 +1806,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   vertical-align: middle;
 }
 
-#mzokqszqej .gt_from_md > :first-child {
+#wxzehiqgxh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mzokqszqej .gt_from_md > :last-child {
+#wxzehiqgxh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mzokqszqej .gt_row {
+#wxzehiqgxh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1667,7 +1833,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   overflow-x: hidden;
 }
 
-#mzokqszqej .gt_stub {
+#wxzehiqgxh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1680,7 +1846,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#mzokqszqej .gt_stub_row_group {
+#wxzehiqgxh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1694,15 +1860,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   vertical-align: top;
 }
 
-#mzokqszqej .gt_row_group_first td {
+#wxzehiqgxh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mzokqszqej .gt_row_group_first th {
+#wxzehiqgxh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mzokqszqej .gt_summary_row {
+#wxzehiqgxh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1712,16 +1878,16 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#mzokqszqej .gt_first_summary_row {
+#wxzehiqgxh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mzokqszqej .gt_first_summary_row.thick {
+#wxzehiqgxh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mzokqszqej .gt_last_summary_row {
+#wxzehiqgxh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1731,7 +1897,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#mzokqszqej .gt_grand_summary_row {
+#wxzehiqgxh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1741,7 +1907,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#mzokqszqej .gt_first_grand_summary_row {
+#wxzehiqgxh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1751,7 +1917,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-top-color: #D3D3D3;
 }
 
-#mzokqszqej .gt_last_grand_summary_row_top {
+#wxzehiqgxh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1761,11 +1927,11 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#mzokqszqej .gt_striped {
+#wxzehiqgxh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mzokqszqej .gt_table_body {
+#wxzehiqgxh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1774,7 +1940,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#mzokqszqej .gt_footnotes {
+#wxzehiqgxh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1788,7 +1954,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#mzokqszqej .gt_footnote {
+#wxzehiqgxh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1797,7 +1963,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#mzokqszqej .gt_sourcenotes {
+#wxzehiqgxh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1811,7 +1977,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#mzokqszqej .gt_sourcenote {
+#wxzehiqgxh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1819,72 +1985,72 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#mzokqszqej .gt_left {
+#wxzehiqgxh .gt_left {
   text-align: left;
 }
 
-#mzokqszqej .gt_center {
+#wxzehiqgxh .gt_center {
   text-align: center;
 }
 
-#mzokqszqej .gt_right {
+#wxzehiqgxh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mzokqszqej .gt_font_normal {
+#wxzehiqgxh .gt_font_normal {
   font-weight: normal;
 }
 
-#mzokqszqej .gt_font_bold {
+#wxzehiqgxh .gt_font_bold {
   font-weight: bold;
 }
 
-#mzokqszqej .gt_font_italic {
+#wxzehiqgxh .gt_font_italic {
   font-style: italic;
 }
 
-#mzokqszqej .gt_super {
+#wxzehiqgxh .gt_super {
   font-size: 65%;
 }
 
-#mzokqszqej .gt_footnote_marks {
+#wxzehiqgxh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mzokqszqej .gt_asterisk {
+#wxzehiqgxh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mzokqszqej .gt_indent_1 {
+#wxzehiqgxh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mzokqszqej .gt_indent_2 {
+#wxzehiqgxh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mzokqszqej .gt_indent_3 {
+#wxzehiqgxh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mzokqszqej .gt_indent_4 {
+#wxzehiqgxh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mzokqszqej .gt_indent_5 {
+#wxzehiqgxh .gt_indent_5 {
   text-indent: 25px;
 }
 
-#mzokqszqej .katex-display {
+#wxzehiqgxh .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#mzokqszqej div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wxzehiqgxh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1927,8 +2093,8 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 <td class="gt_row gt_center" headers="stat_1">58 (17%)</td>
 <td class="gt_row gt_center" headers="stat_2">61 (18%)</td>
 </tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="odd">
+</tbody><tfoot>
+<tr class="gt_footnotes odd">
 <td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> n (%)</td>
 </tr>
 </tfoot>
@@ -1980,23 +2146,23 @@ Comparing percentages
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(pen, <span class="at">include =</span> <span class="st">"species"</span>, <span class="at">by =</span> <span class="st">"sex"</span>, <span class="at">percent =</span> <span class="st">"row"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="awozurenfr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#awozurenfr table {
+<div id="fvpqvuzbsr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fvpqvuzbsr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#awozurenfr thead, #awozurenfr tbody, #awozurenfr tfoot, #awozurenfr tr, #awozurenfr td, #awozurenfr th {
+#fvpqvuzbsr thead, #fvpqvuzbsr tbody, #fvpqvuzbsr tfoot, #fvpqvuzbsr tr, #fvpqvuzbsr td, #fvpqvuzbsr th {
   border-style: none;
 }
 
-#awozurenfr p {
+#fvpqvuzbsr p {
   margin: 0;
   padding: 0;
 }
 
-#awozurenfr .gt_table {
+#fvpqvuzbsr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2022,12 +2188,12 @@ Comparing percentages
   border-left-color: #D3D3D3;
 }
 
-#awozurenfr .gt_caption {
+#fvpqvuzbsr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#awozurenfr .gt_title {
+#fvpqvuzbsr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2039,7 +2205,7 @@ Comparing percentages
   border-bottom-width: 0;
 }
 
-#awozurenfr .gt_subtitle {
+#fvpqvuzbsr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2051,7 +2217,7 @@ Comparing percentages
   border-top-width: 0;
 }
 
-#awozurenfr .gt_heading {
+#fvpqvuzbsr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2063,13 +2229,13 @@ Comparing percentages
   border-right-color: #D3D3D3;
 }
 
-#awozurenfr .gt_bottom_border {
+#fvpqvuzbsr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#awozurenfr .gt_col_headings {
+#fvpqvuzbsr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2084,7 +2250,7 @@ Comparing percentages
   border-right-color: #D3D3D3;
 }
 
-#awozurenfr .gt_col_heading {
+#fvpqvuzbsr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2104,7 +2270,7 @@ Comparing percentages
   overflow-x: hidden;
 }
 
-#awozurenfr .gt_column_spanner_outer {
+#fvpqvuzbsr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2116,15 +2282,15 @@ Comparing percentages
   padding-right: 4px;
 }
 
-#awozurenfr .gt_column_spanner_outer:first-child {
+#fvpqvuzbsr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#awozurenfr .gt_column_spanner_outer:last-child {
+#fvpqvuzbsr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#awozurenfr .gt_column_spanner {
+#fvpqvuzbsr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2136,11 +2302,11 @@ Comparing percentages
   width: 100%;
 }
 
-#awozurenfr .gt_spanner_row {
+#fvpqvuzbsr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#awozurenfr .gt_group_heading {
+#fvpqvuzbsr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2166,7 +2332,7 @@ Comparing percentages
   text-align: left;
 }
 
-#awozurenfr .gt_empty_group_heading {
+#fvpqvuzbsr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2181,15 +2347,15 @@ Comparing percentages
   vertical-align: middle;
 }
 
-#awozurenfr .gt_from_md > :first-child {
+#fvpqvuzbsr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#awozurenfr .gt_from_md > :last-child {
+#fvpqvuzbsr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#awozurenfr .gt_row {
+#fvpqvuzbsr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2208,7 +2374,7 @@ Comparing percentages
   overflow-x: hidden;
 }
 
-#awozurenfr .gt_stub {
+#fvpqvuzbsr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2221,7 +2387,7 @@ Comparing percentages
   padding-right: 5px;
 }
 
-#awozurenfr .gt_stub_row_group {
+#fvpqvuzbsr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2235,15 +2401,15 @@ Comparing percentages
   vertical-align: top;
 }
 
-#awozurenfr .gt_row_group_first td {
+#fvpqvuzbsr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#awozurenfr .gt_row_group_first th {
+#fvpqvuzbsr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#awozurenfr .gt_summary_row {
+#fvpqvuzbsr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2253,16 +2419,16 @@ Comparing percentages
   padding-right: 5px;
 }
 
-#awozurenfr .gt_first_summary_row {
+#fvpqvuzbsr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#awozurenfr .gt_first_summary_row.thick {
+#fvpqvuzbsr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#awozurenfr .gt_last_summary_row {
+#fvpqvuzbsr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2272,7 +2438,7 @@ Comparing percentages
   border-bottom-color: #D3D3D3;
 }
 
-#awozurenfr .gt_grand_summary_row {
+#fvpqvuzbsr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2282,7 +2448,7 @@ Comparing percentages
   padding-right: 5px;
 }
 
-#awozurenfr .gt_first_grand_summary_row {
+#fvpqvuzbsr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2292,7 +2458,7 @@ Comparing percentages
   border-top-color: #D3D3D3;
 }
 
-#awozurenfr .gt_last_grand_summary_row_top {
+#fvpqvuzbsr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2302,11 +2468,11 @@ Comparing percentages
   border-bottom-color: #D3D3D3;
 }
 
-#awozurenfr .gt_striped {
+#fvpqvuzbsr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#awozurenfr .gt_table_body {
+#fvpqvuzbsr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2315,7 +2481,7 @@ Comparing percentages
   border-bottom-color: #D3D3D3;
 }
 
-#awozurenfr .gt_footnotes {
+#fvpqvuzbsr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2329,7 +2495,7 @@ Comparing percentages
   border-right-color: #D3D3D3;
 }
 
-#awozurenfr .gt_footnote {
+#fvpqvuzbsr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2338,7 +2504,7 @@ Comparing percentages
   padding-right: 5px;
 }
 
-#awozurenfr .gt_sourcenotes {
+#fvpqvuzbsr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2352,7 +2518,7 @@ Comparing percentages
   border-right-color: #D3D3D3;
 }
 
-#awozurenfr .gt_sourcenote {
+#fvpqvuzbsr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2360,72 +2526,72 @@ Comparing percentages
   padding-right: 5px;
 }
 
-#awozurenfr .gt_left {
+#fvpqvuzbsr .gt_left {
   text-align: left;
 }
 
-#awozurenfr .gt_center {
+#fvpqvuzbsr .gt_center {
   text-align: center;
 }
 
-#awozurenfr .gt_right {
+#fvpqvuzbsr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#awozurenfr .gt_font_normal {
+#fvpqvuzbsr .gt_font_normal {
   font-weight: normal;
 }
 
-#awozurenfr .gt_font_bold {
+#fvpqvuzbsr .gt_font_bold {
   font-weight: bold;
 }
 
-#awozurenfr .gt_font_italic {
+#fvpqvuzbsr .gt_font_italic {
   font-style: italic;
 }
 
-#awozurenfr .gt_super {
+#fvpqvuzbsr .gt_super {
   font-size: 65%;
 }
 
-#awozurenfr .gt_footnote_marks {
+#fvpqvuzbsr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#awozurenfr .gt_asterisk {
+#fvpqvuzbsr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#awozurenfr .gt_indent_1 {
+#fvpqvuzbsr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#awozurenfr .gt_indent_2 {
+#fvpqvuzbsr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#awozurenfr .gt_indent_3 {
+#fvpqvuzbsr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#awozurenfr .gt_indent_4 {
+#fvpqvuzbsr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#awozurenfr .gt_indent_5 {
+#fvpqvuzbsr .gt_indent_5 {
   text-indent: 25px;
 }
 
-#awozurenfr .katex-display {
+#fvpqvuzbsr .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#awozurenfr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fvpqvuzbsr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2468,8 +2634,8 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 <td class="gt_row gt_center" headers="stat_1">58 (49%)</td>
 <td class="gt_row gt_center" headers="stat_2">61 (51%)</td>
 </tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="odd">
+</tbody><tfoot>
+<tr class="gt_footnotes odd">
 <td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> n (%)</td>
 </tr>
 </tfoot>
@@ -2507,23 +2673,23 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(pen, <span class="at">include =</span> <span class="st">"species"</span>, <span class="at">by =</span> <span class="st">"sex"</span>, <span class="at">percent =</span> <span class="st">"column"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="abjwssrfxs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#abjwssrfxs table {
+<div id="ygbfdaswyn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ygbfdaswyn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#abjwssrfxs thead, #abjwssrfxs tbody, #abjwssrfxs tfoot, #abjwssrfxs tr, #abjwssrfxs td, #abjwssrfxs th {
+#ygbfdaswyn thead, #ygbfdaswyn tbody, #ygbfdaswyn tfoot, #ygbfdaswyn tr, #ygbfdaswyn td, #ygbfdaswyn th {
   border-style: none;
 }
 
-#abjwssrfxs p {
+#ygbfdaswyn p {
   margin: 0;
   padding: 0;
 }
 
-#abjwssrfxs .gt_table {
+#ygbfdaswyn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2549,12 +2715,12 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-left-color: #D3D3D3;
 }
 
-#abjwssrfxs .gt_caption {
+#ygbfdaswyn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#abjwssrfxs .gt_title {
+#ygbfdaswyn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2566,7 +2732,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-width: 0;
 }
 
-#abjwssrfxs .gt_subtitle {
+#ygbfdaswyn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2578,7 +2744,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-top-width: 0;
 }
 
-#abjwssrfxs .gt_heading {
+#ygbfdaswyn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2590,13 +2756,13 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#abjwssrfxs .gt_bottom_border {
+#ygbfdaswyn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#abjwssrfxs .gt_col_headings {
+#ygbfdaswyn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2611,7 +2777,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#abjwssrfxs .gt_col_heading {
+#ygbfdaswyn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2631,7 +2797,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   overflow-x: hidden;
 }
 
-#abjwssrfxs .gt_column_spanner_outer {
+#ygbfdaswyn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2643,15 +2809,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 4px;
 }
 
-#abjwssrfxs .gt_column_spanner_outer:first-child {
+#ygbfdaswyn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#abjwssrfxs .gt_column_spanner_outer:last-child {
+#ygbfdaswyn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#abjwssrfxs .gt_column_spanner {
+#ygbfdaswyn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2663,11 +2829,11 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   width: 100%;
 }
 
-#abjwssrfxs .gt_spanner_row {
+#ygbfdaswyn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#abjwssrfxs .gt_group_heading {
+#ygbfdaswyn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2693,7 +2859,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   text-align: left;
 }
 
-#abjwssrfxs .gt_empty_group_heading {
+#ygbfdaswyn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2708,15 +2874,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   vertical-align: middle;
 }
 
-#abjwssrfxs .gt_from_md > :first-child {
+#ygbfdaswyn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#abjwssrfxs .gt_from_md > :last-child {
+#ygbfdaswyn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#abjwssrfxs .gt_row {
+#ygbfdaswyn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2735,7 +2901,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   overflow-x: hidden;
 }
 
-#abjwssrfxs .gt_stub {
+#ygbfdaswyn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2748,7 +2914,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#abjwssrfxs .gt_stub_row_group {
+#ygbfdaswyn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2762,15 +2928,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   vertical-align: top;
 }
 
-#abjwssrfxs .gt_row_group_first td {
+#ygbfdaswyn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#abjwssrfxs .gt_row_group_first th {
+#ygbfdaswyn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#abjwssrfxs .gt_summary_row {
+#ygbfdaswyn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2780,16 +2946,16 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#abjwssrfxs .gt_first_summary_row {
+#ygbfdaswyn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#abjwssrfxs .gt_first_summary_row.thick {
+#ygbfdaswyn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#abjwssrfxs .gt_last_summary_row {
+#ygbfdaswyn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2799,7 +2965,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#abjwssrfxs .gt_grand_summary_row {
+#ygbfdaswyn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2809,7 +2975,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#abjwssrfxs .gt_first_grand_summary_row {
+#ygbfdaswyn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2819,7 +2985,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-top-color: #D3D3D3;
 }
 
-#abjwssrfxs .gt_last_grand_summary_row_top {
+#ygbfdaswyn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2829,11 +2995,11 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#abjwssrfxs .gt_striped {
+#ygbfdaswyn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#abjwssrfxs .gt_table_body {
+#ygbfdaswyn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2842,7 +3008,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#abjwssrfxs .gt_footnotes {
+#ygbfdaswyn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2856,7 +3022,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#abjwssrfxs .gt_footnote {
+#ygbfdaswyn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2865,7 +3031,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#abjwssrfxs .gt_sourcenotes {
+#ygbfdaswyn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2879,7 +3045,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#abjwssrfxs .gt_sourcenote {
+#ygbfdaswyn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2887,72 +3053,72 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#abjwssrfxs .gt_left {
+#ygbfdaswyn .gt_left {
   text-align: left;
 }
 
-#abjwssrfxs .gt_center {
+#ygbfdaswyn .gt_center {
   text-align: center;
 }
 
-#abjwssrfxs .gt_right {
+#ygbfdaswyn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#abjwssrfxs .gt_font_normal {
+#ygbfdaswyn .gt_font_normal {
   font-weight: normal;
 }
 
-#abjwssrfxs .gt_font_bold {
+#ygbfdaswyn .gt_font_bold {
   font-weight: bold;
 }
 
-#abjwssrfxs .gt_font_italic {
+#ygbfdaswyn .gt_font_italic {
   font-style: italic;
 }
 
-#abjwssrfxs .gt_super {
+#ygbfdaswyn .gt_super {
   font-size: 65%;
 }
 
-#abjwssrfxs .gt_footnote_marks {
+#ygbfdaswyn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#abjwssrfxs .gt_asterisk {
+#ygbfdaswyn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#abjwssrfxs .gt_indent_1 {
+#ygbfdaswyn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#abjwssrfxs .gt_indent_2 {
+#ygbfdaswyn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#abjwssrfxs .gt_indent_3 {
+#ygbfdaswyn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#abjwssrfxs .gt_indent_4 {
+#ygbfdaswyn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#abjwssrfxs .gt_indent_5 {
+#ygbfdaswyn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#abjwssrfxs .katex-display {
+#ygbfdaswyn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#abjwssrfxs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ygbfdaswyn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2995,8 +3161,8 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 <td class="gt_row gt_center" headers="stat_1">58 (35%)</td>
 <td class="gt_row gt_center" headers="stat_2">61 (36%)</td>
 </tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="odd">
+</tbody><tfoot>
+<tr class="gt_footnotes odd">
 <td colspan="3" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> n (%)</td>
 </tr>
 </tfoot>
@@ -3185,380 +3351,255 @@ sjPlot solution
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
       });
     }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
         }
-        return container.innerHTML
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -3566,185 +3607,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./factors.html" class="pagination-link" aria-label="Working with Factors">

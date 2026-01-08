@@ -2,10 +2,6 @@
 
 This lesson is designed to explain the basics of how R works as a programming language. 
 
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Intro/1_h8a1glfl" target="_blank">Lesson Introduction Video</a>
-:::
-
 :::{.callout-note title = "🎓 Learning Objectives" icon=false}
 
 * Define the following terms as they relate to R: object, assign, call, function, arguments, options.
@@ -81,11 +77,6 @@ As you go through these lessons, follow along in your own notes file. Filling in
 
 
 ## Creating objects in R
-
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Creating+Objects+in+R/1_dxcx1qiy" target="_blank">Creating Objects in R - Video</a>
-:::
-
 
 To do useful and interesting things, we need to assign _values_ to
 _objects_. To create an object, we need to give it a name followed by the assignment operator `<-`, and the value we want to give it:
@@ -166,10 +157,6 @@ Pause here and render your Quarto notes document to make sure everything runs an
 
 ## Functions and their arguments
 
-::: {.callout-caution icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Functions+and+their+Arguments/1_7q6v5abj" target="_blank">Lesson Video</a>
-:::
-
 Functions are "canned scripts" that automate more complicated sets of commands including operations assignments, etc. Many functions are predefined, or can be made available by importing R *packages* 
 
 A function usually takes one or more inputs called *arguments*, and often (but not always) return a *value*. 
@@ -222,10 +209,6 @@ round(digits = 2, x = pi)
 This is a simple function with only one argument. Functions are the backbone of how R does it's thing. You will get lots of practice with functions, and quickly encounter functions that require many arguments.
 
 ## Data Types
-
-::: {.callout-caution icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Types/1_e2j7qadw" target="_blank">Data Types Video</a>
-:::
 
 R objects come in different data types. You can use the function `class()` to see what data type an object is. 
 
@@ -301,10 +284,6 @@ Sometimes we want to negate a logical statement. That is, if the value returned 
 
 ## Data Structures
 
-::: {.callout-caution icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Structures/1_yxg14z9f" target="_blank">Lesson Video</a>
-:::
-
 Data structures is how we refer to a collection of pieces of data, like a series of numbers, or a list of words. 
 
 ### Vectors 
@@ -314,7 +293,7 @@ A vector is the most common and basic data structure in R, and is pretty much th
 We can assign a series of values to a vector using the `c()` function. For example we can create a vector of animal weights and assign it to a new object `weight_g`:
 
 ```{r}
-(weight_g <- c(50, 60, 65, 82))
+(weight_g <- c(25, 250, 7800, 3600))
 ```
 
 A vector can also contain characters:
@@ -383,10 +362,10 @@ animals[2]
 animals[c(2, 3)]
 ```
 
-The number in the indices indicates which element to extract. For example we can extract the 3rd element in `weight_g` by typing
+The number in the indices indicates which element to extract. For example we can extract the 3rd element in `weight_KG` by typing
 
 ```{r}
-weight_g[3]
+weight_KG[3]
 ```
 
 ### Conditional subsetting {#sec-cond_subset}
@@ -394,24 +373,28 @@ weight_g[3]
 Another common way of subsetting is by using a logical vector. `TRUE` will select the element with the same index, while `FALSE` will not. Typically, these logical vectors are not typed by hand, but are the output of other functions or logical tests such as: 
 
 ```{r}
-weight_g > 50  # returns TRUE or FALSE depending on which elements that meet the condition
+weight_KG > .5  # returns TRUE or FALSE depending on which elements that meet the condition
 ```
 
-We can use this output to select elements in a _different_ vector where the value of that logical statement is TRUE. For instance, if you wanted to select only the values where weight in grams is above 50 we would type:
+We can use this output to select elements where the value of that logical statement is TRUE. For instance, if you wanted to select only the values where weight in kilograms is above 1 we would type:
 
 ```{r}
-weight_g[weight_g > 50]
+weight_KG[weight_KG > 1]
 ```
 
 You can combine multiple tests using `&` (both conditions are true, AND) or `|` (at least one of the conditions is true, OR):
 
-_Weight is less than 30g or greater than 60g_
+**Weight is less than 1kg or greater than 5kg**
 ```{r}
-weight_g[weight_g < 30 | weight_g > 60]
+weight_KG[weight_KG < 1 | weight_KG > 5]
 ```
-_Weight is between 60 and 80lbs_
+
+
+We can also use this technique to use the values in one vector to subset the rows in a _different_ vector. 
+
+**Animals that weigh between .1 and 5kg**
 ```{r}
-weight_g[weight_g >= 60 & weight_g <= 80]
+animals[weight_KG >= .1 & weight_KG <= 5]
 ```
 
 A common task is to search for certain strings in a vector.  One could use the "or" operator `|` to test for equality to multiple values, but this can quickly become tedious. The function `%in%` allows you to test if any of the elements of a search vector are found:
@@ -440,10 +423,6 @@ Pause here and render the Quarto document to make sure everything runs and displ
 
 
 ## Data Frames
-
-::: {.callout-caution icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Data+Frames/1_8v7zwwro" target="_blank">Video on Data Frames</a>
-:::
 
 Data frames are like spreadsheet data, rectangular with rows and columns. Ideally each row represents data on a single observation and each column contains data on a single variable, or characteristic, of the observation. This is called `tidy data`. This is an important concept that you are encouraged to read more about if you will be doing your own data collection and research.
 [This article is a good place to start](https://www.jstatsoft.org/article/view/v059i10).
