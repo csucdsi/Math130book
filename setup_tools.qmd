@@ -141,7 +141,7 @@ In the script file type `2+2` and then then press <kbd>CTRL+Enter</kbd> while yo
 
 You will see the command echoed down in the Console along with the answer. We will come back to using scripts in the next lesson. 
 
-### Environment / History {.unnumbered}
+#### Environment / History {.unnumbered}
 
 The **Environment / History** pane (top-right) shows all the objects you’ve created in your current R session — for example, data frames, variables, or plots you’ve assigned.
 
@@ -155,7 +155,7 @@ In console run `data(cars)`. This loads a built-in data set named `cars` into yo
 
 There are also some additional tabs in this area, like **Connections**, **Build**, **Tutorial**, and sometimes **Git**.  We won’t cover those here, but RStudio has many additional tools and features available as you learn more.
 
-### Files / Plots / Packages / Help {.unnumbered}
+#### Files / Plots / Packages / Help {.unnumbered}
 
 The **Files / Plots / Packages / Help** pane is used to explore files, view plots, manage packages, and read help pages.
 
@@ -182,7 +182,7 @@ This ensures that each time you restart R, you start with a clean environment in
 :::
 
 
-## Packages
+## Packages {#sec-packages}
 
 [<a href="https://spaceballs.fandom.com/wiki/Spaceballs:_The%E2%80%A6">"Where the real money from the movie is
 made."</a>]{.aside}
@@ -296,10 +296,11 @@ Choose one of the four naming convention shown below for your class folder and s
 :::{.callout-tip title = "Create your folders"}
 1.  On your computer, in an easy to find place, create a new folder named `math130` using your chosen naming convention.
 2.  Then create three subfolders: `data`, `homework`, `notes`.
+:::
 
 ![](img/folder_org.PNG){fig-align="center"}
 
-:::
+
 
 ### Be the boss of your files
 
@@ -313,9 +314,7 @@ When you download a file, right click and "Save as" or "Save target as" and **ac
 :::
 
 :::{.callout-tip title = "👉 Your Turn" icon=false}
-Right click [[this link]](https://quarto.org/docs/get-started/hello/rstudio/_hello.qmd) to download and save this file into your `homework` folder. 
-
-We will use this file in the next lesson. 
+Right click [[this link]](https://quarto.org/docs/get-started/hello/rstudio/_hello.qmd) to download and save this file into your `homework` folder. We will use this file in the next lesson. 
 :::
 
 
@@ -348,13 +347,11 @@ You can tell you are in an R Project by looking in the top right corner by the E
 
 ## Final Tips
 
-**Saving and closing your work.**
+#### Saving and closing your work
 
-Unless you're returning to work in R Studio in a short while, you should make a habit to save all open tabs and completely shut down R studio when you are done working. This ensures your environment is cleared.
+Unless you're returning to work in R Studio in a short while, you should make a habit to save all open tabs and completely shut down R studio when you are done working. This ensures your environment is cleared. [This is a good thing]{.aside} 
 
-*This is a good thing.* 
-
-**Restart R**
+#### Restart R
 
 To restart R without shutting the entire window down, go to the file menu bar in the top,
 

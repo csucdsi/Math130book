@@ -1,43 +1,24 @@
-# Getting Started with R {#sec-intro_r}
+---
+title: Getting started with R
+author: Key
+date: today
+format: pdf
+execute:
+  fig-height: 4
+  message: false
+  warning: false
+---
 
 This lesson is designed to explain the basics of how R works as a programming language. 
-
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+06A+Intro/1_h8a1glfl" target="_blank">Lesson Introduction Video</a>
-:::
-
-:::{.callout-note title = "🎓 Learning Objectives" icon=false}
-
-* Define the following terms as they relate to R: object, assign, call, function, arguments, options.
-* Assign values to objects in R.
-* Learn how to _name_ objects
-* Solve simple arithmetic operations in R.
-* Call functions and use arguments to change their default options.
-* Inspect the content of vectors and manipulate their content.
-* Subset and extract values from vectors.
-* Write logical statements that resolve as TRUE and FALSE.
-* Describe what a data frame is.
-* Summarize the contents of a data frame.
-* Extract vectors out of data frames using variable names.
-
-:::
-
-:::{.callout-tip title = "👉 Prepare" icon=false}
-
-1.  Open your Math 130 R Project.
-2.  Right click and "save as" this lessons [[Quarto notes file]](notes/intro_r_notes.qmd) and save into your `Math130/notes` folder.
-3.  In the *Files* pane, open this Quarto file and Render this file.
-
-:::
 
 ## R as a calculator 
 
 In the last lesson you saw how to do basic math in the console. Now try a more complicated equation. 
 
 :::{.callout-tip title = "👉 Your Turn" icon=false}
-Type this into the console _exactly_ as it is written below. 
+Type this in _exactly_ into the console as it is written below. 
 ```{r}
-#| error: true
+#| eval: false
 2 + 5*(8^3)- 3*log10)
 ```
 :::
@@ -45,15 +26,15 @@ Type this into the console _exactly_ as it is written below.
 Uh oh, we got an Error. Nothing to worry about, errors happen all the time.
 
 :::{.callout-tip title = "👉 Your Turn" icon=false}
-Put a open parenthesis `(` before `log10` to fix it and try
-again.
+Put a open parenthesis `(` before `log10` to fix it and try again.
 :::
 
 **\> R is waiting on you...**
 
 :::{.callout-tip title = "👉 Your Turn" icon=false}
 Run the following code in the console. 
-``` r
+```{r}
+#| eval: false
 2 + 5*(8^3)- 3*log(10
 ```
 :::
@@ -81,11 +62,6 @@ As you go through these lessons, follow along in your own notes file. Filling in
 
 
 ## Creating objects in R
-
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Creating+Objects+in+R/1_dxcx1qiy" target="_blank">Creating Objects in R - Video</a>
-:::
-
 
 To do useful and interesting things, we need to assign _values_ to
 _objects_. To create an object, we need to give it a name followed by the assignment operator `<-`, and the value we want to give it:
@@ -160,15 +136,7 @@ weight_lb <- 2.2 * weight_kg # convert it to lbs
 
 :::
 
-::: {.callout-important title="Reminder: Render your document"}
-Pause here and render your Quarto notes document to make sure everything runs and displays correctly before continuing. This is a good practice to get in to. 
-:::
-
 ## Functions and their arguments
-
-::: {.callout-caution icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Functions+and+their+Arguments/1_7q6v5abj" target="_blank">Lesson Video</a>
-:::
 
 Functions are "canned scripts" that automate more complicated sets of commands including operations assignments, etc. Many functions are predefined, or can be made available by importing R *packages* 
 
@@ -188,7 +156,6 @@ round(pi)
 
 We can learn more about this function by typing `?round`. The **Usage** section of the help documentation shows you what the default values for each argument are. This is a very important piece to pay attention. Sometimes the default behaviors are not what you want to happen. 
 
-
 In the **Arguments** section the help file defines what each argument does.
 
 * `x` is the object that you want to round. It must be a _numeric vector_. In this example, `x = pi`. 
@@ -199,12 +166,9 @@ Above, we called `round()` with just one argument, `pi`, and it has returned the
 :::{.callout-tip title = "👉 Your Turn" icon=false}
 Use the example in the help file to round the digits of pi to 2 digits.
 
-<details>
-  <summary> Solution </summary>
 ```{r}
 round(pi, digits = 2)
 ```
-</details>
 :::
 
 If you provide the arguments in the exact same order as they are defined you don't have to name them:
@@ -222,10 +186,6 @@ round(digits = 2, x = pi)
 This is a simple function with only one argument. Functions are the backbone of how R does it's thing. You will get lots of practice with functions, and quickly encounter functions that require many arguments.
 
 ## Data Types
-
-::: {.callout-caution icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Types/1_e2j7qadw" target="_blank">Data Types Video</a>
-:::
 
 R objects come in different data types. You can use the function `class()` to see what data type an object is. 
 
@@ -249,7 +209,6 @@ im_a_number*2
 Letters, words, and entire sentences can also be stored in objects. These are then called **character** or **string** variables. We can't do math on character variables, and if we try to R gives us an error message. 
 
 ```{r}
-#| error: true
 (im_a_character <- "dog")
 class(im_a_character)
 im_a_character*2
@@ -257,7 +216,7 @@ im_a_character*2
 
 In statistics classes, character variables are often treated as **categorical** variables, which can also be called **factor** variables. Factor variables in R are special types of categorical variables. We will learn how to work with factor variables in week 2. 
 
-### Boolean {#sec-logical}
+### Boolean
 
 When the value of an object can only be `TRUE` or `FALSE` it is called a **Boolean** variable. These are created by writing a **logical statement** where the answer is either TRUE or FALSE. Silly examples include "Is 3 greater than 4?" and "Is the square root of 4 equal to 2?"
 
@@ -267,26 +226,16 @@ class(huh)
 sqrt(4)==2
 ```
 
-:::{.callout-note title = "Comparison Symbols"}
+#### Comparison Symbols
 
-:::: {.columns}
-
-::: {.column width="50%"}
 * `<` stands for "less than" 
 * `>` for "greater than"
 * `>=` for "greater than or equal to"
-:::
-
-::: {.column width="50%"}
 * `<=` for "less than or equal to"
 * `==` for "equal to"
 * `!=` for "not equal to" 
-:::
 
-::::
 The double equal sign `==` is a test for numerical equality between the left and right hand sides, and should not be confused with the single `=` sign, which performs variable assignment (similar to `<-`).
-
-:::
 
 We will see how to use these logical statements to do things such as subsetting data and creating new variables in @sec-cond_subset and beyond. 
 
@@ -300,10 +249,6 @@ Sometimes we want to negate a logical statement. That is, if the value returned 
 ```
 
 ## Data Structures
-
-::: {.callout-caution icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+Lecture+04A+Data+Structures/1_yxg14z9f" target="_blank">Lesson Video</a>
-:::
 
 Data structures is how we refer to a collection of pieces of data, like a series of numbers, or a list of words. 
 
@@ -432,18 +377,7 @@ When considering string or character vectors or data elements, R treats everythi
 
 This will come back to bug you when dealing with categorical data types called `factor`s in a later lesson. Don't worry, we'll show you how to be the boss of your factors and not let R tell you that "one" is greater than "four". 
 
-
-:::{.callout-tip title = "👉 Render your document" icon=false}
-
-Pause here and render the Quarto document to make sure everything runs and displays correctly before continuing.
-:::
-
-
 ## Data Frames
-
-::: {.callout-caution icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+04A+Data+Frames/1_8v7zwwro" target="_blank">Video on Data Frames</a>
-:::
 
 Data frames are like spreadsheet data, rectangular with rows and columns. Ideally each row represents data on a single observation and each column contains data on a single variable, or characteristic, of the observation. This is called `tidy data`. This is an important concept that you are encouraged to read more about if you will be doing your own data collection and research.
 [This article is a good place to start](https://www.jstatsoft.org/article/view/v059i10).
