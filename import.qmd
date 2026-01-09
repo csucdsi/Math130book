@@ -2,9 +2,6 @@
 
 In this lesson we will introduce methods to get data from external files into R. 
 
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+Introduction/1_qwkzetht" target="_blank">Introduction Video</a>
-:::
 
 :::{.callout-note title = "🎓 Learning Objectives" icon=false}
 After completing this lesson learners will be able to
@@ -33,12 +30,14 @@ After completing this lesson learners will be able to
 If you download multiple copies of the data, do not keep the versions that have a (1) or some number in the name. Do not leave these files in your downloads folder. 
 :::
 
+:::{.callout-important title = "CAUTION FOR MAC USERS"}
+Be sure you download the CSV file as .csv and not as a .numbers file. If you create a file in Numbers, you can choose File > Export To > CSV to convert it.
+:::
+
+
+
 
 ## File types 
-
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+09A+File+Types/1_9p0tuqjq" target="_blank">File Types Video</a>
-:::
 
 In this lesson we are only going to explore reading files that exist on your computer into R from three most commonly used data sources: A tab-delimited text file, A CSV file and an Excel file. 
 
@@ -143,11 +142,10 @@ email <- read.table( # <1>
 
 :::{.callout-important title = "Trust but verify"}
 Let's use the `head` function to look at the imported data, ensuring the variable names are intended, and that each column has data in it. 
+:::
 ```{r}
 head(email)
 ```
-
-:::
 
 :::{.callout-important title = "Errors!"}
 What happens if you forget to include the arguments for `header` or `sep`? Try that now and discuss what happened. 

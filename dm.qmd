@@ -2,10 +2,6 @@
 
 In this lesson we will learn how to summarize data in a data frame, and to do basic data management tasks such as making new variables, recoding data and dealing with missing data.
 
-:::{.callout-warning icon=false appearance=minimal} 
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Intro/1_oifkz4hn" target="_blank">Section Introduction</a> 
-:::
-
 :::{.callout-note title = "🎓 Learning Objectives" icon= false}
 
 After completing this lesson learners will be able to
@@ -37,10 +33,6 @@ ncbirths <- openintro::ncbirths
 This first code chunk loads the `ggplot2` package so we can access plotting functions, and then load the `ncbirths` data set, which comes with the `openintro` package.
 
 ## Summarizing data
-
-::: {.callout-warning icon="false" appearance="minimal"}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Summarizing+Data/1_5hztp76z" target="_blank">Summarizing data section video</a>
-:::
 
 Two common methods used to summarize data are frequnecy tables for categorical variables (e.g. nominal, ordinal), and summary statistics for numeric (continuous or discrete) variables.
 
@@ -116,10 +108,6 @@ tbl_summary(ncbirths,
 ```
 
 ## Missing Data
-
-::: {.callout-warning icon="false" appearance="minimal"}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Missing+Data/1_3ignf1uh" target="_blank">Missing data section video</a>
-:::
 
 Sometimes the value for a variable is missing. Think of it as a blank cell in an spreadsheet. Missing data can be a result of many things: skip patterns in a survey (i.e. non-smokers don't get asked how many packs per week they smoke), errors in data reads from a machine, researchers skipped a day of data collection for one plant on accident etc.
 
@@ -228,10 +216,6 @@ ggplot(ncbirths, aes(!is.na(premie))) + geom_bar()
 
 ## Data management
 
-::: {.callout-warning icon="false" appearance="minimal"}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Data+Editing+%28Recoding%29/1_kh8v7jk6" target="_blank">Data editing section video</a>
-:::
-
 Sometimes we have a need to create or modify variables in a data frame. You will learn several ways to do this throughout this course, but we will start by using *base R* functions and methods. These are methods that use functions that come with R, not from additional packages.
 
 ### Overwrite existing values
@@ -290,10 +274,6 @@ min(ncbirths$weight, na.rm=TRUE)
 
 
 ### Creating new variables
-
-::: {.callout-warning icon="false" appearance="minimal"}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Creating+New+Variables/1_ivmj78et" target="_blank">Creating new variables section video</a>
-:::
 
 :::{.callout-important title = "New variables should be added to the data frame"}
 
@@ -367,10 +347,6 @@ ncbirths[ncbirths$mage %in% c(17,18),c('mage', 'underage')]
 Notice I snuck a new operator in on you - `%in%`. This is a way you can provide a list of values (a.k.a a vector) and say "if the value of the variable I want is %in% any of these options in this vector..." do the thing.
 
 ## Chaining commands
-
-::: {.callout-warning icon="false" appearance="minimal"}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+05A+Chaining+Using+the+Pipe+E/1_chcscua0" target="_blank">Chaining commands section video</a>
-:::
 
 Two common styles:
 

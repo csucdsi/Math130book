@@ -1,10 +1,10 @@
 ---
-format: 
-  html: default
-  pdf: default
+title: "Syllabus for Math 130"
+date: today
+date-format: "MMM-YYYY"
+author: Robin Donatello
+format: pdf
 ---
-
-# Syllabus {.unnumbered #sec-syllabus}
 
 ## Course Description
 
@@ -46,11 +46,11 @@ This course is designed as a primer to get the complete novice up and running wi
 For the first five weeks of the semester (1/25/2025 - 9/26/2025), my office hours will be in the [Meriam Library Innovation Lab](https://library.csuchico.edu/innovation-lab):
 --->
 
-* Mondays: 
-* Tuesdays: 
-* Wednesdays:
-* Thursdays: 
-* Fridays: 
+* Mondays: 3-5pm [Meriam Library Innovation Lab](https://library.csuchico.edu/innovation-lab)
+* Tuesdays: 1-2pm over Zoom. Link in Canvas
+* Wednesdays: 2-3pm Holt 202
+
+You can always reach me in the Math 130 channel of our official course communication platform [Discord](https://discord.gg/ck497bJty5). See below for details on how to connect. 
 
 If none of those times work for you, please use my booking link in Canvas to find a time that works for both of us. <!---email me so that we can find a time that works for us both: xxx@csuchico.edu--->
 
@@ -168,10 +168,23 @@ Credit / No Credit. There are 100 points available in this course. You must earn
     - Exploratory Data Analysis (20 pts)
     - Peer Review (5 pts)
     
-Assignments are due after each week, see Canvas for due dates. <!--- Sunday by midnight. --->
+## Due dates
 
-Any assignment can be submit as late within the week after it is due
-for a one point deduction.
+* Assignments are due after each week, see Canvas for due dates. <!--- Sunday by midnight. --->
+* Assignment over 7 days late receive a one point deduction. 
+
+
+## Submitting Assignments
+
+Assignments are submitted to Canvas after rendering directly to PDF and graded using a rubric. You will learn how to create PDF's from your code during the first week. Submitting files not in the requested format will not be graded, but you can resubmit for full credit. 
+<!--be marked down, but you can resubmit for full credit. -->
+
+
+### Gradescope
+
+Gradescope is a third party program that allows for an improved grading platform. You will submit your homework assignments in Canvas by clicking on a link that will take you to the appropriate location in Gradescope. You can log directly into Gradescope using your Chico State SSO login. 
+
+Logging into Gradescope gives you the ability to see your comments and grading breakdown based on a rubric, and to request regrades to your assignments as necessary. Feedback and rubrics are not available in Canvas. 
 
 <!--- 
 Assignments are submit by uploading the appropriate files to a Google
@@ -182,7 +195,6 @@ Only, specifically, you, me, and the course graders will have access
 to this folder.
 --->
 
-Assignments are submitted to Canvas after rendering directly to PDF and graded using a rubric. You will learn how to create PDF's from your code during the first week. Submitting files not in PDF format will be marked down, but you can resubmit for full credit. 
 
 ----
 
@@ -209,7 +221,7 @@ We acknowledge and are mindful that Chico State stands on lands that were origin
 # University Policies and Campus Resources
 
 ### Adding and Dropping the course
-This course only runs for a few weeks and all materials are available on the course website. It will be difficult to get caught up if you add the class after the first week. The last day to add or drop classes without special permission by the instructor is X/XX/25. No adds or drops are allowed after X/XX/25 without a serious and compelling reason approved by the instructor, department chair, and college dean.
+This course only runs for a few weeks and all materials are available on the course website. It will be difficult to get caught up if you add the class after the first week. The last day to add or drop classes without special permission by the instructor is 1/30/26. No adds or drops are allowed after 2/16/25 without a serious and compelling reason approved by the instructor, department chair, and college dean.
 
 ### Academic Integrity
 Students are expected to be familiar with the University’s Academic Integrity Policy. Your own commitment to learning, as evidenced by your enrollment at California State University, Chico, and the University’s Academic Integrity Policy requires you to be honest in all your academic course work. Faculty members are required to report all infractions to the Office of Student Judicial Affairs. The policy on academic integrity and other resources related to student conduct can be found on the Student Judicial Affairs web site at http://www.csuchico.edu/sjd/integrity.shtml.

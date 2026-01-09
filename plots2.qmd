@@ -7,9 +7,6 @@ format:
 ---
 # Plot Enhancements {#sec-plots2}
 
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Introduction/1_qmt3ls9l" target="_blank">Lesson Introduction Video</a>
-:::
 
 Section @sec-plots1 introduced the main plotting packages `ggplot2`, `ggpubr`, and `sjPlot` and focused on creating the correct graphics for the data types. This lesson expands on those tools and demonstrates how to customize some features and add enhancements to clarify or to add information to a plot. 
 
@@ -45,7 +42,6 @@ This lesson also has no specific order, but is a smattering of "things you shoul
 library(tidyverse) # ggplot, forcats
 library(ggpubr)
 email <- openintro::email
-library(paletteer)
 NCbirths <- openintro::ncbirths
 pen <- palmerpenguins::penguins
 ```
@@ -118,12 +114,14 @@ Adding annotation on a numeric distribution plot to indicate where the mean is l
 
 The mean can be denoted on `geom_histogram` or `geom_density` using a vertical line (`geom_vline`) where the `xintercept` is set as the calculated mean of the variable being plotted. 
 
+With boxplots and violins, the code below uses the `stat_summary` layer to add the `mean` as a summary `fun`ction, we plot it as a `point` on the graph, `shape=17` makes it a triangle (see `?pch` for more shapes), `size=4` makes it a bit larger so it stands out. There are also `color` and `fill` options available if desired. 
+
 ```{r}
+#| source-line-numbers: "3-4, 8-10"
 #| layout-ncol: 2
 #| fig-cap: 
 #|   - "using `geom_vline` to add to a histogram or density"
-#|   - "using `stat_summary` to add to a boxplot"
-#| source-line-numbers: "3-4, 8-10"
+#|   - "using `stat_summary` to add the mean to a boxplot"
 ggplot(pen, aes(x=body_mass_g)) + 
   geom_histogram() + 
   geom_vline(aes(xintercept=mean(body_mass_g, na.rm = TRUE)),
@@ -132,8 +130,7 @@ ggplot(pen, aes(x=body_mass_g)) +
 ggplot(pen, aes(y=body_mass_g, x = island)) + 
   geom_boxplot() + 
   stat_summary(fun="mean", geom="point", 
-               shape=17, size=4, 
-               color="red", fill="red") 
+               shape=17, size=4) 
 ```
 
 Play around with the `shape`, `fill`/`color`, and `size` until you achieve your desired look. 
@@ -217,10 +214,6 @@ ggviolin(pen,
 
 ## Themes 
 
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Themes/1_kwh2ucf7" target="_blank">Themes Video</a>
-:::
-
 The standard theme has a gray background, white grid lines etc. 
 Themes can be changed by adding `theme_X()` where `X` has several options
 
@@ -242,10 +235,6 @@ ggplot(email, aes(x=line_breaks, y=num_char)) + geom_point() +
 Explore tons more themes at [https://r-charts.com/ggplot2/themes/](https://r-charts.com/ggplot2/themes/)
 
 ## Legends (keys)
-
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Legends/1_schkl6as" target="_blank">Modifying plot legends video</a>
-:::
 
 
 ### Title of legend
@@ -307,14 +296,11 @@ ggplot(email, aes(y=num_char, x=number, col=number)) + geom_boxplot() +
 
 ## Title and axis labels
 
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Titles/1_xvnu92g7" target="_blank">Lesson Video</a>
-:::
 
-A good plot needs to stand alone and convey as much information as possible. 
+A good plot needs to stand alone and convey as much information as possible. `ggplot2` provides a single `labs` function that is very versitile and includes options for alt-text as well. See `?labs` for more information
 
-* `ggtitle()` adds an overall plot title
-* `ylab()` and `xlab()` adjust the axis labels. 
+* `title` for an overall plot title
+* `y` and `x` adjust the axis labels. 
 * using `\n` creates a line break
 
 ```{r}
@@ -322,10 +308,13 @@ A good plot needs to stand alone and convey as much information as possible.
 ggplot(email, aes(y=num_char, x=number, col=number)) + 
   geom_boxplot() + 
   scale_color_discrete(guide="none") + 
-  ggtitle("Distribution of the number of characters in an email \n based on the size of the number in the email") +
-  ylab("Number of characters") + 
-  xlab("Size of number in email")
+  labs(
+    title = "Distribution of the number of characters in an email \n based on the size of the number in the email", 
+    x = "Size of number in email", 
+    y = "Number of characters"
+  )
 ```
+
 
 
 
@@ -357,31 +346,41 @@ ggplot(email, aes(x=number, fill=number)) + geom_bar() +
 
 ## Using a color palette (recommended)
 
-The R Charts website has a guide on how to use the [paletteer](https://r-charts.com/color-palettes) package to access more color palettes. 
-[Some palettes require you to install other packages - like `ggsci` if you want the Star Trek uniform colors]{.aside}
+There are 3 types of palettes:
+
+* **_Sequential_** palettes are suited to ordered data that progress from low to high. Lightness steps dominate the look of these schemes, with light colors for low data values to dark colors for high data values.
+
+* **_Diverging_** palettes put equal emphasis on mid-range critical values and extremes at both ends of the data range. The critical class or break in the middle of the legend is emphasized with light colors and low and high extremes are emphasized with dark colors that have contrasting hues.
+
+* **_Qualitative_** palettes do not imply magnitude differences between legend classes, and hues are used to create the primary visual differences between classes. Qualitative schemes are best suited to representing nominal or categorical data.
+
+### R ColorBrewer
+One of the most common color pallet packages used. See the [full set of palettes available](https://r-graph-gallery.com/38-rcolorbrewers-palettes.html). 
+
+The function to use is `scale_fill_brewer` (or `scale_color_brewer`), with an argument specifying the palette name in quotes. 
 
 ```{r}
-ggplot(pen, aes(x=species, fill=species)) + geom_bar() +
-    scale_fill_paletteer_d("ggthemes::gdoc")
+library(RColorBrewer)
+ggplot(email, aes(x=number, fill=number)) + geom_bar() +
+    scale_fill_brewer(palette = "Dark2")
 ```
 
-Use `paleteer_d` for a discrete (categorical) pallette, and `paleteer_c` for a continuous palette. 
+### Viridis
 
-Some palettes require you to install other packages - such as `ggsci`. 
+`viridis` provide a series of color maps that are designed to improve graph readability for readers with common forms of color blindness and/or color vision deficiency. [Eight scales are available](https://sjmgarnier.github.io/viridisLite/reference/viridis.html), but `magma`, `inferno`, `plasma`, and `viridis` as defined in Matplotlib for Python. These color maps are designed in such a way that they will analytically be perfectly perceptually-uniform, both in regular form and also when converted to black-and-white. They are also designed to be perceived by readers with the most common form of color blindness. 
+
+If you are `fill`ing or `col`oring by a categorical variable, you'll use the corresponding `scale_fill_discrete` or `scale_color_discrete` function, and then pass the name of the palette with the number of levels needed as a function to the `palette` argument. 
 
 ```{r}
-ggplot(pen, aes(x=species, fill=species)) + geom_bar() +
-    scale_fill_paletteer_d("ggsci::uniform_startrek")
+library(viridisLite)
+ggplot(email, aes(x=number, fill=number)) + geom_bar() +
+    scale_fill_discrete(palette = magma(3))
 ```
 
 :::
 
 
 ## Multivariate plotting 
-
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+-+Lecture+10A+Multivariate+Plotting/1_xp1whb0f" target="_blank">Multivariate plotting video</a>
-:::
 
 So far we've only looked at how to plot 2 variables on the same plot. Let's up our game some. 
 
@@ -405,7 +404,7 @@ NCbirths %>%   # <1>
   filter(!is.na(habit)) %>% 
 ggplot(aes(x=weeks, y=weight, color = habit)) +  # <2>
          geom_point() + geom_smooth(se=FALSE) + 
-  theme_minimal() + scale_color_paletteer_d("ggthemes::colorblind") # <3>
+  theme_minimal() + scale_color_brewer(palette = "Set1") # <3>
 ```
 
 1. Starting with the `NCbirths` data set, I `select` the variables i want to plot, and then use `filter` to drop rows with missing values for `habit`. 

@@ -1,9 +1,11 @@
 ---
 title: "Homework 1"
-author: "Your name here"
-format:
-  html: default
-  pdf: default
+author: "YOUR NAME HERE"
+date: today
+format: pdf
+execute: 
+  warning: false
+  message: false
 ---
 
 Here's your chance to demonstrate that you can integrate the topics and skills you learned so far into a literate report. 
@@ -25,41 +27,156 @@ The first question is done for you as an example.
 
 ```
 
+2. What are the values after each statement in the following?
 
-1. List out the variable name and their corresponding data types for five different variables in the ames data set.
+```{r}
+(mass <- 47.5)            # a 
+(age  <- 122 )            # b
+(mass <- mass * 2.0)      # c 
+(age  <- age - 20)        # d
+(mass_index <- mass/age)  # e
+```
 
+a. `mass` =  
+b. `age` = 
+c. `mass` = 
+d. `age` = 
+e. `mass_index` = 
 
-
-2. How many observations does the ames data set have? How many variables? 
-
-
-
-3. Extract the variable that measures the overall condition of the house (`Overall.Cond`) by position (using bracket index notation `[]`), and by variable names (using `$` notation)
+3. Assign a numeric value to the variable `my_apples`, assign a different numeric value to the variable `my_oranges`. Add these two together and assign the result to the variable `my_fruit`. Print the result of `my_fruit` to the report.
 
 ```{r}
 
 ```
 
-4. What is the maximum number of Full bathrooms (`Full.Bath`) in this housing data set? 
+4. What is the data type of the variable `my_fruit`? 
 
 ```{r}
 
 ```
 
-5. Do any houses have more than 2 fireplaces (`Fireplaces`)? _Hint: Use the `summary()` function._
+5. Render this document then remove this question once you have confirmed that the PDF was created successfully. 
+
+# Vectors
+
+1.  Use the `class()` function to explore what happens when you have vectors of different data types. The first one has been done for you. Report your answer for each in a sentence below.
+
+```{r}
+num_only <- c(1,2,3,4)                    #a
+char_only <- c("a","b","c","d")           #b
+num_char <- c(1, 2, 3, "a")               #c
+num_logical <- c(1, 2, 3, TRUE)           #d
+char_logical <- c("a", "b", "c", TRUE)    #e
+tricky <- c(1, 2, 3, "4")                 #f
+```
+
+* a. The `num_only` vector contains __________, and it's class is __________
+* b. The `char_only` vector contains __________, and it's class is __________ 
+* c. The `num_char` vector contains __________, and it's class is __________
+* d. The `num_logical` vector contains __________, and it's class is __________
+* e. The `char_logical` vector contains __________, and it's class is __________. 
+* f. The `tricky` vector contains __________, and it's class is __________ 
+
+## Let's go to Vegas!
+
+2. Create three vectors (`weekday`, `poker`, `roulette`) using the `c()` operator to describe the following outcome. 
+
+* `weekday`: The 5 weekdays. Use these three letter codes: "mon", "tue", "wed", "thu", "fri." 
+* `poker`: 
+    - On Monday you won $125 
+    - Tuesday you lost $37
+    - Wednesday you won $18
+    - Thursday you lost $91
+    - Friday you won $221
+* `roulette`:
+    - On Monday you lost $18
+    - Tuesday you lost $45
+    - Wednesday you won $136
+    - Thursday you lost $321
+    - Friday you won $9
+
+_Hint: If I won $30 on monday, lost $20 on tuesday and broke even every other day, my vector would look like `c(30, -20, 0, 0, 0)`_
+
 ```{r}
 
 ```
 
-6. What is the average sale price (`price`) for houses sold in 2010? (`Yr.Sold`). Be sure to match the data type of your logical statement with the data type of `Yr.Sold`. The year should be written as 2010, not "2010". 
+3. Use the `sum()` function to calculate your net winnings in each game by the end of the week. 
+
 ```{r}
 
 ```
 
-::: {.callout-danger}
-## Challenge Questions
 
-What is the median _price per square foot_ of houses sold in _2008 or later_?
-:::
 
+4. Add the daily results of both vectors together, then calculate your net gain over the weekend. Did you come out ahead?
+
+```{r}
+
+```
+
+
+5. On which days did you make money on poker? _Hint: subset the `weekday` vector using a logical statement about the `poker` vector_
+```{r}
+
+```
+
+
+6. On which days did you do better on poker than roulette? _Hint: subset the `weekday` vector using a logical comparison between the individual game vectors_
+
+```{r}
+
+``` 
+
+
+7. Render this document then remove this question once you have confirmed that the PDF was created successfully. 
+
+
+# Data Frames
+
+Run the code chunk below to read in the Ames data set from the web. This data set is on all residential home sales in Ames, Iowa between 2006 and 2010. The data set contains many explanatory variables on the quality and quantity of physical attributes of residential homes in Iowa sold between 2006 and 2010. Most of the variables describe information a typical home buyer would like to know about a property (square footage, number of bedrooms and bathrooms, size of lot, etc.). A detailed discussion of variables can be found in the original paper: De Cock D. 2011. Ames, Iowa: Alternative to the Boston Housing Data as an End of Semester Regression Project. Journal of Statistics Education; 19(3).
+
+```{r}
+ames <- openintro::ames
+```
+
+
+1. Use the `names()` and `class()` functions to identify the data types for three different variables in the ames data set. List the variable names and data types in a bulleted list. 
+
+```{r}
+
+```
+
+
+2. How many observations does the ames data set have? How many variables? Explain where you got this information from. 
+
+```{r}
+
+```
+
+
+3. Extract the variable that measures the overall condition of the house (`Lot.Area`) by position (using bracket index notation `[]`), and by variable names (using `$` notation).
+
+```{r}
+
+```
+
+
+4. What is the maximum number of Full bathrooms (`Full.bath`) in this housing data set? 
+
+```{r}
+
+```
+
+5. Do any houses have more than 2 fireplaces (`Fireplaces`)? _Hint: Use the `summary()` function and examine the output to answer this question._
+```{r}
+
+```
+
+
+6. What is the average sale price (`price`) for houses sold in 2010? (`Yr.Sold`). _Hint: Subset the data on the correct year first, then calculate the mean of the variable of interest. Be sure to match the data type of your logical statement with the data type of `Yr.Sold`. The year should be written as 2010, not "2010"._ 
+
+```{r}
+
+```
 

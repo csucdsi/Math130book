@@ -1,8 +1,10 @@
-# Efficient data management {#sec-dplyr}
+---
+format: 
+  html:
+    toc-depth: 3
+---
 
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Introduction/1_r7jhnwgd" target="_blank">Introduction Video</a>
-:::
+# Efficient data management {#sec-dplyr}
 
 When working with data you must:
 
@@ -25,7 +27,7 @@ After completing this lesson students will be able to
 * Explain the difference between a `data.table` and a `tibble`
 * Build and execute a chain of command to accomplish a data management task
 * Extract certain rows using `select`
-* Reorganize the order using `relocate` and rename using `rename`
+* Reorder columns using `relocate`, sort using `arrange`, and rename using `rename`
 * Create new variables using `mutate` and `case_when`
 * Subset rows based on a logical criteria using `filter`
 * Create summary statistics using `group_by` and `summarize`
@@ -59,10 +61,6 @@ The output has been trimmed to something more reasonable for our viewing pleasur
 
 ## Basic verbs
 
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Basic+Verbs/1_ndesnisk" target="_blank">Lesson Video</a>
-:::
-
 The `dplyr` package contains many functions to perform data manipulation "actions", also called verbs. We will look at the following verbs: 
 
 * `filter()`: Returns a subset of the rows
@@ -70,6 +68,7 @@ The `dplyr` package contains many functions to perform data manipulation "action
 * `rename()`: Renames the variables listed
 * `mutate()`: Adds columns from existing data
 * `relocate()`: Moves the order of the columns 
+* `arrange()`: Sorts the rows by the value of a variable
 * `case_when()`: A useful expansion of `ifelse`
 * `summarise()`: Reduces each group to a single row by calculating aggregate measures
 * `group_by()`: Groups a data set on a factor variable, such that all functions performed are then done on each level of the factor
@@ -169,7 +168,51 @@ summarise(flights,
 
 It may seem like a lot of code compared to base R functions such as `mean()`, `sum()` and `max()`, but we'll see how this is used in combination with grouping in the next section to easily create grouped summary statistics.  
 
-## Additional helper verbs
+### Arrange
+
+The `arrange()` function changes the order of the rows for the whole data set based on the value of the variable being sorted. 
+
+
+Lets use a smaller data set with fewer variables so it's easier to visualize. 
+
+```{r}
+flights2 <- select(flights, distance, origin, dep_delay)
+```
+
+#### Sort by one variable
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Sort flights based on distance, from shortest to longest. This is Ascending order.
+```{r}
+arrange(flights2, distance)
+```
+:::
+
+::: {.column width="50%"}
+To reverse the sort order, use `desc()`.  This is Decending order. 
+
+```{r}
+arrange(flights2, desc(distance))
+```
+:::
+
+::::
+
+#### Sort by two variables
+
+You can sort by more than one variable. Rows are ordered by the first variable, and ties are broken using the second variable.
+
+Here we sort flights first by origin airport, then by departure delay within each airport.
+
+```{r}
+arrange(flights2, origin, dep_delay)
+```
+
+:::{.callout-important title = "Avoid the base `sort` function"}
+There is a `sort` and `order` functions in base R, but they operate on a single vector only. They do _not_ keep all rows in a data frame together when sorting rows, so avoid using it. 
+:::
 
 ### Relocate
 
@@ -273,10 +316,6 @@ table(flights$delay_type, useNA="always")
 
 ## Grouped Operations  
 
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Grouped+Operations/1_w9x1kd5m" target="_blank">Introduction Video</a>
-:::
-
 The above verbs are useful, but they become really powerful when you combine them with the idea of "group by", repeating the operation individually on groups of observations within the dataset. In dplyr, you use the `group_by()` function to describe how to break a dataset down into groups of rows. You can then use the resulting object in exactly the same functions as above; they'll automatically work "by group" when the input is a grouped.
 
 Let's demonstrate how some of these functions work after grouping the flights data set by month. First we'll create a new data set that is grouped by month. 
@@ -309,10 +348,6 @@ summarise(by_airport,
 Seems like Laguardia (LGA) is the better airport for the least delays. 
 
 ## Chaining Operations 
-
-:::{.callout-warning icon=false appearance=minimal}
-<a href="https://media.csuchico.edu/media/MATH+130+Lecture+08A+Chaining+Operations/1_6xzk59i7" target="_blank">Introduction Video</a>
-:::
 
 :::{.callout-important title = "Same pipe, different symbol"}
 We've seen chaining before using the base R pipe `|>`. The `%>%` symbol is also called a pipe, but is only accessible after you load the `dplyr` package. They function the same. We show both here because you will see both used out in the wild and need to know they are interchangeable. 

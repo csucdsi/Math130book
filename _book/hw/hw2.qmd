@@ -1,112 +1,67 @@
 ---
 title: "Homework 2"
-author: "PUT YOUR NAME HERE"
-date: "DATE"
-output:
-  pdf_document: default
-  html_document: default
+author: "YOUR NAME HERE"
+date: today
+format: pdf
+execute: 
+  warning: false
+  message: false
 ---
 
 # Introduction
 
-In this homework assignment, you will be working with data and managing factors. The data sets you will use are, `ncbirths` and `smoking` data set which come part of the `openintro` package.
+In this assignment you will practice summarizing variables, creating new variables, handling missing data, and managing factor variables.  You will work with two data sets from the `openintro` package
 
-The code chunk below sets some code chunk options (using `opts_chunk` from the `knitr` package) to make your knitted report output more readable. I encourage you to play around with these options to learn how they work. 
-
-```{r, warning=FALSE, message=FALSE}
-knitr::opts_chunk$set(warning=FALSE, message=FALSE, fig.height=4, fig.width=5, fig.align='center') 
-library(dplyr)
+```{r}
 library(forcats)
+library(gtsummary)
 ncbirths <- openintro::ncbirths
 smoking <- openintro::smoking
 ```
 
-# Working with Data
+# Part I: Working with Data Frames (NC Births)
 
-This section we will use `ncbirths` data set. 
+## A. Summarizing variables
 
-1. Calculate the mean age of the mothers (`mage`).
-```{r}
-
-```
-
-2. Pregnancies last on average 38 weeks. Recode the `weeks` variable to change all records where `weeks` is greater than 38, to equal 38. That is, for all record where `weeks>38`, change the value of `weeks` to `<- 38`.
-
-```{r}
-
-```
-
-3. Use the `summary` function to calculate summary statistics on the fathers age (`fage`). Round to 3 digits using the `digits=` argument. Don't forget that you can look at the bottom of the help for summary (`?summary`) file for examples on how to use this function.  
-```{r}
-
-```
-
-4. Use the `is.na()` function to create a new variable called `missing_gained` on the `ncbirths` data set that identifies if data on the `gained` variable is missing.
-
-```{r}
-
-```
-   
-5. What percent of records are missing data on weight gained during pregnancy? There are several ways you can calculate this! Explain what your process, and answer the question in a full sentence. 
-
-```{r}
-
-```
+1. Calculate the `mean` and `median` of the father’s age (`fage`), removing missing values as needed.
 
 
-6. Use the `ifelse()` function to dichotomize the `weeks` variable at it's mean where records with values over the mean are labeled `AboveAve` and records with values below the mean are labeled `UnderAve`. Call this new variable `week_ave`. (_Hint: Calculate the mean value for the variable `weeks`, then use that number in the logical statement part of the `ifelse` function._)
 
-```{r}
-
-```
-
-7. Create a frequency table for your new variable (`week_ave`) in the previous question. Then use the pipe operator `%>%` to add on the function `prop.table()` at the end. What does the `prop.table()` function do? 
-
-```{r}
-
-```
+2. Pregnancies typically last about 38 weeks. _Update_ the existing variable `weeks` so that any value greater than 38 is set to 38. That is, for all record where `weeks>38`, change the value of `weeks` to `<- 38`. Display the `summary` of `weeks` to confirm that the maximum value is now 38.
 
 
-# Wrangling Factors 
 
-In this section, you will use `smoking` data set.
-
-1. Examine the variable `ethnicity` using `fct_count`. Then, collapse levels of that variable into a smaller number of factors using `fct_collapse`. _Hint: Create a new factor variable as part of the `smoking` data set (i.e smoking$ethnicity_new)._
-
-* "NA" = c("Refused","Unknown")
-* Asian = c("Chinese", "Asian")
-
-```{r}
-
-```
-
-2. Create a two-way `table` of `ethnicity` against `ethnicity_new` to confirm that this new factor variable was created correctly.
-
-```{r}
-
-```
-
-3. Using `fct_recode`, create a new factor variable `recode_ethnicity` from `ethnicity_new` with labels "A"(Asian), "B"(Black), "M"(Mixed), "W"(White). Make sure you create this new variable as part of the `smoking` data set. (i.e. `smoking$recode_ethnicity <-`) 
-
-```{r}
-
-```
+3. Create a new logical variable called `missing_gained` that indicates whether the variable `gained` is missing. Show a table of your result. 
 
 
-4.  Manually reorder the level of `ethnicity_new` variable in an increasing order using `fct_relevel`.
 
-```{r}
-
-```
+4. Calculate the **proportion** of records with missing values in `gained` using **two different methods**.
 
 
-# Challenge Questions (1 point extra credit)
+5. Use the `ifelse` function to create a new variable called `term_status` where pregnancies with `weeks >= 37` are labeled `"term"` and pregnancies with `weeks < 37` are labeled `"preterm"`. Create a frequency table to verify your result.
 
-1. Within the `smoking` data set, define a new variable called `nationality_new` that collapses the levels "Unknown" and "Refused" from the `nationality` variable into a single level named "NA". Manually reorder the `nationality_new` variable in increasing order, then print a table with two variables: `nationality_new` and `smoke`.
-_Hint: You can put two arguments in a table function. See ?table for details._
 
-```{r}
+# Part II: Working with Factors (Smoking Data)
 
-```
+1. Use `fct_count()` to examine the distribution of the variable `ethnicity`.
+
+2. Create a new factor variable `ethnicity_collapsed` by modifying the variable `ethnicity` such that:
+
+- `"Refused"` and `"Unknown"` are dropped
+- `"Asian"` and `"Chinese"` are combined into `"Asian"`
+- all other levels remain unchanged  
+
+Verify your recode using a two-way table comparing the old `ethnicity`and new variables.
+
+
+3. Using `ethnicity_collapsed`, create a new variable called `ethnicity_code` with the following labels: `"A"` for Asian, `"B"` for Black, `"M"` for Mixed, `"W"` for White. Display a frequency table using `tbl_summary` of the new variable.
+
+
+
+4. Using the frequencies from the table above, reorder the levels of `ethnicity_collapsed` from _least frequent to most frequent_.  Print a table of the reordered factor to confirm the new order.
+
+
+5. Create a new factor variable called `nationality_lumped` from `nationality` that keeps the four most frequent nationalities and combines all remaining levels into a single category called "Other". Display a table of the new variable that includes both the frequency and percent (n%)
+
 
 

@@ -1,9 +1,12 @@
 ---
-title: "Working with Data Frames"
-author: "YOUR NAME HERE"
+title: Working with Data Frames
+author: YOUR NAME HERE
 date: today
 format: pdf
-execute: 
+execute:
+  fig-height: 4
+  message: false
+  warning: false
   error: true
 ---
 
