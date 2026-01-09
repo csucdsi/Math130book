@@ -142,11 +142,10 @@ email <- read.table( # <1>
 
 :::{.callout-important title = "Trust but verify"}
 Let's use the `head` function to look at the imported data, ensuring the variable names are intended, and that each column has data in it. 
+:::
 ```{r}
 head(email)
 ```
-
-:::
 
 :::{.callout-important title = "Errors!"}
 What happens if you forget to include the arguments for `header` or `sep`? Try that now and discuss what happened. 

@@ -454,9 +454,12 @@ See each tab on how to compare the distribution of `sex` within each `species`. 
 
 #### `ggplot2`
 
-Put `species` on the x-axis and `fill` by `sex`.
+We have to pre-aggregate the data to calculate the grouped percents before we create the plot. Notice how this changes the variable names. Put `species` (`Var1`) on the x-axis,  `fill` by `sex` (`Var2`), and `weight` the `Freq` variable. I also changed the y axis label here to make it more clear that the heights of the bars are a percent.
 ```{r}
-ggplot(pen, aes(x=species, fill=sex)) + geom_bar(position = "dodge")
+pen.table <- table(pen$species, pen$sex) |> as.data.frame()
+
+ggplot(pen.table, aes(x=Var1, fill=Var2, weight = Freq)) + 
+  geom_bar(position = "dodge")  + ylab("Proportion")
 ```
 
 #### `sjPlot`
@@ -472,7 +475,8 @@ Modify the code above to create a plot to compare the distribution of species wi
 
 **ggplot2 solution**
 ```{r}
-ggplot(pen, aes(x=sex, fill=species)) + geom_bar(position = "dodge")
+ggplot(pen.table, aes(x=Var2, fill=Var1, weight = Freq)) + 
+  geom_bar(position = "dodge")  + ylab("Proportion")
 ```
 
 **sjPlot solution**
