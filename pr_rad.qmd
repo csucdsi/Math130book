@@ -1,0 +1,16 @@
+# How to conduct Peer Reviews
+
+On the project due date, Canvas will automatically assign peer reviews to everyone that has submitted the project on time. 
+
+[See this lovely help page on how to find and complete peer reviews in Canvas.](https://extensionhelpcenter.ucsd.edu/hc/en-us/articles/17732032984973-How-to-view-and-complete-a-Peer-Review-assignment-Students)
+
+
+1. Use the rubric to assign a score in each area
+2. Using the commenting feature provide 4 comments for each project.
+    - Two positive: What specific features did they include that you liked or found helpful?
+    - Two improvements: What can they do different or better next time? Did you find a bug in their code?
+
+
+## Late submissions
+
+If you submit your EDA late, I will have to manually assign you projects to review. This may take a day or two, please feel free to ask and remind me if you are waiting too long.

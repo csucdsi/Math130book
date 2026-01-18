@@ -37,4 +37,9 @@ Right click and save these files in your `Math 130/notes` or `Math 130/hw` folde
 🚧 Watch [Dr. Lytals help video](https://media.csuchico.edu/media/MATH130%20-%20Extra%20Video%20(Jan%2029)/1_9nsoxdy9)
 :::
 
+## Exploratory Data Analysis
+
+* [Project instructions](project.qmd)
+
+
  
