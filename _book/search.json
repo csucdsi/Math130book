@@ -795,6 +795,17 @@
     ]
   },
   {
+    "objectID": "assignments.html#exploratory-data-analysis",
+    "href": "assignments.html#exploratory-data-analysis",
+    "title": "Assignment Files",
+    "section": "Exploratory Data Analysis",
+    "text": "Exploratory Data Analysis\n\nProject instructions",
+    "crumbs": [
+      "Appendix",
+      "Assignment Files"
+    ]
+  },
+  {
     "objectID": "help.html",
     "href": "help.html",
     "title": "Seeking Help",
@@ -876,18 +887,7 @@
     "href": "project.html",
     "title": "Project",
     "section": "",
-    "text": "Instructions\nTime to put everything you learned in this class into action. In an exploratory data analysis (EDA) you are just looking at (exploring) the data and learning about the data and possible relationships between variables. This is not a formal statistical analysis, you cannot make any claims about groups being statistically different. This is just descriptive. You are allowed and encouraged to hypothesize why you observe certain relationships or data characteristics, just be sure not to draw any conclusions from the data.\nUsing your data set of choice, pose a brief research question that explores the relationship between 2-3 variables.\nUse markdown headers to make the following sections\nAll descriptions (univariate and bivariate) must be done using graphics, summary statistics, and words.\nThis is a very vague set of instructions for a reason. I want you to explore and choose a pair of variables that you find interesting. Create tables, graphics, grouped summary statistics (mean of the continuous variable across levels of the categorical variable). Whatever you need to do to understand the relationship between these two measures.\nUse the grading rubric at the end of this document for guidance as to what you should present, in what order, and level of detail you need to present.",
-    "crumbs": [
-      "Appendix",
-      "Project"
-    ]
-  },
-  {
-    "objectID": "project.html#instructions",
-    "href": "project.html#instructions",
-    "title": "Project",
-    "section": "",
-    "text": "Introduction: A short introduction/description of the data.\n\nSpecifically mention the 2-3 variables you are going to explore.\nWhat is your research question? What are you interested in finding out more about?\n\nUnivariate Exploration: Describe each of the variables under consideration.\n\nThis means calculate some summary statistics (N(%) or mean(sd)) and make a graphic\n\nBivariate Exploration: Comparison between two variables of interest.\n\nCalculate grouped summary statistics as appropriate. This is often the most often forgotten part\nYou can go further and explore more than two variables at a time using paneling, but be sure to explain what you learn from each graph.\n\nConclusion: What did you find? If you had a prior hypothesis, does the data seem to support it? Remember this is NOT a statistical analysis.",
+    "text": "Instructions\nTime to put everything you learned in this class into action. In an exploratory data analysis (EDA) you are just looking at (exploring) the data and learning about the data and possible relationships between variables. This is not a formal statistical analysis, you cannot make any claims about groups being statistically different. This is just descriptive. You are allowed and encouraged to hypothesize why you observe certain relationships or data characteristics, just be sure not to draw any conclusions from the data.\nUsing your data set of choice, pose a brief research question that explores the relationship between 2-3 variables.\nUse markdown headers to make the following sections\nThis is a very vague set of instructions for a reason. I want you to explore and choose a pair of variables that you find interesting. Create tables, graphics, grouped summary statistics (mean of the continuous variable across levels of the categorical variable). Whatever you need to do to understand the relationship between these two measures.\nUse the grading rubric at the end of this document for guidance as to what you should present, in what order, and level of detail you need to present.",
     "crumbs": [
       "Appendix",
       "Project"
@@ -898,29 +898,7 @@
     "href": "project.html#data",
     "title": "Project",
     "section": "Data",
-    "text": "Data\nYou have a choice here. If you are currently working on some data that you would like to explore, talk with your instructor to get your data set approved. As long as it has more than a few variables in it, and at least 30 observations it should be fine.\nIf you do not have your own data, you can choose from one of the following data sets, all of which can be downloaded from the Data page of Dr. D’s teaching course website. Here are some common choices:\n\nHIV: Data on adolescent children living with HIV positive parents.\nDepression: Level of depression (cesd), health care, and demographic characteristics.\nHigh School and Beyond: Educational, vocational, and personal development of elementary and high school students.\nPolice Shootings: Characteristics of individuals killed by police in 2015.\n\nAny other data sets require instructor approval. Data sets such as the plants or arm strength data sets are insufficiently complex for this project. Also you can’t use the dsmall, diamonds, or NCbirths data sets because we’ve used them too much already.",
-    "crumbs": [
-      "Appendix",
-      "Project"
-    ]
-  },
-  {
-    "objectID": "project.html#guidelines",
-    "href": "project.html#guidelines",
-    "title": "Project",
-    "section": "Guidelines",
-    "text": "Guidelines\n\nRender early and often. As often as every time you include a new R code chunk.\nSpell check your report prior to submission using RStudio.\nRe-read your report and edit for clarification and removing duplicated information.\nRemove superfluous code and output (i.e. printing a data set to the screen).\nThis is to be independent work. Papers that are too similar will receive no credit.\nLook at the grading rubric to help you decide the level of detail required.",
-    "crumbs": [
-      "Appendix",
-      "Project"
-    ]
-  },
-  {
-    "objectID": "project.html#scoring-rubric",
-    "href": "project.html#scoring-rubric",
-    "title": "Project",
-    "section": "Scoring Rubric",
-    "text": "Scoring Rubric\n\nreview these with others. we’re not really teaching how to interpret.\n\nThe criteria below is what you will be graded on.\n\n\n\n\n\n\n\n\n\nCriteria\nNovice\nCompetent\nProficient\n\n\n\n\nData Description: Provide a description of the data set and the variables of interest.\nThere is no description or the description is a copy of the help file.\nThere is a minor description of the data but not enough to understand what is being measured or compared.\nThe data description is clear and concise, it is clear to me what data is being analyzed and where it was obtained.\n\n\nUnivariate Description: Fully describe the distribution of each variable by itself\nThere are no numerical or graphical summaries provided.\nOnly numeric or only graphical summaries were created, but no textual description.\nThe variable was fully described using both numeric and graphical summary methods. This information was summarized below the output in a paragraph form.\n\n\nBivariate Comparison: Describe the relationship between the two chosen variables.\nNo comparison was made, or the variables were compared, but inappropriate graphics or summary statistics were created.\nThe variables were compared using appropriate graphical methods and grouped summary statistics were created, but nothing was discussed.\nThe variables were compared using appropriate graphical methods and a short textual explanation of what the summaries showed.\n\n\nOrganization / Grammar: How well does the report read? How well organized is it? Was it checked for grammar and spelling mistakes?\nOnly R code, output is present. There is no discussion of results. Tons of extra R code that is not relevant to the discussion is present. Markdown headers were not used.\nAn attempt was made to discuss the results, but the explanations are not in a report format or there are some large grammar and/or spelling problems. Some R code that is not relevant to the analysis question at hand is being displayed. Markdown headers were used to create sections.\nThe report was spell written in well edited, full English sentences, and spell checked prior to submission. The report flowed well and followed the required order of discussion topics with markdown headers used successfully.",
+    "text": "Data\nYou have a choice here. If you are currently working on some data that you would like to explore, talk with your instructor to get your data set approved. As long as it has more than 4 variables in it, and at least 30 observations it should be fine.\nIf you do not have your own data, you can choose from one of the following data sets, all of which can be downloaded from the Data page of Dr. D’s teaching course website.\nNote that you can’t use the following data sets because we’ve used them too much already: diamonds, NCbirths, email, or penguins.",
     "crumbs": [
       "Appendix",
       "Project"
