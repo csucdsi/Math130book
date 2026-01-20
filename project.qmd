@@ -51,7 +51,7 @@ Note that you can't use the following data sets because we've used them too much
 
 After the submission deadline, your analysis projects will be randomly assigned to two other people to peer review and score. This means you will also score and provide feedback on 2 reports. Your instructor will also score all projects for your class section.
 
-[See here on how to do peer reviews for Dr. D](https://math130.netlify.app/pr_rad.qmd)
+[See here on how to do peer reviews for Dr. D](https://math130.netlify.app/pr_rad.html)
 
 
 # Grading
