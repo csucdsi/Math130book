@@ -17,6 +17,7 @@ Follow the instructions appropriate for your operating system.
 
 :::{.callout-warning title = "Tablet / iPad / Chromebook" icon=false collapse=true appearance=minimal}
 
+<!---
 If you are using a tablet, Chromebook or otherwise do not have a computer that you can install programs on, you can use Posit Cloud for this class.
 
 -   Make a **Cloud FREE** account at [https://posit.cloud/plans/free](https://posit.cloud/plans/free)
@@ -24,6 +25,17 @@ If you are using a tablet, Chromebook or otherwise do not have a computer that y
 -   Then go to @sec-nav_Rstudio to learn how to navigate RStudio.
 
 The free account allows for 25 project hours/month, which may not be enough for this class. If you run into time limits or you are using this for another class you will have to upgrade to the **Cloud Student** plan which is $5/month.
+
+--->
+
+If you are using a tablet, Chromebook or otherwise do not have a computer that you can install programs on, you can use the Chico State JupyterHub for this class.
+
+* Go to [https://chicostate.jupyter.cal-icor.org](https://chicostate.jupyter.cal-icor.org) and sign in with your Chico state account. 
+    - You may have to click "Launch Server"
+* On the "Launcher" page you will see all the programming resources available to you. Click on "RStudio"
+
+You now have your own personal R Studio server to work in. You will have to upload homework script files and download compiled PDF assignment to your computer to submit your work. 
+    
 
 Using the cloud is easier to initially setup, but having your own installation on your computer ensures that
 

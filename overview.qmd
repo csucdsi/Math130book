@@ -147,6 +147,6 @@ When giving instructions on which keys to press, buttons are shown as boxes like
 
 ## Getting and Submitting Assignments
 
-All assignment files can be found in @sec-assignments. Submission instructions vary by instructor so check your syllabus for details.  
+All assignment files can be found in @sec-assignments . Submission instructions vary by instructor so check your syllabus for details.  
 
 
