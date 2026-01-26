@@ -13,9 +13,8 @@ This lesson is designed to explain the basics of how R works as a programming la
 
 ## R as a calculator 
 
-:::{.callout-tip title = "👉 Your Turn" icon=false}
+#### Your Turn
 Type the following into a new code chunk in your notes, fix the mistake and run the code chunk
-:::
 
 ```{r}
 2 + 5*(8^3)- 3*log(10)
@@ -36,7 +35,7 @@ weight_kg <- 55
 
 `<-` is the assignment operator. It assigns values on the right to objects on the left. So, after executing `x <- 3`, the value of `x` is `3`. 
 
-:::{.callout-note title = "Names are important"}
+#### Names are important
 
 Objects can be given any name such as `x`, `current_temperature`, or `subject_id`. However there are some naming guidelines you need to be aware of.
 
@@ -50,8 +49,6 @@ Objects can be given any name such as `x`, `current_temperature`, or `subject_id
 * It's best to not use other function names (e.g., `c`, `T`, `mean`, `data`, `df`, `weights`)
   because these already tend to be in use by different parts of R. 
 * See [Google's](https://google.github.io/styleguide/Rguide.xml) style guide for more information. 
-
-:::
 
 When assigning a value to an object, R does not print anything. You can force R to print the value by using parentheses or by typing the object name:
 
@@ -89,7 +86,7 @@ weight_kg <- 100
 
 R executes code in top-down order. So what happens on line 10 occurs before line 11. What do you think is the current content of the object `weight_lb`? 126.5 or 220?
 
-:::{.callout-note title = "Comment your code"}
+#### Comment your code
 The comment character in R is `#`, anything to the right of a `#` in a script will be ignored by R. It is useful to leave notes, and explanations in your scripts as demonstrated earlier.
 
 ```{r}
@@ -97,8 +94,6 @@ weight_kg <- 57.5 # enter the weight in kg
 weight_lb <- 2.2 * weight_kg # convert it to lbs
 # comments can go nearly anywhere in a code chunk
 ```
-
-:::
 
 ## Functions and their arguments
 
@@ -127,13 +122,13 @@ In the **Arguments** section the help file defines what each argument does.
 
 Above, we called `round()` with just one argument, `pi`, and it has returned the value `3`.  That's because the default is to round to the nearest whole number. We see that if we want a different number of digits, we can type `digits = 2` or however many we want.
 
-:::{.callout-tip title = "👉 Your Turn" icon=false}
+#### Your Turn
 Use the example in the help file to round the digits of pi to 2 digits.
 
 ```{r}
 round(pi, digits = 2)
 ```
-:::
+
 
 If you provide the arguments in the exact same order as they are defined you don't have to name them:
 
@@ -173,6 +168,7 @@ im_a_number*2
 Letters, words, and entire sentences can also be stored in objects. These are then called **character** or **string** variables. We can't do math on character variables, and if we try to R gives us an error message. 
 
 ```{r}
+#| error: true
 (im_a_character <- "dog")
 class(im_a_character)
 im_a_character*2
@@ -201,7 +197,7 @@ sqrt(4)==2
 
 The double equal sign `==` is a test for numerical equality between the left and right hand sides, and should not be confused with the single `=` sign, which performs variable assignment (similar to `<-`).
 
-We will see how to use these logical statements to do things such as subsetting data and creating new variables in @sec-cond_subset and beyond. 
+We will see how to use these logical statements to do things such as subsetting data and creating new variables in a few secdtions.  
 
 ### Negating Boolean values using "!"
 
@@ -355,15 +351,14 @@ A data frame is the representation of data in the format of a table where the co
 
 
 
-For this part of the lesson we will use a data set called `diamonds` that comes with the `ggplot2` package that you installed as part of @sec-packages. In a later lesson we will learn how to import data from an external file into R. We can load the `diamonds` data set into our global environment by typing 
+For this part of the lesson we will use a data set called `diamonds` that comes with the `ggplot2` package that you installed earlier. In a later lesson we will learn how to import data from an external file into R. We can load the `diamonds` data set into our global environment by typing 
 
 ```{r}
 diamonds <- ggplot2::diamonds
 ```
 
-::: {.callout-tip title="Look at your data often"}
+#### Look at your data often
 To see the raw data values, click on the square spreadsheet icon to the right of the data set name in the top right panel of RStudio (circled in green in the image below).
-:::
 
 This area also tells us a little bit about the data set, specifically that it has 53,940 rows and 10 variables. 
 
