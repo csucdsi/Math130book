@@ -20,7 +20,7 @@ ncbirths <- openintro::ncbirths
 
 ## Summarizing data
 
-Two common methods used to summarize data are frequnecy tables for categorical variables (e.g. nominal, ordinal), and summary statistics for numeric (continuous or discrete) variables.
+Two common methods used to summarize data are frequency tables for categorical variables (e.g. nominal, ordinal), and summary statistics for numeric (continuous or discrete) variables.
 
 ### Frequency Tables 
 
@@ -32,7 +32,7 @@ You can create a basic frequency table by using the `table()` function.
 _______(ncbirths$lowbirthweight)
 ```
 
-Relative frequencies (proportions or percentages) are calculated by putting the results of the `table` function inside the `prop_table` function.
+Relative frequencies (proportions or percentages) are calculated by putting the results of the `table` function inside the `prop.table` function.
 
 ```{r}
 _______(
@@ -64,7 +64,7 @@ min(ncbirths$mage)
 
 The `gtsummary` package provides a single function `tbl_summary` to create a really nicely formatted summary table for both quantitative and categorical data types.
 
-The first argument is the data set, then you `include` the vector of variable that you want to display in the table. By default the sample size *n* and the relative percent are presented for categorical data, and the median, with first and third quartiles shown for quantitiatve data.
+The first argument is the data set, then you `include` the vector of variable that you want to display in the table. By default the sample size *n* and the relative percent are presented for categorical data, and the median, with first and third quartiles shown for quantitative data.
 
 ```{r}
 tbl_summary(ncbirths, 
@@ -174,10 +174,11 @@ The first and third values are TRUE - so they are **not** missing.
 
 #### Hide the NA bar
 
-We can use this tactic to fix that barchart from above. Wrap `!is.na()` around the `premie` variable in the `ggplot` code to create a barchart that does not have a bar for missing values.
+We can use this tactic to fix that barchart from above. We create a subset of the `ncbirths` data set that only contains non-missing values for `premie`, and then pass that into the plot function. 
 
 ```{r}
-ggplot(ncbirths, aes(_______(premie))) + geom_bar()
+_______ <- _______[_______(ncbirths$premie), ]
+ggplot(_______, aes(premie)) + geom_bar()
 ```
 
 ## Data management

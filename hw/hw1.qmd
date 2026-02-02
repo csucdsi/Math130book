@@ -162,7 +162,7 @@ ames <- openintro::ames
 ```
 
 
-4. What is the maximum number of Full bathrooms (`Full.bath`) in this housing data set? 
+4. What is the maximum number of Full bathrooms (`Full.Bath`) in this housing data set? 
 
 ```{r}
 

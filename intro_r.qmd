@@ -370,13 +370,13 @@ weight_KG[3]
 
 ### Conditional subsetting {#sec-cond_subset}
 
-Another common way of subsetting is by using a logical vector. `TRUE` will select the element with the same index, while `FALSE` will not. Typically, these logical vectors are not typed by hand, but are the output of other functions or logical tests such as: 
+Another common way of subsetting is by using a logical vector. 
 
 ```{r}
-weight_KG > .5  # returns TRUE or FALSE depending on which elements that meet the condition
+weight_KG > 1  # Returns TRUE or FALSE for each element in the vector
 ```
 
-We can use this output to select elements where the value of that logical statement is TRUE. For instance, if you wanted to select only the values where weight in kilograms is above 1 we would type:
+We then use this output to select elements where the value of that logical statement is TRUE. For instance, if you wanted to select only the values where weight in kilograms is above 1 we would type:
 
 ```{r}
 weight_KG[weight_KG > 1]
@@ -392,7 +392,7 @@ weight_KG[weight_KG < 1 | weight_KG > 5]
 
 We can also use this technique to use the values in one vector to subset the rows in a _different_ vector. 
 
-**Animals that weigh between .1 and 5kg**
+**Which animals weigh between .1 and 5kg?**
 ```{r}
 animals[weight_KG >= .1 & weight_KG <= 5]
 ```
