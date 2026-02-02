@@ -1005,14 +1005,14 @@ Comparison Symbols
 </section>
 <section id="sec-cond_subset" class="level3" data-number="3.5.4">
 <h3 data-number="3.5.4" class="anchored" data-anchor-id="sec-cond_subset"><span class="header-section-number">3.5.4</span> Conditional subsetting</h3>
-<p>Another common way of subsetting is by using a logical vector. <code>TRUE</code> will select the element with the same index, while <code>FALSE</code> will not. Typically, these logical vectors are not typed by hand, but are the output of other functions or logical tests such as:</p>
+<p>Another common way of subsetting is by using a logical vector.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb79" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>weight_KG <span class="sc">&gt;</span> .<span class="dv">5</span>  <span class="co"># returns TRUE or FALSE depending on which elements that meet the condition</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>weight_KG <span class="sc">&gt;</span> <span class="dv">1</span>  <span class="co"># Returns TRUE or FALSE for each element in the vector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>[1] FALSE FALSE  TRUE  TRUE</code></pre>
 </div>
 </div>
-<p>We can use this output to select elements where the value of that logical statement is TRUE. For instance, if you wanted to select only the values where weight in kilograms is above 1 we would type:</p>
+<p>We then use this output to select elements where the value of that logical statement is TRUE. For instance, if you wanted to select only the values where weight in kilograms is above 1 we would type:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb81" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>weight_KG[weight_KG <span class="sc">&gt;</span> <span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1028,7 +1028,7 @@ Comparison Symbols
 </div>
 </div>
 <p>We can also use this technique to use the values in one vector to subset the rows in a <em>different</em> vector.</p>
-<p><strong>Animals that weigh between .1 and 5kg</strong></p>
+<p><strong>Which animals weigh between .1 and 5kg?</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb85" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>animals[weight_KG <span class="sc">&gt;=</span> .<span class="dv">1</span> <span class="sc">&amp;</span> weight_KG <span class="sc">&lt;=</span> <span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

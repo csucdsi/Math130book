@@ -105,9 +105,9 @@ In contrast to `ggplot2`'s common starter code and different `geom`etries, the  
 ________(pen, x="________")
 ```
 
-:::{.callout-important title = "Variables names in quotes"}
+**Variables names in quotes**
 This is a feature of `ggpubr` functions - variable names are always in quotes. 
-:::
+
 
 ### Density curves
 
@@ -344,9 +344,9 @@ ________(________, include = "species", by = "sex", percent = "________")
 
 21.9% of all penguins are Adelie females, 18.3% of all penguins are male Gentoo's. 
 
-:::{.callout-note title = "Comparing percentages"}
+**Comparing percentages**
+
 More often than not, we want to compare percents of one group -- within each level of the other group. For example is the male to female ratio the same for each species? 
-:::
 
 ### Row percents
 
@@ -401,9 +401,9 @@ Sometimes pictures are better than tables, so let's try to apply the same `fill`
 ggplot(pen, aes(x=________, fill=________)) + ________
 ```
 
-:::{.callout-important title = "Stacked barcharts are the ggplot2 default"}
+**Stacked barcharts are the ggplot2 default**
 Stacked barcharts are generally only useful when comparing percents out of a whole. To get the correct view you can add a `position = "fill"` argument to the `geom_bar()` layer. 
-:::
+
 
 ```{r}
 ggplot(pen, aes(x=species, fill=sex)) + 
@@ -465,7 +465,7 @@ plot_xtab(x = ________, grp = ________, show.total = "false",
           ________)
 ```
 
-:::{.callout-tip title = "👉 Your Turn" icon=false}
+**Your Turn**
 Modify the code above to create a plot to compare the distribution of species within each sex. 
 
 **ggplot2 solution**
@@ -477,7 +477,7 @@ Modify the code above to create a plot to compare the distribution of species wi
 ```{r}
 
 ```
-:::
+
 
 
 

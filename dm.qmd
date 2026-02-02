@@ -34,7 +34,7 @@ This first code chunk loads the `ggplot2` package so we can access plotting func
 
 ## Summarizing data
 
-Two common methods used to summarize data are frequnecy tables for categorical variables (e.g. nominal, ordinal), and summary statistics for numeric (continuous or discrete) variables.
+Two common methods used to summarize data are frequency tables for categorical variables (e.g. nominal, ordinal), and summary statistics for numeric (continuous or discrete) variables.
 
 ::: {layout-ncol="2"}
 ![An illustration of a chick, with text "Continuous - measured data, can have infinite values within possible range. I am 3.1" tall, I weight 34.16 grams."](img/numeric_data.png){width="50%"}
@@ -52,7 +52,7 @@ You can create a basic frequency table by using the `table()` function.
 table(ncbirths$lowbirthweight)
 ```
 
-Relative frequencies (proportions or percentages) are calculated by putting the results of the `table` function inside the `prop_table` function.
+Relative frequencies (proportions or percentages) are calculated by putting the results of the `table` function inside the `prop.table` function.
 
 ```{r}
 prop.table(
@@ -202,13 +202,12 @@ The first and third values are TRUE - so they are **not** missing.
 
 :::{.callout-tip title = "👉 Hide the NA bar" icon=false}
 
-We can use this tactic to fix that barchart from above. Wrap `!is.na()` around the `premie` variable in the `ggplot` code to create a barchart that does not have a bar for missing values.
-
+We can use this tactic to fix that barchart from above. We create a subset of the `ncbirths` data set that only contains non-missing values for `premie`, and then pass that into the plot function. 
 <details>
   <summary>Solution</summary>
 ```{r}
-#| eval: false
-ggplot(ncbirths, aes(!is.na(premie))) + geom_bar()
+ncbirths_nomissing_premie <- ncbirths[!is.na(ncbirths$premie), ]
+ggplot(ncbirths_nomissing_premie, aes(premie)) + geom_bar()
 ```
 </details>
 

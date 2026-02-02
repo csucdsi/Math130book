@@ -31,7 +31,7 @@ You can create a basic frequency table by using the `table()` function.
 table(ncbirths$lowbirthweight)
 ```
 
-Relative frequencies (proportions or percentages) are calculated by putting the results of the `table` function inside the `prop_table` function.
+Relative frequencies (proportions or percentages) are calculated by putting the results of the `table` function inside the `prop.table` function.
 
 ```{r}
 prop.table(
@@ -173,12 +173,12 @@ The first and third values are TRUE - so they are **not** missing.
 
 #### Hide the NA bar
 
-We can use this tactic to fix that barchart from above. Wrap `!is.na()` around the `premie` variable in the `ggplot` code to create a barchart that does not have a bar for missing values.
+We can use this tactic to fix that barchart from above. We create a subset of the `ncbirths` data set that only contains non-missing values for `premie`, and then pass that into the plot function. 
 
 ```{r}
-ggplot(ncbirths, aes(!is.na(premie))) + geom_bar()
+ncbirths_nomissing_premie <- ncbirths[!is.na(ncbirths$premie), ]
+ggplot(ncbirths_nomissing_premie, aes(premie)) + geom_bar()
 ```
-
 
 ## Data management
 

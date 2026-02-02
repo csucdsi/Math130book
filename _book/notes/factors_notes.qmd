@@ -46,13 +46,13 @@ ________(email$number)
 
 There are three levels: `none`, `small`, and `big`. 
 
-:::{.callout-tip title = "Character data types"}
+### Character data types
 Let's look at the variable `restaurant` from the fast food (`ff`) data set. 
 
 ```{r}
 levels(________)
 ```
-:::
+
 
 Wait - NULL? But this is a categorical variable. 
 
@@ -79,9 +79,9 @@ Sometimes data are entered into the computer using numeric codes such as 0 and 1
 -   For statistical analyses, the data must be numeric 0/1.
 -   For many graphics, the data must be a factor, "no/yes".
 
-:::{.callout-tip title = "Example: What type of transmission does that car have?" icon=false}
+### Example: What type of transmission does that car have?
 The `am` variable from the `mtcars` data set records whether or not the car has an automatic transmission, or a manual one. However, the values were recorded as 0 for automatic and 1 for manual. 
-:::
+
 
 ```{r}
 table(________) # view which values are present
@@ -97,9 +97,9 @@ mtcars$________ <- factor(mtcars$am,
 
 The ordering of the `labels` argument *must* be in the same order (left to right) as the factor levels themselves. Look back at the order of columns in the `table` - it goes 0 then 1. Thus our labels need to go "automatic" then "manual".
 
-:::{.callout-important title = "Trust but verify"}
+### Trust but verify
 We can confirm that the new variable was created correctly by creating a two-way contingency table by calling the `table(old variable, new variable)` function on both the old and new variables.
-:::
+
 
 ```{r}
 table(mtcars$________, mtcars$________, useNA="always")

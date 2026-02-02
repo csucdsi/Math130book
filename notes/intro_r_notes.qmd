@@ -211,7 +211,7 @@ A vector is the most common and basic data structure in R, and is pretty much th
 We can assign a series of values to a vector using the `c()` function. For example we can create a vector of animal weights and assign it to a new object `weight_g`:
 
 ```{r}
-(______ <- ______(50, 60, 65, 82))
+(______ <- ______(25, 250, 7800, 3600))
 ```
 
 A vector can also contain characters:
@@ -288,22 +288,16 @@ ______[3]
 
 ### Conditional subsetting {#sec-cond_subset}
 
-Another common way of subsetting is by using a logical vector. `TRUE` will select the element with the same index, while `FALSE` will not. Typically, these logical vectors are not typed by hand, but are the output of other functions or logical tests such as: 
+Another common way of subsetting is by using a logical vector. 
 
 ```{r}
-weight_g ______  # returns TRUE or FALSE depending on which elements that meet the condition
-```
-
-We can use this output to select elements in a _different_ vector where the value of that logical statement is TRUE. For instance, if you wanted to select only the values where weight in grams is above 50 we would type:
-
-```{r}
-weight_KG ______  # returns TRUE or FALSE depending on which elements that meet the condition
+weight_KG ____  # Returns TRUE or FALSE for each element in the vector
 ```
 
 We can use this output to select elements where the value of that logical statement is TRUE. For instance, if you wanted to select only the values where weight in kilograms is above 1 we would type:
 
 ```{r}
-weight_KG[______]
+weight_KG ______  # returns TRUE or FALSE depending on which elements of the vector are greater than 1
 ```
 
 You can combine multiple tests using `&` (both conditions are true, AND) or `|` (at least one of the conditions is true, OR):
@@ -316,7 +310,7 @@ ______[weight_KG < 1 ______ weight_KG > 5]
 
 We can also use this technique to use the values in one vector to subset the rows in a _different_ vector. 
 
-**Animals that weigh between .1 and 5kg**
+**Which animals weigh between .1 and 5kg?**
 ```{r}
 ______[weight_KG >= .1 & weight_KG <= 5]
 ```
