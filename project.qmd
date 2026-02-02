@@ -51,7 +51,27 @@ Note that you can't use the following data sets because we've used them too much
 
 After the submission deadline, your analysis projects will be randomly assigned to two other people to peer review and score. This means you will also score and provide feedback on 2 reports. Your instructor will also score all projects for your class section.
 
-[See here on how to do peer reviews for Dr. D](pr_rad.html)
+:::{.callout-note title = "PR Instructions for Spring 26"}
+
+#### How to conduct Peer Reviews
+
+On the project due date, Canvas will automatically assign peer reviews to everyone that has submitted the project on time. 
+
+[See this help page on how to find and complete peer reviews in Canvas.](https://extensionhelpcenter.ucsd.edu/hc/en-us/articles/17732032984973-How-to-view-and-complete-a-Peer-Review-assignment-Students)
+
+
+1. Use the rubric to assign a score in each area
+2. Using the commenting feature provide 4 comments for each project.
+    - Two positive: What specific features did they include that you liked or found helpful?
+    - Two improvements: What can they do different or better next time? Did you find a bug in their code?
+
+
+#### Late submissions
+
+If you submit your EDA late, I will have to manually assign you projects to review. This may take a day or two, please feel free to ask and remind me if you are waiting too long.
+
+:::
+
 
 
 # Grading
