@@ -56,9 +56,14 @@ We can reorder these levels on the fly so they are being shown in decreasing fre
 
 ```{r}
 #| source-line-numbers: "2"
+#| layout-ncol: 2
 ggplot(pen, aes(
-  x=fct_infreq(island))) + 
-  geom_bar() + xlab("Island")
+  x=species)) + 
+  geom_bar() + xlab("Species - original sort")
+
+ggplot(pen, aes(
+  x=fct_infreq(species))) + 
+  geom_bar() + xlab("Species - sorted by frequency")
 ```
 ## Flipping the axis
 
