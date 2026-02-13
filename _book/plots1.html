@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,18 +69,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./factors.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-2fef5ea3f8957b3e4ecc936fc74692ca.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f6c7be3311c85c94e08f08db61636199.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-ca4d527d8bfabaaf1a008ce7ecb22d3e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-f6c7be3311c85c94e08f08db61636199.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-63d75d87ad898d1807022c51257e7ca7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3c56524c1693dbfd4339f3cafc11232d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-63d75d87ad898d1807022c51257e7ca7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
@@ -306,7 +307,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to R</a> 
         <div class="sidebar-tools-main">
@@ -536,7 +539,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-🎓 Learning Objectives
+<span class="screen-reader-only">Note</span>🎓 Learning Objectives
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -549,7 +552,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-👉 Prepare
+<span class="screen-reader-only">Tip</span>👉 Prepare
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -563,7 +566,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-syntax-of-ggplot" class="level2 page-columns page-full" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="the-syntax-of-ggplot"><span class="header-section-number">6.1</span> The syntax of <code>ggplot</code></h2>
 <p>The reason we use the functions in <code>ggplot2</code> is for consistency in the structure of it’s arguments. Here is a bare bones generic plotting function:</p>
-<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">col=</span>col, <span class="at">fill=</span>fill, <span class="at">group=</span>group)) <span class="sc">+</span>  <span class="fu">geom_THING</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y, <span class="at">col=</span>col, <span class="at">fill=</span>fill, <span class="at">group=</span>group)) <span class="sc">+</span>  <span class="fu">geom_THING</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="required-arguments" class="level3 unnumbered page-columns page-full">
 <h3 class="unnumbered anchored" data-anchor-id="required-arguments">Required arguments</h3>
 <ul>
@@ -577,21 +580,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Meet the Penguins
+<span class="screen-reader-only">Note</span>Meet the Penguins
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>The <code>palmerpenguins</code> data contains size measurements for three penguin species observed on three islands in the Palmer Archipelago, Antarctica. </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2); <span class="fu">library</span>(sjPlot)    </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2); <span class="fu">library</span>(sjPlot)    </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr);  <span class="fu">library</span>(gtsummary)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>pen <span class="ot">&lt;-</span> palmerpenguins<span class="sc">::</span>penguins</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>pen <span class="ot">&lt;-</span> palmerpenguins<span class="sc">::</span>penguins</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 <div class="no-row-height column-margin column-container"><span class="margin-aside callout-margin-content">Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. <a href="https://allisonhorst.github.io/palmerpenguins/">https://allisonhorst.github.io/palmerpenguins/</a></span></div><p>I am loading the <code>penguins</code> data set out of the <code>palmerpenguins</code> package and storing it into a data frame named <code>pen</code>. We will be exploring variables such as species, body weight, the island and flipper lengths.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(pen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(pen)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>tibble [344 × 8] (S3: tbl_df/tbl/data.frame)
  $ species          : Factor w/ 3 levels "Adelie","Chinstrap",..: 1 1 1 1 1 1 1 1 1 1 ...
@@ -613,12 +616,12 @@ Meet the Penguins
 <h3 data-number="6.2.1" class="anchored" data-anchor-id="barchart"><span class="header-section-number">6.2.1</span> Barchart</h3>
 <p>A Barchart or barplot takes these frequencies, and draws bars along the X-axis where the height of the bars is determined by the frequencies seen in the table.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page"><code>ggplot</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><code>sjPlot</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="" aria-current="page"><code>ggplot</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href=""><code>sjPlot</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>Using <code>ggplot2</code> with the <code>geom_bar()</code> geometry layer gives us actual wide bars, and better axis labels.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -631,7 +634,7 @@ Meet the Penguins
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>Using the <code>plot_frq</code> function from the <code>sjPlot</code> package builds on the <code>geom_bar()</code> type plot from <code>ggplot</code>, but adds frequncies and relative percentages on the plot.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_frq</span>(pen, <span class="st">"species"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_frq</span>(pen, <span class="st">"species"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -652,7 +655,7 @@ Meet the Penguins
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(pen<span class="sc">$</span>species) <span class="sc">|&gt;</span> <span class="fu">pie</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(pen<span class="sc">$</span>species) <span class="sc">|&gt;</span> <span class="fu">pie</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Nicer pie charts using <code>ggplot2</code> or <code>ggpubr</code> functions require the data set to be pre-aggregated, and so we will come back to these approaches in a later lesson.</p>
 </div><div class="column" style="width:50%;">
@@ -677,12 +680,12 @@ Meet the Penguins
 <p>Rather than showing the value of each observation, we prefer to think of the value as belonging to a <em>bin</em>. The height of the bars in a histogram display the frequency of values that fall into those of those bins.</p>
 <p>Since the x-axis is continuous the bars touch. This is unlike the barchart that has a categorical x-axis, and vertical bars that are separated.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><code>ggpubr</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href=""><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href=""><code>ggpubr</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p>Using the <code>ggplot2</code> package we can create a histogram by adding the layer <code>geom_histogram()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -695,7 +698,7 @@ Meet the Penguins
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <p>In contrast to <code>ggplot2</code>’s common starter code and different <code>geom</code>etries, the <code>ggpubr</code> package uses specific functions for each type of plot. The <code>gghistogram</code> package makes a histogram very similar to the <code>ggplot2</code> default, but with a different theme applied (different appearance). Otherwise it’s the same.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gghistogram</span>(pen, <span class="at">x=</span><span class="st">"body_mass_g"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gghistogram</span>(pen, <span class="at">x=</span><span class="st">"body_mass_g"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -710,7 +713,7 @@ Meet the Penguins
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Variables names in quotes
+<span class="screen-reader-only">Important</span>Variables names in quotes
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -725,12 +728,12 @@ Variables names in quotes
 <h3 data-number="6.3.2" class="anchored" data-anchor-id="density-curves"><span class="header-section-number">6.3.2</span> Density curves</h3>
 <p>To get a better idea of the true shape of the distribution we can “smooth” out the bins and create what’s called a <code>density</code> plot or curve. Notice that the shape of this distribution curve is much… “wigglier” than the histogram may have implied.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true"><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false"><code>ggpubr</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href=""><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href=""><code>ggpubr</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <p>With <code>ggplot2</code> we use the <code>geom_density()</code> geometry to produce a nicer looking density plot with minimal additional code.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g)) <span class="sc">+</span> <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g)) <span class="sc">+</span> <span class="fu">geom_density</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -743,7 +746,7 @@ Variables names in quotes
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <p>And the <code>ggdensity</code> function from the <code>ggpubr</code> package creates a very similar density plot with a different default theme.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdensity</span>(pen, <span class="at">x=</span><span class="st">"body_mass_g"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdensity</span>(pen, <span class="at">x=</span><span class="st">"body_mass_g"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -760,12 +763,12 @@ Variables names in quotes
 <h3 data-number="6.3.3" class="anchored" data-anchor-id="boxplots"><span class="header-section-number">6.3.3</span> Boxplots</h3>
 <p>Another very common way to visualize the distribution of a continuous variable is using a boxplot. Boxplots are useful for quickly identifying where the bulk of your data lie. R specifically draws a “modified” boxplot where values that are considered outliers are plotted as dots.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true"><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false"><code>ggpubr</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href=""><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href=""><code>ggpubr</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <p>With <code>ggplot</code> you can create either a horizontal or vertical boxplot by specifying your numeric variable to be on either <code>x</code> or <code>y</code> . Notice the middle of the box is centered on 0, this is just a placeholder. This axis has no inherent meaning.</p>
-<div class="sourceCode cell-code" id="cb12" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="co"># left</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">y=</span>body_mass_g)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="co"># right</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="co"># left</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">y=</span>body_mass_g)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="co"># right</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -782,7 +785,7 @@ Variables names in quotes
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggboxplot</span>(pen, <span class="at">y=</span><span class="st">"body_mass_g"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggboxplot</span>(pen, <span class="at">y=</span><span class="st">"body_mass_g"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -793,7 +796,7 @@ Variables names in quotes
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggboxplot</span>(pen, <span class="at">x=</span><span class="st">"body_mass_g"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggboxplot</span>(pen, <span class="at">x=</span><span class="st">"body_mass_g"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <pre data-code-line-numbers=""><code>Error in (function (fun, data, x, y, combine = FALSE, merge = FALSE, color = "black", : argument "y" is missing, with no default</code></pre>
 </div>
@@ -809,12 +812,12 @@ Variables names in quotes
 <h2 data-number="6.4" class="anchored" data-anchor-id="two-continuous-variables"><span class="header-section-number">6.4</span> Two continuous variables</h2>
 <p>Visualizing the relationship between two continuous variables is done using a scatterplot. Let’s compare the <code>flipper_length_mm</code> of a penguin to it’s <code>body_mass_g</code>.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true"><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false"><code>ggpubr</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href=""><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href=""><code>ggpubr</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <p>With ggplot we specify both the x and y variables, and add <code>geom_point</code> geometry layer.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length_mm, <span class="at">y=</span>body_mass_g)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length_mm, <span class="at">y=</span>body_mass_g)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -827,7 +830,7 @@ Variables names in quotes
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <p>The <code>ggscatter</code> function creates a similar scatterplot.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggscatter</span>(pen, <span class="at">x=</span><span class="st">"flipper_length_mm"</span>, <span class="at">y=</span><span class="st">"body_mass_g"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggscatter</span>(pen, <span class="at">x=</span><span class="st">"flipper_length_mm"</span>, <span class="at">y=</span><span class="st">"body_mass_g"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -843,13 +846,13 @@ Variables names in quotes
 <h3 data-number="6.4.1" class="anchored" data-anchor-id="adding-trend-lines-lines"><span class="header-section-number">6.4.1</span> Adding trend lines lines</h3>
 <p>Two most common trend lines added to a scatterplots are the “best fit” straight line and the “loess” (low-ess) smoother line. Adding a trend line to this plot using base R is a bit tricker, so we won’t bother.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true"><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false"><code>ggpubr</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true" href=""><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false" href=""><code>ggpubr</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
 <p>A trend line can be added by adding a <code>geom_smooth()</code> layer.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length_mm, <span class="at">y=</span>body_mass_g)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length_mm, <span class="at">y=</span>body_mass_g)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -861,9 +864,9 @@ Variables names in quotes
 <p>Here the point-wise confidence interval for this loess line is shown in grey. If you want to turn the confidence interval off, use <code>se=FALSE</code>.</p>
 <p>We can add another <code>geom_smooth()</code> layer for the <code>lm</code> (linear model) line in blue, and the loess line (by not specifying a method) in red.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length_mm, <span class="at">y=</span>body_mass_g)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>flipper_length_mm, <span class="at">y=</span>body_mass_g)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">method=</span><span class="st">"lm"</span>, <span class="at">color=</span><span class="st">"red"</span>) <span class="sc">+</span> </span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">color=</span><span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">color=</span><span class="st">"blue"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -875,8 +878,8 @@ Variables names in quotes
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <p>You can add <em>either</em> a linear model line <em>or</em> a loess line to a <code>ggscatter</code> using the <code>add=</code> argument.</p>
-<div class="sourceCode cell-code" id="cb20" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggscatter</span>(pen, <span class="at">x=</span><span class="st">"flipper_length_mm"</span>, <span class="at">y=</span><span class="st">"body_mass_g"</span>, <span class="at">add =</span> <span class="st">"loess"</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggscatter</span>(pen, <span class="at">x=</span><span class="st">"flipper_length_mm"</span>, <span class="at">y=</span><span class="st">"body_mass_g"</span>, <span class="at">add =</span> <span class="st">"reg.line"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggscatter</span>(pen, <span class="at">x=</span><span class="st">"flipper_length_mm"</span>, <span class="at">y=</span><span class="st">"body_mass_g"</span>, <span class="at">add =</span> <span class="st">"loess"</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggscatter</span>(pen, <span class="at">x=</span><span class="st">"flipper_length_mm"</span>, <span class="at">y=</span><span class="st">"body_mass_g"</span>, <span class="at">add =</span> <span class="st">"reg.line"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -899,15 +902,15 @@ Variables names in quotes
 <h3 data-number="6.5.1" class="anchored" data-anchor-id="histograms"><span class="header-section-number">6.5.1</span> Histograms</h3>
 <p>Neither <code>fill</code>ing or <code>color</code>ing the histogram bars using <code>ggplot2</code> depending on the group work well due to the overlap.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true"><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false"><code>ggpubr</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true" href=""><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false" href=""><code>ggpubr</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell" data-source-line-numbers="2">
-<div class="sourceCode cell-code" id="cb21" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g, </span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">fill=</span>species)) <span class="sc">+</span> </span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -918,9 +921,9 @@ Variables names in quotes
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell" data-source-line-numbers="2">
-<div class="sourceCode cell-code" id="cb22" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g, </span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">color=</span>species)) <span class="sc">+</span> </span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -935,7 +938,7 @@ Variables names in quotes
 <div id="tabset-7-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-2-tab">
 <p>The defaults for <code>gghistogram</code> automatically adjusts the transparency of the histogram bars to make the overlap a little less troublesome, but it doesn’t always work well.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gghistogram</span>(pen, <span class="at">x =</span> <span class="st">"body_mass_g"</span>, <span class="at">fill =</span> <span class="st">"species"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gghistogram</span>(pen, <span class="at">x =</span> <span class="st">"body_mass_g"</span>, <span class="at">fill =</span> <span class="st">"species"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -952,13 +955,13 @@ Variables names in quotes
 <h3 data-number="6.5.2" class="anchored" data-anchor-id="density-curves-1"><span class="header-section-number">6.5.2</span> Density curves</h3>
 <p>Similar to histograms, you can <code>fill</code> or <code>color</code> the density curves depending on the group.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true"><code>ggplot-fill</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false"><code>ggplot-color</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-3" role="tab" aria-controls="tabset-8-3" aria-selected="false"><code>ggpubr</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true" href=""><code>ggplot-fill</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false" href=""><code>ggplot-color</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-3" role="tab" aria-controls="tabset-8-3" aria-selected="false" href=""><code>ggpubr</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
 <p>It’s still hard to see some groups due to the overlap, so we adjust the transparency by applying a value to <code>alpha</code> inside the <code>geom_density</code> layer. Alpha is a measure of transparency, from 0=clear to 1=opaque.</p>
 <div class="cell" data-source-line-numbers="2">
-<div class="sourceCode cell-code" id="cb24" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g, <span class="at">fill=</span>species)) <span class="sc">+</span> </span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g, <span class="at">fill=</span>species)) <span class="sc">+</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha=</span>.<span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -971,7 +974,7 @@ Variables names in quotes
 <div id="tabset-8-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-2-tab">
 <p>You could also just color the lines and leave the fill alone.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g, <span class="at">color=</span>species)) <span class="sc">+</span> <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g, <span class="at">color=</span>species)) <span class="sc">+</span> <span class="fu">geom_density</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -983,8 +986,8 @@ Variables names in quotes
 </div>
 <div id="tabset-8-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-3-tab">
 <p>The <code>ggdensity</code> function also has <code>color</code> and <code>fill</code> options, where the transparency of the density plots are automatically handled.</p>
-<div class="sourceCode cell-code" id="cb26" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdensity</span>(pen, <span class="at">x=</span><span class="st">"body_mass_g"</span>, <span class="at">color =</span> <span class="st">"species"</span>) <span class="co"># left</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdensity</span>(pen, <span class="at">x=</span><span class="st">"body_mass_g"</span>, <span class="at">fill =</span> <span class="st">"species"</span>) <span class="co"># right</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdensity</span>(pen, <span class="at">x=</span><span class="st">"body_mass_g"</span>, <span class="at">color =</span> <span class="st">"species"</span>) <span class="co"># left</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdensity</span>(pen, <span class="at">x=</span><span class="st">"body_mass_g"</span>, <span class="at">fill =</span> <span class="st">"species"</span>) <span class="co"># right</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -1003,11 +1006,11 @@ Variables names in quotes
 <h3 data-number="6.5.3" class="anchored" data-anchor-id="boxplots-1"><span class="header-section-number">6.5.3</span> Boxplots</h3>
 <p>To create grouped boxplots, put the continuous variable on one axis, and the categorical on the other axis.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true"><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false"><code>ggpubr</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true" href=""><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false" href=""><code>ggpubr</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
-<div class="sourceCode cell-code" id="cb27" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g, <span class="at">y=</span>species)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="co"># left</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">y=</span>body_mass_g)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="co"># right</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g, <span class="at">y=</span>species)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="co"># left</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">y=</span>body_mass_g)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="co"># right</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -1019,8 +1022,8 @@ Variables names in quotes
 </div>
 </div>
 <p>If you want an additional color feature (and the corresponding legend), you can either <code>fill</code> or <code>color</code> the boxes by the same categorical variable.</p>
-<div class="sourceCode cell-code" id="cb28" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g, <span class="at">y=</span>species, <span class="at">fill =</span> species)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="co"># left</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">y=</span>body_mass_g, <span class="at">color =</span> species)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="co"># right</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>body_mass_g, <span class="at">y=</span>species, <span class="at">fill =</span> species)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="co"># left</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">y=</span>body_mass_g, <span class="at">color =</span> species)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="co"># right</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -1034,8 +1037,8 @@ Variables names in quotes
 </div>
 <div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
 <p>Not much difference in the style between the <code>ggplot2</code> and <code>ggboxplot</code> versions. This method uses <em>slightly</em> less code.</p>
-<div class="sourceCode cell-code" id="cb29" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggboxplot</span>(pen, <span class="at">y=</span><span class="st">"body_mass_g"</span>, <span class="at">fill =</span> <span class="st">"species"</span>) <span class="co"># left</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggboxplot</span>(pen, <span class="at">y=</span><span class="st">"body_mass_g"</span>, <span class="at">color =</span> <span class="st">"species"</span>) <span class="co"># right</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggboxplot</span>(pen, <span class="at">y=</span><span class="st">"body_mass_g"</span>, <span class="at">fill =</span> <span class="st">"species"</span>) <span class="co"># left</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggboxplot</span>(pen, <span class="at">y=</span><span class="st">"body_mass_g"</span>, <span class="at">color =</span> <span class="st">"species"</span>) <span class="co"># right</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -1059,12 +1062,12 @@ Variables names in quotes
 <section id="frequency-and-proportion-tables" class="level3" data-number="6.6.1">
 <h3 data-number="6.6.1" class="anchored" data-anchor-id="frequency-and-proportion-tables"><span class="header-section-number">6.6.1</span> Frequency and proportion tables</h3>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true">base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false"><code>tbl_summary</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true" href="">base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false" href=""><code>tbl_summary</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-10-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-10-1-tab">
 <p>The first argument <code>species</code> specifies the levels that show on the rows, the second argument <code>sex</code> specifies the columns.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(pen<span class="sc">$</span>species, pen<span class="sc">$</span>sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(pen<span class="sc">$</span>species, pen<span class="sc">$</span>sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>           
             female male
@@ -1077,25 +1080,25 @@ Variables names in quotes
 <div id="tabset-10-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-2-tab">
 <p>To achieve the same ordering with species on the rows and sex on the columns, we <code>include="species"</code> and set <code>by = "sex"</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(pen, <span class="at">include =</span> <span class="st">"species"</span>, <span class="at">by =</span> <span class="st">"sex"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(pen, <span class="at">include =</span> <span class="st">"species"</span>, <span class="at">by =</span> <span class="st">"sex"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="rjrdwazcac" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rjrdwazcac table {
+<div id="vxpaifgvqc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vxpaifgvqc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rjrdwazcac thead, #rjrdwazcac tbody, #rjrdwazcac tfoot, #rjrdwazcac tr, #rjrdwazcac td, #rjrdwazcac th {
+#vxpaifgvqc thead, #vxpaifgvqc tbody, #vxpaifgvqc tfoot, #vxpaifgvqc tr, #vxpaifgvqc td, #vxpaifgvqc th {
   border-style: none;
 }
 
-#rjrdwazcac p {
+#vxpaifgvqc p {
   margin: 0;
   padding: 0;
 }
 
-#rjrdwazcac .gt_table {
+#vxpaifgvqc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1121,12 +1124,12 @@ Variables names in quotes
   border-left-color: #D3D3D3;
 }
 
-#rjrdwazcac .gt_caption {
+#vxpaifgvqc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rjrdwazcac .gt_title {
+#vxpaifgvqc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1138,7 +1141,7 @@ Variables names in quotes
   border-bottom-width: 0;
 }
 
-#rjrdwazcac .gt_subtitle {
+#vxpaifgvqc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1150,7 +1153,7 @@ Variables names in quotes
   border-top-width: 0;
 }
 
-#rjrdwazcac .gt_heading {
+#vxpaifgvqc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1162,13 +1165,13 @@ Variables names in quotes
   border-right-color: #D3D3D3;
 }
 
-#rjrdwazcac .gt_bottom_border {
+#vxpaifgvqc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rjrdwazcac .gt_col_headings {
+#vxpaifgvqc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1183,7 +1186,7 @@ Variables names in quotes
   border-right-color: #D3D3D3;
 }
 
-#rjrdwazcac .gt_col_heading {
+#vxpaifgvqc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1203,7 +1206,7 @@ Variables names in quotes
   overflow-x: hidden;
 }
 
-#rjrdwazcac .gt_column_spanner_outer {
+#vxpaifgvqc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1215,15 +1218,15 @@ Variables names in quotes
   padding-right: 4px;
 }
 
-#rjrdwazcac .gt_column_spanner_outer:first-child {
+#vxpaifgvqc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rjrdwazcac .gt_column_spanner_outer:last-child {
+#vxpaifgvqc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rjrdwazcac .gt_column_spanner {
+#vxpaifgvqc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1235,11 +1238,11 @@ Variables names in quotes
   width: 100%;
 }
 
-#rjrdwazcac .gt_spanner_row {
+#vxpaifgvqc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rjrdwazcac .gt_group_heading {
+#vxpaifgvqc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1265,7 +1268,7 @@ Variables names in quotes
   text-align: left;
 }
 
-#rjrdwazcac .gt_empty_group_heading {
+#vxpaifgvqc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1280,15 +1283,15 @@ Variables names in quotes
   vertical-align: middle;
 }
 
-#rjrdwazcac .gt_from_md > :first-child {
+#vxpaifgvqc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rjrdwazcac .gt_from_md > :last-child {
+#vxpaifgvqc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rjrdwazcac .gt_row {
+#vxpaifgvqc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1307,7 +1310,7 @@ Variables names in quotes
   overflow-x: hidden;
 }
 
-#rjrdwazcac .gt_stub {
+#vxpaifgvqc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1320,7 +1323,7 @@ Variables names in quotes
   padding-right: 5px;
 }
 
-#rjrdwazcac .gt_stub_row_group {
+#vxpaifgvqc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1334,15 +1337,15 @@ Variables names in quotes
   vertical-align: top;
 }
 
-#rjrdwazcac .gt_row_group_first td {
+#vxpaifgvqc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rjrdwazcac .gt_row_group_first th {
+#vxpaifgvqc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rjrdwazcac .gt_summary_row {
+#vxpaifgvqc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1352,16 +1355,16 @@ Variables names in quotes
   padding-right: 5px;
 }
 
-#rjrdwazcac .gt_first_summary_row {
+#vxpaifgvqc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rjrdwazcac .gt_first_summary_row.thick {
+#vxpaifgvqc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rjrdwazcac .gt_last_summary_row {
+#vxpaifgvqc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1371,7 +1374,7 @@ Variables names in quotes
   border-bottom-color: #D3D3D3;
 }
 
-#rjrdwazcac .gt_grand_summary_row {
+#vxpaifgvqc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1381,7 +1384,7 @@ Variables names in quotes
   padding-right: 5px;
 }
 
-#rjrdwazcac .gt_first_grand_summary_row {
+#vxpaifgvqc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1391,7 +1394,7 @@ Variables names in quotes
   border-top-color: #D3D3D3;
 }
 
-#rjrdwazcac .gt_last_grand_summary_row_top {
+#vxpaifgvqc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1401,11 +1404,11 @@ Variables names in quotes
   border-bottom-color: #D3D3D3;
 }
 
-#rjrdwazcac .gt_striped {
+#vxpaifgvqc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rjrdwazcac .gt_table_body {
+#vxpaifgvqc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1414,7 +1417,7 @@ Variables names in quotes
   border-bottom-color: #D3D3D3;
 }
 
-#rjrdwazcac .gt_footnotes {
+#vxpaifgvqc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1428,7 +1431,7 @@ Variables names in quotes
   border-right-color: #D3D3D3;
 }
 
-#rjrdwazcac .gt_footnote {
+#vxpaifgvqc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1437,7 +1440,7 @@ Variables names in quotes
   padding-right: 5px;
 }
 
-#rjrdwazcac .gt_sourcenotes {
+#vxpaifgvqc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1451,7 +1454,7 @@ Variables names in quotes
   border-right-color: #D3D3D3;
 }
 
-#rjrdwazcac .gt_sourcenote {
+#vxpaifgvqc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1459,77 +1462,77 @@ Variables names in quotes
   padding-right: 5px;
 }
 
-#rjrdwazcac .gt_left {
+#vxpaifgvqc .gt_left {
   text-align: left;
 }
 
-#rjrdwazcac .gt_center {
+#vxpaifgvqc .gt_center {
   text-align: center;
 }
 
-#rjrdwazcac .gt_right {
+#vxpaifgvqc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rjrdwazcac .gt_font_normal {
+#vxpaifgvqc .gt_font_normal {
   font-weight: normal;
 }
 
-#rjrdwazcac .gt_font_bold {
+#vxpaifgvqc .gt_font_bold {
   font-weight: bold;
 }
 
-#rjrdwazcac .gt_font_italic {
+#vxpaifgvqc .gt_font_italic {
   font-style: italic;
 }
 
-#rjrdwazcac .gt_super {
+#vxpaifgvqc .gt_super {
   font-size: 65%;
 }
 
-#rjrdwazcac .gt_footnote_marks {
+#vxpaifgvqc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rjrdwazcac .gt_asterisk {
+#vxpaifgvqc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rjrdwazcac .gt_indent_1 {
+#vxpaifgvqc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rjrdwazcac .gt_indent_2 {
+#vxpaifgvqc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rjrdwazcac .gt_indent_3 {
+#vxpaifgvqc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rjrdwazcac .gt_indent_4 {
+#vxpaifgvqc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rjrdwazcac .gt_indent_5 {
+#vxpaifgvqc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rjrdwazcac .katex-display {
+#vxpaifgvqc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rjrdwazcac div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vxpaifgvqc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -1586,11 +1589,11 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 <h4 data-number="6.6.1.1" class="anchored" data-anchor-id="proportions"><span class="header-section-number">6.6.1.1</span> Proportions</h4>
 <p>By default, when we ask for proportions we get the <strong>cell</strong> proportions. That is, the percent out of <em>all</em> penguins in that data set that have that combination of traits. The percents add up to 1 across the entire table.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true">base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false"><code>tbl_summary</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true" href="">base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false" href=""><code>tbl_summary</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-11-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(pen<span class="sc">$</span>species, pen<span class="sc">$</span>sex) <span class="sc">|&gt;</span> <span class="fu">prop.table</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(pen<span class="sc">$</span>species, pen<span class="sc">$</span>sex) <span class="sc">|&gt;</span> <span class="fu">prop.table</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>           
                female      male
@@ -1603,25 +1606,25 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 <div id="tabset-11-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-2-tab">
 <p>Note that <code>gtsummary</code> tables tend to round pretty heavily.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(pen, <span class="at">include =</span> <span class="st">"species"</span>, <span class="at">by =</span> <span class="st">"sex"</span>, <span class="at">percent =</span> <span class="st">"cell"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(pen, <span class="at">include =</span> <span class="st">"species"</span>, <span class="at">by =</span> <span class="st">"sex"</span>, <span class="at">percent =</span> <span class="st">"cell"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="jklmwksecj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#jklmwksecj table {
+<div id="clfldoqcuk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#clfldoqcuk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jklmwksecj thead, #jklmwksecj tbody, #jklmwksecj tfoot, #jklmwksecj tr, #jklmwksecj td, #jklmwksecj th {
+#clfldoqcuk thead, #clfldoqcuk tbody, #clfldoqcuk tfoot, #clfldoqcuk tr, #clfldoqcuk td, #clfldoqcuk th {
   border-style: none;
 }
 
-#jklmwksecj p {
+#clfldoqcuk p {
   margin: 0;
   padding: 0;
 }
 
-#jklmwksecj .gt_table {
+#clfldoqcuk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1647,12 +1650,12 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-left-color: #D3D3D3;
 }
 
-#jklmwksecj .gt_caption {
+#clfldoqcuk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jklmwksecj .gt_title {
+#clfldoqcuk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1664,7 +1667,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-width: 0;
 }
 
-#jklmwksecj .gt_subtitle {
+#clfldoqcuk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1676,7 +1679,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-top-width: 0;
 }
 
-#jklmwksecj .gt_heading {
+#clfldoqcuk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1688,13 +1691,13 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#jklmwksecj .gt_bottom_border {
+#clfldoqcuk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jklmwksecj .gt_col_headings {
+#clfldoqcuk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1709,7 +1712,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#jklmwksecj .gt_col_heading {
+#clfldoqcuk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1729,7 +1732,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   overflow-x: hidden;
 }
 
-#jklmwksecj .gt_column_spanner_outer {
+#clfldoqcuk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1741,15 +1744,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 4px;
 }
 
-#jklmwksecj .gt_column_spanner_outer:first-child {
+#clfldoqcuk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jklmwksecj .gt_column_spanner_outer:last-child {
+#clfldoqcuk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jklmwksecj .gt_column_spanner {
+#clfldoqcuk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1761,11 +1764,11 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   width: 100%;
 }
 
-#jklmwksecj .gt_spanner_row {
+#clfldoqcuk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jklmwksecj .gt_group_heading {
+#clfldoqcuk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1791,7 +1794,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   text-align: left;
 }
 
-#jklmwksecj .gt_empty_group_heading {
+#clfldoqcuk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1806,15 +1809,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   vertical-align: middle;
 }
 
-#jklmwksecj .gt_from_md > :first-child {
+#clfldoqcuk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jklmwksecj .gt_from_md > :last-child {
+#clfldoqcuk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jklmwksecj .gt_row {
+#clfldoqcuk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1833,7 +1836,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   overflow-x: hidden;
 }
 
-#jklmwksecj .gt_stub {
+#clfldoqcuk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1846,7 +1849,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#jklmwksecj .gt_stub_row_group {
+#clfldoqcuk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1860,15 +1863,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   vertical-align: top;
 }
 
-#jklmwksecj .gt_row_group_first td {
+#clfldoqcuk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jklmwksecj .gt_row_group_first th {
+#clfldoqcuk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jklmwksecj .gt_summary_row {
+#clfldoqcuk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1878,16 +1881,16 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#jklmwksecj .gt_first_summary_row {
+#clfldoqcuk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jklmwksecj .gt_first_summary_row.thick {
+#clfldoqcuk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jklmwksecj .gt_last_summary_row {
+#clfldoqcuk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1897,7 +1900,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#jklmwksecj .gt_grand_summary_row {
+#clfldoqcuk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1907,7 +1910,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#jklmwksecj .gt_first_grand_summary_row {
+#clfldoqcuk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1917,7 +1920,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-top-color: #D3D3D3;
 }
 
-#jklmwksecj .gt_last_grand_summary_row_top {
+#clfldoqcuk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1927,11 +1930,11 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#jklmwksecj .gt_striped {
+#clfldoqcuk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jklmwksecj .gt_table_body {
+#clfldoqcuk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1940,7 +1943,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#jklmwksecj .gt_footnotes {
+#clfldoqcuk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1954,7 +1957,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#jklmwksecj .gt_footnote {
+#clfldoqcuk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1963,7 +1966,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#jklmwksecj .gt_sourcenotes {
+#clfldoqcuk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1977,7 +1980,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#jklmwksecj .gt_sourcenote {
+#clfldoqcuk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1985,77 +1988,77 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#jklmwksecj .gt_left {
+#clfldoqcuk .gt_left {
   text-align: left;
 }
 
-#jklmwksecj .gt_center {
+#clfldoqcuk .gt_center {
   text-align: center;
 }
 
-#jklmwksecj .gt_right {
+#clfldoqcuk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jklmwksecj .gt_font_normal {
+#clfldoqcuk .gt_font_normal {
   font-weight: normal;
 }
 
-#jklmwksecj .gt_font_bold {
+#clfldoqcuk .gt_font_bold {
   font-weight: bold;
 }
 
-#jklmwksecj .gt_font_italic {
+#clfldoqcuk .gt_font_italic {
   font-style: italic;
 }
 
-#jklmwksecj .gt_super {
+#clfldoqcuk .gt_super {
   font-size: 65%;
 }
 
-#jklmwksecj .gt_footnote_marks {
+#clfldoqcuk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jklmwksecj .gt_asterisk {
+#clfldoqcuk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jklmwksecj .gt_indent_1 {
+#clfldoqcuk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jklmwksecj .gt_indent_2 {
+#clfldoqcuk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jklmwksecj .gt_indent_3 {
+#clfldoqcuk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jklmwksecj .gt_indent_4 {
+#clfldoqcuk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jklmwksecj .gt_indent_5 {
+#clfldoqcuk .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jklmwksecj .katex-display {
+#clfldoqcuk .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jklmwksecj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#clfldoqcuk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -2114,7 +2117,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Comparing percentages
+<span class="screen-reader-only">Note</span>Comparing percentages
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -2126,12 +2129,12 @@ Comparing percentages
 <h4 data-number="6.6.1.2" class="anchored" data-anchor-id="sec-row-pct-table"><span class="header-section-number">6.6.1.2</span> Row percents</h4>
 <p>To compare the distribution of sex (columns) within each of the sepecies (rows) we need row percentages. The percentages now add up to 1 across the rows and the comparison groups are each species.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true">base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false"><code>tbl_summary</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-12-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-1" role="tab" aria-controls="tabset-12-1" aria-selected="true" href="">base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-12-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-12-2" role="tab" aria-controls="tabset-12-2" aria-selected="false" href=""><code>tbl_summary</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-12-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-12-1-tab">
 <p>Specify <code>margin=1</code> inside the <code>prop.table()</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(pen<span class="sc">$</span>species, pen<span class="sc">$</span>sex) <span class="sc">|&gt;</span> <span class="fu">prop.table</span>(<span class="at">margin=</span><span class="dv">1</span>)  <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">3</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(pen<span class="sc">$</span>species, pen<span class="sc">$</span>sex) <span class="sc">|&gt;</span> <span class="fu">prop.table</span>(<span class="at">margin=</span><span class="dv">1</span>)  <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">3</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>           
             female  male
@@ -2144,25 +2147,25 @@ Comparing percentages
 </div>
 <div id="tabset-12-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-12-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(pen, <span class="at">include =</span> <span class="st">"species"</span>, <span class="at">by =</span> <span class="st">"sex"</span>, <span class="at">percent =</span> <span class="st">"row"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(pen, <span class="at">include =</span> <span class="st">"species"</span>, <span class="at">by =</span> <span class="st">"sex"</span>, <span class="at">percent =</span> <span class="st">"row"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="xcmwefymxj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xcmwefymxj table {
+<div id="rhxmirgndc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rhxmirgndc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xcmwefymxj thead, #xcmwefymxj tbody, #xcmwefymxj tfoot, #xcmwefymxj tr, #xcmwefymxj td, #xcmwefymxj th {
+#rhxmirgndc thead, #rhxmirgndc tbody, #rhxmirgndc tfoot, #rhxmirgndc tr, #rhxmirgndc td, #rhxmirgndc th {
   border-style: none;
 }
 
-#xcmwefymxj p {
+#rhxmirgndc p {
   margin: 0;
   padding: 0;
 }
 
-#xcmwefymxj .gt_table {
+#rhxmirgndc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2188,12 +2191,12 @@ Comparing percentages
   border-left-color: #D3D3D3;
 }
 
-#xcmwefymxj .gt_caption {
+#rhxmirgndc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xcmwefymxj .gt_title {
+#rhxmirgndc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2205,7 +2208,7 @@ Comparing percentages
   border-bottom-width: 0;
 }
 
-#xcmwefymxj .gt_subtitle {
+#rhxmirgndc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2217,7 +2220,7 @@ Comparing percentages
   border-top-width: 0;
 }
 
-#xcmwefymxj .gt_heading {
+#rhxmirgndc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2229,13 +2232,13 @@ Comparing percentages
   border-right-color: #D3D3D3;
 }
 
-#xcmwefymxj .gt_bottom_border {
+#rhxmirgndc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xcmwefymxj .gt_col_headings {
+#rhxmirgndc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2250,7 +2253,7 @@ Comparing percentages
   border-right-color: #D3D3D3;
 }
 
-#xcmwefymxj .gt_col_heading {
+#rhxmirgndc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2270,7 +2273,7 @@ Comparing percentages
   overflow-x: hidden;
 }
 
-#xcmwefymxj .gt_column_spanner_outer {
+#rhxmirgndc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2282,15 +2285,15 @@ Comparing percentages
   padding-right: 4px;
 }
 
-#xcmwefymxj .gt_column_spanner_outer:first-child {
+#rhxmirgndc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xcmwefymxj .gt_column_spanner_outer:last-child {
+#rhxmirgndc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xcmwefymxj .gt_column_spanner {
+#rhxmirgndc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2302,11 +2305,11 @@ Comparing percentages
   width: 100%;
 }
 
-#xcmwefymxj .gt_spanner_row {
+#rhxmirgndc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xcmwefymxj .gt_group_heading {
+#rhxmirgndc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2332,7 +2335,7 @@ Comparing percentages
   text-align: left;
 }
 
-#xcmwefymxj .gt_empty_group_heading {
+#rhxmirgndc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2347,15 +2350,15 @@ Comparing percentages
   vertical-align: middle;
 }
 
-#xcmwefymxj .gt_from_md > :first-child {
+#rhxmirgndc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xcmwefymxj .gt_from_md > :last-child {
+#rhxmirgndc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xcmwefymxj .gt_row {
+#rhxmirgndc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2374,7 +2377,7 @@ Comparing percentages
   overflow-x: hidden;
 }
 
-#xcmwefymxj .gt_stub {
+#rhxmirgndc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2387,7 +2390,7 @@ Comparing percentages
   padding-right: 5px;
 }
 
-#xcmwefymxj .gt_stub_row_group {
+#rhxmirgndc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2401,15 +2404,15 @@ Comparing percentages
   vertical-align: top;
 }
 
-#xcmwefymxj .gt_row_group_first td {
+#rhxmirgndc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xcmwefymxj .gt_row_group_first th {
+#rhxmirgndc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xcmwefymxj .gt_summary_row {
+#rhxmirgndc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2419,16 +2422,16 @@ Comparing percentages
   padding-right: 5px;
 }
 
-#xcmwefymxj .gt_first_summary_row {
+#rhxmirgndc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xcmwefymxj .gt_first_summary_row.thick {
+#rhxmirgndc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xcmwefymxj .gt_last_summary_row {
+#rhxmirgndc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2438,7 +2441,7 @@ Comparing percentages
   border-bottom-color: #D3D3D3;
 }
 
-#xcmwefymxj .gt_grand_summary_row {
+#rhxmirgndc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2448,7 +2451,7 @@ Comparing percentages
   padding-right: 5px;
 }
 
-#xcmwefymxj .gt_first_grand_summary_row {
+#rhxmirgndc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2458,7 +2461,7 @@ Comparing percentages
   border-top-color: #D3D3D3;
 }
 
-#xcmwefymxj .gt_last_grand_summary_row_top {
+#rhxmirgndc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2468,11 +2471,11 @@ Comparing percentages
   border-bottom-color: #D3D3D3;
 }
 
-#xcmwefymxj .gt_striped {
+#rhxmirgndc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xcmwefymxj .gt_table_body {
+#rhxmirgndc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2481,7 +2484,7 @@ Comparing percentages
   border-bottom-color: #D3D3D3;
 }
 
-#xcmwefymxj .gt_footnotes {
+#rhxmirgndc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2495,7 +2498,7 @@ Comparing percentages
   border-right-color: #D3D3D3;
 }
 
-#xcmwefymxj .gt_footnote {
+#rhxmirgndc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2504,7 +2507,7 @@ Comparing percentages
   padding-right: 5px;
 }
 
-#xcmwefymxj .gt_sourcenotes {
+#rhxmirgndc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2518,7 +2521,7 @@ Comparing percentages
   border-right-color: #D3D3D3;
 }
 
-#xcmwefymxj .gt_sourcenote {
+#rhxmirgndc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2526,77 +2529,77 @@ Comparing percentages
   padding-right: 5px;
 }
 
-#xcmwefymxj .gt_left {
+#rhxmirgndc .gt_left {
   text-align: left;
 }
 
-#xcmwefymxj .gt_center {
+#rhxmirgndc .gt_center {
   text-align: center;
 }
 
-#xcmwefymxj .gt_right {
+#rhxmirgndc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xcmwefymxj .gt_font_normal {
+#rhxmirgndc .gt_font_normal {
   font-weight: normal;
 }
 
-#xcmwefymxj .gt_font_bold {
+#rhxmirgndc .gt_font_bold {
   font-weight: bold;
 }
 
-#xcmwefymxj .gt_font_italic {
+#rhxmirgndc .gt_font_italic {
   font-style: italic;
 }
 
-#xcmwefymxj .gt_super {
+#rhxmirgndc .gt_super {
   font-size: 65%;
 }
 
-#xcmwefymxj .gt_footnote_marks {
+#rhxmirgndc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xcmwefymxj .gt_asterisk {
+#rhxmirgndc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xcmwefymxj .gt_indent_1 {
+#rhxmirgndc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xcmwefymxj .gt_indent_2 {
+#rhxmirgndc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xcmwefymxj .gt_indent_3 {
+#rhxmirgndc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xcmwefymxj .gt_indent_4 {
+#rhxmirgndc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xcmwefymxj .gt_indent_5 {
+#rhxmirgndc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xcmwefymxj .katex-display {
+#rhxmirgndc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xcmwefymxj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rhxmirgndc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -2654,12 +2657,12 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 <h4 data-number="6.6.1.3" class="anchored" data-anchor-id="column-percents"><span class="header-section-number">6.6.1.3</span> Column percents</h4>
 <p>To compare the distribution of species (rows) within each of the columns (sex) we need column percentages. The percentages now add up to 1 down the columns and the comparison groups are male and female.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true">base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false"><code>tbl_summary</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-13-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-1" role="tab" aria-controls="tabset-13-1" aria-selected="true" href="">base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-13-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-13-2" role="tab" aria-controls="tabset-13-2" aria-selected="false" href=""><code>tbl_summary</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-13-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-13-1-tab">
 <p>Specify <code>margin=2</code> in <code>prop.table()</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(pen<span class="sc">$</span>species, pen<span class="sc">$</span>sex) <span class="sc">|&gt;</span> <span class="fu">prop.table</span>(<span class="at">margin=</span><span class="dv">2</span>) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">3</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(pen<span class="sc">$</span>species, pen<span class="sc">$</span>sex) <span class="sc">|&gt;</span> <span class="fu">prop.table</span>(<span class="at">margin=</span><span class="dv">2</span>) <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="dv">3</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>           
             female  male
@@ -2671,25 +2674,25 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 </div>
 <div id="tabset-13-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-13-2-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(pen, <span class="at">include =</span> <span class="st">"species"</span>, <span class="at">by =</span> <span class="st">"sex"</span>, <span class="at">percent =</span> <span class="st">"column"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_summary</span>(pen, <span class="at">include =</span> <span class="st">"species"</span>, <span class="at">by =</span> <span class="st">"sex"</span>, <span class="at">percent =</span> <span class="st">"column"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="vkhxcexdgt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vkhxcexdgt table {
+<div id="knjvmeoxmo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#knjvmeoxmo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vkhxcexdgt thead, #vkhxcexdgt tbody, #vkhxcexdgt tfoot, #vkhxcexdgt tr, #vkhxcexdgt td, #vkhxcexdgt th {
+#knjvmeoxmo thead, #knjvmeoxmo tbody, #knjvmeoxmo tfoot, #knjvmeoxmo tr, #knjvmeoxmo td, #knjvmeoxmo th {
   border-style: none;
 }
 
-#vkhxcexdgt p {
+#knjvmeoxmo p {
   margin: 0;
   padding: 0;
 }
 
-#vkhxcexdgt .gt_table {
+#knjvmeoxmo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2715,12 +2718,12 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-left-color: #D3D3D3;
 }
 
-#vkhxcexdgt .gt_caption {
+#knjvmeoxmo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vkhxcexdgt .gt_title {
+#knjvmeoxmo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2732,7 +2735,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-width: 0;
 }
 
-#vkhxcexdgt .gt_subtitle {
+#knjvmeoxmo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2744,7 +2747,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-top-width: 0;
 }
 
-#vkhxcexdgt .gt_heading {
+#knjvmeoxmo .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2756,13 +2759,13 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#vkhxcexdgt .gt_bottom_border {
+#knjvmeoxmo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vkhxcexdgt .gt_col_headings {
+#knjvmeoxmo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2777,7 +2780,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#vkhxcexdgt .gt_col_heading {
+#knjvmeoxmo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2797,7 +2800,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   overflow-x: hidden;
 }
 
-#vkhxcexdgt .gt_column_spanner_outer {
+#knjvmeoxmo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2809,15 +2812,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 4px;
 }
 
-#vkhxcexdgt .gt_column_spanner_outer:first-child {
+#knjvmeoxmo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vkhxcexdgt .gt_column_spanner_outer:last-child {
+#knjvmeoxmo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vkhxcexdgt .gt_column_spanner {
+#knjvmeoxmo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2829,11 +2832,11 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   width: 100%;
 }
 
-#vkhxcexdgt .gt_spanner_row {
+#knjvmeoxmo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vkhxcexdgt .gt_group_heading {
+#knjvmeoxmo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2859,7 +2862,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   text-align: left;
 }
 
-#vkhxcexdgt .gt_empty_group_heading {
+#knjvmeoxmo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2874,15 +2877,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   vertical-align: middle;
 }
 
-#vkhxcexdgt .gt_from_md > :first-child {
+#knjvmeoxmo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vkhxcexdgt .gt_from_md > :last-child {
+#knjvmeoxmo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vkhxcexdgt .gt_row {
+#knjvmeoxmo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2901,7 +2904,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   overflow-x: hidden;
 }
 
-#vkhxcexdgt .gt_stub {
+#knjvmeoxmo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2914,7 +2917,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#vkhxcexdgt .gt_stub_row_group {
+#knjvmeoxmo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2928,15 +2931,15 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   vertical-align: top;
 }
 
-#vkhxcexdgt .gt_row_group_first td {
+#knjvmeoxmo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vkhxcexdgt .gt_row_group_first th {
+#knjvmeoxmo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vkhxcexdgt .gt_summary_row {
+#knjvmeoxmo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2946,16 +2949,16 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#vkhxcexdgt .gt_first_summary_row {
+#knjvmeoxmo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vkhxcexdgt .gt_first_summary_row.thick {
+#knjvmeoxmo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vkhxcexdgt .gt_last_summary_row {
+#knjvmeoxmo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2965,7 +2968,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#vkhxcexdgt .gt_grand_summary_row {
+#knjvmeoxmo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2975,7 +2978,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#vkhxcexdgt .gt_first_grand_summary_row {
+#knjvmeoxmo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2985,7 +2988,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-top-color: #D3D3D3;
 }
 
-#vkhxcexdgt .gt_last_grand_summary_row_top {
+#knjvmeoxmo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2995,11 +2998,11 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#vkhxcexdgt .gt_striped {
+#knjvmeoxmo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vkhxcexdgt .gt_table_body {
+#knjvmeoxmo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3008,7 +3011,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-bottom-color: #D3D3D3;
 }
 
-#vkhxcexdgt .gt_footnotes {
+#knjvmeoxmo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3022,7 +3025,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#vkhxcexdgt .gt_footnote {
+#knjvmeoxmo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3031,7 +3034,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#vkhxcexdgt .gt_sourcenotes {
+#knjvmeoxmo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3045,7 +3048,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   border-right-color: #D3D3D3;
 }
 
-#vkhxcexdgt .gt_sourcenote {
+#knjvmeoxmo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3053,77 +3056,77 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
   padding-right: 5px;
 }
 
-#vkhxcexdgt .gt_left {
+#knjvmeoxmo .gt_left {
   text-align: left;
 }
 
-#vkhxcexdgt .gt_center {
+#knjvmeoxmo .gt_center {
   text-align: center;
 }
 
-#vkhxcexdgt .gt_right {
+#knjvmeoxmo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vkhxcexdgt .gt_font_normal {
+#knjvmeoxmo .gt_font_normal {
   font-weight: normal;
 }
 
-#vkhxcexdgt .gt_font_bold {
+#knjvmeoxmo .gt_font_bold {
   font-weight: bold;
 }
 
-#vkhxcexdgt .gt_font_italic {
+#knjvmeoxmo .gt_font_italic {
   font-style: italic;
 }
 
-#vkhxcexdgt .gt_super {
+#knjvmeoxmo .gt_super {
   font-size: 65%;
 }
 
-#vkhxcexdgt .gt_footnote_marks {
+#knjvmeoxmo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vkhxcexdgt .gt_asterisk {
+#knjvmeoxmo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vkhxcexdgt .gt_indent_1 {
+#knjvmeoxmo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vkhxcexdgt .gt_indent_2 {
+#knjvmeoxmo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vkhxcexdgt .gt_indent_3 {
+#knjvmeoxmo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vkhxcexdgt .gt_indent_4 {
+#knjvmeoxmo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vkhxcexdgt .gt_indent_5 {
+#knjvmeoxmo .gt_indent_5 {
   text-indent: 25px;
 }
 
-#vkhxcexdgt .katex-display {
+#knjvmeoxmo .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#vkhxcexdgt div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#knjvmeoxmo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 33%">
 <col style="width: 33%">
@@ -3182,7 +3185,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 <h3 data-number="6.6.2" class="anchored" data-anchor-id="stacked-bar-charts"><span class="header-section-number">6.6.2</span> Stacked bar charts</h3>
 <p>Sometimes pictures are better than tables, so let’s try to apply the same <code>fill</code> tactic that we used in the last section.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">fill=</span>sex)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">fill=</span>sex)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3197,7 +3200,7 @@ N = 168<span class="gt_footnote_marks" style="white-space:nowrap;font-style:ital
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Stacked barcharts are the ggplot2 default
+<span class="screen-reader-only">Important</span>Stacked barcharts are the ggplot2 default
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3205,9 +3208,9 @@ Stacked barcharts are the ggplot2 default
 </div>
 </div>
 <div class="cell" data-source-line-numbers="2">
-<div class="sourceCode cell-code" id="cb43" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">fill=</span>sex)) <span class="sc">+</span> </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">fill=</span>sex)) <span class="sc">+</span> </span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span> </span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Proportion"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Proportion"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3220,13 +3223,13 @@ Stacked barcharts are the ggplot2 default
 <section id="side-by-side-bar-charts" class="level3" data-number="6.6.3">
 <h3 data-number="6.6.3" class="anchored" data-anchor-id="side-by-side-bar-charts"><span class="header-section-number">6.6.3</span> Side by side bar charts</h3>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-14-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-1" role="tab" aria-controls="tabset-14-1" aria-selected="true"><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-2" role="tab" aria-controls="tabset-14-2" aria-selected="false"><code>sjPlot</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-14-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-1" role="tab" aria-controls="tabset-14-1" aria-selected="true" href=""><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-14-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-14-2" role="tab" aria-controls="tabset-14-2" aria-selected="false" href=""><code>sjPlot</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-14-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-14-1-tab">
 <p>Add the argument <code>position=dodge</code> inside the <code>geom_bar</code> layer to put the bars side by side.</p>
 <div class="cell" data-source-line-numbers="2">
-<div class="sourceCode cell-code" id="cb44" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">fill=</span>sex)) <span class="sc">+</span> </span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">fill=</span>sex)) <span class="sc">+</span> </span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3239,7 +3242,7 @@ Stacked barcharts are the ggplot2 default
 <div id="tabset-14-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-14-2-tab">
 <p>The <code>plot_xtab</code> function is the two-way table analogy to <code>plot_frq</code> to create a barchart with clear lables on the bars for the N and % (and NA values dropped). Note you have to use dollar sign notation here for the variables.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_xtab</span>(<span class="at">x =</span> pen<span class="sc">$</span>species, <span class="at">grp =</span> pen<span class="sc">$</span>sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_xtab</span>(<span class="at">x =</span> pen<span class="sc">$</span>species, <span class="at">grp =</span> pen<span class="sc">$</span>sex)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3250,8 +3253,8 @@ Stacked barcharts are the ggplot2 default
 </div>
 <p>By default this plots the vertical axis as percents, not counts, and it shows the marginal total for the variable that’s on the x-axis. We can remove the total by setting <code>show.total</code> to <code>false</code>.</p>
 <div class="cell" data-source-line-numbers="2">
-<div class="sourceCode cell-code" id="cb46" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_xtab</span>(<span class="at">x =</span> pen<span class="sc">$</span>species, <span class="at">grp =</span> pen<span class="sc">$</span>sex, </span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">show.total =</span> <span class="st">"false"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_xtab</span>(<span class="at">x =</span> pen<span class="sc">$</span>species, <span class="at">grp =</span> pen<span class="sc">$</span>sex, </span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">show.total =</span> <span class="st">"false"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3270,12 +3273,12 @@ Stacked barcharts are the ggplot2 default
 <p>Our eyes make comparisons the best when the bars are physically close to each other. So generally you want to put the groups we want to compare <em>within</em> on the x-axis, and have separate bars for each level of the variable we want to compare <em>across</em>.</p>
 <p>See each tab on how to compare the distribution of <code>sex</code> within each <code>species</code>. This corresponds to the <strong>row</strong> percents from <a href="#sec-row-pct-table" class="quarto-xref"><span>Section 6.6.1.2</span></a> .</p>
 <div class="tabset-margin-container page-columns page-full"><div class="no-row-height column-margin column-container"><span class="margin-aside tabset-margin-content tabset-15-1-tab-margin-content">I also changed the y axis label here to make it more clear that the heights of the bars are a percent</span></div></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-15-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-1" role="tab" aria-controls="tabset-15-1" aria-selected="true"><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-2" role="tab" aria-controls="tabset-15-2" aria-selected="false"><code>sjPlot</code></a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-15-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-1" role="tab" aria-controls="tabset-15-1" aria-selected="true" href=""><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-15-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-15-2" role="tab" aria-controls="tabset-15-2" aria-selected="false" href=""><code>sjPlot</code></a></li></ul>
 <div class="tab-content">
 <div id="tabset-15-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-15-1-tab">
 <p>We have to pre-aggregate the data to calculate the grouped percents before we create the plot. Notice how this changes the variable names. Put <code>species</code> (<code>Var1</code>) on the x-axis, <code>fill</code> by <code>sex</code> (<code>Var2</code>), and <code>weight</code> the <code>Freq</code> variable. </p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>(pen.table <span class="ot">&lt;-</span> <span class="fu">table</span>(pen<span class="sc">$</span>species, pen<span class="sc">$</span>sex) <span class="sc">|&gt;</span> <span class="fu">as.data.frame</span>()) <span class="co"># Printing to show the variable names have changed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>(pen.table <span class="ot">&lt;-</span> <span class="fu">table</span>(pen<span class="sc">$</span>species, pen<span class="sc">$</span>sex) <span class="sc">|&gt;</span> <span class="fu">as.data.frame</span>()) <span class="co"># Printing to show the variable names have changed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>       Var1   Var2 Freq
 1    Adelie female   73
@@ -3285,8 +3288,8 @@ Stacked barcharts are the ggplot2 default
 5 Chinstrap   male   34
 6    Gentoo   male   61</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen.table, <span class="fu">aes</span>(<span class="at">x=</span>Var1, <span class="at">fill=</span>Var2, <span class="at">weight =</span> Freq)) <span class="sc">+</span> </span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)  <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Proportion"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen.table, <span class="fu">aes</span>(<span class="at">x=</span>Var1, <span class="at">fill=</span>Var2, <span class="at">weight =</span> Freq)) <span class="sc">+</span> </span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)  <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Proportion"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3299,8 +3302,8 @@ Stacked barcharts are the ggplot2 default
 <div id="tabset-15-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-15-2-tab">
 <p>Put <code>species</code> on the x-axis and <code>grp</code> by <code>sex</code>, and specify <code>margin = "row"</code>.</p>
 <div class="cell" data-source-line-numbers="2">
-<div class="sourceCode cell-code" id="cb50" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_xtab</span>(<span class="at">x =</span> pen<span class="sc">$</span>species, <span class="at">grp =</span> pen<span class="sc">$</span>sex, <span class="at">show.total =</span> <span class="st">"false"</span>, </span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">margin =</span> <span class="st">"row"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_xtab</span>(<span class="at">x =</span> pen<span class="sc">$</span>species, <span class="at">grp =</span> pen<span class="sc">$</span>sex, <span class="at">show.total =</span> <span class="st">"false"</span>, </span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">margin =</span> <span class="st">"row"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3318,7 +3321,7 @@ Stacked barcharts are the ggplot2 default
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-👉 Your Turn
+<span class="screen-reader-only">Tip</span>👉 Your Turn
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -3328,8 +3331,8 @@ Stacked barcharts are the ggplot2 default
 ggplot2 solution
 </summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen.table, <span class="fu">aes</span>(<span class="at">x=</span>Var2, <span class="at">fill=</span>Var1, <span class="at">weight =</span> Freq)) <span class="sc">+</span> </span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)  <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Proportion"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen.table, <span class="fu">aes</span>(<span class="at">x=</span>Var2, <span class="at">fill=</span>Var1, <span class="at">weight =</span> Freq)) <span class="sc">+</span> </span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>)  <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Proportion"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3344,7 +3347,7 @@ ggplot2 solution
 sjPlot solution
 </summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_xtab</span>(<span class="at">x =</span> pen<span class="sc">$</span>sex, <span class="at">grp =</span> pen<span class="sc">$</span>species, <span class="at">show.total =</span> <span class="st">"false"</span>, <span class="at">margin =</span> <span class="st">"row"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_xtab</span>(<span class="at">x =</span> pen<span class="sc">$</span>sex, <span class="at">grp =</span> pen<span class="sc">$</span>species, <span class="at">show.total =</span> <span class="st">"false"</span>, <span class="at">margin =</span> <span class="st">"row"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3426,13 +3429,14 @@ sjPlot solution
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
