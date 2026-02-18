@@ -16,11 +16,7 @@ execute:
 
 # Part I: Importing data
 
-Go to Dr. D's Data page (https://www.norcalbiostat.com/data/) and download the following data sets. 
-
-* High School and Beyond
-* Crime Data
-* countyComplete
+Go to [Dr. D's data website](https://www.norcalbiostat.com/data/) to find the three data files used in the questions below. Download them to your `data` folder and import them in the first three questions below. 
 
 1. Read in the `High School and Beyond` data set.  Use the R function `names` to get a list of variable names in this data set.
 
