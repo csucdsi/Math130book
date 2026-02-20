@@ -165,7 +165,7 @@ The data set won't successfully be read in, and won't show up in your environmen
 email.nohead <- read.table(here::here("data/email.txt"), sep="\t")
 head(email.nohead)
 ```
-The data is read into the object `email.nohead`, but the variable names were read in as datta in the first row. R assigned generic `V1`, and `V2` data names as your clue. 
+The data is read into the object `email.nohead`, but the variable names were read in as data in the first row. R assigned generic `V1`, and `V2` data names as your clue. 
 </details>
 
 <details>

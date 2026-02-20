@@ -152,9 +152,9 @@ Use the `fct_recode("NEW" = "old")` function here.
 
 ```{r}
 email$my_forcats_number <- fct_recode(email$number, 
-                                      "BIG" = "big", 
-                                      "NONE" = "none", 
-                                      "SMALL" = "small")
+                                      "1M+" = "big", 
+                                      "None" = "none", 
+                                      "<1M" = "small")
 
 table(email$number, email$my_forcats_number, useNA="always")
 ```

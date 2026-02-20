@@ -157,7 +157,7 @@ mutate(flights, gain = arr_delay - dep_delay,
 
 ### Summarize
 
-The last verb is `summarise()`, which is most often used to calculate summary statistics. 
+Next up is the verb `summarise()`, which is most often used to calculate summary statistics. 
 ```{r}
 summarise(flights, 
           ave_departure_delay = mean(dep_delay, na.rm = TRUE), 
