@@ -102,32 +102,10 @@ plot_xtab(x = ncbirths$mature, grp = ncbirths$habit, show.total = "false",
 # Part II: Efficient Data Management → Plot (NYC Flights)
 
 Each question starts with the full `flights` data set and will use multiple dplyr verbs so chaining is advised. Your final result should be shown as a printed tibble. 
-
-
-1. Create a new data set that contains only flights that:
-
-- departed from **JFK**
-- traveled at least **1000 miles**
-- have non-missing `air_time`
-
-Keep only the variables `origin`, `dest`, `distance`, and `air_time`. Then create a new variable called `speed` defined as `distance / air_time * 60`. Finally, sort from fastest to slowest `speed` and display the first 10 rows.
-
-
-```{r}
-flights %>%
-  filter(origin == "JFK", distance >= 1000, !is.na(air_time)) %>%
-  select(origin, dest, distance, air_time) %>%
-  mutate(speed = distance / air_time * 60) %>%
-  arrange(desc(speed)) %>%
-  head(10)
-```
-
 2. What are the most popular destinations for each airport?  
 
-:::{.callout-note appearance=minimal}
-This question is broken down into a few smaller parts to help you ensure that you are on the right track before moving to the next step. Only add one command at a time and "trust but verify" to make sure your code works as intended. You do not need to report the results of each step, just the final result.
-:::
- 
+> This question is broken down into a few smaller parts to help you ensure that you are on the right track before moving to the next step. Only add one command at a time and "trust but verify" to make sure your code works as intended. You do not need to report the results of each step, just the final result.
+
 a. Use `filter()` to keep only flights with a non-missing distance, then `group_by(origin, dest)` to group the data by origin first, then destination within origin. 
 b. Use `summarise()` to calculate, for each origin–destination pair:
    - the number of flights as `n_flights`
@@ -146,6 +124,26 @@ flights %>%
   slice_head(n=3) %>% 
   relocate(c(dest, n_flights), .after = last_col())
 ```
+
+
+2. Create a new data set that contains only flights that:
+
+- departed from **JFK**
+- traveled at least **1000 miles**
+- have non-missing `air_time`
+
+Keep only the variables `origin`, `dest`, `distance`, and `air_time`. Then create a new variable called `speed` defined as `distance / air_time * 60`. Finally, sort from fastest to slowest `speed` and display the first 10 rows.
+
+
+```{r}
+flights %>%
+  filter(origin == "JFK", distance >= 1000, !is.na(air_time)) %>%
+  select(origin, dest, distance, air_time) %>%
+  mutate(speed = distance / air_time * 60) %>%
+  arrange(desc(speed)) %>%
+  head(10)
+```
+
 
 3. Exploring travel delays
 
