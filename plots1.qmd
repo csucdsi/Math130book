@@ -87,7 +87,7 @@ ggplot(pen, aes(x=species)) + geom_bar()
 
 ## `sjPlot`
 
-Using the `plot_frq` function from the `sjPlot` package builds on the `geom_bar()` type plot from `ggplot`, but adds frequncies and relative percentages on the plot. 
+Using the `plot_frq` function from the `sjPlot` package builds on the `geom_bar()` type plot from `ggplot`, but adds frequencies and relative percentages on the plot. 
 ```{r}
 plot_frq(pen, "species")
 ```
@@ -273,7 +273,26 @@ ggscatter(pen, x="flipper_length_mm", y="body_mass_g", add = "reg.line")
 ```
 :::
 
+### Correlation Coefficient
 
+The _correlation coefficient_ (denoted $r$) is a summary number that describes the direction and strength of a linear relationship between two continuous variables. The `ggscatter` function can add this number to the plot using the `cor.coef` argument. 
+
+```{r}
+#| fig-height: 4
+#| fig-width: 4
+ggscatter(pen, x="flipper_length_mm", y="body_mass_g", 
+          add = "reg.line", cor.coef = TRUE)
+```
+
+General guidelines for interpretation of _strength_: 
+
+* $|r| > .7$ - strong relationship
+* $0.3 < |r| < 0.7$ - moderate relationship
+* $|r| < .3$ - weak relationship
+
+The _direction_ of the relationship is determined by the sign of $r$. A positive value indicates a positive relationship (as x increases, so does y), and a negative value indicates a negative relationship (as x increases, y decreases).
+
+In this case we have a **strong positive relationship** between flipper length and body mass of penguins.
 
 ## One continuous vs. one categorical 
 
@@ -446,7 +465,7 @@ More often than not, we want to compare percents of one group -- within each lev
 
 #### Row percents {#sec-row-pct-table}
 
-To compare the distribution of sex (columns) within each of the sepecies (rows) we need row percentages. The percentages now add up to 1 across the rows and the comparison groups are each species. 
+To compare the distribution of sex (columns) within each of the species (rows) we need row percentages. The percentages now add up to 1 across the rows and the comparison groups are each species. 
  
 ::: {.panel-tabset}
 ## base R
@@ -456,7 +475,7 @@ Specify `margin=1` inside the `prop.table()`
 table(pen$species, pen$sex) |> prop.table(margin=1)  |> round(3) 
 ```
 
-I added a `round` function to the end of this because noone needs that many decimal places. 
+I added a `round` function to the end of this because no one needs that many decimal places. 
 
 ## `tbl_summary`
 
@@ -523,7 +542,7 @@ ggplot(pen, aes(x=species, fill=sex)) +
 
 ## `sjPlot`
 
-The `plot_xtab` function is the two-way table analogy to `plot_frq` to create a barchart with clear lables on the bars for the N and % (and NA values dropped). Note you have to use dollar sign notation here for the variables. 
+The `plot_xtab` function is the two-way table analogy to `plot_frq` to create a barchart with clear labels on the bars for the N and % (and NA values dropped). Note you have to use dollar sign notation here for the variables. 
 
 ```{r}
 plot_xtab(x = pen$species, grp = pen$sex)

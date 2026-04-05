@@ -338,13 +338,13 @@ This lets us compare the distribution of gestation period for smokers vs non smo
 ### Scatterplots
 
 ```{r}
-NCbirths %>%   # <1>
+NCbirths %>%   
   select(weeks, weight, habit) %>% 
   filter(!is.na(habit)) %>% 
-ggplot(aes(x=_________, y=_________, color = _________)) +  # <2>
+ggplot(aes(x=_________, y=_________, color = _________)) + 
          geom_point() + geom_smooth(se=FALSE) + 
   theme_minimal() + 
-  _________(palette = "_________") # <3>
+  _________(palette = "_________") 
 ```
 
 1. Starting with the `NCbirths` data set, I `select` the variables i want to plot, and then use `filter` to drop rows with missing values for `habit`. 

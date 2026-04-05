@@ -23,6 +23,7 @@ Go to [Dr. D's data website](https://www.norcalbiostat.com/data/) to find the th
 
 2. Read in the `Crime Data` data set.  Use R functions to create a table that shows how many states are in each division (using the `division` variable).
 
+
 3. When reading in the Excel data set on crime, what do the arguments `sheet=1` and `col_names=TRUE` mean?
 
 
@@ -61,7 +62,7 @@ b. These are multiple divisions in a region, so let's facet on `region` so that 
 
 
 
-c. Improve readabilty. Let's try to fix the overlapping of the x axis labels using `coord_flip()` to rotate the plots horizontally. 
+c. Improve readability. Let's try to fix the overlapping of the x axis labels using `coord_flip()` to rotate the plots horizontally. 
 
 
 d. Simplify. Since division is nested within region we don't need ALL the levels of division to show up in each panel. Let's "free" our y axis labels by adding `scales="free_y"` to the `facet_wrap`. 

@@ -39,7 +39,7 @@ AI coding tools are not permitted for any stage or phase of work in this class. 
 * It can show you techniques that are _technically_ correct (e.g. it comes to the same result), but not in the streamlined way that this course teaches
 * It doesn't help you learn right now. It's a crutch, and will take you so much longer to actually learn what to do. 
 
-Imagine if you went to another country where you did not speak the language and relied 100% on using google translate to get around. Sure it's mostly fine, and you get your point across most the time, but it takes much longer, can be more convoluted and anoyying for everyone. Just take the time to learn the basics. 
+Imagine if you went to another country where you did not speak the language and relied 100% on using google translate to get around. Sure it's mostly fine, and you get your point across most the time, but it takes much longer, can be more convoluted and annoying for everyone. Just take the time to learn the basics. 
 
 :::{.callout-tip title = "You will grow into it"}
 I'm **not** saying that AI can't be useful to help you code. Just not yet at this stage. Once you have a basic understanding of fundamentals, can provide clear instructions, and have a better "bullshit" radar, AI can be _very_ helpful in figuring out how to code things. 
@@ -108,7 +108,7 @@ When at all possible, use results from the past 1-2 years. Anything over 5 years
 - The package "vignettes". Walk through package documentation with examples and clearly explained text. E.g. [ggpubr](https://rpkgs.datanovia.com/ggpubr/index.html), [sjPlot](https://strengejacke.github.io/sjPlot/index.html), and [gtsummary](https://www.danieldsjoberg.com/gtsummary/)
 -   Quarto authoring guide [https://quarto.org/docs/guide/](https://quarto.org/docs/guide/)
 -   Variety of "cheatsheets" [https://posit.co/resources/cheatsheets/](https://posit.co/resources/cheatsheets/)
--   [Stack Overflow](http://stackoverflow.com/questions/tagged/r): if your question hasn't been answered before and is well crafted, chances are you will get an answer in less than 5 min. Remember tofollow their guidelines on [how to ask a good question](http://stackoverflow.com/help/how-to-ask).
+-   [Stack Overflow](http://stackoverflow.com/questions/tagged/r): if your question hasn't been answered before and is well crafted, chances are you will get an answer in less than 5 min. Remember to follow their guidelines on [how to ask a good question](http://stackoverflow.com/help/how-to-ask).
 -   The [Posit Community](https://forum.posit.co/): it is read by a lot of people and is welcoming to new users.
 
 

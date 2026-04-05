@@ -10,7 +10,7 @@ format:
 
 -   The term **R** refers to both the programming language and the software that interprets the scripts written using it.
 - An **IDE** is an "Integrated Development Environment" and essentially is another program that lets you interact with R in a productive and efficient manner. 
-    - **[RStudio](https://posit.co/downloads/)** has been a very popular IDE since around 2011 that has continued to flourish and improve throughtout the years. 
+    - **[RStudio](https://posit.co/downloads/)** has been a very popular IDE since around 2011 that has continued to flourish and improve throughout the years. 
     - **[Positron](https://positron.posit.co/)** is a new IDE created by the developers of RStudio that is based off another popular IDE called VSCode - and aimed primarily at Data Scientists
     
 

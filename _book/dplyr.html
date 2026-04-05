@@ -573,7 +573,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Learn more about <a href="https://dplyr.tidyverse.org/reference/rename.html">dplyr::rename</a></span></div></div>
-<div class="page-columns page-full"><p>Sometimes variables come to you in really obscure naming conventions. What the heck is SBA641? The <code>rename()</code> function converts an <code>old name</code> to a <code>new name</code>. The generic syntax is <code>rename(new = old)</code>. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">For the purpose of these lecture notes I am not making this change permenant. There is no assignment operator <code>&lt;-</code> used here, so this change is not going to persist into later code.</span></div></div>
+<div class="page-columns page-full"><p>Sometimes variables come to you in really obscure naming conventions. What the heck is SBA641? The <code>rename()</code> function converts an <code>old name</code> to a <code>new name</code>. The generic syntax is <code>rename(new = old)</code>. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">For the purpose of these lecture notes I am not making this change permanent. There is no assignment operator <code>&lt;-</code> used here, so this change is not going to persist into later code.</span></div></div>
 <p>So to rename <code>dep_time</code> to <code>departure_time</code> we would type</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rename</span>(flights, <span class="at">departure_time =</span> dep_time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -706,7 +706,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<p>To reverse the sort order, use <code>desc()</code>. This is Decending order.</p>
+<p>To reverse the sort order, use <code>desc()</code>. This is Descending order.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(flights2, <span class="fu">desc</span>(distance))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -837,7 +837,7 @@ Avoid the base <code>sort</code> function
 </figure>
 </div>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Learn more about <a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span></div></div>
-<p>This function allows you to vectorise multiple <code>if_else()</code> statements. Each case is evaluated sequentially and the first match for each element determines the corresponding value in the output vector. If no cases match, the <code>.default</code> is used as a final “else” statment.</p>
+<p>This function allows you to vectorise multiple <code>if_else()</code> statements. Each case is evaluated sequentially and the first match for each element determines the corresponding value in the output vector. If no cases match, the <code>.default</code> is used as a final “else” statement.</p>
 <p>The general syntax is <code>logical statment</code> ~ <code>value</code>. On the left hand side you specify a logical statement to identify a certain “case”, then a tilde <code>~</code>, then on the right hand side you specify what you want the value of the new variable to be when this case is true.</p>
 <div class="cell" data-code-annotations="below">
 <div class="sourceCode cell-code" id="annotated-cell-19" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-19" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-19-1" class="code-annotation-target"><a href="#annotated-cell-19-1" aria-hidden="true" tabindex="-1"></a>flights <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span></span>
@@ -899,7 +899,7 @@ Solution
 </details>
 </div>
 </div>
-<p>This <code>case_when</code> function can be used with complex logical statements involving multiple variables. Additionally, you don’t have to specify every single possible combiantion. If none of the statments specified evaluate as TRUE, the <code>.default</code> value will be used.</p>
+<p>This <code>case_when</code> function can be used with complex logical statements involving multiple variables. Additionally, you don’t have to specify every single possible combination. If none of the statements specified evaluate as TRUE, the <code>.default</code> value will be used.</p>
 <div class="cell" data-code-annotations="below">
 <div class="sourceCode cell-code" id="annotated-cell-20" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-20-1" class="code-annotation-target"><a href="#annotated-cell-20-1" aria-hidden="true" tabindex="-1"></a>flights <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-20" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-20-2" class="code-annotation-target"><a href="#annotated-cell-20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">delay_type =</span> <span class="fu">case_when</span>(</span>
@@ -921,7 +921,7 @@ Solution
 </dd>
 <dt data-target-cell="annotated-cell-20" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-20" data-code-lines="5" data-code-annotation="3">If neither of these two statments are true, there is a delay at either the departure or arrival and so we set <code>delay_type</code> to “one delay”.</span>
+<span data-code-cell="annotated-cell-20" data-code-lines="5" data-code-annotation="3">If neither of these two statements are true, there is a delay at either the departure or arrival and so we set <code>delay_type</code> to “one delay”.</span>
 </dd>
 </dl>
 </div>
@@ -942,23 +942,23 @@ Solution
 </div>
 <p>The <code>summarise()</code> verb allows you to calculate summary statistics for each group. This is probably the most common function that is used in conjunction with <code>group_by</code>. For example, the average distance flown per month.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(by_month, <span class="at">avg_airtime =</span> <span class="fu">mean</span>(distance, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(by_month, <span class="at">avg_distance =</span> <span class="fu">mean</span>(distance, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code># A tibble: 12 × 2
-   month avg_airtime
-   &lt;int&gt;       &lt;dbl&gt;
- 1     1       1007.
- 2     2       1001.
- 3     3       1012.
- 4     4       1039.
- 5     5       1041.
- 6     6       1057.
- 7     7       1059.
- 8     8       1062.
- 9     9       1041.
-10    10       1039.
-11    11       1050.
-12    12       1065.</code></pre>
+   month avg_distance
+   &lt;int&gt;        &lt;dbl&gt;
+ 1     1        1007.
+ 2     2        1001.
+ 3     3        1012.
+ 4     4        1039.
+ 5     5        1041.
+ 6     6        1057.
+ 7     7        1059.
+ 8     8        1062.
+ 9     9        1041.
+10    10        1039.
+11    11        1050.
+12    12        1065.</code></pre>
 </div>
 </div>
 <p>Or simply the total number of flights per month,</p>
@@ -982,7 +982,7 @@ Solution
 12    12 28135</code></pre>
 </div>
 </div>
-<p>Or even more interstingly, the average departure delay, number of flights with delays, and the maximum length of delay at each of the three origin airports.</p>
+<p>Or even more interestingly, the average departure delay, number of flights with delays, and the maximum length of delay at each of the three origin airports.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>by_airport <span class="ot">&lt;-</span> <span class="fu">group_by</span>(flights, origin)</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(by_airport, </span>

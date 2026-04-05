@@ -302,7 +302,7 @@ ggplot(email, aes(y=num_char, x=number, col=number)) + geom_boxplot() +
 ## Title and axis labels
 
 
-A good plot needs to stand alone and convey as much information as possible. `ggplot2` provides a single `labs` function that is very versitile and includes options for alt-text as well. See `?labs` for more information
+A good plot needs to stand alone and convey as much information as possible. `ggplot2` provides a single `labs` function that is very versatile and includes options for alt-text as well. See `?labs` for more information
 
 * `title` for an overall plot title
 * `y` and `x` adjust the axis labels. 

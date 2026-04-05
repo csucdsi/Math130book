@@ -19,7 +19,7 @@ ncbirths <- openintro::ncbirths
 
 ## Summarizing data
 
-Two common methods used to summarize data are frequnecy tables for categorical variables (e.g. nominal, ordinal), and summary statistics for numeric (continuous or discrete) variables.
+Two common methods used to summarize data are frequency tables for categorical variables (e.g. nominal, ordinal), and summary statistics for numeric (continuous or discrete) variables.
 
 ### Frequency Tables 
 
@@ -63,7 +63,7 @@ min(ncbirths$mage)
 
 The `gtsummary` package provides a single function `tbl_summary` to create a really nicely formatted summary table for both quantitative and categorical data types.
 
-The first argument is the data set, then you `include` the vector of variable that you want to display in the table. By default the sample size *n* and the relative percent are presented for categorical data, and the median, with first and third quartiles shown for quantitiatve data.
+The first argument is the data set, then you `include` the vector of variable that you want to display in the table. By default the sample size *n* and the relative percent are presented for categorical data, and the median, with first and third quartiles shown for quantitative data.
 
 ```{r}
 tbl_summary(ncbirths, 

@@ -119,7 +119,7 @@ ggplot(crime, aes(y=poverty, x = division, fill = region)) +
   scale_fill_discrete(guide = "none")
 ```
 
-c. Improve readabilty. Let's try to fix the overlapping of the x axis labels using `coord_flip()` to rotate the plots horizontally. 
+c. Improve readability. Let's try to fix the overlapping of the x axis labels using `coord_flip()` to rotate the plots horizontally. 
 ```{r}
 ggplot(crime, aes(y=poverty, x = division, fill = region)) + 
   geom_violin(alpha=.1) + 

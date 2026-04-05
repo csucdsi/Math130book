@@ -56,7 +56,7 @@ ggplot(pen, aes(x=species)) + geom_bar()
 
 #### `sjPlot`
 
-Using the `plot_frq` function from the `sjPlot` package builds on the `geom_bar()` type plot from `ggplot`, but adds frequncies and relative percentages on the plot. 
+Using the `plot_frq` function from the `sjPlot` package builds on the `geom_bar()` type plot from `ggplot`, but adds frequencies and relative percentages on the plot. 
 ```{r}
 plot_frq(pen, "species")
 ```
@@ -356,7 +356,7 @@ More often than not, we want to compare percents of one group -- within each lev
 
 ### Row percents
 
-To compare the distribution of sex (columns) within each of the sepecies (rows) we need row percentages. The percentages now add up to 1 across the rows and the comparison groups are each species. 
+To compare the distribution of sex (columns) within each of the species (rows) we need row percentages. The percentages now add up to 1 across the rows and the comparison groups are each species. 
  
 
 #### base R
@@ -429,7 +429,7 @@ ggplot(pen, aes(x=species, fill=sex)) +
 
 #### `sjPlot`
 
-The `plot_xtab` function is the two-way table analogy to `plot_frq` to create a barchart with clear lables on the bars for the N and % (and NA values dropped). Note you have to use dollar sign notation here for the variables. 
+The `plot_xtab` function is the two-way table analogy to `plot_frq` to create a barchart with clear labels on the bars for the N and % (and NA values dropped). Note you have to use dollar sign notation here for the variables. 
 
 ```{r}
 plot_xtab(x = pen$species, grp = pen$sex)

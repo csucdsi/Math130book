@@ -119,7 +119,7 @@ select(flights, -(year:day))
 
 [Learn more about [dplyr::rename](https://dplyr.tidyverse.org/reference/rename.html)]{.aside}
 
-Sometimes variables come to you in really obscure naming conventions. What the heck is SBA641? The `rename()` function converts an `old name` to a `new name`. The generic syntax is `rename(new = old)`. [For the purpose of these lecture notes I am not making this change permenant. There is no assignment operator `<-` used here, so this change is not going to persist into later code.]{.aside}
+Sometimes variables come to you in really obscure naming conventions. What the heck is SBA641? The `rename()` function converts an `old name` to a `new name`. The generic syntax is `rename(new = old)`. [For the purpose of these lecture notes I am not making this change permanent. There is no assignment operator `<-` used here, so this change is not going to persist into later code.]{.aside}
 
 So to rename `dep_time` to `departure_time` we would type
 
@@ -191,7 +191,7 @@ arrange(flights2, distance)
 :::
 
 ::: {.column width="50%"}
-To reverse the sort order, use `desc()`.  This is Decending order. 
+To reverse the sort order, use `desc()`.  This is Descending order. 
 
 ```{r}
 arrange(flights2, desc(distance))
@@ -259,7 +259,7 @@ names(flights)
 
 [Learn more about [case_when](https://dplyr.tidyverse.org/reference/case_when.html)]{.aside}
 
-This function allows you to vectorise multiple `if_else()` statements. Each case is evaluated sequentially and the first match for each element determines the corresponding value in the output vector. If no cases match, the `.default` is used as a final "else" statment.
+This function allows you to vectorise multiple `if_else()` statements. Each case is evaluated sequentially and the first match for each element determines the corresponding value in the output vector. If no cases match, the `.default` is used as a final "else" statement.
 
 The general syntax is `logical statment` ~ `value`.
 On the left hand side you specify a logical statement to identify a certain "case", then a tilde `~`, then on the right hand side you specify what you want the value of the new variable to be when this case is true. 
@@ -295,7 +295,7 @@ ggpubr::ggboxplot(flights, y="distance", fill = "distance_cat")
 
 :::
 
-This `case_when` function can be used with complex logical statements involving multiple variables. Additionally, you don't have to specify every single possible combiantion. If none of the statments specified evaluate as TRUE, the `.default` value will be used. 
+This `case_when` function can be used with complex logical statements involving multiple variables. Additionally, you don't have to specify every single possible combination. If none of the statements specified evaluate as TRUE, the `.default` value will be used. 
 
 ```{r}
 #| code-annotations: below
@@ -311,7 +311,7 @@ table(flights$delay_type, useNA="always")
 
 1. Take the `flights` data set, and then, 
 2. Create a new variable called `delay_type` based on whether or not there was a delay at both sides (departure and arrival), if there was no delays either departing or arriving
-3. If neither of these two statments are true, there is a delay at either the departure or arrival and so we set `delay_type` to "one delay". 
+3. If neither of these two statements are true, there is a delay at either the departure or arrival and so we set `delay_type` to "one delay". 
 
 
 ## Grouped Operations  
@@ -326,7 +326,7 @@ by_month <- group_by(flights, month)
 
 The `summarise()` verb allows you to calculate summary statistics for each group. This is probably the most common function that is used in conjunction with `group_by`. For example, the average distance flown per month. 
 ```{r}
-summarise(by_month, avg_airtime = mean(distance, na.rm=TRUE))
+summarise(by_month, avg_distance = mean(distance, na.rm=TRUE))
 ```
 
 Or simply the total number of flights per month, 
@@ -334,7 +334,7 @@ Or simply the total number of flights per month,
 summarize(by_month, count=n())
 ``` 
 
-Or even more interstingly, the average departure delay, number of flights with delays, and the maximum length of delay at each of the three origin airports. 
+Or even more interestingly, the average departure delay, number of flights with delays, and the maximum length of delay at each of the three origin airports. 
 
 ```{r}
 by_airport <- group_by(flights, origin)
