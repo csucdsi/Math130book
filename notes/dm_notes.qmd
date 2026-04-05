@@ -194,7 +194,7 @@ Choose all observations (rows) of a `data` set, where a `variable` is equal to s
 data[data$variable==value] <- new_value  # example code to show syntax.
 ```
 
-{.callout-tip title = "Example: Too low birthweight
+### Example: Too low birthweight
 Let's look at the numerical distribution of birthweight (in pounds) of the baby.
 
 ```{r}
@@ -248,7 +248,7 @@ The new variable you want to create goes on the left side of the assignment oper
 data$new_variable <- creation_statement  # example code not run
 ```
 
-{.callout-tip title = "Example: Row-wise difference between two existing variables
+### Example: Row-wise difference between two existing variables
 
 As a pregnancy progresses, both the mother and the baby gain weight. The variable `gained` is the total amount of weight the mother gained in her pregnancy. The variable `weight` is how much the baby weighed at birth.
 
@@ -324,7 +324,7 @@ The pipe lets you string set of functions together, like links on a chain, to be
 
 This is what I read to myself when using the pipe. "Do this `|>` the next thing `|>` do this third thing `|>` this last"
 
-{.callout-tip title = "👉Example: Frequency tables & summary statistics using the pipe
+### Example: Frequency tables & summary statistics using the pipe
 
 First stating the variable, then pipe in the summary function.
 

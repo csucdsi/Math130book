@@ -155,7 +155,7 @@ Sort flights based on distance, from shortest to longest. This is Ascending orde
 ________(flights2, ________)
 ```
 
-To reverse the sort order, use `desc()`.  This is Decending order. 
+To reverse the sort order, use `desc()`.  This is Descending order. 
 
 ```{r}
 ________(________, ________(distance))
@@ -195,7 +195,7 @@ names(flights)
 
 ### Case when
 
-This function allows you to vectorise multiple `if_else()` statements. Each case is evaluated sequentially and the first match for each element determines the corresponding value in the output vector. If no cases match, the `.default` is used as a final "else" statment.
+This function allows you to vectorise multiple `if_else()` statements. Each case is evaluated sequentially and the first match for each element determines the corresponding value in the output vector. If no cases match, the `.default` is used as a final "else" statement.
 
 The general syntax is `logical statment` ~ `value`.
 On the left hand side you specify a logical statement to identify a certain "case", then a tilde `~`, then on the right hand side you specify what you want the value of the new variable to be when this case is true. 
@@ -218,14 +218,14 @@ _________(flights, y="distance", fill = "distance_cat")
 
 
 
-This `case_when` function can be used with complex logical statements involving multiple variables. Additionally, you don't have to specify every single possible combiantion. If none of the statments specified evaluate as TRUE, the `.default` value will be used. 
+This `case_when` function can be used with complex logical statements involving multiple variables. Additionally, you don't have to specify every single possible combination. If none of the statements specified evaluate as TRUE, the `.default` value will be used. 
 
 ```{r}
-_________ <- _________ %>% # <1> 
-  _________(_________ = _________( # <2> 
-             dep_delay > 0 & arr_delay > 0 ~ "two delays", # <2> 
-             dep_delay <= 0 & arr_delay <= 0 ~ "no delays", # <2> 
-             _________ ~ "one delay" # <3> 
+_________ <- _________ %>% 
+  _________(_________ = _________( 
+             dep_delay > 0 & arr_delay > 0 ~ "two delays", 
+             dep_delay <= 0 & arr_delay <= 0 ~ "no delays",  
+             _________ ~ "one delay" 
            )
   )
 table(flights$delay_type, useNA="always")
@@ -233,7 +233,7 @@ table(flights$delay_type, useNA="always")
 
 1. Take the `flights` data set, and then, 
 2. Create a new variable called `delay_type` based on whether or not there was a delay at both sides (departure and arrival), if there was no delays either departing or arriving
-3. If neither of these two statments are true, there is a delay at either the departure or arrival and so we set `delay_type` to "one delay". 
+3. If neither of these two statements are true, there is a delay at either the departure or arrival and so we set `delay_type` to "one delay". 
 
 
 ## Grouped Operations  
@@ -248,7 +248,7 @@ by_month <- _________(flights, month)
 
 The `summarise()` verb allows you to calculate summary statistics for each group. This is probably the most common function that is used in conjunction with `group_by`. For example, the average distance flown per month. 
 ```{r}
-summarise(_________, avg_airtime = _________)
+summarise(_________, avg_distance = _________)
 ```
 
 Or simply the total number of flights per month, 
@@ -256,7 +256,7 @@ Or simply the total number of flights per month,
 _________(by_month, _________)
 ``` 
 
-Or even more interstingly, the average departure delay, number of flights with delays, and the maximum length of delay at each of the three origin airports. 
+Or even more interestingly, the average departure delay, number of flights with delays, and the maximum length of delay at each of the three origin airports. 
 
 ```{r}
 by_airport <- _________

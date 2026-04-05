@@ -154,7 +154,7 @@ Sort flights based on distance, from shortest to longest. This is Ascending orde
 arrange(flights2, distance)
 ```
 
-To reverse the sort order, use `desc()`.  This is Decending order. 
+To reverse the sort order, use `desc()`.  This is Descending order. 
 
 ```{r}
 arrange(flights2, desc(distance))
@@ -205,7 +205,7 @@ names(flights)
 
 ### Case when
 
-This function allows you to vectorise multiple `if_else()` statements. Each case is evaluated sequentially and the first match for each element determines the corresponding value in the output vector. If no cases match, the `.default` is used as a final "else" statment.
+This function allows you to vectorise multiple `if_else()` statements. Each case is evaluated sequentially and the first match for each element determines the corresponding value in the output vector. If no cases match, the `.default` is used as a final "else" statement.
 
 The general syntax is `logical statment` ~ `value`.
 On the left hand side you specify a logical statement to identify a certain "case", then a tilde `~`, then on the right hand side you specify what you want the value of the new variable to be when this case is true. 
@@ -219,16 +219,14 @@ flights <- flights %>%
   
 ```
 
-:::{.callout-tip title = "👉 Trust but verify" icon=false}
+#### Trust but verify
 Create a grouped boxplot of `distance` against `distance_cat` to confirm that this recode worked. 
 
 ```{r}
 ggpubr::ggboxplot(flights, y="distance", fill = "distance_cat")
 ```
 
-:::
-
-This `case_when` function can be used with complex logical statements involving multiple variables. Additionally, you don't have to specify every single possible combiantion. If none of the statments specified evaluate as TRUE, the `.default` value will be used. 
+This `case_when` function can be used with complex logical statements involving multiple variables. Additionally, you don't have to specify every single possible combination. If none of the statements specified evaluate as TRUE, the `.default` value will be used. 
 
 ```{r}
 flights <- flights %>% # <1> 
@@ -243,7 +241,7 @@ table(flights$delay_type, useNA="always")
 
 1. Take the `flights` data set, and then, 
 2. Create a new variable called `delay_type` based on whether or not there was a delay at both sides (departure and arrival), if there was no delays either departing or arriving
-3. If neither of these two statments are true, there is a delay at either the departure or arrival and so we set `delay_type` to "one delay". 
+3. If neither of these two statements are true, there is a delay at either the departure or arrival and so we set `delay_type` to "one delay". 
 
 
 ## Grouped Operations  
@@ -258,7 +256,7 @@ by_month <- group_by(flights, month)
 
 The `summarise()` verb allows you to calculate summary statistics for each group. This is probably the most common function that is used in conjunction with `group_by`. For example, the average distance flown per month. 
 ```{r}
-summarise(by_month, avg_airtime = mean(distance, na.rm=TRUE))
+summarise(by_month, avg_distance = mean(distance, na.rm=TRUE))
 ```
 
 Or simply the total number of flights per month, 
@@ -266,7 +264,7 @@ Or simply the total number of flights per month,
 summarize(by_month, count=n())
 ``` 
 
-Or even more interstingly, the average departure delay, number of flights with delays, and the maximum length of delay at each of the three origin airports. 
+Or even more interestingly, the average departure delay, number of flights with delays, and the maximum length of delay at each of the three origin airports. 
 
 ```{r}
 by_airport <- group_by(flights, origin)
@@ -281,10 +279,9 @@ Seems like Laguardia (LGA) is the better airport for the least delays.
 
 ## Chaining Operations 
 
-
-:::{.callout-important title = "Same pipe, different symbol"}
+**Same pipe, different symbol**
 We've seen chaining before using the base R pipe `|>`. The `%>%` symbol is also called a pipe, but is only accessible after you load the `dplyr` package. They function the same. We show both here because you will see both used out in the wild and need to know they are interchangeable. 
-:::
+
 
 Consider the following group of operations that take the data set `flights`, and produce a final data set (`a4`) that contains only the flights where the daily average delay is greater than a half hour. 
 ```{r}

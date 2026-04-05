@@ -556,12 +556,12 @@ Trust but verify
 </div>
 </div>
 <p>R defaults to alphabetical order in other cases, so beware! You may need to correct the ordering for other data sets.</p>
-<p>We need to take control of these factors! We can do that by re-factoring the existing factor variable, but this time specifying the <code>levels</code> of the factor (since it already has labels). Say we decide to order the restaraunts by putting all the places that sell burgers together.</p>
+<p>We need to take control of these factors! We can do that by re-factoring the existing factor variable, but this time specifying the <code>levels</code> of the factor (since it already has labels). Say we decide to order the restaurants by putting all the places that sell burgers together.</p>
 <blockquote class="blockquote">
 <p>Original Order: Arbys, Burger King, Chick Fil-A, Dairy Queen, Mcdonalds, Sonic, Subway, Taco Bell</p>
 <p>Desired Order: Arbys, Burger King, Dairy Queen, Mcdonalds, Sonic, Chick Fil-A, Subway, Taco Bell</p>
 </blockquote>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Since I did not use the assignment operator (<code>&lt;-</code>) here, these changes were not made to the variable in the <code>ff</code> data set. The examples below demonstrate making an adjustmet to a factor variable and saving that adjustment as a new variable in the data set.</span></div></div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Since I did not use the assignment operator (<code>&lt;-</code>) here, these changes were not made to the variable in the <code>ff</code> data set. The examples below demonstrate making an adjustment to a factor variable and saving that adjustment as a new variable in the data set.</span></div></div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><code>forcats</code></a></li></ul>
 <div class="tab-content">
@@ -583,7 +583,7 @@ Trust but verify
 </div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p>Using the <code>fct_relevel</code> function, you only need to specifiy the levels that you want to move.</p>
+<p>Using the <code>fct_relevel</code> function, you only need to specify the levels that you want to move.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># results not saved</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant <span class="sc">|&gt;</span> </span>

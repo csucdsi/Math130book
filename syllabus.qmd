@@ -155,7 +155,7 @@ Students who do not have a computer that they install programs on (i.e. a iPad o
 
 This adds up to 15 hours in class, and 30 hours outside of class during these 5 weeks. That's 3 hours in class, and 10 hours of homework per week. If you are new to programming and unfamiliar with computers, you may end up taking the entire time. Be sure to schedule sufficient time during week 5 to work on the project.
 
-You will get out of this class what you put into it. Recall this is just a co-curriculuar or supplemental basic introductory class. You will not learn everything there is to know about R, nor likely not feel proficient by the time you are done. But you will be solidly on the path where you can continue to learn and improve.
+You will get out of this class what you put into it. Recall this is just a co-curricular or supplemental basic introductory class. You will not learn everything there is to know about R, nor likely not feel proficient by the time you are done. But you will be solidly on the path where you can continue to learn and improve.
 
 # Grading
 <!-- updateme -->
@@ -232,7 +232,7 @@ AI writing tools are not permitted for any stage or phase of work in this class.
 ### IT Support Services
 
 
-Computer labs for student use are located in multiple locations in the libray, Tehama Hall Room 131, and in the lobby of the new BSS building. You can get help using your computer from IT Support Services; contact them through the ITSS web site at [http://www.csuchico.edu/itss](http://www.csuchico.edu/itss). Additional labs may be available to students in your department or college.
+Computer labs for student use are located in multiple locations in the library, Tehama Hall Room 131, and in the lobby of the new BSS building. You can get help using your computer from IT Support Services; contact them through the ITSS web site at [http://www.csuchico.edu/itss](http://www.csuchico.edu/itss). Additional labs may be available to students in your department or college.
 
 ### Americans with Disabilities Act
 If you need course adaptations or accommodations because of a disability or chronic illness,  or if you need to make special arrangements in case the building must be evacuated, please make an appointment with me as soon as possible, or see me during office hours. Please also contact Accessibility Resource Center (ARC) as they are the designated department responsible for approving and coordinating reasonable accommodations and services for students with disabilities. ARC will help you understand your rights and responsibilities under the Americans with Disabilities Act and provide you further assistance with requesting and arranging accommodations.

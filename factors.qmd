@@ -173,13 +173,13 @@ levels(ff$restaurant)
 
 R defaults to alphabetical order in other cases, so beware! You may need to correct the ordering for other data sets.
 
-We need to take control of these factors! We can do that by re-factoring the existing factor variable, but this time specifying the `levels` of the factor (since it already has labels). Say we decide to order the restaraunts by putting all the places that sell burgers together. 
+We need to take control of these factors! We can do that by re-factoring the existing factor variable, but this time specifying the `levels` of the factor (since it already has labels). Say we decide to order the restaurants by putting all the places that sell burgers together. 
 
 > Original Order: Arbys, Burger King, Chick Fil-A, Dairy Queen, Mcdonalds, Sonic, Subway, Taco Bell
 > 
 > Desired Order: Arbys, Burger King, Dairy Queen, Mcdonalds, Sonic, Chick Fil-A, Subway, Taco Bell
 
-[Since I did not use the assignment operator (`<-`) here, these changes were not made to the variable in the `ff` data set. The examples below demonstrate making an adjustmet to a factor variable and saving that adjustment as a new variable in the data set.]{.aside}
+[Since I did not use the assignment operator (`<-`) here, these changes were not made to the variable in the `ff` data set. The examples below demonstrate making an adjustment to a factor variable and saving that adjustment as a new variable in the data set.]{.aside}
 
 ::: {.panel-tabset}
 ## Base R
@@ -195,7 +195,7 @@ factor(ff$restaurant,
 ```
 
 ## `forcats`
-Using the `fct_relevel` function, you only need to specifiy the levels that you want to move. 
+Using the `fct_relevel` function, you only need to specify the levels that you want to move. 
 ```{r}
 # results not saved
 ff$restaurant |> 

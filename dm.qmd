@@ -86,7 +86,7 @@ min(ncbirths$visits)
 
 The `gtsummary` package provides a single function `tbl_summary` to create a really nicely formatted summary table for both quantitative and categorical data types.
 
-The first argument is the data set, then you `include` the vector of variable that you want to display in the table. By default the sample size *n* and the relative percent are presented for categorical data, and the median, with first and third quartiles shown for quantitiatve data.
+The first argument is the data set, then you `include` the vector of variable that you want to display in the table. By default the sample size *n* and the relative percent are presented for categorical data, and the median, with first and third quartiles shown for quantitative data.
 
 ```{r}
 tbl_summary(ncbirths, 

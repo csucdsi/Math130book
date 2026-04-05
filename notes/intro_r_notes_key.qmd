@@ -197,7 +197,7 @@ sqrt(4)==2
 
 The double equal sign `==` is a test for numerical equality between the left and right hand sides, and should not be confused with the single `=` sign, which performs variable assignment (similar to `<-`).
 
-We will see how to use these logical statements to do things such as subsetting data and creating new variables in a few secdtions.  
+We will see how to use these logical statements to do things such as subsetting data and creating new variables in a few sections.  
 
 ### Negating Boolean values using "!"
 
