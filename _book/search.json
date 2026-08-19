@@ -24,7 +24,7 @@
     "href": "overview.html",
     "title": "Course Overview",
     "section": "",
-    "text": "Program Terminology\nThis book teaches you how to use R from within the R Studio IDE as we feel it is easier for new learners to start with. You will have to install both onto your computer. Setup instructions are discussed later in Section 1.1 Installing R and R Studio.",
+    "text": "Program Terminology\nThis book teaches you how to use R from within the R Studio IDE as we feel it is easier for new learners to start with. You will have to install both onto your computer. Setup instructions are discussed later in Section Installing R and R Studio.",
     "crumbs": [
       "Course Overview"
     ]
@@ -74,7 +74,7 @@
     "href": "overview.html#getting-and-submitting-assignments",
     "title": "Course Overview",
     "section": "Getting and Submitting Assignments",
-    "text": "Getting and Submitting Assignments\nAll assignment files can be found in ?sec-assignments . Submission instructions vary by instructor so check your syllabus for details.",
+    "text": "Getting and Submitting Assignments\nAll assignment files can be found in Assignment Files. Submission instructions vary by instructor so check your syllabus for details.",
     "crumbs": [
       "Course Overview"
     ]
@@ -150,18 +150,7 @@
     "href": "setup_tools.html#get-organized",
     "title": "1  Your New Tools",
     "section": "1.6 Get oRganized!",
-    "text": "1.6 Get oRganized!\nIt is good practice to keep a set of related data, analyses, and text self-contained in a single folder called the working directory. For example keeping all files related to one class in it’s own folder, separate from other classes. If you are taking another class using R at the same time as this one, it’s even MORE important to keep your files separate.\n\n\n\n\n\n\nImportant\n\n\n\nTHIS SHOULD NOT BE YOUR DOWNLOADS FOLDER\n\n\n\n1.6.1 Names are important\nChoose one of the four naming convention shown below for your class folder and stick with it. These are snake_case, camelCase, kebab-case or UPPER_SNAKE.\n\n\n\nCommon Naming Conventions\n\n\n\n\n\n\n\n\nCreate your folders\n\n\n\n\nOn your computer, in an easy to find place, create a new folder named math130 using your chosen naming convention.\nThen create three subfolders: data, homework, notes.\n\n\n\n\n\n\n\n\n\n\n1.6.2 Be the boss of your files\nWhen you download a file, right click and “Save as” or “Save target as” and actively choose where to download this file.\n\n\n\n\n\n\nAvoid these pain points\n\n\n\n\nDo not left click on the links\nDo not let files live in your downloads folder.\nDo not open any files from your browser window after downloading.\n\n\n\n\n\n\n\n\n\n👉 Your Turn\n\n\n\nRight click [this link] to download and save this file into your homework folder. We will use this file in the next lesson.",
-    "crumbs": [
-      "Getting Started",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Your New Tools</span>"
-    ]
-  },
-  {
-    "objectID": "setup_tools.html#sec-rproj",
-    "href": "setup_tools.html#sec-rproj",
-    "title": "1  Your New Tools",
-    "section": "1.7 Organization using R Projects",
-    "text": "1.7 Organization using R Projects\nR projects are a great way of keeping all files for one project all together, and makes importing data much easier by using relative paths instead of absolute ones. Plus this ensures reproducibility by others (because no-one else stores their files at C:\\users\\rdonatello\\myprojects\\math130)\n\n\n\n\n\n\n👉 Your Turn\n\n\n\n\nClick on the R cube icon in the top right corner of RStudio and select Crete new project.\nChoose Existing Directory and navigate to your Math 130 folder.\nCheck Open in new session. This allows you to have multiple Rstudio windows open for different projects and the files/data/objects don’t get cross-contaminated.\nClick Create Project.\n\n\n\nThis will open a new R Studio window. Go ahead and close both R Studio windows for now (Don’t save Untitled1.R). We’ll see how to use R Projects next.\nIf you think about wanting to work on a report written in Microsoft Word, or a video that you want to edit, the common practice is to navigate to that file and double click to open that file in the appropriate program. We don’t tend to open the program first, and then try to open the file from within the program. Using R Projects is somewhat the same.\n\n\n\n\n\n\n👉 Using R Projects\n\n\n\n\nNavigate in your file explorer to the folder where you created your project.\nClick on the R cube icon to open the whole project. \nUsing the files tab (bottom right) find and click to open the hello.qmd script file you downloaded earlier.\n\n\n\nYou can tell you are in an R Project by looking in the top right corner by the Environment pane and seeing if the R project cube has your class folder name\n\n\n\nExample R Project",
+    "text": "1.6 Get oRganized!\nIt is good practice to keep a set of related data, analyses, and text self-contained in a single folder called the working directory. For example keeping all files related to one class in it’s own folder, separate from other classes. If you are taking another class using R at the same time as this one, it’s even MORE important to keep your files separate.\n\n\n\n\n\n\nImportant\n\n\n\nThis should be your Math130 course folder. This should not be your Downloads folder.\n\n\n\n1.6.1 Names are important\nChoose one of the four naming convention shown below for your class folder and stick with it. These are snake_case, camelCase, kebab-case or UPPER_SNAKE.\n\n\n\nCommon Naming Conventions\n\n\n\n\n\n\n\n\nCreate your folders\n\n\n\n\nOn your computer, in an easy to find place, create a new folder named math130 using your chosen naming convention.\nThen create three subfolders: data, homework, notes.\n\n\n\n\n\n\n\n\n\n\n1.6.2 Be the boss of your files\nWhen you download a file, right click and “Save as” or “Save target as” and actively choose where to download this file.\n\n\n\n\n\n\nAvoid these pain points\n\n\n\n\nDo not left click on the links\nDo not let files live in your downloads folder.\nDo not open any files from your browser window after downloading.\n\n\n\n\n\n\n\n\n\n👉 Your Turn\n\n\n\nRight click [this link] to download and save this file into your homework folder. We will use this file in the next lesson.",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Your New Tools</span>"
@@ -171,8 +160,8 @@
     "objectID": "setup_tools.html#final-tips",
     "href": "setup_tools.html#final-tips",
     "title": "1  Your New Tools",
-    "section": "1.8 Final Tips",
-    "text": "1.8 Final Tips\n\n1.8.0.1 Saving and closing your work\nUnless you’re returning to work in R Studio in a short while, you should make a habit to save all open tabs and completely shut down R studio when you are done working. This ensures your environment is cleared. This is a good thing\n\n\n1.8.0.2 Restart R\nTo restart R without shutting the entire window down, go to the file menu bar in the top,\n\nSession –&gt; Restart R and Clear Output\n\nThis is good to do when switching between projects/classes.",
+    "section": "1.7 Final Tips",
+    "text": "1.7 Final Tips\n\n1.7.0.1 Saving and closing your work\nUnless you’re returning to work in R Studio in a short while, you should make a habit to save all open tabs and completely shut down R studio when you are done working. This ensures your environment is cleared. This is a good thing\n\n\n1.7.0.2 Restart R\nTo restart R without shutting the entire window down, go to the file menu bar in the top,\n\nSession –&gt; Restart R and Clear Output\n\nThis is good to do when switching between classes/projects.\n\n\n1.7.0.3 Closing R\nIf R ever asks you to\n\nRestore .RData to workspace at startup, or\nSave history/.RData\n\nsay No.",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Your New Tools</span>"
@@ -194,7 +183,7 @@
     "href": "quarto.html#document-structure",
     "title": "2  Reproducibility with Quarto",
     "section": "",
-    "text": "A Quarto document with the extension .qmd (on the left), along with its rendered version as HTML (on the right). Credit: Quarto documentation.\n\n\n\n\n\n\n\n\nOptional Video\n\n\n\nGetting started with Quarto\n\n\n\n\n\n\n\n\n👉 Open the Quarto tutorial file\n\n\n\n\nMake sure you are in your Math 130 Project. (ref Section 1.7)\nFrom the file pane, open the _hello.qmd quarto document\nClick “Render” at the top of this file.\n\n\n\n\n\n\n\nThe Render button",
+    "text": "A Quarto document with the extension .qmd (on the left), along with its rendered version as HTML (on the right). Credit: Quarto documentation.\n\n\n\n\n\n\n\n\nOptional Video\n\n\n\nGetting started with Quarto\n\n\n\n\n\n\n\n\n👉 Open the Quarto tutorial file\n\n\n\n\nMake sure you are in your Math 130 Project. (ref ?sec-rproj)\nFrom the file pane, open the _hello.qmd quarto document\nClick “Render” at the top of this file.\n\n\n\n\n\n\n\nThe Render button",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Reproducibility with Quarto</span>"
@@ -227,7 +216,7 @@
     "href": "intro_r.html",
     "title": "3  Getting Started with R",
     "section": "",
-    "text": "3.1 R as a calculator\nThis lesson is designed to explain the basics of how R works as a programming language.\nIn the last lesson you saw how to do basic math in the console. Now try a more complicated equation.\nUh oh, we got an Error. Nothing to worry about, errors happen all the time.\n&gt; R is waiting on you…\nNotice the console shows a + prompt. This means that you haven’t finished entering a complete command.\nThis is because you have not ‘closed’ a parenthesis or quotation, i.e. you don’t have the same number of left-parentheses as right-parentheses, or the same number of opening and closing quotation marks.\nWhen this happens, and you thought you finished typing your command, click inside the console window and press Esc; this will cancel the incomplete command and return you to the &gt; prompt.\nLet’s go back to that long expression but this time type it into a new code chunk. Recall we can make a new code chunk by pressing CTRL+ALT+I, or by clicking on Insert then R. Also recall that we submit this code by pressing Ctrl+Enter or clicking the green play arrow in the top right corner of the code chunk.\nAs you go through these lessons, follow along in your own notes file. Filling in blanks and/or retype each code chunk. Think of this as taking notes off the chalkboard while the instructor teaches - it’s important that you annotate these notes as you would take notes in any other class. For you to retain what you are reading and learning, writing out what these pieces of code are doing (e.g. the assignment operator &lt;-) in your own words is an effective learning technique.",
+    "text": "3.1 R as a calculator\nThis lesson is designed to explain the basics of how R works as a programming language.\nIn the last lesson you saw how to do basic math in the console. Now try a more complicated expression.\nUh oh, we got an Error. Nothing to worry about, errors happen all the time.\n&gt; R is waiting on you…\nNotice the console shows a + prompt. This means that you haven’t finished entering a complete command.\nThis is because you have not ‘closed’ a parenthesis or quotation, i.e. you don’t have the same number of left-parentheses as right-parentheses, or the same number of opening and closing quotation marks, or finished the expression before pressing enter.\nWhen this happens, and you thought you finished typing your command, click inside the console window and press Esc; this will cancel the incomplete command and return you to the &gt; prompt.\nLet’s go back to that long expression but this time type it into a new code chunk. Recall we can make a new code chunk by pressing CTRL+ALT+I, or by clicking on Insert then R. Also recall that we submit this code by pressing Ctrl+Enter or clicking the green play arrow in the top right corner of the code chunk.\nAs you go through these lessons, follow along in your own notes file. Filling in blanks and/or retype each code chunk. Think of this as taking notes off the chalkboard while the instructor teaches - it’s important that you annotate these notes as you would take notes in any other class. For you to retain what you are reading and learning, writing out what these pieces of code are doing (e.g. the assignment operator &lt;-) in your own words is an effective learning technique.",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Getting Started with R</span>"
@@ -238,7 +227,7 @@
     "href": "intro_r.html#r-as-a-calculator",
     "title": "3  Getting Started with R",
     "section": "",
-    "text": "👉 Your Turn\n\n\n\nType this into the console exactly as it is written below.\n\n2 + 5*(8^3)- 3*log10)\n\nError in parse(text = input): &lt;text&gt;:1:21: unexpected ')'\n1: 2 + 5*(8^3)- 3*log10)\n                        ^\n\n\n\n\n\n\n\n\n\n\n\n👉 Your Turn\n\n\n\nPut a open parenthesis ( before log10 to fix it and try again.\n\n\n\n\n\n\n\n\n\n👉 Your Turn\n\n\n\nRun the following code in the console.\n2 + 5*(8^3)- 3*log(10\n\n\n\n\n\n\n\n\n\n\n\n\n👉 Your Turn\n\n\n\nType the following into a new code chunk in your notes, fix the mistake and run the code chunk\n2 + 5*(8^3)- 3*log(10",
+    "text": "👉 Your Turn\n\n\n\nType this into the console exactly as it is written below.\n\n2 + 5*(8^3)- 3*log10)\n\nError in parse(text = input): &lt;text&gt;:1:21: unexpected ')'\n1: 2 + 5*(8^3)- 3*log10)\n                        ^\n\n\n\n\n\n\n\n\n\n\n\n👉 Your Turn\n\n\n\nPut an open parenthesis ( before log10 to fix it and try again.\n\n\n\n\n\n\n\n\n\n👉 Your Turn\n\n\n\nRun the following code in the console.\n2 + 5*(8^3)- 3*log(10\n\n\n\n\n\n\n\n\n\n\n\n\n👉 Your Turn\n\n\n\nType the following into a new code chunk in your notes, fix the mistake and run the code chunk\n2 + 5*(8^3)- 3*log(10",
     "crumbs": [
       "Getting Started",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Getting Started with R</span>"
@@ -788,18 +777,18 @@
     "href": "assignments.html",
     "title": "Assignment Files",
     "section": "",
-    "text": "Lesson notes files\nRight click and save these files in your Math 130/notes or Math 130/hw folder as appropriate. You will write your answers directly in them and submit your assignment as instructed by the due date.",
+    "text": "Lesson Notes\nFor this class you should have a dedicated Math130 folder. Please create it now. To save the files below, right click and save these files Math130 sub-folders Math130/notes or Math130/hw folder as appropriate. You will write your answers directly in these files and submit your assignment as instructed by the due date. Rename each file as notes03.qmd, notes04.qmd, …, notes09.qmd, hw01.qmd, hw02.qmd, …, hw04.qmd.",
     "crumbs": [
       "Appendix",
       "Assignment Files"
     ]
   },
   {
-    "objectID": "assignments.html#lesson-notes-files",
-    "href": "assignments.html#lesson-notes-files",
+    "objectID": "assignments.html#lesson-notes",
+    "href": "assignments.html#lesson-notes",
     "title": "Assignment Files",
     "section": "",
-    "text": "Lesson 3  Getting Started with R\nLesson 4  Working with Data Frames\nLesson 5  Working with Factors\nLesson 6  Creating Plots\n\n\n\n\n\nLesson 7  Efficient data management\nLesson 8  Getting data into R\nLesson 9  Plot Enhancements",
+    "text": "Lesson 3  Getting Started with R\nLesson 4  Working with Data Frames\nLesson 5  Working with Factors\nLesson 6  Creating Plots\nLesson 7  Efficient data management\nLesson 8  Getting data into R\nLesson 9  Plot Enhancements",
     "crumbs": [
       "Appendix",
       "Assignment Files"
@@ -810,7 +799,7 @@
     "href": "assignments.html#homework",
     "title": "Assignment Files",
     "section": "Homework",
-    "text": "Homework\n\nHW 1 (Lessons 2-3)\nHW 2 (Lessons 4-5)\nHW 3 (Lessons 6-7)\nHW 4 (Lessons 8-9)\n\n\n\n\n\n\n\nGNeed help getting started?\n\n\n\n🚧 Watch Dr. Lytals help video",
+    "text": "Homework\n\nHW 1 (Lesson 3)\nHW 2 (Lessons 4-5)\nHW 3 (Lessons 6-7)\nHW 4 (Lessons 8-9)\n\n\n\n\n\n\n\nNeed help getting started?\n\n\n\n🚧 Watch Dr. Lytals help video",
     "crumbs": [
       "Appendix",
       "Assignment Files"
@@ -909,18 +898,18 @@
     "href": "project.html",
     "title": "Project",
     "section": "",
-    "text": "Instructions\nTime to put everything you learned in this class into action. In an exploratory data analysis (EDA) you are just looking at (exploring) the data and learning about the data and possible relationships between variables. This is not a formal statistical analysis, you cannot make any claims about groups being statistically different. This is just descriptive. You are allowed and encouraged to hypothesize why you observe certain relationships or data characteristics, just be sure not to draw any conclusions from the data.\nUsing your data set of choice, pose a brief research question that explores the relationship between 2-3 variables.\nUse markdown headers to make the following sections\nThis is a very vague set of instructions for a reason. I want you to explore and choose a pair of variables that you find interesting. Create tables, graphics, grouped summary statistics (mean of the continuous variable across levels of the categorical variable). Whatever you need to do to understand the relationship between these two measures.\nUse the grading rubric at the end of this document for guidance as to what you should present, in what order, and level of detail you need to present.",
+    "text": "Instructions\nTime to put everything you learned in this class into action. In an exploratory data analysis (EDA) you are just looking at (exploring) the data and learning about the data and possible relationships between variables. This is not a formal statistical analysis, you cannot make any claims about groups being statistically different. This is just descriptive. You are allowed and encouraged to hypothesize why you observe certain relationships or data characteristics, just be sure not to draw any conclusions from the data.\nUsing your data set of choice, pose a brief question that explores the relationship between 2-3 variables and a question for which your data can answer. It’s best if you choose one or two numeric variables and one or two categorical variables.\nUse markdown headers to make the following sections\nThis is a very vague set of instructions for a reason. I want you to explore and choose a set of variables that you find interesting: create tables, graphics, grouped summary statistics (mean of the continuous variable across levels of the categorical variable). Whatever you need to do to understand a relationship between the variables you chose.\nUse the grading rubric at the end of this document for guidance as to what you should present, in what order, and level of detail you need to present.",
     "crumbs": [
       "Appendix",
       "Project"
     ]
   },
   {
-    "objectID": "project.html#data",
-    "href": "project.html#data",
+    "objectID": "project.html#data-set",
+    "href": "project.html#data-set",
     "title": "Project",
-    "section": "Data",
-    "text": "Data\nYou have a choice here. If you are currently working on some data that you would like to explore, talk with your instructor to get your data set approved. As long as it has more than 4 variables in it, and at least 30 observations it should be fine.\nIf you do not have your own data, you can choose from one of the following data sets, all of which can be downloaded from the Data page of Dr. D’s teaching course website.\n\n\n\n\n\n\nDisallowed Data\n\n\n\nYou cannot can’t use data sets that are already available in R, or any that we’ve used in class such asdiamonds, NCbirths, email, or penguins.",
+    "section": "Data Set",
+    "text": "Data Set\nYou have a choice here. If you are currently working on some data that you would like to explore, talk with your instructor to get your data set approved. As long as it has more than 4 variables in it, one of which is categorical, and at least 30 observations it should be fine.\nIf you do not have your own data, you can choose from one of the following data sets, all of which can be downloaded from the Data page of Dr. D’s teaching course website.\n\n\n\n\n\n\nDisallowed Data\n\n\n\nYou cannot can’t use data sets that are already available in R, or any that we’ve used in class such as diamonds, NCbirths, email, or penguins.",
     "crumbs": [
       "Appendix",
       "Project"
