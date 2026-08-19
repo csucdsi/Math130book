@@ -8,77 +8,79 @@ This is not a research class, and so we suggest that you take a look at some [pr
 
 # Instructions
 
-Using your data set of choice, pose a brief research question that explores the relationship between 2-3 variables.
+Using your data set of choice, pose a brief question that explores the relationship between 2-3 variables and a question for which your data can answer. It's best if you choose one or two numeric variables and one or two categorical variables.
 
 Use markdown headers to make the following sections
 
 1.  **Introduction**: A short introduction/description of the data.
     -   Specifically mention the 2-3 variables you are going to explore.
-    -   What is your research question? What are you interested in finding out more about?
+    -   What is your question? What are you interested in finding out more about?
 2.  **Univariate Exploration**: Describe each of the variables under consideration.
-    -   This means calculate summary statistics appropriate for your data type (N(%) or mean(sd)) and make a graphic
+    -   Calculate summary statistics appropriate for your data type (N(%) or mean(sd)) and make a graphic.
     - Describe what you see in the graphic, and what the numbers say in a sentence or two. 
 3.  **Bivariate Exploration**: Comparison between two variables of interest.
-    -   Calculate grouped summary statistics as appropriate. _This is often the most often forgotten part_
-    -   Create an appropriate bivariate visualization
+    -   Calculate grouped summary statistics as appropriate. _This is often the most often forgotten part_.
+    -   Create an appropriate bivariate visualization.
     -   You can go further and explore more than two variables at a time using paneling, but be sure to explain what you learn from each graph.
     - Describe the patterns you are noticing, with summary numbers, in a sentence or two. 
 4.  **Conclusion**: What did you find? If you had a prior hypothesis, does the data seem to support it? Remember this is NOT a statistical analysis.
 
 
-This is a very vague set of instructions for a reason. I want you to explore and choose a pair of variables that you find interesting. Create tables, graphics, grouped summary statistics (mean of the continuous variable across levels of the categorical variable). Whatever you need to do to understand the relationship between these two measures.
+This is a very vague set of instructions for a reason. I want you to explore and choose a set of variables that you find interesting: create tables, graphics, grouped summary statistics (mean of the continuous variable across levels of the categorical variable). Whatever you need to do to understand a relationship between the variables you chose.
 
 Use the grading rubric at the end of this document for guidance as to what you should present, in what order, and level of detail you need to present.
 
-## Data
+## Data Set
 
-You have a choice here. If you are currently working on some data that you would like to explore, talk with your instructor to get your data set approved. As long as it has more than 4 variables in it, and at least 30 observations it should be fine. 
+You have a choice here. If you are currently working on some data that you would like to explore, talk with your instructor to get your data set approved. As long as it has more than 4 variables in it, one of which is categorical, and at least 30 observations it should be fine. 
 
 If you do not have your own data, you can choose from one of the following data sets, all of which can be downloaded from the [Data](https://www.norcalbiostat.com/data/) page of Dr. D's teaching course website. 
 
 :::{.callout-important title = "Disallowed Data"}
-You cannot can't use data sets that are already available in R, or any that we've used in class such as`diamonds`, `NCbirths`, `email`, or `penguins`. 
+You cannot can't use data sets that are already available in R, or any that we've used in class such as `diamonds`, `NCbirths`, `email`, or `penguins`. 
 :::
 
 # Guidelines
 
--   Render early and often. As often as every time you include a new R code chunk.
+-   Render early and often. As often as every time you include a new line of code or R code chunk.
 -   Spell check your report prior to submission using RStudio.
--   Re-read your report and edit for clarification and removing duplicated information.
+-   Re-read your report, edit for clarification, remove duplicate information.
 -   Remove superfluous code and output (i.e. printing a data set to the screen).
 -   This is to be independent work. Papers that are too similar will receive no credit.
 -   Look at the grading rubric to help you decide the level of detail required.
 
-# Peer Review
+<!-- # Peer Review -->
 
-After the submission deadline, your analysis projects will be randomly assigned to two other people to peer review and score. This means you will also score and provide feedback on 2 reports. Your instructor will also score all projects for your class section.
+<!-- After the submission deadline, your analysis projects will be randomly assigned to two other people to peer review and score. This means you will also score and provide feedback on 2 reports. Your instructor will also score all projects for your class section. -->
 
-:::{.callout-note title = "PR Instructions for Spring 26"}
+<!-- :::{.callout-note title = "PR Instructions for Spring 26"} -->
 
-#### How to conduct Peer Reviews
+<!-- #### How to conduct Peer Reviews -->
 
-On the project due date, Canvas will automatically assign peer reviews to everyone that has submitted the project on time. 
+<!-- On the project due date, Canvas will automatically assign peer reviews to everyone that has submitted the project on time.  -->
 
-[See this help page on how to find and complete peer reviews in Canvas.](https://extensionhelpcenter.ucsd.edu/hc/en-us/articles/17732032984973-How-to-view-and-complete-a-Peer-Review-assignment-Students)
-
-
-1. Use the rubric to assign a score in each area
-2. Using the commenting feature provide 4 comments for each project.
-    - Two positive: What specific features did they include that you liked or found helpful?
-    - Two improvements: What can they do different or better next time? Did you find a bug in their code?
+<!-- [See this help page on how to find and complete peer reviews in Canvas.](https://extensionhelpcenter.ucsd.edu/hc/en-us/articles/17732032984973-How-to-view-and-complete-a-Peer-Review-assignment-Students) -->
 
 
-#### Late submissions
+<!-- 1. Use the rubric to assign a score in each area -->
+<!-- 2. Using the commenting feature provide 4 comments for each project. -->
+<!--     - Two positive: What specific features did they include that you liked or found helpful? -->
+<!--     - Two improvements: What can they do different or better next time? Did you find a bug in their code? -->
 
-If you submit your EDA late, I will have to manually assign you projects to review. This may take a day or two, please feel free to ask and remind me if you are waiting too long.
 
-:::
+<!-- #### Late submissions -->
+
+<!-- If you submit your EDA late, I will have to manually assign you projects to review. This may take a day or two, please feel free to ask and remind me if you are waiting too long. -->
+
+<!-- ::: -->
 
 
 
 # Grading
 
-The criteria below is what you will be graded on. Below each criteria is an example of the points awarded for the level of competency. Use this criteria when you score your peers reports.
+The criteria below is what you will be graded on. Below each criteria is an example of the points awarded for the level of competency. 
+
+<!-- Use this criteria when you score your peers reports. -->
 
 #### 1. Data Description
 

@@ -7,7 +7,7 @@ After completing this lesson learners will be able to:
 -   Navigate the RStudio GUI.
 -   Install additional packages using R code.
 -   Create an organized class folder. 
--   Create and use an R Project.
+<!-- -   Create and use an R Project. -->
 
 :::
 
@@ -300,7 +300,7 @@ We will specifically be using the `dplyr`, `ggplot2` and `readxl` packages that 
 It is good practice to keep a set of related data, analyses, and text self-contained in a single folder called the _working directory_. For example keeping all files related to one class in it's own folder, separate from other classes. If you are taking another class using R at the same time as this one, it's even MORE important to keep your files separate. 
 
 :::{.callout-important}
-THIS SHOULD NOT BE YOUR DOWNLOADS FOLDER
+This should be your `Math130` course folder. This should not be your Downloads folder.
 :::
 
 ### Names are important
@@ -335,32 +335,32 @@ Right click [[this link]](https://quarto.org/docs/get-started/hello/rstudio/_hel
 :::
 
 
-## Organization using R Projects {#sec-rproj}
+<!-- ## Organization using R Projects {#sec-rproj} -->
 
-R projects are a great way of keeping all files for one project all together, and makes importing data much easier by using relative paths instead of absolute ones. Plus this ensures reproducibility by others (because no-one else stores their files at `C:\users\rdonatello\myprojects\math130`)
+<!-- R projects are a great way of keeping all files for one project all together, and makes importing data much easier by using relative paths instead of absolute ones. Plus this ensures reproducibility by others (because no-one else stores their files at `C:\users\rdonatello\myprojects\math130`) -->
 
 
-:::{.callout-tip title = "👉 Your Turn" icon=false}
-* Click on the R cube icon in the top right corner of RStudio  and select _Crete new project_. 
-* Choose _Existing Directory_ and navigate to your Math 130 folder. 
-* Check _Open in new session_. This allows you to have multiple Rstudio windows open for different projects and the files/data/objects don't get cross-contaminated. 
-* Click _Create Project_. 
-:::
+<!-- :::{.callout-tip title = "👉 Your Turn" icon=false} -->
+<!-- * Click on the R cube icon in the top right corner of RStudio  and select _Crete new project_.  -->
+<!-- * Choose _Existing Directory_ and navigate to your Math 130 folder.  -->
+<!-- * Check _Open in new session_. This allows you to have multiple Rstudio windows open for different projects and the files/data/objects don't get cross-contaminated.  -->
+<!-- * Click _Create Project_.  -->
+<!-- ::: -->
 
-This will open a new R Studio window. Go ahead and close both R Studio windows for now (Don't save `Untitled1.R`). We'll see how to use R Projects next. 
+<!-- This will open a new R Studio window. Go ahead and close both R Studio windows for now (Don't save `Untitled1.R`). We'll see how to use R Projects next.  -->
 
-If you think about wanting to work on a report written in Microsoft Word, or a video that you want to edit, the common practice is to navigate to that file and double click to open that file in the appropriate program. We don't tend to open the program first, and then try to open the file from within the program. Using R Projects is somewhat the same. 
+<!-- If you think about wanting to work on a report written in Microsoft Word, or a video that you want to edit, the common practice is to navigate to that file and double click to open that file in the appropriate program. We don't tend to open the program first, and then try to open the file from within the program. Using R Projects is somewhat the same.  -->
 
-:::{.callout-tip title = "👉 Using R Projects" icon=false}
+<!-- :::{.callout-tip title = "👉 Using R Projects" icon=false} -->
 
-* Navigate in your file explorer to the folder where you created your project. 
-* Click on the R cube icon to open the whole project.  ![](img/Rproj_cube.png){width=10%}
-* Using the `files` tab (bottom right) find and click to open the `hello.qmd` script file you downloaded earlier. 
-:::
+<!-- * Navigate in your file explorer to the folder where you created your project.  -->
+<!-- * Click on the R cube icon to open the whole project.  ![](img/Rproj_cube.png){width=10%} -->
+<!-- * Using the `files` tab (bottom right) find and click to open the `hello.qmd` script file you downloaded earlier.  -->
+<!-- ::: -->
 
-You can tell you are in an R Project by looking in the top right corner by the Environment pane and seeing if the R project cube has your class folder name
+<!-- You can tell you are in an R Project by looking in the top right corner by the Environment pane and seeing if the R project cube has your class folder name -->
 
-![Example R Project](img/RProj.png)
+<!-- ![Example R Project](img/RProj.png) -->
 
 ## Final Tips
 
@@ -374,6 +374,14 @@ To restart R without shutting the entire window down, go to the file menu bar in
 
 > *Session* --\> Restart R and Clear Output
 
-This is good to do when switching between projects/classes.
+This is good to do when switching between classes/projects.
 
+#### Closing R
+
+If R ever asks you to 
+
+* Restore .RData to workspace at startup, or
+* Save history/.RData
+
+say No.
 
