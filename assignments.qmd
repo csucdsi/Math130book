@@ -1,39 +1,25 @@
 # Assignment Files {#sec-assignments .unnumbered}
 
-Right click and save these files in your `Math 130/notes` or `Math 130/hw` folder as appropriate. You will write your answers directly in them and submit your assignment as instructed by the due date.
+For this class you should have a dedicated `Math130` folder. Please create it now. To save the files below, right click and save these files `Math130` sub-folders `Math130/notes` or `Math130/hw` folder as appropriate. You will write your answers directly in these files and submit your assignment as instructed by the due date. Rename each file as notes03.qmd, notes04.qmd, ..., notes09.qmd, hw01.qmd, hw02.qmd, ..., hw04.qmd.
 
-## Lesson notes files
+## Lesson Notes
 
-:::: {.columns}
-
-::: {.column width="45%"}
 * [Lesson @sec-intro_r](notes/intro_r_notes.qmd)
 * [Lesson @sec-dm](notes/dm_notes.qmd)
 * [Lesson @sec-factors](notes/factors_notes.qmd)
 * [Lesson @sec-plots1](notes/plots1_notes.qmd)
-
-:::
-
-::: {.column width="10%"}
-:::
-
-::: {.column width="45%"}
 * [Lesson @sec-dplyr](notes/dplyr_notes.qmd)
 * [Lesson @sec-import](notes/import_notes.qmd)
 * [Lesson @sec-plots2](notes/plots2_notes.qmd)
 
-:::
-
-::::
-
 ## Homework
 
-* [HW 1 (Lessons 2-3)](hw/hw1.qmd)
+* [HW 1 (Lesson 3)](hw/hw1.qmd)
 * [HW 2 (Lessons 4-5)](hw/hw2.qmd)
 * [HW 3 (Lessons 6-7)](hw/hw3.qmd)
 * [HW 4 (Lessons 8-9)](hw/hw4.qmd)
 
-:::{.callout-warning icon=false appearance=minimal title = "GNeed help getting started? "}
+:::{.callout-warning icon=false appearance=minimal title = "Need help getting started? "}
 🚧 Watch [Dr. Lytals help video](https://media.csuchico.edu/media/MATH130%20-%20Extra%20Video%20(Jan%2029)/1_9nsoxdy9)
 :::
 
