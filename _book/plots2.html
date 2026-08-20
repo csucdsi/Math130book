@@ -505,6 +505,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+9+Intro/1_bx7k3pcm"><strong>Plot Enhancements</strong> video</a></p>
 <p>Section <a href="plots1.html" class="quarto-xref"><span>Chapter 6</span></a> introduced the main plotting packages <code>ggplot2</code>, <code>ggpubr</code>, and <code>sjPlot</code> and focused on creating the correct graphics for the data types. This lesson expands on those tools and demonstrates how to customize some features and add enhancements to clarify or to add information to a plot.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="🎓 Learning Objectives">
 <div class="callout-header d-flex align-content-center">
@@ -572,6 +573,7 @@ Too much to memorize!
 <p>This lesson uses several data sets that we have seen in prior lessons.</p>
 <section id="reorder-barcharts-in-decreasing-order" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="reorder-barcharts-in-decreasing-order"><span class="header-section-number">9.1</span> Reorder barcharts in decreasing order</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+9.1/1_bjdbvhrf"><strong>Reorder barcharts in decreasing order</strong> video</a></p>
 <p>We can reorder these levels on the fly so they are being shown in decreasing frequency using the <code>fct_infreq</code> function from the <code>forcats</code> library. You can add this layer to both <code>ggplot</code> and <code>ggpubr</code> creations.</p>
 <div class="sourceCode cell-code" id="cb2" data-source-line-numbers="2" data-code-line-numbers="2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x=</span>species)) <span class="sc">+</span> </span>
@@ -592,6 +594,7 @@ Too much to memorize!
 </section>
 <section id="flipping-the-axis" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="flipping-the-axis"><span class="header-section-number">9.2</span> Flipping the axis</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+9.2/1_dthvw7xw"><strong>Flipping the axis</strong> video</a></p>
 <p>Sometimes barcharts and boxplots look better horizontally, especially when the category labels are long, but the default is vertical. We can add a <code>coord_flip</code> layer to nearly any plot to rotate it 90*.</p>
 <div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pen, <span class="fu">aes</span>(<span class="at">x=</span>island)) <span class="sc">+</span> <span class="fu">geom_bar</span>() <span class="sc">+</span>  </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span>
@@ -610,6 +613,7 @@ Too much to memorize!
 </section>
 <section id="a-better-pie-chart" class="level2 page-columns page-full" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="a-better-pie-chart"><span class="header-section-number">9.3</span> A “better” Pie chart</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+9.3/1_lu2qv8ay"><strong>A “better” Pie chart</strong> video</a></p>
 <p>We need to pre-calculate the percentages first, then plot those summary numbers. So we will chain functions from <code>dplyr</code> and <code>ggpubr</code> together.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">See the <a href="https://r-graph-gallery.com/piechart-ggplot2.html">R graph gallery</a> for how to make a pie chart in <code>ggplot</code>.</span></div></div>
 <div class="cell" data-code-annotations="below">
@@ -673,6 +677,7 @@ Too much to memorize!
 </section>
 <section id="adding-the-mean" class="level2" data-number="9.4">
 <h2 data-number="9.4" class="anchored" data-anchor-id="adding-the-mean"><span class="header-section-number">9.4</span> Adding the mean</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+9.4/1_6713syok"><strong>Adding the mean</strong> video</a></p>
 <p>Adding annotation on a numeric distribution plot to indicate where the mean is located is often a nice informative feature.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">ggplot2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">ggpubr</a></li></ul>
@@ -733,6 +738,7 @@ Too much to memorize!
 </section>
 <section id="histograms-density-curve" class="level2" data-number="9.5">
 <h2 data-number="9.5" class="anchored" data-anchor-id="histograms-density-curve"><span class="header-section-number">9.5</span> Histograms + density curve</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+9.5/1_7dvuog5f"><strong>Histograms + density curve</strong> video</a></p>
 <p>Often it is more helpful to have the density (or kernel density) plot <em>on top of</em> a histogram plot.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true"><code>ggplot2</code></a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false"><code>ggpubr</code></a></li></ul>
@@ -787,6 +793,7 @@ Too much to memorize!
 </section>
 <section id="adding-violins-to-a-boxplot" class="level2" data-number="9.6">
 <h2 data-number="9.6" class="anchored" data-anchor-id="adding-violins-to-a-boxplot"><span class="header-section-number">9.6</span> Adding violins to a boxplot</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+9.6/1_2kgijmom"><strong>Adding violins to a boxplot</strong> video</a></p>
 <p>A violin plot is like a density plot, turned on its side, and reflected around the axis for symmetry purposes. Overlaying a boxplot and a violin plot serves a similar purpose to Histograms + Density plots. It shows outliers, the location of most the data, and better shows the shape/skew of the distribution.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">ggplot2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">ggpubr</a></li></ul>
@@ -826,6 +833,7 @@ Too much to memorize!
 </section>
 <section id="themes" class="level2" data-number="9.7">
 <h2 data-number="9.7" class="anchored" data-anchor-id="themes"><span class="header-section-number">9.7</span> Themes</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+9.7/1_t7lqlbnh"><strong>Themes</strong> video</a></p>
 <p>The standard theme has a gray background, white grid lines etc. Themes can be changed by adding <code>theme_X()</code> where <code>X</code> has several options</p>
 <div class="sourceCode cell-code" id="cb9" data-source-line-numbers="2, 4, 6" data-code-line-numbers="2, 4, 6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(email, <span class="fu">aes</span>(<span class="at">x=</span>line_breaks, <span class="at">y=</span>num_char)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
@@ -865,6 +873,7 @@ Too much to memorize!
 </section>
 <section id="legends-keys" class="level2" data-number="9.8">
 <h2 data-number="9.8" class="anchored" data-anchor-id="legends-keys"><span class="header-section-number">9.8</span> Legends (keys)</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+9.8/1_eulwhqtm"><strong>Legends (keys)</strong> video</a></p>
 <section id="title-of-legend" class="level3" data-number="9.8.1">
 <h3 data-number="9.8.1" class="anchored" data-anchor-id="title-of-legend"><span class="header-section-number">9.8.1</span> Title of legend</h3>
 <p>Add the <code>name=</code> argument to whatever layer you added that created the legend. Here I specified a <code>fill</code>, and it was a <code>discrete</code> variable. So I use the <code>scale_fill_discrete()</code> layer.</p>
@@ -948,6 +957,7 @@ Too much to memorize!
 </section>
 <section id="title-and-axis-labels" class="level2" data-number="9.9">
 <h2 data-number="9.9" class="anchored" data-anchor-id="title-and-axis-labels"><span class="header-section-number">9.9</span> Title and axis labels</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+9.9/1_20mnj5p8"><strong>Title and axis labels</strong> videos</a></p>
 <p>A good plot needs to stand alone and convey as much information as possible. <code>ggplot2</code> provides a single <code>labs</code> function that is very versatile and includes options for alt-text as well. See <code>?labs</code> for more information</p>
 <ul>
 <li><code>title</code> for an overall plot title</li>
@@ -974,9 +984,10 @@ Too much to memorize!
 </section>
 <section id="changing-colors" class="level2" data-number="9.10">
 <h2 data-number="9.10" class="anchored" data-anchor-id="changing-colors"><span class="header-section-number">9.10</span> Changing colors</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+9.10/1_74fq85lj"><strong>Changing colors</strong> videos</a></p>
 <p>Full guide on how to change colors in <code>ggplot2</code> at <a href="https://r-graph-gallery.com/ggplot2-color.html">https://r-graph-gallery.com/ggplot2-color.html</a></p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Manual</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Using a color palette (recommended)</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Manual</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Using a color palette (recommended)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-3" role="tab" aria-controls="tabset-5-3" aria-selected="false">R ColorBrewer</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-4" role="tab" aria-controls="tabset-5-4" aria-selected="false">Viridis</a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <div class="cell" data-source-line-numbers="2">
@@ -1022,8 +1033,8 @@ Too much to memorize!
 <li><p><strong><em>Diverging</em></strong> palettes put equal emphasis on mid-range critical values and extremes at both ends of the data range. The critical class or break in the middle of the legend is emphasized with light colors and low and high extremes are emphasized with dark colors that have contrasting hues.</p></li>
 <li><p><strong><em>Qualitative</em></strong> palettes do not imply magnitude differences between legend classes, and hues are used to create the primary visual differences between classes. Qualitative schemes are best suited to representing nominal or categorical data.</p></li>
 </ul>
-<section id="r-colorbrewer" class="level3" data-number="9.10.1">
-<h3 data-number="9.10.1" class="anchored" data-anchor-id="r-colorbrewer"><span class="header-section-number">9.10.1</span> R ColorBrewer</h3>
+</div>
+<div id="tabset-5-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-3-tab">
 <p>One of the most common color pallet packages used. See the <a href="https://r-graph-gallery.com/38-rcolorbrewers-palettes.html">full set of palettes available</a>.</p>
 <p>The function to use is <code>scale_fill_brewer</code> (or <code>scale_color_brewer</code>), with an argument specifying the palette name in quotes.</p>
 <div class="cell">
@@ -1038,9 +1049,8 @@ Too much to memorize!
 </div>
 </div>
 </div>
-</section>
-<section id="viridis" class="level3" data-number="9.10.2">
-<h3 data-number="9.10.2" class="anchored" data-anchor-id="viridis"><span class="header-section-number">9.10.2</span> Viridis</h3>
+</div>
+<div id="tabset-5-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-4-tab">
 <p><code>viridis</code> provide a series of color maps that are designed to improve graph readability for readers with common forms of color blindness and/or color vision deficiency. <a href="https://sjmgarnier.github.io/viridisLite/reference/viridis.html">Eight scales are available</a>, but <code>magma</code>, <code>inferno</code>, <code>plasma</code>, and <code>viridis</code> as defined in Matplotlib for Python. These color maps are designed in such a way that they will analytically be perfectly perceptually-uniform, both in regular form and also when converted to black-and-white. They are also designed to be perceived by readers with the most common form of color blindness.</p>
 <p>If you are <code>fill</code>ing or <code>col</code>oring by a categorical variable, you’ll use the corresponding <code>scale_fill_discrete</code> or <code>scale_color_discrete</code> function, and then pass the name of the palette with the number of levels needed as a function to the <code>palette</code> argument.</p>
 <div class="cell">
@@ -1055,13 +1065,13 @@ Too much to memorize!
 </div>
 </div>
 </div>
-</section>
 </div>
 </div>
 </div>
 </section>
 <section id="multivariate-plotting" class="level2" data-number="9.11">
 <h2 data-number="9.11" class="anchored" data-anchor-id="multivariate-plotting"><span class="header-section-number">9.11</span> Multivariate plotting</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+9.11/1_obqiszd4"><strong>Multivariate plotting</strong> video</a></p>
 <p>So far we’ve only looked at how to plot 2 variables on the same plot. Let’s up our game some.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Boxplots with three variables</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Scatterplots</a></li></ul>
@@ -1118,6 +1128,7 @@ Too much to memorize!
 </section>
 <section id="faceting-paneling" class="level2" data-number="9.12">
 <h2 data-number="9.12" class="anchored" data-anchor-id="faceting-paneling"><span class="header-section-number">9.12</span> Faceting / paneling</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+9.12/1_sg8p0a8z"><strong>Faceting / paneling</strong> video</a></p>
 <p>ggplot introduces yet another term called <code>faceting</code>. The definition is <em>a particular aspect or feature of something</em>, or <em>one side of something many-sided, especially of a cut gem</em>. Basically instead of plotting the grouped graphics on the same plotting area, we let each group have it’s own plot, or facet.</p>
 <p>We add a <code>facet_wrap()</code> and specify the variable we want to panel on after the <code>~</code> tilde.</p>
 <div class="cell" data-source-line-numbers="2">
@@ -1169,6 +1180,7 @@ Too much to memorize!
 </section>
 <section id="multiple-plots-per-window" class="level2" data-number="9.13">
 <h2 data-number="9.13" class="anchored" data-anchor-id="multiple-plots-per-window"><span class="header-section-number">9.13</span> Multiple plots per window</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+9.13/1_ibj1at74"><strong>Multiple plots per window</strong> video</a></p>
 <p>We can set the number of columns figures show up in using code chunk option: <code>layout-ncol</code>. This method works only in Quarto documents.</p>
 <div class="sourceCode cell-code" id="cb24" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| layout-ncol: 2</span></span>

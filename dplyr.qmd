@@ -6,6 +6,8 @@ format:
 
 # Efficient data management {#sec-dplyr}
 
+[**Efficient data management** video](https://media.csuchico.edu/media/MATH+130+-+Section+7+Intro/1_9w8ieaku)
+
 When working with data you must:
 
 1. Figure out what you want to do.
@@ -51,6 +53,8 @@ The `nycflights13` package contains several data sets that can be used to help u
 
 ## Tibbles {#sec-tibble}
 
+[**Tibbles** video](https://media.csuchico.edu/media/MATH+130+-+Section+7.1/1_ae7p85p6)
+
 The `flights` data set, and any data set created with `dplyr`, has a specific data type called a `tibble`. These are not as furry and prolific as their cousins the `tribbles`. `tibbles` behaves for all intents and purposes as a `data.frame`, just gets displayed differently. For example, the `flights` data set contains data on 19 characteristics (variables) from 336,776 flights. There's no way I would want to print out a data set that large. But I'm gonna....  
 
 ```{r}
@@ -76,6 +80,8 @@ The `dplyr` package contains many functions to perform data manipulation "action
 
 ### Filter
 
+[**Filter** video](https://media.csuchico.edu/media/MATH+130+-+Section+7.2.1/1_xcn8y6j7)
+
 ![Cartoon showing three fuzzy monsters either selecting or crossing out rows of a data table. If the type of animal in the table is "otter" and the site is "bay", a monster is drawing a purple rectangle around the row. If those conditions are not met, another monster is putting a line through the column indicating it will be excluded. Stylized text reads "dplyr::filter() - keep rows that satisfy your conditions."](img/filter.png)
 
 [Learn more about [dplyr::filter](https://dplyr.tidyverse.org/reference/filter.html).]{.aside}
@@ -92,6 +98,8 @@ filter(flights, month == 1 | month == 2)
 ```
 
 ### Select
+
+[**Select** video](https://media.csuchico.edu/media/MATH+130+-+Section+7.2.2/1_mtbbgy5p)
 
 Often you work with large data sets with many columns where only a few are actually of interest to you. `select()` allows you to rapidly zoom in on a useful subset using operations that usually only work on numeric variable positions.
 ```{r}
@@ -115,6 +123,8 @@ select(flights, -(year:day))
 
 ### Rename
 
+[**Rename** video](https://media.csuchico.edu/media/MATH+130+-+Section+7.2.3/1_jy59mokz)
+
 ![Header text: "dplyr:: rename() - rename columns". Below, an illustration of a mouse standing on a wedge of swiss cheese, changing column names from "species" to "nemesis," and "site" to "lair." On a cork board next to the mouse are images of "Cheese thieves" suspects (narwhal, chicken and pika) and maps of their locations.](img/rename.png)
 
 [Learn more about [dplyr::rename](https://dplyr.tidyverse.org/reference/rename.html)]{.aside}
@@ -132,6 +142,8 @@ The variable name on the 3rd column now says `departure_time` instead of `dep_ti
 
 
 ### Mutate
+
+[**Mutate** video](https://media.csuchico.edu/media/MATH+130+-+Section+7.2.4/1_m02kzrh7)
 
 ![Cartoon of cute fuzzy monsters dressed up as different X-men characters, working together to add a new column to an existing](img/mutate.png)
 
@@ -157,6 +169,8 @@ mutate(flights, gain = arr_delay - dep_delay,
 
 ### Summarize
 
+[**Summarize** video](https://media.csuchico.edu/media/MATH+130+-+Section+7.2.5/1_f3xyklec)
+
 Next up is the verb `summarise()`, which is most often used to calculate summary statistics. 
 ```{r}
 summarise(flights, 
@@ -169,6 +183,8 @@ summarise(flights,
 It may seem like a lot of code compared to base R functions such as `mean()`, `sum()` and `max()`, but we'll see how this is used in combination with grouping in the next section to easily create grouped summary statistics.  
 
 ### Arrange
+
+[**Arrange** video](https://media.csuchico.edu/media/MATH+130+-+Section+7.2.6/1_h0yaxknf)
 
 The `arrange()` function changes the order of the rows for the whole data set based on the value of the variable being sorted. 
 
@@ -216,6 +232,8 @@ There is a `sort` and `order` functions in base R, but they operate on a single 
 
 ### Relocate
 
+[**Relocate** video](https://media.csuchico.edu/media/MATH+130+-+Section+7.2.7/1_dbxs6uh0)
+
 ![Cartoon of fuzzy monsters moving columns around in fork lifts, while one supervises. Stylized text reads "dplyr::relocate() - move columns around! Default: move to FRONT , or move to .before or .after a specified column."](img/relocate.png)
 
 [Learn more about [dplyr::relocate](https://dplyr.tidyverse.org/reference/relocate.html)]{.aside}
@@ -254,6 +272,8 @@ names(flights)
 ```
 
 ### Case when
+
+[**Case when** video](https://media.csuchico.edu/media/MATH+130+-+Section+7.2.8/1_jhqy0au6)
 
 ![Cartoon showing a table with creature type (kraken, dragon, or cyclops) and age (baby, teen, or adult). The three creatures listed are adding a new column named “danger”, which contains the word “extreme!” if the type is “kraken”, or “high” for any other type. Stylized text reads “dplyr::case_when() - IF ELSE...but you love it? An example of code is shown: mutate(danger = case_when(type == “kraken” ~ “extreme!”, TRUE ~ “high”).](img/case_when.png)
 
@@ -316,6 +336,8 @@ table(flights$delay_type, useNA="always")
 
 ## Grouped Operations  
 
+[**Grouped Operations** video](https://media.csuchico.edu/media/MATH+130+-+Section+7.3/1_007m0j9k)
+
 The above verbs are useful, but they become really powerful when you combine them with the idea of "group by", repeating the operation individually on groups of observations within the dataset. In dplyr, you use the `group_by()` function to describe how to break a dataset down into groups of rows. You can then use the resulting object in exactly the same functions as above; they'll automatically work "by group" when the input is a grouped.
 
 Let's demonstrate how some of these functions work after grouping the flights data set by month. First we'll create a new data set that is grouped by month. 
@@ -348,6 +370,8 @@ summarise(by_airport,
 Seems like Laguardia (LGA) is the better airport for the least delays. 
 
 ## Chaining Operations 
+
+[**Chaining Operations** video](https://media.csuchico.edu/media/MATH+130+-+Section+7.4/1_gfoztd73)
 
 :::{.callout-important title = "Same pipe, different symbol"}
 We've seen chaining before using the base R pipe `|>`. The `%>%` symbol is also called a pipe, but is only accessible after you load the `dplyr` package. They function the same. We show both here because you will see both used out in the wild and need to know they are interchangeable. 

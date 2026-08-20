@@ -491,6 +491,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+8+Intro/1_3ujbzgr2"><strong>Getting data into R</strong> video</a></p>
 <p>In this lesson we will introduce methods to get data from external files into R.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="🎓 Learning Objectives">
 <div class="callout-header d-flex align-content-center">
@@ -562,6 +563,7 @@ CAUTION FOR MAC USERS
 </div>
 <section id="file-types" class="level2 page-columns page-full" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="file-types"><span class="header-section-number">8.1</span> File types</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+8.1/1_44333nn6"><strong>File types</strong> video</a></p>
 <p>In this lesson we are only going to explore reading files that exist on your computer into R from three most commonly used data sources: A tab-delimited text file, A CSV file and an Excel file.</p>
 <div class="page-columns page-full"><p>The three different files we will be using have different file types, or extensions. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">.doc (Microsoft word), .pdf (PDF) and .png (images) are examples of file extensions for other types of files</span></div></div>
 <ul>
@@ -610,6 +612,7 @@ Figure&nbsp;8.1: Example of two common types of delimiters.
 </section>
 <section id="paths-where-the-data-lives" class="level2 page-columns page-full" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="paths-where-the-data-lives"><span class="header-section-number">8.2</span> Paths (where the data lives)</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+8.2/1_13vhbz09"><strong>Paths</strong> video</a></p>
 <p>In addition to using the correct function for the delimiter type, we have to then tell the program explicitly where to find the files you want to access. To do that we need to find the file’s <em>path</em>. The <em>path</em> is a programmatic way to direct your computer to the location of a file.</p>
 <p>You can think of it as a file’s address, or where it lives on your computer. But to get to that address depends on where you start your journey. For example to get to your instructors office in Holt Hall, it will be different depending on if you start from your house, vs start from Meriam Library. If someone else starts from their house, their path would look different than if you both started at the Library.</p>
 <ul>
@@ -645,7 +648,7 @@ Figure&nbsp;8.1: Example of two common types of delimiters.
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dr. D's path to the code to build this course website</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>here<span class="sc">::</span><span class="fu">here</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>[1] "/Users/rdonatello/GitHub/Math130book"</code></pre>
+<pre data-code-line-numbers=""><code>[1] "/Users/edward/Math130book"</code></pre>
 </div>
 </div>
 </div>
@@ -672,6 +675,7 @@ Cannot open the Connection
 </section>
 <section id="checking-the-import-was-successful" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="checking-the-import-was-successful"><span class="header-section-number">8.3</span> Checking the import was successful</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+8.3/1_s688jjn3"><strong>Checking the import was successful</strong> video</a></p>
 <p>The first thing you should always do after importing a data file is look at the raw data and ask yourself the following things:</p>
 <ol type="1">
 <li>Were the variable names read in correctly?</li>
@@ -682,6 +686,7 @@ Cannot open the Connection
 </section>
 <section id="text-files" class="level2" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="text-files"><span class="header-section-number">8.4</span> Text files</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+8.4/1_44ptmgkf"><strong>Text files</strong> video</a></p>
 <p>Text files are very simple files that have a <code>.txt</code> file extension. Common delimiters include a space, a comma (,) or a tab. Uncommon delimiters could include a <code>%</code> or even a semi-colon (<code>;</code>).</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="👉 Open the file directly">
 <div class="callout-header d-flex align-content-center">
@@ -844,6 +849,7 @@ We get the same error message and it will not read the data into your environmen
 </section>
 <section id="csv-comma-separated-values" class="level2 page-columns page-full" data-number="8.5">
 <h2 data-number="8.5" class="anchored" data-anchor-id="csv-comma-separated-values"><span class="header-section-number">8.5</span> CSV: Comma Separated Values</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+8.5/1_vudlljk7"><strong>CSV: Comma Separated Values</strong> video</a></p>
 <div class="page-columns page-full"><p>CSV stands for “comma-separated values”. This file type can also open in spreadsheet programs like MS Excel, Numbers or google sheets. The icons even look similar. Here we use the <code>read.csv()</code> function because it is optimized to read in this file type. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Not CVS the pharmacy</span></div></div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>cc <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data/countyComplete.csv"</span>), <span class="at">header=</span><span class="cn">TRUE</span>)</span>
@@ -861,6 +867,7 @@ We get the same error message and it will not read the data into your environmen
 </section>
 <section id="excel-files" class="level2" data-number="8.6">
 <h2 data-number="8.6" class="anchored" data-anchor-id="excel-files"><span class="header-section-number">8.6</span> Excel files</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+8.6/1_sf15czbr"><strong>Excel files</strong> videos</a></p>
 <p>Files with the <code>.xlsx</code> or <code>.xls</code> extensions are Microsoft Excel files. These are also comma separated, but have more features than a <code>.csv</code> file. We will use the <code>read_excel()</code> function from the <a href="http://readxl.tidyverse.org/"><code>readxl</code> package</a>, which is contained within the <code>tidyverse</code> package that we installed earlier.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
