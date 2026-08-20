@@ -28,7 +28,6 @@ By the end of this class you will be able to:
 :::
 
 :::{.callout-tip title = "Details for Fall 2026" icon=false}
-
 📄 &nbsp; [Syllabus](syllabus.pdf) \
 📅 &nbsp; Section 01: in person MWF  9-9.50am in Holt 291, 08/24/26 - 09/25/26 \
 📅 &nbsp; Section 02: fully asynchronous 08/24/26 - 09/25/26 \
