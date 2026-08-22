@@ -7,6 +7,8 @@ format:
 ---
 # Creating Plots {#sec-plots1}
 
+[**Creating Plots** video](https://media.csuchico.edu/media/MATH+130+-+Section+6+Intro/1_w6n4rn7n)
+
 ![A fuzzy monster in a beret and scarf, critiquing their own column graph on a canvas in front of them while other assistant monsters (also in berets) carry over boxes full of elements that can be used to customize a graph (like themes and geometric shapes). In the background is a wall with framed data visualizations. Stylized text reads “ggplot2: build a data masterpiece.”](img/ggplot2.png)
 
 [Learn more about [ggplot2](https://ggplot2.tidyverse.org/)]{.aside}
@@ -37,6 +39,8 @@ After completing this lesson students will be able to create basic statistical d
 
 
 ## The syntax of `ggplot`
+
+[**The syntax of `ggplot`** video](https://media.csuchico.edu/media/MATH+130+-+Section+6.1/1_3zomuz5t)
 
 The reason we use the functions in `ggplot2` is for consistency in the structure of it's arguments. Here is a bare bones generic plotting function: 
 
@@ -69,6 +73,8 @@ str(pen)
 
 
 ## One categorical variable
+
+[**One categorical variable** video](https://media.csuchico.edu/media/MATH+130+-+Section+6.2/1_dc5vgd68)
 
 Both Nominal and Ordinal data types can be visualized using tables, barcharts or pie charts.
 
@@ -124,6 +130,8 @@ table(pen$species) |> pie()
 
 
 ## One continuous variable
+
+[**One continuous variable** video](https://media.csuchico.edu/media/MATH+130+-+Section+6.3/1_29lgpd6h)
 
 We will examine the chonkiness of the penguin (`body_mass_g`) using several types of appropriate visualizations including histograms, density plots, boxplots and violin plots. 
 
@@ -219,6 +227,8 @@ ggboxplot(pen, x="body_mass_g")
 
 ## Two continuous variables
 
+[**Two continuous variables** video](https://media.csuchico.edu/media/MATH+130+-+Section+6.4/1_x0qr778h)
+
 Visualizing the relationship between two continuous variables is done using a scatterplot. Let's compare the `flipper_length_mm` of a penguin to it's `body_mass_g`. 
 
 ::: {.panel-tabset}
@@ -294,7 +304,9 @@ The _direction_ of the relationship is determined by the sign of $r$. A positive
 
 In this case we have a **strong positive relationship** between flipper length and body mass of penguins.
 
-## One continuous vs. one categorical 
+## One continuous vs. one categorical
+
+[**One continuous vs. one categorical** video](https://media.csuchico.edu/media/MATH+130+-+Section+6.5/1_3dam481b)
 
 The tactic here is to create an appropriate plot for a continuous variable, and then `fill` the geometric area or `color` the lines depending on the level of the categorical variable.  
 
@@ -408,6 +420,8 @@ ggboxplot(pen, y="body_mass_g", color = "species") # right
 
 
 ## Two categorical variables
+
+[**Two categorical variables** video](https://media.csuchico.edu/media/MATH+130+-+Section+6.6/1_ymg5vqe8)
 
 Recall from Section @sec-intro-tables that frequency tables are a common way to summarize categorical variables, and that both the frequency and relative percent are important summary numbers. Those percentages are even more important when comparing the joint distribution of two categorical variables. 
 

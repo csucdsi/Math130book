@@ -5,6 +5,8 @@ execute:
 
 # Reproducibility with Quarto
 
+[**Reproducibility with Quarto** video](https://media.csuchico.edu/media/MATH+130+-+Section+2+Intro/1_lm1l27wp)
+
 ![A schematic representing the multi-language input (e.g. Python, R, Observable, Julia) and multi-format output (e.g. PDF, html, Word documents, and more) versatility of Quarto.](img/quarto.png)
 
 
@@ -22,6 +24,8 @@ After completing this lesson learners will be able to:
 While Quarto is also it's own standalone program, it comes "built-in" to R Studio so [**no additional installations needed!**]{style="color:red;"}
 
 ## Document structure
+
+[**Document structure** video](https://media.csuchico.edu/media/MATH+130+-+Section+2.1/1_3vg2ff0c)
 
 Quarto is an example of literate programming where the explanation of the program (or analysis) logic is presented in a natural language (such as English), with supporting pieces of code embedded in the document itself. Quarto combines normal text such as this sentence, code and the output from the code all in one file. It is similar to a scientific lab notebook where a scientist can write down their hypotheses, code to produce graphs and analysis results, and the discussion of those findings.
 
@@ -46,6 +50,8 @@ The ![](img/rstudio-render-button.png){width="25"} Render button in the RStudio 
 ![The Render button](img/rstudio-render.png)
 
 ## Components of a Quarto file {#sec-quarto-components}
+
+[**Components of a Quarto file** video](https://media.csuchico.edu/media/MATH+130+-+Section+2.2/1_oczil6mx)
 
 Quarto files contains three types of content:
 
@@ -157,7 +163,9 @@ Additionally, using `#` and `##` symbols at the start of a line creates first (`
 
 :::
 
-## Create professional looking PDF reports. 
+## Create professional looking PDF reports 
+
+[**Create professional looking PDF reports** video](https://media.csuchico.edu/media/MATH+130+-+Section+2.3/1_0f009ow5)
 
 To convert your work into a professional looking PDF, or to write math symbols in your homework, or you need a typesetting program called $\LaTeX$ (pronounced "lay-tek" or "lah-tex"). It's a super neat program, but also nearly 4Gb. Too big for our needs. That's where the `tinytex` package came from. we're going to use it to install a lightweight version of $\LaTeX$. This will let us write math equations in Markdown/Quarto, and create nice PDF's of your work.
 

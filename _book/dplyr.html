@@ -499,6 +499,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+7+Intro/1_9w8ieaku"><strong>Efficient data management</strong> video</a></p>
 <p>When working with data you must:</p>
 <ol type="1">
 <li>Figure out what you want to do.</li>
@@ -557,6 +558,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The <code>nycflights13</code> package contains several data sets that can be used to help understand what causes delays. We will be using the <code>flights</code> data set which contains information about all flights that departed from NYC (e.g.&nbsp;EWR, JFK and LGA) in 2013.</p>
 <section id="sec-tibble" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="sec-tibble"><span class="header-section-number">7.1</span> Tibbles</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+7.1/1_ae7p85p6"><strong>Tibbles</strong> video</a></p>
 <p>The <code>flights</code> data set, and any data set created with <code>dplyr</code>, has a specific data type called a <code>tibble</code>. These are not as furry and prolific as their cousins the <code>tribbles</code>. <code>tibbles</code> behaves for all intents and purposes as a <code>data.frame</code>, just gets displayed differently. For example, the <code>flights</code> data set contains data on 19 characteristics (variables) from 336,776 flights. There’s no way I would want to print out a data set that large. But I’m gonna….</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>flights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -598,6 +600,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="filter" class="level3 page-columns page-full" data-number="7.2.1">
 <h3 data-number="7.2.1" class="anchored" data-anchor-id="filter"><span class="header-section-number">7.2.1</span> Filter</h3>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+7.2.1/1_xcn8y6j7"><strong>Filter</strong> video</a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/filter.png" class="img-fluid figure-img"></p>
@@ -654,6 +657,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="select" class="level3" data-number="7.2.2">
 <h3 data-number="7.2.2" class="anchored" data-anchor-id="select"><span class="header-section-number">7.2.2</span> Select</h3>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+7.2.2/1_mtbbgy5p"><strong>Select</strong> video</a></p>
 <p>Often you work with large data sets with many columns where only a few are actually of interest to you. <code>select()</code> allows you to rapidly zoom in on a useful subset using operations that usually only work on numeric variable positions.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(flights, month, day, year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -742,6 +746,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="rename" class="level3 page-columns page-full" data-number="7.2.3">
 <h3 data-number="7.2.3" class="anchored" data-anchor-id="rename"><span class="header-section-number">7.2.3</span> Rename</h3>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+7.2.3/1_jy59mokz"><strong>Rename</strong> video</a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/rename.png" class="img-fluid figure-img"></p>
@@ -777,6 +782,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="mutate" class="level3 page-columns page-full" data-number="7.2.4">
 <h3 data-number="7.2.4" class="anchored" data-anchor-id="mutate"><span class="header-section-number">7.2.4</span> Mutate</h3>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+7.2.4/1_m02kzrh7"><strong>Mutate</strong> video</a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/mutate.png" class="img-fluid figure-img"></p>
@@ -834,6 +840,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="summarize" class="level3" data-number="7.2.5">
 <h3 data-number="7.2.5" class="anchored" data-anchor-id="summarize"><span class="header-section-number">7.2.5</span> Summarize</h3>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+7.2.5/1_f3xyklec"><strong>Summarize</strong> video</a></p>
 <p>Next up is the verb <code>summarise()</code>, which is most often used to calculate summary statistics.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarise</span>(flights, </span>
@@ -852,6 +859,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="arrange" class="level3" data-number="7.2.6">
 <h3 data-number="7.2.6" class="anchored" data-anchor-id="arrange"><span class="header-section-number">7.2.6</span> Arrange</h3>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+7.2.6/1_h0yaxknf"><strong>Arrange</strong> video</a></p>
 <p>The <code>arrange()</code> function changes the order of the rows for the whole data set based on the value of the variable being sorted.</p>
 <p>Lets use a smaller data set with fewer variables so it’s easier to visualize.</p>
 <div class="cell">
@@ -945,6 +953,7 @@ Avoid the base <code>sort</code> function
 </section>
 <section id="relocate" class="level3 page-columns page-full" data-number="7.2.7">
 <h3 data-number="7.2.7" class="anchored" data-anchor-id="relocate"><span class="header-section-number">7.2.7</span> Relocate</h3>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+7.2.7/1_dbxs6uh0"><strong>Relocate</strong> video</a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/relocate.png" class="img-fluid figure-img"></p>
@@ -1006,6 +1015,7 @@ Avoid the base <code>sort</code> function
 </section>
 <section id="case-when" class="level3 page-columns page-full" data-number="7.2.8">
 <h3 data-number="7.2.8" class="anchored" data-anchor-id="case-when"><span class="header-section-number">7.2.8</span> Case when</h3>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+7.2.8/1_jhqy0au6"><strong>Case when</strong> video</a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/case_when.png" class="img-fluid figure-img"></p>
@@ -1111,6 +1121,7 @@ Solution
 </section>
 <section id="grouped-operations" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="grouped-operations"><span class="header-section-number">7.3</span> Grouped Operations</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+7.3/1_007m0j9k"><strong>Grouped Operations</strong> video</a></p>
 <p>The above verbs are useful, but they become really powerful when you combine them with the idea of “group by”, repeating the operation individually on groups of observations within the dataset. In dplyr, you use the <code>group_by()</code> function to describe how to break a dataset down into groups of rows. You can then use the resulting object in exactly the same functions as above; they’ll automatically work “by group” when the input is a grouped.</p>
 <p>Let’s demonstrate how some of these functions work after grouping the flights data set by month. First we’ll create a new data set that is grouped by month.</p>
 <div class="cell">
@@ -1179,6 +1190,7 @@ Solution
 </section>
 <section id="chaining-operations" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="chaining-operations"><span class="header-section-number">7.4</span> Chaining Operations</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+7.4/1_gfoztd73"><strong>Chaining Operations</strong> video</a></p>
 <div class="callout callout-style-default callout-important callout-titled" title="Same pipe, different symbol">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
