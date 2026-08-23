@@ -1,5 +1,7 @@
 # Getting Started with R {#sec-intro_r}
 
+[**Getting Started with R** video](https://media.csuchico.edu/media/MATH+130+-+Section+3+Intro/1_snpe6o76)
+
 This lesson is designed to explain the basics of how R works as a programming language. 
 
 :::{.callout-note title = "🎓 Learning Objectives" icon=false}
@@ -27,6 +29,8 @@ This lesson is designed to explain the basics of how R works as a programming la
 :::
 
 ## R as a calculator 
+
+[**R as a calculator** video](https://media.csuchico.edu/media/MATH+130+-+Section+3.1/1_wb6brju3)
 
 In the last lesson you saw how to do basic math in the console. Now try a more complicated expression. 
 
@@ -77,6 +81,8 @@ As you go through these lessons, follow along in your own notes file. Filling in
 
 
 ## Creating objects in R
+
+[**Creating objects in R** video](https://media.csuchico.edu/media/MATH+130+-+Section+3.2/1_fznux8u9)
 
 To do useful and interesting things, we need to assign _values_ to
 _objects_. To create an object, we need to give it a name followed by the assignment operator `<-`, and the value we want to give it:
@@ -157,6 +163,8 @@ Pause here and render your Quarto notes document to make sure everything runs an
 
 ## Functions and their arguments
 
+[**Functions and their arguments** video](https://media.csuchico.edu/media/MATH+130+-+Section+3.3/1_l105bgpb)
+
 Functions are "canned scripts" that automate more complicated sets of commands including operations assignments, etc. Many functions are predefined, or can be made available by importing R *packages* 
 
 A function usually takes one or more inputs called *arguments*, and often (but not always) return a *value*. 
@@ -209,6 +217,8 @@ round(digits = 2, x = pi)
 This is a simple function with only one argument. Functions are the backbone of how R does it's thing. You will get lots of practice with functions, and quickly encounter functions that require many arguments.
 
 ## Data Types
+
+[**Data Types** video](https://media.csuchico.edu/media/MATH+130+-+Section+3.4/1_glptknjv)
 
 R objects come in different data types. You can use the function `class()` to see what data type an object is. 
 
@@ -283,6 +293,8 @@ Sometimes we want to negate a logical statement. That is, if the value returned 
 ```
 
 ## Data Structures
+
+[**Data Structures** video](https://media.csuchico.edu/media/MATH+130+-+Section+3.5/1_5n9oowpc)
 
 Data structures is how we refer to a collection of pieces of data, like a series of numbers, or a list of words. 
 
@@ -423,6 +435,8 @@ Pause here and render the Quarto document to make sure everything runs and displ
 
 
 ## Data Frames
+
+[**Data Frames** video](https://media.csuchico.edu/media/MATH+130+-+Section+3.6/1_ph47ippc)
 
 Data frames are like spreadsheet data, rectangular with rows and columns. Ideally each row represents data on a single observation and each column contains data on a single variable, or characteristic, of the observation. This is called `tidy data`. This is an important concept that you are encouraged to read more about if you will be doing your own data collection and research.
 [This article is a good place to start](https://www.jstatsoft.org/article/view/v059i10).

@@ -497,6 +497,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+5+Intro/1_eglosuld"><strong>Working with Factors</strong> video</a></p>
 <p>In this lesson we will discuss ways to organize and deal with categorical data, also known as factor data types.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled" title="🎓 Learning Objectives">
 <div class="callout-header d-flex align-content-center">
@@ -552,11 +553,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The goal of the <code>forcats</code> package is to provide a suite of useful tools that solve common problems with factors. Often in R there are multiple ways to accomplish the same task. Some examples in this lesson will show how to perform a certain task using base R functions, as well as functions from the <code>forcats</code> package.</p>
 <section id="what-is-a-factor" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="what-is-a-factor"><span class="header-section-number">5.1</span> What is a factor?</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+5.1/1_7nrb4x76"><strong>What is a factor?</strong> video</a></p>
 <p>The term factor refers to a data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable corresponds to a limited number of categories, while a continuous variable can correspond to an infinite number of values.</p>
 <p>An example of a categorical variable is the <code>number</code> variable in the <code>email</code> data set. This variable contains data on whether there was no number, a small number (under 1 million), or a big number in the content of the email.</p>
 </section>
 <section id="confirming-the-factor-data-type" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="confirming-the-factor-data-type"><span class="header-section-number">5.2</span> Confirming the factor data type</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+5.2/1_7ysdl4aw"><strong>Confirming the factor data type</strong> video</a></p>
 <p>First we should confirm that R sees <code>number</code> as a factor. We can use the <code>class</code> function we saw earlier, or <code>str</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(email<span class="sc">$</span>number)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -602,6 +605,7 @@ Character data types
 </section>
 <section id="convert-a-character-variable-to-factor" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="convert-a-character-variable-to-factor"><span class="header-section-number">5.3</span> Convert a character variable to factor</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+5.3/1_h45ljvkt"><strong>Convert a character variable to factor</strong> video</a></p>
 <p>We can use the <code>as.factor()</code> function.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ff<span class="sc">$</span>restaurant <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(ff<span class="sc">$</span>restaurant)</span>
@@ -615,6 +619,7 @@ Character data types
 </section>
 <section id="convert-a-number-variable-to-factor" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="convert-a-number-variable-to-factor"><span class="header-section-number">5.4</span> Convert a number variable to factor</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+5.4/1_f0qxpp4y"><strong>Convert a number variable to factor</strong> video</a></p>
 <p>Sometimes data are entered into the computer using numeric codes such as 0 and 1. These codes stand for categories, such as “no” and “yes”. Sometimes we want to analyze these binary variables in two ways:</p>
 <ul>
 <li>For statistical analyses, the data must be numeric 0/1.</li>
@@ -678,6 +683,7 @@ Trust but verify
 </section>
 <section id="factor-renaming" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="factor-renaming"><span class="header-section-number">5.5</span> Factor (re)naming</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+5.5/1_qgd4xvg7"><strong>Factor (re)naming</strong> video</a></p>
 <p>What if the variable is already a factor, but has names we don’t prefer. We want them to say something else. We can accomplish this in both base R and using <code>forcats</code> package.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Base R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false"><code>forcats</code></a></li></ul>
@@ -723,6 +729,7 @@ Trust but verify
 </section>
 <section id="factor-ordering" class="level2 page-columns page-full" data-number="5.6">
 <h2 data-number="5.6" class="anchored" data-anchor-id="factor-ordering"><span class="header-section-number">5.6</span> Factor ordering</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+5.6/1_9djpkvhv"><strong>Factor ordering</strong> video</a></p>
 <p>Let’s look back at the variable <code>restaurant</code> from the fast food (<code>ff</code>) data set.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(ff<span class="sc">$</span>restaurant)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -796,6 +803,7 @@ Trust but verify
 </section>
 <section id="decreasing-number-of-levels" class="level2" data-number="5.7">
 <h2 data-number="5.7" class="anchored" data-anchor-id="decreasing-number-of-levels"><span class="header-section-number">5.7</span> Decreasing number of levels</h2>
+<p><a href="https://media.csuchico.edu/media/MATH+130+-+Section+5.7/1_fiih9rgm"><strong>Decreasing number of levels</strong> video</a></p>
 <p>For analysis purposes, sometimes you want to work with a smaller number of factor variables. Let’s look at the restaurants that are included in the <code>fastfood</code> data set.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ff<span class="sc">$</span>restaurant)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

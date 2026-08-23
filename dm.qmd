@@ -1,5 +1,7 @@
 # Working with Data Frames {#sec-dm}
 
+[**Working with Data Frames** video](https://media.csuchico.edu/media/MATH+130+-+Section+4+Intro/1_s7vkmaf4)
+
 In this lesson we will learn how to summarize data in a data frame, and to do basic data management tasks such as making new variables, recoding data and dealing with missing data.
 
 :::{.callout-note title = "🎓 Learning Objectives" icon= false}
@@ -33,6 +35,8 @@ ncbirths <- openintro::ncbirths
 This first code chunk loads the `ggplot2` package so we can access plotting functions, and then load the `ncbirths` data set, which comes with the `openintro` package.
 
 ## Summarizing data
+
+[**Summarizing data** video](https://media.csuchico.edu/media/+MATH+130+-+Section+4.1/1_ii6ke0e8)
 
 Two common methods used to summarize data are frequency tables for categorical variables (e.g. nominal, ordinal), and summary statistics for numeric (continuous or discrete) variables.
 
@@ -108,6 +112,8 @@ tbl_summary(ncbirths,
 ```
 
 ## Missing Data
+
+[**Missing Data** video](https://media.csuchico.edu/media/MATH+130+-+Section+4.2/1_kzu4m8ab)
 
 Sometimes the value for a variable is missing. Think of it as a blank cell in an spreadsheet. Missing data can be a result of many things: skip patterns in a survey (i.e. non-smokers don't get asked how many packs per week they smoke), errors in data reads from a machine, researchers skipped a day of data collection for one plant on accident etc.
 
@@ -214,6 +220,8 @@ ggplot(ncbirths_nomissing_premie, aes(premie)) + geom_bar()
 :::
 
 ## Data management
+
+[**Data management** video](https://media.csuchico.edu/media/MATH+130+-+Section+4.3/1_gqd813vf)
 
 Sometimes we have a need to create or modify variables in a data frame. You will learn several ways to do this throughout this course, but we will start by using *base R* functions and methods. These are methods that use functions that come with R, not from additional packages.
 
@@ -346,6 +354,8 @@ ncbirths[ncbirths$mage %in% c(17,18),c('mage', 'underage')]
 Notice I snuck a new operator in on you - `%in%`. This is a way you can provide a list of values (a.k.a a vector) and say "if the value of the variable I want is %in% any of these options in this vector..." do the thing.
 
 ## Chaining commands
+
+[**Chaining commands** video](https://media.csuchico.edu/media/MATH+130+-+Section+4.4/1_ebmbps8l)
 
 Two common styles:
 
