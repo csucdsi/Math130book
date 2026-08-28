@@ -2,7 +2,9 @@
 title: Efficient data management 
 author: YOUR NAME HERE
 date: today
-format: pdf
+format:
+  html:
+    embed-resources: true
 execute:
   fig-height: 4
   message: false

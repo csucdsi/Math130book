@@ -103,7 +103,7 @@ Learning how to code is like learning a new language. There are rules and except
     title="Literal Programming"
     start="37">}}
 
-:::{.callout-note appearance=minimal}
+:::{.callout-note appearance="minimal" title="No prerequisite programming knowledge"}
 This class does not assume that you have any knowledge in programming, and will provide all the codes that you need. For best results you should be trying to understand this new language, and how to tell R to do what you want it to do. 
 
 The tendency may be to reach out to AI to help write code for you, but this does not help you _learn_ and worse can provide code that is overly complicated and does not work as intended.
@@ -236,7 +236,7 @@ The downloaded binary packages are in
     C:\Users\Robin\AppData\Local\Temp\Rtmpi8NAym\downloaded_packages
 ```
 
-:::{.callout-important title = "R is Case sensitive"}
+:::{.callout-important title="R is Case sensitive"}
 R is case sensitive and spelling matters. If you get an error message like the following. 
 
 ``` r
@@ -263,12 +263,9 @@ Additional packages can be installed from the ‘packages’ tab.
 Now that you're a package installing pro, go ahead and install the following packages that we will be using in the next few weeks.
 
 :::{.callout-tip title = "👉 Your Turn" icon=false}
-
-
 Install the list of packages to the left one at a time and wait for it to finish before entering the next command. Some of these contain functions that we will use, others contain data sets that we will be working with. 
 
 :::: {.columns}
-
 ::: {.column width="50%"}
 - `tidyverse`  
 - `sjPlot`
@@ -303,15 +300,13 @@ We will specifically be using the `dplyr`, `ggplot2` and `readxl` packages that 
 
 :::
 
-
-
 ## Get oRganized!
 
 [**Get oRganized!** video](https://media.csuchico.edu/media/MATH+130+-+Section+1.6/1_ndp3elrc)
 
 It is good practice to keep a set of related data, analyses, and text self-contained in a single folder called the _working directory_. For example keeping all files related to one class in it's own folder, separate from other classes. If you are taking another class using R at the same time as this one, it's even MORE important to keep your files separate. 
 
-:::{.callout-important}
+:::{.callout-important title="Use your Math130 folder"}
 This should be your `Math130` course folder. This should not be your Downloads folder.
 :::
 
@@ -340,6 +335,7 @@ When you download a file, right click and "Save as" or "Save target as" and **ac
 * Do not left click on the links
 * Do not let files live in your downloads folder.
 * Do not open any files from your browser window after downloading.
+
 :::
 
 :::{.callout-tip title = "👉 Your Turn" icon=false}
@@ -363,6 +359,7 @@ R projects are a great way of keeping all files for one project all together, an
 * Choose _Existing Directory_ and navigate to your Math 130 folder.
 * Check _Open in new session_. This allows you to have multiple Rstudio windows open for different projects and the files/data/objects don't get cross-contaminated.
 * Click _Create Project_.
+
 :::
 
 This will open a new R Studio window. Go ahead and close both R Studio windows for now (Don't save `Untitled1.R`). We'll see how to use R Projects next.
@@ -374,6 +371,7 @@ If you think about wanting to work on a report written in Microsoft Word, or a v
 * Navigate in your file explorer to the folder where you created your project.
 * Click on the R cube icon to open the whole project.  ![](img/Rproj_cube.png){width=10%}
 * Using the `files` tab (bottom right) find and click to open the `hello.qmd` script file you downloaded earlier.
+
 :::
 
 You can tell you are in an R Project by looking in the top right corner by the Environment pane and seeing if the R project cube has your class folder name
