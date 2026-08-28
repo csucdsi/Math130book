@@ -2,8 +2,9 @@
 title: Plot Enhancements
 author: Key
 date: today
-format: 
-  pdf: 
+format:
+  html:
+    embed-resources: true
     fig-pos: H
 execute:
   fig-height: 4
